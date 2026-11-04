@@ -134,3 +134,11 @@ mode** (no subdomain). To test tenant mode locally, set a custom `hosts` entry:
 - ❌ **nuqs** — install before adding URL-synced filters.
 - ❌ **date-fns** — install before adding date formatting or the availability calendar.
 - ❌ **shadcn/ui `cn()` / `cva`** — scaffolded in `src/lib/utils.ts`; install `class-variance-authority` and `clsx` before importing.
+## Branch hygiene (mandatory)
+
+After every merge, clean up the branches it leaves behind. Only `master`/`main` and `staging` are long-lived.
+
+- Delete the merged branch on the remote (`gh pr merge --delete-branch`, or the repo's auto-delete setting) and locally (`git branch -d <name>`, then `git fetch --prune`).
+- Delete release/integration branches as soon as they are merged into `staging`/`master`.
+- Before deleting, confirm nothing unmerged or unpushed is on the branch (`git log origin/staging..<name>`); name branches explicitly, never delete by pattern.
+- Keep `staging` and `master`/`main` in sync after a release, with nothing left on local that is not pushed.
