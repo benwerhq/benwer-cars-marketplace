@@ -12,6 +12,11 @@
       "overlap": "Este vehículo ya está reservado para esas fechas.",
       "not_found": "Reserva no encontrada. Comprueba el enlace de confirmación.",
       "invalid_dates": "La devolución debe ser posterior a la recogida."
+    },
+    "pricing": {
+      "min_days": "Estas fechas son demasiado cortas para la temporada. Elige un alquiler más largo.",
+      "max_days": "Estas fechas son demasiado largas para la temporada. Elige un alquiler más corto.",
+      "rental_too_long": "Este alquiler es demasiado largo para reservarlo online. Contacta con la empresa."
     }
   },
   "nav": {

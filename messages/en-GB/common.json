@@ -12,6 +12,11 @@
       "overlap": "This vehicle is already booked for those dates.",
       "not_found": "Reservation not found. Check your confirmation link.",
       "invalid_dates": "Drop-off must be after pick-up."
+    },
+    "pricing": {
+      "min_days": "These dates are too short for the season. Choose a longer rental.",
+      "max_days": "These dates are too long for the season. Choose a shorter rental.",
+      "rental_too_long": "This rental is too long to book online. Contact the company."
     }
   },
   "nav": {

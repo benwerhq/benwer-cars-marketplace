@@ -10,9 +10,11 @@ import { ArrowLeft, Mail, ShieldCheck, Wallet } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BookingForm } from "./BookingForm";
 import { BookingSummary } from "./BookingSummary";
+import { PriceBreakdownList, PriceWarnings } from "./PriceBreakdownList";
 import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useCreateReservation } from "@/hooks/useCreateReservation";
+import { usePriceQuote } from "@/hooks/usePriceQuote";
 import { buildBookHref } from "@/lib/booking";
 import {
   createBookingSchema,
@@ -28,6 +30,12 @@ import type { Company } from "@/types/company";
 import type { Vehicle } from "@/types/vehicle";
 
 const BOOKING_FORM_ID = "booking-form";
+
+const RENTAL_LENGTH_ERRORS: Partial<Record<string, ErrorMessages>> = {
+  "pricing.min_days": ErrorMessages.PRICING_MIN_DAYS,
+  "pricing.max_days": ErrorMessages.PRICING_MAX_DAYS,
+  "pricing.rental_too_long": ErrorMessages.PRICING_RENTAL_TOO_LONG,
+};
 
 interface BookingViewProps {
   vehicle: Vehicle;
@@ -82,9 +90,21 @@ export function BookingView({
   const endDate =
     useWatch({ control: form.control, name: "endDate" }) ?? initialRange.to;
   const days = countRentalDays(startDate, endDate);
+  const quoteQuery = usePriceQuote(companySlug, {
+    vehicleId: vehicle.id,
+    startDate: days > 0 ? startDate : "",
+    endDate: days > 0 ? endDate : "",
+  });
+  const quote =
+    days > 0 && quoteQuery.data?.totalDays === days ? quoteQuery.data : null;
+  const lengthBlocked = (quote?.warnings.length ?? 0) > 0;
   const total =
     days > 0
-      ? formatMoney(days * vehicle.pricePerDay, vehicle.currency, locale)
+      ? formatMoney(
+          quote?.vehicleSubtotal ?? days * vehicle.pricePerDay,
+          vehicle.currency,
+          locale,
+        )
       : null;
   const dailyRate = formatMoney(vehicle.pricePerDay, vehicle.currency, locale);
 
@@ -111,7 +131,7 @@ export function BookingView({
   const isBusy = isPending || form.formState.isSubmitting;
 
   async function onSubmit(values: BookingFormValues) {
-    if (isPending) {
+    if (isPending || lengthBlocked) {
       return;
     }
 
@@ -188,6 +208,19 @@ export function BookingView({
           </div>
         ) : null}
 
+        {quote ? (
+          <div className="flex flex-col gap-3 lg:hidden">
+            {quote.segments.length > 0 ? (
+              <PriceBreakdownList
+                breakdown={quote}
+                currency={vehicle.currency}
+                className="rounded-xl border border-border bg-surface px-4 py-3"
+              />
+            ) : null}
+            <PriceWarnings warnings={quote.warnings} />
+          </div>
+        ) : null}
+
         <form
           id={BOOKING_FORM_ID}
           onSubmit={form.handleSubmit(onSubmit, onInvalid)}
@@ -211,9 +244,11 @@ export function BookingView({
                 from={startDate}
                 to={endDate}
                 carHref={carHref}
+                quote={quote}
               />
               <ConfirmButton
                 isBusy={isBusy}
+                blocked={lengthBlocked}
                 confirmingLabel={t("confirming")}
                 confirmLabel={t("confirm")}
               />
@@ -241,6 +276,7 @@ export function BookingView({
           </div>
           <ConfirmButton
             isBusy={isBusy}
+            blocked={lengthBlocked}
             confirmingLabel={t("confirming")}
             confirmLabel={t("confirm")}
             form={BOOKING_FORM_ID}
@@ -254,12 +290,14 @@ export function BookingView({
 
 function ConfirmButton({
   isBusy,
+  blocked = false,
   confirmingLabel,
   confirmLabel,
   form,
   className,
 }: {
   isBusy: boolean;
+  blocked?: boolean;
   confirmingLabel: string;
   confirmLabel: string;
   form?: string;
@@ -271,7 +309,7 @@ function ConfirmButton({
       form={form}
       size="lg"
       isLoading={isBusy}
-      disabled={isBusy}
+      disabled={isBusy || blocked}
       className={cn("h-11 w-full", className)}
     >
       {isBusy ? confirmingLabel : confirmLabel}
@@ -310,6 +348,13 @@ function mapReservationErrors(
     const message = translate(ErrorMessages.RESERVATION_OVERLAP);
     setError("startDate", { message });
     setError("endDate", { message });
+    return true;
+  }
+
+  const lengthError =
+    error instanceof ApiError ? RENTAL_LENGTH_ERRORS[error.code] : undefined;
+  if (lengthError) {
+    setError("endDate", { message: translate(lengthError) });
     return true;
   }
 

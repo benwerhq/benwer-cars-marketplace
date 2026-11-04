@@ -325,7 +325,14 @@
       "endDate": "Selecciona una fecha de devolución.",
       "endAfterStart": "La devolución debe ser posterior a la recogida.",
       "fixErrors": "Corrige los campos marcados."
-    }
+    },
+    "averageRate": "Tarifa diaria media",
+    "breakdownTitle": "Desglose del precio",
+    "standardRate": "Tarifa estándar",
+    "weekendRate": "Fin de semana",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "En esta temporada el alquiler debe durar al menos {limit, plural, one {# día} other {# días}}. Cambia las fechas para reservar.",
+    "warningMaxDays": "En esta temporada el alquiler puede durar como máximo {limit, plural, one {# día} other {# días}}. Cambia las fechas para reservar."
   },
   "reservationStatus": {
     "title": "Tu reserva",

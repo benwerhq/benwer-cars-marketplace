@@ -325,7 +325,14 @@
       "endDate": "Select a drop-off date.",
       "endAfterStart": "Drop-off must be after pick-up.",
       "fixErrors": "Please fix the highlighted fields."
-    }
+    },
+    "averageRate": "Average daily rate",
+    "breakdownTitle": "Price breakdown",
+    "standardRate": "Standard rate",
+    "weekendRate": "Weekend",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Rentals in this season must last at least {limit, plural, one {# day} other {# days}}. Change your dates to book.",
+    "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book."
   },
   "reservationStatus": {
     "title": "Your reservation",

@@ -4,850 +4,964 @@
  */
 
 export interface paths {
-  "/v1/public/config": {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
+    "/v1/public/config": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Platform defaults (timezones, locales, currency) */
+        get: operations["SettingsController_publicConfig"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
     };
-    /** Platform defaults (timezones, locales, currency) */
-    get: operations["SettingsController_publicConfig"];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  "/v1/public/companies": {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
+    "/v1/public/sign/{token}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Open a remote signing link
+         * @description No auth.
+         */
+        get: operations["PublicSigningController_info"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
     };
-    /** Marketplace companies, optionally filtered by name or location */
-    get: operations["PublicController_companies"];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  "/v1/public/companies/{slug}": {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
+    "/v1/public/sign/{token}/otp": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Email a verification code
+         * @description No auth. Rate limited per link; 429 carries Retry-After.
+         */
+        post: operations["PublicSigningController_sendOtp"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
     };
-    /** Company profile and branding by slug */
-    get: operations["PublicController_company"];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  "/v1/public/vehicles": {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
+    "/v1/public/sign/{token}/otp/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Verify the code and open a signing session
+         * @description No auth. Five wrong codes lock the link.
+         */
+        post: operations["PublicSigningController_verifyOtp"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
     };
-    /** Search public vehicles across all marketplace companies */
-    get: operations["PublicController_vehicles"];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  "/v1/public/companies/{slug}/vehicles": {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
+    "/v1/public/sign/{token}/document": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Presigned URL for the contract to sign
+         * @description No auth.
+         */
+        get: operations["PublicSigningController_document"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
     };
-    /** A company's bookable public vehicles */
-    get: operations["PublicController_companyVehicles"];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  "/v1/public/companies/{slug}/vehicles/{id}": {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
+    "/v1/public/sign/{token}/signature": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Sign the contract
+         * @description No auth.
+         */
+        post: operations["PublicSigningController_sign"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
     };
-    /** One public vehicle */
-    get: operations["PublicController_vehicle"];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  "/v1/public/companies/{slug}/availability": {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
+    "/v1/public/category-images/{file}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Default vehicle image for a category
+         * @description No auth. Path is `{category}.webp` or `{category}.jpg` for economy, sedan, suv, minivan, van, or other. Unknown names are 404.
+         */
+        get: operations["PublicController_categoryImage"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
     };
-    /** Whether a vehicle is free for a date range */
-    get: operations["PublicController_availability"];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  "/v1/public/companies/{slug}/reservations": {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
+    "/v1/public/companies": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Marketplace companies, optionally filtered by name or location */
+        get: operations["PublicController_companies"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
     };
-    get?: never;
-    put?: never;
-    /** Book a vehicle as a guest (no account) */
-    post: operations["PublicController_book"];
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
-  "/v1/public/reservations/{token}": {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
+    "/v1/public/companies/{slug}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Company profile and branding by slug */
+        get: operations["PublicController_company"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
     };
-    /** Look up a guest booking by its secret token */
-    get: operations["PublicController_reservation"];
-    put?: never;
-    post?: never;
-    delete?: never;
-    options?: never;
-    head?: never;
-    patch?: never;
-    trace?: never;
-  };
+    "/v1/public/vehicles": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Search public vehicles across all marketplace companies */
+        get: operations["PublicController_vehicles"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/public/companies/{slug}/vehicles": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** A company's bookable public vehicles */
+        get: operations["PublicController_companyVehicles"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/public/companies/{slug}/vehicles/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** One public vehicle */
+        get: operations["PublicController_vehicle"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/public/companies/{slug}/availability": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Whether a vehicle is free for a date range */
+        get: operations["PublicController_availability"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/public/companies/{slug}/insurance-packages": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Insurance package quotes for a vehicle and date range */
+        get: operations["PublicController_insurancePackages"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/public/companies/{slug}/price-quote": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Price a car for a date range
+         * @description Day-by-day breakdown from the company rate tables. Warnings name season minimum or maximum lengths that would block the booking.
+         */
+        get: operations["PublicController_priceQuote"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/public/companies/{slug}/reservations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Book a vehicle as a guest (no account) */
+        post: operations["PublicController_book"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/public/reservations/{token}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Look up a guest booking by its secret token */
+        get: operations["PublicController_reservation"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
-  schemas: {
-    FirebaseLoginDto: {
-      idToken: string;
-      client?: string;
-    };
-    LoginResponseDto: {
-      user: {
-        /** Format: uuid */
-        id: string;
-        email: string;
-        name: string;
-        photoUrl: string | null;
-        company: string;
-        /** Format: uuid */
-        companyId: string;
-        companyLogoUrl: string | null;
-        logoUrl: string | null;
-        onboardingCompleted: boolean;
-        /** @enum {string} */
-        role: "owner" | "manager" | "staff";
-        isPlatformAdmin: boolean;
-        impersonating: boolean;
-        /** Format: uuid */
-        activeBranchId: string | null;
-        activeBranchName: string | null;
-        /** @enum {string} */
-        branchScope: "all" | "branch";
-        accessibleBranches: {
-          /** Format: uuid */
-          id: string;
-          name: string;
-          isHeadquarters: boolean;
-        }[];
-      };
-      /** Format: date-time */
-      loginAt: string;
-    };
-    RegisterDto: {
-      idToken: string;
-      companyName: string;
-      phone: string;
-      address: string;
-      slug?: string;
-      /** Format: uri */
-      websiteUrl?: string;
-      /** Format: email */
-      companyEmail?: string;
-      timezone?: string;
-      locale?: string;
-      client?: string;
-    };
-    RegisterResponseDto: {
-      user: {
-        /** Format: uuid */
-        id: string;
-        email: string;
-        name: string;
-        photoUrl: string | null;
-        company: string;
-        /** Format: uuid */
-        companyId: string;
-        companyLogoUrl: string | null;
-        logoUrl: string | null;
-        onboardingCompleted: boolean;
-        /** @enum {string} */
-        role: "owner" | "manager" | "staff";
-        isPlatformAdmin: boolean;
-        impersonating: boolean;
-        /** Format: uuid */
-        activeBranchId: string | null;
-        activeBranchName: string | null;
-        /** @enum {string} */
-        branchScope: "all" | "branch";
-        accessibleBranches: {
-          /** Format: uuid */
-          id: string;
-          name: string;
-          isHeadquarters: boolean;
-        }[];
-      };
-      /** Format: date-time */
-      loginAt: string;
-      redirectTo: string;
-    };
-    InviteInfoDto: {
-      companyName: string;
-      email: string;
-      /** @enum {string} */
-      role: "staff" | "manager";
-      /** Format: date-time */
-      expiresAt: string;
-    };
-    AcceptInviteDto: {
-      idToken: string;
-      token: string;
-    };
-    SendVerificationDto: {
-      idToken: string;
-      locale?: string;
-      continuePath?: string;
-    };
-    SendPasswordResetDto: {
-      /** Format: email */
-      email: string;
-      locale?: string;
-    };
-    SessionUserDto: {
-      /** Format: uuid */
-      id: string;
-      email: string;
-      name: string;
-      photoUrl: string[];
-      company: string;
-      /** Format: uuid */
-      companyId: string;
-      companyLogoUrl: string[];
-      logoUrl: string[];
-      onboardingCompleted: boolean;
-      /** @enum {string} */
-      role: "owner" | "manager" | "staff";
-      isPlatformAdmin: boolean;
-      impersonating: boolean;
-      /** Format: uuid */
-      activeBranchId: string | null;
-      activeBranchName: string[];
-      /** @enum {string} */
-      branchScope: "all" | "branch";
-      accessibleBranches: {
-        /** Format: uuid */
-        id: string;
-        name: string;
-        isHeadquarters: boolean;
-      }[];
-    };
-    PaymentCollectionDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        /** Format: uuid */
-        companyId: string | null;
-        companyName: string | null;
-        customerEmail: string;
-        plan: string;
-        billingInterval: string;
-        amount: number;
-        currency: string;
-        status: string;
-        /** Format: date-time */
-        periodStart: string | null;
-        /** Format: date-time */
-        periodEnd: string | null;
-        /** Format: date-time */
-        paidAt: string | null;
-        /** Format: date-time */
-        createdAt: string;
-      }[];
-    };
-    InvoiceUrlDto: {
-      /** Format: uri */
-      invoiceUrl: string;
-    };
-    CompleteCheckoutDto: {
-      /** Format: uuid */
-      paymentId: string;
-    };
-    CompleteCheckoutResultDto: {
-      payment: {
-        /** Format: uuid */
-        id: string;
-        /** Format: uuid */
-        companyId: string | null;
-        customerEmail: string;
-        /** @enum {string} */
-        plan: "growth" | "fleet";
-        billingInterval: string;
-        amount: number;
-        currency: string;
-        /** @enum {string} */
-        status: "pending" | "processing" | "succeeded" | "failed" | "refunded";
-        /** Format: date-time */
-        periodStart: string | null;
-        /** Format: date-time */
-        periodEnd: string | null;
-        /** Format: date-time */
-        paidAt: string | null;
-        /** Format: date-time */
-        createdAt: string;
-        hasInvoice: boolean;
-      };
-      redirectTo: string;
-    };
-    SubscriptionInfoDto: {
-      /** @enum {string} */
-      plan: "growth" | "fleet";
-      status: string;
-      billingInterval: string[];
-      vehicleCount: number;
-      vehicleLimit: number | null;
-      documentScanPagesUsed: number;
-      documentScanPageLimit: number;
-      canUpgrade: boolean;
-      canDowngrade: boolean;
-      canCancel: boolean;
-      /** Format: date-time */
-      cancelAt: string | null;
-      hasStripeCustomer: boolean;
-    };
-    PortalRequestDto: {
-      /** Format: uri */
-      returnUrl: string;
-    };
-    PortalSessionDto: {
-      url: string;
-    };
-    PlanChangeDto: {
-      /** @enum {string} */
-      plan: "growth" | "fleet";
-    };
-    CancelResultDto: {
-      /** Format: date-time */
-      cancelAt: string;
-    };
-    CheckoutAccessDto: {
-      /** @enum {string} */
-      action: "checkout" | "dashboard" | "onboarding";
-    };
-    PrepareCheckoutDto: {
-      email?: string;
-      billingInterval: string;
-      plan: string;
-    };
-    CheckoutIntentDto: {
-      /** Format: uuid */
-      paymentId: string;
-      clientSecret: string;
-      publishableKey: string;
-      amount: number;
-      currency: string;
-      billingInterval: string;
-      /** @enum {string} */
-      plan: "growth" | "fleet";
-    };
-    PaymentDto: {
-      /** Format: uuid */
-      id: string;
-      /** Format: uuid */
-      companyId: string | null;
-      customerEmail: string;
-      /** @enum {string} */
-      plan: "growth" | "fleet";
-      billingInterval: string;
-      amount: number;
-      currency: string;
-      /** @enum {string} */
-      status: "pending" | "processing" | "succeeded" | "failed" | "refunded";
-      /** Format: date-time */
-      periodStart: string | null;
-      /** Format: date-time */
-      periodEnd: string | null;
-      /** Format: date-time */
-      paidAt: string | null;
-      /** Format: date-time */
-      createdAt: string;
-      hasInvoice: boolean;
-    };
-    WebhookAckDto: {
-      /** @enum {boolean} */
-      received: true;
-    };
-    ProfileDto: {
-      /** Format: uuid */
-      id: string;
-      email: string;
-      name: string;
-      photoUrl: string[];
-      /** @enum {string} */
-      role: "owner" | "manager" | "staff";
-      /** Format: uuid */
-      companyId: string;
-      companyName: string;
-      companyLogoUrl: string[];
-      logoUrl: string[];
-    };
-    UpdateProfileDto: {
-      /** Format: uuid */
-      id?: string;
-      name?: string;
-      photoUrl?: string[];
-    };
-    TeamDto: {
-      members: {
-        /** Format: uuid */
-        id: string;
-        email: string;
-        name: string;
-        /** @enum {string} */
-        role: "owner" | "manager" | "staff";
-        /** Format: date-time */
-        createdAt: string;
-      }[];
-      deactivatedMembers: {
-        /** Format: uuid */
-        id: string;
-        email: string;
-        name: string;
-        /** @enum {string} */
-        role: "owner" | "manager" | "staff";
-        /** Format: date-time */
-        createdAt: string;
-      }[];
-      invitations: {
-        /** Format: uuid */
-        id: string;
-        email: string;
-        name: string;
-        /** @enum {string} */
-        role: "staff" | "manager";
-        /** Format: date-time */
-        expiresAt: string;
-        /** Format: date-time */
-        createdAt: string;
-        inviteUrl?: string;
-      }[];
-    };
-    InviteUserDto: {
-      /** Format: email */
-      email: string;
-      name: string;
-      /** @enum {string} */
-      role: "staff" | "manager";
-    };
-    InvitationDto: {
-      /** Format: uuid */
-      id: string;
-      email: string;
-      name: string;
-      /** @enum {string} */
-      role: "staff" | "manager";
-      /** Format: date-time */
-      expiresAt: string;
-      /** Format: date-time */
-      createdAt: string;
-      inviteUrl?: string;
-    };
-    UpdateRoleDto: {
-      /** @enum {string} */
-      role: "staff" | "manager";
-    };
-    MemberDto: {
-      /** Format: uuid */
-      id: string;
-      email: string;
-      name: string;
-      /** @enum {string} */
-      role: "owner" | "manager" | "staff";
-      /** Format: date-time */
-      createdAt: string;
-    };
-    AccessibleBranchDto: {
-      /** Format: uuid */
-      id: string;
-      name: string;
-      isHeadquarters: boolean;
-    };
-    BranchDto: {
-      /** Format: uuid */
-      id: string;
-      name: string;
-      isHeadquarters: boolean;
-      phone: string | null;
-      address: string;
-      /** Format: email */
-      email: string | null;
-      timezone: string[];
-      isActive: boolean;
-    };
-    CreateBranchDto: {
-      name: string;
-      address: string;
-      phone?: string | null;
-      /** Format: email */
-      email?: string | null;
-      timezone?: string[];
-      isActive?: boolean;
-    };
-    UpdateBranchDto: {
-      name?: string;
-      address?: string;
-      phone?: string | null;
-      /** Format: email */
-      email?: string | null;
-      timezone?: string[];
-      isActive?: boolean;
-    };
-    SettingsDto: {
-      company: {
-        /** Format: uuid */
-        id: string;
-        name: string;
-        timezone: string;
-        defaultLocale: string;
-        phone: string | null;
-        address: string | null;
-        slug: string;
-        websiteUrl: string | null;
-        companyEmail: string | null;
-        description: string | null;
-        isPublic: boolean;
-        onboardingCompleted: boolean;
-        logoUrl: string | null;
-        branding: {
-          primaryColor: string;
-          logoUrl: string | null;
+    schemas: {
+        AcceptInviteDto: {
+            idToken: string;
+            token: string;
         };
-      };
-      currency: string;
-      /** @enum {string} */
-      role: "owner" | "manager" | "staff";
-      defaults: {
-        timezone: string;
-        timezoneRegion: string;
-        currency: string;
-        defaultLocale: string;
-      };
-    };
-    UpdateSettingsDto: {
-      company?: {
-        name?: string;
-        timezone?: string;
-        defaultLocale?: string;
-        phone?: string;
-        address?: string;
-        slug?: string;
-        /** Format: uri */
-        websiteUrl?: string | null;
-        /** Format: email */
-        companyEmail?: string | null;
-        description?: string | null;
-        isPublic?: boolean;
-        onboardingCompleted?: boolean;
-        /** Format: uri */
-        logoUrl?: string | null;
-        branding?: {
-          primaryColor?: string;
-          /** Format: uri */
-          logoUrl?: string | null;
-        };
-      };
-      currency?: string;
-    };
-    CompanyPatchDto: {
-      name?: string;
-      timezone?: string;
-      defaultLocale?: string;
-      phone?: string;
-      address?: string;
-      slug?: string;
-      /** Format: uri */
-      websiteUrl?: string | null;
-      /** Format: email */
-      companyEmail?: string | null;
-      description?: string | null;
-      isPublic?: boolean;
-      onboardingCompleted?: boolean;
-      /** Format: uri */
-      logoUrl?: string | null;
-      branding?: {
-        primaryColor?: string;
-        /** Format: uri */
-        logoUrl?: string | null;
-      };
-    };
-    SlugAvailabilityDto: {
-      slug: string;
-      available: boolean;
-    };
-    PublicConfigDto: {
-      companyDefaults: {
-        timezone: string;
-        timezoneRegion: string;
-        currency: string;
-        defaultLocale: string;
-      };
-      locale: {
-        companyForced: boolean;
-        supported: string[];
-        default: string;
-      };
-      timezones: {
-        id: string;
-        label: string;
-        default: boolean;
-      }[];
-    };
-    AddonListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        kind: string;
-        name: {
-          [key: string]: string;
-        };
-        shortDescription: {
-          [key: string]: string;
-        };
-        longDescription: {
-          [key: string]: string;
-        };
-        type: string;
-        price: number;
-        imageUrl: string | null;
-        active: boolean;
-        quantity: number | null;
-        availableQuantity: number | null;
-      }[];
-      page: {
-        total: number;
-        nextCursor: string | null;
-      };
-    };
-    AddonDto: {
-      /** Format: uuid */
-      id: string;
-      kind: string;
-      name: {
-        [key: string]: string;
-      };
-      shortDescription: {
-        [key: string]: string;
-      };
-      longDescription: {
-        [key: string]: string;
-      };
-      type: string;
-      price: number;
-      imageUrl: string[];
-      active: boolean;
-      quantity: number | null;
-      availableQuantity: number | null;
-    };
-    CreateAddonDto: {
-      /** @enum {string} */
-      kind:
-        | "child_seat"
-        | "booster_seat"
-        | "gps"
-        | "additional_driver"
-        | "full_insurance"
-        | "wifi_hotspot"
-        | "roof_box"
-        | "ski_rack"
-        | "snow_chains"
-        | "toll_tag"
-        | "cleaning"
-        | "full_tank"
-        | "other";
-      name?: {
-        [key: string]: string;
-      };
-      shortDescription?: {
-        [key: string]: string;
-      };
-      longDescription?: {
-        [key: string]: string;
-      };
-      /** @enum {string} */
-      type: "per_day" | "fixed";
-      price: number;
-      active?: boolean;
-      quantity?: number | null;
-    };
-    UpdateAddonDto: {
-      /** @enum {string} */
-      kind?:
-        | "child_seat"
-        | "booster_seat"
-        | "gps"
-        | "additional_driver"
-        | "full_insurance"
-        | "wifi_hotspot"
-        | "roof_box"
-        | "ski_rack"
-        | "snow_chains"
-        | "toll_tag"
-        | "cleaning"
-        | "full_tank"
-        | "other";
-      name?: {
-        [key: string]: string;
-      };
-      shortDescription?: {
-        [key: string]: string;
-      };
-      longDescription?: {
-        [key: string]: string;
-      };
-      /** @enum {string} */
-      type?: "per_day" | "fixed";
-      price?: number;
-      active?: boolean;
-      quantity?: number | null;
-    };
-    StockPhotoDto: {
-      /** Format: uuid */
-      id: string;
-      make: string;
-      model: string;
-      yearFrom: number | null;
-      yearTo: number | null;
-      url: string;
-      licenseNote: string[];
-    };
-    UploadResponseDto: {
-      /** @enum {string} */
-      kind:
-        | "vehicle_photo"
-        | "vehicle_insurance"
-        | "vehicle_itv"
-        | "vehicle_registration"
-        | "vehicle_technical_sheet"
-        | "vehicle_road_tax_receipt"
-        | "customer_id"
-        | "customer_licence"
-        | "charge_image"
-        | "company_logo"
-        | "user_avatar";
-      /** Format: uuid */
-      entityId: string;
-      /** @description Present for public kinds only */
-      url?: string;
-    };
-    CompanyCollectionDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        name: string;
-        timezone: string;
-        defaultLocale: string;
-        currency: string;
-        ownerEmail: string | null;
-        subscriptionPlan: string;
-        subscriptionStatus: string;
-        subscriptionInterval: string | null;
-        userCount: number;
-        /** Format: date-time */
-        createdAt: string;
-      }[];
-    };
-    ImpersonateDto: {
-      /** Format: uuid */
-      companyId: string;
-    };
-    ReservationListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        customer: {
-          /** Format: uuid */
-          id: string;
-          fullName: string;
-          firstName: string;
-          lastName: string | null;
-          email: string | null;
-          phone: string;
-          address: string | null;
-          addressLine2: string | null;
-          city: string | null;
-          region: string | null;
-          postcode: string | null;
-          country: string | null;
-          idNumber: string | null;
-          idExpiresAt: string | null;
-          idScanUrl: string | null;
-          idScans: {
+        AccessibleBranchDto: {
             /** Format: uuid */
             id: string;
-            url: string;
-          }[];
-          drivingLicenceNumber: string | null;
-          drivingLicenceExpiresAt: string | null;
-          licenceScanUrl: string | null;
-          licenceScans: {
+            name: string;
+            address: string;
+            isHeadquarters: boolean;
+        };
+        AccountSessionDto: {
+            clientSecret: string;
+            connectedAccountId: string;
+            publishableKey: string;
+            /** @enum {string} */
+            status: "not_started" | "pending" | "active" | "restricted" | "disabled";
+            chargesEnabled: boolean;
+        };
+        AddCustomerNoteDto: {
+            body: string;
+            authorName?: string;
+        };
+        AddNoteDto: {
+            body: string;
+            authorName?: string;
+        };
+        AddReservationNoteDto: {
+            body: string;
+            authorName?: string;
+        };
+        AddonDto: {
             /** Format: uuid */
             id: string;
-            url: string;
-          }[];
-          dateOfBirth: string | null;
-          notes: {
+            kind: string;
+            name: {
+                [key: string]: string;
+            };
+            shortDescription: {
+                [key: string]: string;
+            };
+            longDescription: {
+                [key: string]: string;
+            };
+            type: string;
+            price: number;
+            imageUrl: string[];
+            active: boolean;
+            quantity: number | null;
+            availableQuantity: number | null;
+        };
+        AddonListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                kind: string;
+                name: {
+                    [key: string]: string;
+                };
+                shortDescription: {
+                    [key: string]: string;
+                };
+                longDescription: {
+                    [key: string]: string;
+                };
+                type: string;
+                price: number;
+                imageUrl: string | null;
+                active: boolean;
+                quantity: number | null;
+                availableQuantity: number | null;
+            }[];
+            page: {
+                total: number;
+                nextCursor: string | null;
+            };
+        };
+        AutoCancelResultDto: {
+            cancelled: number;
+        };
+        AvailabilityDto: {
+            /** Format: uuid */
+            vehicleId: string;
+            available: boolean;
+        };
+        BranchDto: {
+            /** Format: uuid */
+            id: string;
+            name: string;
+            isHeadquarters: boolean;
+            phone: string | null;
+            address: string;
+            /** Format: email */
+            email: string | null;
+            timezone: string[];
+            isActive: boolean;
+            sesEstablishmentCode: string | null;
+        };
+        CalendarDto: {
+            from: string;
+            to: string;
+            vehicles: {
+                /** Format: uuid */
+                vehicleId: string;
+                plate: string;
+                bookings: {
+                    /** Format: uuid */
+                    reservationId: string;
+                    customerName: string;
+                    startDate: string;
+                    endDate: string;
+                    startTime: string | null;
+                    endTime: string | null;
+                    /** Format: uuid */
+                    pickupBranchId: string;
+                    /** Format: uuid */
+                    returnBranchId: string;
+                    status: string;
+                    paymentStatus: string;
+                }[];
+            }[];
+        };
+        CancelReservationDto: {
+            reason?: string;
+            /** @enum {string} */
+            reasonCode?: "customer_request" | "no_show" | "vehicle_unavailable" | "duplicate" | "other";
+        };
+        CancelResultDto: {
+            /** Format: date-time */
+            cancelAt: string;
+        };
+        ChargeDto: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            type: "vehicle_damage" | "fine" | "cleaning" | "fuel" | "extra_km" | "other";
+            amount: number;
+            details: string[];
+            imageUrls: string[];
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: uuid */
+            inspectionMarkId?: string;
+            /** Format: uuid */
+            inspectionId?: string;
+            damage?: {
+                zone: string;
+                severity: string;
+                damageType: string;
+                note: string | null;
+                photoUrl: string | null;
+                posX: number | null;
+                posY: number | null;
+                price: number | null;
+            };
+            /** @enum {string} */
+            source: "manual" | "auto";
+            calculatedAmount: number[];
+            waivedReason: string[];
+        };
+        ChargeListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                type: "vehicle_damage" | "fine" | "cleaning" | "fuel" | "extra_km" | "other";
+                amount: number;
+                details: string | null;
+                imageUrls: string[];
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                inspectionMarkId?: string;
+                /** Format: uuid */
+                inspectionId?: string;
+                damage?: {
+                    zone: string;
+                    severity: string;
+                    damageType: string;
+                    note: string | null;
+                    photoUrl: string | null;
+                    posX: number | null;
+                    posY: number | null;
+                    price: number | null;
+                };
+                /** @enum {string} */
+                source: "manual" | "auto";
+                calculatedAmount: number | null;
+                waivedReason: string | null;
+            }[];
+        };
+        ChecklistDto: {
+            items?: {
+                key: string;
+                /** @enum {string|null} */
+                answer: "pass" | "fail" | "na" | null;
+            }[];
+            answers?: {
+                [key: string]: "pass" | "fail" | "na" | null;
+            };
+        };
+        CheckoutAccessDto: {
+            /** @enum {string} */
+            action: "checkout" | "dashboard" | "onboarding";
+        };
+        CheckoutIntentDto: {
+            /** Format: uuid */
+            paymentId: string;
+            clientSecret: string;
+            publishableKey: string;
+            amount: number;
+            currency: string;
+            billingInterval: string;
+            plan: string;
+        };
+        CompanyCollectionDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                name: string;
+                timezone: string;
+                defaultLocale: string;
+                currency: string;
+                ownerEmail: string | null;
+                subscriptionPlan: string;
+                subscriptionStatus: string;
+                subscriptionInterval: string | null;
+                userCount: number;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        CompanyPatchDto: {
+            name?: string;
+            timezone?: string;
+            defaultLocale?: string;
+            phone?: string;
+            address?: string;
+            legalName?: string | null;
+            taxId?: string | null;
+            registeredAddress?: string | null;
+            slug?: string;
+            /** Format: uri */
+            websiteUrl?: string | null;
+            /** Format: email */
+            companyEmail?: string | null;
+            description?: string | null;
+            isPublic?: boolean;
+            onboardingCompleted?: boolean;
+            /** Format: uri */
+            logoUrl?: string | null;
+            branding?: {
+                primaryColor?: string;
+                /** Format: uri */
+                logoUrl?: string | null;
+            };
+        };
+        CompleteCheckoutDto: {
+            /** Format: uuid */
+            paymentId: string;
+        };
+        CompleteCheckoutResultDto: {
+            payment: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                companyId: string | null;
+                customerEmail: string;
+                plan: string;
+                billingInterval: string;
+                amount: number;
+                currency: string;
+                /** @enum {string} */
+                status: "pending" | "processing" | "succeeded" | "failed" | "refunded";
+                /** Format: date-time */
+                periodStart: string | null;
+                /** Format: date-time */
+                periodEnd: string | null;
+                /** Format: date-time */
+                paidAt: string | null;
+                /** Format: date-time */
+                createdAt: string;
+                hasInvoice: boolean;
+            };
+            redirectTo: string;
+        };
+        ConnectStatusDto: {
+            connectedAccountId: string[];
+            /** @enum {string} */
+            status: "not_started" | "pending" | "active" | "restricted" | "disabled";
+            chargesEnabled: boolean;
+            /** @enum {string} */
+            dashboard: "full";
+        };
+        CreateAddonDto: {
+            /** @enum {string} */
+            kind: "child_seat" | "booster_seat" | "gps" | "additional_driver" | "wifi_hotspot" | "roof_box" | "ski_rack" | "snow_chains" | "toll_tag" | "cleaning" | "full_tank" | "other" | "full_insurance";
+            name?: {
+                [key: string]: string;
+            };
+            shortDescription?: {
+                [key: string]: string;
+            };
+            longDescription?: {
+                [key: string]: string;
+            };
+            /** @enum {string} */
+            type: "per_day" | "fixed";
+            price: number;
+            active?: boolean;
+            quantity?: number | null;
+        };
+        CreateBranchDto: {
+            name: string;
+            address: string;
+            phone?: string | null;
+            /** Format: email */
+            email?: string | null;
+            timezone?: string[];
+            isActive?: boolean;
+            sesEstablishmentCode?: string | null;
+        };
+        CreateChargeDto: {
+            /** @enum {string} */
+            type: "vehicle_damage" | "fine" | "cleaning" | "fuel" | "extra_km" | "other";
+            amount: number;
+            details?: string | null;
+            /** Format: uuid */
+            inspectionMarkId?: string;
+        };
+        CreateCustomerDto: {
+            firstName?: string;
+            lastName?: string | null;
+            fullName?: string;
+            email?: (string | "") | null;
+            phone: string;
+            address?: string | null;
+            addressLine2?: string | null;
+            city?: string | null;
+            postcode?: string | null;
+            region?: string | null;
+            country?: (string | "") | null;
+            idNumber?: string | null;
+            /** Format: date */
+            idExpiresAt?: string | null;
+            drivingLicenceNumber?: string | null;
+            /** Format: date */
+            drivingLicenceExpiresAt?: string | null;
+            /** Format: date */
+            dateOfBirth?: string | null;
+            secondLastName?: (string | "") | null;
+            idDocumentType?: (("nif" | "nie" | "passport" | "other") | "") | null;
+            nationality?: (string | "") | null;
+            sex?: (("male" | "female" | "other") | "") | null;
+            municipalityCode?: (string | "") | null;
+            drivingLicenceClass?: (("AM" | "A1" | "A2" | "A" | "B" | "BE" | "C1" | "C1E" | "C" | "CE" | "D1" | "D1E" | "D" | "DE" | "other") | "") | null;
+            preferredLocale?: (("es-ES" | "en-GB" | "pt-PT") | "") | null;
+            initialNotes?: string[];
+            noteAuthorName?: string;
+        };
+        CreateGuestReservationDto: {
+            guestName: string;
+            /** Format: email */
+            guestEmail: string;
+            guestPhone: string;
+            /** Format: uuid */
+            vehicleId: string;
+            /** Format: date */
+            startDate: string;
+            /** Format: date */
+            endDate: string;
+            /** Format: uuid */
+            insurancePackageId?: string;
+        };
+        CreateInspectionDto: {
+            /** @enum {string} */
+            type: "checkout" | "checkin";
+        };
+        CreateReservationDto: {
+            /** Format: uuid */
+            customerId: string;
+            /** Format: uuid */
+            vehicleId: string;
+            /** Format: uuid */
+            pickupBranchId?: string;
+            /** Format: uuid */
+            returnBranchId?: string;
+            /** Format: date */
+            startDate: string;
+            /** Format: date */
+            endDate: string;
+            startTime?: string;
+            endTime?: string;
+            addonIds?: string[];
+            /** Format: uuid */
+            insurancePackageId?: string;
+            initialNotes?: string[];
+            noteAuthor?: {
+                authorName: string;
+            };
+            blacklistOverrideReason?: string;
+            /** @enum {string} */
+            source?: "counter" | "phone";
+        };
+        CreateVehicleDto: {
+            plate: string;
+            make: string;
+            model: string;
+            year: number;
+            color: string;
+            /** @enum {string} */
+            fuelType: "petrol" | "diesel" | "electric" | "hybrid" | "plugin_hybrid";
+            /** @enum {string} */
+            category?: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+            /** Format: uuid */
+            groupId?: string;
+            dailyRate: number;
+            /** @description true prices this car at its own dailyRate instead of its group's rate table. */
+            priceOverride?: boolean;
+            deposit?: number;
+            minDeposit?: number | null;
+            /** Format: uuid */
+            branchId?: string;
+            vin?: string | null;
+            insurer?: string | null;
+            /** Format: date */
+            registeredAt?: string | null;
+            currentMileage?: number | null;
+            /** Format: date */
+            insuranceExpiresAt?: string | null;
+            /** Format: date */
+            itvExpiresAt?: string | null;
+            /** Format: date */
+            roadTaxDueAt?: string | null;
+            /** Format: date */
+            nextServiceDueAt?: string | null;
+            initialNotes?: string[];
+            noteAuthor?: {
+                authorName: string;
+            };
+            enginePowerKw?: number | null;
+            engineDisplacementCc?: number | null;
+            co2Emissions?: number | null;
+            seatingCapacity?: number | null;
+            maxTowingWeight?: number | null;
+            maxAuthorizedMassKg?: number | null;
+            unladenMassKg?: number | null;
+            doorCount?: number | null;
+            fuelTankLitres?: number | null;
+            batteryKwh?: number | null;
+            /** @enum {string|null} */
+            environmentalLabel?: "0" | "ECO" | "C" | "B" | "none" | null;
+            /** @enum {string|null} */
+            transmission?: "automatic" | "manual" | null;
+            registrationRawData?: {
+                [key: string]: unknown;
+            } | null;
+            technicalSheetRawData?: {
+                [key: string]: unknown;
+            } | null;
+        };
+        CustomerDto: {
+            /** Format: uuid */
+            id: string;
+            fullName: string;
+            firstName: string;
+            lastName: string[];
+            email: string[];
+            phone: string;
+            address: string[];
+            addressLine2: string[];
+            city: string[];
+            region: string[];
+            postcode: string[];
+            country: string[];
+            idNumber: string[];
+            idExpiresAt: string[];
+            idScanUrl: string[];
+            idScans: {
+                /** Format: uuid */
+                id: string;
+                url: string;
+            }[];
+            drivingLicenceNumber: string[];
+            drivingLicenceExpiresAt: string[];
+            licenceScanUrl: string[];
+            licenceScans: {
+                /** Format: uuid */
+                id: string;
+                url: string;
+            }[];
+            dateOfBirth: string[];
+            secondLastName: string[];
+            /** @enum {string|null} */
+            idDocumentType: "nif" | "nie" | "passport" | "other" | null;
+            nationality: string[];
+            /** @enum {string|null} */
+            sex: "male" | "female" | "other" | null;
+            municipalityCode: string[];
+            /** @enum {string|null} */
+            drivingLicenceClass: "AM" | "A1" | "A2" | "A" | "B" | "BE" | "C1" | "C1E" | "C" | "CE" | "D1" | "D1E" | "D" | "DE" | "other" | null;
+            /** @enum {string|null} */
+            preferredLocale: "es-ES" | "en-GB" | "pt-PT" | null;
+            notes: {
+                /** Format: uuid */
+                id: string;
+                body: string;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                authorId: string | null;
+                authorName: string;
+            }[];
+            /** @enum {string} */
+            origin: "admin" | "web" | "mobile" | "marketplace";
+            reservationCount: number;
+            /** Format: date-time */
+            lastReservationAt: string | null;
+            /** @enum {string|null} */
+            licenceAlert: "warning" | "expired" | null;
+            blacklist: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                reason: "non_payment" | "vehicle_damage" | "fraud_or_false_documents" | "theft_or_late_return" | "traffic_fines_unpaid" | "abusive_behaviour" | "contract_breach" | "other";
+                details: string;
+                /** Format: uuid */
+                reservationId: string | null;
+                /** Format: date-time */
+                expiresAt: string;
+                active: boolean;
+                /** Format: date-time */
+                createdAt: string;
+                createdByName: string;
+                /** Format: date-time */
+                updatedAt: string;
+                updatedByName: string | null;
+                /** Format: date-time */
+                liftedAt: string | null;
+                liftedByName: string | null;
+                liftReason: string | null;
+            } | null;
+            /** Format: date-time */
+            deactivatedAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: date-time */
+            updatedAt: string;
+        };
+        CustomerListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                fullName: string;
+                firstName: string;
+                lastName: string | null;
+                email: string | null;
+                phone: string;
+                address: string | null;
+                addressLine2: string | null;
+                city: string | null;
+                region: string | null;
+                postcode: string | null;
+                country: string | null;
+                idNumber: string | null;
+                idExpiresAt: string | null;
+                idScanUrl: string | null;
+                idScans: {
+                    /** Format: uuid */
+                    id: string;
+                    url: string;
+                }[];
+                drivingLicenceNumber: string | null;
+                drivingLicenceExpiresAt: string | null;
+                licenceScanUrl: string | null;
+                licenceScans: {
+                    /** Format: uuid */
+                    id: string;
+                    url: string;
+                }[];
+                dateOfBirth: string | null;
+                secondLastName: string | null;
+                /** @enum {string|null} */
+                idDocumentType: "nif" | "nie" | "passport" | "other" | null;
+                nationality: string | null;
+                /** @enum {string|null} */
+                sex: "male" | "female" | "other" | null;
+                municipalityCode: string | null;
+                /** @enum {string|null} */
+                drivingLicenceClass: "AM" | "A1" | "A2" | "A" | "B" | "BE" | "C1" | "C1E" | "C" | "CE" | "D1" | "D1E" | "D" | "DE" | "other" | null;
+                /** @enum {string|null} */
+                preferredLocale: "es-ES" | "en-GB" | "pt-PT" | null;
+                notes: {
+                    /** Format: uuid */
+                    id: string;
+                    body: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    authorId: string | null;
+                    authorName: string;
+                }[];
+                /** @enum {string} */
+                origin: "admin" | "web" | "mobile" | "marketplace";
+                reservationCount: number;
+                /** Format: date-time */
+                lastReservationAt: string | null;
+                /** @enum {string|null} */
+                licenceAlert: "warning" | "expired" | null;
+                blacklist: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    reason: "non_payment" | "vehicle_damage" | "fraud_or_false_documents" | "theft_or_late_return" | "traffic_fines_unpaid" | "abusive_behaviour" | "contract_breach" | "other";
+                    details: string;
+                    /** Format: uuid */
+                    reservationId: string | null;
+                    /** Format: date-time */
+                    expiresAt: string;
+                    active: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                    updatedByName: string | null;
+                    /** Format: date-time */
+                    liftedAt: string | null;
+                    liftedByName: string | null;
+                    liftReason: string | null;
+                } | null;
+                /** Format: date-time */
+                deactivatedAt: string | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+            }[];
+            page: {
+                total: number;
+                nextCursor: string | null;
+            };
+        };
+        CustomerNoteDto: {
             /** Format: uuid */
             id: string;
             body: string;
@@ -856,2939 +970,4825 @@ export interface components {
             /** Format: uuid */
             authorId: string | null;
             authorName: string;
-          }[];
-          /** @enum {string} */
-          origin: "admin" | "web" | "mobile" | "marketplace";
-          reservationCount: number;
-          /** Format: date-time */
-          lastReservationAt: string | null;
-          /** @enum {string|null} */
-          licenceAlert: "warning" | "expired" | null;
-          /** Format: date-time */
-          deactivatedAt: string | null;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: date-time */
-          updatedAt: string;
         };
-        vehicle: {
-          /** Format: uuid */
-          id: string;
-          plate: string;
-          make: string;
-          model: string;
-          year: number;
-          color: string;
-          fuelType: string;
-          vin: string | null;
-          category: string;
-          dailyRate: number;
-          deposit: number;
-          status: string;
-          statusReason: string | null;
-          insurer: string | null;
-          /** Format: uuid */
-          branchId: string;
-          registeredAt: string | null;
-          currentMileage: number | null;
-          insuranceExpiresAt: string | null;
-          itvExpiresAt: string | null;
-          roadTaxDueAt: string | null;
-          nextServiceDueAt: string | null;
-          insuranceScanUrl: string | null;
-          itvScanUrl: string | null;
-          registrationScanUrl: string | null;
-          technicalSheetScanUrl: string | null;
-          roadTaxReceiptScanUrl: string | null;
-          photoUrl: string | null;
-          /** Format: uuid */
-          stockPhotoId: string | null;
-          enginePowerKw: number | null;
-          engineDisplacementCc: number | null;
-          co2Emissions: number | null;
-          environmentalLabel: string | null;
-          seatingCapacity: number | null;
-          maxTowingWeight: number | null;
-          maxAuthorizedMassKg: number | null;
-          unladenMassKg: number | null;
-          doorCount: number | null;
-          transmission: string | null;
-          registrationRawData: {
-            [key: string]: unknown;
-          } | null;
-          technicalSheetRawData: {
-            [key: string]: unknown;
-          } | null;
-          notes: {
+        CustomerNoteListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                body: string;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                authorId: string | null;
+                authorName: string;
+            }[];
+        };
+        CustomerScanDto: {
+            firstName: string[];
+            lastName: string[];
+            secondLastName: string[];
+            dateOfBirth: string[];
+            idNumber: string[];
+            idExpiresAt: string[];
+            drivingLicenceNumber: string[];
+            drivingLicenceExpiresAt: string[];
+            address: string[];
+            city: string[];
+            region: string[];
+            postcode: string[];
+            country: string[];
+            documentType: string[];
+            /** @enum {string|null} */
+            idDocumentType: "nif" | "nie" | "passport" | "other" | null;
+            nationality: string[];
+            /** @enum {string|null} */
+            sex: "male" | "female" | "other" | null;
+            rawFields: {
+                [key: string]: string;
+            } | null;
+            matches: {
+                /** Format: uuid */
+                id: string;
+                fullName: string;
+                phone: string;
+                email: string | null;
+                idNumber: string | null;
+                drivingLicenceNumber: string | null;
+                deactivated: boolean;
+                blacklisted: boolean;
+                matchedOn: ("phone" | "email" | "document")[];
+            }[];
+        };
+        DamageMarksDto: {
+            marks: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                zone: "front" | "rear" | "left" | "right" | "front_left" | "front_right" | "rear_left" | "rear_right" | "interior_front" | "interior_rear" | "dash_odometer" | "other";
+                /** @enum {string} */
+                severity: "low" | "medium" | "high";
+                /** @enum {string} */
+                damageType: "scratch" | "dent" | "crack" | "missing_part" | "paint_damage" | "other";
+                note: string | null;
+                photoUrl: string | null;
+                posX: number | null;
+                posY: number | null;
+                price: number | null;
+                preExisting: boolean;
+                /** @enum {string} */
+                source: "inspection" | "manual";
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        DashboardDto: {
+            stats: {
+                pickupsToday: number;
+                returnsToday: number;
+                activeRentals: number;
+                inMaintenance: number;
+            };
+            pickupsToday: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                customerId: string;
+                /** Format: uuid */
+                vehicleId: string;
+                customer: {
+                    /** Format: uuid */
+                    id: string;
+                    fullName: string;
+                    firstName: string;
+                    lastName: string | null;
+                    email: string | null;
+                    phone: string;
+                    address: string | null;
+                    addressLine2: string | null;
+                    city: string | null;
+                    region: string | null;
+                    postcode: string | null;
+                    country: string | null;
+                    idNumber: string | null;
+                    idExpiresAt: string | null;
+                    idScanUrl: string | null;
+                    idScans: {
+                        /** Format: uuid */
+                        id: string;
+                        url: string;
+                    }[];
+                    drivingLicenceNumber: string | null;
+                    drivingLicenceExpiresAt: string | null;
+                    licenceScanUrl: string | null;
+                    licenceScans: {
+                        /** Format: uuid */
+                        id: string;
+                        url: string;
+                    }[];
+                    dateOfBirth: string | null;
+                    secondLastName: string | null;
+                    /** @enum {string|null} */
+                    idDocumentType: "nif" | "nie" | "passport" | "other" | null;
+                    nationality: string | null;
+                    /** @enum {string|null} */
+                    sex: "male" | "female" | "other" | null;
+                    municipalityCode: string | null;
+                    /** @enum {string|null} */
+                    drivingLicenceClass: "AM" | "A1" | "A2" | "A" | "B" | "BE" | "C1" | "C1E" | "C" | "CE" | "D1" | "D1E" | "D" | "DE" | "other" | null;
+                    /** @enum {string|null} */
+                    preferredLocale: "es-ES" | "en-GB" | "pt-PT" | null;
+                    notes: {
+                        /** Format: uuid */
+                        id: string;
+                        body: string;
+                        /** Format: date-time */
+                        createdAt: string;
+                        /** Format: uuid */
+                        authorId: string | null;
+                        authorName: string;
+                    }[];
+                    /** @enum {string} */
+                    origin: "admin" | "web" | "mobile" | "marketplace";
+                    reservationCount: number;
+                    /** Format: date-time */
+                    lastReservationAt: string | null;
+                    /** @enum {string|null} */
+                    licenceAlert: "warning" | "expired" | null;
+                    blacklist: {
+                        /** Format: uuid */
+                        id: string;
+                        /** @enum {string} */
+                        reason: "non_payment" | "vehicle_damage" | "fraud_or_false_documents" | "theft_or_late_return" | "traffic_fines_unpaid" | "abusive_behaviour" | "contract_breach" | "other";
+                        details: string;
+                        /** Format: uuid */
+                        reservationId: string | null;
+                        /** Format: date-time */
+                        expiresAt: string;
+                        active: boolean;
+                        /** Format: date-time */
+                        createdAt: string;
+                        createdByName: string;
+                        /** Format: date-time */
+                        updatedAt: string;
+                        updatedByName: string | null;
+                        /** Format: date-time */
+                        liftedAt: string | null;
+                        liftedByName: string | null;
+                        liftReason: string | null;
+                    } | null;
+                    /** Format: date-time */
+                    deactivatedAt: string | null;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                };
+                vehicle: {
+                    /** Format: uuid */
+                    id: string;
+                    plate: string;
+                    make: string;
+                    model: string;
+                    year: number;
+                    color: string;
+                    fuelType: string;
+                    vin: string | null;
+                    category: string;
+                    /** Format: uuid */
+                    groupId: string | null;
+                    group: {
+                        /** Format: uuid */
+                        id: string;
+                        name: {
+                            [key: string]: string;
+                        };
+                        code: string | null;
+                        /** @enum {string} */
+                        baseType: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+                    } | null;
+                    dailyRate: number;
+                    priceOverride: boolean;
+                    deposit: number;
+                    minDeposit: number | null;
+                    status: string;
+                    statusReason: string | null;
+                    insurer: string | null;
+                    /** Format: uuid */
+                    branchId: string;
+                    registeredAt: string | null;
+                    currentMileage: number | null;
+                    insuranceExpiresAt: string | null;
+                    itvExpiresAt: string | null;
+                    roadTaxDueAt: string | null;
+                    nextServiceDueAt: string | null;
+                    insuranceScanUrl: string | null;
+                    itvScanUrl: string | null;
+                    registrationScanUrl: string | null;
+                    registrationScanUrls: string[];
+                    technicalSheetScanUrl: string | null;
+                    technicalSheetScanUrls: string[];
+                    roadTaxReceiptScanUrl: string | null;
+                    photoUrl: string | null;
+                    /** Format: uri */
+                    categoryImageUrl: string;
+                    /** Format: uuid */
+                    stockPhotoId: string | null;
+                    enginePowerKw: number | null;
+                    engineDisplacementCc: number | null;
+                    co2Emissions: number | null;
+                    environmentalLabel: string | null;
+                    seatingCapacity: number | null;
+                    maxTowingWeight: number | null;
+                    maxAuthorizedMassKg: number | null;
+                    unladenMassKg: number | null;
+                    doorCount: number | null;
+                    fuelTankLitres: number | null;
+                    batteryKwh: number | null;
+                    transmission: string | null;
+                    registrationRawData: {
+                        [key: string]: unknown;
+                    } | null;
+                    technicalSheetRawData: {
+                        [key: string]: unknown;
+                    } | null;
+                    notes: {
+                        /** Format: uuid */
+                        id: string;
+                        body: string;
+                        /** Format: date-time */
+                        createdAt: string;
+                        /** Format: uuid */
+                        authorId: string | null;
+                        authorName: string;
+                    }[];
+                    alerts: {
+                        /** @enum {string} */
+                        type: "insurance_expiring" | "itv_expiring" | "road_tax_due" | "service_due";
+                        /** @enum {string} */
+                        severity: "expired" | "critical" | "warning";
+                        expiresAt: string;
+                        daysUntil: number;
+                    }[];
+                    reservationCount: number;
+                    /** Format: date-time */
+                    deactivatedAt: string | null;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                };
+                /** Format: uuid */
+                pickupBranchId: string;
+                /** Format: uuid */
+                returnBranchId: string;
+                pickupBranch: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    phone: string | null;
+                };
+                returnBranch: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    phone: string | null;
+                };
+                startDate: string;
+                endDate: string;
+                startTime: string | null;
+                endTime: string | null;
+                totalDays: number;
+                dailyRate: number;
+                /** @description Day-by-day price snapshot taken when the car or dates were last set. null for bookings priced before rate tables. */
+                priceBreakdown: {
+                    pricingVersion: number;
+                    /** @enum {string} */
+                    source: "group" | "override" | "vehicle";
+                    /** Format: uuid */
+                    groupId: string | null;
+                    band: {
+                        /** Format: uuid */
+                        id: string;
+                        minDays: number;
+                        maxDays: number | null;
+                    } | null;
+                    totalDays: number;
+                    segments: {
+                        /** Format: date */
+                        startDate: string;
+                        /** Format: date */
+                        endDate: string;
+                        days: number;
+                        /** Format: uuid */
+                        seasonId: string | null;
+                        seasonName: {
+                            [key: string]: string;
+                        } | null;
+                        dailyRate: number;
+                        weekend: boolean;
+                        subtotal: number;
+                    }[];
+                    vehicleSubtotal: number;
+                    averageDailyRate: number;
+                    warnings: {
+                        /** @enum {string} */
+                        code: "pricing.min_days" | "pricing.max_days";
+                        /** Format: uuid */
+                        seasonId: string;
+                        limit: number;
+                    }[];
+                } | null;
+                deposit: number;
+                vehicleSubtotal: number;
+                addonsSubtotal: number;
+                insuranceSubtotal: number;
+                originalTotalAmount: number;
+                adjustmentAmount: number;
+                totalAmount: number;
+                priceAdjustment: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "discount_percent" | "discount_amount" | "set_total";
+                    value: number;
+                    computedAmount: number;
+                    totalBefore: number;
+                    totalAfter: number;
+                    /** @enum {string} */
+                    reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                    reasonText: string | null;
+                    needsConfirmation: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    createdBy: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    voidedAt: string | null;
+                    /** Format: uuid */
+                    voidedBy: string | null;
+                    voidedByName: string | null;
+                    voidReason: string | null;
+                } | null;
+                priceAdjustments: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "discount_percent" | "discount_amount" | "set_total";
+                    value: number;
+                    computedAmount: number;
+                    totalBefore: number;
+                    totalAfter: number;
+                    /** @enum {string} */
+                    reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                    reasonText: string | null;
+                    needsConfirmation: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    createdBy: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    voidedAt: string | null;
+                    /** Format: uuid */
+                    voidedBy: string | null;
+                    voidedByName: string | null;
+                    voidReason: string | null;
+                }[];
+                chargesTotal: number;
+                damageChargesTotal: number;
+                damageLiabilityTotal: number;
+                otherChargesTotal: number;
+                liableChargesTotal: number;
+                grandTotal: number;
+                insurance: {
+                    /** Format: uuid */
+                    packageId: string | null;
+                    code: string;
+                    name: {
+                        [key: string]: string;
+                    };
+                    pricePerDay: number;
+                    minTotal: number | null;
+                    maxTotal: number | null;
+                    total: number;
+                    excessAmount: number | null;
+                    depositAmount: number;
+                    coverage: {
+                        [key: string]: "included" | "excluded" | "extra";
+                    };
+                    driverConditions: {
+                        minDriverAge: number | null;
+                        minLicenceYears: number | null;
+                    } | null;
+                    driverAgeUnverified: boolean;
+                    /** @enum {string} */
+                    source: "package" | "legacy_addon" | "legacy_waiver" | "legacy_none";
+                } | null;
+                companyInsuranceAccepted: boolean;
+                /** @enum {string} */
+                status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+                /** @enum {string} */
+                paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                depositStatus: string;
+                paymentChannel: string | null;
+                /** @enum {string} */
+                source: "counter" | "phone" | "storefront";
+                /** @enum {string|null} */
+                cancelReason: "customer_request" | "no_show" | "unpaid_timeout" | "vehicle_unavailable" | "duplicate" | "other" | null;
+                /** Format: date-time */
+                cancelledAt: string | null;
+                addonLines: {
+                    /** Format: uuid */
+                    id: string;
+                    /** Format: uuid */
+                    addonId: string | null;
+                    /** @enum {string} */
+                    type: "per_day" | "fixed";
+                    unitPrice: number;
+                    name: string;
+                    total: number;
+                }[];
+                charges: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "vehicle_damage" | "fine" | "cleaning" | "fuel" | "extra_km" | "other";
+                    amount: number;
+                    details: string | null;
+                    imageUrls: string[];
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    inspectionMarkId?: string;
+                    /** Format: uuid */
+                    inspectionId?: string;
+                    damage?: {
+                        zone: string;
+                        severity: string;
+                        damageType: string;
+                        note: string | null;
+                        photoUrl: string | null;
+                        posX: number | null;
+                        posY: number | null;
+                        price: number | null;
+                    };
+                    /** @enum {string} */
+                    source: "manual" | "auto";
+                    calculatedAmount: number | null;
+                    waivedReason: string | null;
+                }[];
+                notes: {
+                    /** Format: uuid */
+                    id: string;
+                    body: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    authorId: string | null;
+                    authorName: string;
+                }[];
+                history: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+                    /** @enum {string} */
+                    paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                    /** Format: date-time */
+                    changedAt: string;
+                    /** Format: uuid */
+                    authorId?: string;
+                    authorName?: string;
+                }[];
+                warnings: {
+                    /** @enum {string} */
+                    code: "reservation.vehicle_at_other_branch" | "reservation.insurance_expires_before_return" | "reservation.price_change_unconfirmed" | "reservation.below_season_min_days" | "reservation.above_season_max_days";
+                    message: string;
+                    /** @enum {string|null} */
+                    side: "pickup" | "return" | null;
+                    details: {
+                        [key: string]: string | number | boolean | null;
+                    };
+                }[];
+                blacklistOverride: {
+                    byName: string;
+                    reason: string;
+                    /** Format: date-time */
+                    at: string;
+                } | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+            }[];
+            returnsToday: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                customerId: string;
+                /** Format: uuid */
+                vehicleId: string;
+                customer: {
+                    /** Format: uuid */
+                    id: string;
+                    fullName: string;
+                    firstName: string;
+                    lastName: string | null;
+                    email: string | null;
+                    phone: string;
+                    address: string | null;
+                    addressLine2: string | null;
+                    city: string | null;
+                    region: string | null;
+                    postcode: string | null;
+                    country: string | null;
+                    idNumber: string | null;
+                    idExpiresAt: string | null;
+                    idScanUrl: string | null;
+                    idScans: {
+                        /** Format: uuid */
+                        id: string;
+                        url: string;
+                    }[];
+                    drivingLicenceNumber: string | null;
+                    drivingLicenceExpiresAt: string | null;
+                    licenceScanUrl: string | null;
+                    licenceScans: {
+                        /** Format: uuid */
+                        id: string;
+                        url: string;
+                    }[];
+                    dateOfBirth: string | null;
+                    secondLastName: string | null;
+                    /** @enum {string|null} */
+                    idDocumentType: "nif" | "nie" | "passport" | "other" | null;
+                    nationality: string | null;
+                    /** @enum {string|null} */
+                    sex: "male" | "female" | "other" | null;
+                    municipalityCode: string | null;
+                    /** @enum {string|null} */
+                    drivingLicenceClass: "AM" | "A1" | "A2" | "A" | "B" | "BE" | "C1" | "C1E" | "C" | "CE" | "D1" | "D1E" | "D" | "DE" | "other" | null;
+                    /** @enum {string|null} */
+                    preferredLocale: "es-ES" | "en-GB" | "pt-PT" | null;
+                    notes: {
+                        /** Format: uuid */
+                        id: string;
+                        body: string;
+                        /** Format: date-time */
+                        createdAt: string;
+                        /** Format: uuid */
+                        authorId: string | null;
+                        authorName: string;
+                    }[];
+                    /** @enum {string} */
+                    origin: "admin" | "web" | "mobile" | "marketplace";
+                    reservationCount: number;
+                    /** Format: date-time */
+                    lastReservationAt: string | null;
+                    /** @enum {string|null} */
+                    licenceAlert: "warning" | "expired" | null;
+                    blacklist: {
+                        /** Format: uuid */
+                        id: string;
+                        /** @enum {string} */
+                        reason: "non_payment" | "vehicle_damage" | "fraud_or_false_documents" | "theft_or_late_return" | "traffic_fines_unpaid" | "abusive_behaviour" | "contract_breach" | "other";
+                        details: string;
+                        /** Format: uuid */
+                        reservationId: string | null;
+                        /** Format: date-time */
+                        expiresAt: string;
+                        active: boolean;
+                        /** Format: date-time */
+                        createdAt: string;
+                        createdByName: string;
+                        /** Format: date-time */
+                        updatedAt: string;
+                        updatedByName: string | null;
+                        /** Format: date-time */
+                        liftedAt: string | null;
+                        liftedByName: string | null;
+                        liftReason: string | null;
+                    } | null;
+                    /** Format: date-time */
+                    deactivatedAt: string | null;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                };
+                vehicle: {
+                    /** Format: uuid */
+                    id: string;
+                    plate: string;
+                    make: string;
+                    model: string;
+                    year: number;
+                    color: string;
+                    fuelType: string;
+                    vin: string | null;
+                    category: string;
+                    /** Format: uuid */
+                    groupId: string | null;
+                    group: {
+                        /** Format: uuid */
+                        id: string;
+                        name: {
+                            [key: string]: string;
+                        };
+                        code: string | null;
+                        /** @enum {string} */
+                        baseType: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+                    } | null;
+                    dailyRate: number;
+                    priceOverride: boolean;
+                    deposit: number;
+                    minDeposit: number | null;
+                    status: string;
+                    statusReason: string | null;
+                    insurer: string | null;
+                    /** Format: uuid */
+                    branchId: string;
+                    registeredAt: string | null;
+                    currentMileage: number | null;
+                    insuranceExpiresAt: string | null;
+                    itvExpiresAt: string | null;
+                    roadTaxDueAt: string | null;
+                    nextServiceDueAt: string | null;
+                    insuranceScanUrl: string | null;
+                    itvScanUrl: string | null;
+                    registrationScanUrl: string | null;
+                    registrationScanUrls: string[];
+                    technicalSheetScanUrl: string | null;
+                    technicalSheetScanUrls: string[];
+                    roadTaxReceiptScanUrl: string | null;
+                    photoUrl: string | null;
+                    /** Format: uri */
+                    categoryImageUrl: string;
+                    /** Format: uuid */
+                    stockPhotoId: string | null;
+                    enginePowerKw: number | null;
+                    engineDisplacementCc: number | null;
+                    co2Emissions: number | null;
+                    environmentalLabel: string | null;
+                    seatingCapacity: number | null;
+                    maxTowingWeight: number | null;
+                    maxAuthorizedMassKg: number | null;
+                    unladenMassKg: number | null;
+                    doorCount: number | null;
+                    fuelTankLitres: number | null;
+                    batteryKwh: number | null;
+                    transmission: string | null;
+                    registrationRawData: {
+                        [key: string]: unknown;
+                    } | null;
+                    technicalSheetRawData: {
+                        [key: string]: unknown;
+                    } | null;
+                    notes: {
+                        /** Format: uuid */
+                        id: string;
+                        body: string;
+                        /** Format: date-time */
+                        createdAt: string;
+                        /** Format: uuid */
+                        authorId: string | null;
+                        authorName: string;
+                    }[];
+                    alerts: {
+                        /** @enum {string} */
+                        type: "insurance_expiring" | "itv_expiring" | "road_tax_due" | "service_due";
+                        /** @enum {string} */
+                        severity: "expired" | "critical" | "warning";
+                        expiresAt: string;
+                        daysUntil: number;
+                    }[];
+                    reservationCount: number;
+                    /** Format: date-time */
+                    deactivatedAt: string | null;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                };
+                /** Format: uuid */
+                pickupBranchId: string;
+                /** Format: uuid */
+                returnBranchId: string;
+                pickupBranch: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    phone: string | null;
+                };
+                returnBranch: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    phone: string | null;
+                };
+                startDate: string;
+                endDate: string;
+                startTime: string | null;
+                endTime: string | null;
+                totalDays: number;
+                dailyRate: number;
+                /** @description Day-by-day price snapshot taken when the car or dates were last set. null for bookings priced before rate tables. */
+                priceBreakdown: {
+                    pricingVersion: number;
+                    /** @enum {string} */
+                    source: "group" | "override" | "vehicle";
+                    /** Format: uuid */
+                    groupId: string | null;
+                    band: {
+                        /** Format: uuid */
+                        id: string;
+                        minDays: number;
+                        maxDays: number | null;
+                    } | null;
+                    totalDays: number;
+                    segments: {
+                        /** Format: date */
+                        startDate: string;
+                        /** Format: date */
+                        endDate: string;
+                        days: number;
+                        /** Format: uuid */
+                        seasonId: string | null;
+                        seasonName: {
+                            [key: string]: string;
+                        } | null;
+                        dailyRate: number;
+                        weekend: boolean;
+                        subtotal: number;
+                    }[];
+                    vehicleSubtotal: number;
+                    averageDailyRate: number;
+                    warnings: {
+                        /** @enum {string} */
+                        code: "pricing.min_days" | "pricing.max_days";
+                        /** Format: uuid */
+                        seasonId: string;
+                        limit: number;
+                    }[];
+                } | null;
+                deposit: number;
+                vehicleSubtotal: number;
+                addonsSubtotal: number;
+                insuranceSubtotal: number;
+                originalTotalAmount: number;
+                adjustmentAmount: number;
+                totalAmount: number;
+                priceAdjustment: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "discount_percent" | "discount_amount" | "set_total";
+                    value: number;
+                    computedAmount: number;
+                    totalBefore: number;
+                    totalAfter: number;
+                    /** @enum {string} */
+                    reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                    reasonText: string | null;
+                    needsConfirmation: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    createdBy: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    voidedAt: string | null;
+                    /** Format: uuid */
+                    voidedBy: string | null;
+                    voidedByName: string | null;
+                    voidReason: string | null;
+                } | null;
+                priceAdjustments: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "discount_percent" | "discount_amount" | "set_total";
+                    value: number;
+                    computedAmount: number;
+                    totalBefore: number;
+                    totalAfter: number;
+                    /** @enum {string} */
+                    reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                    reasonText: string | null;
+                    needsConfirmation: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    createdBy: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    voidedAt: string | null;
+                    /** Format: uuid */
+                    voidedBy: string | null;
+                    voidedByName: string | null;
+                    voidReason: string | null;
+                }[];
+                chargesTotal: number;
+                damageChargesTotal: number;
+                damageLiabilityTotal: number;
+                otherChargesTotal: number;
+                liableChargesTotal: number;
+                grandTotal: number;
+                insurance: {
+                    /** Format: uuid */
+                    packageId: string | null;
+                    code: string;
+                    name: {
+                        [key: string]: string;
+                    };
+                    pricePerDay: number;
+                    minTotal: number | null;
+                    maxTotal: number | null;
+                    total: number;
+                    excessAmount: number | null;
+                    depositAmount: number;
+                    coverage: {
+                        [key: string]: "included" | "excluded" | "extra";
+                    };
+                    driverConditions: {
+                        minDriverAge: number | null;
+                        minLicenceYears: number | null;
+                    } | null;
+                    driverAgeUnverified: boolean;
+                    /** @enum {string} */
+                    source: "package" | "legacy_addon" | "legacy_waiver" | "legacy_none";
+                } | null;
+                companyInsuranceAccepted: boolean;
+                /** @enum {string} */
+                status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+                /** @enum {string} */
+                paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                depositStatus: string;
+                paymentChannel: string | null;
+                /** @enum {string} */
+                source: "counter" | "phone" | "storefront";
+                /** @enum {string|null} */
+                cancelReason: "customer_request" | "no_show" | "unpaid_timeout" | "vehicle_unavailable" | "duplicate" | "other" | null;
+                /** Format: date-time */
+                cancelledAt: string | null;
+                addonLines: {
+                    /** Format: uuid */
+                    id: string;
+                    /** Format: uuid */
+                    addonId: string | null;
+                    /** @enum {string} */
+                    type: "per_day" | "fixed";
+                    unitPrice: number;
+                    name: string;
+                    total: number;
+                }[];
+                charges: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "vehicle_damage" | "fine" | "cleaning" | "fuel" | "extra_km" | "other";
+                    amount: number;
+                    details: string | null;
+                    imageUrls: string[];
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    inspectionMarkId?: string;
+                    /** Format: uuid */
+                    inspectionId?: string;
+                    damage?: {
+                        zone: string;
+                        severity: string;
+                        damageType: string;
+                        note: string | null;
+                        photoUrl: string | null;
+                        posX: number | null;
+                        posY: number | null;
+                        price: number | null;
+                    };
+                    /** @enum {string} */
+                    source: "manual" | "auto";
+                    calculatedAmount: number | null;
+                    waivedReason: string | null;
+                }[];
+                notes: {
+                    /** Format: uuid */
+                    id: string;
+                    body: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    authorId: string | null;
+                    authorName: string;
+                }[];
+                history: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+                    /** @enum {string} */
+                    paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                    /** Format: date-time */
+                    changedAt: string;
+                    /** Format: uuid */
+                    authorId?: string;
+                    authorName?: string;
+                }[];
+                warnings: {
+                    /** @enum {string} */
+                    code: "reservation.vehicle_at_other_branch" | "reservation.insurance_expires_before_return" | "reservation.price_change_unconfirmed" | "reservation.below_season_min_days" | "reservation.above_season_max_days";
+                    message: string;
+                    /** @enum {string|null} */
+                    side: "pickup" | "return" | null;
+                    details: {
+                        [key: string]: string | number | boolean | null;
+                    };
+                }[];
+                blacklistOverride: {
+                    byName: string;
+                    reason: string;
+                    /** Format: date-time */
+                    at: string;
+                } | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+            }[];
+            activeRentals: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                customerId: string;
+                /** Format: uuid */
+                vehicleId: string;
+                customer: {
+                    /** Format: uuid */
+                    id: string;
+                    fullName: string;
+                    firstName: string;
+                    lastName: string | null;
+                    email: string | null;
+                    phone: string;
+                    address: string | null;
+                    addressLine2: string | null;
+                    city: string | null;
+                    region: string | null;
+                    postcode: string | null;
+                    country: string | null;
+                    idNumber: string | null;
+                    idExpiresAt: string | null;
+                    idScanUrl: string | null;
+                    idScans: {
+                        /** Format: uuid */
+                        id: string;
+                        url: string;
+                    }[];
+                    drivingLicenceNumber: string | null;
+                    drivingLicenceExpiresAt: string | null;
+                    licenceScanUrl: string | null;
+                    licenceScans: {
+                        /** Format: uuid */
+                        id: string;
+                        url: string;
+                    }[];
+                    dateOfBirth: string | null;
+                    secondLastName: string | null;
+                    /** @enum {string|null} */
+                    idDocumentType: "nif" | "nie" | "passport" | "other" | null;
+                    nationality: string | null;
+                    /** @enum {string|null} */
+                    sex: "male" | "female" | "other" | null;
+                    municipalityCode: string | null;
+                    /** @enum {string|null} */
+                    drivingLicenceClass: "AM" | "A1" | "A2" | "A" | "B" | "BE" | "C1" | "C1E" | "C" | "CE" | "D1" | "D1E" | "D" | "DE" | "other" | null;
+                    /** @enum {string|null} */
+                    preferredLocale: "es-ES" | "en-GB" | "pt-PT" | null;
+                    notes: {
+                        /** Format: uuid */
+                        id: string;
+                        body: string;
+                        /** Format: date-time */
+                        createdAt: string;
+                        /** Format: uuid */
+                        authorId: string | null;
+                        authorName: string;
+                    }[];
+                    /** @enum {string} */
+                    origin: "admin" | "web" | "mobile" | "marketplace";
+                    reservationCount: number;
+                    /** Format: date-time */
+                    lastReservationAt: string | null;
+                    /** @enum {string|null} */
+                    licenceAlert: "warning" | "expired" | null;
+                    blacklist: {
+                        /** Format: uuid */
+                        id: string;
+                        /** @enum {string} */
+                        reason: "non_payment" | "vehicle_damage" | "fraud_or_false_documents" | "theft_or_late_return" | "traffic_fines_unpaid" | "abusive_behaviour" | "contract_breach" | "other";
+                        details: string;
+                        /** Format: uuid */
+                        reservationId: string | null;
+                        /** Format: date-time */
+                        expiresAt: string;
+                        active: boolean;
+                        /** Format: date-time */
+                        createdAt: string;
+                        createdByName: string;
+                        /** Format: date-time */
+                        updatedAt: string;
+                        updatedByName: string | null;
+                        /** Format: date-time */
+                        liftedAt: string | null;
+                        liftedByName: string | null;
+                        liftReason: string | null;
+                    } | null;
+                    /** Format: date-time */
+                    deactivatedAt: string | null;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                };
+                vehicle: {
+                    /** Format: uuid */
+                    id: string;
+                    plate: string;
+                    make: string;
+                    model: string;
+                    year: number;
+                    color: string;
+                    fuelType: string;
+                    vin: string | null;
+                    category: string;
+                    /** Format: uuid */
+                    groupId: string | null;
+                    group: {
+                        /** Format: uuid */
+                        id: string;
+                        name: {
+                            [key: string]: string;
+                        };
+                        code: string | null;
+                        /** @enum {string} */
+                        baseType: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+                    } | null;
+                    dailyRate: number;
+                    priceOverride: boolean;
+                    deposit: number;
+                    minDeposit: number | null;
+                    status: string;
+                    statusReason: string | null;
+                    insurer: string | null;
+                    /** Format: uuid */
+                    branchId: string;
+                    registeredAt: string | null;
+                    currentMileage: number | null;
+                    insuranceExpiresAt: string | null;
+                    itvExpiresAt: string | null;
+                    roadTaxDueAt: string | null;
+                    nextServiceDueAt: string | null;
+                    insuranceScanUrl: string | null;
+                    itvScanUrl: string | null;
+                    registrationScanUrl: string | null;
+                    registrationScanUrls: string[];
+                    technicalSheetScanUrl: string | null;
+                    technicalSheetScanUrls: string[];
+                    roadTaxReceiptScanUrl: string | null;
+                    photoUrl: string | null;
+                    /** Format: uri */
+                    categoryImageUrl: string;
+                    /** Format: uuid */
+                    stockPhotoId: string | null;
+                    enginePowerKw: number | null;
+                    engineDisplacementCc: number | null;
+                    co2Emissions: number | null;
+                    environmentalLabel: string | null;
+                    seatingCapacity: number | null;
+                    maxTowingWeight: number | null;
+                    maxAuthorizedMassKg: number | null;
+                    unladenMassKg: number | null;
+                    doorCount: number | null;
+                    fuelTankLitres: number | null;
+                    batteryKwh: number | null;
+                    transmission: string | null;
+                    registrationRawData: {
+                        [key: string]: unknown;
+                    } | null;
+                    technicalSheetRawData: {
+                        [key: string]: unknown;
+                    } | null;
+                    notes: {
+                        /** Format: uuid */
+                        id: string;
+                        body: string;
+                        /** Format: date-time */
+                        createdAt: string;
+                        /** Format: uuid */
+                        authorId: string | null;
+                        authorName: string;
+                    }[];
+                    alerts: {
+                        /** @enum {string} */
+                        type: "insurance_expiring" | "itv_expiring" | "road_tax_due" | "service_due";
+                        /** @enum {string} */
+                        severity: "expired" | "critical" | "warning";
+                        expiresAt: string;
+                        daysUntil: number;
+                    }[];
+                    reservationCount: number;
+                    /** Format: date-time */
+                    deactivatedAt: string | null;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                };
+                /** Format: uuid */
+                pickupBranchId: string;
+                /** Format: uuid */
+                returnBranchId: string;
+                pickupBranch: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    phone: string | null;
+                };
+                returnBranch: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    phone: string | null;
+                };
+                startDate: string;
+                endDate: string;
+                startTime: string | null;
+                endTime: string | null;
+                totalDays: number;
+                dailyRate: number;
+                /** @description Day-by-day price snapshot taken when the car or dates were last set. null for bookings priced before rate tables. */
+                priceBreakdown: {
+                    pricingVersion: number;
+                    /** @enum {string} */
+                    source: "group" | "override" | "vehicle";
+                    /** Format: uuid */
+                    groupId: string | null;
+                    band: {
+                        /** Format: uuid */
+                        id: string;
+                        minDays: number;
+                        maxDays: number | null;
+                    } | null;
+                    totalDays: number;
+                    segments: {
+                        /** Format: date */
+                        startDate: string;
+                        /** Format: date */
+                        endDate: string;
+                        days: number;
+                        /** Format: uuid */
+                        seasonId: string | null;
+                        seasonName: {
+                            [key: string]: string;
+                        } | null;
+                        dailyRate: number;
+                        weekend: boolean;
+                        subtotal: number;
+                    }[];
+                    vehicleSubtotal: number;
+                    averageDailyRate: number;
+                    warnings: {
+                        /** @enum {string} */
+                        code: "pricing.min_days" | "pricing.max_days";
+                        /** Format: uuid */
+                        seasonId: string;
+                        limit: number;
+                    }[];
+                } | null;
+                deposit: number;
+                vehicleSubtotal: number;
+                addonsSubtotal: number;
+                insuranceSubtotal: number;
+                originalTotalAmount: number;
+                adjustmentAmount: number;
+                totalAmount: number;
+                priceAdjustment: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "discount_percent" | "discount_amount" | "set_total";
+                    value: number;
+                    computedAmount: number;
+                    totalBefore: number;
+                    totalAfter: number;
+                    /** @enum {string} */
+                    reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                    reasonText: string | null;
+                    needsConfirmation: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    createdBy: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    voidedAt: string | null;
+                    /** Format: uuid */
+                    voidedBy: string | null;
+                    voidedByName: string | null;
+                    voidReason: string | null;
+                } | null;
+                priceAdjustments: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "discount_percent" | "discount_amount" | "set_total";
+                    value: number;
+                    computedAmount: number;
+                    totalBefore: number;
+                    totalAfter: number;
+                    /** @enum {string} */
+                    reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                    reasonText: string | null;
+                    needsConfirmation: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    createdBy: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    voidedAt: string | null;
+                    /** Format: uuid */
+                    voidedBy: string | null;
+                    voidedByName: string | null;
+                    voidReason: string | null;
+                }[];
+                chargesTotal: number;
+                damageChargesTotal: number;
+                damageLiabilityTotal: number;
+                otherChargesTotal: number;
+                liableChargesTotal: number;
+                grandTotal: number;
+                insurance: {
+                    /** Format: uuid */
+                    packageId: string | null;
+                    code: string;
+                    name: {
+                        [key: string]: string;
+                    };
+                    pricePerDay: number;
+                    minTotal: number | null;
+                    maxTotal: number | null;
+                    total: number;
+                    excessAmount: number | null;
+                    depositAmount: number;
+                    coverage: {
+                        [key: string]: "included" | "excluded" | "extra";
+                    };
+                    driverConditions: {
+                        minDriverAge: number | null;
+                        minLicenceYears: number | null;
+                    } | null;
+                    driverAgeUnverified: boolean;
+                    /** @enum {string} */
+                    source: "package" | "legacy_addon" | "legacy_waiver" | "legacy_none";
+                } | null;
+                companyInsuranceAccepted: boolean;
+                /** @enum {string} */
+                status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+                /** @enum {string} */
+                paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                depositStatus: string;
+                paymentChannel: string | null;
+                /** @enum {string} */
+                source: "counter" | "phone" | "storefront";
+                /** @enum {string|null} */
+                cancelReason: "customer_request" | "no_show" | "unpaid_timeout" | "vehicle_unavailable" | "duplicate" | "other" | null;
+                /** Format: date-time */
+                cancelledAt: string | null;
+                addonLines: {
+                    /** Format: uuid */
+                    id: string;
+                    /** Format: uuid */
+                    addonId: string | null;
+                    /** @enum {string} */
+                    type: "per_day" | "fixed";
+                    unitPrice: number;
+                    name: string;
+                    total: number;
+                }[];
+                charges: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "vehicle_damage" | "fine" | "cleaning" | "fuel" | "extra_km" | "other";
+                    amount: number;
+                    details: string | null;
+                    imageUrls: string[];
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    inspectionMarkId?: string;
+                    /** Format: uuid */
+                    inspectionId?: string;
+                    damage?: {
+                        zone: string;
+                        severity: string;
+                        damageType: string;
+                        note: string | null;
+                        photoUrl: string | null;
+                        posX: number | null;
+                        posY: number | null;
+                        price: number | null;
+                    };
+                    /** @enum {string} */
+                    source: "manual" | "auto";
+                    calculatedAmount: number | null;
+                    waivedReason: string | null;
+                }[];
+                notes: {
+                    /** Format: uuid */
+                    id: string;
+                    body: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    authorId: string | null;
+                    authorName: string;
+                }[];
+                history: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+                    /** @enum {string} */
+                    paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                    /** Format: date-time */
+                    changedAt: string;
+                    /** Format: uuid */
+                    authorId?: string;
+                    authorName?: string;
+                }[];
+                warnings: {
+                    /** @enum {string} */
+                    code: "reservation.vehicle_at_other_branch" | "reservation.insurance_expires_before_return" | "reservation.price_change_unconfirmed" | "reservation.below_season_min_days" | "reservation.above_season_max_days";
+                    message: string;
+                    /** @enum {string|null} */
+                    side: "pickup" | "return" | null;
+                    details: {
+                        [key: string]: string | number | boolean | null;
+                    };
+                }[];
+                blacklistOverride: {
+                    byName: string;
+                    reason: string;
+                    /** Format: date-time */
+                    at: string;
+                } | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+            }[];
+            maintenanceVehicles: {
+                /** Format: uuid */
+                id: string;
+                plate: string;
+                make: string;
+                model: string;
+                year: number;
+                color: string;
+                fuelType: string;
+                vin: string | null;
+                category: string;
+                /** Format: uuid */
+                groupId: string | null;
+                group: {
+                    /** Format: uuid */
+                    id: string;
+                    name: {
+                        [key: string]: string;
+                    };
+                    code: string | null;
+                    /** @enum {string} */
+                    baseType: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+                } | null;
+                dailyRate: number;
+                priceOverride: boolean;
+                deposit: number;
+                minDeposit: number | null;
+                status: string;
+                statusReason: string | null;
+                insurer: string | null;
+                /** Format: uuid */
+                branchId: string;
+                registeredAt: string | null;
+                currentMileage: number | null;
+                insuranceExpiresAt: string | null;
+                itvExpiresAt: string | null;
+                roadTaxDueAt: string | null;
+                nextServiceDueAt: string | null;
+                insuranceScanUrl: string | null;
+                itvScanUrl: string | null;
+                registrationScanUrl: string | null;
+                registrationScanUrls: string[];
+                technicalSheetScanUrl: string | null;
+                technicalSheetScanUrls: string[];
+                roadTaxReceiptScanUrl: string | null;
+                photoUrl: string | null;
+                /** Format: uri */
+                categoryImageUrl: string;
+                /** Format: uuid */
+                stockPhotoId: string | null;
+                enginePowerKw: number | null;
+                engineDisplacementCc: number | null;
+                co2Emissions: number | null;
+                environmentalLabel: string | null;
+                seatingCapacity: number | null;
+                maxTowingWeight: number | null;
+                maxAuthorizedMassKg: number | null;
+                unladenMassKg: number | null;
+                doorCount: number | null;
+                fuelTankLitres: number | null;
+                batteryKwh: number | null;
+                transmission: string | null;
+                registrationRawData: {
+                    [key: string]: unknown;
+                } | null;
+                technicalSheetRawData: {
+                    [key: string]: unknown;
+                } | null;
+                notes: {
+                    /** Format: uuid */
+                    id: string;
+                    body: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    authorId: string | null;
+                    authorName: string;
+                }[];
+                alerts: {
+                    /** @enum {string} */
+                    type: "insurance_expiring" | "itv_expiring" | "road_tax_due" | "service_due";
+                    /** @enum {string} */
+                    severity: "expired" | "critical" | "warning";
+                    expiresAt: string;
+                    daysUntil: number;
+                }[];
+                reservationCount: number;
+                /** Format: date-time */
+                deactivatedAt: string | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+            }[];
+        };
+        DashboardStatsDto: {
+            pickupsToday: number;
+            returnsToday: number;
+            activeRentals: number;
+            inMaintenance: number;
+        };
+        DepositHoldResultDto: {
+            clientSecret: string;
+            publishableKey: string;
+            connectedAccountId: string;
+            payment: {
+                /** Format: uuid */
+                reservationId: string;
+                /** @enum {string} */
+                paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                /** @enum {string} */
+                depositStatus: "none" | "requires_hold" | "held" | "captured" | "released";
+                companyInsuranceAccepted: boolean;
+                /** @enum {string|null} */
+                paymentChannel: "walk_in" | "phone" | "cash" | null;
+                rentalPaymentIntentId: string | null;
+                depositPaymentIntentId: string | null;
+                checkoutSessionId: string | null;
+                payLinkUrl: string | null;
+                /** Format: date-time */
+                payLinkExpiresAt: string | null;
+                canStartRental: boolean;
+                totalAmount: number;
+                paidAmount: number;
+                balanceDue: number;
+                depositAmount: number;
+                excessAmount: number | null;
+                insurancePackage: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                } | null;
+                currency: string;
+                connectedAccountId: string | null;
+                chargesEnabled: boolean;
+                refundableAmount: number;
+                cardRefundableAmount: number;
+                suggestedRefund: number | null;
+                advance: {
+                    percent: number;
+                    amount: number;
+                    due: number;
+                    covered: boolean;
+                    fullPaymentRequiredAtPickup: boolean;
+                    cancellationRefund: number;
+                } | null;
+                charges: {
+                    total: number;
+                    collected: number;
+                    balanceDue: number;
+                    linkUrl: string | null;
+                    /** Format: date-time */
+                    linkExpiresAt: string | null;
+                };
+                /** Format: date-time */
+                depositHoldExpiresAt: string | null;
+                depositRenewalFailed: boolean;
+                hasSavedCard: boolean;
+                transactions: {
+                    /** Format: uuid */
+                    id: string;
+                    /** Format: uuid */
+                    companyId: string;
+                    /** Format: uuid */
+                    reservationId: string;
+                    /** @enum {string} */
+                    eventType: "rental_card_paid" | "rental_cash_paid" | "deposit_held" | "deposit_captured" | "deposit_released" | "deposit_cash_collected" | "payment_received" | "payment_voided" | "refund_recorded" | "charge_paid" | "charge_refunded";
+                    /** @enum {string|null} */
+                    channel: "walk_in" | "phone" | "cash" | null;
+                    /** @enum {string|null} */
+                    method: "stripe_card" | "cash" | "card_terminal" | "bizum" | "bank_transfer" | null;
+                    amount: number;
+                    currency: string;
+                    reference: string | null;
+                    note: string | null;
+                    voidsTransactionId: string | null;
+                    stripePaymentIntentId: string | null;
+                    stripeCheckoutSessionId: string | null;
+                    stripeRefundId: string | null;
+                    receiptUrl: string | null;
+                    actorUserId: string | null;
+                    actorName: string | null;
+                    metadata: unknown;
+                    /** Format: date-time */
+                    occurredAt: string;
+                    customerName: string | null;
+                    customerEmail: string | null;
+                    vehicleLabel: string | null;
+                }[];
+            };
+        };
+        FirebaseLoginDto: {
+            idToken: string;
+            client?: string;
+        };
+        FreeVehicleListDto: {
+            data: {
+                /** Format: uuid */
+                vehicleId: string;
+                plate: string;
+                make: string;
+                model: string;
+                category: string;
+                dailyRate: number;
+                /** @enum {boolean} */
+                available: true;
+            }[];
+            page: {
+                total: number;
+                nextCursor: null;
+            };
+        };
+        GeneratorRunDto: {
+            created: {
+                [key: string]: number;
+            };
+        };
+        GuestReservationDto: {
             /** Format: uuid */
             id: string;
-            body: string;
+            token: string;
+            guestName: string;
+            guestEmail: string;
+            /** Format: uuid */
+            vehicleId: string;
+            vehicleMake: string;
+            vehicleModel: string;
+            /** Format: date */
+            startDate: string;
+            /** Format: date */
+            endDate: string;
+            /** @description Average price per day of the car rental. */
+            dailyRate: number;
+            /** @description Day-by-day price as booked; null for bookings priced from the car rate alone. */
+            priceBreakdown: {
+                pricingVersion: number;
+                /** @enum {string} */
+                source: "group" | "override" | "vehicle";
+                /** Format: uuid */
+                groupId: string | null;
+                band: {
+                    /** Format: uuid */
+                    id: string;
+                    minDays: number;
+                    maxDays: number | null;
+                } | null;
+                totalDays: number;
+                segments: {
+                    /** Format: date */
+                    startDate: string;
+                    /** Format: date */
+                    endDate: string;
+                    days: number;
+                    /** Format: uuid */
+                    seasonId: string | null;
+                    seasonName: {
+                        [key: string]: string;
+                    } | null;
+                    dailyRate: number;
+                    weekend: boolean;
+                    subtotal: number;
+                }[];
+                vehicleSubtotal: number;
+                averageDailyRate: number;
+                warnings: {
+                    /** @enum {string} */
+                    code: "pricing.min_days" | "pricing.max_days";
+                    /** Format: uuid */
+                    seasonId: string;
+                    limit: number;
+                }[];
+            } | null;
+            totalDays: number;
+            totalAmount: number;
+            status: string;
+            insurance: {
+                /** Format: uuid */
+                packageId: string | null;
+                code: string;
+                name: {
+                    [key: string]: string;
+                };
+                pricePerDay: number;
+                minTotal: number | null;
+                maxTotal: number | null;
+                total: number;
+                excessAmount: number | null;
+                depositAmount: number;
+                coverage: {
+                    [key: string]: "included" | "excluded" | "extra";
+                };
+                driverConditions: {
+                    minDriverAge: number | null;
+                    minLicenceYears: number | null;
+                } | null;
+                driverAgeUnverified: boolean;
+                /** @enum {string} */
+                source: "package" | "legacy_addon" | "legacy_waiver" | "legacy_none";
+            } | null;
+        };
+        ImpersonateDto: {
+            /** Format: uuid */
+            companyId: string;
+        };
+        InspectionDto: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            reservationId: string;
+            /** Format: uuid */
+            vehicleId: string;
+            /** @enum {string} */
+            type: "checkout" | "checkin";
+            /** @enum {string} */
+            status: "draft" | "completed";
+            odometerKm: number | null;
+            fuelLevelPercent: number | null;
+            notes: string[];
+            signatureSvg: string[];
+            signerName: string[];
+            reportUrl: string[];
+            mediaCount: number;
+            marksCount: number;
+            /** Format: date-time */
+            completedAt: string | null;
             /** Format: date-time */
             createdAt: string;
+            /** Format: date-time */
+            updatedAt: string;
+            items: {
+                key: string;
+                /** @enum {string|null} */
+                answer: "pass" | "fail" | "na" | null;
+            }[];
+            media: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                zone: "front" | "rear" | "left" | "right" | "front_left" | "front_right" | "rear_left" | "rear_right" | "interior_front" | "interior_rear" | "dash_odometer" | "other";
+                url: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            marks: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                zone: "front" | "rear" | "left" | "right" | "front_left" | "front_right" | "rear_left" | "rear_right" | "interior_front" | "interior_rear" | "dash_odometer" | "other";
+                /** @enum {string} */
+                severity: "low" | "medium" | "high";
+                /** @enum {string} */
+                damageType: "scratch" | "dent" | "crack" | "missing_part" | "paint_damage" | "other";
+                note: string | null;
+                photoUrl: string | null;
+                posX: number | null;
+                posY: number | null;
+                price: number | null;
+                preExisting: boolean;
+                /** @enum {string} */
+                source: "inspection" | "manual";
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        InspectionListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                reservationId: string;
+                /** Format: uuid */
+                vehicleId: string;
+                /** @enum {string} */
+                type: "checkout" | "checkin";
+                /** @enum {string} */
+                status: "draft" | "completed";
+                odometerKm: number | null;
+                fuelLevelPercent: number | null;
+                notes: string | null;
+                signatureSvg: string | null;
+                signerName: string | null;
+                reportUrl: string | null;
+                mediaCount: number;
+                marksCount: number;
+                /** Format: date-time */
+                completedAt: string | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+                items: {
+                    key: string;
+                    /** @enum {string|null} */
+                    answer: "pass" | "fail" | "na" | null;
+                }[];
+                media: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    zone: "front" | "rear" | "left" | "right" | "front_left" | "front_right" | "rear_left" | "rear_right" | "interior_front" | "interior_rear" | "dash_odometer" | "other";
+                    url: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                }[];
+                marks: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    zone: "front" | "rear" | "left" | "right" | "front_left" | "front_right" | "rear_left" | "rear_right" | "interior_front" | "interior_rear" | "dash_odometer" | "other";
+                    /** @enum {string} */
+                    severity: "low" | "medium" | "high";
+                    /** @enum {string} */
+                    damageType: "scratch" | "dent" | "crack" | "missing_part" | "paint_damage" | "other";
+                    note: string | null;
+                    photoUrl: string | null;
+                    posX: number | null;
+                    posY: number | null;
+                    price: number | null;
+                    preExisting: boolean;
+                    /** @enum {string} */
+                    source: "inspection" | "manual";
+                    /** Format: date-time */
+                    createdAt: string;
+                }[];
+            }[];
+        };
+        InsuranceInputDto: {
+            accepted: boolean;
+        };
+        InsuranceQuoteListDto: {
+            days: number;
+            data: {
+                /** Format: uuid */
+                packageId: string;
+                code: string;
+                name: {
+                    [key: string]: string;
+                };
+                description: {
+                    [key: string]: string;
+                } | null;
+                pricePerDay: number;
+                total: number;
+                excessAmount: number;
+                depositAmount: number;
+                coverage: {
+                    [key: string]: "included" | "excluded" | "extra";
+                };
+                minDriverAge: number | null;
+                minLicenceYears: number | null;
+                isDefault: boolean;
+            }[];
+        };
+        InvitationDto: {
             /** Format: uuid */
-            authorId: string | null;
-            authorName: string;
-          }[];
-          alerts: {
+            id: string;
+            email: string;
+            name: string;
             /** @enum {string} */
-            type:
-              | "insurance_expiring"
-              | "itv_expiring"
-              | "road_tax_due"
-              | "service_due";
-            /** @enum {string} */
-            severity: "expired" | "critical" | "warning";
+            role: "staff" | "manager";
+            /** Format: date-time */
             expiresAt: string;
-            daysUntil: number;
-          }[];
-          reservationCount: number;
-          /** Format: date-time */
-          deactivatedAt: string | null;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: date-time */
-          updatedAt: string;
-        };
-        /** Format: uuid */
-        pickupBranchId: string;
-        /** Format: uuid */
-        returnBranchId: string;
-        startDate: string;
-        endDate: string;
-        startTime: string | null;
-        endTime: string | null;
-        totalDays: number;
-        dailyRate: number;
-        deposit: number;
-        vehicleSubtotal: number;
-        addonsSubtotal: number;
-        totalAmount: number;
-        chargesTotal: number;
-        grandTotal: number;
-        /** @enum {string} */
-        status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-        /** @enum {string} */
-        paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-        depositStatus: string;
-        paymentChannel: string | null;
-        addonLines: {
-          /** Format: uuid */
-          id: string;
-          /** Format: uuid */
-          addonId: string | null;
-          /** @enum {string} */
-          type: "per_day" | "fixed";
-          unitPrice: number;
-          name: string;
-          total: number;
-        }[];
-        charges: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          type: "vehicle_damage" | "fine" | "cleaning" | "other";
-          amount: number;
-          details: string | null;
-          imageUrls: string[];
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          inspectionMarkId?: string;
-          /** Format: uuid */
-          inspectionId?: string;
-          damage?: {
-            zone: string;
-            severity: string;
-            damageType: string;
-            note: string | null;
-            photoUrl: string | null;
-            posX: number | null;
-            posY: number | null;
-            price: number | null;
-          };
-        }[];
-        notes: {
-          /** Format: uuid */
-          id: string;
-          body: string;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          authorId: string | null;
-          authorName: string;
-        }[];
-        history: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-          /** @enum {string} */
-          paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-          /** Format: date-time */
-          changedAt: string;
-          /** Format: uuid */
-          authorId?: string;
-          authorName?: string;
-        }[];
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-      }[];
-      page: {
-        total: number;
-        nextCursor: string | null;
-      };
-    };
-    CreateReservationDto: {
-      /** Format: uuid */
-      customerId: string;
-      /** Format: uuid */
-      vehicleId: string;
-      /** Format: uuid */
-      pickupBranchId?: string;
-      /** Format: uuid */
-      returnBranchId?: string;
-      /** Format: date */
-      startDate: string;
-      /** Format: date */
-      endDate: string;
-      startTime?: string;
-      endTime?: string;
-      addonIds?: string[];
-      initialNotes?: string[];
-      noteAuthor?: {
-        authorName: string;
-      };
-    };
-    ReservationDto: {
-      /** Format: uuid */
-      id: string;
-      customer: {
-        /** Format: uuid */
-        id: string;
-        fullName: string;
-        firstName: string;
-        lastName: string | null;
-        email: string | null;
-        phone: string;
-        address: string | null;
-        addressLine2: string | null;
-        city: string | null;
-        region: string | null;
-        postcode: string | null;
-        country: string | null;
-        idNumber: string | null;
-        idExpiresAt: string | null;
-        idScanUrl: string | null;
-        idScans: {
-          /** Format: uuid */
-          id: string;
-          url: string;
-        }[];
-        drivingLicenceNumber: string | null;
-        drivingLicenceExpiresAt: string | null;
-        licenceScanUrl: string | null;
-        licenceScans: {
-          /** Format: uuid */
-          id: string;
-          url: string;
-        }[];
-        dateOfBirth: string | null;
-        notes: {
-          /** Format: uuid */
-          id: string;
-          body: string;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          authorId: string | null;
-          authorName: string;
-        }[];
-        /** @enum {string} */
-        origin: "admin" | "web" | "mobile" | "marketplace";
-        reservationCount: number;
-        /** Format: date-time */
-        lastReservationAt: string | null;
-        /** @enum {string|null} */
-        licenceAlert: "warning" | "expired" | null;
-        /** Format: date-time */
-        deactivatedAt: string | null;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-      };
-      vehicle: {
-        /** Format: uuid */
-        id: string;
-        plate: string;
-        make: string;
-        model: string;
-        year: number;
-        color: string;
-        fuelType: string;
-        vin: string | null;
-        category: string;
-        dailyRate: number;
-        deposit: number;
-        status: string;
-        statusReason: string | null;
-        insurer: string | null;
-        /** Format: uuid */
-        branchId: string;
-        registeredAt: string | null;
-        currentMileage: number | null;
-        insuranceExpiresAt: string | null;
-        itvExpiresAt: string | null;
-        roadTaxDueAt: string | null;
-        nextServiceDueAt: string | null;
-        insuranceScanUrl: string | null;
-        itvScanUrl: string | null;
-        registrationScanUrl: string | null;
-        technicalSheetScanUrl: string | null;
-        roadTaxReceiptScanUrl: string | null;
-        photoUrl: string | null;
-        /** Format: uuid */
-        stockPhotoId: string | null;
-        enginePowerKw: number | null;
-        engineDisplacementCc: number | null;
-        co2Emissions: number | null;
-        environmentalLabel: string | null;
-        seatingCapacity: number | null;
-        maxTowingWeight: number | null;
-        maxAuthorizedMassKg: number | null;
-        unladenMassKg: number | null;
-        doorCount: number | null;
-        transmission: string | null;
-        registrationRawData: {
-          [key: string]: unknown;
-        } | null;
-        technicalSheetRawData: {
-          [key: string]: unknown;
-        } | null;
-        notes: {
-          /** Format: uuid */
-          id: string;
-          body: string;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          authorId: string | null;
-          authorName: string;
-        }[];
-        alerts: {
-          /** @enum {string} */
-          type:
-            | "insurance_expiring"
-            | "itv_expiring"
-            | "road_tax_due"
-            | "service_due";
-          /** @enum {string} */
-          severity: "expired" | "critical" | "warning";
-          expiresAt: string;
-          daysUntil: number;
-        }[];
-        reservationCount: number;
-        /** Format: date-time */
-        deactivatedAt: string | null;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-      };
-      /** Format: uuid */
-      pickupBranchId: string;
-      /** Format: uuid */
-      returnBranchId: string;
-      startDate: string;
-      endDate: string;
-      startTime: string[];
-      endTime: string[];
-      totalDays: number;
-      dailyRate: number;
-      deposit: number;
-      vehicleSubtotal: number;
-      addonsSubtotal: number;
-      totalAmount: number;
-      chargesTotal: number;
-      grandTotal: number;
-      /** @enum {string} */
-      status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-      /** @enum {string} */
-      paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-      depositStatus: string;
-      paymentChannel: string[];
-      addonLines: {
-        /** Format: uuid */
-        id: string;
-        /** Format: uuid */
-        addonId: string | null;
-        /** @enum {string} */
-        type: "per_day" | "fixed";
-        unitPrice: number;
-        name: string;
-        total: number;
-      }[];
-      charges: {
-        /** Format: uuid */
-        id: string;
-        /** @enum {string} */
-        type: "vehicle_damage" | "fine" | "cleaning" | "other";
-        amount: number;
-        details: string | null;
-        imageUrls: string[];
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: uuid */
-        inspectionMarkId?: string;
-        /** Format: uuid */
-        inspectionId?: string;
-        damage?: {
-          zone: string;
-          severity: string;
-          damageType: string;
-          note: string | null;
-          photoUrl: string | null;
-          posX: number | null;
-          posY: number | null;
-          price: number | null;
-        };
-      }[];
-      notes: {
-        /** Format: uuid */
-        id: string;
-        body: string;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: uuid */
-        authorId: string | null;
-        authorName: string;
-      }[];
-      history: {
-        /** Format: uuid */
-        id: string;
-        /** @enum {string} */
-        status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-        /** @enum {string} */
-        paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-        /** Format: date-time */
-        changedAt: string;
-        /** Format: uuid */
-        authorId?: string;
-        authorName?: string;
-      }[];
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: date-time */
-      updatedAt: string;
-    };
-    UpdateReservationDto: {
-      /** Format: uuid */
-      customerId?: string;
-      /** Format: uuid */
-      vehicleId?: string;
-      /** Format: uuid */
-      pickupBranchId?: string;
-      /** Format: uuid */
-      returnBranchId?: string;
-      /** Format: date */
-      startDate?: string;
-      /** Format: date */
-      endDate?: string;
-      startTime?: string | null;
-      endTime?: string | null;
-      addonIds?: string[];
-    };
-    CancelReservationDto: {
-      reason?: string;
-    };
-    ReservationNoteListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        body: string;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: uuid */
-        authorId: string | null;
-        authorName: string;
-      }[];
-    };
-    AddReservationNoteDto: {
-      body: string;
-      authorName?: string;
-    };
-    ReservationNoteDto: {
-      /** Format: uuid */
-      id: string;
-      body: string;
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: uuid */
-      authorId: string | null;
-      authorName: string;
-    };
-    ChargeListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        /** @enum {string} */
-        type: "vehicle_damage" | "fine" | "cleaning" | "other";
-        amount: number;
-        details: string | null;
-        imageUrls: string[];
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: uuid */
-        inspectionMarkId?: string;
-        /** Format: uuid */
-        inspectionId?: string;
-        damage?: {
-          zone: string;
-          severity: string;
-          damageType: string;
-          note: string | null;
-          photoUrl: string | null;
-          posX: number | null;
-          posY: number | null;
-          price: number | null;
-        };
-      }[];
-    };
-    CreateChargeDto: {
-      /** @enum {string} */
-      type: "vehicle_damage" | "fine" | "cleaning" | "other";
-      amount: number;
-      details?: string | null;
-      /** Format: uuid */
-      inspectionMarkId?: string;
-    };
-    ChargeDto: {
-      /** Format: uuid */
-      id: string;
-      /** @enum {string} */
-      type: "vehicle_damage" | "fine" | "cleaning" | "other";
-      amount: number;
-      details: string[];
-      imageUrls: string[];
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: uuid */
-      inspectionMarkId?: string;
-      /** Format: uuid */
-      inspectionId?: string;
-      damage?: {
-        zone: string;
-        severity: string;
-        damageType: string;
-        note: string | null;
-        photoUrl: string | null;
-        posX: number | null;
-        posY: number | null;
-        price: number | null;
-      };
-    };
-    UpdateChargeDto: {
-      /** @enum {string} */
-      type?: "vehicle_damage" | "fine" | "cleaning" | "other";
-      amount?: number;
-      details?: string | null;
-    };
-    VehicleScanDto: {
-      plate: string[];
-      vin: string[];
-      make: string[];
-      model: string[];
-      year: number | null;
-      /** @enum {string|null} */
-      colour:
-        | "white"
-        | "black"
-        | "silver"
-        | "grey"
-        | "blue"
-        | "red"
-        | "green"
-        | "brown"
-        | "orange"
-        | "yellow"
-        | "other"
-        | null;
-      /** @enum {string|null} */
-      fuelType:
-        "petrol" | "diesel" | "electric" | "hybrid" | "plugin_hybrid" | null;
-      registeredAt: string[];
-      currentMileage: number | null;
-      enginePowerKw: number | null;
-      engineDisplacementCc: number | null;
-      co2Emissions: number | null;
-      seatingCapacity: number | null;
-      maxTowingWeight: number | null;
-      maxAuthorizedMassKg: number | null;
-      unladenMassKg: number | null;
-      /** @enum {string|null} */
-      environmentalLabel: "0" | "ECO" | null;
-      quota: {
-        used: number;
-        limit: number;
-        resetsAt: string;
-        /** @enum {string} */
-        plan: "growth" | "fleet";
-      };
-    };
-    VehicleListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        plate: string;
-        make: string;
-        model: string;
-        year: number;
-        color: string;
-        fuelType: string;
-        vin: string | null;
-        category: string;
-        dailyRate: number;
-        deposit: number;
-        status: string;
-        statusReason: string | null;
-        insurer: string | null;
-        /** Format: uuid */
-        branchId: string;
-        registeredAt: string | null;
-        currentMileage: number | null;
-        insuranceExpiresAt: string | null;
-        itvExpiresAt: string | null;
-        roadTaxDueAt: string | null;
-        nextServiceDueAt: string | null;
-        insuranceScanUrl: string | null;
-        itvScanUrl: string | null;
-        registrationScanUrl: string | null;
-        technicalSheetScanUrl: string | null;
-        roadTaxReceiptScanUrl: string | null;
-        photoUrl: string | null;
-        /** Format: uuid */
-        stockPhotoId: string | null;
-        enginePowerKw: number | null;
-        engineDisplacementCc: number | null;
-        co2Emissions: number | null;
-        environmentalLabel: string | null;
-        seatingCapacity: number | null;
-        maxTowingWeight: number | null;
-        maxAuthorizedMassKg: number | null;
-        unladenMassKg: number | null;
-        doorCount: number | null;
-        transmission: string | null;
-        registrationRawData: {
-          [key: string]: unknown;
-        } | null;
-        technicalSheetRawData: {
-          [key: string]: unknown;
-        } | null;
-        notes: {
-          /** Format: uuid */
-          id: string;
-          body: string;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          authorId: string | null;
-          authorName: string;
-        }[];
-        alerts: {
-          /** @enum {string} */
-          type:
-            | "insurance_expiring"
-            | "itv_expiring"
-            | "road_tax_due"
-            | "service_due";
-          /** @enum {string} */
-          severity: "expired" | "critical" | "warning";
-          expiresAt: string;
-          daysUntil: number;
-        }[];
-        reservationCount: number;
-        /** Format: date-time */
-        deactivatedAt: string | null;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-      }[];
-      page: {
-        total: number;
-        nextCursor: string | null;
-      };
-    };
-    CreateVehicleDto: {
-      plate: string;
-      make: string;
-      model: string;
-      year: number;
-      color: string;
-      /** @enum {string} */
-      fuelType: "petrol" | "diesel" | "electric" | "hybrid" | "plugin_hybrid";
-      /** @enum {string} */
-      category: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
-      dailyRate: number;
-      deposit: number;
-      /** Format: uuid */
-      branchId?: string;
-      vin?: string | null;
-      insurer?: string | null;
-      /** Format: date */
-      registeredAt?: string | null;
-      currentMileage?: number | null;
-      /** Format: date */
-      insuranceExpiresAt?: string | null;
-      /** Format: date */
-      itvExpiresAt?: string | null;
-      /** Format: date */
-      roadTaxDueAt?: string | null;
-      /** Format: date */
-      nextServiceDueAt?: string | null;
-      initialNotes?: string[];
-      noteAuthor?: {
-        authorName: string;
-      };
-      enginePowerKw?: number | null;
-      engineDisplacementCc?: number | null;
-      co2Emissions?: number | null;
-      seatingCapacity?: number | null;
-      maxTowingWeight?: number | null;
-      maxAuthorizedMassKg?: number | null;
-      unladenMassKg?: number | null;
-      doorCount?: number | null;
-      /** @enum {string|null} */
-      environmentalLabel?: "0" | "ECO" | "C" | "B" | "none" | null;
-      /** @enum {string|null} */
-      transmission?: "automatic" | "manual" | null;
-      registrationRawData?: {
-        [key: string]: unknown;
-      } | null;
-      technicalSheetRawData?: {
-        [key: string]: unknown;
-      } | null;
-    };
-    VehicleDto: {
-      /** Format: uuid */
-      id: string;
-      plate: string;
-      make: string;
-      model: string;
-      year: number;
-      color: string;
-      fuelType: string;
-      vin: string[];
-      category: string;
-      dailyRate: number;
-      deposit: number;
-      status: string;
-      statusReason: string[];
-      insurer: string[];
-      /** Format: uuid */
-      branchId: string;
-      registeredAt: string[];
-      currentMileage: number | null;
-      insuranceExpiresAt: string[];
-      itvExpiresAt: string[];
-      roadTaxDueAt: string[];
-      nextServiceDueAt: string[];
-      insuranceScanUrl: string[];
-      itvScanUrl: string[];
-      registrationScanUrl: string[];
-      technicalSheetScanUrl: string[];
-      roadTaxReceiptScanUrl: string[];
-      photoUrl: string[];
-      /** Format: uuid */
-      stockPhotoId: string | null;
-      enginePowerKw: number | null;
-      engineDisplacementCc: number | null;
-      co2Emissions: number | null;
-      environmentalLabel: string[];
-      seatingCapacity: number | null;
-      maxTowingWeight: number | null;
-      maxAuthorizedMassKg: number | null;
-      unladenMassKg: number | null;
-      doorCount: number | null;
-      transmission: string[];
-      registrationRawData: {
-        [key: string]: unknown;
-      } | null;
-      technicalSheetRawData: {
-        [key: string]: unknown;
-      } | null;
-      notes: {
-        /** Format: uuid */
-        id: string;
-        body: string;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: uuid */
-        authorId: string | null;
-        authorName: string;
-      }[];
-      alerts: {
-        /** @enum {string} */
-        type:
-          | "insurance_expiring"
-          | "itv_expiring"
-          | "road_tax_due"
-          | "service_due";
-        /** @enum {string} */
-        severity: "expired" | "critical" | "warning";
-        expiresAt: string;
-        daysUntil: number;
-      }[];
-      reservationCount: number;
-      /** Format: date-time */
-      deactivatedAt: string | null;
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: date-time */
-      updatedAt: string;
-    };
-    UpdateVehicleDto: {
-      plate?: string;
-      make?: string;
-      model?: string;
-      year?: number;
-      color?: string;
-      /** @enum {string} */
-      fuelType?: "petrol" | "diesel" | "electric" | "hybrid" | "plugin_hybrid";
-      /** @enum {string} */
-      category?: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
-      dailyRate?: number;
-      deposit?: number;
-      status?: unknown;
-      deactivated?: boolean;
-      vin?: string | null;
-      insurer?: string | null;
-      registeredAt?: (string | "") | null;
-      currentMileage?: number | null;
-      insuranceExpiresAt?: (string | "") | null;
-      itvExpiresAt?: (string | "") | null;
-      roadTaxDueAt?: (string | "") | null;
-      nextServiceDueAt?: (string | "") | null;
-      enginePowerKw?: number | null;
-      engineDisplacementCc?: number | null;
-      co2Emissions?: number | null;
-      seatingCapacity?: number | null;
-      maxTowingWeight?: number | null;
-      maxAuthorizedMassKg?: number | null;
-      unladenMassKg?: number | null;
-      doorCount?: number | null;
-      /** @enum {string|null} */
-      environmentalLabel?: "0" | "ECO" | "C" | "B" | "none" | null;
-      /** @enum {string|null} */
-      transmission?: "automatic" | "manual" | null;
-      registrationRawData?: {
-        [key: string]: unknown;
-      } | null;
-      technicalSheetRawData?: {
-        [key: string]: unknown;
-      } | null;
-    };
-    SetStatusDto: {
-      /** @enum {string} */
-      status: "available" | "maintenance";
-      reason?: string;
-    };
-    SetStockPhotoDto: {
-      /** Format: uuid */
-      stockPhotoId: string;
-    };
-    VehicleNoteListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        body: string;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: uuid */
-        authorId: string | null;
-        authorName: string;
-      }[];
-    };
-    AddNoteDto: {
-      body: string;
-      authorName?: string;
-    };
-    VehicleNoteDto: {
-      /** Format: uuid */
-      id: string;
-      body: string;
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: uuid */
-      authorId: string | null;
-      authorName: string;
-    };
-    ScanQuotaDto: {
-      used: number;
-      limit: number;
-      resetsAt: string;
-      /** @enum {string} */
-      plan: "growth" | "fleet";
-    };
-    CustomerScanDto: {
-      firstName: string[];
-      lastName: string[];
-      dateOfBirth: string[];
-      idNumber: string[];
-      idExpiresAt: string[];
-      drivingLicenceNumber: string[];
-      drivingLicenceExpiresAt: string[];
-      address: string[];
-      city: string[];
-      region: string[];
-      postcode: string[];
-      country: string[];
-      documentType: string[];
-      rawFields: {
-        [key: string]: string;
-      } | null;
-      quota: {
-        used: number;
-        limit: number;
-        resetsAt: string;
-        /** @enum {string} */
-        plan: "growth" | "fleet";
-      };
-    };
-    CustomerListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        fullName: string;
-        firstName: string;
-        lastName: string | null;
-        email: string | null;
-        phone: string;
-        address: string | null;
-        addressLine2: string | null;
-        city: string | null;
-        region: string | null;
-        postcode: string | null;
-        country: string | null;
-        idNumber: string | null;
-        idExpiresAt: string | null;
-        idScanUrl: string | null;
-        idScans: {
-          /** Format: uuid */
-          id: string;
-          url: string;
-        }[];
-        drivingLicenceNumber: string | null;
-        drivingLicenceExpiresAt: string | null;
-        licenceScanUrl: string | null;
-        licenceScans: {
-          /** Format: uuid */
-          id: string;
-          url: string;
-        }[];
-        dateOfBirth: string | null;
-        notes: {
-          /** Format: uuid */
-          id: string;
-          body: string;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          authorId: string | null;
-          authorName: string;
-        }[];
-        /** @enum {string} */
-        origin: "admin" | "web" | "mobile" | "marketplace";
-        reservationCount: number;
-        /** Format: date-time */
-        lastReservationAt: string | null;
-        /** @enum {string|null} */
-        licenceAlert: "warning" | "expired" | null;
-        /** Format: date-time */
-        deactivatedAt: string | null;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-      }[];
-      page: {
-        total: number;
-        nextCursor: string | null;
-      };
-    };
-    CreateCustomerDto: {
-      firstName?: string;
-      lastName?: string | null;
-      fullName?: string;
-      email?: (string | "") | null;
-      phone: string;
-      address?: string | null;
-      addressLine2?: string | null;
-      city?: string | null;
-      postcode?: string | null;
-      region?: string | null;
-      country?: (string | "") | null;
-      idNumber?: string | null;
-      /** Format: date */
-      idExpiresAt?: string | null;
-      drivingLicenceNumber?: string | null;
-      /** Format: date */
-      drivingLicenceExpiresAt?: string | null;
-      /** Format: date */
-      dateOfBirth?: string | null;
-      initialNotes?: string[];
-      noteAuthorName?: string;
-    };
-    CustomerDto: {
-      /** Format: uuid */
-      id: string;
-      fullName: string;
-      firstName: string;
-      lastName: string[];
-      email: string[];
-      phone: string;
-      address: string[];
-      addressLine2: string[];
-      city: string[];
-      region: string[];
-      postcode: string[];
-      country: string[];
-      idNumber: string[];
-      idExpiresAt: string[];
-      idScanUrl: string[];
-      idScans: {
-        /** Format: uuid */
-        id: string;
-        url: string;
-      }[];
-      drivingLicenceNumber: string[];
-      drivingLicenceExpiresAt: string[];
-      licenceScanUrl: string[];
-      licenceScans: {
-        /** Format: uuid */
-        id: string;
-        url: string;
-      }[];
-      dateOfBirth: string[];
-      notes: {
-        /** Format: uuid */
-        id: string;
-        body: string;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: uuid */
-        authorId: string | null;
-        authorName: string;
-      }[];
-      /** @enum {string} */
-      origin: "admin" | "web" | "mobile" | "marketplace";
-      reservationCount: number;
-      /** Format: date-time */
-      lastReservationAt: string | null;
-      /** @enum {string|null} */
-      licenceAlert: "warning" | "expired" | null;
-      /** Format: date-time */
-      deactivatedAt: string | null;
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: date-time */
-      updatedAt: string;
-    };
-    UpdateCustomerDto: {
-      firstName?: string;
-      lastName?: string | null;
-      fullName?: string;
-      email?: (string | "") | null;
-      phone?: string;
-      address?: string | null;
-      addressLine2?: string | null;
-      city?: string | null;
-      postcode?: string | null;
-      region?: string | null;
-      country?: (string | "") | null;
-      idNumber?: string | null;
-      idExpiresAt?: (string | "") | null;
-      drivingLicenceNumber?: string | null;
-      drivingLicenceExpiresAt?: (string | "") | null;
-      dateOfBirth?: (string | "") | null;
-      deactivated?: boolean;
-    };
-    CustomerNoteListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        body: string;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: uuid */
-        authorId: string | null;
-        authorName: string;
-      }[];
-    };
-    AddCustomerNoteDto: {
-      body: string;
-      authorName?: string;
-    };
-    CustomerNoteDto: {
-      /** Format: uuid */
-      id: string;
-      body: string;
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: uuid */
-      authorId: string | null;
-      authorName: string;
-    };
-    InspectionListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        /** Format: uuid */
-        reservationId: string;
-        /** Format: uuid */
-        vehicleId: string;
-        /** @enum {string} */
-        type: "checkout" | "checkin";
-        /** @enum {string} */
-        status: "draft" | "completed";
-        odometerKm: number | null;
-        fuelLevelPercent: number | null;
-        notes: string | null;
-        signatureSvg: string | null;
-        signerName: string | null;
-        reportUrl: string | null;
-        mediaCount: number;
-        marksCount: number;
-        /** Format: date-time */
-        completedAt: string | null;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-        items: {
-          key: string;
-          /** @enum {string|null} */
-          answer: "pass" | "fail" | "na" | null;
-        }[];
-        media: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          zone:
-            | "front"
-            | "rear"
-            | "left"
-            | "right"
-            | "front_left"
-            | "front_right"
-            | "rear_left"
-            | "rear_right"
-            | "interior_front"
-            | "interior_rear"
-            | "dash_odometer"
-            | "other";
-          url: string;
-          /** Format: date-time */
-          createdAt: string;
-        }[];
-        marks: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          zone:
-            | "front"
-            | "rear"
-            | "left"
-            | "right"
-            | "front_left"
-            | "front_right"
-            | "rear_left"
-            | "rear_right"
-            | "interior_front"
-            | "interior_rear"
-            | "dash_odometer"
-            | "other";
-          /** @enum {string} */
-          severity: "low" | "medium" | "high";
-          /** @enum {string} */
-          damageType:
-            | "scratch"
-            | "dent"
-            | "crack"
-            | "missing_part"
-            | "paint_damage"
-            | "other";
-          note: string | null;
-          photoUrl: string | null;
-          posX: number | null;
-          posY: number | null;
-          price: number | null;
-          preExisting: boolean;
-          /** @enum {string} */
-          source: "inspection" | "manual";
-          /** Format: date-time */
-          createdAt: string;
-        }[];
-      }[];
-    };
-    CreateInspectionDto: {
-      /** @enum {string} */
-      type: "checkout" | "checkin";
-    };
-    InspectionDto: {
-      /** Format: uuid */
-      id: string;
-      /** Format: uuid */
-      reservationId: string;
-      /** Format: uuid */
-      vehicleId: string;
-      /** @enum {string} */
-      type: "checkout" | "checkin";
-      /** @enum {string} */
-      status: "draft" | "completed";
-      odometerKm: number | null;
-      fuelLevelPercent: number | null;
-      notes: string[];
-      signatureSvg: string[];
-      signerName: string[];
-      reportUrl: string[];
-      mediaCount: number;
-      marksCount: number;
-      /** Format: date-time */
-      completedAt: string | null;
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: date-time */
-      updatedAt: string;
-      items: {
-        key: string;
-        /** @enum {string|null} */
-        answer: "pass" | "fail" | "na" | null;
-      }[];
-      media: {
-        /** Format: uuid */
-        id: string;
-        /** @enum {string} */
-        zone:
-          | "front"
-          | "rear"
-          | "left"
-          | "right"
-          | "front_left"
-          | "front_right"
-          | "rear_left"
-          | "rear_right"
-          | "interior_front"
-          | "interior_rear"
-          | "dash_odometer"
-          | "other";
-        url: string;
-        /** Format: date-time */
-        createdAt: string;
-      }[];
-      marks: {
-        /** Format: uuid */
-        id: string;
-        /** @enum {string} */
-        zone:
-          | "front"
-          | "rear"
-          | "left"
-          | "right"
-          | "front_left"
-          | "front_right"
-          | "rear_left"
-          | "rear_right"
-          | "interior_front"
-          | "interior_rear"
-          | "dash_odometer"
-          | "other";
-        /** @enum {string} */
-        severity: "low" | "medium" | "high";
-        /** @enum {string} */
-        damageType:
-          | "scratch"
-          | "dent"
-          | "crack"
-          | "missing_part"
-          | "paint_damage"
-          | "other";
-        note: string | null;
-        photoUrl: string | null;
-        posX: number | null;
-        posY: number | null;
-        price: number | null;
-        preExisting: boolean;
-        /** @enum {string} */
-        source: "inspection" | "manual";
-        /** Format: date-time */
-        createdAt: string;
-      }[];
-    };
-    ReadingsDto: {
-      odometerKm?: number;
-      fuelLevelPercent?: number;
-      notes?: string | null;
-    };
-    ChecklistDto: {
-      items?: {
-        key: string;
-        /** @enum {string|null} */
-        answer: "pass" | "fail" | "na" | null;
-      }[];
-      answers?: {
-        [key: string]: "pass" | "fail" | "na" | null;
-      };
-    };
-    SignatureDto: {
-      signatureSvg: string;
-      /** @default  */
-      signerName: string;
-    };
-    DamageMarksDto: {
-      marks: {
-        /** Format: uuid */
-        id: string;
-        /** @enum {string} */
-        zone:
-          | "front"
-          | "rear"
-          | "left"
-          | "right"
-          | "front_left"
-          | "front_right"
-          | "rear_left"
-          | "rear_right"
-          | "interior_front"
-          | "interior_rear"
-          | "dash_odometer"
-          | "other";
-        /** @enum {string} */
-        severity: "low" | "medium" | "high";
-        /** @enum {string} */
-        damageType:
-          | "scratch"
-          | "dent"
-          | "crack"
-          | "missing_part"
-          | "paint_damage"
-          | "other";
-        note: string | null;
-        photoUrl: string | null;
-        posX: number | null;
-        posY: number | null;
-        price: number | null;
-        preExisting: boolean;
-        /** @enum {string} */
-        source: "inspection" | "manual";
-        /** Format: date-time */
-        createdAt: string;
-      }[];
-    };
-    NotificationCollectionDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        /** @enum {string} */
-        type:
-          | "welcome"
-          | "test"
-          | "vehicle_insurance_expired"
-          | "reservation_cancelled"
-          | "itv_expiring"
-          | "pickup_today"
-          | "licence_expiring"
-          | "return_today"
-          | "return_overdue"
-          | "reservation_created_external"
-          | "reservation_updated_dates_vehicle"
-          | "damage_recorded_on_return"
-          | "licence_expired"
-          | "itv_expired"
-          | "deposit_due_before_pickup"
-          | "missing_docs_before_pickup"
-          | "no_show"
-          | "pickup_soon"
-          | "return_soon";
-        /** @enum {string} */
-        status: "unread" | "acknowledged" | "dismissed";
-        /** Format: date-time */
-        createdAt: string;
-        params: {
-          [key: string]: string;
-        };
-        /** Format: uuid */
-        vehicleId: string | null;
-        /** Format: uuid */
-        reservationId: string | null;
-        /** Format: uuid */
-        customerId: string | null;
-      }[];
-      page: {
-        total: number;
-        nextCursor: string | null;
-      };
-    };
-    NotificationDto: {
-      /** Format: uuid */
-      id: string;
-      /** @enum {string} */
-      type:
-        | "welcome"
-        | "test"
-        | "vehicle_insurance_expired"
-        | "reservation_cancelled"
-        | "itv_expiring"
-        | "pickup_today"
-        | "licence_expiring"
-        | "return_today"
-        | "return_overdue"
-        | "reservation_created_external"
-        | "reservation_updated_dates_vehicle"
-        | "damage_recorded_on_return"
-        | "licence_expired"
-        | "itv_expired"
-        | "deposit_due_before_pickup"
-        | "missing_docs_before_pickup"
-        | "no_show"
-        | "pickup_soon"
-        | "return_soon";
-      /** @enum {string} */
-      status: "unread" | "acknowledged" | "dismissed";
-      /** Format: date-time */
-      createdAt: string;
-      params: {
-        [key: string]: string;
-      };
-      /** Format: uuid */
-      vehicleId: string | null;
-      /** Format: uuid */
-      reservationId: string | null;
-      /** Format: uuid */
-      customerId: string | null;
-    };
-    PushTokenDto: {
-      token: string;
-      /** @enum {string} */
-      platform: "ios" | "android";
-      locale?: string;
-    };
-    RemovePushTokenDto: {
-      token: string;
-    };
-    WebPushDto: {
-      endpoint: string;
-      p256dh: string;
-      auth: string;
-      locale?: string;
-    };
-    RemoveWebPushDto: {
-      endpoint: string;
-    };
-    VapidKeyDto: {
-      publicKey: string;
-    };
-    TestPushResultDto: {
-      sent: number;
-      /** Format: uuid */
-      notificationId: string;
-    };
-    GeneratorRunDto: {
-      created: {
-        [key: string]: number;
-      };
-    };
-    ConnectStatusDto: {
-      connectedAccountId: string[];
-      /** @enum {string} */
-      status: "not_started" | "pending" | "active" | "restricted" | "disabled";
-      chargesEnabled: boolean;
-      /** @enum {string} */
-      dashboard: "full";
-    };
-    AccountSessionDto: {
-      clientSecret: string;
-      connectedAccountId: string;
-      publishableKey: string;
-      /** @enum {string} */
-      status: "not_started" | "pending" | "active" | "restricted" | "disabled";
-      chargesEnabled: boolean;
-    };
-    TransactionListDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        /** Format: uuid */
-        companyId: string;
-        /** Format: uuid */
-        reservationId: string;
-        /** @enum {string} */
-        eventType:
-          | "rental_card_paid"
-          | "rental_cash_paid"
-          | "deposit_held"
-          | "deposit_captured"
-          | "deposit_released"
-          | "deposit_cash_collected";
-        /** @enum {string|null} */
-        channel: "walk_in" | "phone" | "cash" | null;
-        amount: number;
-        currency: string;
-        stripePaymentIntentId: string | null;
-        stripeCheckoutSessionId: string | null;
-        receiptUrl: string | null;
-        actorUserId: string | null;
-        actorName: string | null;
-        metadata: unknown;
-        /** Format: date-time */
-        occurredAt: string;
-        customerName: string | null;
-        customerEmail: string | null;
-        vehicleLabel: string | null;
-      }[];
-      total: number;
-      limit: number;
-      offset: number;
-    };
-    AutoCancelResultDto: {
-      cancelled: number;
-    };
-    PaymentStateDto: {
-      /** Format: uuid */
-      reservationId: string;
-      paymentStatus: string;
-      /** @enum {string} */
-      depositStatus:
-        "none" | "requires_hold" | "held" | "captured" | "released";
-      companyInsuranceAccepted: boolean;
-      /** @enum {string|null} */
-      paymentChannel: "walk_in" | "phone" | "cash" | null;
-      rentalPaymentIntentId: string[];
-      depositPaymentIntentId: string[];
-      checkoutSessionId: string[];
-      payLinkUrl: string[];
-      /** Format: date-time */
-      payLinkExpiresAt: string | null;
-      canStartRental: boolean;
-      totalAmount: number;
-      depositAmount: number;
-      currency: string;
-      connectedAccountId: string[];
-      chargesEnabled: boolean;
-      transactions: {
-        /** Format: uuid */
-        id: string;
-        /** Format: uuid */
-        companyId: string;
-        /** Format: uuid */
-        reservationId: string;
-        /** @enum {string} */
-        eventType:
-          | "rental_card_paid"
-          | "rental_cash_paid"
-          | "deposit_held"
-          | "deposit_captured"
-          | "deposit_released"
-          | "deposit_cash_collected";
-        /** @enum {string|null} */
-        channel: "walk_in" | "phone" | "cash" | null;
-        amount: number;
-        currency: string;
-        stripePaymentIntentId: string | null;
-        stripeCheckoutSessionId: string | null;
-        receiptUrl: string | null;
-        actorUserId: string | null;
-        actorName: string | null;
-        metadata: unknown;
-        /** Format: date-time */
-        occurredAt: string;
-        customerName: string | null;
-        customerEmail: string | null;
-        vehicleLabel: string | null;
-      }[];
-    };
-    ReservationTransactionsDto: {
-      data: {
-        /** Format: uuid */
-        id: string;
-        /** Format: uuid */
-        companyId: string;
-        /** Format: uuid */
-        reservationId: string;
-        /** @enum {string} */
-        eventType:
-          | "rental_card_paid"
-          | "rental_cash_paid"
-          | "deposit_held"
-          | "deposit_captured"
-          | "deposit_released"
-          | "deposit_cash_collected";
-        /** @enum {string|null} */
-        channel: "walk_in" | "phone" | "cash" | null;
-        amount: number;
-        currency: string;
-        stripePaymentIntentId: string | null;
-        stripeCheckoutSessionId: string | null;
-        receiptUrl: string | null;
-        actorUserId: string | null;
-        actorName: string | null;
-        metadata: unknown;
-        /** Format: date-time */
-        occurredAt: string;
-        customerName: string | null;
-        customerEmail: string | null;
-        vehicleLabel: string | null;
-      }[];
-    };
-    InsuranceInputDto: {
-      accepted: boolean;
-    };
-    WalkInResultDto: {
-      rentalClientSecret: string;
-      depositClientSecret: string[];
-      publishableKey: string;
-      connectedAccountId: string;
-      payment: {
-        /** Format: uuid */
-        reservationId: string;
-        paymentStatus: string;
-        /** @enum {string} */
-        depositStatus:
-          "none" | "requires_hold" | "held" | "captured" | "released";
-        companyInsuranceAccepted: boolean;
-        /** @enum {string|null} */
-        paymentChannel: "walk_in" | "phone" | "cash" | null;
-        rentalPaymentIntentId: string | null;
-        depositPaymentIntentId: string | null;
-        checkoutSessionId: string | null;
-        payLinkUrl: string | null;
-        /** Format: date-time */
-        payLinkExpiresAt: string | null;
-        canStartRental: boolean;
-        totalAmount: number;
-        depositAmount: number;
-        currency: string;
-        connectedAccountId: string | null;
-        chargesEnabled: boolean;
-        transactions: {
-          /** Format: uuid */
-          id: string;
-          /** Format: uuid */
-          companyId: string;
-          /** Format: uuid */
-          reservationId: string;
-          /** @enum {string} */
-          eventType:
-            | "rental_card_paid"
-            | "rental_cash_paid"
-            | "deposit_held"
-            | "deposit_captured"
-            | "deposit_released"
-            | "deposit_cash_collected";
-          /** @enum {string|null} */
-          channel: "walk_in" | "phone" | "cash" | null;
-          amount: number;
-          currency: string;
-          stripePaymentIntentId: string | null;
-          stripeCheckoutSessionId: string | null;
-          receiptUrl: string | null;
-          actorUserId: string | null;
-          actorName: string | null;
-          metadata: unknown;
-          /** Format: date-time */
-          occurredAt: string;
-          customerName: string | null;
-          customerEmail: string | null;
-          vehicleLabel: string | null;
-        }[];
-      };
-    };
-    SyncResultDto: {
-      payment: {
-        /** Format: uuid */
-        reservationId: string;
-        paymentStatus: string;
-        /** @enum {string} */
-        depositStatus:
-          "none" | "requires_hold" | "held" | "captured" | "released";
-        companyInsuranceAccepted: boolean;
-        /** @enum {string|null} */
-        paymentChannel: "walk_in" | "phone" | "cash" | null;
-        rentalPaymentIntentId: string | null;
-        depositPaymentIntentId: string | null;
-        checkoutSessionId: string | null;
-        payLinkUrl: string | null;
-        /** Format: date-time */
-        payLinkExpiresAt: string | null;
-        canStartRental: boolean;
-        totalAmount: number;
-        depositAmount: number;
-        currency: string;
-        connectedAccountId: string | null;
-        chargesEnabled: boolean;
-        transactions: {
-          /** Format: uuid */
-          id: string;
-          /** Format: uuid */
-          companyId: string;
-          /** Format: uuid */
-          reservationId: string;
-          /** @enum {string} */
-          eventType:
-            | "rental_card_paid"
-            | "rental_cash_paid"
-            | "deposit_held"
-            | "deposit_captured"
-            | "deposit_released"
-            | "deposit_cash_collected";
-          /** @enum {string|null} */
-          channel: "walk_in" | "phone" | "cash" | null;
-          amount: number;
-          currency: string;
-          stripePaymentIntentId: string | null;
-          stripeCheckoutSessionId: string | null;
-          receiptUrl: string | null;
-          actorUserId: string | null;
-          actorName: string | null;
-          metadata: unknown;
-          /** Format: date-time */
-          occurredAt: string;
-          customerName: string | null;
-          customerEmail: string | null;
-          vehicleLabel: string | null;
-        }[];
-      };
-      receiptUrl: string[];
-    };
-    /** @default {} */
-    PayLinkInputDto: {
-      /** Format: uri */
-      successUrl?: string;
-      /** Format: uri */
-      cancelUrl?: string;
-    };
-    PayLinkResultDto: {
-      url: string;
-      /** Format: date-time */
-      expiresAt: string;
-      checkoutSessionId: string;
-      emailSent: boolean;
-      payment: {
-        /** Format: uuid */
-        reservationId: string;
-        paymentStatus: string;
-        /** @enum {string} */
-        depositStatus:
-          "none" | "requires_hold" | "held" | "captured" | "released";
-        companyInsuranceAccepted: boolean;
-        /** @enum {string|null} */
-        paymentChannel: "walk_in" | "phone" | "cash" | null;
-        rentalPaymentIntentId: string | null;
-        depositPaymentIntentId: string | null;
-        checkoutSessionId: string | null;
-        payLinkUrl: string | null;
-        /** Format: date-time */
-        payLinkExpiresAt: string | null;
-        canStartRental: boolean;
-        totalAmount: number;
-        depositAmount: number;
-        currency: string;
-        connectedAccountId: string | null;
-        chargesEnabled: boolean;
-        transactions: {
-          /** Format: uuid */
-          id: string;
-          /** Format: uuid */
-          companyId: string;
-          /** Format: uuid */
-          reservationId: string;
-          /** @enum {string} */
-          eventType:
-            | "rental_card_paid"
-            | "rental_cash_paid"
-            | "deposit_held"
-            | "deposit_captured"
-            | "deposit_released"
-            | "deposit_cash_collected";
-          /** @enum {string|null} */
-          channel: "walk_in" | "phone" | "cash" | null;
-          amount: number;
-          currency: string;
-          stripePaymentIntentId: string | null;
-          stripeCheckoutSessionId: string | null;
-          receiptUrl: string | null;
-          actorUserId: string | null;
-          actorName: string | null;
-          metadata: unknown;
-          /** Format: date-time */
-          occurredAt: string;
-          customerName: string | null;
-          customerEmail: string | null;
-          vehicleLabel: string | null;
-        }[];
-      };
-    };
-    DepositHoldResultDto: {
-      clientSecret: string;
-      publishableKey: string;
-      connectedAccountId: string;
-      payment: {
-        /** Format: uuid */
-        reservationId: string;
-        paymentStatus: string;
-        /** @enum {string} */
-        depositStatus:
-          "none" | "requires_hold" | "held" | "captured" | "released";
-        companyInsuranceAccepted: boolean;
-        /** @enum {string|null} */
-        paymentChannel: "walk_in" | "phone" | "cash" | null;
-        rentalPaymentIntentId: string | null;
-        depositPaymentIntentId: string | null;
-        checkoutSessionId: string | null;
-        payLinkUrl: string | null;
-        /** Format: date-time */
-        payLinkExpiresAt: string | null;
-        canStartRental: boolean;
-        totalAmount: number;
-        depositAmount: number;
-        currency: string;
-        connectedAccountId: string | null;
-        chargesEnabled: boolean;
-        transactions: {
-          /** Format: uuid */
-          id: string;
-          /** Format: uuid */
-          companyId: string;
-          /** Format: uuid */
-          reservationId: string;
-          /** @enum {string} */
-          eventType:
-            | "rental_card_paid"
-            | "rental_cash_paid"
-            | "deposit_held"
-            | "deposit_captured"
-            | "deposit_released"
-            | "deposit_cash_collected";
-          /** @enum {string|null} */
-          channel: "walk_in" | "phone" | "cash" | null;
-          amount: number;
-          currency: string;
-          stripePaymentIntentId: string | null;
-          stripeCheckoutSessionId: string | null;
-          receiptUrl: string | null;
-          actorUserId: string | null;
-          actorName: string | null;
-          metadata: unknown;
-          /** Format: date-time */
-          occurredAt: string;
-          customerName: string | null;
-          customerEmail: string | null;
-          vehicleLabel: string | null;
-        }[];
-      };
-    };
-    CalendarDto: {
-      from: string;
-      to: string;
-      vehicles: {
-        /** Format: uuid */
-        vehicleId: string;
-        plate: string;
-        bookings: {
-          /** Format: uuid */
-          reservationId: string;
-          customerName: string;
-          startDate: string;
-          endDate: string;
-          status: string;
-        }[];
-      }[];
-    };
-    FreeVehicleListDto: {
-      data: {
-        /** Format: uuid */
-        vehicleId: string;
-        plate: string;
-        make: string;
-        model: string;
-        category: string;
-        dailyRate: number;
-        /** @enum {boolean} */
-        available: true;
-      }[];
-      page: {
-        total: number;
-        nextCursor: null;
-      };
-    };
-    VehicleAvailabilityDto: {
-      /** Format: uuid */
-      vehicleId: string;
-      available: boolean;
-      conflicts: {
-        /** Format: uuid */
-        reservationId: string;
-        startDate: string;
-        endDate: string;
-      }[];
-    };
-    DashboardDto: {
-      stats: {
-        pickupsToday: number;
-        returnsToday: number;
-        activeRentals: number;
-        inMaintenance: number;
-      };
-      pickupsToday: {
-        /** Format: uuid */
-        id: string;
-        customer: {
-          /** Format: uuid */
-          id: string;
-          fullName: string;
-          firstName: string;
-          lastName: string | null;
-          email: string | null;
-          phone: string;
-          address: string | null;
-          addressLine2: string | null;
-          city: string | null;
-          region: string | null;
-          postcode: string | null;
-          country: string | null;
-          idNumber: string | null;
-          idExpiresAt: string | null;
-          idScanUrl: string | null;
-          idScans: {
-            /** Format: uuid */
-            id: string;
-            url: string;
-          }[];
-          drivingLicenceNumber: string | null;
-          drivingLicenceExpiresAt: string | null;
-          licenceScanUrl: string | null;
-          licenceScans: {
-            /** Format: uuid */
-            id: string;
-            url: string;
-          }[];
-          dateOfBirth: string | null;
-          notes: {
-            /** Format: uuid */
-            id: string;
-            body: string;
             /** Format: date-time */
             createdAt: string;
-            /** Format: uuid */
-            authorId: string | null;
-            authorName: string;
-          }[];
-          /** @enum {string} */
-          origin: "admin" | "web" | "mobile" | "marketplace";
-          reservationCount: number;
-          /** Format: date-time */
-          lastReservationAt: string | null;
-          /** @enum {string|null} */
-          licenceAlert: "warning" | "expired" | null;
-          /** Format: date-time */
-          deactivatedAt: string | null;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: date-time */
-          updatedAt: string;
+            inviteUrl?: string;
         };
-        vehicle: {
-          /** Format: uuid */
-          id: string;
-          plate: string;
-          make: string;
-          model: string;
-          year: number;
-          color: string;
-          fuelType: string;
-          vin: string | null;
-          category: string;
-          dailyRate: number;
-          deposit: number;
-          status: string;
-          statusReason: string | null;
-          insurer: string | null;
-          /** Format: uuid */
-          branchId: string;
-          registeredAt: string | null;
-          currentMileage: number | null;
-          insuranceExpiresAt: string | null;
-          itvExpiresAt: string | null;
-          roadTaxDueAt: string | null;
-          nextServiceDueAt: string | null;
-          insuranceScanUrl: string | null;
-          itvScanUrl: string | null;
-          registrationScanUrl: string | null;
-          technicalSheetScanUrl: string | null;
-          roadTaxReceiptScanUrl: string | null;
-          photoUrl: string | null;
-          /** Format: uuid */
-          stockPhotoId: string | null;
-          enginePowerKw: number | null;
-          engineDisplacementCc: number | null;
-          co2Emissions: number | null;
-          environmentalLabel: string | null;
-          seatingCapacity: number | null;
-          maxTowingWeight: number | null;
-          maxAuthorizedMassKg: number | null;
-          unladenMassKg: number | null;
-          doorCount: number | null;
-          transmission: string | null;
-          registrationRawData: {
-            [key: string]: unknown;
-          } | null;
-          technicalSheetRawData: {
-            [key: string]: unknown;
-          } | null;
-          notes: {
-            /** Format: uuid */
-            id: string;
-            body: string;
+        InviteInfoDto: {
+            companyName: string;
+            email: string;
+            /** @enum {string} */
+            role: "staff" | "manager";
             /** Format: date-time */
-            createdAt: string;
-            /** Format: uuid */
-            authorId: string | null;
-            authorName: string;
-          }[];
-          alerts: {
-            /** @enum {string} */
-            type:
-              | "insurance_expiring"
-              | "itv_expiring"
-              | "road_tax_due"
-              | "service_due";
-            /** @enum {string} */
-            severity: "expired" | "critical" | "warning";
             expiresAt: string;
-            daysUntil: number;
-          }[];
-          reservationCount: number;
-          /** Format: date-time */
-          deactivatedAt: string | null;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: date-time */
-          updatedAt: string;
         };
-        /** Format: uuid */
-        pickupBranchId: string;
-        /** Format: uuid */
-        returnBranchId: string;
-        startDate: string;
-        endDate: string;
-        startTime: string | null;
-        endTime: string | null;
-        totalDays: number;
-        dailyRate: number;
-        deposit: number;
-        vehicleSubtotal: number;
-        addonsSubtotal: number;
-        totalAmount: number;
-        chargesTotal: number;
-        grandTotal: number;
-        /** @enum {string} */
-        status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-        /** @enum {string} */
-        paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-        depositStatus: string;
-        paymentChannel: string | null;
-        addonLines: {
-          /** Format: uuid */
-          id: string;
-          /** Format: uuid */
-          addonId: string | null;
-          /** @enum {string} */
-          type: "per_day" | "fixed";
-          unitPrice: number;
-          name: string;
-          total: number;
-        }[];
-        charges: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          type: "vehicle_damage" | "fine" | "cleaning" | "other";
-          amount: number;
-          details: string | null;
-          imageUrls: string[];
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          inspectionMarkId?: string;
-          /** Format: uuid */
-          inspectionId?: string;
-          damage?: {
-            zone: string;
-            severity: string;
-            damageType: string;
-            note: string | null;
-            photoUrl: string | null;
-            posX: number | null;
-            posY: number | null;
-            price: number | null;
-          };
-        }[];
-        notes: {
-          /** Format: uuid */
-          id: string;
-          body: string;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          authorId: string | null;
-          authorName: string;
-        }[];
-        history: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-          /** @enum {string} */
-          paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-          /** Format: date-time */
-          changedAt: string;
-          /** Format: uuid */
-          authorId?: string;
-          authorName?: string;
-        }[];
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-      }[];
-      returnsToday: {
-        /** Format: uuid */
-        id: string;
-        customer: {
-          /** Format: uuid */
-          id: string;
-          fullName: string;
-          firstName: string;
-          lastName: string | null;
-          email: string | null;
-          phone: string;
-          address: string | null;
-          addressLine2: string | null;
-          city: string | null;
-          region: string | null;
-          postcode: string | null;
-          country: string | null;
-          idNumber: string | null;
-          idExpiresAt: string | null;
-          idScanUrl: string | null;
-          idScans: {
+        InviteUserDto: {
+            /** Format: email */
+            email: string;
+            name: string;
+            /** @enum {string} */
+            role: "staff" | "manager";
+        };
+        InvoiceUrlDto: {
+            /** Format: uri */
+            invoiceUrl: string;
+        };
+        LoginResponseDto: {
+            user: {
+                /** Format: uuid */
+                id: string;
+                email: string;
+                name: string;
+                photoUrl: string | null;
+                company: string;
+                /** Format: uuid */
+                companyId: string;
+                companyLogoUrl: string | null;
+                logoUrl: string | null;
+                onboardingCompleted: boolean;
+                /** @enum {string} */
+                role: "owner" | "manager" | "staff";
+                isPlatformAdmin: boolean;
+                impersonating: boolean;
+                /** Format: uuid */
+                activeBranchId: string | null;
+                activeBranchName: string | null;
+                /** @enum {string} */
+                branchScope: "all" | "branch";
+                accessibleBranches: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    isHeadquarters: boolean;
+                }[];
+            };
+            /** Format: date-time */
+            loginAt: string;
+        };
+        MemberDto: {
             /** Format: uuid */
             id: string;
-            url: string;
-          }[];
-          drivingLicenceNumber: string | null;
-          drivingLicenceExpiresAt: string | null;
-          licenceScanUrl: string | null;
-          licenceScans: {
-            /** Format: uuid */
-            id: string;
-            url: string;
-          }[];
-          dateOfBirth: string | null;
-          notes: {
-            /** Format: uuid */
-            id: string;
-            body: string;
+            email: string;
+            name: string;
+            /** @enum {string} */
+            role: "owner" | "manager" | "staff";
             /** Format: date-time */
             createdAt: string;
-            /** Format: uuid */
-            authorId: string | null;
-            authorName: string;
-          }[];
-          /** @enum {string} */
-          origin: "admin" | "web" | "mobile" | "marketplace";
-          reservationCount: number;
-          /** Format: date-time */
-          lastReservationAt: string | null;
-          /** @enum {string|null} */
-          licenceAlert: "warning" | "expired" | null;
-          /** Format: date-time */
-          deactivatedAt: string | null;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: date-time */
-          updatedAt: string;
         };
-        vehicle: {
-          /** Format: uuid */
-          id: string;
-          plate: string;
-          make: string;
-          model: string;
-          year: number;
-          color: string;
-          fuelType: string;
-          vin: string | null;
-          category: string;
-          dailyRate: number;
-          deposit: number;
-          status: string;
-          statusReason: string | null;
-          insurer: string | null;
-          /** Format: uuid */
-          branchId: string;
-          registeredAt: string | null;
-          currentMileage: number | null;
-          insuranceExpiresAt: string | null;
-          itvExpiresAt: string | null;
-          roadTaxDueAt: string | null;
-          nextServiceDueAt: string | null;
-          insuranceScanUrl: string | null;
-          itvScanUrl: string | null;
-          registrationScanUrl: string | null;
-          technicalSheetScanUrl: string | null;
-          roadTaxReceiptScanUrl: string | null;
-          photoUrl: string | null;
-          /** Format: uuid */
-          stockPhotoId: string | null;
-          enginePowerKw: number | null;
-          engineDisplacementCc: number | null;
-          co2Emissions: number | null;
-          environmentalLabel: string | null;
-          seatingCapacity: number | null;
-          maxTowingWeight: number | null;
-          maxAuthorizedMassKg: number | null;
-          unladenMassKg: number | null;
-          doorCount: number | null;
-          transmission: string | null;
-          registrationRawData: {
-            [key: string]: unknown;
-          } | null;
-          technicalSheetRawData: {
-            [key: string]: unknown;
-          } | null;
-          notes: {
+        NotificationCollectionDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                type: "welcome" | "test" | "vehicle_insurance_expiring" | "vehicle_insurance_expired" | "road_tax_due_soon" | "road_tax_overdue" | "reservation_cancelled" | "itv_expiring" | "pickup_today" | "licence_expiring" | "return_today" | "return_overdue" | "reservation_created_external" | "reservation_updated_dates_vehicle" | "damage_recorded_on_return" | "licence_expired" | "itv_expired" | "deposit_due_before_pickup" | "missing_docs_before_pickup" | "no_show" | "pickup_soon" | "return_soon" | "contract_signed" | "contract_signed_remote" | "contract_delivery_failed" | "ses_communication_failed" | "invoice_needs_attention" | "blacklist_expiring" | "blacklist_booking_blocked";
+                /** @enum {string} */
+                status: "unread" | "acknowledged" | "dismissed";
+                /** Format: date-time */
+                createdAt: string;
+                params: {
+                    [key: string]: string;
+                };
+                /** Format: uuid */
+                vehicleId: string | null;
+                /** Format: uuid */
+                reservationId: string | null;
+                /** Format: uuid */
+                customerId: string | null;
+            }[];
+            page: {
+                total: number;
+                nextCursor: string | null;
+            };
+        };
+        NotificationDto: {
             /** Format: uuid */
             id: string;
-            body: string;
+            /** @enum {string} */
+            type: "welcome" | "test" | "vehicle_insurance_expiring" | "vehicle_insurance_expired" | "road_tax_due_soon" | "road_tax_overdue" | "reservation_cancelled" | "itv_expiring" | "pickup_today" | "licence_expiring" | "return_today" | "return_overdue" | "reservation_created_external" | "reservation_updated_dates_vehicle" | "damage_recorded_on_return" | "licence_expired" | "itv_expired" | "deposit_due_before_pickup" | "missing_docs_before_pickup" | "no_show" | "pickup_soon" | "return_soon" | "contract_signed" | "contract_signed_remote" | "contract_delivery_failed" | "ses_communication_failed" | "invoice_needs_attention" | "blacklist_expiring" | "blacklist_booking_blocked";
+            /** @enum {string} */
+            status: "unread" | "acknowledged" | "dismissed";
             /** Format: date-time */
             createdAt: string;
+            params: {
+                [key: string]: string;
+            };
             /** Format: uuid */
-            authorId: string | null;
-            authorName: string;
-          }[];
-          alerts: {
-            /** @enum {string} */
-            type:
-              | "insurance_expiring"
-              | "itv_expiring"
-              | "road_tax_due"
-              | "service_due";
-            /** @enum {string} */
-            severity: "expired" | "critical" | "warning";
+            vehicleId: string | null;
+            /** Format: uuid */
+            reservationId: string | null;
+            /** Format: uuid */
+            customerId: string | null;
+        };
+        OtpSentDto: {
+            otpDestination: string;
+            /** Format: date-time */
             expiresAt: string;
-            daysUntil: number;
-          }[];
-          reservationCount: number;
-          /** Format: date-time */
-          deactivatedAt: string | null;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: date-time */
-          updatedAt: string;
         };
-        /** Format: uuid */
-        pickupBranchId: string;
-        /** Format: uuid */
-        returnBranchId: string;
-        startDate: string;
-        endDate: string;
-        startTime: string | null;
-        endTime: string | null;
-        totalDays: number;
-        dailyRate: number;
-        deposit: number;
-        vehicleSubtotal: number;
-        addonsSubtotal: number;
-        totalAmount: number;
-        chargesTotal: number;
-        grandTotal: number;
-        /** @enum {string} */
-        status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-        /** @enum {string} */
-        paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-        depositStatus: string;
-        paymentChannel: string | null;
-        addonLines: {
-          /** Format: uuid */
-          id: string;
-          /** Format: uuid */
-          addonId: string | null;
-          /** @enum {string} */
-          type: "per_day" | "fixed";
-          unitPrice: number;
-          name: string;
-          total: number;
-        }[];
-        charges: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          type: "vehicle_damage" | "fine" | "cleaning" | "other";
-          amount: number;
-          details: string | null;
-          imageUrls: string[];
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          inspectionMarkId?: string;
-          /** Format: uuid */
-          inspectionId?: string;
-          damage?: {
-            zone: string;
-            severity: string;
-            damageType: string;
-            note: string | null;
-            photoUrl: string | null;
-            posX: number | null;
-            posY: number | null;
-            price: number | null;
-          };
-        }[];
-        notes: {
-          /** Format: uuid */
-          id: string;
-          body: string;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          authorId: string | null;
-          authorName: string;
-        }[];
-        history: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-          /** @enum {string} */
-          paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-          /** Format: date-time */
-          changedAt: string;
-          /** Format: uuid */
-          authorId?: string;
-          authorName?: string;
-        }[];
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-      }[];
-      activeRentals: {
-        /** Format: uuid */
-        id: string;
-        customer: {
-          /** Format: uuid */
-          id: string;
-          fullName: string;
-          firstName: string;
-          lastName: string | null;
-          email: string | null;
-          phone: string;
-          address: string | null;
-          addressLine2: string | null;
-          city: string | null;
-          region: string | null;
-          postcode: string | null;
-          country: string | null;
-          idNumber: string | null;
-          idExpiresAt: string | null;
-          idScanUrl: string | null;
-          idScans: {
-            /** Format: uuid */
-            id: string;
-            url: string;
-          }[];
-          drivingLicenceNumber: string | null;
-          drivingLicenceExpiresAt: string | null;
-          licenceScanUrl: string | null;
-          licenceScans: {
-            /** Format: uuid */
-            id: string;
-            url: string;
-          }[];
-          dateOfBirth: string | null;
-          notes: {
-            /** Format: uuid */
-            id: string;
-            body: string;
-            /** Format: date-time */
-            createdAt: string;
-            /** Format: uuid */
-            authorId: string | null;
-            authorName: string;
-          }[];
-          /** @enum {string} */
-          origin: "admin" | "web" | "mobile" | "marketplace";
-          reservationCount: number;
-          /** Format: date-time */
-          lastReservationAt: string | null;
-          /** @enum {string|null} */
-          licenceAlert: "warning" | "expired" | null;
-          /** Format: date-time */
-          deactivatedAt: string | null;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: date-time */
-          updatedAt: string;
+        /** @default {} */
+        PayLinkInputDto: {
+            /**
+             * @default full
+             * @enum {string}
+             */
+            purpose: "full" | "advance";
+            /** Format: uri */
+            successUrl?: string;
+            /** Format: uri */
+            cancelUrl?: string;
         };
-        vehicle: {
-          /** Format: uuid */
-          id: string;
-          plate: string;
-          make: string;
-          model: string;
-          year: number;
-          color: string;
-          fuelType: string;
-          vin: string | null;
-          category: string;
-          dailyRate: number;
-          deposit: number;
-          status: string;
-          statusReason: string | null;
-          insurer: string | null;
-          /** Format: uuid */
-          branchId: string;
-          registeredAt: string | null;
-          currentMileage: number | null;
-          insuranceExpiresAt: string | null;
-          itvExpiresAt: string | null;
-          roadTaxDueAt: string | null;
-          nextServiceDueAt: string | null;
-          insuranceScanUrl: string | null;
-          itvScanUrl: string | null;
-          registrationScanUrl: string | null;
-          technicalSheetScanUrl: string | null;
-          roadTaxReceiptScanUrl: string | null;
-          photoUrl: string | null;
-          /** Format: uuid */
-          stockPhotoId: string | null;
-          enginePowerKw: number | null;
-          engineDisplacementCc: number | null;
-          co2Emissions: number | null;
-          environmentalLabel: string | null;
-          seatingCapacity: number | null;
-          maxTowingWeight: number | null;
-          maxAuthorizedMassKg: number | null;
-          unladenMassKg: number | null;
-          doorCount: number | null;
-          transmission: string | null;
-          registrationRawData: {
-            [key: string]: unknown;
-          } | null;
-          technicalSheetRawData: {
-            [key: string]: unknown;
-          } | null;
-          notes: {
-            /** Format: uuid */
-            id: string;
-            body: string;
+        PayLinkResultDto: {
+            url: string;
             /** Format: date-time */
-            createdAt: string;
-            /** Format: uuid */
-            authorId: string | null;
-            authorName: string;
-          }[];
-          alerts: {
-            /** @enum {string} */
-            type:
-              | "insurance_expiring"
-              | "itv_expiring"
-              | "road_tax_due"
-              | "service_due";
-            /** @enum {string} */
-            severity: "expired" | "critical" | "warning";
             expiresAt: string;
-            daysUntil: number;
-          }[];
-          reservationCount: number;
-          /** Format: date-time */
-          deactivatedAt: string | null;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: date-time */
-          updatedAt: string;
+            checkoutSessionId: string;
+            emailSent: boolean;
+            payment: {
+                /** Format: uuid */
+                reservationId: string;
+                /** @enum {string} */
+                paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                /** @enum {string} */
+                depositStatus: "none" | "requires_hold" | "held" | "captured" | "released";
+                companyInsuranceAccepted: boolean;
+                /** @enum {string|null} */
+                paymentChannel: "walk_in" | "phone" | "cash" | null;
+                rentalPaymentIntentId: string | null;
+                depositPaymentIntentId: string | null;
+                checkoutSessionId: string | null;
+                payLinkUrl: string | null;
+                /** Format: date-time */
+                payLinkExpiresAt: string | null;
+                canStartRental: boolean;
+                totalAmount: number;
+                paidAmount: number;
+                balanceDue: number;
+                depositAmount: number;
+                excessAmount: number | null;
+                insurancePackage: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                } | null;
+                currency: string;
+                connectedAccountId: string | null;
+                chargesEnabled: boolean;
+                refundableAmount: number;
+                cardRefundableAmount: number;
+                suggestedRefund: number | null;
+                advance: {
+                    percent: number;
+                    amount: number;
+                    due: number;
+                    covered: boolean;
+                    fullPaymentRequiredAtPickup: boolean;
+                    cancellationRefund: number;
+                } | null;
+                charges: {
+                    total: number;
+                    collected: number;
+                    balanceDue: number;
+                    linkUrl: string | null;
+                    /** Format: date-time */
+                    linkExpiresAt: string | null;
+                };
+                /** Format: date-time */
+                depositHoldExpiresAt: string | null;
+                depositRenewalFailed: boolean;
+                hasSavedCard: boolean;
+                transactions: {
+                    /** Format: uuid */
+                    id: string;
+                    /** Format: uuid */
+                    companyId: string;
+                    /** Format: uuid */
+                    reservationId: string;
+                    /** @enum {string} */
+                    eventType: "rental_card_paid" | "rental_cash_paid" | "deposit_held" | "deposit_captured" | "deposit_released" | "deposit_cash_collected" | "payment_received" | "payment_voided" | "refund_recorded" | "charge_paid" | "charge_refunded";
+                    /** @enum {string|null} */
+                    channel: "walk_in" | "phone" | "cash" | null;
+                    /** @enum {string|null} */
+                    method: "stripe_card" | "cash" | "card_terminal" | "bizum" | "bank_transfer" | null;
+                    amount: number;
+                    currency: string;
+                    reference: string | null;
+                    note: string | null;
+                    voidsTransactionId: string | null;
+                    stripePaymentIntentId: string | null;
+                    stripeCheckoutSessionId: string | null;
+                    stripeRefundId: string | null;
+                    receiptUrl: string | null;
+                    actorUserId: string | null;
+                    actorName: string | null;
+                    metadata: unknown;
+                    /** Format: date-time */
+                    occurredAt: string;
+                    customerName: string | null;
+                    customerEmail: string | null;
+                    vehicleLabel: string | null;
+                }[];
+            };
         };
-        /** Format: uuid */
-        pickupBranchId: string;
-        /** Format: uuid */
-        returnBranchId: string;
-        startDate: string;
-        endDate: string;
-        startTime: string | null;
-        endTime: string | null;
-        totalDays: number;
-        dailyRate: number;
-        deposit: number;
-        vehicleSubtotal: number;
-        addonsSubtotal: number;
-        totalAmount: number;
-        chargesTotal: number;
-        grandTotal: number;
-        /** @enum {string} */
-        status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-        /** @enum {string} */
-        paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-        depositStatus: string;
-        paymentChannel: string | null;
-        addonLines: {
-          /** Format: uuid */
-          id: string;
-          /** Format: uuid */
-          addonId: string | null;
-          /** @enum {string} */
-          type: "per_day" | "fixed";
-          unitPrice: number;
-          name: string;
-          total: number;
-        }[];
-        charges: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          type: "vehicle_damage" | "fine" | "cleaning" | "other";
-          amount: number;
-          details: string | null;
-          imageUrls: string[];
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          inspectionMarkId?: string;
-          /** Format: uuid */
-          inspectionId?: string;
-          damage?: {
-            zone: string;
-            severity: string;
-            damageType: string;
-            note: string | null;
-            photoUrl: string | null;
-            posX: number | null;
-            posY: number | null;
-            price: number | null;
-          };
-        }[];
-        notes: {
-          /** Format: uuid */
-          id: string;
-          body: string;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          authorId: string | null;
-          authorName: string;
-        }[];
-        history: {
-          /** Format: uuid */
-          id: string;
-          /** @enum {string} */
-          status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
-          /** @enum {string} */
-          paymentStatus: "pending" | "deposit_paid" | "paid" | "refunded";
-          /** Format: date-time */
-          changedAt: string;
-          /** Format: uuid */
-          authorId?: string;
-          authorName?: string;
-        }[];
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-      }[];
-      maintenanceVehicles: {
-        /** Format: uuid */
-        id: string;
-        plate: string;
-        make: string;
-        model: string;
-        year: number;
-        color: string;
-        fuelType: string;
-        vin: string | null;
-        category: string;
-        dailyRate: number;
-        deposit: number;
-        status: string;
-        statusReason: string | null;
-        insurer: string | null;
-        /** Format: uuid */
-        branchId: string;
-        registeredAt: string | null;
-        currentMileage: number | null;
-        insuranceExpiresAt: string | null;
-        itvExpiresAt: string | null;
-        roadTaxDueAt: string | null;
-        nextServiceDueAt: string | null;
-        insuranceScanUrl: string | null;
-        itvScanUrl: string | null;
-        registrationScanUrl: string | null;
-        technicalSheetScanUrl: string | null;
-        roadTaxReceiptScanUrl: string | null;
-        photoUrl: string | null;
-        /** Format: uuid */
-        stockPhotoId: string | null;
-        enginePowerKw: number | null;
-        engineDisplacementCc: number | null;
-        co2Emissions: number | null;
-        environmentalLabel: string | null;
-        seatingCapacity: number | null;
-        maxTowingWeight: number | null;
-        maxAuthorizedMassKg: number | null;
-        unladenMassKg: number | null;
-        doorCount: number | null;
-        transmission: string | null;
-        registrationRawData: {
-          [key: string]: unknown;
-        } | null;
-        technicalSheetRawData: {
-          [key: string]: unknown;
-        } | null;
-        notes: {
-          /** Format: uuid */
-          id: string;
-          body: string;
-          /** Format: date-time */
-          createdAt: string;
-          /** Format: uuid */
-          authorId: string | null;
-          authorName: string;
-        }[];
-        alerts: {
-          /** @enum {string} */
-          type:
-            | "insurance_expiring"
-            | "itv_expiring"
-            | "road_tax_due"
-            | "service_due";
-          /** @enum {string} */
-          severity: "expired" | "critical" | "warning";
-          expiresAt: string;
-          daysUntil: number;
-        }[];
-        reservationCount: number;
-        /** Format: date-time */
-        deactivatedAt: string | null;
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string;
-      }[];
+        PaymentCollectionDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                companyId: string | null;
+                companyName: string | null;
+                customerEmail: string;
+                plan: string;
+                billingInterval: string;
+                amount: number;
+                currency: string;
+                status: string;
+                /** Format: date-time */
+                periodStart: string | null;
+                /** Format: date-time */
+                periodEnd: string | null;
+                /** Format: date-time */
+                paidAt: string | null;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        PaymentDto: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            companyId: string | null;
+            customerEmail: string;
+            plan: string;
+            billingInterval: string;
+            amount: number;
+            currency: string;
+            /** @enum {string} */
+            status: "pending" | "processing" | "succeeded" | "failed" | "refunded";
+            /** Format: date-time */
+            periodStart: string | null;
+            /** Format: date-time */
+            periodEnd: string | null;
+            /** Format: date-time */
+            paidAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            hasInvoice: boolean;
+        };
+        PaymentStateDto: {
+            /** Format: uuid */
+            reservationId: string;
+            /** @enum {string} */
+            paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+            /** @enum {string} */
+            depositStatus: "none" | "requires_hold" | "held" | "captured" | "released";
+            companyInsuranceAccepted: boolean;
+            /** @enum {string|null} */
+            paymentChannel: "walk_in" | "phone" | "cash" | null;
+            rentalPaymentIntentId: string[];
+            depositPaymentIntentId: string[];
+            checkoutSessionId: string[];
+            payLinkUrl: string[];
+            /** Format: date-time */
+            payLinkExpiresAt: string | null;
+            canStartRental: boolean;
+            totalAmount: number;
+            paidAmount: number;
+            balanceDue: number;
+            depositAmount: number;
+            excessAmount: number[];
+            insurancePackage: {
+                /** Format: uuid */
+                id: string;
+                name: string;
+            } | null;
+            currency: string;
+            connectedAccountId: string[];
+            chargesEnabled: boolean;
+            refundableAmount: number;
+            cardRefundableAmount: number;
+            suggestedRefund: number[];
+            advance: {
+                percent: number;
+                amount: number;
+                due: number;
+                covered: boolean;
+                fullPaymentRequiredAtPickup: boolean;
+                cancellationRefund: number;
+            } | null;
+            charges: {
+                total: number;
+                collected: number;
+                balanceDue: number;
+                linkUrl: string | null;
+                /** Format: date-time */
+                linkExpiresAt: string | null;
+            };
+            /** Format: date-time */
+            depositHoldExpiresAt: string | null;
+            depositRenewalFailed: boolean;
+            hasSavedCard: boolean;
+            transactions: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                companyId: string;
+                /** Format: uuid */
+                reservationId: string;
+                /** @enum {string} */
+                eventType: "rental_card_paid" | "rental_cash_paid" | "deposit_held" | "deposit_captured" | "deposit_released" | "deposit_cash_collected" | "payment_received" | "payment_voided" | "refund_recorded" | "charge_paid" | "charge_refunded";
+                /** @enum {string|null} */
+                channel: "walk_in" | "phone" | "cash" | null;
+                /** @enum {string|null} */
+                method: "stripe_card" | "cash" | "card_terminal" | "bizum" | "bank_transfer" | null;
+                amount: number;
+                currency: string;
+                reference: string | null;
+                note: string | null;
+                voidsTransactionId: string | null;
+                stripePaymentIntentId: string | null;
+                stripeCheckoutSessionId: string | null;
+                stripeRefundId: string | null;
+                receiptUrl: string | null;
+                actorUserId: string | null;
+                actorName: string | null;
+                metadata: unknown;
+                /** Format: date-time */
+                occurredAt: string;
+                customerName: string | null;
+                customerEmail: string | null;
+                vehicleLabel: string | null;
+            }[];
+        };
+        PlanChangeDto: {
+            plan: string;
+        };
+        PortalRequestDto: {
+            /** Format: uri */
+            returnUrl: string;
+        };
+        PortalSessionDto: {
+            url: string;
+        };
+        PrepareCheckoutDto: {
+            email?: string;
+            billingInterval: string;
+            plan: string;
+        };
+        PriceBreakdownDto: {
+            pricingVersion: number;
+            /** @enum {string} */
+            source: "group" | "override" | "vehicle";
+            /** Format: uuid */
+            groupId: string | null;
+            band: {
+                /** Format: uuid */
+                id: string;
+                minDays: number;
+                maxDays: number | null;
+            } | null;
+            totalDays: number;
+            segments: {
+                /** Format: date */
+                startDate: string;
+                /** Format: date */
+                endDate: string;
+                days: number;
+                /** Format: uuid */
+                seasonId: string | null;
+                seasonName: {
+                    [key: string]: string;
+                } | null;
+                dailyRate: number;
+                weekend: boolean;
+                subtotal: number;
+            }[];
+            vehicleSubtotal: number;
+            averageDailyRate: number;
+            warnings: {
+                /** @enum {string} */
+                code: "pricing.min_days" | "pricing.max_days";
+                /** Format: uuid */
+                seasonId: string;
+                limit: number;
+            }[];
+        };
+        ProfileDto: {
+            /** Format: uuid */
+            id: string;
+            email: string;
+            name: string;
+            photoUrl: string[];
+            /** @enum {string} */
+            role: "owner" | "manager" | "staff";
+            /** Format: uuid */
+            companyId: string;
+            companyName: string;
+            companyLogoUrl: string[];
+            logoUrl: string[];
+        };
+        PublicCompanyDto: {
+            /** Format: uuid */
+            id: string;
+            slug: string;
+            name: string;
+            description: string[];
+            location: string[];
+            locationSlug: string[];
+            latitude: number[];
+            longitude: number[];
+            vehicleCount: number;
+            isPublic: boolean;
+            websiteUrl: string[];
+            email: string[];
+            phone: string[];
+            address: string[];
+            branding: {
+                primaryColor: string;
+                logoUrl: string | null;
+            };
+            defaultLocale: string;
+            currency: string;
+        };
+        PublicConfigDto: {
+            companyDefaults: {
+                timezone: string;
+                timezoneRegion: string;
+                currency: string;
+                defaultLocale: string;
+            };
+            locale: {
+                companyForced: boolean;
+                supported: string[];
+                default: string;
+            };
+            timezones: {
+                id: string;
+                label: string;
+                default: boolean;
+            }[];
+        };
+        PublicSignatureDto: {
+            signerName: string;
+            signatureSvg: string;
+            documentSha256: string;
+            acknowledgements: {
+                key: string;
+            }[];
+            /** Format: date-time */
+            clientSignedAt?: string;
+            device?: {
+                platform: string;
+                osVersion?: string;
+                appVersion?: string;
+                model?: string;
+            };
+        };
+        PublicSignatureResultDto: {
+            /** @enum {string} */
+            status: "signed" | "awaiting_countersign";
+        };
+        PublicSigningDocumentDto: {
+            /** Format: uri */
+            url: string;
+            sha256: string;
+            /** Format: date-time */
+            urlExpiresAt: string;
+            customerName: string;
+            acknowledgements: {
+                key: string;
+                text: string;
+                required: boolean;
+            }[];
+        };
+        PublicSigningInfoDto: {
+            /** @enum {string} */
+            status: "open" | "signed";
+            companyName: string;
+            contractNumber: string;
+            customerName: string;
+            locale: string;
+            /** Format: date-time */
+            expiresAt: string;
+            otpDestination: string[];
+        };
+        PublicVehicleDto: {
+            /** Format: uuid */
+            id: string;
+            companySlug: string;
+            companyName: string;
+            make: string;
+            model: string;
+            year: number;
+            color: string;
+            fuelType: string;
+            category: string;
+            dailyRate: number;
+            deposit: number;
+            depositFrom: number;
+            seats: number | null;
+            transmission: string[];
+            description: string[];
+            currency: string;
+            photos: string[];
+            photoUrl: string[];
+            /** Format: uri */
+            categoryImageUrl: string;
+            available: boolean;
+        };
+        PushTokenDto: {
+            token: string;
+            /** @enum {string} */
+            platform: "ios" | "android";
+            locale?: string;
+        };
+        ReadingsDto: {
+            odometerKm?: number;
+            fuelLevelPercent?: number;
+            notes?: string | null;
+        };
+        RegisterDto: {
+            idToken: string;
+            companyName: string;
+            phone: string;
+            address: string;
+            slug?: string;
+            /** Format: uri */
+            websiteUrl?: string;
+            /** Format: email */
+            companyEmail?: string;
+            timezone?: string;
+            locale?: string;
+            client?: string;
+        };
+        RegisterResponseDto: {
+            user: {
+                /** Format: uuid */
+                id: string;
+                email: string;
+                name: string;
+                photoUrl: string | null;
+                company: string;
+                /** Format: uuid */
+                companyId: string;
+                companyLogoUrl: string | null;
+                logoUrl: string | null;
+                onboardingCompleted: boolean;
+                /** @enum {string} */
+                role: "owner" | "manager" | "staff";
+                isPlatformAdmin: boolean;
+                impersonating: boolean;
+                /** Format: uuid */
+                activeBranchId: string | null;
+                activeBranchName: string | null;
+                /** @enum {string} */
+                branchScope: "all" | "branch";
+                accessibleBranches: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    isHeadquarters: boolean;
+                }[];
+            };
+            /** Format: date-time */
+            loginAt: string;
+            redirectTo: string;
+        };
+        RemovePushTokenDto: {
+            token: string;
+        };
+        RemoveWebPushDto: {
+            endpoint: string;
+        };
+        ReservationDto: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            customerId: string;
+            /** Format: uuid */
+            vehicleId: string;
+            customer: {
+                /** Format: uuid */
+                id: string;
+                fullName: string;
+                firstName: string;
+                lastName: string | null;
+                email: string | null;
+                phone: string;
+                address: string | null;
+                addressLine2: string | null;
+                city: string | null;
+                region: string | null;
+                postcode: string | null;
+                country: string | null;
+                idNumber: string | null;
+                idExpiresAt: string | null;
+                idScanUrl: string | null;
+                idScans: {
+                    /** Format: uuid */
+                    id: string;
+                    url: string;
+                }[];
+                drivingLicenceNumber: string | null;
+                drivingLicenceExpiresAt: string | null;
+                licenceScanUrl: string | null;
+                licenceScans: {
+                    /** Format: uuid */
+                    id: string;
+                    url: string;
+                }[];
+                dateOfBirth: string | null;
+                secondLastName: string | null;
+                /** @enum {string|null} */
+                idDocumentType: "nif" | "nie" | "passport" | "other" | null;
+                nationality: string | null;
+                /** @enum {string|null} */
+                sex: "male" | "female" | "other" | null;
+                municipalityCode: string | null;
+                /** @enum {string|null} */
+                drivingLicenceClass: "AM" | "A1" | "A2" | "A" | "B" | "BE" | "C1" | "C1E" | "C" | "CE" | "D1" | "D1E" | "D" | "DE" | "other" | null;
+                /** @enum {string|null} */
+                preferredLocale: "es-ES" | "en-GB" | "pt-PT" | null;
+                notes: {
+                    /** Format: uuid */
+                    id: string;
+                    body: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    authorId: string | null;
+                    authorName: string;
+                }[];
+                /** @enum {string} */
+                origin: "admin" | "web" | "mobile" | "marketplace";
+                reservationCount: number;
+                /** Format: date-time */
+                lastReservationAt: string | null;
+                /** @enum {string|null} */
+                licenceAlert: "warning" | "expired" | null;
+                blacklist: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    reason: "non_payment" | "vehicle_damage" | "fraud_or_false_documents" | "theft_or_late_return" | "traffic_fines_unpaid" | "abusive_behaviour" | "contract_breach" | "other";
+                    details: string;
+                    /** Format: uuid */
+                    reservationId: string | null;
+                    /** Format: date-time */
+                    expiresAt: string;
+                    active: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                    updatedByName: string | null;
+                    /** Format: date-time */
+                    liftedAt: string | null;
+                    liftedByName: string | null;
+                    liftReason: string | null;
+                } | null;
+                /** Format: date-time */
+                deactivatedAt: string | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+            };
+            vehicle: {
+                /** Format: uuid */
+                id: string;
+                plate: string;
+                make: string;
+                model: string;
+                year: number;
+                color: string;
+                fuelType: string;
+                vin: string | null;
+                category: string;
+                /** Format: uuid */
+                groupId: string | null;
+                group: {
+                    /** Format: uuid */
+                    id: string;
+                    name: {
+                        [key: string]: string;
+                    };
+                    code: string | null;
+                    /** @enum {string} */
+                    baseType: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+                } | null;
+                dailyRate: number;
+                priceOverride: boolean;
+                deposit: number;
+                minDeposit: number | null;
+                status: string;
+                statusReason: string | null;
+                insurer: string | null;
+                /** Format: uuid */
+                branchId: string;
+                registeredAt: string | null;
+                currentMileage: number | null;
+                insuranceExpiresAt: string | null;
+                itvExpiresAt: string | null;
+                roadTaxDueAt: string | null;
+                nextServiceDueAt: string | null;
+                insuranceScanUrl: string | null;
+                itvScanUrl: string | null;
+                registrationScanUrl: string | null;
+                registrationScanUrls: string[];
+                technicalSheetScanUrl: string | null;
+                technicalSheetScanUrls: string[];
+                roadTaxReceiptScanUrl: string | null;
+                photoUrl: string | null;
+                /** Format: uri */
+                categoryImageUrl: string;
+                /** Format: uuid */
+                stockPhotoId: string | null;
+                enginePowerKw: number | null;
+                engineDisplacementCc: number | null;
+                co2Emissions: number | null;
+                environmentalLabel: string | null;
+                seatingCapacity: number | null;
+                maxTowingWeight: number | null;
+                maxAuthorizedMassKg: number | null;
+                unladenMassKg: number | null;
+                doorCount: number | null;
+                fuelTankLitres: number | null;
+                batteryKwh: number | null;
+                transmission: string | null;
+                registrationRawData: {
+                    [key: string]: unknown;
+                } | null;
+                technicalSheetRawData: {
+                    [key: string]: unknown;
+                } | null;
+                notes: {
+                    /** Format: uuid */
+                    id: string;
+                    body: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    authorId: string | null;
+                    authorName: string;
+                }[];
+                alerts: {
+                    /** @enum {string} */
+                    type: "insurance_expiring" | "itv_expiring" | "road_tax_due" | "service_due";
+                    /** @enum {string} */
+                    severity: "expired" | "critical" | "warning";
+                    expiresAt: string;
+                    daysUntil: number;
+                }[];
+                reservationCount: number;
+                /** Format: date-time */
+                deactivatedAt: string | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+            };
+            /** Format: uuid */
+            pickupBranchId: string;
+            /** Format: uuid */
+            returnBranchId: string;
+            pickupBranch: {
+                /** Format: uuid */
+                id: string;
+                name: string;
+                address: string;
+                phone: string | null;
+            };
+            returnBranch: {
+                /** Format: uuid */
+                id: string;
+                name: string;
+                address: string;
+                phone: string | null;
+            };
+            startDate: string;
+            endDate: string;
+            startTime: string[];
+            endTime: string[];
+            totalDays: number;
+            dailyRate: number;
+            /** @description Day-by-day price snapshot taken when the car or dates were last set. null for bookings priced before rate tables. */
+            priceBreakdown: {
+                pricingVersion: number;
+                /** @enum {string} */
+                source: "group" | "override" | "vehicle";
+                /** Format: uuid */
+                groupId: string | null;
+                band: {
+                    /** Format: uuid */
+                    id: string;
+                    minDays: number;
+                    maxDays: number | null;
+                } | null;
+                totalDays: number;
+                segments: {
+                    /** Format: date */
+                    startDate: string;
+                    /** Format: date */
+                    endDate: string;
+                    days: number;
+                    /** Format: uuid */
+                    seasonId: string | null;
+                    seasonName: {
+                        [key: string]: string;
+                    } | null;
+                    dailyRate: number;
+                    weekend: boolean;
+                    subtotal: number;
+                }[];
+                vehicleSubtotal: number;
+                averageDailyRate: number;
+                warnings: {
+                    /** @enum {string} */
+                    code: "pricing.min_days" | "pricing.max_days";
+                    /** Format: uuid */
+                    seasonId: string;
+                    limit: number;
+                }[];
+            } | null;
+            deposit: number;
+            vehicleSubtotal: number;
+            addonsSubtotal: number;
+            insuranceSubtotal: number;
+            originalTotalAmount: number;
+            adjustmentAmount: number;
+            totalAmount: number;
+            priceAdjustment: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                type: "discount_percent" | "discount_amount" | "set_total";
+                value: number;
+                computedAmount: number;
+                totalBefore: number;
+                totalAfter: number;
+                /** @enum {string} */
+                reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                reasonText: string | null;
+                needsConfirmation: boolean;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                createdBy: string;
+                createdByName: string;
+                /** Format: date-time */
+                voidedAt: string | null;
+                /** Format: uuid */
+                voidedBy: string | null;
+                voidedByName: string | null;
+                voidReason: string | null;
+            } | null;
+            priceAdjustments: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                type: "discount_percent" | "discount_amount" | "set_total";
+                value: number;
+                computedAmount: number;
+                totalBefore: number;
+                totalAfter: number;
+                /** @enum {string} */
+                reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                reasonText: string | null;
+                needsConfirmation: boolean;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                createdBy: string;
+                createdByName: string;
+                /** Format: date-time */
+                voidedAt: string | null;
+                /** Format: uuid */
+                voidedBy: string | null;
+                voidedByName: string | null;
+                voidReason: string | null;
+            }[];
+            chargesTotal: number;
+            damageChargesTotal: number;
+            damageLiabilityTotal: number;
+            otherChargesTotal: number;
+            liableChargesTotal: number;
+            grandTotal: number;
+            insurance: {
+                /** Format: uuid */
+                packageId: string | null;
+                code: string;
+                name: {
+                    [key: string]: string;
+                };
+                pricePerDay: number;
+                minTotal: number | null;
+                maxTotal: number | null;
+                total: number;
+                excessAmount: number | null;
+                depositAmount: number;
+                coverage: {
+                    [key: string]: "included" | "excluded" | "extra";
+                };
+                driverConditions: {
+                    minDriverAge: number | null;
+                    minLicenceYears: number | null;
+                } | null;
+                driverAgeUnverified: boolean;
+                /** @enum {string} */
+                source: "package" | "legacy_addon" | "legacy_waiver" | "legacy_none";
+            } | null;
+            companyInsuranceAccepted: boolean;
+            /** @enum {string} */
+            status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+            /** @enum {string} */
+            paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+            depositStatus: string;
+            paymentChannel: string[];
+            /** @enum {string} */
+            source: "counter" | "phone" | "storefront";
+            /** @enum {string|null} */
+            cancelReason: "customer_request" | "no_show" | "unpaid_timeout" | "vehicle_unavailable" | "duplicate" | "other" | null;
+            /** Format: date-time */
+            cancelledAt: string | null;
+            addonLines: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                addonId: string | null;
+                /** @enum {string} */
+                type: "per_day" | "fixed";
+                unitPrice: number;
+                name: string;
+                total: number;
+            }[];
+            charges: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                type: "vehicle_damage" | "fine" | "cleaning" | "fuel" | "extra_km" | "other";
+                amount: number;
+                details: string | null;
+                imageUrls: string[];
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                inspectionMarkId?: string;
+                /** Format: uuid */
+                inspectionId?: string;
+                damage?: {
+                    zone: string;
+                    severity: string;
+                    damageType: string;
+                    note: string | null;
+                    photoUrl: string | null;
+                    posX: number | null;
+                    posY: number | null;
+                    price: number | null;
+                };
+                /** @enum {string} */
+                source: "manual" | "auto";
+                calculatedAmount: number | null;
+                waivedReason: string | null;
+            }[];
+            notes: {
+                /** Format: uuid */
+                id: string;
+                body: string;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                authorId: string | null;
+                authorName: string;
+            }[];
+            history: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+                /** @enum {string} */
+                paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                /** Format: date-time */
+                changedAt: string;
+                /** Format: uuid */
+                authorId?: string;
+                authorName?: string;
+            }[];
+            warnings: {
+                /** @enum {string} */
+                code: "reservation.vehicle_at_other_branch" | "reservation.insurance_expires_before_return" | "reservation.price_change_unconfirmed" | "reservation.below_season_min_days" | "reservation.above_season_max_days";
+                message: string;
+                /** @enum {string|null} */
+                side: "pickup" | "return" | null;
+                details: {
+                    [key: string]: string | number | boolean | null;
+                };
+            }[];
+            blacklistOverride: {
+                byName: string;
+                reason: string;
+                /** Format: date-time */
+                at: string;
+            } | null;
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: date-time */
+            updatedAt: string;
+        };
+        ReservationListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                customerId: string;
+                /** Format: uuid */
+                vehicleId: string;
+                customer: {
+                    /** Format: uuid */
+                    id: string;
+                    fullName: string;
+                    firstName: string;
+                    lastName: string | null;
+                    email: string | null;
+                    phone: string;
+                    address: string | null;
+                    addressLine2: string | null;
+                    city: string | null;
+                    region: string | null;
+                    postcode: string | null;
+                    country: string | null;
+                    idNumber: string | null;
+                    idExpiresAt: string | null;
+                    idScanUrl: string | null;
+                    idScans: {
+                        /** Format: uuid */
+                        id: string;
+                        url: string;
+                    }[];
+                    drivingLicenceNumber: string | null;
+                    drivingLicenceExpiresAt: string | null;
+                    licenceScanUrl: string | null;
+                    licenceScans: {
+                        /** Format: uuid */
+                        id: string;
+                        url: string;
+                    }[];
+                    dateOfBirth: string | null;
+                    secondLastName: string | null;
+                    /** @enum {string|null} */
+                    idDocumentType: "nif" | "nie" | "passport" | "other" | null;
+                    nationality: string | null;
+                    /** @enum {string|null} */
+                    sex: "male" | "female" | "other" | null;
+                    municipalityCode: string | null;
+                    /** @enum {string|null} */
+                    drivingLicenceClass: "AM" | "A1" | "A2" | "A" | "B" | "BE" | "C1" | "C1E" | "C" | "CE" | "D1" | "D1E" | "D" | "DE" | "other" | null;
+                    /** @enum {string|null} */
+                    preferredLocale: "es-ES" | "en-GB" | "pt-PT" | null;
+                    notes: {
+                        /** Format: uuid */
+                        id: string;
+                        body: string;
+                        /** Format: date-time */
+                        createdAt: string;
+                        /** Format: uuid */
+                        authorId: string | null;
+                        authorName: string;
+                    }[];
+                    /** @enum {string} */
+                    origin: "admin" | "web" | "mobile" | "marketplace";
+                    reservationCount: number;
+                    /** Format: date-time */
+                    lastReservationAt: string | null;
+                    /** @enum {string|null} */
+                    licenceAlert: "warning" | "expired" | null;
+                    blacklist: {
+                        /** Format: uuid */
+                        id: string;
+                        /** @enum {string} */
+                        reason: "non_payment" | "vehicle_damage" | "fraud_or_false_documents" | "theft_or_late_return" | "traffic_fines_unpaid" | "abusive_behaviour" | "contract_breach" | "other";
+                        details: string;
+                        /** Format: uuid */
+                        reservationId: string | null;
+                        /** Format: date-time */
+                        expiresAt: string;
+                        active: boolean;
+                        /** Format: date-time */
+                        createdAt: string;
+                        createdByName: string;
+                        /** Format: date-time */
+                        updatedAt: string;
+                        updatedByName: string | null;
+                        /** Format: date-time */
+                        liftedAt: string | null;
+                        liftedByName: string | null;
+                        liftReason: string | null;
+                    } | null;
+                    /** Format: date-time */
+                    deactivatedAt: string | null;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                };
+                vehicle: {
+                    /** Format: uuid */
+                    id: string;
+                    plate: string;
+                    make: string;
+                    model: string;
+                    year: number;
+                    color: string;
+                    fuelType: string;
+                    vin: string | null;
+                    category: string;
+                    /** Format: uuid */
+                    groupId: string | null;
+                    group: {
+                        /** Format: uuid */
+                        id: string;
+                        name: {
+                            [key: string]: string;
+                        };
+                        code: string | null;
+                        /** @enum {string} */
+                        baseType: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+                    } | null;
+                    dailyRate: number;
+                    priceOverride: boolean;
+                    deposit: number;
+                    minDeposit: number | null;
+                    status: string;
+                    statusReason: string | null;
+                    insurer: string | null;
+                    /** Format: uuid */
+                    branchId: string;
+                    registeredAt: string | null;
+                    currentMileage: number | null;
+                    insuranceExpiresAt: string | null;
+                    itvExpiresAt: string | null;
+                    roadTaxDueAt: string | null;
+                    nextServiceDueAt: string | null;
+                    insuranceScanUrl: string | null;
+                    itvScanUrl: string | null;
+                    registrationScanUrl: string | null;
+                    registrationScanUrls: string[];
+                    technicalSheetScanUrl: string | null;
+                    technicalSheetScanUrls: string[];
+                    roadTaxReceiptScanUrl: string | null;
+                    photoUrl: string | null;
+                    /** Format: uri */
+                    categoryImageUrl: string;
+                    /** Format: uuid */
+                    stockPhotoId: string | null;
+                    enginePowerKw: number | null;
+                    engineDisplacementCc: number | null;
+                    co2Emissions: number | null;
+                    environmentalLabel: string | null;
+                    seatingCapacity: number | null;
+                    maxTowingWeight: number | null;
+                    maxAuthorizedMassKg: number | null;
+                    unladenMassKg: number | null;
+                    doorCount: number | null;
+                    fuelTankLitres: number | null;
+                    batteryKwh: number | null;
+                    transmission: string | null;
+                    registrationRawData: {
+                        [key: string]: unknown;
+                    } | null;
+                    technicalSheetRawData: {
+                        [key: string]: unknown;
+                    } | null;
+                    notes: {
+                        /** Format: uuid */
+                        id: string;
+                        body: string;
+                        /** Format: date-time */
+                        createdAt: string;
+                        /** Format: uuid */
+                        authorId: string | null;
+                        authorName: string;
+                    }[];
+                    alerts: {
+                        /** @enum {string} */
+                        type: "insurance_expiring" | "itv_expiring" | "road_tax_due" | "service_due";
+                        /** @enum {string} */
+                        severity: "expired" | "critical" | "warning";
+                        expiresAt: string;
+                        daysUntil: number;
+                    }[];
+                    reservationCount: number;
+                    /** Format: date-time */
+                    deactivatedAt: string | null;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: date-time */
+                    updatedAt: string;
+                };
+                /** Format: uuid */
+                pickupBranchId: string;
+                /** Format: uuid */
+                returnBranchId: string;
+                pickupBranch: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    phone: string | null;
+                };
+                returnBranch: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                    address: string;
+                    phone: string | null;
+                };
+                startDate: string;
+                endDate: string;
+                startTime: string | null;
+                endTime: string | null;
+                totalDays: number;
+                dailyRate: number;
+                /** @description Day-by-day price snapshot taken when the car or dates were last set. null for bookings priced before rate tables. */
+                priceBreakdown: {
+                    pricingVersion: number;
+                    /** @enum {string} */
+                    source: "group" | "override" | "vehicle";
+                    /** Format: uuid */
+                    groupId: string | null;
+                    band: {
+                        /** Format: uuid */
+                        id: string;
+                        minDays: number;
+                        maxDays: number | null;
+                    } | null;
+                    totalDays: number;
+                    segments: {
+                        /** Format: date */
+                        startDate: string;
+                        /** Format: date */
+                        endDate: string;
+                        days: number;
+                        /** Format: uuid */
+                        seasonId: string | null;
+                        seasonName: {
+                            [key: string]: string;
+                        } | null;
+                        dailyRate: number;
+                        weekend: boolean;
+                        subtotal: number;
+                    }[];
+                    vehicleSubtotal: number;
+                    averageDailyRate: number;
+                    warnings: {
+                        /** @enum {string} */
+                        code: "pricing.min_days" | "pricing.max_days";
+                        /** Format: uuid */
+                        seasonId: string;
+                        limit: number;
+                    }[];
+                } | null;
+                deposit: number;
+                vehicleSubtotal: number;
+                addonsSubtotal: number;
+                insuranceSubtotal: number;
+                originalTotalAmount: number;
+                adjustmentAmount: number;
+                totalAmount: number;
+                priceAdjustment: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "discount_percent" | "discount_amount" | "set_total";
+                    value: number;
+                    computedAmount: number;
+                    totalBefore: number;
+                    totalAfter: number;
+                    /** @enum {string} */
+                    reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                    reasonText: string | null;
+                    needsConfirmation: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    createdBy: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    voidedAt: string | null;
+                    /** Format: uuid */
+                    voidedBy: string | null;
+                    voidedByName: string | null;
+                    voidReason: string | null;
+                } | null;
+                priceAdjustments: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "discount_percent" | "discount_amount" | "set_total";
+                    value: number;
+                    computedAmount: number;
+                    totalBefore: number;
+                    totalAfter: number;
+                    /** @enum {string} */
+                    reasonCode: "repeat_customer" | "long_rental" | "price_match" | "compensation" | "staff_family" | "other";
+                    reasonText: string | null;
+                    needsConfirmation: boolean;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    createdBy: string;
+                    createdByName: string;
+                    /** Format: date-time */
+                    voidedAt: string | null;
+                    /** Format: uuid */
+                    voidedBy: string | null;
+                    voidedByName: string | null;
+                    voidReason: string | null;
+                }[];
+                chargesTotal: number;
+                damageChargesTotal: number;
+                damageLiabilityTotal: number;
+                otherChargesTotal: number;
+                liableChargesTotal: number;
+                grandTotal: number;
+                insurance: {
+                    /** Format: uuid */
+                    packageId: string | null;
+                    code: string;
+                    name: {
+                        [key: string]: string;
+                    };
+                    pricePerDay: number;
+                    minTotal: number | null;
+                    maxTotal: number | null;
+                    total: number;
+                    excessAmount: number | null;
+                    depositAmount: number;
+                    coverage: {
+                        [key: string]: "included" | "excluded" | "extra";
+                    };
+                    driverConditions: {
+                        minDriverAge: number | null;
+                        minLicenceYears: number | null;
+                    } | null;
+                    driverAgeUnverified: boolean;
+                    /** @enum {string} */
+                    source: "package" | "legacy_addon" | "legacy_waiver" | "legacy_none";
+                } | null;
+                companyInsuranceAccepted: boolean;
+                /** @enum {string} */
+                status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+                /** @enum {string} */
+                paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                depositStatus: string;
+                paymentChannel: string | null;
+                /** @enum {string} */
+                source: "counter" | "phone" | "storefront";
+                /** @enum {string|null} */
+                cancelReason: "customer_request" | "no_show" | "unpaid_timeout" | "vehicle_unavailable" | "duplicate" | "other" | null;
+                /** Format: date-time */
+                cancelledAt: string | null;
+                addonLines: {
+                    /** Format: uuid */
+                    id: string;
+                    /** Format: uuid */
+                    addonId: string | null;
+                    /** @enum {string} */
+                    type: "per_day" | "fixed";
+                    unitPrice: number;
+                    name: string;
+                    total: number;
+                }[];
+                charges: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    type: "vehicle_damage" | "fine" | "cleaning" | "fuel" | "extra_km" | "other";
+                    amount: number;
+                    details: string | null;
+                    imageUrls: string[];
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    inspectionMarkId?: string;
+                    /** Format: uuid */
+                    inspectionId?: string;
+                    damage?: {
+                        zone: string;
+                        severity: string;
+                        damageType: string;
+                        note: string | null;
+                        photoUrl: string | null;
+                        posX: number | null;
+                        posY: number | null;
+                        price: number | null;
+                    };
+                    /** @enum {string} */
+                    source: "manual" | "auto";
+                    calculatedAmount: number | null;
+                    waivedReason: string | null;
+                }[];
+                notes: {
+                    /** Format: uuid */
+                    id: string;
+                    body: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    authorId: string | null;
+                    authorName: string;
+                }[];
+                history: {
+                    /** Format: uuid */
+                    id: string;
+                    /** @enum {string} */
+                    status: "draft" | "confirmed" | "active" | "completed" | "cancelled";
+                    /** @enum {string} */
+                    paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                    /** Format: date-time */
+                    changedAt: string;
+                    /** Format: uuid */
+                    authorId?: string;
+                    authorName?: string;
+                }[];
+                warnings: {
+                    /** @enum {string} */
+                    code: "reservation.vehicle_at_other_branch" | "reservation.insurance_expires_before_return" | "reservation.price_change_unconfirmed" | "reservation.below_season_min_days" | "reservation.above_season_max_days";
+                    message: string;
+                    /** @enum {string|null} */
+                    side: "pickup" | "return" | null;
+                    details: {
+                        [key: string]: string | number | boolean | null;
+                    };
+                }[];
+                blacklistOverride: {
+                    byName: string;
+                    reason: string;
+                    /** Format: date-time */
+                    at: string;
+                } | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+            }[];
+            page: {
+                total: number;
+                nextCursor: string | null;
+            };
+        };
+        ReservationNoteDto: {
+            /** Format: uuid */
+            id: string;
+            body: string;
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: uuid */
+            authorId: string | null;
+            authorName: string;
+        };
+        ReservationNoteListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                body: string;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                authorId: string | null;
+                authorName: string;
+            }[];
+        };
+        ReservationTransactionsDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                companyId: string;
+                /** Format: uuid */
+                reservationId: string;
+                /** @enum {string} */
+                eventType: "rental_card_paid" | "rental_cash_paid" | "deposit_held" | "deposit_captured" | "deposit_released" | "deposit_cash_collected" | "payment_received" | "payment_voided" | "refund_recorded" | "charge_paid" | "charge_refunded";
+                /** @enum {string|null} */
+                channel: "walk_in" | "phone" | "cash" | null;
+                /** @enum {string|null} */
+                method: "stripe_card" | "cash" | "card_terminal" | "bizum" | "bank_transfer" | null;
+                amount: number;
+                currency: string;
+                reference: string | null;
+                note: string | null;
+                voidsTransactionId: string | null;
+                stripePaymentIntentId: string | null;
+                stripeCheckoutSessionId: string | null;
+                stripeRefundId: string | null;
+                receiptUrl: string | null;
+                actorUserId: string | null;
+                actorName: string | null;
+                metadata: unknown;
+                /** Format: date-time */
+                occurredAt: string;
+                customerName: string | null;
+                customerEmail: string | null;
+                vehicleLabel: string | null;
+            }[];
+        };
+        SendContactDto: {
+            name: string;
+            /** Format: email */
+            email: string;
+            subject: string;
+            message: string;
+            source?: string;
+        };
+        SendPasswordResetDto: {
+            /** Format: email */
+            email: string;
+            locale?: string;
+        };
+        SendVerificationDto: {
+            idToken: string;
+            locale?: string;
+            continuePath?: string;
+        };
+        SessionUserDto: {
+            /** Format: uuid */
+            id: string;
+            email: string;
+            name: string;
+            photoUrl: string[];
+            company: string;
+            /** Format: uuid */
+            companyId: string;
+            companyLogoUrl: string[];
+            logoUrl: string[];
+            onboardingCompleted: boolean;
+            /** @enum {string} */
+            role: "owner" | "manager" | "staff";
+            isPlatformAdmin: boolean;
+            impersonating: boolean;
+            /** Format: uuid */
+            activeBranchId: string | null;
+            activeBranchName: string[];
+            /** @enum {string} */
+            branchScope: "all" | "branch";
+            accessibleBranches: {
+                /** Format: uuid */
+                id: string;
+                name: string;
+                address: string;
+                isHeadquarters: boolean;
+            }[];
+        };
+        SetStatusDto: {
+            /** @enum {string} */
+            status: "available" | "maintenance";
+            reason?: string;
+        };
+        SetStockPhotoDto: {
+            /** Format: uuid */
+            stockPhotoId: string;
+        };
+        SettingsDto: {
+            company: {
+                /** Format: uuid */
+                id: string;
+                name: string;
+                timezone: string;
+                defaultLocale: string;
+                phone: string | null;
+                address: string | null;
+                slug: string;
+                websiteUrl: string | null;
+                companyEmail: string | null;
+                description: string | null;
+                isPublic: boolean;
+                onboardingCompleted: boolean;
+                logoUrl: string | null;
+                legalName: string | null;
+                taxId: string | null;
+                registeredAddress: string | null;
+                branding: {
+                    primaryColor: string;
+                    logoUrl: string | null;
+                };
+            };
+            currency: string;
+            /** @enum {string} */
+            role: "owner" | "manager" | "staff";
+            defaults: {
+                timezone: string;
+                timezoneRegion: string;
+                currency: string;
+                defaultLocale: string;
+            };
+            features: {
+                contracts: boolean;
+                rentalPayments: boolean;
+                inspections: boolean;
+                extras: boolean;
+                documentScan: boolean;
+                sesReporting: boolean;
+                oneWayRentals: boolean;
+                locationFees: boolean;
+                invoicing: boolean;
+                blacklist: boolean;
+            };
+            contracts: {
+                /** @default true */
+                requireSignedToStart: boolean;
+                /** @default true */
+                alwaysIncludeSpanish: boolean;
+                /** @default true */
+                autoEmail: boolean;
+                remoteSigning: {
+                    /** @default true */
+                    enabled: boolean;
+                    /** @default false */
+                    requireStaffCountersign: boolean;
+                    /** @default false */
+                    staffMayUploadPaper: boolean;
+                };
+            };
+            rules: {
+                /** @default 7 */
+                sesReadinessWindowDays: number;
+                /** @default 24 */
+                payLinkValidHours: number;
+                /** @default 30 */
+                expiryAlertLeadDays: number;
+                /** @default 7 */
+                expirySecondReminderDays: number;
+                /** @default 1 */
+                expiryFinalReminderDays: number;
+                /** @default true */
+                sendBookingConfirmation: boolean;
+                /**
+                 * @default tables
+                 * @enum {string}
+                 */
+                pricingEngine: "tables" | "legacy";
+            };
+            rentalRules: {
+                /**
+                 * @default same_to_same
+                 * @enum {string}
+                 */
+                fuelPolicy: "same_to_same" | "full_to_full" | "prepaid_with_refund";
+                /** @default null */
+                petrolPricePerLitre: number | null;
+                /** @default null */
+                dieselPricePerLitre: number | null;
+                /** @default null */
+                electricityPricePerKwh: number | null;
+                /** @default 0 */
+                refuelServiceFee: number;
+                /** @default 5 */
+                fuelTolerancePercent: number;
+                /**
+                 * @default unlimited
+                 * @enum {string}
+                 */
+                mileagePolicy: "unlimited" | "limited";
+                /** @default null */
+                kmPerDay: number | null;
+                /** @default null */
+                extraKmPrice: number | null;
+                /** @default null */
+                maxKmPerRental: number | null;
+            };
+            documentScanAvailable: boolean;
+        };
+        SignSessionDto: {
+            sessionToken: string;
+            /** Format: date-time */
+            expiresAt: string;
+        };
+        SignatureDto: {
+            signatureSvg: string;
+            /** @default  */
+            signerName: string;
+        };
+        SlugAvailabilityDto: {
+            slug: string;
+            available: boolean;
+        };
+        StockPhotoDto: {
+            /** Format: uuid */
+            id: string;
+            make: string;
+            model: string;
+            yearFrom: number | null;
+            yearTo: number | null;
+            url: string;
+            licenseNote: string[];
+        };
+        SubscriptionInfoDto: {
+            plan: string;
+            planDisplayName: string;
+            priceCents: number;
+            currency: string;
+            status: string;
+            billingInterval: string[];
+            vehicleCount: number;
+            vehicleLimit: number | null;
+            staffCount: number;
+            staffLimit: number | null;
+            documentScanPagesUsed: number;
+            documentScanPageLimit: number | null;
+            features: {
+                apiAccess: boolean;
+                prioritySupport: boolean;
+                customBranding: boolean;
+                /** @default true */
+                reports: boolean;
+                advancedReporting: boolean;
+                marketplaceListing: boolean;
+                /** @default false */
+                seasonalPricing: boolean;
+                modules: {
+                    contracts: boolean;
+                    rentalPayments: boolean;
+                    inspections: boolean;
+                    extras: boolean;
+                    documentScan: boolean;
+                };
+            };
+            availableUpgrades: {
+                id: string;
+                displayName: string;
+                tierRank: number;
+                priceCents: number;
+                currency: string;
+                vehicleLimit: number | null;
+                staffLimit: number | null;
+            }[];
+            availableDowngrades: {
+                id: string;
+                displayName: string;
+                tierRank: number;
+                priceCents: number;
+                currency: string;
+                vehicleLimit: number | null;
+                staffLimit: number | null;
+            }[];
+            canUpgrade: boolean;
+            canDowngrade: boolean;
+            canCancel: boolean;
+            /** Format: date-time */
+            cancelAt: string | null;
+            hasStripeCustomer: boolean;
+        };
+        SyncResultDto: {
+            payment: {
+                /** Format: uuid */
+                reservationId: string;
+                /** @enum {string} */
+                paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                /** @enum {string} */
+                depositStatus: "none" | "requires_hold" | "held" | "captured" | "released";
+                companyInsuranceAccepted: boolean;
+                /** @enum {string|null} */
+                paymentChannel: "walk_in" | "phone" | "cash" | null;
+                rentalPaymentIntentId: string | null;
+                depositPaymentIntentId: string | null;
+                checkoutSessionId: string | null;
+                payLinkUrl: string | null;
+                /** Format: date-time */
+                payLinkExpiresAt: string | null;
+                canStartRental: boolean;
+                totalAmount: number;
+                paidAmount: number;
+                balanceDue: number;
+                depositAmount: number;
+                excessAmount: number | null;
+                insurancePackage: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                } | null;
+                currency: string;
+                connectedAccountId: string | null;
+                chargesEnabled: boolean;
+                refundableAmount: number;
+                cardRefundableAmount: number;
+                suggestedRefund: number | null;
+                advance: {
+                    percent: number;
+                    amount: number;
+                    due: number;
+                    covered: boolean;
+                    fullPaymentRequiredAtPickup: boolean;
+                    cancellationRefund: number;
+                } | null;
+                charges: {
+                    total: number;
+                    collected: number;
+                    balanceDue: number;
+                    linkUrl: string | null;
+                    /** Format: date-time */
+                    linkExpiresAt: string | null;
+                };
+                /** Format: date-time */
+                depositHoldExpiresAt: string | null;
+                depositRenewalFailed: boolean;
+                hasSavedCard: boolean;
+                transactions: {
+                    /** Format: uuid */
+                    id: string;
+                    /** Format: uuid */
+                    companyId: string;
+                    /** Format: uuid */
+                    reservationId: string;
+                    /** @enum {string} */
+                    eventType: "rental_card_paid" | "rental_cash_paid" | "deposit_held" | "deposit_captured" | "deposit_released" | "deposit_cash_collected" | "payment_received" | "payment_voided" | "refund_recorded" | "charge_paid" | "charge_refunded";
+                    /** @enum {string|null} */
+                    channel: "walk_in" | "phone" | "cash" | null;
+                    /** @enum {string|null} */
+                    method: "stripe_card" | "cash" | "card_terminal" | "bizum" | "bank_transfer" | null;
+                    amount: number;
+                    currency: string;
+                    reference: string | null;
+                    note: string | null;
+                    voidsTransactionId: string | null;
+                    stripePaymentIntentId: string | null;
+                    stripeCheckoutSessionId: string | null;
+                    stripeRefundId: string | null;
+                    receiptUrl: string | null;
+                    actorUserId: string | null;
+                    actorName: string | null;
+                    metadata: unknown;
+                    /** Format: date-time */
+                    occurredAt: string;
+                    customerName: string | null;
+                    customerEmail: string | null;
+                    vehicleLabel: string | null;
+                }[];
+            };
+            receiptUrl: string[];
+        };
+        TeamDto: {
+            members: {
+                /** Format: uuid */
+                id: string;
+                email: string;
+                name: string;
+                /** @enum {string} */
+                role: "owner" | "manager" | "staff";
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            deactivatedMembers: {
+                /** Format: uuid */
+                id: string;
+                email: string;
+                name: string;
+                /** @enum {string} */
+                role: "owner" | "manager" | "staff";
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            invitations: {
+                /** Format: uuid */
+                id: string;
+                email: string;
+                name: string;
+                /** @enum {string} */
+                role: "staff" | "manager";
+                /** Format: date-time */
+                expiresAt: string;
+                /** Format: date-time */
+                createdAt: string;
+                inviteUrl?: string;
+            }[];
+        };
+        TestPushResultDto: {
+            sent: number;
+            /** Format: uuid */
+            notificationId: string;
+        };
+        TransactionListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                /** Format: uuid */
+                companyId: string;
+                /** Format: uuid */
+                reservationId: string;
+                /** @enum {string} */
+                eventType: "rental_card_paid" | "rental_cash_paid" | "deposit_held" | "deposit_captured" | "deposit_released" | "deposit_cash_collected" | "payment_received" | "payment_voided" | "refund_recorded" | "charge_paid" | "charge_refunded";
+                /** @enum {string|null} */
+                channel: "walk_in" | "phone" | "cash" | null;
+                /** @enum {string|null} */
+                method: "stripe_card" | "cash" | "card_terminal" | "bizum" | "bank_transfer" | null;
+                amount: number;
+                currency: string;
+                reference: string | null;
+                note: string | null;
+                voidsTransactionId: string | null;
+                stripePaymentIntentId: string | null;
+                stripeCheckoutSessionId: string | null;
+                stripeRefundId: string | null;
+                receiptUrl: string | null;
+                actorUserId: string | null;
+                actorName: string | null;
+                metadata: unknown;
+                /** Format: date-time */
+                occurredAt: string;
+                customerName: string | null;
+                customerEmail: string | null;
+                vehicleLabel: string | null;
+            }[];
+            total: number;
+            limit: number;
+            offset: number;
+        };
+        UpdateAddonDto: {
+            /** @enum {string} */
+            kind?: "child_seat" | "booster_seat" | "gps" | "additional_driver" | "wifi_hotspot" | "roof_box" | "ski_rack" | "snow_chains" | "toll_tag" | "cleaning" | "full_tank" | "other" | "full_insurance";
+            name?: {
+                [key: string]: string;
+            };
+            shortDescription?: {
+                [key: string]: string;
+            };
+            longDescription?: {
+                [key: string]: string;
+            };
+            /** @enum {string} */
+            type?: "per_day" | "fixed";
+            price?: number;
+            active?: boolean;
+            quantity?: number | null;
+        };
+        UpdateBranchDto: {
+            name?: string;
+            address?: string;
+            phone?: string | null;
+            /** Format: email */
+            email?: string | null;
+            timezone?: string[];
+            isActive?: boolean;
+            sesEstablishmentCode?: string | null;
+        };
+        UpdateChargeDto: {
+            /** @enum {string} */
+            type?: "vehicle_damage" | "fine" | "cleaning" | "fuel" | "extra_km" | "other";
+            amount?: number;
+            details?: string | null;
+            waivedReason?: string | null;
+        };
+        UpdateCustomerDto: {
+            firstName?: string;
+            lastName?: string | null;
+            fullName?: string;
+            email?: (string | "") | null;
+            phone?: string;
+            address?: string | null;
+            addressLine2?: string | null;
+            city?: string | null;
+            postcode?: string | null;
+            region?: string | null;
+            country?: (string | "") | null;
+            idNumber?: string | null;
+            idExpiresAt?: (string | "") | null;
+            drivingLicenceNumber?: string | null;
+            drivingLicenceExpiresAt?: (string | "") | null;
+            dateOfBirth?: (string | "") | null;
+            secondLastName?: (string | "") | null;
+            idDocumentType?: (("nif" | "nie" | "passport" | "other") | "") | null;
+            nationality?: (string | "") | null;
+            sex?: (("male" | "female" | "other") | "") | null;
+            municipalityCode?: (string | "") | null;
+            drivingLicenceClass?: (("AM" | "A1" | "A2" | "A" | "B" | "BE" | "C1" | "C1E" | "C" | "CE" | "D1" | "D1E" | "D" | "DE" | "other") | "") | null;
+            preferredLocale?: (("es-ES" | "en-GB" | "pt-PT") | "") | null;
+            deactivated?: boolean;
+        };
+        UpdateProfileDto: {
+            /** Format: uuid */
+            id?: string;
+            name?: string;
+            photoUrl?: string[];
+        };
+        UpdateReservationDto: {
+            /** Format: uuid */
+            customerId?: string;
+            /** Format: uuid */
+            vehicleId?: string;
+            /** Format: uuid */
+            pickupBranchId?: string;
+            /** Format: uuid */
+            returnBranchId?: string;
+            /** Format: date */
+            startDate?: string;
+            /** Format: date */
+            endDate?: string;
+            startTime?: string | null;
+            endTime?: string | null;
+            addonIds?: string[];
+            /** Format: uuid */
+            insurancePackageId?: string;
+            blacklistOverrideReason?: string;
+        };
+        UpdateRoleDto: {
+            /** @enum {string} */
+            role: "staff" | "manager";
+        };
+        UpdateSettingsDto: {
+            company?: {
+                name?: string;
+                timezone?: string;
+                defaultLocale?: string;
+                phone?: string;
+                address?: string;
+                legalName?: string | null;
+                taxId?: string | null;
+                registeredAddress?: string | null;
+                slug?: string;
+                /** Format: uri */
+                websiteUrl?: string | null;
+                /** Format: email */
+                companyEmail?: string | null;
+                description?: string | null;
+                isPublic?: boolean;
+                onboardingCompleted?: boolean;
+                /** Format: uri */
+                logoUrl?: string | null;
+                branding?: {
+                    primaryColor?: string;
+                    /** Format: uri */
+                    logoUrl?: string | null;
+                };
+            };
+            currency?: string;
+            contracts?: {
+                requireSignedToStart?: boolean;
+                alwaysIncludeSpanish?: boolean;
+                autoEmail?: boolean;
+                remoteSigning?: {
+                    enabled?: boolean;
+                    requireStaffCountersign?: boolean;
+                    staffMayUploadPaper?: boolean;
+                };
+            };
+            features?: {
+                contracts?: boolean;
+                rentalPayments?: boolean;
+                inspections?: boolean;
+                extras?: boolean;
+                documentScan?: boolean;
+                sesReporting?: boolean;
+                oneWayRentals?: boolean;
+                locationFees?: boolean;
+                invoicing?: boolean;
+                blacklist?: boolean;
+            };
+            rules?: {
+                /** @default 7 */
+                sesReadinessWindowDays: number;
+                /** @default 24 */
+                payLinkValidHours: number;
+                /** @default 30 */
+                expiryAlertLeadDays: number;
+                /** @default 7 */
+                expirySecondReminderDays: number;
+                /** @default 1 */
+                expiryFinalReminderDays: number;
+                /** @default true */
+                sendBookingConfirmation: boolean;
+                /**
+                 * @default tables
+                 * @enum {string}
+                 */
+                pricingEngine: "tables" | "legacy";
+            };
+            rentalRules?: {
+                /**
+                 * @default same_to_same
+                 * @enum {string}
+                 */
+                fuelPolicy: "same_to_same" | "full_to_full" | "prepaid_with_refund";
+                /** @default null */
+                petrolPricePerLitre: number | null;
+                /** @default null */
+                dieselPricePerLitre: number | null;
+                /** @default null */
+                electricityPricePerKwh: number | null;
+                /** @default 0 */
+                refuelServiceFee: number;
+                /** @default 5 */
+                fuelTolerancePercent: number;
+                /**
+                 * @default unlimited
+                 * @enum {string}
+                 */
+                mileagePolicy: "unlimited" | "limited";
+                /** @default null */
+                kmPerDay: number | null;
+                /** @default null */
+                extraKmPrice: number | null;
+                /** @default null */
+                maxKmPerRental: number | null;
+            };
+        };
+        UpdateVehicleDto: {
+            plate?: string;
+            make?: string;
+            model?: string;
+            year?: number;
+            color?: string;
+            /** @enum {string} */
+            fuelType?: "petrol" | "diesel" | "electric" | "hybrid" | "plugin_hybrid";
+            /** @enum {string} */
+            category?: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+            /** Format: uuid */
+            groupId?: string | null;
+            dailyRate?: number;
+            /** @description true prices this car at its own dailyRate instead of its group's rate table. */
+            priceOverride?: boolean;
+            deposit?: number;
+            minDeposit?: number | null;
+            status?: unknown;
+            deactivated?: boolean;
+            vin?: string | null;
+            insurer?: string | null;
+            registeredAt?: (string | "") | null;
+            currentMileage?: number | null;
+            insuranceExpiresAt?: (string | "") | null;
+            itvExpiresAt?: (string | "") | null;
+            roadTaxDueAt?: (string | "") | null;
+            nextServiceDueAt?: (string | "") | null;
+            enginePowerKw?: number | null;
+            engineDisplacementCc?: number | null;
+            co2Emissions?: number | null;
+            seatingCapacity?: number | null;
+            maxTowingWeight?: number | null;
+            maxAuthorizedMassKg?: number | null;
+            unladenMassKg?: number | null;
+            doorCount?: number | null;
+            fuelTankLitres?: number | null;
+            batteryKwh?: number | null;
+            /** @enum {string|null} */
+            environmentalLabel?: "0" | "ECO" | "C" | "B" | "none" | null;
+            /** @enum {string|null} */
+            transmission?: "automatic" | "manual" | null;
+            registrationRawData?: {
+                [key: string]: unknown;
+            } | null;
+            technicalSheetRawData?: {
+                [key: string]: unknown;
+            } | null;
+        };
+        UploadResponseDto: {
+            /** @enum {string} */
+            kind: "vehicle_photo" | "vehicle_insurance" | "vehicle_itv" | "vehicle_registration" | "vehicle_technical_sheet" | "vehicle_road_tax_receipt" | "customer_id" | "customer_licence" | "charge_image" | "company_logo" | "user_avatar";
+            /** Format: uuid */
+            entityId: string;
+            /** @description Present for public kinds only */
+            url?: string;
+        };
+        VapidKeyDto: {
+            publicKey: string;
+        };
+        VehicleAvailabilityDto: {
+            /** Format: uuid */
+            vehicleId: string;
+            available: boolean;
+            conflicts: {
+                /** Format: uuid */
+                reservationId: string;
+                startDate: string;
+                endDate: string;
+            }[];
+        };
+        VehicleDto: {
+            /** Format: uuid */
+            id: string;
+            plate: string;
+            make: string;
+            model: string;
+            year: number;
+            color: string;
+            fuelType: string;
+            vin: string[];
+            category: string;
+            /** Format: uuid */
+            groupId: string | null;
+            group: {
+                /** Format: uuid */
+                id: string;
+                name: {
+                    [key: string]: string;
+                };
+                code: string | null;
+                /** @enum {string} */
+                baseType: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+            } | null;
+            dailyRate: number;
+            priceOverride: boolean;
+            deposit: number;
+            minDeposit: number[];
+            status: string;
+            statusReason: string[];
+            insurer: string[];
+            /** Format: uuid */
+            branchId: string;
+            registeredAt: string[];
+            currentMileage: number | null;
+            insuranceExpiresAt: string[];
+            itvExpiresAt: string[];
+            roadTaxDueAt: string[];
+            nextServiceDueAt: string[];
+            insuranceScanUrl: string[];
+            itvScanUrl: string[];
+            registrationScanUrl: string[];
+            registrationScanUrls: string[];
+            technicalSheetScanUrl: string[];
+            technicalSheetScanUrls: string[];
+            roadTaxReceiptScanUrl: string[];
+            photoUrl: string[];
+            /** Format: uri */
+            categoryImageUrl: string;
+            /** Format: uuid */
+            stockPhotoId: string | null;
+            enginePowerKw: number | null;
+            engineDisplacementCc: number | null;
+            co2Emissions: number | null;
+            environmentalLabel: string[];
+            seatingCapacity: number | null;
+            maxTowingWeight: number | null;
+            maxAuthorizedMassKg: number | null;
+            unladenMassKg: number | null;
+            doorCount: number | null;
+            fuelTankLitres: number[];
+            batteryKwh: number[];
+            transmission: string[];
+            registrationRawData: {
+                [key: string]: unknown;
+            } | null;
+            technicalSheetRawData: {
+                [key: string]: unknown;
+            } | null;
+            notes: {
+                /** Format: uuid */
+                id: string;
+                body: string;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                authorId: string | null;
+                authorName: string;
+            }[];
+            alerts: {
+                /** @enum {string} */
+                type: "insurance_expiring" | "itv_expiring" | "road_tax_due" | "service_due";
+                /** @enum {string} */
+                severity: "expired" | "critical" | "warning";
+                expiresAt: string;
+                daysUntil: number;
+            }[];
+            reservationCount: number;
+            /** Format: date-time */
+            deactivatedAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: date-time */
+            updatedAt: string;
+        };
+        VehicleListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                plate: string;
+                make: string;
+                model: string;
+                year: number;
+                color: string;
+                fuelType: string;
+                vin: string | null;
+                category: string;
+                /** Format: uuid */
+                groupId: string | null;
+                group: {
+                    /** Format: uuid */
+                    id: string;
+                    name: {
+                        [key: string]: string;
+                    };
+                    code: string | null;
+                    /** @enum {string} */
+                    baseType: "economy" | "sedan" | "suv" | "minivan" | "van" | "other";
+                } | null;
+                dailyRate: number;
+                priceOverride: boolean;
+                deposit: number;
+                minDeposit: number | null;
+                status: string;
+                statusReason: string | null;
+                insurer: string | null;
+                /** Format: uuid */
+                branchId: string;
+                registeredAt: string | null;
+                currentMileage: number | null;
+                insuranceExpiresAt: string | null;
+                itvExpiresAt: string | null;
+                roadTaxDueAt: string | null;
+                nextServiceDueAt: string | null;
+                insuranceScanUrl: string | null;
+                itvScanUrl: string | null;
+                registrationScanUrl: string | null;
+                registrationScanUrls: string[];
+                technicalSheetScanUrl: string | null;
+                technicalSheetScanUrls: string[];
+                roadTaxReceiptScanUrl: string | null;
+                photoUrl: string | null;
+                /** Format: uri */
+                categoryImageUrl: string;
+                /** Format: uuid */
+                stockPhotoId: string | null;
+                enginePowerKw: number | null;
+                engineDisplacementCc: number | null;
+                co2Emissions: number | null;
+                environmentalLabel: string | null;
+                seatingCapacity: number | null;
+                maxTowingWeight: number | null;
+                maxAuthorizedMassKg: number | null;
+                unladenMassKg: number | null;
+                doorCount: number | null;
+                fuelTankLitres: number | null;
+                batteryKwh: number | null;
+                transmission: string | null;
+                registrationRawData: {
+                    [key: string]: unknown;
+                } | null;
+                technicalSheetRawData: {
+                    [key: string]: unknown;
+                } | null;
+                notes: {
+                    /** Format: uuid */
+                    id: string;
+                    body: string;
+                    /** Format: date-time */
+                    createdAt: string;
+                    /** Format: uuid */
+                    authorId: string | null;
+                    authorName: string;
+                }[];
+                alerts: {
+                    /** @enum {string} */
+                    type: "insurance_expiring" | "itv_expiring" | "road_tax_due" | "service_due";
+                    /** @enum {string} */
+                    severity: "expired" | "critical" | "warning";
+                    expiresAt: string;
+                    daysUntil: number;
+                }[];
+                reservationCount: number;
+                /** Format: date-time */
+                deactivatedAt: string | null;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: date-time */
+                updatedAt: string;
+            }[];
+            page: {
+                total: number;
+                nextCursor: string | null;
+            };
+        };
+        VehicleNoteDto: {
+            /** Format: uuid */
+            id: string;
+            body: string;
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: uuid */
+            authorId: string | null;
+            authorName: string;
+        };
+        VehicleNoteListDto: {
+            data: {
+                /** Format: uuid */
+                id: string;
+                body: string;
+                /** Format: date-time */
+                createdAt: string;
+                /** Format: uuid */
+                authorId: string | null;
+                authorName: string;
+            }[];
+        };
+        VehicleScanDto: {
+            plate: string[];
+            vin: string[];
+            make: string[];
+            model: string[];
+            version: string[];
+            year: number | null;
+            /** @enum {string|null} */
+            color: "white" | "black" | "silver" | "grey" | "blue" | "red" | "green" | "brown" | "orange" | "yellow" | "other" | null;
+            /** @enum {string|null} */
+            colour: "white" | "black" | "silver" | "grey" | "blue" | "red" | "green" | "brown" | "orange" | "yellow" | "other" | null;
+            colorName: string[];
+            /** @enum {string|null} */
+            fuelType: "petrol" | "diesel" | "electric" | "hybrid" | "plugin_hybrid" | null;
+            registeredAt: string[];
+            permitIssuedAt: string[];
+            technicalSheetIssuedAt: string[];
+            itvExpiresAt: string[];
+            lastItvAt: string[];
+            lastItvResult: string[];
+            currentMileage: number | null;
+            enginePowerKw: number | null;
+            enginePowerCv: number | null;
+            engineDisplacementCc: number | null;
+            co2Emissions: number | null;
+            euroNorm: string[];
+            /** @enum {string|null} */
+            environmentalLabel: "0" | "ECO" | "C" | "B" | "none" | null;
+            seatingCapacity: number | null;
+            doorCount: number | null;
+            bodyType: string[];
+            maxTowingWeight: number | null;
+            maxAuthorizedMassKg: number | null;
+            unladenMassKg: number | null;
+            lengthMm: number | null;
+            widthMm: number | null;
+            heightMm: number | null;
+            tyres: string[];
+            registrationOffice: string[];
+            typeApproval: string[];
+            rawData: {
+                [key: string]: string;
+            };
+            matches: {
+                /** Format: uuid */
+                id: string;
+                plate: string;
+                make: string;
+                model: string;
+                year: number;
+                vin: string | null;
+                deactivated: boolean;
+                matchedOn: ("plate" | "vin")[];
+            }[];
+        };
+        VerifyOtpDto: {
+            code: string;
+        };
+        WalkInResultDto: {
+            rentalClientSecret: string;
+            depositClientSecret: string[];
+            publishableKey: string;
+            connectedAccountId: string;
+            payment: {
+                /** Format: uuid */
+                reservationId: string;
+                /** @enum {string} */
+                paymentStatus: "unpaid" | "partially_paid" | "paid" | "refund_due";
+                /** @enum {string} */
+                depositStatus: "none" | "requires_hold" | "held" | "captured" | "released";
+                companyInsuranceAccepted: boolean;
+                /** @enum {string|null} */
+                paymentChannel: "walk_in" | "phone" | "cash" | null;
+                rentalPaymentIntentId: string | null;
+                depositPaymentIntentId: string | null;
+                checkoutSessionId: string | null;
+                payLinkUrl: string | null;
+                /** Format: date-time */
+                payLinkExpiresAt: string | null;
+                canStartRental: boolean;
+                totalAmount: number;
+                paidAmount: number;
+                balanceDue: number;
+                depositAmount: number;
+                excessAmount: number | null;
+                insurancePackage: {
+                    /** Format: uuid */
+                    id: string;
+                    name: string;
+                } | null;
+                currency: string;
+                connectedAccountId: string | null;
+                chargesEnabled: boolean;
+                refundableAmount: number;
+                cardRefundableAmount: number;
+                suggestedRefund: number | null;
+                advance: {
+                    percent: number;
+                    amount: number;
+                    due: number;
+                    covered: boolean;
+                    fullPaymentRequiredAtPickup: boolean;
+                    cancellationRefund: number;
+                } | null;
+                charges: {
+                    total: number;
+                    collected: number;
+                    balanceDue: number;
+                    linkUrl: string | null;
+                    /** Format: date-time */
+                    linkExpiresAt: string | null;
+                };
+                /** Format: date-time */
+                depositHoldExpiresAt: string | null;
+                depositRenewalFailed: boolean;
+                hasSavedCard: boolean;
+                transactions: {
+                    /** Format: uuid */
+                    id: string;
+                    /** Format: uuid */
+                    companyId: string;
+                    /** Format: uuid */
+                    reservationId: string;
+                    /** @enum {string} */
+                    eventType: "rental_card_paid" | "rental_cash_paid" | "deposit_held" | "deposit_captured" | "deposit_released" | "deposit_cash_collected" | "payment_received" | "payment_voided" | "refund_recorded" | "charge_paid" | "charge_refunded";
+                    /** @enum {string|null} */
+                    channel: "walk_in" | "phone" | "cash" | null;
+                    /** @enum {string|null} */
+                    method: "stripe_card" | "cash" | "card_terminal" | "bizum" | "bank_transfer" | null;
+                    amount: number;
+                    currency: string;
+                    reference: string | null;
+                    note: string | null;
+                    voidsTransactionId: string | null;
+                    stripePaymentIntentId: string | null;
+                    stripeCheckoutSessionId: string | null;
+                    stripeRefundId: string | null;
+                    receiptUrl: string | null;
+                    actorUserId: string | null;
+                    actorName: string | null;
+                    metadata: unknown;
+                    /** Format: date-time */
+                    occurredAt: string;
+                    customerName: string | null;
+                    customerEmail: string | null;
+                    vehicleLabel: string | null;
+                }[];
+            };
+        };
+        WebPushDto: {
+            endpoint: string;
+            p256dh: string;
+            auth: string;
+            locale?: string;
+        };
+        WebhookAckDto: {
+            /** @enum {boolean} */
+            received: true;
+        };
+        ScanQuotaDto: {
+            used: number;
+            limit: number;
+            resetsAt: string;
+            /** @enum {string} */
+            plan: "growth" | "fleet";
+        };
     };
-    DashboardStatsDto: {
-      pickupsToday: number;
-      returnsToday: number;
-      activeRentals: number;
-      inMaintenance: number;
-    };
-    PublicCompanyDto: {
-      /** Format: uuid */
-      id: string;
-      slug: string;
-      name: string;
-      description: string[];
-      location: string[];
-      locationSlug: string[];
-      latitude: number[];
-      longitude: number[];
-      vehicleCount: number;
-      isPublic: boolean;
-      websiteUrl: string[];
-      email: string[];
-      phone: string[];
-      address: string[];
-      branding: {
-        primaryColor: string;
-        logoUrl: string | null;
-      };
-      defaultLocale: string;
-      currency: string;
-    };
-    PublicVehicleDto: {
-      /** Format: uuid */
-      id: string;
-      companySlug: string;
-      companyName: string;
-      make: string;
-      model: string;
-      year: number;
-      color: string;
-      fuelType: string;
-      category: string;
-      dailyRate: number;
-      deposit: number;
-      seats: number | null;
-      transmission: string[];
-      description: string[];
-      currency: string;
-      photos: string[];
-      photoUrl: string[];
-      available: boolean;
-    };
-    AvailabilityDto: {
-      /** Format: uuid */
-      vehicleId: string;
-      available: boolean;
-    };
-    CreateGuestReservationDto: {
-      guestName: string;
-      /** Format: email */
-      guestEmail: string;
-      guestPhone: string;
-      /** Format: uuid */
-      vehicleId: string;
-      /** Format: date */
-      startDate: string;
-      /** Format: date */
-      endDate: string;
-    };
-    GuestReservationDto: {
-      /** Format: uuid */
-      id: string;
-      token: string;
-      guestName: string;
-      guestEmail: string;
-      /** Format: uuid */
-      vehicleId: string;
-      vehicleMake: string;
-      vehicleModel: string;
-      /** Format: date */
-      startDate: string;
-      /** Format: date */
-      endDate: string;
-      dailyRate: number;
-      totalDays: number;
-      totalAmount: number;
-      status: string;
-    };
-    SendContactDto: {
-      name: string;
-      /** Format: email */
-      email: string;
-      subject: string;
-      message: string;
-      source?: string;
-    };
-  };
-  responses: never;
-  parameters: never;
-  requestBodies: never;
-  headers: never;
-  pathItems: never;
+    responses: never;
+    parameters: never;
+    requestBodies: never;
+    headers: never;
+    pathItems: never;
 }
 export type $defs = Record<string, never>;
 export interface operations {
-  SettingsController_publicConfig: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
+    SettingsController_publicConfig: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
         };
-        content: {
-          "application/json": components["schemas"]["PublicConfigDto"];
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicConfigDto"];
+                };
+            };
         };
-      };
     };
-  };
-  PublicController_companies: {
-    parameters: {
-      query?: {
-        q?: string;
-        location?: string;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
+    PublicSigningController_info: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                token: string;
+            };
+            cookie?: never;
         };
-        content: {
-          "application/json": components["schemas"]["PublicCompanyDto"][];
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicSigningInfoDto"];
+                };
+            };
         };
-      };
     };
-  };
-  PublicController_company: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        slug: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
+    PublicSigningController_sendOtp: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                token: string;
+            };
+            cookie?: never;
         };
-        content: {
-          "application/json": components["schemas"]["PublicCompanyDto"];
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["OtpSentDto"];
+                };
+            };
         };
-      };
     };
-  };
-  PublicController_vehicles: {
-    parameters: {
-      query?: {
-        q?: string;
-        type?: string;
-        minSeats?: number;
-        transmission?: "automatic" | "manual";
-        from?: string;
-        to?: string;
-      };
-      header?: never;
-      path?: never;
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
+    PublicSigningController_verifyOtp: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                token: string;
+            };
+            cookie?: never;
         };
-        content: {
-          "application/json": components["schemas"]["PublicVehicleDto"][];
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["VerifyOtpDto"];
+            };
         };
-      };
-    };
-  };
-  PublicController_companyVehicles: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        slug: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SignSessionDto"];
+                };
+            };
         };
-        content: {
-          "application/json": components["schemas"]["PublicVehicleDto"][];
+    };
+    PublicSigningController_document: {
+        parameters: {
+            query?: never;
+            header: {
+                "x-sign-session": string;
+            };
+            path: {
+                token: string;
+            };
+            cookie?: never;
         };
-      };
-    };
-  };
-  PublicController_vehicle: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        slug: string;
-        id: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicSigningDocumentDto"];
+                };
+            };
         };
-        content: {
-          "application/json": components["schemas"]["PublicVehicleDto"];
+    };
+    PublicSigningController_sign: {
+        parameters: {
+            query?: never;
+            header: {
+                "x-sign-session": string;
+            };
+            path: {
+                token: string;
+            };
+            cookie?: never;
         };
-      };
-    };
-  };
-  PublicController_availability: {
-    parameters: {
-      query: {
-        vehicleId: string;
-        from: string;
-        to: string;
-      };
-      header?: never;
-      path: {
-        slug: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["PublicSignatureDto"];
+            };
         };
-        content: {
-          "application/json": components["schemas"]["AvailabilityDto"];
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicSignatureResultDto"];
+                };
+            };
         };
-      };
     };
-  };
-  PublicController_book: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        slug: string;
-      };
-      cookie?: never;
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["CreateGuestReservationDto"];
-      };
-    };
-    responses: {
-      201: {
-        headers: {
-          [name: string]: unknown;
+    PublicController_categoryImage: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                file: string;
+            };
+            cookie?: never;
         };
-        content: {
-          "application/json": components["schemas"]["GuestReservationDto"];
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "image/webp": string;
+                    "image/jpeg": string;
+                };
+            };
         };
-      };
     };
-  };
-  PublicController_reservation: {
-    parameters: {
-      query?: never;
-      header?: never;
-      path: {
-        token: string;
-      };
-      cookie?: never;
-    };
-    requestBody?: never;
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown;
+    PublicController_companies: {
+        parameters: {
+            query?: {
+                q?: string;
+                location?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
         };
-        content: {
-          "application/json": components["schemas"]["GuestReservationDto"];
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicCompanyDto"][];
+                };
+            };
         };
-      };
     };
-  };
+    PublicController_company: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicCompanyDto"];
+                };
+            };
+        };
+    };
+    PublicController_vehicles: {
+        parameters: {
+            query?: {
+                q?: string;
+                type?: string;
+                minSeats?: number;
+                transmission?: "automatic" | "manual";
+                from?: string;
+                to?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicVehicleDto"][];
+                };
+            };
+        };
+    };
+    PublicController_companyVehicles: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicVehicleDto"][];
+                };
+            };
+        };
+    };
+    PublicController_vehicle: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                slug: string;
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicVehicleDto"];
+                };
+            };
+        };
+    };
+    PublicController_availability: {
+        parameters: {
+            query: {
+                vehicleId: string;
+                from: string;
+                to: string;
+            };
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AvailabilityDto"];
+                };
+            };
+        };
+    };
+    PublicController_insurancePackages: {
+        parameters: {
+            query: {
+                vehicleId: string;
+                startDate: string;
+                endDate: string;
+            };
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["InsuranceQuoteListDto"];
+                };
+            };
+        };
+    };
+    PublicController_priceQuote: {
+        parameters: {
+            query: {
+                vehicleId: string;
+                startDate: string;
+                endDate: string;
+            };
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PriceBreakdownDto"];
+                };
+            };
+        };
+    };
+    PublicController_book: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateGuestReservationDto"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GuestReservationDto"];
+                };
+            };
+        };
+    };
+    PublicController_reservation: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                token: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GuestReservationDto"];
+                };
+            };
+        };
+    };
 }

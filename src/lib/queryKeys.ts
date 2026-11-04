@@ -1,5 +1,6 @@
 import { QueryKeys } from "@/enums";
 import type { CompanyListFilters } from "@/types/company";
+import type { PriceQuoteQuery } from "@/types/pricing";
 import type { MarketplaceSearchFilters, VehicleFilters } from "@/types/vehicle";
 
 function compactQueryFilters<T extends object>(filters?: T): T | undefined {
@@ -48,4 +49,17 @@ export function marketplaceVehiclesQueryKey(
   }
 
   return [QueryKeys.VEHICLES, "marketplace", compact] as const;
+}
+
+export function priceQuoteQueryKey(
+  companySlug: string,
+  query: PriceQuoteQuery,
+) {
+  return [
+    QueryKeys.PRICE_QUOTE,
+    companySlug,
+    query.vehicleId,
+    query.startDate,
+    query.endDate,
+  ] as const;
 }

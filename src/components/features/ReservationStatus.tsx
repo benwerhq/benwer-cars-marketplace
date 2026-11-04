@@ -10,6 +10,7 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { ErrorState } from "@/components/ui/ErrorState";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { BookingVehiclePreview } from "./BookingVehiclePreview";
+import { PriceBreakdownList } from "./PriceBreakdownList";
 import { NavRoutes, ReservationStatus as ReservationStatusEnum } from "@/enums";
 import { countRentalDays, formatLongDate, parseIsoDate } from "@/lib/dates";
 import { formatMoney } from "@/lib/money";
@@ -137,6 +138,14 @@ export function ReservationStatus({
           <StatusRow label={t("email")} value={data.guestEmail} />
           <StatusRow label={t("phone")} value={data.guestPhone} />
         </dl>
+
+        {data.priceBreakdown && data.priceBreakdown.segments.length > 0 ? (
+          <PriceBreakdownList
+            breakdown={data.priceBreakdown}
+            currency={data.currency}
+            className="border-t border-border pt-4"
+          />
+        ) : null}
 
         <div className="flex items-center justify-between border-t border-border pt-4">
           <span className="text-sm font-medium text-foreground">

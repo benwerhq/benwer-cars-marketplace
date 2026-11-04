@@ -422,6 +422,7 @@ export const mockReservationsApi = {
       startDate: payload.startDate,
       endDate: payload.endDate,
       totalPrice: days * vehicle.pricePerDay,
+      priceBreakdown: null,
       currency: vehicle.currency,
       guestName: payload.guestName,
       guestEmail: payload.guestEmail,

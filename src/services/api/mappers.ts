@@ -14,6 +14,12 @@ import type {
   AvailabilityRange,
 } from "@/types/availability";
 import type { Company } from "@/types/company";
+import type {
+  PriceBreakdown,
+  PriceSegment,
+  PriceSource,
+  PriceWarning,
+} from "@/types/pricing";
 import type { GuestReservation } from "@/types/reservation";
 import type { Vehicle } from "@/types/vehicle";
 
@@ -378,6 +384,7 @@ export function mapReservation(
       readNumber(row.totalAmount) ??
       readNumber(row.total) ??
       0,
+    priceBreakdown: mapPriceBreakdown(row.priceBreakdown),
     currency: readString(row.currency) || "EUR",
     guestName: readString(row.guestName) ?? readString(customer.name) ?? "",
     guestEmail: readString(row.guestEmail) ?? readString(customer.email) ?? "",
@@ -490,4 +497,100 @@ export function mapAvailabilityList(
   return unwrapList(payload)
     .map((row) => mapAvailability(row, range))
     .filter((row) => row.vehicleId);
+}
+
+const PRICE_SOURCES: readonly PriceSource[] = ["group", "override", "vehicle"];
+
+function readStringRecord(value: unknown): Record<string, string> | null {
+  if (!isRecord(value)) {
+    return null;
+  }
+
+  const entries = Object.entries(value).filter(
+    (entry): entry is [string, string] => typeof entry[1] === "string",
+  );
+  return entries.length > 0 ? Object.fromEntries(entries) : null;
+}
+
+function mapPriceSegment(raw: unknown): PriceSegment | null {
+  if (!isRecord(raw)) {
+    return null;
+  }
+
+  const startDate = readString(raw.startDate);
+  const endDate = readString(raw.endDate);
+  const days = readNumber(raw.days);
+  const dailyRate = readNumber(raw.dailyRate);
+  const subtotal = readNumber(raw.subtotal);
+  if (
+    !startDate ||
+    !endDate ||
+    days === undefined ||
+    dailyRate === undefined ||
+    subtotal === undefined
+  ) {
+    return null;
+  }
+
+  return {
+    startDate,
+    endDate,
+    days,
+    seasonId: readString(raw.seasonId) ?? null,
+    seasonName: readStringRecord(raw.seasonName),
+    dailyRate,
+    weekend: readBoolean(raw.weekend) ?? false,
+    subtotal,
+  };
+}
+
+function mapPriceWarning(raw: unknown): PriceWarning | null {
+  if (!isRecord(raw)) {
+    return null;
+  }
+
+  const code = readString(raw.code);
+  const seasonId = readString(raw.seasonId);
+  const limit = readNumber(raw.limit);
+  if (
+    (code !== "pricing.min_days" && code !== "pricing.max_days") ||
+    !seasonId ||
+    limit === undefined
+  ) {
+    return null;
+  }
+
+  return { code, seasonId, limit };
+}
+
+export function mapPriceBreakdown(raw: unknown): PriceBreakdown | null {
+  if (!isRecord(raw)) {
+    return null;
+  }
+
+  const totalDays = readNumber(raw.totalDays);
+  const vehicleSubtotal = readNumber(raw.vehicleSubtotal);
+  const averageDailyRate = readNumber(raw.averageDailyRate);
+  const source = PRICE_SOURCES.find((value) => value === raw.source);
+  if (
+    totalDays === undefined ||
+    vehicleSubtotal === undefined ||
+    averageDailyRate === undefined ||
+    !source
+  ) {
+    return null;
+  }
+
+  return {
+    source,
+    totalDays,
+    segments: (Array.isArray(raw.segments) ? raw.segments : [])
+      .map(mapPriceSegment)
+      .filter((segment): segment is PriceSegment => segment !== null),
+    vehicleSubtotal,
+    averageDailyRate,
+    warnings: (Array.isArray(raw.warnings) ? raw.warnings : [])
+      .map(mapPriceWarning)
+      .filter((warning): warning is PriceWarning => warning !== null),
+  };
 }

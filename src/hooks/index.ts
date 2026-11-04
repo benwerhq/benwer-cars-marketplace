@@ -7,4 +7,5 @@ export { useAvailability } from "./useAvailability";
 export { useContact } from "./useContact";
 export { useCreateReservation } from "./useCreateReservation";
 export { useReservation } from "./useReservation";
+export { usePriceQuote } from "./usePriceQuote";
 export { useMediaQuery } from "./useMediaQuery";

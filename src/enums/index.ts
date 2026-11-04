@@ -40,6 +40,7 @@ export enum QueryKeys {
   VEHICLE = "vehicle",
   AVAILABILITY = "availability",
   RESERVATION = "reservation",
+  PRICE_QUOTE = "price-quote",
 }
 
 export enum StorageKeys {
@@ -83,4 +84,7 @@ export enum ErrorMessages {
   RESERVATION_OVERLAP = "errors.reservation.overlap",
   RESERVATION_NOT_FOUND = "errors.reservation.not_found",
   RESERVATION_INVALID_DATES = "errors.reservation.invalid_dates",
+  PRICING_MIN_DAYS = "errors.pricing.min_days",
+  PRICING_MAX_DAYS = "errors.pricing.max_days",
+  PRICING_RENTAL_TOO_LONG = "errors.pricing.rental_too_long",
 }

@@ -8,6 +8,7 @@ import {
   mapAvailabilityList,
   mapCompany,
   mapCompanyList,
+  mapPriceBreakdown,
   mapReservation,
   mapVehicle,
   mapVehicleList,
@@ -410,5 +411,53 @@ describe("mapReservation", () => {
     expect(reservation.company?.slug).toBe("med-rentacar");
     expect(reservation.company?.latitude).toBe(36.72);
     expect(reservation.companySlug).toBe("med-rentacar");
+  });
+});
+
+describe("mapPriceBreakdown", () => {
+  it("keeps valid segments and season warnings", () => {
+    const breakdown = mapPriceBreakdown({
+      pricingVersion: 3,
+      source: "group",
+      totalDays: 3,
+      segments: [
+        {
+          startDate: "2026-07-01",
+          endDate: "2026-07-02",
+          days: 2,
+          seasonId: "s1",
+          seasonName: { "en-GB": "Summer", "es-ES": 7 },
+          dailyRate: 60,
+          weekend: false,
+          subtotal: 120,
+        },
+        { startDate: "2026-07-03", days: 1 },
+      ],
+      vehicleSubtotal: 120,
+      averageDailyRate: 40,
+      warnings: [
+        { code: "pricing.min_days", seasonId: "s1", limit: 5 },
+        { code: "pricing.other", seasonId: "s1", limit: 2 },
+      ],
+    });
+
+    expect(breakdown?.segments).toHaveLength(1);
+    expect(breakdown?.segments[0]?.seasonName).toEqual({ "en-GB": "Summer" });
+    expect(breakdown?.warnings).toEqual([
+      { code: "pricing.min_days", seasonId: "s1", limit: 5 },
+    ]);
+  });
+
+  it("returns null when totals or source are missing", () => {
+    expect(mapPriceBreakdown({ source: "group", totalDays: 2 })).toBeNull();
+    expect(
+      mapPriceBreakdown({
+        source: "unknown",
+        totalDays: 2,
+        vehicleSubtotal: 10,
+        averageDailyRate: 5,
+      }),
+    ).toBeNull();
+    expect(mapPriceBreakdown(null)).toBeNull();
   });
 });

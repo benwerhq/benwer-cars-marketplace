@@ -1,5 +1,6 @@
 import type { ReservationStatus } from "@/enums";
 import type { Company } from "./company";
+import type { PriceBreakdown } from "./pricing";
 import type { Vehicle } from "./vehicle";
 
 export interface CreateGuestReservationPayload {
@@ -19,6 +20,7 @@ export interface GuestReservation {
   startDate: string;
   endDate: string;
   totalPrice: number;
+  priceBreakdown: PriceBreakdown | null;
   currency: string;
   guestName: string;
   guestEmail: string;
