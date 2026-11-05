@@ -136,6 +136,11 @@ mode** (no subdomain). To test tenant mode locally, set a custom `hosts` entry:
 - ❌ **shadcn/ui `cn()` / `cva`** — scaffolded in `src/lib/utils.ts`; install `class-variance-authority` and `clsx` before importing.
 ## Branch hygiene (mandatory)
 
+**Before starting any work**, list local and remote branches (`git fetch --prune`, `git branch -a`). For each branch other than `master`/`main`/`staging`:
+- Already merged (`git log origin/staging..<name>` empty, or its PR is merged) → clean it up (remote and local).
+- In progress (unmerged commits, open PR, or unpushed work) → keep it.
+- Unsure → keep it and highlight it to the user; never delete on a guess.
+
 After every merge, clean up the branches it leaves behind. Only `master`/`main` and `staging` are long-lived.
 
 - Delete the merged branch on the remote (`gh pr merge --delete-branch`, or the repo's auto-delete setting) and locally (`git branch -d <name>`, then `git fetch --prune`).
