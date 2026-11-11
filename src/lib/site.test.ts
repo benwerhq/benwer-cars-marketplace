@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BookingMode, SiteStatus } from "@/enums";
+import { BookingMode, SiteLayout, SiteStatus } from "@/enums";
 import { PublicChannel } from "@/enums";
 import {
   SITE_CHANNEL,
@@ -10,6 +10,7 @@ import {
   siteBookHref,
   siteCarPath,
   siteHomePath,
+  siteOwnerPath,
   withSiteQuery,
 } from "./site";
 import type { PublicSite } from "@/types/site";
@@ -28,6 +29,7 @@ function site(overrides: Partial<PublicSite> = {}): PublicSite {
     showAddress: false,
     isPreview: false,
     canonicalUrl: null,
+    layout: SiteLayout.CLASSIC,
     company: {
       id: "c1",
       slug: "denver-cars",
@@ -59,6 +61,7 @@ describe("SITE_CHANNEL", () => {
 describe("site paths", () => {
   it("builds tenant-isolated /s/{slug} routes", () => {
     expect(siteHomePath("denver-cars")).toBe("/s/denver-cars");
+    expect(siteOwnerPath("denver-cars")).toBe("/s/denver-cars/owner");
     expect(siteCarPath("denver-cars", "v1")).toBe("/s/denver-cars/cars/v1");
     expect(
       siteBookHref({

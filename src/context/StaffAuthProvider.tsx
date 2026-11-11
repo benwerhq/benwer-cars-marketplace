@@ -1,0 +1,77 @@
+"use client";
+
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
+import type { User } from "firebase/auth";
+import { setStaffAccessTokenProvider } from "@/lib/staffAccessToken";
+import {
+  staffIdToken,
+  staffSignIn,
+  staffSignOut,
+  subscribeStaffAuth,
+} from "@/lib/staffAuth.client";
+import { isStaffFirebaseConfigured } from "@/lib/staffFirebase";
+
+interface StaffAuthContextValue {
+  user: User | null;
+  ready: boolean;
+  configured: boolean;
+  signIn: (email: string, password: string) => Promise<void>;
+  signOut: () => Promise<void>;
+}
+
+const StaffAuthContext = createContext<StaffAuthContextValue | null>(null);
+
+export function StaffAuthProvider({ children }: { children: ReactNode }) {
+  const configured = isStaffFirebaseConfigured();
+  const [user, setUser] = useState<User | null>(null);
+  const [ready, setReady] = useState(!configured);
+
+  useEffect(() => {
+    if (!configured) {
+      return;
+    }
+
+    return subscribeStaffAuth((next) => {
+      setUser(next);
+      setReady(true);
+    });
+  }, [configured]);
+
+  useEffect(() => {
+    setStaffAccessTokenProvider(() => staffIdToken(user));
+    return () => setStaffAccessTokenProvider(null);
+  }, [user]);
+
+  const value = useMemo<StaffAuthContextValue>(
+    () => ({
+      user,
+      ready,
+      configured,
+      signIn: staffSignIn,
+      signOut: staffSignOut,
+    }),
+    [configured, ready, user],
+  );
+
+  return (
+    <StaffAuthContext.Provider value={value}>
+      {children}
+    </StaffAuthContext.Provider>
+  );
+}
+
+export function useStaffAuth(): StaffAuthContextValue {
+  const value = useContext(StaffAuthContext);
+  if (!value) {
+    throw new Error("useStaffAuth requires StaffAuthProvider");
+  }
+
+  return value;
+}

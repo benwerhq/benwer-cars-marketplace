@@ -38,5 +38,8 @@ describe("getErrorKey", () => {
     expect(getErrorKey(new ApiError(404, "website_domain.not_found"))).toBe(
       ErrorMessages.WEBSITE_DOMAIN_NOT_FOUND,
     );
+    expect(getErrorKey(new ApiError(403, "staff.forbidden"))).toBe(
+      ErrorMessages.STAFF_FORBIDDEN,
+    );
   });
 });

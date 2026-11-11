@@ -49,6 +49,9 @@ const CODE_ALIASES: Record<string, string> = {
   "reservation.not_cancellable": "reservation.not_cancellable",
   already_paid: "rental_payments.already_paid",
   "rental_payments.already_paid": "rental_payments.already_paid",
+  "staff.unauthenticated": "staff.unauthenticated",
+  "staff.forbidden": "staff.forbidden",
+  forbidden: "staff.forbidden",
 };
 
 export function liveApiBaseUrl(): string {

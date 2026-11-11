@@ -34,6 +34,10 @@
     "website_domain": {
       "not_found": "Este endereço não está ligado a uma empresa de aluguer."
     },
+    "staff": {
+      "unauthenticated": "Inicie sessão como proprietário para editar este site.",
+      "forbidden": "Não tem permissão para editar este site."
+    },
     "pricing": {
       "min_days": "Estas datas são demasiado curtas para a época. Escolha um aluguer mais longo.",
       "max_days": "Estas datas são demasiado longas para a época. Escolha um aluguer mais curto.",

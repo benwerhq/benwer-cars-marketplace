@@ -599,6 +599,70 @@
     "searchTitle": "Procurar carros",
     "searchDescription": "Escolha datas e sucursal para ver a disponibilidade.",
     "branch": "Sucursal",
-    "anyBranch": "Qualquer sucursal"
+    "anyBranch": "Qualquer sucursal",
+    "ownerSignIn": "Acesso do proprietário"
+  },
+  "owner": {
+    "signInTitle": "Acesso do proprietário",
+    "signInHint": "Use a conta de staff da Benwer desta empresa. Os clientes usam outro acesso.",
+    "signInAction": "Entrar",
+    "email": "Email",
+    "password": "Palavra-passe",
+    "signedInTitle": "Sessão iniciada",
+    "signedInHint": "Se puder gerir este site, o editor abre na página inicial.",
+    "openEditor": "Abrir o editor",
+    "disabledTitle": "A edição não está disponível",
+    "disabledDescription": "O Firebase de staff não está configurado neste marketplace.",
+    "toolbarTitle": "Editor do site",
+    "unpublished": "Alterações por publicar",
+    "saved": "Tudo guardado",
+    "signOut": "Sair",
+    "layout": "Modelo",
+    "headline": "Título",
+    "intro": "Introdução",
+    "primaryColor": "Cor da marca",
+    "showPhone": "Mostrar telefone",
+    "showEmail": "Mostrar email",
+    "showAddress": "Mostrar morada",
+    "bookingMode": "Modo de reserva",
+    "modeInstant": "Imediato",
+    "modeRequest": "Pedido",
+    "status": "Estado do site",
+    "statusDraft": "Rascunho",
+    "statusPublished": "Publicado",
+    "statusPaused": "Em pausa",
+    "minLead": "Horas mínimas de antecedência",
+    "requestWindow": "Horas da janela de pedido",
+    "domain": "Domínio próprio",
+    "save": "Guardar",
+    "discard": "Descartar",
+    "layouts": {
+      "classic": {
+        "name": "Clássico",
+        "hint": "Destaque, pesquisa e frota — o modelo actual."
+      },
+      "modern_hero": {
+        "name": "Hero moderno",
+        "hint": "Hero em ecrã inteiro com pesquisa por cima e coluna de contacto."
+      },
+      "minimal_list": {
+        "name": "Lista mínima",
+        "hint": "Página estreita, cabeçalho compacto e frota em lista."
+      },
+      "grid_gallery": {
+        "name": "Galeria",
+        "hint": "Cabeçalho escuro e frota focada em fotos."
+      },
+      "bold_landing": {
+        "name": "Landing forte",
+        "hint": "Landing centrada com um painel de marca grande."
+      }
+    },
+    "auth": {
+      "invalidEmail": "Introduza um email válido.",
+      "tooManyRequests": "Demasiadas tentativas. Tente mais tarde.",
+      "invalidCredentials": "O email ou a palavra-passe não estão correctos.",
+      "unknown": "Não foi possível entrar. Tente novamente."
+    }
   }
 }

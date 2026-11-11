@@ -19,6 +19,14 @@ export enum SiteStatus {
   PAUSED = "paused",
 }
 
+export enum SiteLayout {
+  CLASSIC = "classic",
+  MODERN_HERO = "modern_hero",
+  MINIMAL_LIST = "minimal_list",
+  GRID_GALLERY = "grid_gallery",
+  BOLD_LANDING = "bold_landing",
+}
+
 export enum BookingMode {
   INSTANT = "instant",
   REQUEST = "request",
@@ -77,6 +85,7 @@ export enum QueryKeys {
   RESERVATION = "reservation",
   PRICE_QUOTE = "price-quote",
   SITE = "site",
+  WEBSITE_SETTINGS = "website-settings",
   INSURANCE = "insurance",
   PAYMENT = "payment",
   CANCELLATION_QUOTE = "cancellation-quote",
@@ -104,6 +113,7 @@ export enum NavRoutes {
   SITE_CAR = "/s/:slug/cars/:id",
   SITE_BOOK = "/s/:slug/book",
   SITE_BOOKING = "/s/:slug/booking/:token",
+  SITE_OWNER = "/s/:slug/owner",
 }
 
 export enum SearchParams {
@@ -163,4 +173,6 @@ export enum ErrorMessages {
   RESERVATION_NOT_CANCELLABLE = "errors.reservation.not_cancellable",
   RENTAL_PAYMENTS_ALREADY_PAID = "errors.rental_payments.already_paid",
   WEBSITE_DOMAIN_NOT_FOUND = "errors.website_domain.not_found",
+  STAFF_UNAUTHENTICATED = "errors.staff.unauthenticated",
+  STAFF_FORBIDDEN = "errors.staff.forbidden",
 }

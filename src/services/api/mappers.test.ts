@@ -8,6 +8,7 @@ import {
   PaymentChannel,
   PaymentStatus,
   ReservationStatus,
+  SiteLayout,
   SiteStatus,
   VehicleType,
 } from "@/enums";
@@ -21,6 +22,7 @@ import {
   mapInsurancePackageList,
   mapPriceBreakdown,
   mapPublicSite,
+  mapWebsiteSettings,
   mapReservation,
   mapVehicle,
   mapVehicleList,
@@ -514,6 +516,21 @@ describe("mapPublicSite", () => {
     ]);
     expect(site.company.slug).toBe("denver-cars");
     expect(site.canonicalUrl).toBe("https://reservas.denver.example");
+    expect(site.layout).toBe(SiteLayout.CLASSIC);
+  });
+});
+
+describe("mapWebsiteSettings", () => {
+  it("maps layout and edit permission", () => {
+    const settings = mapWebsiteSettings({
+      layout: "grid_gallery",
+      role: "owner",
+      headline: { "en-GB": "Hi" },
+      primaryColor: "#123456",
+    });
+    expect(settings.layout).toBe(SiteLayout.GRID_GALLERY);
+    expect(settings.canEdit).toBe(true);
+    expect(settings.primaryColor).toBe("#123456");
   });
 });
 

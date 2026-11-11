@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { NavRoutes } from "@/enums";
+import { ownerHrefFromHome } from "@/lib/site";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 
 interface SiteFooterProps {
@@ -53,6 +54,12 @@ export async function SiteFooter({ companyName, homeHref }: SiteFooterProps) {
               </Link>
               <Link href={NavRoutes.COOKIES} className="text-sm text-foreground hover:text-primary">
                 {tNav("cookies")}
+              </Link>
+              <Link
+                href={ownerHrefFromHome(homeHref)}
+                className="text-xs text-muted-foreground hover:text-foreground"
+              >
+                {tSite("ownerSignIn")}
               </Link>
             </div>
           </div>

@@ -34,6 +34,10 @@
     "website_domain": {
       "not_found": "This website address is not linked to a rental company."
     },
+    "staff": {
+      "unauthenticated": "Sign in as the company owner to edit this website.",
+      "forbidden": "You do not have permission to edit this website."
+    },
     "pricing": {
       "min_days": "These dates are too short for the season. Choose a longer rental.",
       "max_days": "These dates are too long for the season. Choose a shorter rental.",

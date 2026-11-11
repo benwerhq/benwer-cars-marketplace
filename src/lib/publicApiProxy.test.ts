@@ -5,6 +5,7 @@ import {
   assertMockCatalogueAllowed,
   collapseDuplicateV1Path,
   isAllowedPublicApiProxyPath,
+  isAllowedStaffWebsiteProxyPath,
   isSameOriginApiBase,
   isUnreachableError,
   joinApiUrl,
@@ -216,6 +217,23 @@ describe("isAllowedPublicApiProxyPath", () => {
     expect(isAllowedPublicApiProxyPath("POST", "v1/public/companies")).toBe(
       false,
     );
+  });
+});
+
+describe("isAllowedStaffWebsiteProxyPath", () => {
+  it("allows staff website settings only with a bearer", () => {
+    expect(
+      isAllowedStaffWebsiteProxyPath("GET", "v1/settings/website", true),
+    ).toBe(true);
+    expect(
+      isAllowedStaffWebsiteProxyPath("PATCH", "v1/settings/website", true),
+    ).toBe(true);
+    expect(
+      isAllowedStaffWebsiteProxyPath("GET", "v1/settings/website", false),
+    ).toBe(false);
+    expect(
+      isAllowedStaffWebsiteProxyPath("GET", "v1/settings/billing", true),
+    ).toBe(false);
   });
 });
 

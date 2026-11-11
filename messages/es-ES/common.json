@@ -34,6 +34,10 @@
     "website_domain": {
       "not_found": "Esta dirección no está vinculada a una empresa de alquiler."
     },
+    "staff": {
+      "unauthenticated": "Entra como propietario para editar esta web.",
+      "forbidden": "No tienes permiso para editar esta web."
+    },
     "pricing": {
       "min_days": "Estas fechas son demasiado cortas para la temporada. Elige un alquiler más largo.",
       "max_days": "Estas fechas son demasiado largas para la temporada. Elige un alquiler más corto.",
