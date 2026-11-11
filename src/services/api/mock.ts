@@ -1,6 +1,6 @@
 import { isProvinceWideLocation } from "@/data/malagaCities";
 import { env } from "@/env";
-import { ReservationStatus } from "@/enums";
+import { PaymentStatus, ReservationStatus } from "@/enums";
 import { ApiError } from "@/lib/errors";
 import { assertMockCatalogueAllowed } from "@/lib/publicApiProxy";
 import {
@@ -431,6 +431,13 @@ export const mockReservationsApi = {
       createdAt: new Date().toISOString(),
       requestExpiresAt: null,
       cancelReason: null,
+      paymentStatus: PaymentStatus.UNPAID,
+      paymentChannel: null,
+      paidAmount: 0,
+      advanceDue: 0,
+      advanceAuthorized: false,
+      paymentExpiresAt: null,
+      onlinePaymentRequired: false,
       vehicle,
       company,
     };

@@ -57,6 +57,18 @@ export function marketplaceVehiclesQueryKey(
   return [QueryKeys.VEHICLES, "marketplace", compact] as const;
 }
 
+export function reservationQueryKey(token: string) {
+  return [QueryKeys.RESERVATION, token] as const;
+}
+
+export function guestPaymentQueryKey(token: string) {
+  return [QueryKeys.PAYMENT, token] as const;
+}
+
+export function cancellationQuoteQueryKey(token: string) {
+  return [QueryKeys.CANCELLATION_QUOTE, token] as const;
+}
+
 export function priceQuoteQueryKey(
   companySlug: string,
   query: PriceQuoteQuery,
