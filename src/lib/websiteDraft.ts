@@ -15,6 +15,7 @@ export function settingsFromSite(site: PublicSite): WebsiteSettings {
     showAddress: site.showAddress,
     primaryColor: site.company.branding.primaryColor,
     domain: site.canonicalUrl ?? "",
+    content: site.content,
     canEdit: true,
   };
 }
@@ -36,6 +37,7 @@ export function applyWebsiteDraft(
     showEmail: draft.showEmail,
     showAddress: draft.showAddress,
     canonicalUrl: draft.domain || site.canonicalUrl,
+    content: draft.content,
     company: {
       ...site.company,
       branding: {
@@ -67,5 +69,6 @@ function omitCanEdit(value: WebsiteSettings): Omit<WebsiteSettings, "canEdit"> {
     showAddress: value.showAddress,
     primaryColor: value.primaryColor,
     domain: value.domain,
+    content: value.content,
   };
 }

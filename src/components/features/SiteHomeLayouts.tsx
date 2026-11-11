@@ -7,15 +7,23 @@ import { CompanyMark } from "@/components/features/CompanyMark";
 import { SitePausedNotice } from "@/components/features/SitePausedNotice";
 import { SiteSearchForm } from "@/components/features/SiteSearchForm";
 import { CarListView } from "@/components/features/CarListView";
-import { SiteLayout } from "@/enums";
+import { SiteLayout, SiteSectionId } from "@/enums";
 import {
   SITE_CHANNEL,
   canAcceptBookings,
   isSitePaused,
   sitePathFromHome,
 } from "@/lib/site";
+import { visibleSections } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { PublicSite } from "@/types/site";
+import { SiteAppSection } from "./SiteAppSection";
+import { SiteBannerCarousel } from "./SiteBannerCarousel";
+import { SiteContactSection } from "./SiteContactSection";
+import { SiteFaqSection } from "./SiteFaqSection";
+import { SiteIncludedSection } from "./SiteIncludedSection";
+import { SiteLocationsSection } from "./SiteLocationsSection";
+import { SiteReviewsSection } from "./SiteReviewsSection";
 
 export interface SiteHomeCopy {
   headline: string;
@@ -73,6 +81,12 @@ export function SiteHomeLayouts({
   );
   const paused = isSitePaused(site) ? <SitePausedNotice /> : null;
   const layout = site.layout;
+  const visible = visibleSections(site.content, {
+    branchCount: site.branches.length,
+    hasPhone: Boolean(copy.phone),
+    hasEmail: Boolean(copy.email),
+  });
+  const lower = <SiteLowerSections site={site} copy={copy} visible={visible} />;
 
   if (layout === SiteLayout.MODERN_HERO) {
     return (
@@ -87,6 +101,7 @@ export function SiteHomeLayouts({
           <div id="fleet">{paused}{fleet}</div>
           <ContactAside copy={copy} />
         </main>
+        {lower}
       </div>
     );
   }
@@ -100,6 +115,7 @@ export function SiteHomeLayouts({
         <div id="fleet" className="border-t border-border pt-6">
           {fleet}
         </div>
+        {lower}
       </div>
     );
   }
@@ -119,6 +135,7 @@ export function SiteHomeLayouts({
           {paused}
           {fleet}
         </main>
+        {lower}
       </div>
     );
   }
@@ -146,22 +163,116 @@ export function SiteHomeLayouts({
           {paused}
           {fleet}
         </main>
+        {lower}
       </div>
     );
   }
 
+  const showBanners = visible.includes(SiteSectionId.BANNERS);
+  const blocks = visible.map((id) => {
+    switch (id) {
+      case SiteSectionId.BANNERS:
+        return (
+          <div key={id} className="mx-auto w-full max-w-7xl px-4 pt-6 md:px-6 lg:px-8">
+            <SiteBannerCarousel
+              banners={site.content.banners}
+              companyName={site.company.name}
+            />
+            <div className="relative z-10 -mt-12 px-0 md:-mt-20 md:px-10">
+              <div className="rounded-2xl shadow-xl">{search}</div>
+            </div>
+          </div>
+        );
+      case SiteSectionId.COMPANY:
+        return (
+          <div key={id} className={cn(showBanners && "mt-10")}>
+            <HeroBanner site={site} copy={copy} variant="classic" />
+          </div>
+        );
+      case SiteSectionId.FLEET:
+        return (
+          <main
+            key={id}
+            id="fleet"
+            className="mx-auto flex w-full max-w-7xl scroll-mt-20 flex-col gap-8 px-4 py-10 md:px-6 lg:px-8"
+          >
+            {paused}
+            {showBanners ? null : search}
+            {fleet}
+          </main>
+        );
+      default:
+        return null;
+    }
+  });
+
   return (
     <>
-      <HeroBanner site={site} copy={copy} variant="classic" />
-      <main
-        id="fleet"
-        className="mx-auto flex w-full max-w-7xl scroll-mt-20 flex-col gap-8 px-4 py-8 md:px-6 lg:px-8"
-      >
-        {paused}
-        {search}
-        {fleet}
-      </main>
+      {blocks}
+      {lower}
     </>
+  );
+}
+
+const LOWER_SECTIONS: SiteSectionId[] = [
+  SiteSectionId.INCLUDED,
+  SiteSectionId.REVIEWS,
+  SiteSectionId.APP,
+  SiteSectionId.LOCATIONS,
+  SiteSectionId.FAQ,
+  SiteSectionId.CONTACT,
+];
+
+function SiteLowerSections({
+  site,
+  copy,
+  visible,
+}: {
+  site: PublicSite;
+  copy: SiteHomeCopy;
+  visible: SiteSectionId[];
+}) {
+  const sections = visible.filter((id) => LOWER_SECTIONS.includes(id));
+  if (sections.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="mx-auto flex w-full max-w-7xl flex-col gap-20 px-4 pt-8 pb-20 md:px-6 lg:px-8">
+      {sections.map((id) => {
+        switch (id) {
+          case SiteSectionId.INCLUDED:
+            return <SiteIncludedSection key={id} items={site.content.included} />;
+          case SiteSectionId.REVIEWS:
+            return <SiteReviewsSection key={id} reviews={site.content.reviews} />;
+          case SiteSectionId.APP:
+            return <SiteAppSection key={id} app={site.content.app} />;
+          case SiteSectionId.LOCATIONS:
+            return (
+              <SiteLocationsSection
+                key={id}
+                branches={site.branches}
+                companyName={site.company.name}
+                phone={copy.phone}
+              />
+            );
+          case SiteSectionId.FAQ:
+            return <SiteFaqSection key={id} items={site.content.faq} />;
+          case SiteSectionId.CONTACT:
+            return (
+              <SiteContactSection
+                key={id}
+                contact={site.content.contact}
+                companyName={site.company.name}
+                phone={copy.phone}
+                email={copy.email}
+              />
+            );
+          default:
+            return null;
+        }
+      })}
+    </div>
   );
 }
 

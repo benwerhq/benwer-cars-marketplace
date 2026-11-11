@@ -1,5 +1,6 @@
 import type { BookingMode, SiteLayout, SiteStatus } from "@/enums";
 import type { Company } from "./company";
+import type { SiteContent } from "./siteContent";
 
 export interface SiteBranch {
   id: string;
@@ -23,6 +24,7 @@ export interface PublicSite {
   layout: SiteLayout;
   company: Company;
   branches: SiteBranch[];
+  content: SiteContent;
 }
 
 export interface SiteQuery {

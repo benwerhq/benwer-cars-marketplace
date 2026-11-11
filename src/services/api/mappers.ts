@@ -31,6 +31,7 @@ import type { GuestAccount } from "@/types/guest";
 import type { GuestReservation } from "@/types/reservation";
 import type { PublicSite, SiteBranch } from "@/types/site";
 import type { WebsiteSettings } from "@/types/websiteSettings";
+import { parseSiteContent } from "@/lib/siteContent";
 import type { Vehicle } from "@/types/vehicle";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -768,6 +769,7 @@ export function mapPublicSite(raw: unknown, fallbackSlug?: string): PublicSite {
       slug: company.slug || slug,
     },
     branches,
+    content: parseSiteContent(nestedSite.content ?? row.content),
   };
 }
 
@@ -800,6 +802,7 @@ export function mapWebsiteSettings(raw: unknown): WebsiteSettings {
       readString(nested.customDomain) ??
       readString(nested.canonicalUrl) ??
       "",
+    content: parseSiteContent(nested.content),
     canEdit: Boolean(canEdit),
   };
 }

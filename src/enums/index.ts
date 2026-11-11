@@ -27,6 +27,38 @@ export enum SiteLayout {
   BOLD_LANDING = "bold_landing",
 }
 
+export enum SiteSectionId {
+  BANNERS = "banners",
+  COMPANY = "company",
+  FLEET = "fleet",
+  INCLUDED = "included",
+  REVIEWS = "reviews",
+  APP = "app",
+  LOCATIONS = "locations",
+  FAQ = "faq",
+  CONTACT = "contact",
+}
+
+export enum SiteIncludedPreset {
+  INSURANCE = "insurance",
+  MILEAGE = "mileage",
+  FUEL = "fuel",
+  CANCELLATION = "cancellation",
+}
+
+export enum SiteIncludedIcon {
+  SHIELD = "shield",
+  GAUGE = "gauge",
+  FUEL = "fuel",
+  CALENDAR_CHECK = "calendar_check",
+  CHECK = "check",
+  CAR = "car",
+  USERS = "users",
+  BABY = "baby",
+  PLANE = "plane",
+  KEY = "key",
+}
+
 export enum BookingMode {
   INSTANT = "instant",
   REQUEST = "request",

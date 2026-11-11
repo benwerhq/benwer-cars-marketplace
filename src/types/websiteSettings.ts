@@ -1,4 +1,5 @@
 import type { BookingMode, SiteLayout, SiteStatus } from "@/enums";
+import type { SiteContent } from "./siteContent";
 
 export interface WebsiteSettings {
   layout: SiteLayout;
@@ -13,6 +14,7 @@ export interface WebsiteSettings {
   showAddress: boolean;
   primaryColor: string;
   domain: string;
+  content: SiteContent;
   canEdit: boolean;
 }
 

@@ -8,7 +8,7 @@ import { SiteEditBanner } from "@/components/layout/SiteEditBanner";
 import { OwnerHomeRoot } from "@/components/features/OwnerHomeRoot";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { PageLoadError } from "@/components/ui/PageLoadError";
-import { NavRoutes, SearchParams } from "@/enums";
+import { NavRoutes, SearchParams, SiteSectionId } from "@/enums";
 import { ApiError } from "@/lib/errors";
 import { logError } from "@/lib/logger";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
@@ -24,6 +24,7 @@ import { localizedText } from "@/lib/localizedCopy";
 import { isSiteEditMode, parseEditFlag } from "@/lib/siteEdit";
 import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata } from "@/lib/seo";
+import { visibleSections } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -121,6 +122,13 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
     edit: editMode,
   });
   const fleetHref = `${homeHref}#fleet`;
+  const phone = site.showPhone ? site.company.phone : null;
+  const email = site.showEmail ? site.company.email : null;
+  const navSections = visibleSections(site.content, {
+    branchCount: site.branches.length,
+    hasPhone: Boolean(phone),
+    hasEmail: Boolean(email),
+  }).filter((id) => NAV_SECTIONS.includes(id));
   const dehydratedState = await prefetchCompanyFleetState(site.company, {
     from: typeof query.from === "string" ? query.from : undefined,
     to: typeof query.to === "string" ? query.to : undefined,
@@ -138,6 +146,7 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
         logoUrl={site.company.branding.logoUrl}
         homeHref={homeHref}
         fleetHref={fleetHref}
+        sections={navSections}
       />
       <OwnerHomeRoot
         site={site}
@@ -153,9 +162,23 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
         }
         dehydratedState={dehydratedState}
       />
-      <SiteFooter companyName={site.company.name} homeHref={homeHref} />
+      <SiteFooter
+        companyName={site.company.name}
+        homeHref={homeHref}
+        description={site.company.description}
+        sections={navSections}
+        contact={{ phone, email, whatsapp: site.content.contact.whatsapp }}
+      />
     </>
   );
 }
+
+const NAV_SECTIONS: SiteSectionId[] = [
+  SiteSectionId.REVIEWS,
+  SiteSectionId.APP,
+  SiteSectionId.LOCATIONS,
+  SiteSectionId.FAQ,
+  SiteSectionId.CONTACT,
+];
 
 export default CompanySiteHomePage;

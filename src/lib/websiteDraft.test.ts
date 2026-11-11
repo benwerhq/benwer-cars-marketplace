@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { BookingMode, SiteLayout, SiteStatus } from "@/enums";
 import { applyWebsiteDraft, settingsFromSite } from "./websiteDraft";
 import type { PublicSite } from "@/types/site";
+import { defaultSiteContent } from "./siteContent";
 
 const site: PublicSite = {
   slug: "denver-cars",
@@ -17,6 +18,7 @@ const site: PublicSite = {
   isPreview: false,
   canonicalUrl: null,
   layout: SiteLayout.CLASSIC,
+  content: defaultSiteContent(),
   company: {
     id: "c1",
     slug: "denver-cars",

@@ -20,6 +20,7 @@ import {
   withSiteQuery,
 } from "./site";
 import type { PublicSite } from "@/types/site";
+import { defaultSiteContent } from "./siteContent";
 
 function site(overrides: Partial<PublicSite> = {}): PublicSite {
   return {
@@ -36,6 +37,7 @@ function site(overrides: Partial<PublicSite> = {}): PublicSite {
     isPreview: false,
     canonicalUrl: null,
     layout: SiteLayout.CLASSIC,
+    content: defaultSiteContent(),
     company: {
       id: "c1",
       slug: "denver-cars",

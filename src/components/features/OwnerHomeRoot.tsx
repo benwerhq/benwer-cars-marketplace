@@ -3,7 +3,7 @@
 import { useMemo, useState, type CSSProperties } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import type { DehydratedState } from "@tanstack/react-query";
-import { OwnerEditPanel } from "@/components/features/OwnerEditPanel";
+import { SiteEditor } from "@/components/features/site-editor/SiteEditor";
 import { SiteHomeLayouts } from "@/components/features/SiteHomeLayouts";
 import { useStaffAuth } from "@/context/StaffAuthProvider";
 import {
@@ -78,7 +78,7 @@ export function OwnerHomeRoot({
   return (
     <div
       style={style}
-      className={canEdit ? "lg:grid lg:grid-cols-[minmax(0,1fr)_20rem]" : undefined}
+      className={canEdit ? "lg:grid lg:grid-cols-[minmax(0,1fr)_26rem]" : undefined}
     >
       <div>
         <SiteHomeLayouts
@@ -94,8 +94,14 @@ export function OwnerHomeRoot({
         />
       </div>
       {canEdit ? (
-        <OwnerEditPanel
+        <SiteEditor
           draft={draft}
+          companyName={liveSite.company.name}
+          facts={{
+            branchCount: liveSite.branches.length,
+            hasPhone: Boolean(copy.phone),
+            hasEmail: Boolean(copy.email),
+          }}
           dirty={dirty}
           saving={save.isPending}
           error={save.error ? tRoot(getErrorKey(save.error)) : null}

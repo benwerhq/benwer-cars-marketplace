@@ -617,29 +617,7 @@
     "openEditor": "Abrir o editor",
     "disabledTitle": "A edição não está disponível",
     "disabledDescription": "O Firebase de staff não está configurado neste marketplace.",
-    "toolbarTitle": "Editor do site",
-    "unpublished": "Alterações por publicar",
-    "saved": "Tudo guardado",
     "signOut": "Sair",
-    "layout": "Modelo",
-    "headline": "Título",
-    "intro": "Introdução",
-    "primaryColor": "Cor da marca",
-    "showPhone": "Mostrar telefone",
-    "showEmail": "Mostrar email",
-    "showAddress": "Mostrar morada",
-    "bookingMode": "Modo de reserva",
-    "modeInstant": "Imediato",
-    "modeRequest": "Pedido",
-    "status": "Estado do site",
-    "statusDraft": "Rascunho",
-    "statusPublished": "Publicado",
-    "statusPaused": "Em pausa",
-    "minLead": "Horas mínimas de antecedência",
-    "requestWindow": "Horas da janela de pedido",
-    "domain": "Domínio próprio",
-    "save": "Guardar",
-    "discard": "Descartar",
     "layouts": {
       "classic": {
         "name": "Clássico",
@@ -716,6 +694,312 @@
       "tooManyRequests": "Demasiadas tentativas. Tente de novo daqui a uns minutos.",
       "invalidCredentials": "O email ou a palavra-passe não estão correctos.",
       "unknown": "Não foi possível entrar. Tente novamente."
+    }
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Ofertas de {name}",
+      "slideAlt": "Banner {position} de {name}",
+      "slideLabel": "{position} de {count}",
+      "previous": "Banner anterior",
+      "next": "Banner seguinte",
+      "goTo": "Ver banner {position}",
+      "pause": "Pausar banners",
+      "play": "Reproduzir banners"
+    },
+    "included": {
+      "eyebrow": "Incluído em todos os preços",
+      "title": "O preço que vê é o preço que paga",
+      "description": "Sem surpresas no balcão. Isto está sempre incluído no preço.",
+      "presets": {
+        "insurance": {
+          "title": "Seguro básico",
+          "text": "Cobertura de danos, roubo e responsabilidade civil.",
+          "tag": "Incluído"
+        },
+        "mileage": {
+          "title": "Quilómetros ilimitados",
+          "text": "Conduza o que quiser, sem custos por quilómetro.",
+          "tag": "Sem limites"
+        },
+        "fuel": {
+          "title": "Combustível cheio/cheio",
+          "text": "Levanta o carro com o depósito cheio e devolve-o cheio.",
+          "tag": "Sem depósito pré-pago"
+        },
+        "cancellation": {
+          "title": "Cancelamento gratuito",
+          "text": "Mudou de planos? Cancele sem custos.",
+          "tag": "Flexível"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Avaliações",
+      "title": "O que dizem os nossos clientes",
+      "seeAll": "Ver {count, plural, one {# avaliação} other {as # avaliações}}",
+      "seeAllOn": "Ver {count, plural, one {# avaliação} other {as # avaliações}} no {source}",
+      "basedOn": "Com base em {count, plural, one {# avaliação} other {# avaliações}}",
+      "basedOnSource": "Com base em {count, plural, one {# avaliação} other {# avaliações}} no {source}",
+      "ratingAria": "Avaliação de {rating} em 5",
+      "rented": "Alugou: {vehicle}"
+    },
+    "app": {
+      "title": "A sua reserva, sempre consigo",
+      "text": "Faça o check-in online, consulte os dados de levantamento e fale connosco, tudo a partir do telemóvel.",
+      "platformBoth": "iOS e Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Leia para descarregar",
+      "qrAlt": "Código QR para descarregar a app",
+      "appStore": {
+        "prefix": "Descarregar na",
+        "name": "App Store",
+        "aria": "Descarregar na App Store",
+        "unavailable": "Ainda não disponível na App Store"
+      },
+      "googlePlay": {
+        "prefix": "Disponível no",
+        "name": "Google Play",
+        "aria": "Disponível no Google Play",
+        "unavailable": "Ainda não disponível no Google Play"
+      }
+    },
+    "locations": {
+      "eyebrow": "Lojas",
+      "title": "{count, plural, one {A nossa loja} other {As nossas lojas}}",
+      "description": "{count, plural, one {Levante e devolva o seu carro aqui.} other {Levante e devolva o seu carro em qualquer uma das nossas lojas.}}",
+      "directions": "Direções",
+      "directionsTo": "Direções para {name}",
+      "call": "Ligar"
+    },
+    "faq": {
+      "eyebrow": "Perguntas frequentes",
+      "title": "Antes de reservar",
+      "description": "Não encontra a resposta? Fale connosco, teremos todo o gosto em ajudar."
+    },
+    "contact": {
+      "title": "Dúvidas? Fale com uma pessoa.",
+      "description": "Envie-nos uma mensagem ou ligue-nos e ajudamos a encontrar o carro certo.",
+      "whatsapp": "WhatsApp",
+      "email": "Enviar email",
+      "whatsappMessage": "Olá {name}, tenho uma pergunta sobre o aluguer de um carro."
+    },
+    "nav": {
+      "reviews": "Avaliações",
+      "locations": "Lojas",
+      "faq": "Perguntas",
+      "contact": "Contacto",
+      "app": "App"
+    },
+    "footer": {
+      "contact": "Contacto",
+      "whatsapp": "WhatsApp",
+      "manageBooking": "As minhas reservas",
+      "copyright": "© {year} {name}"
+    }
+  },
+  "siteEditor": {
+    "aria": "Editor do site",
+    "title": "Editor do site",
+    "signOut": "Terminar sessão",
+    "tabsAria": "Secções do editor",
+    "status": {
+      "draft": "Rascunho",
+      "published": "Publicado",
+      "paused": "Em pausa"
+    },
+    "tabs": {
+      "sections": "Secções",
+      "design": "Design",
+      "settings": "Definições"
+    },
+    "contentLanguage": "Idioma em edição",
+    "locales": {
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "pt-PT": "PT"
+    },
+    "backToSections": "Todas as secções",
+    "sections": {
+      "banners": "Banners e pesquisa",
+      "company": "Empresa",
+      "fleet": "Carros",
+      "included": "Incluído no preço",
+      "reviews": "Avaliações",
+      "app": "App móvel",
+      "locations": "Lojas",
+      "faq": "Perguntas frequentes",
+      "contact": "Contacto"
+    },
+    "sectionsHint": "Ative ou desative secções e altere a sua ordem. Abra uma secção para editar o conteúdo.",
+    "orderHint": "Os carros são sempre mostrados. As lojas vêm das suas filiais no Benwer admin.",
+    "hiddenUntilContent": "Oculta até adicionar conteúdo",
+    "summary": {
+      "banners": "{count, plural, one {# banner} other {# banners}}",
+      "bannersEmpty": "Sem banners, é mostrada a cor da marca",
+      "company": "Título, introdução e contactos",
+      "fleet": "Da sua frota no Benwer",
+      "included": "{count, plural, one {# item} other {# itens}}",
+      "reviews": "{count, plural, one {# avaliação} other {# avaliações}}",
+      "app": "Links das lojas e código QR",
+      "locations": "{count, plural, one {# loja} other {# lojas}} do Benwer",
+      "faq": "{count, plural, one {# pergunta} other {# perguntas}}",
+      "contactWhatsapp": "WhatsApp, telefone e horário",
+      "contact": "Telefone e email"
+    },
+    "unsaved": "Alterações por guardar",
+    "saved": "Tudo guardado",
+    "discard": "Descartar",
+    "save": "Guardar alterações",
+    "common": {
+      "moveUp": "Mover {item} para cima",
+      "moveDown": "Mover {item} para baixo",
+      "remove": "Remover {item}",
+      "show": "Mostrar {item}"
+    },
+    "banners": {
+      "title": "Banners",
+      "description": "Até {max} imagens que rodam no topo do site. A barra de pesquisa fica por cima.",
+      "sizeHint": "Tamanho recomendado: 2496 × 880 px. Deixe os 90 px inferiores sem texto, a pesquisa tapa-os.",
+      "empty": "Ainda não há banners. É mostrada a cor da marca.",
+      "item": "Banner {position}",
+      "imageUrl": "URL da imagem",
+      "imageHint": "Cole o link da imagem (JPG, PNG ou WebP).",
+      "headline": "Título",
+      "headlineHint": "Opcional. Deixe vazio se o texto já estiver na imagem.",
+      "subtitle": "Subtítulo",
+      "link": "Link",
+      "add": "Adicionar banner"
+    },
+    "company": {
+      "title": "Cabeçalho da empresa",
+      "description": "O seu nome, um título e uma breve introdução.",
+      "headline": "Título",
+      "headlinePlaceholder": "Alugue um carro com {name}",
+      "intro": "Introdução",
+      "introHint": "Uma ou duas frases sobre a sua empresa.",
+      "contactTitle": "Contactos",
+      "contactDescription": "Mostrados no cabeçalho, nas lojas e no contacto.",
+      "showPhone": "Mostrar telefone",
+      "showEmail": "Mostrar email",
+      "showAddress": "Mostrar morada"
+    },
+    "included": {
+      "title": "Incluído no preço",
+      "description": "Até 6 compromissos que fazem sempre parte do preço.",
+      "accuracy": "Inclua apenas o que é verdade em todos os alugueres. O texto padrão é uma sugestão, confirme que corresponde às suas condições.",
+      "item": "Item {position}",
+      "icon": "Ícone",
+      "itemTitle": "Título",
+      "itemText": "Descrição",
+      "itemTag": "Destaque",
+      "tagHint": "Etiqueta curta a verde, como «Franquia 1000 €».",
+      "presets": {
+        "insurance": "Seguro básico",
+        "mileage": "Km ilimitados",
+        "fuel": "Cheio/cheio",
+        "cancellation": "Cancelamento gratuito"
+      },
+      "addCustom": "Item próprio"
+    },
+    "icons": {
+      "shield": "Escudo",
+      "gauge": "Conta-quilómetros",
+      "fuel": "Bomba de combustível",
+      "calendar_check": "Calendário",
+      "check": "Visto",
+      "car": "Carro",
+      "users": "Pessoas",
+      "baby": "Cadeira de criança",
+      "plane": "Avião",
+      "key": "Chave"
+    },
+    "reviews": {
+      "summaryTitle": "Resumo da avaliação",
+      "summaryDescription": "A sua nota global. Deixe vazio para usar a média das avaliações abaixo.",
+      "score": "Nota (em 5)",
+      "count": "Número de avaliações",
+      "source": "Fonte",
+      "sourceUrl": "Link para todas as avaliações",
+      "sourceUrlHint": "Por exemplo, a sua página de avaliações no Google Maps.",
+      "itemsTitle": "Avaliações em destaque",
+      "itemsDescription": "Até {max} avaliações reais dos seus clientes.",
+      "empty": "Ainda não há avaliações. A secção fica oculta até adicionar uma.",
+      "item": "Avaliação {position}",
+      "author": "Nome",
+      "rating": "Avaliação",
+      "stars": "{count, plural, one {# estrela} other {# estrelas}}",
+      "origin": "Origem",
+      "originPlaceholder": "Lisboa, PT",
+      "date": "Data",
+      "datePlaceholder": "out 2025",
+      "vehicle": "Carro alugado",
+      "text": "Avaliação",
+      "add": "Adicionar avaliação"
+    },
+    "app": {
+      "storesTitle": "Links das lojas",
+      "storesDescription": "A secção aparece quando adiciona pelo menos um link. A loja em falta aparece a cinzento.",
+      "ios": "Link da App Store",
+      "android": "Link do Google Play",
+      "qrHint": "O código QR abre o link do Google Play, ou o da App Store se não houver do Google Play.",
+      "copyTitle": "Texto",
+      "title": "Título",
+      "text": "Descrição"
+    },
+    "faq": {
+      "title": "Perguntas",
+      "description": "Até {max} perguntas com respostas curtas.",
+      "empty": "Ainda não há perguntas. A secção fica oculta até adicionar uma.",
+      "item": "Pergunta {position}",
+      "question": "Pergunta",
+      "answer": "Resposta",
+      "incompleteHint": "As perguntas sem resposta não aparecem no site.",
+      "add": "Adicionar pergunta"
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Como os clientes o contactam. O telefone e o email vêm da secção da empresa.",
+      "whatsapp": "Número de WhatsApp",
+      "whatsappHint": "Inclua o indicativo do país. Deixe vazio para ocultar o botão do WhatsApp.",
+      "hours": "Quando respondem",
+      "hoursPlaceholder": "Respondemos todos os dias das 08:00 às 22:00."
+    },
+    "design": {
+      "colorTitle": "Cor da marca",
+      "colorDescription": "Usada em botões, links e destaques do site.",
+      "presets": "Cores sugeridas",
+      "custom": "Cor personalizada",
+      "customHint": "Use um código hexadecimal, como #4f46e5.",
+      "picker": "Escolher cor",
+      "layoutTitle": "Layout",
+      "layoutDescription": "Todos os layouts mostram o mesmo conteúdo, com outra disposição."
+    },
+    "settings": {
+      "statusTitle": "Estado do site",
+      "statusDescription": "Sites em rascunho ou em pausa não aceitam reservas.",
+      "status": "Estado",
+      "statusPublished": "Publicado",
+      "statusDraft": "Rascunho",
+      "statusPaused": "Em pausa",
+      "bookingTitle": "Reservas",
+      "bookingDescription": "Como os clientes reservam no seu site.",
+      "bookingMode": "Modo de reserva",
+      "mode": {
+        "instant": "Imediata",
+        "request": "Mediante pedido"
+      },
+      "modeHint": {
+        "instant": "As reservas são confirmadas de imediato.",
+        "request": "Aceita ou recusa cada reserva dentro do prazo de resposta."
+      },
+      "minLead": "Antecedência mínima",
+      "requestWindow": "Prazo de resposta",
+      "hoursUnit": "Em horas",
+      "domainTitle": "Domínio próprio",
+      "domainDescription": "O seu próprio endereço web. O DNS é configurado no Benwer admin.",
+      "domain": "Domínio"
     }
   }
 }

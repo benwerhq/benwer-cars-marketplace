@@ -617,29 +617,7 @@
     "openEditor": "Open website editor",
     "disabledTitle": "Owner editing is not available",
     "disabledDescription": "Staff Firebase is not configured on this marketplace.",
-    "toolbarTitle": "Website editor",
-    "unpublished": "Unpublished changes",
-    "saved": "All changes saved",
     "signOut": "Sign out",
-    "layout": "Layout",
-    "headline": "Headline",
-    "intro": "Intro",
-    "primaryColor": "Brand colour",
-    "showPhone": "Show phone",
-    "showEmail": "Show email",
-    "showAddress": "Show address",
-    "bookingMode": "Booking mode",
-    "modeInstant": "Instant",
-    "modeRequest": "Request",
-    "status": "Site status",
-    "statusDraft": "Draft",
-    "statusPublished": "Published",
-    "statusPaused": "Paused",
-    "minLead": "Minimum lead hours",
-    "requestWindow": "Request window hours",
-    "domain": "Custom domain",
-    "save": "Save",
-    "discard": "Discard",
     "layouts": {
       "classic": {
         "name": "Classic",
@@ -716,6 +694,312 @@
       "tooManyRequests": "Too many attempts. Try again in a few minutes.",
       "invalidCredentials": "Email or password is not correct.",
       "unknown": "Could not sign in. Try again."
+    }
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "{name} offers",
+      "slideAlt": "{name} banner {position}",
+      "slideLabel": "{position} of {count}",
+      "previous": "Previous banner",
+      "next": "Next banner",
+      "goTo": "Show banner {position}",
+      "pause": "Pause banners",
+      "play": "Play banners"
+    },
+    "included": {
+      "eyebrow": "Included in every price",
+      "title": "The price you see is the price you pay",
+      "description": "No surprises at the desk. These are always part of the price.",
+      "presets": {
+        "insurance": {
+          "title": "Basic insurance",
+          "text": "Collision, theft and third-party cover.",
+          "tag": "Included"
+        },
+        "mileage": {
+          "title": "Unlimited kilometres",
+          "text": "Drive as far as you like, with no per-km charges.",
+          "tag": "No limits"
+        },
+        "fuel": {
+          "title": "Full-to-full fuel",
+          "text": "Pick the car up full and bring it back full.",
+          "tag": "No pre-paid tank"
+        },
+        "cancellation": {
+          "title": "Free cancellation",
+          "text": "Plans changed? Cancel for free.",
+          "tag": "Flexible"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Reviews",
+      "title": "What drivers say about us",
+      "seeAll": "See all {count, plural, one {# review} other {# reviews}}",
+      "seeAllOn": "See all {count, plural, one {# review} other {# reviews}} on {source}",
+      "basedOn": "Based on {count, plural, one {# review} other {# reviews}}",
+      "basedOnSource": "Based on {count, plural, one {# review} other {# reviews}} on {source}",
+      "ratingAria": "Rated {rating} out of 5",
+      "rented": "Rented: {vehicle}"
+    },
+    "app": {
+      "title": "Your booking, on the go",
+      "text": "Check in online, see your pick-up details and message us, all from your phone.",
+      "platformBoth": "iOS & Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Scan to download",
+      "qrAlt": "QR code to download the app",
+      "appStore": {
+        "prefix": "Download on the",
+        "name": "App Store",
+        "aria": "Download on the App Store",
+        "unavailable": "Not available on the App Store yet"
+      },
+      "googlePlay": {
+        "prefix": "Get it on",
+        "name": "Google Play",
+        "aria": "Get it on Google Play",
+        "unavailable": "Not available on Google Play yet"
+      }
+    },
+    "locations": {
+      "eyebrow": "Locations",
+      "title": "{count, plural, one {Our office} other {Our offices}}",
+      "description": "{count, plural, one {Pick up and return your car here.} other {Pick up and return your car at any of our offices.}}",
+      "directions": "Directions",
+      "directionsTo": "Directions to {name}",
+      "call": "Call"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Questions before booking",
+      "description": "Can't find your answer? Get in touch, we're happy to help."
+    },
+    "contact": {
+      "title": "Questions? Talk to a person.",
+      "description": "Send us a message or give us a call and we'll help you find the right car.",
+      "whatsapp": "WhatsApp",
+      "email": "Email us",
+      "whatsappMessage": "Hello {name}, I have a question about renting a car."
+    },
+    "nav": {
+      "reviews": "Reviews",
+      "locations": "Locations",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "app": "App"
+    },
+    "footer": {
+      "contact": "Contact",
+      "whatsapp": "WhatsApp",
+      "manageBooking": "My bookings",
+      "copyright": "© {year} {name}"
+    }
+  },
+  "siteEditor": {
+    "aria": "Website editor",
+    "title": "Website editor",
+    "signOut": "Sign out",
+    "tabsAria": "Editor sections",
+    "status": {
+      "draft": "Draft",
+      "published": "Live",
+      "paused": "Paused"
+    },
+    "tabs": {
+      "sections": "Sections",
+      "design": "Design",
+      "settings": "Settings"
+    },
+    "contentLanguage": "Editing language",
+    "locales": {
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "pt-PT": "PT"
+    },
+    "backToSections": "All sections",
+    "sections": {
+      "banners": "Banners & search",
+      "company": "Company",
+      "fleet": "Cars",
+      "included": "Included in every price",
+      "reviews": "Reviews",
+      "app": "Mobile app",
+      "locations": "Locations",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "sectionsHint": "Switch sections on or off and change their order. Open a section to edit its content.",
+    "orderHint": "Cars always show. Offices come from your branches in Benwer admin.",
+    "hiddenUntilContent": "Hidden until you add content",
+    "summary": {
+      "banners": "{count, plural, one {# banner} other {# banners}}",
+      "bannersEmpty": "No banners yet, brand colour shown",
+      "company": "Headline, intro and contact details",
+      "fleet": "From your Benwer fleet",
+      "included": "{count, plural, one {# item} other {# items}}",
+      "reviews": "{count, plural, one {# review} other {# reviews}}",
+      "app": "Store links and QR code",
+      "locations": "{count, plural, one {# office} other {# offices}} from Benwer",
+      "faq": "{count, plural, one {# question} other {# questions}}",
+      "contactWhatsapp": "WhatsApp, phone and opening hours",
+      "contact": "Phone and email"
+    },
+    "unsaved": "Unsaved changes",
+    "saved": "All changes saved",
+    "discard": "Discard",
+    "save": "Save changes",
+    "common": {
+      "moveUp": "Move {item} up",
+      "moveDown": "Move {item} down",
+      "remove": "Remove {item}",
+      "show": "Show {item}"
+    },
+    "banners": {
+      "title": "Banners",
+      "description": "Up to {max} slides that rotate at the top of your site. The search bar sits on top of them.",
+      "sizeHint": "Recommended size: 2496 × 880 px. Keep the bottom 90 px free of text, the search bar covers it.",
+      "empty": "No banners yet. Your brand colour is shown instead.",
+      "item": "Banner {position}",
+      "imageUrl": "Image URL",
+      "imageHint": "Paste a link to your banner image (JPG, PNG or WebP).",
+      "headline": "Headline",
+      "headlineHint": "Optional. Leave empty if the text is already in the image.",
+      "subtitle": "Subtitle",
+      "link": "Link",
+      "add": "Add banner"
+    },
+    "company": {
+      "title": "Company header",
+      "description": "Your name, a headline and a short introduction.",
+      "headline": "Headline",
+      "headlinePlaceholder": "Rent a car with {name}",
+      "intro": "Introduction",
+      "introHint": "One or two sentences about your company.",
+      "contactTitle": "Contact details",
+      "contactDescription": "Shown in the header, locations and contact sections.",
+      "showPhone": "Show phone number",
+      "showEmail": "Show email",
+      "showAddress": "Show address"
+    },
+    "included": {
+      "title": "Included in every price",
+      "description": "Up to 6 promises that are always part of your price.",
+      "accuracy": "Only list what is true for every rental. The default text is a suggestion, check it matches your rental conditions.",
+      "item": "Item {position}",
+      "icon": "Icon",
+      "itemTitle": "Title",
+      "itemText": "Description",
+      "itemTag": "Highlight",
+      "tagHint": "Short label shown in green, such as “Excess €1,000”.",
+      "presets": {
+        "insurance": "Basic insurance",
+        "mileage": "Unlimited km",
+        "fuel": "Full-to-full fuel",
+        "cancellation": "Free cancellation"
+      },
+      "addCustom": "Custom item"
+    },
+    "icons": {
+      "shield": "Shield",
+      "gauge": "Speedometer",
+      "fuel": "Fuel pump",
+      "calendar_check": "Calendar",
+      "check": "Tick",
+      "car": "Car",
+      "users": "People",
+      "baby": "Child seat",
+      "plane": "Plane",
+      "key": "Key"
+    },
+    "reviews": {
+      "summaryTitle": "Rating summary",
+      "summaryDescription": "Your overall score. Leave empty to use the average of the reviews below.",
+      "score": "Score (out of 5)",
+      "count": "Number of reviews",
+      "source": "Source",
+      "sourceUrl": "Link to all reviews",
+      "sourceUrlHint": "For example, your Google Maps reviews page.",
+      "itemsTitle": "Featured reviews",
+      "itemsDescription": "Up to {max} real reviews from your customers.",
+      "empty": "No reviews yet. The section stays hidden until you add one.",
+      "item": "Review {position}",
+      "author": "Name",
+      "rating": "Rating",
+      "stars": "{count, plural, one {# star} other {# stars}}",
+      "origin": "From",
+      "originPlaceholder": "Manchester, UK",
+      "date": "Date",
+      "datePlaceholder": "Oct 2025",
+      "vehicle": "Car rented",
+      "text": "Review",
+      "add": "Add review"
+    },
+    "app": {
+      "storesTitle": "Store links",
+      "storesDescription": "The section shows once you add at least one link. A missing store shows as greyed out.",
+      "ios": "App Store link",
+      "android": "Google Play link",
+      "qrHint": "The QR code opens the Google Play link, or the App Store link if there is no Google Play link.",
+      "copyTitle": "Text",
+      "title": "Title",
+      "text": "Description"
+    },
+    "faq": {
+      "title": "Questions",
+      "description": "Up to {max} questions with short answers.",
+      "empty": "No questions yet. The section stays hidden until you add one.",
+      "item": "Question {position}",
+      "question": "Question",
+      "answer": "Answer",
+      "incompleteHint": "Questions without an answer are not shown on the site.",
+      "add": "Add question"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "How customers reach you. Phone and email come from the company section.",
+      "whatsapp": "WhatsApp number",
+      "whatsappHint": "Include the country code. Leave empty to hide the WhatsApp button.",
+      "hours": "When you answer",
+      "hoursPlaceholder": "We answer every day from 08:00 to 22:00."
+    },
+    "design": {
+      "colorTitle": "Brand colour",
+      "colorDescription": "Used for buttons, links and highlights across your site.",
+      "presets": "Suggested colours",
+      "custom": "Custom colour",
+      "customHint": "Use a hex code, such as #4f46e5.",
+      "picker": "Pick a colour",
+      "layoutTitle": "Layout",
+      "layoutDescription": "Every layout shows the same content, in a different arrangement."
+    },
+    "settings": {
+      "statusTitle": "Website status",
+      "statusDescription": "Draft and paused sites are not open for bookings.",
+      "status": "Status",
+      "statusPublished": "Live",
+      "statusDraft": "Draft",
+      "statusPaused": "Paused",
+      "bookingTitle": "Bookings",
+      "bookingDescription": "How customers book from your site.",
+      "bookingMode": "Booking mode",
+      "mode": {
+        "instant": "Instant",
+        "request": "On request"
+      },
+      "modeHint": {
+        "instant": "Bookings are confirmed straight away.",
+        "request": "You accept or decline each booking within the request window."
+      },
+      "minLead": "Minimum notice",
+      "requestWindow": "Time to reply",
+      "hoursUnit": "In hours",
+      "domainTitle": "Custom domain",
+      "domainDescription": "Your own web address. DNS setup is done in Benwer admin.",
+      "domain": "Domain"
     }
   }
 }

@@ -5,6 +5,7 @@ export interface StoreBadgeCopy {
   prefix: string;
   name: string;
   aria: string;
+  href?: string;
 }
 
 function AppleMark() {
@@ -40,22 +41,42 @@ function StoreBadge({
   name,
   aria,
   icon,
+  href,
 }: StoreBadgeCopy & { icon: ReactNode }) {
-  return (
-    <button
-      type="button"
-      disabled
-      aria-label={aria}
-      className={cn(
-        "inline-flex h-12 w-full min-w-[10.75rem] cursor-not-allowed items-center gap-3 rounded-lg bg-secondary px-3.5 text-left text-secondary-foreground opacity-60 sm:w-auto",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-      )}
-    >
+  const className = cn(
+    "inline-flex h-12 w-full min-w-[10.75rem] items-center gap-3 rounded-lg bg-secondary px-3.5 text-left text-secondary-foreground sm:w-auto",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+    href
+      ? "cursor-pointer transition-colors hover:bg-secondary-hover"
+      : "cursor-not-allowed opacity-60",
+  );
+  const body = (
+    <>
       {icon}
       <span className="flex min-w-0 flex-col leading-tight">
         <span className="text-[10px] font-medium tracking-wide">{prefix}</span>
         <span className="text-sm font-semibold">{name}</span>
       </span>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={aria}
+        className={className}
+      >
+        {body}
+      </a>
+    );
+  }
+
+  return (
+    <button type="button" disabled aria-label={aria} className={className}>
+      {body}
     </button>
   );
 }
