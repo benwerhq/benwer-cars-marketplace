@@ -26,6 +26,7 @@ import type {
   PriceWarning,
 } from "@/types/pricing";
 import type { GuestCancellationQuote, GuestPayment } from "@/types/payment";
+import type { GuestAccount } from "@/types/guest";
 import type { GuestReservation } from "@/types/reservation";
 import type { PublicSite, SiteBranch } from "@/types/site";
 import type { Vehicle } from "@/types/vehicle";
@@ -475,6 +476,43 @@ export function mapReservation(
         : null,
     company: row.company ? mapCompany(row.company) : null,
   };
+}
+
+export function mapGuestAccount(
+  raw: unknown,
+  fallbackSlug?: string,
+): GuestAccount {
+  const row = isRecord(raw) ? raw : {};
+  const nested = isRecord(row.data) ? row.data : row;
+  const user = isRecord(nested.user) ? nested.user : {};
+  const customer = isRecord(nested.customer) ? nested.customer : {};
+
+  return {
+    email:
+      readString(nested.email) ??
+      readString(user.email) ??
+      readString(customer.email) ??
+      "",
+    linked:
+      readBoolean(nested.linked) ??
+      Boolean(readString(nested.linkedAt) ?? readString(nested.customerId)),
+    companySlug:
+      readString(nested.companySlug) ??
+      (isRecord(nested.company)
+        ? readString(nested.company.slug)
+        : undefined) ??
+      fallbackSlug ??
+      "",
+  };
+}
+
+export function mapGuestReservationList(
+  payload: unknown,
+  fallbackSlug?: string,
+): GuestReservation[] {
+  return unwrapList(payload)
+    .map((row) => mapReservation(row, fallbackSlug))
+    .filter((reservation) => reservation.id || reservation.token);
 }
 
 export function mapGuestPayment(raw: unknown): GuestPayment {

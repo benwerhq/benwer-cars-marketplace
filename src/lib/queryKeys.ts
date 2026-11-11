@@ -69,6 +69,14 @@ export function cancellationQuoteQueryKey(token: string) {
   return [QueryKeys.CANCELLATION_QUOTE, token] as const;
 }
 
+export function guestAccountQueryKey(companySlug: string) {
+  return [QueryKeys.GUEST, companySlug] as const;
+}
+
+export function guestReservationsQueryKey(companySlug: string) {
+  return [QueryKeys.GUEST_RESERVATIONS, companySlug] as const;
+}
+
 export function priceQuoteQueryKey(
   companySlug: string,
   query: PriceQuoteQuery,

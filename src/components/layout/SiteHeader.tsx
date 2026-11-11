@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { CompanyMark } from "@/components/features/CompanyMark";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { SiteGuestLink } from "./SiteGuestLink";
 import { SiteNav } from "./SiteNav";
 import { cn } from "@/lib/utils";
 
@@ -49,6 +50,7 @@ export async function SiteHeader({
         </Link>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-4">
           <SiteNav homeHref={homeHref} fleetHref={fleetHref} />
+          <SiteGuestLink homeHref={homeHref} />
           <LocaleSwitcher />
         </div>
       </div>

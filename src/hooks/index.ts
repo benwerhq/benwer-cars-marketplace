@@ -19,3 +19,11 @@ export {
   useCreateGuestPayment,
   useGuestPayment,
 } from "./useGuestPayment";
+export {
+  useConfirmGuestLink,
+  useEraseGuest,
+  useGuestAccount,
+  useGuestLink,
+  useGuestReservations,
+  useUnlinkGuest,
+} from "./useGuestAccount";
