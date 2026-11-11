@@ -31,6 +31,14 @@ export function matchesVehicleFilters(
     return false;
   }
 
+  if (
+    filters.branchId &&
+    vehicle.branchId &&
+    vehicle.branchId !== filters.branchId
+  ) {
+    return false;
+  }
+
   if (filters.q) {
     const query = normalize(filters.q);
     const haystack = normalize(

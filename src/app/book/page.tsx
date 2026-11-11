@@ -12,15 +12,9 @@ import { BookingView } from "@/components/features/BookingView";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { companiesApi, vehiclesApi } from "@/services/api";
 import { NavRoutes } from "@/enums";
-import {
-  buildBookHref,
-  buildCarDetailHref,
-  buildFleetHref,
-} from "@/lib/booking";
-import {
-  buildCompanySiteHref,
-  buildCompanySiteOrigin,
-} from "@/lib/companySite";
+import { buildCarDetailHref, buildFleetHref } from "@/lib/booking";
+import { buildCompanySiteHref } from "@/lib/companySite";
+import { siteBookHref, siteHomePath } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -78,17 +72,17 @@ async function BookPage({ searchParams }: Props) {
 
     if (companySlug && carId) {
       redirect(
-        `${buildCompanySiteOrigin(companySlug)}${buildBookHref({
-          companySlug,
+        siteBookHref({
+          slug: companySlug,
           carId,
           from,
           to,
-        })}`,
+        }),
       );
     }
 
     if (companySlug) {
-      redirect(buildCompanySiteHref({ slug: companySlug }));
+      redirect(siteHomePath(companySlug));
     }
   }
 

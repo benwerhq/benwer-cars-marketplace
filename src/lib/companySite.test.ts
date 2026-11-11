@@ -21,7 +21,7 @@ describe("buildCompanySiteHref", () => {
     ).toBe("https://med.example/fleet?from=2026-09-20&to=2026-09-24");
   });
 
-  it("falls back to the company subdomain and tenant car path", () => {
+  it("falls back to the marketplace /s/{slug} live URL", () => {
     expect(
       buildCompanySiteHref({
         slug: "denver-cars",
@@ -30,7 +30,7 @@ describe("buildCompanySiteHref", () => {
         to: "2026-09-24",
       }),
     ).toBe(
-      "https://denver-cars.benwer.es/cars/v1?from=2026-09-20&to=2026-09-24",
+      "http://localhost:3002/s/denver-cars/cars/v1?from=2026-09-20&to=2026-09-24",
     );
   });
 });

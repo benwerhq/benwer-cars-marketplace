@@ -43,6 +43,7 @@ export function buildCompanySiteHref(input: {
   }
 
   const path = input.path && input.path !== "/" ? input.path : "";
-  const origin = buildCompanySiteOrigin(input.slug);
-  return query ? `${origin}${path}?${query}` : `${origin}${path || "/"}`;
+  const origin = env.NEXT_PUBLIC_APP_URL.replace(/\/$/, "");
+  const sitePath = `/s/${encodeURIComponent(input.slug)}${path}`;
+  return query ? `${origin}${sitePath}?${query}` : `${origin}${sitePath}`;
 }

@@ -3,8 +3,11 @@ export interface AvailabilityRange {
   unavailableDates: string[];
 }
 
+import type { PublicChannel } from "@/enums";
+
 export interface AvailabilityQuery {
   from: string;
   to: string;
   vehicleId?: string;
+  channel?: PublicChannel;
 }

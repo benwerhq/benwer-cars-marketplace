@@ -51,12 +51,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   try {
     const companies = await companiesApi.getAll();
-    const companyRoutes: MetadataRoute.Sitemap = companies.map((company) => ({
-      url: absoluteUrl(`/companies/${company.slug}`),
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.8,
-    }));
+    const companyRoutes: MetadataRoute.Sitemap = companies.flatMap((company) => [
+      {
+        url: absoluteUrl(`/companies/${company.slug}`),
+        lastModified: now,
+        changeFrequency: "daily" as const,
+        priority: 0.8,
+      },
+      {
+        url: absoluteUrl(`/s/${company.slug}`),
+        lastModified: now,
+        changeFrequency: "daily" as const,
+        priority: 0.8,
+      },
+    ]);
 
     const vehicleRoutes: MetadataRoute.Sitemap = [];
     for (const company of companies) {

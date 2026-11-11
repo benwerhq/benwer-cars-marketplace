@@ -1,8 +1,9 @@
 import type {
+  FuelType,
+  PublicChannel,
+  TransmissionType,
   VehicleStatus,
   VehicleType,
-  TransmissionType,
-  FuelType,
 } from "@/enums";
 import type { Company } from "./company";
 
@@ -26,6 +27,7 @@ export interface Vehicle {
   deposit: number | null;
   category: string | null;
   mileage: number | null;
+  branchId: string | null;
 }
 
 export interface VehicleFilters {
@@ -40,6 +42,8 @@ export interface VehicleFilters {
   limit?: number;
   companySlug?: string;
   companySlugs?: string[];
+  branchId?: string;
+  channel?: PublicChannel;
 }
 
 export interface MarketplaceSearchFilters extends VehicleFilters {

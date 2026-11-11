@@ -3,12 +3,15 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { ReservationStatus, VehicleType } from "@/enums";
+import { BookingMode, SiteStatus } from "@/enums";
 import {
   mapAvailability,
   mapAvailabilityList,
   mapCompany,
   mapCompanyList,
+  mapInsurancePackageList,
   mapPriceBreakdown,
+  mapPublicSite,
   mapReservation,
   mapVehicle,
   mapVehicleList,
@@ -459,5 +462,94 @@ describe("mapPriceBreakdown", () => {
       }),
     ).toBeNull();
     expect(mapPriceBreakdown(null)).toBeNull();
+  });
+});
+
+describe("mapPublicSite", () => {
+  it("maps a published site with localized copy and contact toggles", () => {
+    const site = mapPublicSite(
+      {
+        slug: "denver-cars",
+        status: "paused",
+        bookingMode: "request",
+        minLeadHours: 12,
+        requestWindowHours: 36,
+        headline: { "en-GB": "Drive Denver" },
+        intro: { "en-GB": "Cars in town." },
+        showPhone: false,
+        showEmail: true,
+        showAddress: true,
+        preview: true,
+        company: {
+          slug: "denver-cars",
+          name: "Denver Cars",
+          phone: "+34 600 000 000",
+          email: "hi@denver.example",
+          address: "Calle 1",
+        },
+        locations: [{ id: "b1", name: "Airport", address: "AGP" }],
+      },
+      "ignored",
+    );
+
+    expect(site.status).toBe(SiteStatus.PAUSED);
+    expect(site.bookingMode).toBe(BookingMode.REQUEST);
+    expect(site.minLeadHours).toBe(12);
+    expect(site.isPreview).toBe(true);
+    expect(site.showPhone).toBe(false);
+    expect(site.showEmail).toBe(true);
+    expect(site.headline["en-GB"]).toBe("Drive Denver");
+    expect(site.branches).toEqual([
+      { id: "b1", name: "Airport", address: "AGP" },
+    ]);
+    expect(site.company.slug).toBe("denver-cars");
+  });
+});
+
+describe("mapInsurancePackageList", () => {
+  it("maps quote list envelopes", () => {
+    const packages = mapInsurancePackageList({
+      days: 3,
+      data: [
+        {
+          packageId: "p1",
+          code: "basic",
+          name: { "en-GB": "Basic" },
+          pricePerDay: 8,
+          total: 24,
+          excessAmount: 900,
+          depositAmount: 200,
+          isDefault: true,
+        },
+      ],
+    });
+
+    expect(packages).toEqual([
+      {
+        packageId: "p1",
+        code: "basic",
+        name: { "en-GB": "Basic" },
+        description: null,
+        pricePerDay: 8,
+        total: 24,
+        excessAmount: 900,
+        depositAmount: 200,
+        isDefault: true,
+      },
+    ]);
+  });
+});
+
+describe("mapReservation extras", () => {
+  it("maps request expiry and cancel reason", () => {
+    const reservation = mapReservation({
+      token: "abc",
+      status: "draft",
+      requestExpiresAt: "2026-09-21T10:00:00Z",
+      cancelReason: "guest_withdrawn",
+    });
+
+    expect(reservation.requestExpiresAt).toBe("2026-09-21T10:00:00Z");
+    expect(reservation.cancelReason).toBe("guest_withdrawn");
   });
 });

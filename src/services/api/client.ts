@@ -3,6 +3,7 @@ import { env } from "@/env";
 import {
   assertMockCatalogueAllowed,
   collapseDuplicateV1Path,
+  joinApiUrl,
   normalizeApiBaseUrl,
   resolveBrowserApiBaseUrl,
 } from "@/lib/publicApiProxy";
@@ -26,6 +27,18 @@ const FIELD_ALIASES: Record<string, string> = {
 const CODE_ALIASES: Record<string, string> = {
   after_start: "reservation.invalid_dates",
   invalid_dates: "reservation.invalid_dates",
+  min_lead: "reservation.min_lead",
+  min_notice: "reservation.min_lead",
+  "booking.min_lead_hours": "reservation.min_lead",
+  "site.min_lead_hours": "reservation.min_lead",
+  terms_required: "reservation.terms_required",
+  terms_not_accepted: "reservation.terms_required",
+  "booking.terms_required": "reservation.terms_required",
+  max_open_requests: "reservation.max_open_requests",
+  "booking.max_open_requests": "reservation.max_open_requests",
+  request_expired: "reservation.request_expired",
+  "booking.request_expired": "reservation.request_expired",
+  "site.unpublished": "site.not_published",
 };
 
 export function liveApiBaseUrl(): string {
@@ -70,10 +83,52 @@ function problemCode(status: number, body: ProblemBody): string {
 export function throwApiError(status: number, body: ProblemBody): never {
   throw new ApiError(
     status,
-    problemCode(status, body),
+    CODE_ALIASES[problemCode(status, body)] ?? problemCode(status, body),
     (body.errors ?? []).map(normalizeFieldError),
     body.detail,
   );
+}
+
+export async function publicRequest<T>(
+  path: string,
+  init?: RequestInit & { query?: Record<string, string | undefined> },
+): Promise<T> {
+  const baseUrl = liveApiBaseUrl();
+  if (!baseUrl) {
+    throw new ApiError(0, "network", [], "Live API is not configured");
+  }
+
+  const url = new URL(
+    joinApiUrl(baseUrl, path),
+    typeof window === "undefined" ? env.NEXT_PUBLIC_APP_URL : window.location.origin,
+  );
+  const { query, ...requestInit } = init ?? {};
+  for (const [key, value] of Object.entries(query ?? {})) {
+    if (value) {
+      url.searchParams.set(key, value);
+    }
+  }
+
+  const response = await fetch(url, {
+    ...requestInit,
+    headers: {
+      Accept: "application/json",
+      ...requestInit.headers,
+    },
+    cache: "no-store",
+    signal: requestInit.signal ?? AbortSignal.timeout(LIVE_TIMEOUT_MS),
+  });
+
+  if (!response.ok) {
+    const body = (await response.json().catch(() => ({}))) as ProblemBody;
+    throwApiError(response.status, body);
+  }
+
+  if (response.status === 204) {
+    return undefined as T;
+  }
+
+  return response.json() as Promise<T>;
 }
 
 const problemMiddleware: Middleware = {

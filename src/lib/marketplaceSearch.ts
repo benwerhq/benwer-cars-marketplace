@@ -11,6 +11,8 @@ export function appendSearchParams(
     view?: string;
     companySlug?: string;
     companySlugs?: string[];
+    preview?: string;
+    branch?: string;
   },
 ): string {
   const params = new URLSearchParams();
@@ -39,6 +41,14 @@ export function appendSearchParams(
 
   if (companySlugs.length) {
     params.set(SearchParams.COMPANIES, serializeCompanySlugs(companySlugs));
+  }
+
+  if (input?.preview) {
+    params.set(SearchParams.PREVIEW, input.preview);
+  }
+
+  if (input?.branch) {
+    params.set(SearchParams.BRANCH, input.branch);
   }
 
   const query = params.toString();

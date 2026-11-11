@@ -15,6 +15,7 @@ import {
   sanitizeDateRange,
   unavailableDatesForVehicle,
 } from "@/lib/availability";
+import type { PublicChannel } from "@/enums";
 import type { Vehicle } from "@/types/vehicle";
 
 const AvailabilityCalendar = dynamic(
@@ -39,6 +40,10 @@ interface CarDetailViewProps {
   initialTo?: string;
   backHref?: string;
   backLabel?: string;
+  bookingsEnabled?: boolean;
+  bookHrefOverride?: string | null;
+  requestMode?: boolean;
+  channel?: PublicChannel;
 }
 
 export function CarDetailView({
@@ -51,6 +56,10 @@ export function CarDetailView({
   initialTo,
   backHref,
   backLabel,
+  bookingsEnabled = true,
+  bookHrefOverride,
+  requestMode = false,
+  channel,
 }: CarDetailViewProps) {
   const t = useTranslations("carDetail");
   const calendarWindow = availabilityCalendarWindow();
@@ -60,6 +69,7 @@ export function CarDetailView({
       from: calendarWindow.from,
       to: calendarWindow.to,
       vehicleId: vehicle.id,
+      channel,
     },
     isTenant,
   );
@@ -160,6 +170,9 @@ export function CarDetailView({
           isRangeBlocked={isRangeBlocked}
           isAvailabilityPending={isTenant && isPending}
           isAvailabilityError={isTenant && isError}
+          bookingsEnabled={bookingsEnabled}
+          bookHrefOverride={bookHrefOverride}
+          requestMode={requestMode}
         />
       </div>
     </div>

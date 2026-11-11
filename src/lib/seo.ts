@@ -90,7 +90,7 @@ export function websiteJsonLd(input: {
         name: input.name,
         url,
         description: input.description,
-        inLanguage: ["en-GB", "es-ES"],
+        inLanguage: ["en-GB", "es-ES", "pt-PT"],
       },
     ],
   };

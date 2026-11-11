@@ -5,7 +5,7 @@ import { addMonths } from "date-fns";
 import { useLocale, useTranslations } from "next-intl";
 import { CalendarDays } from "lucide-react";
 import { DayPicker, type DateRange, type Matcher } from "react-day-picker";
-import { enGB, es } from "react-day-picker/locale";
+import { enGB, es, pt } from "react-day-picker/locale";
 import { AvailabilityCalendarSkeleton } from "./AvailabilityCalendarSkeleton";
 import { ErrorState } from "@/components/ui/ErrorState";
 import { Button } from "@/components/ui/Button";
@@ -153,7 +153,7 @@ export function AvailabilityCalendar({
         <>
           <DayPicker
             mode="range"
-            locale={locale === "es-ES" ? es : enGB}
+            locale={locale === "es-ES" ? es : locale === "pt-PT" ? pt : enGB}
             numberOfMonths={isDesktop ? 2 : 1}
             selected={selected}
             onSelect={handleSelect}

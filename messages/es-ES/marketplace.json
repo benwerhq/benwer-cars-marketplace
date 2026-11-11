@@ -296,7 +296,14 @@
     "stickyMeta": "{name} · {count, plural, one {# día} other {# días}}",
     "rateTimesDays": "{rate} × {days}",
     "confirm": "Confirmar reserva",
+    "confirmRequest": "Enviar solicitud",
+    "requesting": "Enviando solicitud…",
     "confirming": "Confirmando…",
+    "sitePaused": "No acepta reservas",
+    "insurance": "Seguro",
+    "termsLabel": "Condiciones de alquiler",
+    "termsAccept": "Acepto las",
+    "termsLink": "condiciones de alquiler",
     "successTitle": "¡Reserva confirmada!",
     "successMessage": "Tu confirmación ha sido enviada a {email}.",
     "viewBooking": "Ver mi reserva",
@@ -324,6 +331,7 @@
       "startDate": "Selecciona una fecha de recogida.",
       "endDate": "Selecciona una fecha de devolución.",
       "endAfterStart": "La devolución debe ser posterior a la recogida.",
+      "terms": "Acepta las condiciones de alquiler para continuar.",
       "fixErrors": "Corrige los campos marcados."
     },
     "averageRate": "Tarifa diaria media",
@@ -365,7 +373,10 @@
     "browseMore": "Ver más coches",
     "notFoundTitle": "Reserva no encontrada",
     "notFoundDescription": "Comprueba el enlace de tu correo de confirmación, o empieza una nueva búsqueda.",
-    "backHome": "Volver al inicio"
+    "backHome": "Volver al inicio",
+    "requestExpires": "La solicitud caduca",
+    "cancelReason": "Motivo de cancelación",
+    "withdraw": "Retirar solicitud"
   },
   "companies": {
     "title": "Empresas de alquiler",
@@ -520,5 +531,23 @@
         }
       ]
     }
+  },
+  "site": {
+    "logoAlt": "Inicio de {name}",
+    "defaultHeadline": "Alquila un coche con {name}",
+    "footerTagline": "Reserva directamente con esta empresa de alquiler.",
+    "previewBanner": "Vista previa — esta página no es pública. Los buscadores no la indexarán.",
+    "pausedTitle": "No acepta reservas",
+    "pausedDescription": "Esta empresa ha pausado las reservas online. Aún puedes ver la flota.",
+    "notFoundTitle": "Web no encontrada",
+    "notFoundDescription": "Esta web de alquiler no está disponible.",
+    "loadErrorTitle": "Web no disponible",
+    "loadErrorDescription": "No hemos podido cargar esta web de alquiler. Inténtalo de nuevo.",
+    "search": "Buscar coches",
+    "searchAria": "Buscar por fechas y sucursal",
+    "searchTitle": "Buscar coches",
+    "searchDescription": "Elige fechas y sucursal para ver la disponibilidad.",
+    "branch": "Sucursal",
+    "anyBranch": "Cualquier sucursal"
   }
 }

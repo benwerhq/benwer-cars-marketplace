@@ -1,11 +1,13 @@
 import { ApiError } from "@/lib/errors";
+import { channelQuery } from "@/lib/publicChannel";
+import type { PublicChannel } from "@/enums";
 import type {
   MarketplaceSearchFilters,
   MarketplaceVehicle,
   Vehicle,
   VehicleFilters,
 } from "@/types/vehicle";
-import { getOpenApiClient } from "./client";
+import { getOpenApiClient, publicRequest } from "./client";
 import { companiesApi } from "./companies";
 import { applyVehicleListFilters } from "./filters";
 import { mapVehicle, mapVehicleList } from "./mappers";
@@ -22,14 +24,17 @@ async function fetchLiveVehicles(
   companySlug: string,
   filters?: VehicleFilters,
 ): Promise<Vehicle[]> {
-  const { data } = await getOpenApiClient().GET(
-    "/v1/public/companies/{slug}/vehicles",
-    {
-      params: {
-        path: { slug: companySlug },
-      },
-    },
-  );
+  const channel = filters?.channel;
+  const data = channel
+    ? await publicRequest<unknown>(
+        `/v1/public/companies/${encodeURIComponent(companySlug)}/vehicles`,
+        { query: channelQuery(channel) },
+      )
+    : (
+        await getOpenApiClient().GET("/v1/public/companies/{slug}/vehicles", {
+          params: { path: { slug: companySlug } },
+        })
+      ).data;
 
   return applyVehicleListFilters(
     mapVehicleList(data, { companySlug }),
@@ -40,14 +45,22 @@ async function fetchLiveVehicles(
 async function fetchLiveVehicle(
   companySlug: string,
   vehicleId: string,
+  channel?: PublicChannel,
 ): Promise<Vehicle> {
   try {
-    const { data } = await getOpenApiClient().GET(
-      "/v1/public/companies/{slug}/vehicles/{id}",
-      {
-        params: { path: { slug: companySlug, id: vehicleId } },
-      },
-    );
+    const data = channel
+      ? await publicRequest<unknown>(
+          `/v1/public/companies/${encodeURIComponent(companySlug)}/vehicles/${encodeURIComponent(vehicleId)}`,
+          { query: channelQuery(channel) },
+        )
+      : (
+          await getOpenApiClient().GET(
+            "/v1/public/companies/{slug}/vehicles/{id}",
+            {
+              params: { path: { slug: companySlug, id: vehicleId } },
+            },
+          )
+        ).data;
     const vehicle = mapVehicle(data, { companySlug });
     if (!vehicle.id) {
       throw new ApiError(404, "vehicle.not_found");
@@ -62,7 +75,7 @@ async function fetchLiveVehicle(
     }
 
     try {
-      const listed = await fetchLiveVehicles(companySlug);
+      const listed = await fetchLiveVehicles(companySlug, { channel });
       const found = listed.find((vehicle) => vehicle.id === vehicleId);
       if (found) {
         return found;
@@ -83,8 +96,12 @@ export const vehiclesApi = {
     return fetchLiveVehicles(companySlug, filters);
   },
 
-  getById(companySlug: string, id: string): Promise<Vehicle> {
-    return fetchLiveVehicle(companySlug, decodeVehicleId(id));
+  getById(
+    companySlug: string,
+    id: string,
+    channel?: PublicChannel,
+  ): Promise<Vehicle> {
+    return fetchLiveVehicle(companySlug, decodeVehicleId(id), channel);
   },
 
   searchMarketplace(

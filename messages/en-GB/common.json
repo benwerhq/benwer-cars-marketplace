@@ -11,7 +11,16 @@
     "reservation": {
       "overlap": "This vehicle is already booked for those dates.",
       "not_found": "Reservation not found. Check your confirmation link.",
-      "invalid_dates": "Drop-off must be after pick-up."
+      "invalid_dates": "Drop-off must be after pick-up.",
+      "min_lead": "Pick-up is too soon. Choose a later date.",
+      "terms_required": "Please accept the rental terms to continue.",
+      "max_open_requests": "You already have two open requests. Withdraw one before sending another.",
+      "request_expired": "This request has expired. Start a new one."
+    },
+    "site": {
+      "not_found": "This rental website could not be found.",
+      "paused": "This company is not taking bookings right now.",
+      "not_published": "This website is not open for bookings yet."
     },
     "pricing": {
       "min_days": "These dates are too short for the season. Choose a longer rental.",
@@ -49,8 +58,10 @@
     "label": "Language",
     "en": "EN",
     "es": "ES",
+    "pt": "PT",
     "enName": "English",
-    "esName": "Español"
+    "esName": "Español",
+    "ptName": "Português"
   },
   "footer": {
     "tagline": "Compare cars from partner rental companies.",

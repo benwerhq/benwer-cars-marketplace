@@ -3,6 +3,8 @@ export { vehiclesApi } from "./vehicles";
 export { reservationsApi } from "./reservations";
 export { availabilityApi } from "./availability";
 export { pricingApi } from "./pricing";
+export { sitesApi } from "./sites";
+export { insuranceApi } from "./insurance";
 export {
   contactApi,
   MARKETPLACE_CONTACT_SOURCE,
