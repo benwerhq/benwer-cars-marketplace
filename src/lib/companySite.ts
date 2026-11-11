@@ -3,6 +3,7 @@ import { env } from "@/env";
 import {
   companySubdomainOrigin,
   hostFromAppUrl,
+  isLoopbackHost,
   usesCompanySubdomains,
 } from "@/lib/platformHost";
 
@@ -19,10 +20,19 @@ export function buildCompanySiteOrigin(slug: string): string {
 }
 
 export function shouldLinkCompanySubdomain(): boolean {
+  const domain = env.NEXT_PUBLIC_MARKETPLACE_DOMAIN.trim();
+  if (!domain) {
+    return false;
+  }
+
   const appHost =
     hostFromAppUrl(env.NEXT_PUBLIC_APP_URL) ??
     new URL(env.NEXT_PUBLIC_APP_URL).hostname;
-  return usesCompanySubdomains(appHost, env.NEXT_PUBLIC_MARKETPLACE_DOMAIN);
+  if (usesCompanySubdomains(appHost, domain)) {
+    return true;
+  }
+
+  return !isLoopbackHost(appHost);
 }
 
 export function buildCompanySiteHref(input: {
@@ -64,4 +74,20 @@ export function buildCompanySiteHref(input: {
   const origin = env.NEXT_PUBLIC_APP_URL.replace(/\/$/, "");
   const sitePath = `/s/${encodeURIComponent(input.slug)}${path}`;
   return query ? `${origin}${sitePath}?${query}` : `${origin}${sitePath}`;
+}
+
+export function buildCompanyCarHref(input: {
+  slug: string;
+  vehicleId: string;
+  websiteUrl?: string | null;
+  from?: string;
+  to?: string;
+}): string {
+  return buildCompanySiteHref({
+    slug: input.slug,
+    websiteUrl: input.websiteUrl,
+    path: `/cars/${encodeURIComponent(input.vehicleId)}`,
+    from: input.from,
+    to: input.to,
+  });
 }

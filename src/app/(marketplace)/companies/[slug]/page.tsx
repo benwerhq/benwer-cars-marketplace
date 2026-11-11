@@ -140,7 +140,11 @@ async function CompanyPage({ params, searchParams }: Props) {
         <HydrationBoundary state={dehydratedState}>
           <CarListView
             companySlug={slug}
-            hrefBase={`/companies/${slug}/cars`}
+            hrefBase={buildCompanySiteHref({
+              slug,
+              websiteUrl: company.websiteUrl,
+              path: "/cars",
+            })}
             showDirectoryEmptyAction
           />
         </HydrationBoundary>

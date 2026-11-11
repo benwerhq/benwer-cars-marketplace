@@ -1,11 +1,13 @@
 import { addDays, addMonths } from "date-fns";
-import { QueryKeys } from "@/enums";
+import { QueryKeys, VehicleStatus } from "@/enums";
 import {
+  hasCompleteSearchDates,
   listingRangeDates,
   parseIsoDate,
   startOfToday,
   toIsoDate,
 } from "@/lib/dates";
+import type { Vehicle } from "@/types/vehicle";
 import type {
   AvailabilityQuery,
   AvailabilityRange,
@@ -60,7 +62,48 @@ export function rangeIncludesUnavailable(
   }
 
   const blocked = new Set(unavailableDates);
-  return listingRangeDates(from, to).some((date) => blocked.has(date));
+  const dates = listingRangeDates(from, to);
+  if (dates.length === 0) {
+    return blocked.has(from);
+  }
+  return dates.some((date) => blocked.has(date));
+}
+
+export function defaultFleetDateRange(today = startOfToday()): {
+  from: string;
+  to: string;
+} {
+  return {
+    from: toIsoDate(today),
+    to: toIsoDate(addDays(today, 1)),
+  };
+}
+
+export function resolveFleetDateRange(
+  from: string | undefined,
+  to: string | undefined,
+): { from: string; to: string } {
+  if (hasCompleteSearchDates(from, to) && from && to) {
+    return { from, to };
+  }
+  return defaultFleetDateRange();
+}
+
+export function isFleetVehicleAvailable(
+  vehicle: Vehicle,
+  ranges: AvailabilityRange[] | undefined,
+  from: string,
+  to: string,
+): boolean {
+  const hasRow = ranges?.some((row) => row.vehicleId === vehicle.id) ?? false;
+  if (hasRow) {
+    return !rangeIncludesUnavailable(
+      from,
+      to,
+      unavailableDatesForVehicle(ranges, vehicle.id),
+    );
+  }
+  return vehicle.status === VehicleStatus.AVAILABLE;
 }
 
 export function firstUnavailableOnOrAfter(

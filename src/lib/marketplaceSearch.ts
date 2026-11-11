@@ -1,5 +1,6 @@
 import { NavRoutes, SearchParams } from "@/enums";
 import { DEFAULT_CITY_SLUG } from "@/data/malagaCities";
+import { buildCompanySiteHref } from "@/lib/companySite";
 import { serializeCompanySlugs } from "@/lib/vehicleFilters";
 
 export function appendSearchParams(
@@ -104,5 +105,9 @@ export function buildCompanyHref(
     to?: string;
   },
 ): string {
-  return appendSearchParams(`${NavRoutes.COMPANIES}/${slug}`, input);
+  return buildCompanySiteHref({
+    slug,
+    from: input?.from,
+    to: input?.to,
+  });
 }

@@ -16,7 +16,10 @@ import { formatSearchDate, parseIsoDate } from "@/lib/dates";
 import { resolveCardCompany } from "@/lib/companyIdentity";
 import { NavRoutes, SearchParams, type PublicChannel } from "@/enums";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
-import { rangeIncludesUnavailable } from "@/lib/availability";
+import {
+  isFleetVehicleAvailable,
+  resolveFleetDateRange,
+} from "@/lib/availability";
 import { useFleetAvailability } from "@/hooks/useFleetAvailability";
 import {
   applyVehicleFilters,
@@ -58,23 +61,25 @@ function CarListViewContent({
     companySlug,
     channel ? { ...filters, channel } : filters,
   );
-  const hasRange = Boolean(filters.from && filters.to);
+  const availabilityRange = resolveFleetDateRange(filters.from, filters.to);
   const availabilityQuery = useFleetAvailability(
     companySlug,
     {
-      from: filters.from ?? "",
-      to: filters.to ?? "",
+      from: availabilityRange.from,
+      to: availabilityRange.to,
       vehicleIds: data?.map((vehicle) => vehicle.id) ?? [],
       channel,
     },
-    filterByAvailability && hasRange && Boolean(data?.length),
+    filterByAvailability && Boolean(data?.length),
   );
-  const vehicles = filterVehiclesByAvailability(
-    data,
-    availabilityQuery.data,
-    filterByAvailability && hasRange ? filters.from : undefined,
-    filterByAvailability && hasRange ? filters.to : undefined,
-  );
+  const vehicles = filterByAvailability
+    ? sortVehiclesByAvailability(
+        data,
+        availabilityQuery.data,
+        availabilityRange.from,
+        availabilityRange.to,
+      )
+    : data;
   const companyQuery = useCompany(companySlug);
   const directory = companyQuery.data ? [companyQuery.data] : [];
 
@@ -83,8 +88,26 @@ function CarListViewContent({
   const fromDate = filters.from ? parseIsoDate(filters.from) : null;
   const toDate = filters.to ? parseIsoDate(filters.to) : null;
   const count = vehicles?.length ?? 0;
-  const resultsLabel =
-    fromDate && toDate
+  const availableCount = filterByAvailability
+    ? (vehicles?.filter((vehicle) =>
+        isFleetVehicleAvailable(
+          vehicle,
+          availabilityQuery.data,
+          availabilityRange.from,
+          availabilityRange.to,
+        ),
+      ).length ?? 0)
+    : count;
+  const resultsLabel = filterByAvailability
+    ? fromDate && toDate
+      ? t("fleetSummaryForDates", {
+          total: count,
+          available: availableCount,
+          from: formatSearchDate(fromDate, locale),
+          to: formatSearchDate(toDate, locale),
+        })
+      : t("fleetSummary", { total: count, available: availableCount })
+    : fromDate && toDate
       ? t("resultsForDates", {
           count,
           from: formatSearchDate(fromDate, locale),
@@ -176,15 +199,23 @@ function CarListViewContent({
         <div className="min-w-0 flex-1">
           <CarGridView
             vehicles={vehicles}
-            isPending={
-              isPending ||
-              (filterByAvailability && hasRange && availabilityQuery.isPending)
-            }
+            isPending={isPending}
             isError={isError}
             error={error}
             onRetry={refetch}
             buildHref={buildHref}
             companyFor={(vehicle) => resolveCardCompany(vehicle, directory)}
+            isAvailable={
+              filterByAvailability
+                ? (vehicle) =>
+                    isFleetVehicleAvailable(
+                      vehicle,
+                      availabilityQuery.data,
+                      availabilityRange.from,
+                      availabilityRange.to,
+                    )
+                : undefined
+            }
             onClearFilters={hasFilters ? clearAdvancedFilters : undefined}
             emptyActionLabel={
               hasFilters || !showDirectoryEmptyAction
@@ -282,23 +313,22 @@ export function CarListView({
   );
 }
 
-function filterVehiclesByAvailability(
+function sortVehiclesByAvailability(
   vehicles: Vehicle[] | undefined,
   ranges: { vehicleId: string; unavailableDates: string[] }[] | undefined,
-  from: string | undefined,
-  to: string | undefined,
+  from: string,
+  to: string,
 ): Vehicle[] | undefined {
-  if (!vehicles || !from || !to || !ranges?.length) {
+  if (!vehicles) {
     return vehicles;
   }
 
-  const blocked = new Set(
-    ranges
-      .filter((row) =>
-        rangeIncludesUnavailable(from, to, row.unavailableDates),
-      )
-      .map((row) => row.vehicleId),
-  );
-
-  return vehicles.filter((vehicle) => !blocked.has(vehicle.id));
+  return [...vehicles].sort((a, b) => {
+    const aAvailable = isFleetVehicleAvailable(a, ranges, from, to);
+    const bAvailable = isFleetVehicleAvailable(b, ranges, from, to);
+    if (aAvailable === bAvailable) {
+      return 0;
+    }
+    return aAvailable ? -1 : 1;
+  });
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useMarketplaceVehicles } from "@/hooks/useMarketplaceVehicles";
 import { NavRoutes } from "@/enums";
+import { buildCompanyCarHref } from "@/lib/companySite";
 import { CarGridView } from "./CarGrid";
 import type { Vehicle } from "@/types/vehicle";
 
@@ -18,7 +19,12 @@ export function FeaturedCars() {
   const vehicles = data?.slice(0, FEATURED_LIMIT);
 
   function buildHref(vehicle: Vehicle): string {
-    return `${NavRoutes.COMPANIES}/${encodeURIComponent(vehicle.companySlug)}/cars/${encodeURIComponent(vehicle.id)}`;
+    const company = companyFor(vehicle);
+    return buildCompanyCarHref({
+      slug: vehicle.companySlug,
+      vehicleId: vehicle.id,
+      websiteUrl: company?.websiteUrl,
+    });
   }
 
   function companyFor(vehicle: Vehicle) {

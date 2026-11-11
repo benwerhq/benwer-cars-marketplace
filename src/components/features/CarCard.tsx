@@ -27,6 +27,7 @@ interface CarCardProps {
   company?: Pick<Company, "name" | "slug" | "branding"> | null;
   priority?: boolean;
   className?: string;
+  available?: boolean;
 }
 
 const FALLBACK_TONE: Record<VehicleType, string> = {
@@ -51,6 +52,7 @@ export function CarCard({
   company,
   priority = false,
   className,
+  available = true,
 }: CarCardProps) {
   const t = useTranslations("cars");
   const tDetail = useTranslations("carDetail");
@@ -66,6 +68,7 @@ export function CarCard({
         "transition-[box-shadow,transform] duration-200",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         "motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md",
+        !available && "opacity-80",
         className,
       )}
     >
@@ -89,6 +92,14 @@ export function CarCard({
         >
           {t(`types.${vehicle.type}`)}
         </Badge>
+        {!available ? (
+          <Badge
+            variant="warning"
+            className="absolute right-3 top-3 max-w-[calc(100%-1.5rem)] border border-border bg-surface/90 text-left backdrop-blur-sm"
+          >
+            {t("notAvailableForDates")}
+          </Badge>
+        ) : null}
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-3 p-4">
@@ -134,14 +145,20 @@ export function CarCard({
               {t("perDaySuffix")}
             </span>
           </p>
-          <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-            {t("viewDetails")}
-            <ChevronRight
-              size={16}
-              aria-hidden
-              className="transition-transform motion-safe:group-hover:translate-x-0.5"
-            />
-          </span>
+          {available ? (
+            <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+              {t("viewDetails")}
+              <ChevronRight
+                size={16}
+                aria-hidden
+                className="transition-transform motion-safe:group-hover:translate-x-0.5"
+              />
+            </span>
+          ) : (
+            <span className="inline-flex items-center rounded-md bg-surface-muted px-3 py-1.5 text-sm font-medium text-muted-foreground">
+              {t("bookUnavailable")}
+            </span>
+          )}
         </div>
       </div>
     </Link>

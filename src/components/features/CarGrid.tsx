@@ -37,6 +37,7 @@ interface CarGridProps {
   companyFor?: (
     vehicle: Vehicle,
   ) => Pick<Company, "name" | "slug" | "branding"> | null;
+  isAvailable?: (vehicle: Vehicle) => boolean;
   onClearFilters?: () => void;
   emptyTitle?: string;
   emptyHint?: string;
@@ -49,6 +50,7 @@ export function CarGrid({
   vehicles,
   buildHref,
   companyFor,
+  isAvailable,
   onClearFilters,
   emptyTitle,
   emptyHint,
@@ -91,6 +93,7 @@ export function CarGrid({
           href={buildHref(vehicle)}
           company={companyFor?.(vehicle)}
           priority={index === 0}
+          available={isAvailable?.(vehicle) ?? true}
         />
       ))}
     </div>
@@ -107,6 +110,7 @@ interface CarGridViewProps {
   companyFor?: (
     vehicle: Vehicle,
   ) => Pick<Company, "name" | "slug" | "branding"> | null;
+  isAvailable?: (vehicle: Vehicle) => boolean;
   onClearFilters?: () => void;
   emptyTitle?: string;
   emptyHint?: string;
@@ -124,6 +128,7 @@ export function CarGridView({
   onRetry,
   buildHref,
   companyFor,
+  isAvailable,
   onClearFilters,
   emptyTitle,
   emptyHint,
@@ -145,6 +150,7 @@ export function CarGridView({
       vehicles={vehicles ?? []}
       buildHref={buildHref}
       companyFor={companyFor}
+      isAvailable={isAvailable}
       onClearFilters={onClearFilters}
       emptyTitle={emptyTitle}
       emptyHint={emptyHint}
