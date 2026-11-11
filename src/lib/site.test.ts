@@ -9,6 +9,9 @@ import {
   isSitePaused,
   siteBookHref,
   siteCarPath,
+  siteGuestBookingsPath,
+  siteGuestConfirmPath,
+  siteGuestPath,
   siteHomePath,
   siteOwnerPath,
   withSiteQuery,
@@ -62,6 +65,13 @@ describe("site paths", () => {
   it("builds tenant-isolated /s/{slug} routes", () => {
     expect(siteHomePath("denver-cars")).toBe("/s/denver-cars");
     expect(siteOwnerPath("denver-cars")).toBe("/s/denver-cars/owner");
+    expect(siteGuestPath("denver-cars")).toBe("/s/denver-cars/guest");
+    expect(siteGuestBookingsPath("denver-cars")).toBe(
+      "/s/denver-cars/guest/bookings",
+    );
+    expect(siteGuestConfirmPath("denver-cars")).toBe(
+      "/s/denver-cars/guest/confirm",
+    );
     expect(siteCarPath("denver-cars", "v1")).toBe("/s/denver-cars/cars/v1");
     expect(
       siteBookHref({

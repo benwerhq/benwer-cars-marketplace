@@ -89,6 +89,8 @@ export enum QueryKeys {
   INSURANCE = "insurance",
   PAYMENT = "payment",
   CANCELLATION_QUOTE = "cancellation-quote",
+  GUEST = "guest",
+  GUEST_RESERVATIONS = "guest-reservations",
 }
 
 export enum StorageKeys {
@@ -114,6 +116,9 @@ export enum NavRoutes {
   SITE_BOOK = "/s/:slug/book",
   SITE_BOOKING = "/s/:slug/booking/:token",
   SITE_OWNER = "/s/:slug/owner",
+  SITE_GUEST = "/s/:slug/guest",
+  SITE_GUEST_BOOKINGS = "/s/:slug/guest/bookings",
+  SITE_GUEST_CONFIRM = "/s/:slug/guest/confirm",
 }
 
 export enum SearchParams {
@@ -131,6 +136,7 @@ export enum SearchParams {
   PREVIEW = "preview",
   BRANCH = "branch",
   EDIT = "edit",
+  TOKEN = "token",
 }
 
 export enum SiteEditTab {
@@ -175,4 +181,8 @@ export enum ErrorMessages {
   WEBSITE_DOMAIN_NOT_FOUND = "errors.website_domain.not_found",
   STAFF_UNAUTHENTICATED = "errors.staff.unauthenticated",
   STAFF_FORBIDDEN = "errors.staff.forbidden",
+  GUEST_NOT_CONFIGURED = "errors.guest.not_configured",
+  GUEST_NOT_LINKED = "errors.guest.not_linked",
+  GUEST_INVALID_TOKEN = "errors.guest.invalid_token",
+  GUEST_UNAUTHENTICATED = "errors.guest.unauthenticated",
 }

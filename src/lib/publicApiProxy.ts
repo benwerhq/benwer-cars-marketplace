@@ -110,6 +110,22 @@ export function isAllowedPublicApiProxyPath(
     return true;
   }
 
+  if (
+    verb === "POST" &&
+    /^v1\/public\/companies\/[^/]+\/guest\/link(?:\/confirm)?$/.test(
+      normalized,
+    )
+  ) {
+    return true;
+  }
+
+  if (
+    verb === "DELETE" &&
+    /^v1\/public\/companies\/[^/]+\/guest(?:\/link)?$/.test(normalized)
+  ) {
+    return true;
+  }
+
   return false;
 }
 

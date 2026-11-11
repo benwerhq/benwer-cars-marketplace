@@ -2,6 +2,7 @@ import type {
   CreateGuestReservationPayload,
   GuestReservation,
 } from "@/types/reservation";
+import { getGuestAccessToken } from "@/lib/guestAccessToken";
 import { getOpenApiClient, publicRequest } from "./client";
 import { mapReservation } from "./mappers";
 
@@ -31,14 +32,19 @@ export const reservationsApi = {
     const body = reservationBody(payload);
 
     if (payload.channel) {
-      return publicRequest<unknown>(
-        `/v1/public/companies/${encodeURIComponent(companySlug)}/reservations`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        },
-      ).then((data) => mapReservation(data, companySlug));
+      return getGuestAccessToken().then((token) =>
+        publicRequest<unknown>(
+          `/v1/public/companies/${encodeURIComponent(companySlug)}/reservations`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              ...(token ? { Authorization: `Bearer ${token}` } : {}),
+            },
+            body: JSON.stringify(body),
+          },
+        ).then((data) => mapReservation(data, companySlug)),
+      );
     }
 
     return getOpenApiClient()

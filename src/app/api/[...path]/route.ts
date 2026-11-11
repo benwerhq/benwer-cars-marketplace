@@ -96,3 +96,7 @@ export function PATCH(request: NextRequest, context: RouteContext) {
 export function PUT(request: NextRequest, context: RouteContext) {
   return proxyPublicApi(request, context);
 }
+
+export function DELETE(request: NextRequest, context: RouteContext) {
+  return proxyPublicApi(request, context);
+}

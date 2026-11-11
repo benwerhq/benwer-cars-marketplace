@@ -41,5 +41,11 @@ describe("getErrorKey", () => {
     expect(getErrorKey(new ApiError(403, "staff.forbidden"))).toBe(
       ErrorMessages.STAFF_FORBIDDEN,
     );
+    expect(getErrorKey(new ApiError(503, "guest.not_configured"))).toBe(
+      ErrorMessages.GUEST_NOT_CONFIGURED,
+    );
+    expect(getErrorKey(new ApiError(404, "guest.not_linked"))).toBe(
+      ErrorMessages.GUEST_NOT_LINKED,
+    );
   });
 });

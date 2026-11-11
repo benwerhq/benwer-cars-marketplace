@@ -38,6 +38,12 @@
       "unauthenticated": "Entra como propietario para editar esta web.",
       "forbidden": "No tienes permiso para editar esta web."
     },
+    "guest": {
+      "not_configured": "Las cuentas de cliente aún no están disponibles para esta empresa.",
+      "not_linked": "Aún no hay reservas vinculadas a esta cuenta.",
+      "invalid_token": "Este enlace de confirmación no es válido o ha caducado.",
+      "unauthenticated": "Inicia sesión para continuar."
+    },
     "pricing": {
       "min_days": "Estas fechas son demasiado cortas para la temporada. Elige un alquiler más largo.",
       "max_days": "Estas fechas son demasiado largas para la temporada. Elige un alquiler más corto.",

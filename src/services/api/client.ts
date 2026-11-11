@@ -52,6 +52,13 @@ const CODE_ALIASES: Record<string, string> = {
   "staff.unauthenticated": "staff.unauthenticated",
   "staff.forbidden": "staff.forbidden",
   forbidden: "staff.forbidden",
+  "guest.not_configured": "guest.not_configured",
+  not_configured: "guest.not_configured",
+  "guest.not_linked": "guest.not_linked",
+  not_linked: "guest.not_linked",
+  "guest.invalid_token": "guest.invalid_token",
+  invalid_token: "guest.invalid_token",
+  "guest.unauthenticated": "guest.unauthenticated",
 };
 
 export function liveApiBaseUrl(): string {

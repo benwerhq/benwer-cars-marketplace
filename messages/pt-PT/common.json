@@ -38,6 +38,12 @@
       "unauthenticated": "Inicie sessão como proprietário para editar este site.",
       "forbidden": "Não tem permissão para editar este site."
     },
+    "guest": {
+      "not_configured": "As contas de cliente ainda não estão disponíveis nesta empresa.",
+      "not_linked": "Ainda não há reservas ligadas a esta conta.",
+      "invalid_token": "Este link de confirmação é inválido ou expirou.",
+      "unauthenticated": "Inicie sessão para continuar."
+    },
     "pricing": {
       "min_days": "Estas datas são demasiado curtas para a época. Escolha um aluguer mais longo.",
       "max_days": "Estas datas são demasiado longas para a época. Escolha um aluguer mais curto.",

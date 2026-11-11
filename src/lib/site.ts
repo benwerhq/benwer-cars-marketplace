@@ -33,6 +33,30 @@ export function ownerHrefFromHome(homeHref: string): string {
   return `${url.pathname.replace(/\/$/, "")}/owner${url.search}`;
 }
 
+export function siteGuestPath(slug: string): string {
+  return `${siteHomePath(slug)}/guest`;
+}
+
+export function siteGuestBookingsPath(slug: string): string {
+  return `${siteGuestPath(slug)}/bookings`;
+}
+
+export function siteGuestConfirmPath(slug: string): string {
+  return `${siteGuestPath(slug)}/confirm`;
+}
+
+export function guestLinksFromHomeHref(homeHref: string): {
+  signIn: string;
+  bookings: string;
+} {
+  const url = new URL(homeHref, "https://benwer.local");
+  const base = url.pathname.replace(/\/$/, "");
+  return {
+    signIn: `${base}/guest${url.search}`,
+    bookings: `${base}/guest/bookings${url.search}`,
+  };
+}
+
 export interface SiteLinkQuery {
   from?: string;
   to?: string;
