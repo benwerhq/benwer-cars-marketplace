@@ -599,7 +599,71 @@
     "searchTitle": "Search cars",
     "searchDescription": "Choose dates and a branch to see what is available.",
     "branch": "Branch",
-    "anyBranch": "Any branch"
+    "anyBranch": "Any branch",
+    "ownerSignIn": "Owner sign-in"
+  },
+  "owner": {
+    "signInTitle": "Owner sign-in",
+    "signInHint": "Use your Benwer staff account for this company. Guests use a different sign-in.",
+    "signInAction": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "signedInTitle": "You are signed in",
+    "signedInHint": "If you can manage this website, the editor opens on the home page.",
+    "openEditor": "Open website editor",
+    "disabledTitle": "Owner editing is not available",
+    "disabledDescription": "Staff Firebase is not configured on this marketplace.",
+    "toolbarTitle": "Website editor",
+    "unpublished": "Unpublished changes",
+    "saved": "All changes saved",
+    "signOut": "Sign out",
+    "layout": "Layout",
+    "headline": "Headline",
+    "intro": "Intro",
+    "primaryColor": "Brand colour",
+    "showPhone": "Show phone",
+    "showEmail": "Show email",
+    "showAddress": "Show address",
+    "bookingMode": "Booking mode",
+    "modeInstant": "Instant",
+    "modeRequest": "Request",
+    "status": "Site status",
+    "statusDraft": "Draft",
+    "statusPublished": "Published",
+    "statusPaused": "Paused",
+    "minLead": "Minimum lead hours",
+    "requestWindow": "Request window hours",
+    "domain": "Custom domain",
+    "save": "Save",
+    "discard": "Discard",
+    "layouts": {
+      "classic": {
+        "name": "Classic",
+        "hint": "Hero, search, then the fleet — the current default."
+      },
+      "modern_hero": {
+        "name": "Modern hero",
+        "hint": "Full-bleed hero with search overlay and a contact column."
+      },
+      "minimal_list": {
+        "name": "Minimal list",
+        "hint": "Narrow page, compact header, fleet as a simple list."
+      },
+      "grid_gallery": {
+        "name": "Grid gallery",
+        "hint": "Dark masthead and photo-first fleet grid."
+      },
+      "bold_landing": {
+        "name": "Bold landing",
+        "hint": "Large centred landing with a strong brand panel."
+      }
+    },
+    "auth": {
+      "invalidEmail": "Enter a valid email address.",
+      "tooManyRequests": "Too many attempts. Try again later.",
+      "invalidCredentials": "Email or password is not correct.",
+      "unknown": "Could not sign in. Try again."
+    }
   },
   "guest": {
     "signInNav": "Sign in",

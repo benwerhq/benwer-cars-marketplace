@@ -24,6 +24,15 @@ export function siteBookingPath(slug: string, token: string): string {
   return `${siteHomePath(slug)}/booking/${encodeURIComponent(token)}`;
 }
 
+export function siteOwnerPath(slug: string): string {
+  return `${siteHomePath(slug)}/owner`;
+}
+
+export function ownerHrefFromHome(homeHref: string): string {
+  const url = new URL(homeHref, "https://benwer.local");
+  return `${url.pathname.replace(/\/$/, "")}/owner${url.search}`;
+}
+
 export function siteGuestPath(slug: string): string {
   return `${siteHomePath(slug)}/guest`;
 }

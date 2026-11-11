@@ -34,6 +34,10 @@
     "website_domain": {
       "not_found": "Esta dirección no está vinculada a una empresa de alquiler."
     },
+    "staff": {
+      "unauthenticated": "Entra como propietario para editar esta web.",
+      "forbidden": "No tienes permiso para editar esta web."
+    },
     "guest": {
       "not_configured": "Las cuentas de cliente aún no están disponibles para esta empresa.",
       "not_linked": "Aún no hay reservas vinculadas a esta cuenta.",

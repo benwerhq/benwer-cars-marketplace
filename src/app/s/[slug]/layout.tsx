@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { Suspense } from "react";
 import { GuestAuthProvider } from "@/context/GuestAuthProvider";
+import { StaffAuthProvider } from "@/context/StaffAuthProvider";
 import { SitePreviewBanner } from "@/components/layout/SitePreviewBanner";
 import { sitesApi } from "@/services/api";
 
@@ -25,12 +26,14 @@ async function SiteLayout({ children, params }: Props) {
 
   return (
     <GuestAuthProvider>
-      <div style={style} className="flex min-h-dvh flex-col">
-        <Suspense fallback={null}>
-          <SitePreviewBanner />
-        </Suspense>
-        {children}
-      </div>
+      <StaffAuthProvider>
+        <div style={style} className="flex min-h-dvh flex-col">
+          <Suspense fallback={null}>
+            <SitePreviewBanner />
+          </Suspense>
+          {children}
+        </div>
+      </StaffAuthProvider>
     </GuestAuthProvider>
   );
 }

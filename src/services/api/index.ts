@@ -6,6 +6,7 @@ export { pricingApi } from "./pricing";
 export { sitesApi } from "./sites";
 export { insuranceApi } from "./insurance";
 export { guestPaymentsApi } from "./payments";
+export { websiteSettingsApi } from "./websiteSettings";
 export { guestApi } from "./guest";
 export {
   contactApi,

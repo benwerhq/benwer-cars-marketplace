@@ -129,6 +129,23 @@ export function isAllowedPublicApiProxyPath(
   return false;
 }
 
+export function isAllowedStaffWebsiteProxyPath(
+  method: string,
+  path: string,
+  hasAuthorization: boolean,
+): boolean {
+  if (!hasAuthorization) {
+    return false;
+  }
+
+  const normalized = path.replace(/^\/+/, "");
+  const verb = method.toUpperCase();
+  return (
+    /^v1\/settings\/website(?:\/|$)/.test(normalized) &&
+    (verb === "GET" || verb === "PATCH" || verb === "PUT" || verb === "POST")
+  );
+}
+
 export function isUnreachableError(error: unknown): boolean {
   if (error instanceof TypeError) {
     const message = error.message.toLowerCase();

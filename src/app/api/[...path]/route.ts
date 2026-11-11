@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { env } from "@/env";
 import {
   isAllowedPublicApiProxyPath,
+  isAllowedStaffWebsiteProxyPath,
   normalizeApiBaseUrl,
 } from "@/lib/publicApiProxy";
 
@@ -19,7 +20,15 @@ async function proxyPublicApi(request: NextRequest, context: RouteContext) {
   const { path } = await context.params;
   const pathname = path.join("/");
 
-  if (!isAllowedPublicApiProxyPath(request.method, pathname)) {
+  const authorization = request.headers.get("Authorization");
+  if (
+    !isAllowedPublicApiProxyPath(request.method, pathname) &&
+    !isAllowedStaffWebsiteProxyPath(
+      request.method,
+      pathname,
+      Boolean(authorization),
+    )
+  ) {
     return NextResponse.json({ status: 404, code: "unknown" }, { status: 404 });
   }
 
@@ -39,7 +48,6 @@ async function proxyPublicApi(request: NextRequest, context: RouteContext) {
   if (contentType) {
     headers.set("Content-Type", contentType);
   }
-  const authorization = request.headers.get("Authorization");
   if (authorization) {
     headers.set("Authorization", authorization);
   }
@@ -78,6 +86,14 @@ export function GET(request: NextRequest, context: RouteContext) {
 }
 
 export function POST(request: NextRequest, context: RouteContext) {
+  return proxyPublicApi(request, context);
+}
+
+export function PATCH(request: NextRequest, context: RouteContext) {
+  return proxyPublicApi(request, context);
+}
+
+export function PUT(request: NextRequest, context: RouteContext) {
   return proxyPublicApi(request, context);
 }
 

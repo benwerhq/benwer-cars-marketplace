@@ -1,4 +1,4 @@
-import type { BookingMode, SiteStatus } from "@/enums";
+import type { BookingMode, SiteLayout, SiteStatus } from "@/enums";
 import type { Company } from "./company";
 
 export interface SiteBranch {
@@ -20,6 +20,7 @@ export interface PublicSite {
   showAddress: boolean;
   isPreview: boolean;
   canonicalUrl: string | null;
+  layout: SiteLayout;
   company: Company;
   branches: SiteBranch[];
 }

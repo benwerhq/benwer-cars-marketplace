@@ -1,27 +1,20 @@
 import type { Metadata } from "next";
 import { Building2 } from "lucide-react";
-import { HydrationBoundary } from "@tanstack/react-query";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteEditBanner } from "@/components/layout/SiteEditBanner";
-import { SiteEditSection } from "@/components/layout/SiteEditSection";
-import { SiteHero } from "@/components/features/SiteHero";
-import { SitePausedNotice } from "@/components/features/SitePausedNotice";
-import { SiteSearchForm } from "@/components/features/SiteSearchForm";
-import { CarListView } from "@/components/features/CarListView";
+import { OwnerHomeRoot } from "@/components/features/OwnerHomeRoot";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { PageLoadError } from "@/components/ui/PageLoadError";
-import { NavRoutes, SearchParams, SiteEditSection as SiteEditSectionId } from "@/enums";
+import { NavRoutes, SearchParams } from "@/enums";
 import { ApiError } from "@/lib/errors";
 import { logError } from "@/lib/logger";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
 import { prefetchCompanyFleetState } from "@/lib/prefetchCompanyFleet";
 import {
   SITE_CHANNEL,
-  canAcceptBookings,
   companySlugFromSite,
-  isSitePaused,
   siteHomePath,
   withSiteQuery,
 } from "@/lib/site";
@@ -143,77 +136,19 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
         homeHref={homeHref}
         fleetHref={fleetHref}
       />
-      <SiteHero site={site} editMode={editMode} />
-      <main
-        id="fleet"
-        className="mx-auto flex w-full max-w-7xl scroll-mt-20 flex-col gap-8 px-4 py-8 md:px-6 lg:px-8"
-      >
-        {isSitePaused(site) ? <SitePausedNotice /> : null}
-        <SiteEditSection section={SiteEditSectionId.SEARCH} enabled={editMode}>
-          <SiteSearchForm
-            slug={site.slug}
-            branches={site.branches}
-            defaultFrom={typeof query.from === "string" ? query.from : ""}
-            defaultTo={typeof query.to === "string" ? query.to : ""}
-            defaultBranch={
-              typeof query[SearchParams.BRANCH] === "string"
-                ? query[SearchParams.BRANCH]
-                : ""
-            }
-            preview={preview}
-            edit={editMode}
-            disabled={!canAcceptBookings(site)}
-          />
-        </SiteEditSection>
-        <SiteEditSection section={SiteEditSectionId.FLEET} enabled={editMode}>
-          <HydrationBoundary state={dehydratedState}>
-            <CarListView
-              companySlug={companySlug}
-              hrefBase={`${siteHomePath(site.slug)}/cars`}
-              showDateSearch={false}
-              filterByAvailability
-              showDirectoryEmptyAction={false}
-              channel={SITE_CHANNEL}
-            />
-          </HydrationBoundary>
-        </SiteEditSection>
-        {editMode ? (
-          <div className="flex flex-col gap-4">
-            <SiteEditSection section={SiteEditSectionId.BRANCHES} enabled>
-              <div className="rounded-lg border border-dashed border-border bg-surface px-4 py-3">
-                <p className="text-sm font-medium text-foreground">
-                  {t("editSection.branches")}
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {site.branches.length > 0
-                    ? site.branches.map((branch) => branch.name).join(" · ")
-                    : t("editBranchesEmpty")}
-                </p>
-              </div>
-            </SiteEditSection>
-            <SiteEditSection section={SiteEditSectionId.RULES} enabled>
-              <div className="rounded-lg border border-dashed border-border bg-surface px-4 py-3">
-                <p className="text-sm font-medium text-foreground">
-                  {t("editSection.rules")}
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {t("editRulesHint")}
-                </p>
-              </div>
-            </SiteEditSection>
-            <SiteEditSection section={SiteEditSectionId.DOMAIN} enabled>
-              <div className="rounded-lg border border-dashed border-border bg-surface px-4 py-3">
-                <p className="text-sm font-medium text-foreground">
-                  {t("editSection.domain")}
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {t("editDomainHint")}
-                </p>
-              </div>
-            </SiteEditSection>
-          </div>
-        ) : null}
-      </main>
+      <OwnerHomeRoot
+        site={site}
+        companySlug={companySlug}
+        preview={preview}
+        from={typeof query.from === "string" ? query.from : ""}
+        to={typeof query.to === "string" ? query.to : ""}
+        branch={
+          typeof query[SearchParams.BRANCH] === "string"
+            ? query[SearchParams.BRANCH]
+            : ""
+        }
+        dehydratedState={dehydratedState}
+      />
       <SiteFooter companyName={site.company.name} homeHref={homeHref} />
     </>
   );

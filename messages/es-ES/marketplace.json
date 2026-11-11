@@ -599,7 +599,71 @@
     "searchTitle": "Buscar coches",
     "searchDescription": "Elige fechas y sucursal para ver la disponibilidad.",
     "branch": "Sucursal",
-    "anyBranch": "Cualquier sucursal"
+    "anyBranch": "Cualquier sucursal",
+    "ownerSignIn": "Acceso del propietario"
+  },
+  "owner": {
+    "signInTitle": "Acceso del propietario",
+    "signInHint": "Usa tu cuenta de personal de Benwer para esta empresa. Los clientes usan otro acceso.",
+    "signInAction": "Entrar",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "signedInTitle": "Has iniciado sesión",
+    "signedInHint": "Si puedes gestionar esta web, el editor se abre en la portada.",
+    "openEditor": "Abrir el editor",
+    "disabledTitle": "La edición no está disponible",
+    "disabledDescription": "Firebase de personal no está configurado en este marketplace.",
+    "toolbarTitle": "Editor de la web",
+    "unpublished": "Cambios sin publicar",
+    "saved": "Todo guardado",
+    "signOut": "Salir",
+    "layout": "Diseño",
+    "headline": "Titular",
+    "intro": "Introducción",
+    "primaryColor": "Color de marca",
+    "showPhone": "Mostrar teléfono",
+    "showEmail": "Mostrar correo",
+    "showAddress": "Mostrar dirección",
+    "bookingMode": "Modo de reserva",
+    "modeInstant": "Instantánea",
+    "modeRequest": "Solicitud",
+    "status": "Estado del sitio",
+    "statusDraft": "Borrador",
+    "statusPublished": "Publicado",
+    "statusPaused": "Pausado",
+    "minLead": "Horas mínimas de antelación",
+    "requestWindow": "Horas de ventana de solicitud",
+    "domain": "Dominio propio",
+    "save": "Guardar",
+    "discard": "Descartar",
+    "layouts": {
+      "classic": {
+        "name": "Clásico",
+        "hint": "Portada, búsqueda y flota — el diseño actual."
+      },
+      "modern_hero": {
+        "name": "Hero moderno",
+        "hint": "Hero a pantalla con búsqueda superpuesta y columna de contacto."
+      },
+      "minimal_list": {
+        "name": "Lista mínima",
+        "hint": "Página estrecha, cabecera compacta y flota en lista."
+      },
+      "grid_gallery": {
+        "name": "Galería",
+        "hint": "Cabecera oscura y flota centrada en fotos."
+      },
+      "bold_landing": {
+        "name": "Landing fuerte",
+        "hint": "Landing centrada con un panel de marca grande."
+      }
+    },
+    "auth": {
+      "invalidEmail": "Introduce un correo válido.",
+      "tooManyRequests": "Demasiados intentos. Prueba más tarde.",
+      "invalidCredentials": "El correo o la contraseña no son correctos.",
+      "unknown": "No se ha podido entrar. Inténtalo de nuevo."
+    }
   },
   "guest": {
     "signInNav": "Entrar",
