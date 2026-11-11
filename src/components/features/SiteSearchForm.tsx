@@ -16,6 +16,7 @@ interface SiteSearchFormProps {
   defaultTo?: string;
   defaultBranch?: string;
   preview?: string;
+  edit?: boolean;
   disabled?: boolean;
 }
 
@@ -26,6 +27,7 @@ export function SiteSearchForm({
   defaultTo = "",
   defaultBranch = "",
   preview,
+  edit = false,
   disabled = false,
 }: SiteSearchFormProps) {
   const t = useTranslations("site");
@@ -46,6 +48,7 @@ export function SiteSearchForm({
         to: to || undefined,
         branch: branch || undefined,
         preview,
+        edit,
       }),
     );
   }

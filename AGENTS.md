@@ -108,6 +108,7 @@ NEXT_PUBLIC_MARKETPLACE_DOMAIN=benwer.es
 NEXT_PUBLIC_ENV=local
 NEXT_PUBLIC_MARKETING_URL=https://cars.benwer.es
 # NEXT_PUBLIC_ADMIN_DEMO_URL=https://admin.cars.benwer.es
+# NEXT_PUBLIC_ADMIN_URL=https://cars-admin.benwer.es
 # NEXT_PUBLIC_MEDIA_ORIGIN=https://dxxxx.cloudfront.net
 ```
 

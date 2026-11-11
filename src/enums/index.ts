@@ -120,6 +120,23 @@ export enum SearchParams {
   COMPANIES = "companies",
   PREVIEW = "preview",
   BRANCH = "branch",
+  EDIT = "edit",
+}
+
+export enum SiteEditTab {
+  LOOK = "look",
+  RULES = "rules",
+  DOMAIN = "domain",
+}
+
+export enum SiteEditSection {
+  HERO = "hero",
+  SEARCH = "search",
+  FLEET = "fleet",
+  BRANCHES = "branches",
+  CONTACT = "contact",
+  RULES = "rules",
+  DOMAIN = "domain",
 }
 
 export enum ErrorMessages {
