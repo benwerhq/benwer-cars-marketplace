@@ -23,7 +23,8 @@ import {
   siteHomePath,
   withSiteQuery,
 } from "@/lib/site";
-import { absoluteUrl, buildPageMetadata, carProductJsonLd } from "@/lib/seo";
+import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
+import { buildPageMetadata, carProductJsonLd } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string; id: string }>;
@@ -67,6 +68,7 @@ export async function generateMetadata({
       siteName: site.company.name,
       locale,
       images: vehicle.photos,
+      canonicalUrl: siteCanonicalPageUrl(site.canonicalUrl, path, site.slug),
       noIndex: Boolean(preview),
     });
   } catch {
@@ -158,7 +160,11 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
             vehicle,
             companyName: site.company.name,
             description: vehicle.description ?? "",
-            url: absoluteUrl(siteCarPath(site.slug, vehicle.id)),
+            url: siteCanonicalPageUrl(
+              site.canonicalUrl,
+              siteCarPath(site.slug, vehicle.id),
+              site.slug,
+            ),
           })}
         />
       </main>

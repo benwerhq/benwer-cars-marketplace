@@ -31,6 +31,9 @@
       "paused": "Esta empresa no está aceptando reservas ahora.",
       "not_published": "Esta web aún no está abierta a reservas."
     },
+    "website_domain": {
+      "not_found": "Esta dirección no está vinculada a una empresa de alquiler."
+    },
     "pricing": {
       "min_days": "Estas fechas son demasiado cortas para la temporada. Elige un alquiler más largo.",
       "max_days": "Estas fechas son demasiado largas para la temporada. Elige un alquiler más corto.",
@@ -51,6 +54,10 @@
   "meta": {
     "siteTitle": "Encuentra coches de alquiler locales",
     "siteDescription": "Compara coches de empresas de alquiler asociadas en la provincia de Málaga y continúa en la web de la empresa."
+  },
+  "hostUnknown": {
+    "title": "Esta web no está disponible",
+    "description": "Comprueba la dirección. Esta página no pertenece a una web de alquiler de Benwer Cars."
   },
   "notFound": {
     "title": "Página no encontrada",

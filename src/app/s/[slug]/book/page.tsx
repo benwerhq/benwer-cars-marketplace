@@ -9,12 +9,12 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { vehiclesApi } from "@/services/api";
 import { SearchParams } from "@/enums";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
+import { platformBookingHref } from "@/lib/canonicalUrl";
 import {
   canAcceptBookings,
   companySlugFromSite,
   SITE_CHANNEL,
   siteBookHref,
-  siteBookingPath,
   siteCarPath,
   siteHomePath,
   withSiteQuery,
@@ -177,9 +177,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           bookingMode={site.bookingMode}
           bookingsEnabled
           channel={SITE_CHANNEL}
-          confirmationHref={(token) =>
-            withSiteQuery(siteBookingPath(site.slug, token), { preview })
-          }
+          confirmationHref={(token) => platformBookingHref(token)}
           bookHrefBuilder={(nextFrom, nextTo) =>
             siteBookHref({
               slug: site.slug,

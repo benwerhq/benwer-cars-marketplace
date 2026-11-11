@@ -26,6 +26,7 @@ import {
   withSiteQuery,
 } from "@/lib/site";
 import { isSiteEditMode, parseEditFlag } from "@/lib/siteEdit";
+import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata } from "@/lib/seo";
 
 interface Props {
@@ -42,14 +43,28 @@ export async function generateMetadata({
   const locale = await getLocale();
   const t = await getTranslations("site");
 
-  return buildPageMetadata({
-    title: t("searchTitle"),
-    description: t("searchDescription"),
-    path: siteSearchPath(slug),
-    siteName: t("searchTitle"),
-    locale,
-    noIndex: Boolean(preview) || parseEditFlag(query.edit),
-  });
+  const path = siteSearchPath(slug);
+  try {
+    const site = await loadPublicSite(slug, preview);
+    return buildPageMetadata({
+      title: t("searchTitle"),
+      description: t("searchDescription"),
+      path,
+      siteName: t("searchTitle"),
+      locale,
+      canonicalUrl: siteCanonicalPageUrl(site.canonicalUrl, path, site.slug),
+      noIndex: Boolean(preview) || parseEditFlag(query.edit),
+    });
+  } catch {
+    return buildPageMetadata({
+      title: t("searchTitle"),
+      description: t("searchDescription"),
+      path,
+      siteName: t("searchTitle"),
+      locale,
+      noIndex: true,
+    });
+  }
 }
 
 async function CompanySiteSearchPage({ params, searchParams }: Props) {

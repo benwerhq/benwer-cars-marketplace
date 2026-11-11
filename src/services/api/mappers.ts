@@ -712,6 +712,10 @@ export function mapPublicSite(raw: unknown, fallbackSlug?: string): PublicSite {
       readBoolean(row.preview) ??
       readBoolean(row.isPreview) ??
       false,
+    canonicalUrl:
+      readString(nestedSite.canonicalUrl) ??
+      readString(row.canonicalUrl) ??
+      null,
     company: {
       ...company,
       slug: company.slug || slug,

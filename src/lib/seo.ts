@@ -27,6 +27,11 @@ interface PageMetadataInput {
   locale: string;
   images?: string[];
   noIndex?: boolean;
+  canonicalUrl?: string | null;
+}
+
+export function shouldNoIndexPublicPages(): boolean {
+  return env.NEXT_PUBLIC_ENV !== "production";
 }
 
 export function buildPageMetadata({
@@ -37,15 +42,17 @@ export function buildPageMetadata({
   locale,
   images,
   noIndex = false,
+  canonicalUrl,
 }: PageMetadataInput): Metadata {
-  const url = absoluteUrl(path);
+  const url = canonicalUrl || absoluteUrl(path);
   const ogImages = images?.filter(Boolean).map((image) => ({ url: image }));
+  const hideFromIndex = noIndex || shouldNoIndexPublicPages();
 
   return {
     title,
     description,
     alternates: { canonical: url },
-    robots: noIndex
+    robots: hideFromIndex
       ? { index: false, follow: false }
       : { index: true, follow: true },
     openGraph: {

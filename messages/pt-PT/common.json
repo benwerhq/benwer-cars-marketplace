@@ -31,6 +31,9 @@
       "paused": "Esta empresa não está a aceitar reservas de momento.",
       "not_published": "Este site ainda não está aberto a reservas."
     },
+    "website_domain": {
+      "not_found": "Este endereço não está ligado a uma empresa de aluguer."
+    },
     "pricing": {
       "min_days": "Estas datas são demasiado curtas para a época. Escolha um aluguer mais longo.",
       "max_days": "Estas datas são demasiado longas para a época. Escolha um aluguer mais curto.",
@@ -56,6 +59,10 @@
     "title": "Página não encontrada",
     "description": "Essa página não existe. Volte atrás e procure um carro.",
     "action": "Voltar ao início"
+  },
+  "hostUnknown": {
+    "title": "Este site não está disponível",
+    "description": "Verifique o endereço. Esta página não pertence a um site de aluguer da Benwer Cars."
   },
   "brand": {
     "name": "Benwer Cars",

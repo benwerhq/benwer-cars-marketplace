@@ -27,6 +27,7 @@ function site(overrides: Partial<PublicSite> = {}): PublicSite {
     showEmail: false,
     showAddress: false,
     isPreview: false,
+    canonicalUrl: null,
     company: {
       id: "c1",
       slug: "denver-cars",
