@@ -25,6 +25,7 @@ export function SiteNav({ homeHref, fleetHref, sections = [] }: SiteNavProps) {
       label: t("home"),
       isActive: isHome,
       hideOnMobile: true,
+      hidden: sections.length > 0,
     },
     {
       href: fleetHref,
@@ -46,7 +47,7 @@ export function SiteNav({ homeHref, fleetHref, sections = [] }: SiteNavProps) {
 
   return (
     <nav className="flex items-center gap-1" aria-label={t("mainAria")}>
-      {links.map((link) => (
+      {links.filter((link) => !("hidden" in link && link.hidden)).map((link) => (
         <Link
           key={link.href}
           href={link.href}

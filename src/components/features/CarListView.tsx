@@ -31,6 +31,7 @@ import {
 import type { Vehicle } from "@/types/vehicle";
 
 const RESULTS_GRID_CLASS = "sm:grid-cols-2 xl:grid-cols-3";
+const ROWS_GRID_CLASS = "sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5";
 
 interface CarListViewProps {
   companySlug: string;
@@ -39,7 +40,12 @@ interface CarListViewProps {
   showDateSearch?: boolean;
   filterByAvailability?: boolean;
   channel?: PublicChannel;
+  layout?: CarListLayout;
 }
+
+export type CarListLayout = "rail" | "rows";
+
+const DAY_MS = 24 * 60 * 60 * 1000;
 
 function CarListViewContent({
   companySlug,
@@ -48,6 +54,7 @@ function CarListViewContent({
   showDateSearch = true,
   filterByAvailability = false,
   channel,
+  layout = "rail",
 }: CarListViewProps) {
   const t = useTranslations("cars");
   const locale = useLocale();
@@ -88,6 +95,11 @@ function CarListViewContent({
   const fromDate = filters.from ? parseIsoDate(filters.from) : null;
   const toDate = filters.to ? parseIsoDate(filters.to) : null;
   const count = vehicles?.length ?? 0;
+  const rows = layout === "rows";
+  const days =
+    fromDate && toDate
+      ? Math.max(1, Math.round((toDate.getTime() - fromDate.getTime()) / DAY_MS))
+      : null;
   const availableCount = filterByAvailability
     ? (vehicles?.filter((vehicle) =>
         isFleetVehicleAvailable(
@@ -173,14 +185,16 @@ function CarListViewContent({
         ) : isError ? (
           <span />
         ) : (
-          <p className="text-sm text-muted-foreground">{resultsLabel}</p>
+          <p className={rows ? "text-base text-muted-foreground" : "text-sm text-muted-foreground"}>
+            {resultsLabel}
+          </p>
         )}
         <Button
           type="button"
           variant="secondary"
           size="sm"
           onClick={() => setFiltersOpen(true)}
-          className="lg:hidden"
+          className={rows ? "rounded-full" : "lg:hidden"}
           aria-label={t("filters.openAria", { count: appliedCount })}
         >
           <SlidersHorizontal size={16} aria-hidden />
@@ -193,9 +207,11 @@ function CarListViewContent({
         </Button>
       </div>
       <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
-        <aside className="hidden lg:block lg:w-72 lg:shrink-0 xl:w-80">
-          <div className="sticky top-20">{filterRail("desktop")}</div>
-        </aside>
+        {rows ? null : (
+          <aside className="hidden lg:block lg:w-72 lg:shrink-0 xl:w-80">
+            <div className="sticky top-20">{filterRail("desktop")}</div>
+          </aside>
+        )}
         <div className="min-w-0 flex-1">
           <CarGridView
             vehicles={vehicles}
@@ -227,7 +243,9 @@ function CarListViewContent({
                 ? undefined
                 : NavRoutes.COMPANIES
             }
-            className={RESULTS_GRID_CLASS}
+            className={rows ? ROWS_GRID_CLASS : RESULTS_GRID_CLASS}
+            variant={rows ? "row" : "card"}
+            days={days}
           />
         </div>
       </div>
@@ -298,6 +316,7 @@ export function CarListView({
   showDateSearch,
   filterByAvailability,
   channel,
+  layout,
 }: CarListViewProps) {
   return (
     <Suspense fallback={<CarListViewFallback />}>
@@ -308,6 +327,7 @@ export function CarListView({
         showDateSearch={showDateSearch}
         filterByAvailability={filterByAvailability}
         channel={channel}
+        layout={layout}
       />
     </Suspense>
   );

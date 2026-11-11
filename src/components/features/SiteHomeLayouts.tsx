@@ -1,7 +1,7 @@
 "use client";
 
 import { HydrationBoundary, type DehydratedState } from "@tanstack/react-query";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { CompanyMark } from "@/components/features/CompanyMark";
 import { SitePausedNotice } from "@/components/features/SitePausedNotice";
@@ -14,7 +14,7 @@ import {
   isSitePaused,
   sitePathFromHome,
 } from "@/lib/site";
-import { visibleSections } from "@/lib/siteContent";
+import { visibleSections, whatsappHref } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { PublicSite } from "@/types/site";
 import { SiteAppSection } from "./SiteAppSection";
@@ -31,6 +31,8 @@ export interface SiteHomeCopy {
   phone: string | null;
   email: string | null;
   address: string | null;
+  whatsapp?: string | null;
+  rating?: { score: number; count: number } | null;
 }
 
 interface SiteHomeLayoutsProps {
@@ -70,6 +72,7 @@ export function SiteHomeLayouts({
   const fleet = (
     <HydrationBoundary state={dehydratedState}>
       <CarListView
+        layout={site.layout === SiteLayout.CLASSIC ? "rows" : "rail"}
         companySlug={companySlug}
         hrefBase={sitePathFromHome(homeHref, "/cars")}
         showDateSearch={false}
@@ -179,7 +182,16 @@ export function SiteHomeLayouts({
               companyName={site.company.name}
             />
             <div className="relative z-10 -mt-12 px-0 md:-mt-20 md:px-10">
-              <div className="rounded-2xl shadow-xl">{search}</div>
+              <SiteSearchForm
+                homeHref={homeHref}
+                branches={site.branches}
+                defaultFrom={from}
+                defaultTo={to}
+                defaultBranch={branch}
+                preview={preview}
+                disabled={!canAcceptBookings(site)}
+                variant="hero"
+              />
             </div>
           </div>
         );
@@ -355,7 +367,9 @@ function HeroBanner({
 }
 
 function ContactRow({ copy }: { copy: SiteHomeCopy }) {
-  if (!copy.phone && !copy.email && !copy.address) {
+  const t = useTranslations("siteSections");
+  const whatsapp = copy.whatsapp ? whatsappHref(copy.whatsapp) : null;
+  if (!copy.phone && !copy.email && !copy.address && !whatsapp && !copy.rating) {
     return null;
   }
 
@@ -377,10 +391,29 @@ function ContactRow({ copy }: { copy: SiteHomeCopy }) {
           </a>
         </li>
       ) : null}
+      {whatsapp ? (
+        <li className="inline-flex items-center gap-2">
+          <MessageCircle size={16} className="text-primary" aria-hidden />
+          <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+            {t("footer.whatsapp")}
+          </a>
+        </li>
+      ) : null}
       {copy.address ? (
         <li className="inline-flex items-center gap-2">
           <MapPin size={16} className="text-primary" aria-hidden />
           <span>{copy.address}</span>
+        </li>
+      ) : null}
+      {copy.rating ? (
+        <li className="inline-flex items-center gap-2">
+          <Star size={16} className="fill-warning text-warning" aria-hidden />
+          <a href={`#reviews`} className="hover:text-primary">
+            {t("footer.rating", {
+              score: copy.rating.score.toFixed(1),
+              count: copy.rating.count,
+            })}
+          </a>
         </li>
       ) : null}
     </ul>

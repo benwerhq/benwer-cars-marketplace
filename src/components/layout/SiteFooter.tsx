@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { NavRoutes, type SiteSectionId } from "@/enums";
+import { NavRoutes, type SitePaymentMethod, type SiteSectionId } from "@/enums";
 import { guestLinksFromHomeHref, ownerHrefFromHome } from "@/lib/site";
 import { whatsappHref } from "@/lib/siteContent";
+import { CookieSettingsLink } from "./CookieSettingsLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 
 interface SiteFooterContact {
@@ -17,6 +18,7 @@ interface SiteFooterProps {
   description?: string | null;
   sections?: SiteSectionId[];
   contact?: SiteFooterContact;
+  payments?: SitePaymentMethod[];
 }
 
 const linkClass =
@@ -30,6 +32,7 @@ export async function SiteFooter({
   description,
   sections = [],
   contact,
+  payments = [],
 }: SiteFooterProps) {
   const year = new Date().getFullYear();
   const tFooter = await getTranslations("footer");
@@ -95,6 +98,7 @@ export async function SiteFooter({
             <Link href={NavRoutes.COOKIES} className={linkClass}>
               {tNav("cookies")}
             </Link>
+            <CookieSettingsLink className={`${linkClass} cursor-pointer text-left`} />
             <Link
               href={ownerHrefFromHome(homeHref)}
               className="w-fit text-xs text-muted-foreground hover:text-foreground"
@@ -103,6 +107,21 @@ export async function SiteFooter({
             </Link>
           </nav>
         </div>
+        {payments.length > 0 ? (
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="mr-1 text-xs text-muted-foreground">{tSections("footer.weAccept")}</p>
+            <ul className="flex flex-wrap gap-2">
+              {payments.map((method) => (
+                <li
+                  key={method}
+                  className="rounded-md border border-border bg-surface px-2.5 py-1 text-xs font-semibold text-foreground"
+                >
+                  {tSections(`payments.${method}`)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
         <div className="flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-muted-foreground">
             {tSections("footer.copyright", { year, name: companyName })} ·{" "}

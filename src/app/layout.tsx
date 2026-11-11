@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bebas_Neue, Caveat, Inter } from "next/font/google";
 import { cookies } from "next/headers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -22,6 +22,20 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
+});
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-bebas",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["700"],
+  display: "swap",
+  variable: "--font-caveat",
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -80,7 +94,10 @@ export default async function RootLayout({
         : { ...enCommon, ...enMarketplace };
 
   return (
-    <html lang={locale} className={inter.variable}>
+    <html
+      lang={locale}
+      className={`${inter.variable} ${bebasNeue.variable} ${caveat.variable}`}
+    >
       <body className="flex min-h-dvh flex-col bg-background text-foreground antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <QueryProvider>

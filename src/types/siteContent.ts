@@ -1,5 +1,6 @@
 import type {
   SiteIncludedIcon,
+  SitePaymentMethod,
   SiteIncludedPreset,
   SiteSectionId,
 } from "@/enums";
@@ -62,6 +63,7 @@ export interface SiteFaqItem {
 export interface SiteContactContent {
   whatsapp: string;
   hours: LocalizedCopy;
+  payments: SitePaymentMethod[];
 }
 
 export interface SiteContent {

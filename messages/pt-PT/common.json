@@ -100,8 +100,10 @@
   "cookieBanner": {
     "body": "Usamos um cookie de idioma e lembramos esta escolha no seu dispositivo. Os cookies opcionais ficam desligados até os aceitar.",
     "policy": "Política de cookies",
-    "necessary": "Apenas necessários",
-    "accept": "Aceitar todos"
+    "necessary": "Rejeitar tudo",
+    "accept": "Aceitar todos",
+    "title": "Respeitamos a sua privacidade",
+    "settings": "Definições de cookies"
   },
   "actions": {
     "retry": "Tentar novamente",

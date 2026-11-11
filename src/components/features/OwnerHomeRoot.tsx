@@ -69,6 +69,14 @@ export function OwnerHomeRoot({
     address: liveSite.showAddress
       ? liveSite.company.address || liveSite.company.location
       : null,
+    whatsapp: liveSite.content.contact.whatsapp || null,
+    rating:
+      liveSite.content.reviews.score && liveSite.content.reviews.count
+        ? {
+            score: liveSite.content.reviews.score,
+            count: liveSite.content.reviews.count,
+          }
+        : null,
   };
   const dirty = canEdit && websiteDraftDirty(baseline, draft);
   const style = liveSite.company.branding.primaryColor

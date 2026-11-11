@@ -10,6 +10,7 @@ import { HowItWorks } from "@/components/features/HowItWorks";
 import { AppDownloadBanner } from "@/components/features/AppDownloadBanner";
 import { MarketplaceFaq } from "@/components/features/MarketplaceFaq";
 import { MarketplaceSearchHeader } from "@/components/features/MarketplaceSearchHeader";
+import { MarketplaceBannerCarousel } from "@/components/features/MarketplaceBannerCarousel";
 import { PartnersInvite } from "@/components/features/PartnersInvite";
 import { WhatYouGet } from "@/components/features/WhatYouGet";
 import { NavRoutes } from "@/enums";
@@ -37,6 +38,7 @@ export async function MarketplaceHome() {
   return (
     <>
       <MarketplaceHeader />
+      <MarketplaceBannerCarousel />
       <MarketplaceSearchHeader />
       <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-8 px-4 py-8 md:gap-10 md:px-6 md:py-10 lg:px-8">
         <HydrationBoundary state={dehydratedState}>

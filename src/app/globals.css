@@ -29,6 +29,11 @@
   --danger-soft: #dc262614;
   --info: #0ea5e9;
   --info-soft: #0ea5e918;
+  --promo: #032d2e;
+  --promo-foreground: #ffffff;
+  --promo-accent: #e8a52c;
+  --promo-ink: #102018;
+  --promo-paper: #f8f7f3;
 }
 
 .dark {
@@ -91,6 +96,13 @@
   --color-danger-soft: var(--danger-soft);
   --color-info: var(--info);
   --color-info-soft: var(--info-soft);
+  --color-promo: var(--promo);
+  --color-promo-foreground: var(--promo-foreground);
+  --color-promo-accent: var(--promo-accent);
+  --color-promo-ink: var(--promo-ink);
+  --color-promo-paper: var(--promo-paper);
+  --font-promo-display: var(--font-bebas);
+  --font-promo-script: var(--font-caveat);
 }
 
 html,

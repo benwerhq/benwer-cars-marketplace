@@ -226,7 +226,10 @@
       "diesel": "Diesel",
       "electric": "Electric",
       "hybrid": "Hybrid"
-    }
+    },
+    "rowDeposit": "Caução {amount}",
+    "rowAvailable": "Disponível nas suas datas",
+    "rowTotal": "{amount} no total · {days, plural, one {# dia} other {# dias}}"
   },
   "carDetail": {
     "bookNow": "Book now",
@@ -796,7 +799,18 @@
       "contact": "Contacto",
       "whatsapp": "WhatsApp",
       "manageBooking": "As minhas reservas",
-      "copyright": "© {year} {name}"
+      "copyright": "© {year} {name}",
+      "weAccept": "Aceitamos",
+      "rating": "{score} · {count, plural, one {# avaliação} other {# avaliações}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Numerário"
     }
   },
   "siteEditor": {
@@ -964,7 +978,9 @@
       "whatsapp": "Número de WhatsApp",
       "whatsappHint": "Inclua o indicativo do país. Deixe vazio para ocultar o botão do WhatsApp.",
       "hours": "Quando respondem",
-      "hoursPlaceholder": "Respondemos todos os dias das 08:00 às 22:00."
+      "hoursPlaceholder": "Respondemos todos os dias das 08:00 às 22:00.",
+      "payments": "Métodos de pagamento",
+      "paymentsHint": "Mostrados no rodapé."
     },
     "design": {
       "colorTitle": "Cor da marca",
@@ -1000,6 +1016,39 @@
       "domainTitle": "Domínio próprio",
       "domainDescription": "O seu próprio endereço web. O DNS é configurado no Benwer admin.",
       "domain": "Domínio"
+    }
+  },
+  "marketplaceBanners": {
+    "aria": "Destaques Benwer",
+    "slideLabel": "{position} de {count}",
+    "goTo": "Ver banner {position}",
+    "previous": "Banner anterior",
+    "next": "Banner seguinte",
+    "pause": "Pausar banners",
+    "play": "Reproduzir banners",
+    "trust": {
+      "script": "reserve com confiança",
+      "highlight": "Empresas verificadas",
+      "joiner": "e",
+      "boxed": "Reserva segura",
+      "description": "Avaliações reais, condições claras e contratos digitais que assina no telemóvel",
+      "cta": "Encontrar empresa"
+    },
+    "prices": {
+      "script": "uma só pesquisa",
+      "highlight": "Compare preços",
+      "joiner": "de",
+      "boxed": "Dezenas de empresas",
+      "description": "Veja preços, seguros e cauções reais lado a lado antes de reservar",
+      "cta": "Reservar um carro"
+    },
+    "anywhere": {
+      "script": "encontre o seu carro",
+      "highlight": "Onde quer que vá",
+      "joiner": "escolha entre",
+      "boxed": "Empresas locais",
+      "description": "Empresas de aluguer de confiança em cidades de Espanha e não só, num só lugar",
+      "cta": "Ver carros"
     }
   }
 }

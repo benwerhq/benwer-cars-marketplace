@@ -226,7 +226,10 @@
       "diesel": "Diesel",
       "electric": "Electric",
       "hybrid": "Hybrid"
-    }
+    },
+    "rowDeposit": "Deposit {amount}",
+    "rowAvailable": "Available for your dates",
+    "rowTotal": "{amount} total · {days, plural, one {# day} other {# days}}"
   },
   "carDetail": {
     "bookNow": "Book now",
@@ -796,7 +799,18 @@
       "contact": "Contact",
       "whatsapp": "WhatsApp",
       "manageBooking": "My bookings",
-      "copyright": "© {year} {name}"
+      "copyright": "© {year} {name}",
+      "weAccept": "We accept",
+      "rating": "{score} · {count, plural, one {# review} other {# reviews}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Cash"
     }
   },
   "siteEditor": {
@@ -964,7 +978,9 @@
       "whatsapp": "WhatsApp number",
       "whatsappHint": "Include the country code. Leave empty to hide the WhatsApp button.",
       "hours": "When you answer",
-      "hoursPlaceholder": "We answer every day from 08:00 to 22:00."
+      "hoursPlaceholder": "We answer every day from 08:00 to 22:00.",
+      "payments": "Payment methods",
+      "paymentsHint": "Shown in your footer."
     },
     "design": {
       "colorTitle": "Brand colour",
@@ -1000,6 +1016,39 @@
       "domainTitle": "Custom domain",
       "domainDescription": "Your own web address. DNS setup is done in Benwer admin.",
       "domain": "Domain"
+    }
+  },
+  "marketplaceBanners": {
+    "aria": "Benwer highlights",
+    "slideLabel": "{position} of {count}",
+    "goTo": "Show banner {position}",
+    "previous": "Previous banner",
+    "next": "Next banner",
+    "pause": "Pause banners",
+    "play": "Play banners",
+    "trust": {
+      "script": "book with confidence",
+      "highlight": "Verified companies",
+      "joiner": "and",
+      "boxed": "Secure booking",
+      "description": "Real reviews, clear terms and digital contracts you sign from your phone",
+      "cta": "Find a company"
+    },
+    "prices": {
+      "script": "one search",
+      "highlight": "Compare prices",
+      "joiner": "from",
+      "boxed": "Dozens of companies",
+      "description": "See real prices, insurance and deposits side by side before you book",
+      "cta": "Book a car"
+    },
+    "anywhere": {
+      "script": "find your ride",
+      "highlight": "Anywhere you go",
+      "joiner": "compare",
+      "boxed": "Local rental companies",
+      "description": "Trusted rental companies in cities across Spain and beyond, all in one place",
+      "cta": "Explore cars"
     }
   }
 }

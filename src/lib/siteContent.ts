@@ -1,5 +1,6 @@
 import {
   SiteIncludedIcon,
+  SitePaymentMethod,
   SiteIncludedPreset,
   SiteSectionId,
 } from "@/enums";
@@ -71,7 +72,7 @@ export function defaultSiteContent(): SiteContent {
     },
     app: { iosUrl: "", androidUrl: "", title: {}, text: {} },
     faq: [],
-    contact: { whatsapp: "", hours: {} },
+    contact: { whatsapp: "", hours: {}, payments: [] },
   };
 }
 
@@ -279,6 +280,11 @@ export function parseSiteContent(raw: unknown): SiteContent {
     contact: {
       whatsapp: readString(contact.whatsapp).replace(/[^\d+]/g, ""),
       hours: readCopy(contact.hours),
+      payments: Array.isArray(contact.payments)
+        ? Object.values(SitePaymentMethod).filter((method) =>
+            (contact.payments as unknown[]).includes(method),
+          )
+        : [],
     },
   };
 }

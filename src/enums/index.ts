@@ -46,6 +46,16 @@ export enum SiteIncludedPreset {
   CANCELLATION = "cancellation",
 }
 
+export enum SitePaymentMethod {
+  VISA = "visa",
+  MASTERCARD = "mastercard",
+  AMEX = "amex",
+  APPLE_PAY = "apple_pay",
+  GOOGLE_PAY = "google_pay",
+  BIZUM = "bizum",
+  CASH = "cash",
+}
+
 export enum SiteIncludedIcon {
   SHIELD = "shield",
   GAUGE = "gauge",

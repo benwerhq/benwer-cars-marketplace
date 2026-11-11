@@ -159,3 +159,12 @@ describe("helpers", () => {
     expect(isSafeUrl("data:text/html,hi")).toBe(false);
   });
 });
+
+describe("payments", () => {
+  it("keeps known payment methods in a stable order and drops unknown ones", () => {
+    const content = parseSiteContent({
+      contact: { payments: ["bizum", "paypal", "visa", "visa"] },
+    });
+    expect(content.contact.payments).toEqual(["visa", "bizum"]);
+  });
+});

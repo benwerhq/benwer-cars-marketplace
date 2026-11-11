@@ -100,8 +100,10 @@
   "cookieBanner": {
     "body": "We use a language cookie and remember this choice on your device. Optional cookies stay off unless you accept them.",
     "policy": "Cookie policy",
-    "necessary": "Necessary only",
-    "accept": "Accept all"
+    "necessary": "Reject all",
+    "accept": "Accept all",
+    "title": "We value your privacy",
+    "settings": "Cookie settings"
   },
   "actions": {
     "retry": "Try again",

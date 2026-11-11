@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { CompanyMark } from "@/components/features/CompanyMark";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -13,6 +14,7 @@ interface SiteHeaderProps {
   homeHref: string;
   fleetHref: string;
   sections?: SiteSectionId[];
+  phone?: string | null;
   className?: string;
 }
 
@@ -22,6 +24,7 @@ export async function SiteHeader({
   homeHref,
   fleetHref,
   sections,
+  phone,
   className,
 }: SiteHeaderProps) {
   const t = await getTranslations("site");
@@ -53,6 +56,15 @@ export async function SiteHeader({
         </Link>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-4">
           <SiteNav homeHref={homeHref} fleetHref={fleetHref} sections={sections} />
+          {phone ? (
+            <a
+              href={`tel:${phone}`}
+              className="hidden items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring xl:inline-flex"
+            >
+              <Phone size={15} aria-hidden />
+              {phone}
+            </a>
+          ) : null}
           <SiteGuestLink homeHref={homeHref} />
           <LocaleSwitcher />
         </div>

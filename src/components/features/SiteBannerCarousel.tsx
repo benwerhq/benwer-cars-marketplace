@@ -1,15 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useCarousel } from "@/hooks/useCarousel";
 import { localizedText } from "@/lib/localizedCopy";
 import { cn } from "@/lib/utils";
 import type { SiteBanner } from "@/types/siteContent";
-
-const ROTATE_MS = 6000;
 
 interface SiteBannerCarouselProps {
   banners: SiteBanner[];
@@ -22,25 +19,16 @@ export function SiteBannerCarousel({
 }: SiteBannerCarouselProps) {
   const t = useTranslations("siteSections.banners");
   const locale = useLocale();
-  const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [hovered, setHovered] = useState(false);
   const count = banners.length;
-  const active = count > 0 ? Math.min(index, count - 1) : 0;
-
-  const go = useCallback(
-    (direction: -1 | 1) => setIndex((current) => (current + direction + count) % count),
-    [count],
-  );
-
-  useEffect(() => {
-    if (count < 2 || paused || hovered || reducedMotion) {
-      return;
-    }
-    const timer = window.setInterval(() => go(1), ROTATE_MS);
-    return () => window.clearInterval(timer);
-  }, [count, paused, hovered, reducedMotion, go]);
+  const {
+    active,
+    setIndex,
+    go,
+    paused,
+    togglePaused,
+    reducedMotion,
+    interactionHandlers,
+  } = useCarousel(count);
 
   if (count === 0) {
     return (
@@ -56,10 +44,7 @@ export function SiteBannerCarousel({
       aria-roledescription="carousel"
       aria-label={t("aria", { name: companyName })}
       className="relative"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setHovered(true)}
-      onBlurCapture={() => setHovered(false)}
+      {...interactionHandlers}
     >
       <div className="relative h-56 w-full overflow-hidden rounded-3xl bg-surface-muted md:h-[27.5rem]">
         {banners.map((banner, position) => {
@@ -157,7 +142,7 @@ export function SiteBannerCarousel({
             {reducedMotion ? null : (
               <button
                 type="button"
-                onClick={() => setPaused((value) => !value)}
+                onClick={togglePaused}
                 aria-label={paused ? t("play") : t("pause")}
                 className="ml-1 inline-flex h-5 w-5 cursor-pointer items-center justify-center rounded-full text-secondary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >

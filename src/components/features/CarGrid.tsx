@@ -3,6 +3,7 @@
 import { Car } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { CarCard } from "./CarCard";
+import { CarRowCard } from "./CarRowCard";
 import { CarCardSkeleton } from "./CarCardSkeleton";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { ErrorState } from "@/components/ui/ErrorState";
@@ -44,7 +45,11 @@ interface CarGridProps {
   emptyActionLabel?: string;
   emptyActionHref?: string;
   className?: string;
+  variant?: CarGridVariant;
+  days?: number | null;
 }
+
+export type CarGridVariant = "card" | "row";
 
 export function CarGrid({
   vehicles,
@@ -57,6 +62,8 @@ export function CarGrid({
   emptyActionLabel,
   emptyActionHref,
   className,
+  variant = "card",
+  days = null,
 }: CarGridProps) {
   const t = useTranslations("cars");
 
@@ -86,16 +93,27 @@ export function CarGrid({
         className,
       )}
     >
-      {vehicles.map((vehicle, index) => (
-        <CarCard
-          key={`${vehicle.companySlug}-${vehicle.id}`}
-          vehicle={vehicle}
-          href={buildHref(vehicle)}
-          company={companyFor?.(vehicle)}
-          priority={index === 0}
-          available={isAvailable?.(vehicle) ?? true}
-        />
-      ))}
+      {vehicles.map((vehicle, index) =>
+        variant === "row" ? (
+          <CarRowCard
+            key={`${vehicle.companySlug}-${vehicle.id}`}
+            vehicle={vehicle}
+            href={buildHref(vehicle)}
+            days={days}
+            priority={index === 0}
+            available={isAvailable?.(vehicle) ?? true}
+          />
+        ) : (
+          <CarCard
+            key={`${vehicle.companySlug}-${vehicle.id}`}
+            vehicle={vehicle}
+            href={buildHref(vehicle)}
+            company={companyFor?.(vehicle)}
+            priority={index === 0}
+            available={isAvailable?.(vehicle) ?? true}
+          />
+        ),
+      )}
     </div>
   );
 }
@@ -118,6 +136,8 @@ interface CarGridViewProps {
   emptyActionHref?: string;
   className?: string;
   skeletonCount?: number;
+  variant?: CarGridVariant;
+  days?: number | null;
 }
 
 export function CarGridView({
@@ -136,6 +156,8 @@ export function CarGridView({
   emptyActionHref,
   className,
   skeletonCount,
+  variant,
+  days,
 }: CarGridViewProps) {
   const t = useTranslations();
 
@@ -157,6 +179,8 @@ export function CarGridView({
       emptyActionLabel={emptyActionLabel}
       emptyActionHref={emptyActionHref}
       className={className}
+      variant={variant}
+      days={days}
     />
   );
 }

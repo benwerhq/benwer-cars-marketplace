@@ -17,8 +17,8 @@ export function SiteGuestLink({ homeHref }: { homeHref: string }) {
     <Link
       href={href}
       className={cn(
-        "inline-flex cursor-pointer items-center rounded-full px-2.5 py-1.5 text-sm whitespace-nowrap transition-colors",
-        "text-muted-foreground hover:bg-surface-hover hover:text-foreground",
+        "inline-flex cursor-pointer items-center rounded-full border border-border bg-surface px-3.5 py-1.5 text-sm font-medium whitespace-nowrap text-foreground transition-colors",
+        "hover:bg-surface-hover",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
       )}
     >

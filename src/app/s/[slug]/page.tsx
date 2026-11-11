@@ -128,7 +128,11 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
     branchCount: site.branches.length,
     hasPhone: Boolean(phone),
     hasEmail: Boolean(email),
-  }).filter((id) => NAV_SECTIONS.includes(id));
+  });
+  const headerSections = navSections.filter((id) => NAV_SECTIONS.includes(id));
+  const footerSections = navSections.filter(
+    (id) => NAV_SECTIONS.includes(id) || id === SiteSectionId.APP,
+  );
   const dehydratedState = await prefetchCompanyFleetState(site.company, {
     from: typeof query.from === "string" ? query.from : undefined,
     to: typeof query.to === "string" ? query.to : undefined,
@@ -146,7 +150,8 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
         logoUrl={site.company.branding.logoUrl}
         homeHref={homeHref}
         fleetHref={fleetHref}
-        sections={navSections}
+        sections={headerSections}
+        phone={phone}
       />
       <OwnerHomeRoot
         site={site}
@@ -166,8 +171,9 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
         companyName={site.company.name}
         homeHref={homeHref}
         description={site.company.description}
-        sections={navSections}
+        sections={footerSections}
         contact={{ phone, email, whatsapp: site.content.contact.whatsapp }}
+        payments={site.content.contact.payments}
       />
     </>
   );
@@ -175,7 +181,6 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
 
 const NAV_SECTIONS: SiteSectionId[] = [
   SiteSectionId.REVIEWS,
-  SiteSectionId.APP,
   SiteSectionId.LOCATIONS,
   SiteSectionId.FAQ,
   SiteSectionId.CONTACT,
