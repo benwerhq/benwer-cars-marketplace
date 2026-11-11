@@ -15,6 +15,7 @@ import {
   sanitizeDateRange,
   unavailableDatesForVehicle,
 } from "@/lib/availability";
+import { vehicleImageUrls } from "@/lib/vehicleImage";
 import type { PublicChannel } from "@/enums";
 import type { Vehicle } from "@/types/vehicle";
 
@@ -125,7 +126,7 @@ export function CarDetailView({
           </p>
         </div>
         <CarPhotoGallery
-          photos={vehicle.photos}
+          photos={vehicleImageUrls(vehicle)}
           alt={`${vehicle.brand} ${vehicle.model}`}
         />
         {vehicle.description ? (

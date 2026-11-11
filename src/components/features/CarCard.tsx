@@ -13,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import { CarPhoto } from "./CarPhoto";
@@ -57,7 +58,7 @@ export function CarCard({
   const t = useTranslations("cars");
   const tDetail = useTranslations("carDetail");
   const locale = useLocale();
-  const primaryPhoto = vehicle.photos[0];
+  const primaryPhoto = vehicleImageUrl(vehicle);
   const name = `${vehicle.brand} ${vehicle.model}`;
 
   return (

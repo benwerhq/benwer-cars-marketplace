@@ -10,6 +10,7 @@ import { vehiclesApi, companiesApi } from "@/services/api";
 import { NavRoutes } from "@/enums";
 import { appendSearchParams, buildCompanyHref } from "@/lib/marketplaceSearch";
 import { absoluteUrl, buildPageMetadata, carProductJsonLd } from "@/lib/seo";
+import { vehicleImageUrls } from "@/lib/vehicleImage";
 
 interface Props {
   params: Promise<{ slug: string; id: string }>;
@@ -52,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path,
       siteName: tBrand("name"),
       locale,
-      images: vehicle.photos,
+      images: vehicleImageUrls(vehicle),
     });
   } catch {
     return buildPageMetadata({

@@ -391,6 +391,8 @@ export function mapVehicle(
     ),
     isPublic: readBoolean(row.isPublic) ?? true,
     photos: readPhotos(row),
+    photoUrl: readPhotoUrl(row.photoUrl) ?? null,
+    categoryImageUrl: readPhotoUrl(row.categoryImageUrl) ?? null,
     description: readString(row.description) ?? null,
     color: readString(row.color) ?? null,
     deposit: readNumber(row.deposit) ?? null,

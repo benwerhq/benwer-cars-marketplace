@@ -48,14 +48,12 @@ export function CarPhotoGallery({
         className,
       )}
     >
-      <div className="group relative flex min-h-48 w-full items-center justify-center overflow-hidden rounded-xl bg-surface-muted px-3 py-4">
+      <div className="group relative aspect-[16/10] min-h-48 w-full overflow-hidden rounded-xl bg-surface-muted">
         <CarPhoto
           key={activePhoto}
           src={activePhoto}
           alt={t("photoAlt", { name: alt, index: activeIndex + 1 })}
           priority
-          fit="contain"
-          className="max-h-80"
           sizes="(min-width: 768px) 48rem, calc(100vw - 2rem)"
           fallback={
             <div className="flex h-48 w-full flex-col items-center justify-center gap-2">
@@ -112,8 +110,6 @@ export function CarPhotoGallery({
                 key={photo}
                 src={photo}
                 alt={`${alt} thumbnail ${i + 1}`}
-                fit="contain"
-                className="max-h-16"
                 sizes="96px"
                 fallback={
                   <div className="flex h-full w-full items-center justify-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { env } from "@/env";
+import { vehicleImageUrls } from "@/lib/vehicleImage";
 import type { Vehicle } from "@/types/vehicle";
 
 export function getSiteUrl(): string {
@@ -116,7 +117,7 @@ export function carProductJsonLd(input: {
     "@type": "Product",
     name: `${vehicle.brand} ${vehicle.model}`,
     description,
-    image: vehicle.photos,
+    image: vehicleImageUrls(vehicle),
     brand: {
       "@type": "Brand",
       name: vehicle.brand,

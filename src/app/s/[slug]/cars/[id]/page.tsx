@@ -27,6 +27,7 @@ import {
 } from "@/lib/site";
 import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata, carProductJsonLd } from "@/lib/seo";
+import { vehicleImageUrls } from "@/lib/vehicleImage";
 
 interface Props {
   params: Promise<{ slug: string; id: string }>;
@@ -69,7 +70,7 @@ export async function generateMetadata({
       path,
       siteName: site.company.name,
       locale,
-      images: vehicle.photos,
+      images: vehicleImageUrls(vehicle),
       canonicalUrl: siteCanonicalPageUrl(site.canonicalUrl, path, site.slug),
       noIndex: Boolean(preview),
     });
