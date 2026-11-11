@@ -19,6 +19,7 @@ export interface PublicSite {
   showEmail: boolean;
   showAddress: boolean;
   isPreview: boolean;
+  canonicalUrl: string | null;
   company: Company;
   branches: SiteBranch[];
 }

@@ -35,5 +35,8 @@ describe("getErrorKey", () => {
     expect(getErrorKey(new ApiError(409, "rental_payments.already_paid"))).toBe(
       ErrorMessages.RENTAL_PAYMENTS_ALREADY_PAID,
     );
+    expect(getErrorKey(new ApiError(404, "website_domain.not_found"))).toBe(
+      ErrorMessages.WEBSITE_DOMAIN_NOT_FOUND,
+    );
   });
 });

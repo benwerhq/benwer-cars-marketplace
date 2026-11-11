@@ -31,6 +31,9 @@
       "paused": "This company is not taking bookings right now.",
       "not_published": "This website is not open for bookings yet."
     },
+    "website_domain": {
+      "not_found": "This website address is not linked to a rental company."
+    },
     "pricing": {
       "min_days": "These dates are too short for the season. Choose a longer rental.",
       "max_days": "These dates are too long for the season. Choose a shorter rental.",
@@ -56,6 +59,10 @@
     "title": "Page not found",
     "description": "That page does not exist. Head back and search for a car.",
     "action": "Back to home"
+  },
+  "hostUnknown": {
+    "title": "This website is not available",
+    "description": "Check the address you typed. This page does not belong to a Benwer Cars rental website."
   },
   "brand": {
     "name": "Benwer Cars",

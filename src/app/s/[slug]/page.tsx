@@ -27,6 +27,7 @@ import {
 } from "@/lib/site";
 import { localizedText } from "@/lib/localizedCopy";
 import { isSiteEditMode, parseEditFlag } from "@/lib/siteEdit";
+import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata } from "@/lib/seo";
 
 interface Props {
@@ -55,6 +56,7 @@ export async function generateMetadata({
       path,
       siteName: site.company.name,
       locale,
+      canonicalUrl: siteCanonicalPageUrl(site.canonicalUrl, path, site.slug),
       noIndex:
         Boolean(preview) ||
         parseEditFlag(query.edit) ||

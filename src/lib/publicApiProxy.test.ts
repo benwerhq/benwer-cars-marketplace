@@ -113,6 +113,13 @@ describe("resolveBrowserApiBaseUrl", () => {
         "https://marketplace.benwer.es",
       ),
     ).toBe(SAME_ORIGIN_API_PREFIX);
+    expect(
+      resolveBrowserApiBaseUrl(
+        "https://cars-api.benwer.es/v1",
+        "production",
+        "https://reservas.acme.es",
+      ),
+    ).toBe(SAME_ORIGIN_API_PREFIX);
   });
 
   it("uses the BFF in production even when the public API URL is unset", () => {
@@ -183,6 +190,22 @@ describe("isAllowedPublicApiProxyPath", () => {
       ),
     ).toBe(true);
     expect(isAllowedPublicApiProxyPath("POST", "v1/contact")).toBe(true);
+    expect(isAllowedPublicApiProxyPath("GET", "v1/public/hosts")).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "POST",
+        "v1/public/reservations/tok/withdraw",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "POST",
+        "v1/public/reservations/tok/payments",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath("POST", "v1/public/reservations/tok/cancel"),
+    ).toBe(true);
   });
 
   it("rejects authenticated or unknown API paths", () => {

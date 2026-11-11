@@ -162,4 +162,5 @@ export enum ErrorMessages {
   BOOKING_PAYMENT_NOT_OPEN = "errors.booking.payment_not_open",
   RESERVATION_NOT_CANCELLABLE = "errors.reservation.not_cancellable",
   RENTAL_PAYMENTS_ALREADY_PAID = "errors.rental_payments.already_paid",
+  WEBSITE_DOMAIN_NOT_FOUND = "errors.website_domain.not_found",
 }

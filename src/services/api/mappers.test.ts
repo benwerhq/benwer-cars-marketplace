@@ -489,6 +489,7 @@ describe("mapPublicSite", () => {
         showEmail: true,
         showAddress: true,
         preview: true,
+        canonicalUrl: "https://reservas.denver.example",
         company: {
           slug: "denver-cars",
           name: "Denver Cars",
@@ -512,6 +513,7 @@ describe("mapPublicSite", () => {
       { id: "b1", name: "Airport", address: "AGP" },
     ]);
     expect(site.company.slug).toBe("denver-cars");
+    expect(site.canonicalUrl).toBe("https://reservas.denver.example");
   });
 });
 

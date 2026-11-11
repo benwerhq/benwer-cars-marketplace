@@ -101,6 +101,15 @@ export function isAllowedPublicApiProxyPath(
     return true;
   }
 
+  if (
+    verb === "POST" &&
+    /^v1\/public\/reservations\/[^/]+\/(withdraw|payments|cancel)$/.test(
+      normalized,
+    )
+  ) {
+    return true;
+  }
+
   return false;
 }
 
