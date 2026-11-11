@@ -9,11 +9,13 @@ import { cn } from "@/lib/utils";
 const LOCALE_SHORT_KEYS = {
   "en-GB": "en",
   "es-ES": "es",
+  "pt-PT": "pt",
 } as const;
 
 const LOCALE_NAME_KEYS = {
   "en-GB": "enName",
   "es-ES": "esName",
+  "pt-PT": "ptName",
 } as const;
 
 interface LocaleSwitcherProps {

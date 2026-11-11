@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -14,8 +14,10 @@ import { PriceBreakdownList, PriceWarnings } from "./PriceBreakdownList";
 import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useCreateReservation } from "@/hooks/useCreateReservation";
+import { useInsurancePackages } from "@/hooks/useInsurancePackages";
 import { usePriceQuote } from "@/hooks/usePriceQuote";
 import { buildBookHref } from "@/lib/booking";
+import { localizedText } from "@/lib/localizedCopy";
 import {
   createBookingSchema,
   type BookingFormValues,
@@ -24,7 +26,7 @@ import { sanitizeDateRange } from "@/lib/availability";
 import { countRentalDays } from "@/lib/dates";
 import { ApiError, applyFieldErrors, getErrorKey } from "@/lib/errors";
 import { formatMoney } from "@/lib/money";
-import { ErrorMessages } from "@/enums";
+import { BookingMode, ErrorMessages, type PublicChannel } from "@/enums";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
 import type { Vehicle } from "@/types/vehicle";
@@ -35,6 +37,7 @@ const RENTAL_LENGTH_ERRORS: Partial<Record<string, ErrorMessages>> = {
   "pricing.min_days": ErrorMessages.PRICING_MIN_DAYS,
   "pricing.max_days": ErrorMessages.PRICING_MAX_DAYS,
   "pricing.rental_too_long": ErrorMessages.PRICING_RENTAL_TOO_LONG,
+  "reservation.min_lead": ErrorMessages.RESERVATION_MIN_LEAD,
 };
 
 interface BookingViewProps {
@@ -44,6 +47,13 @@ interface BookingViewProps {
   defaultFrom?: string;
   defaultTo?: string;
   carHref: string;
+  requireTerms?: boolean;
+  bookingMode?: BookingMode;
+  bookingsEnabled?: boolean;
+  channel?: PublicChannel;
+  showInsurance?: boolean;
+  confirmationHref?: (token: string) => string;
+  bookHrefBuilder?: (from: string, to: string) => string;
 }
 
 export function BookingView({
@@ -53,6 +63,13 @@ export function BookingView({
   defaultFrom = "",
   defaultTo = "",
   carHref,
+  requireTerms = false,
+  bookingMode = BookingMode.INSTANT,
+  bookingsEnabled = true,
+  channel,
+  showInsurance = false,
+  confirmationHref,
+  bookHrefBuilder,
 }: BookingViewProps) {
   const router = useRouter();
   const t = useTranslations("booking");
@@ -68,8 +85,9 @@ export function BookingView({
         startDate: t("validation.startDate"),
         endDate: t("validation.endDate"),
         endAfterStart: t("validation.endAfterStart"),
-      }),
-    [t],
+        terms: requireTerms ? t("validation.terms") : undefined,
+      }, { website: Boolean(channel) }),
+    [channel, requireTerms, t],
   );
 
   const form = useForm<BookingFormValues>({
@@ -82,6 +100,7 @@ export function BookingView({
       guestPhone: "",
       startDate: initialRange.from,
       endDate: initialRange.to,
+      acceptTerms: false,
     },
   });
 
@@ -94,7 +113,18 @@ export function BookingView({
     vehicleId: vehicle.id,
     startDate: days > 0 ? startDate : "",
     endDate: days > 0 ? endDate : "",
+    channel,
   });
+  const insuranceQuery = useInsurancePackages(
+    showInsurance ? companySlug : "",
+    {
+      vehicleId: vehicle.id,
+      startDate: days > 0 ? startDate : "",
+      endDate: days > 0 ? endDate : "",
+      channel,
+    },
+  );
+  const [insurancePackageId, setInsurancePackageId] = useState("");
   const quote =
     days > 0 && quoteQuery.data?.totalDays === days ? quoteQuery.data : null;
   const lengthBlocked = (quote?.warnings.length ?? 0) > 0;
@@ -109,22 +139,28 @@ export function BookingView({
   const dailyRate = formatMoney(vehicle.pricePerDay, vehicle.currency, locale);
 
   useEffect(() => {
-    const nextHref = buildBookHref({
-      companySlug,
-      carId: vehicle.id,
-      from: startDate,
-      to: endDate,
-    });
+    const nextHref = bookHrefBuilder
+      ? bookHrefBuilder(startDate, endDate)
+      : buildBookHref({
+          companySlug,
+          carId: vehicle.id,
+          from: startDate,
+          to: endDate,
+        });
     const current = `${window.location.pathname}${window.location.search}`;
     if (current !== nextHref) {
       router.replace(nextHref, { scroll: false });
     }
-  }, [companySlug, endDate, router, startDate, vehicle.id]);
+  }, [bookHrefBuilder, companySlug, endDate, router, startDate, vehicle.id]);
 
   const { mutateAsync, isPending } = useCreateReservation({
     companySlug,
     onSuccess: (reservation) => {
-      router.push(`/booking/${reservation.token}`);
+      router.push(
+        confirmationHref
+          ? confirmationHref(reservation.token)
+          : `/booking/${reservation.token}`,
+      );
     },
   });
 
@@ -143,6 +179,9 @@ export function BookingView({
         guestName: values.guestName,
         guestEmail: values.guestEmail,
         guestPhone: values.guestPhone,
+        insurancePackageId: insurancePackageId || undefined,
+        channel,
+        acceptTerms: channel ? values.acceptTerms : undefined,
       });
     } catch (error) {
       if (
@@ -230,7 +269,47 @@ export function BookingView({
           aria-busy={isBusy}
         >
           <div className="lg:col-span-3">
-            <BookingForm carHref={carHref} />
+            {bookingsEnabled ? (
+              <BookingForm carHref={carHref} requireTerms={requireTerms} />
+            ) : (
+              <p className="rounded-2xl border border-border bg-surface p-5 text-sm text-muted-foreground">
+                {t("sitePaused")}
+              </p>
+            )}
+            {showInsurance && insuranceQuery.data && insuranceQuery.data.length > 0 ? (
+              <fieldset className="mt-4 flex flex-col gap-2 rounded-2xl border border-border bg-surface p-5">
+                <legend className="text-sm font-medium text-foreground">
+                  {t("insurance")}
+                </legend>
+                {insuranceQuery.data.map((pack) => {
+                  const name =
+                    localizedText(pack.name, locale) || pack.code || pack.packageId;
+                  return (
+                    <label
+                      key={pack.packageId}
+                      className="flex cursor-pointer items-start gap-3 rounded-lg px-2 py-2 hover:bg-surface-hover"
+                    >
+                      <input
+                        type="radio"
+                        name="insurancePackageId"
+                        value={pack.packageId}
+                        checked={insurancePackageId === pack.packageId}
+                        onChange={() => setInsurancePackageId(pack.packageId)}
+                        className="mt-1"
+                      />
+                      <span className="flex min-w-0 flex-col">
+                        <span className="text-sm font-medium text-foreground">
+                          {name}
+                        </span>
+                        <span className="text-xs text-muted-foreground">
+                          {formatMoney(pack.total, vehicle.currency, locale)}
+                        </span>
+                      </span>
+                    </label>
+                  );
+                })}
+              </fieldset>
+            ) : null}
             <p className="mt-4 hidden text-xs text-muted-foreground lg:block">
               {t("trustFooter")}
             </p>
@@ -249,8 +328,17 @@ export function BookingView({
               <ConfirmButton
                 isBusy={isBusy}
                 blocked={lengthBlocked}
-                confirmingLabel={t("confirming")}
-                confirmLabel={t("confirm")}
+                confirmingLabel={
+                  bookingMode === BookingMode.REQUEST
+                    ? t("requesting")
+                    : t("confirming")
+                }
+                confirmLabel={
+                  bookingMode === BookingMode.REQUEST
+                    ? t("confirmRequest")
+                    : t("confirm")
+                }
+                disabled={!bookingsEnabled}
               />
             </div>
           </div>
@@ -277,10 +365,19 @@ export function BookingView({
           <ConfirmButton
             isBusy={isBusy}
             blocked={lengthBlocked}
-            confirmingLabel={t("confirming")}
-            confirmLabel={t("confirm")}
+            confirmingLabel={
+              bookingMode === BookingMode.REQUEST
+                ? t("requesting")
+                : t("confirming")
+            }
+            confirmLabel={
+              bookingMode === BookingMode.REQUEST
+                ? t("confirmRequest")
+                : t("confirm")
+            }
             form={BOOKING_FORM_ID}
             className="w-auto min-w-36"
+            disabled={!bookingsEnabled}
           />
         </div>
       </div>
@@ -295,6 +392,7 @@ function ConfirmButton({
   confirmLabel,
   form,
   className,
+  disabled = false,
 }: {
   isBusy: boolean;
   blocked?: boolean;
@@ -302,6 +400,7 @@ function ConfirmButton({
   confirmLabel: string;
   form?: string;
   className?: string;
+  disabled?: boolean;
 }) {
   return (
     <Button
@@ -309,7 +408,7 @@ function ConfirmButton({
       form={form}
       size="lg"
       isLoading={isBusy}
-      disabled={isBusy || blocked}
+      disabled={isBusy || blocked || disabled}
       className={cn("h-11 w-full", className)}
     >
       {isBusy ? confirmingLabel : confirmLabel}

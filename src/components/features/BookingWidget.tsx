@@ -23,6 +23,9 @@ interface BookingWidgetProps {
   isAvailabilityPending: boolean;
   isAvailabilityError: boolean;
   className?: string;
+  bookingsEnabled?: boolean;
+  bookHrefOverride?: string | null;
+  requestMode?: boolean;
 }
 
 export function BookingWidget({
@@ -37,6 +40,9 @@ export function BookingWidget({
   isAvailabilityPending,
   isAvailabilityError,
   className,
+  bookingsEnabled = true,
+  bookHrefOverride,
+  requestMode = false,
 }: BookingWidgetProps) {
   const t = useTranslations("booking");
   const tCars = useTranslations("cars");
@@ -57,16 +63,20 @@ export function BookingWidget({
     from: from || undefined,
     to: to || undefined,
   });
-  const bookHref = isTenant
-    ? canBook
-      ? buildBookHref({
-          companySlug,
-          carId: vehicle.id,
-          from,
-          to,
-        })
-      : null
-    : handoffHref;
+  const tenantBookHref = canBook
+    ? (bookHrefOverride ??
+      buildBookHref({
+        companySlug,
+        carId: vehicle.id,
+        from,
+        to,
+      }))
+    : null;
+  const bookHref = !bookingsEnabled
+    ? null
+    : isTenant
+      ? tenantBookHref
+      : handoffHref;
 
   const priceFormatted = formatMoney(
     vehicle.pricePerDay,
@@ -87,6 +97,8 @@ export function BookingWidget({
     isRangeBlocked,
     isAvailabilityPending,
     isAvailabilityError,
+    bookingsEnabled,
+    requestMode,
     t,
     tDetail,
   });
@@ -252,6 +264,8 @@ function bookCtaLabel({
   isRangeBlocked,
   isAvailabilityPending,
   isAvailabilityError,
+  bookingsEnabled,
+  requestMode,
   t,
   tDetail,
 }: {
@@ -263,9 +277,15 @@ function bookCtaLabel({
   isRangeBlocked: boolean;
   isAvailabilityPending: boolean;
   isAvailabilityError: boolean;
+  bookingsEnabled: boolean;
+  requestMode: boolean;
   t: ReturnType<typeof useTranslations>;
   tDetail: ReturnType<typeof useTranslations>;
 }): string {
+  if (!bookingsEnabled) {
+    return t("sitePaused");
+  }
+
   if (isTenant) {
     if (isAvailabilityPending) {
       return tDetail("checkingAvailability");
@@ -283,7 +303,7 @@ function bookCtaLabel({
       return t("invalidDates");
     }
 
-    return tDetail("bookNow");
+    return requestMode ? t("confirmRequest") : tDetail("bookNow");
   }
 
   if (companyName) {

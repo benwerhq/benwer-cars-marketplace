@@ -7,6 +7,7 @@ import {
   VehicleStatus,
   VehicleType,
 } from "@/enums";
+import { BookingMode, SiteStatus } from "@/enums";
 import { listingRangeDates } from "@/lib/dates";
 import { toPublicMediaSrc } from "@/lib/media";
 import type {
@@ -14,6 +15,7 @@ import type {
   AvailabilityRange,
 } from "@/types/availability";
 import type { Company } from "@/types/company";
+import type { InsurancePackageQuote } from "@/types/insurance";
 import type {
   PriceBreakdown,
   PriceSegment,
@@ -21,6 +23,7 @@ import type {
   PriceWarning,
 } from "@/types/pricing";
 import type { GuestReservation } from "@/types/reservation";
+import type { PublicSite, SiteBranch } from "@/types/site";
 import type { Vehicle } from "@/types/vehicle";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -301,6 +304,7 @@ export function mapCompany(raw: unknown): Company {
       readString(row.phoneNumber) ??
       readString(row.contactPhone) ??
       null,
+    address: readString(row.address) ?? readString(row.registeredAddress) ?? null,
     branding: {
       primaryColor: readString(branding.primaryColor) ?? "",
       logoUrl:
@@ -356,6 +360,11 @@ export function mapVehicle(
       readNumber(row.mileage) ??
       readNumber(row.odometer) ??
       null,
+    branchId:
+      readId(row.branchId) ??
+      readId(row.pickupBranchId) ??
+      readId(row.locationId) ??
+      null,
   };
 }
 
@@ -395,6 +404,14 @@ export function mapReservation(
       "",
     companySlug,
     createdAt: readString(row.createdAt) ?? new Date().toISOString(),
+    requestExpiresAt:
+      readString(row.requestExpiresAt) ??
+      readString(row.expiresAt) ??
+      null,
+    cancelReason:
+      readString(row.cancelReason) ??
+      readString(row.cancellationReason) ??
+      null,
     vehicle: row.vehicle
       ? mapVehicle(row.vehicle, {
           companySlug,
@@ -464,6 +481,172 @@ export function mapAvailability(
     vehicleId: readString(row.vehicleId) ?? "",
     unavailableDates: unavailable,
   };
+}
+
+function mapSiteStatus(value: string | undefined): SiteStatus {
+  switch (value) {
+    case SiteStatus.PAUSED:
+      return SiteStatus.PAUSED;
+    case SiteStatus.DRAFT:
+      return SiteStatus.DRAFT;
+    default:
+      return SiteStatus.PUBLISHED;
+  }
+}
+
+function mapBookingMode(value: string | undefined): BookingMode {
+  return value === BookingMode.REQUEST
+    ? BookingMode.REQUEST
+    : BookingMode.INSTANT;
+}
+
+function mapLocalizedCopy(value: unknown): Record<string, string> {
+  if (typeof value === "string" && value.trim()) {
+    return { "en-GB": value };
+  }
+
+  if (!isRecord(value)) {
+    return {};
+  }
+
+  const entries = Object.entries(value).filter(
+    (entry): entry is [string, string] =>
+      typeof entry[1] === "string" && entry[1].trim().length > 0,
+  );
+  return Object.fromEntries(entries);
+}
+
+function mapSiteBranch(raw: unknown): SiteBranch | null {
+  if (!isRecord(raw)) {
+    return null;
+  }
+
+  const id = readId(raw.id) ?? readString(raw.slug);
+  const name = readString(raw.name) ?? readString(raw.label);
+  if (!id || !name) {
+    return null;
+  }
+
+  return {
+    id,
+    name,
+    address: readString(raw.address) ?? null,
+  };
+}
+
+export function mapPublicSite(raw: unknown, fallbackSlug?: string): PublicSite {
+  const row = isRecord(raw) ? raw : {};
+  const nestedSite = isRecord(row.site) ? row.site : row;
+  const nestedCompany = isRecord(row.company)
+    ? row.company
+    : isRecord(nestedSite.company)
+      ? nestedSite.company
+      : row;
+  const company = mapCompany({
+    ...nestedCompany,
+    slug:
+      readString(nestedCompany.slug) ??
+      readString(nestedSite.slug) ??
+      fallbackSlug,
+  });
+  const slug =
+    readString(nestedSite.slug) ??
+    readString(row.slug) ??
+    company.slug ??
+    fallbackSlug ??
+    "";
+  const branchesRaw =
+    nestedSite.branches ??
+    nestedSite.locations ??
+    row.branches ??
+    row.locations;
+  const branches = Array.isArray(branchesRaw)
+    ? branchesRaw
+        .map(mapSiteBranch)
+        .filter((branch): branch is SiteBranch => branch !== null)
+    : [];
+
+  return {
+    slug,
+    status: mapSiteStatus(
+      readString(nestedSite.status) ?? readString(nestedSite.publicationStatus),
+    ),
+    bookingMode: mapBookingMode(
+      readString(nestedSite.bookingMode) ?? readString(row.bookingMode),
+    ),
+    minLeadHours:
+      readNumber(nestedSite.minLeadHours) ??
+      readNumber(row.minLeadHours) ??
+      0,
+    requestWindowHours:
+      readNumber(nestedSite.requestWindowHours) ??
+      readNumber(row.requestWindowHours) ??
+      0,
+    headline: mapLocalizedCopy(
+      nestedSite.headline ?? nestedSite.headlines ?? row.headline,
+    ),
+    intro: mapLocalizedCopy(
+      nestedSite.intro ?? nestedSite.introduction ?? row.intro,
+    ),
+    showPhone:
+      readBoolean(nestedSite.showPhone) ??
+      readBoolean(row.showPhone) ??
+      Boolean(company.phone),
+    showEmail:
+      readBoolean(nestedSite.showEmail) ??
+      readBoolean(row.showEmail) ??
+      Boolean(company.email),
+    showAddress:
+      readBoolean(nestedSite.showAddress) ??
+      readBoolean(row.showAddress) ??
+      Boolean(company.address),
+    isPreview:
+      readBoolean(nestedSite.preview) ??
+      readBoolean(row.preview) ??
+      readBoolean(row.isPreview) ??
+      false,
+    company: {
+      ...company,
+      slug: company.slug || slug,
+    },
+    branches,
+  };
+}
+
+export function mapInsurancePackageList(
+  payload: unknown,
+): InsurancePackageQuote[] {
+  const rows = isRecord(payload) && Array.isArray(payload.data)
+    ? payload.data
+    : unwrapList(payload);
+
+  return rows.flatMap((item) => {
+    if (!isRecord(item)) {
+      return [];
+    }
+
+    const packageId = readId(item.packageId) ?? readId(item.id);
+    if (!packageId) {
+      return [];
+    }
+
+    return [
+      {
+        packageId,
+        code: readString(item.code) ?? "",
+        name: mapLocalizedCopy(item.name),
+        description: (() => {
+          const copy = mapLocalizedCopy(item.description);
+          return Object.keys(copy).length > 0 ? copy : null;
+        })(),
+        pricePerDay: readNumber(item.pricePerDay) ?? 0,
+        total: readNumber(item.total) ?? 0,
+        excessAmount: readNumber(item.excessAmount) ?? 0,
+        depositAmount: readNumber(item.depositAmount) ?? 0,
+        isDefault: readBoolean(item.isDefault) ?? false,
+      },
+    ];
+  });
 }
 
 export function mapCompanyList(payload: unknown): Company[] {

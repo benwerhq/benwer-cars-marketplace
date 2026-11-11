@@ -6,7 +6,7 @@ import { Calendar } from "lucide-react";
 import { useFormContext } from "react-hook-form";
 import { useLocale, useTranslations } from "next-intl";
 import { DayPicker, type DateRange } from "react-day-picker";
-import { enGB, es } from "react-day-picker/locale";
+import { enGB, es, pt } from "react-day-picker/locale";
 import { Field } from "@/components/ui/Field";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import type { BookingFormValues } from "@/lib/bookingSchema";
@@ -113,7 +113,7 @@ export function BookingDateFields() {
           >
             <DayPicker
               mode="range"
-              locale={locale === "es-ES" ? es : enGB}
+              locale={locale === "es-ES" ? es : locale === "pt-PT" ? pt : enGB}
               numberOfMonths={isDesktop ? 2 : 1}
               selected={selected}
               onSelect={handleSelect}

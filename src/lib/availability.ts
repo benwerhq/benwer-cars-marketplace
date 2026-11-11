@@ -33,6 +33,7 @@ export function availabilityQueryKey(
     params.from,
     params.to,
     params.vehicleId ?? null,
+    params.channel ?? null,
   ] as const;
 }
 

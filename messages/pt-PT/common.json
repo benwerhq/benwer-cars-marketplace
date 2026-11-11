@@ -1,0 +1,85 @@
+{
+  "errors": {
+    "unknown": "Algo correu mal. Tente novamente.",
+    "network": "Não foi possível ligar ao servidor. Verifique a ligação.",
+    "vehicle": {
+      "not_found": "Este veículo já não está disponível."
+    },
+    "company": {
+      "not_found": "Não foi possível encontrar esta empresa."
+    },
+    "reservation": {
+      "overlap": "Este veículo já está reservado nestas datas.",
+      "not_found": "Reserva não encontrada. Verifique o link de confirmação.",
+      "invalid_dates": "A devolução tem de ser depois da recolha.",
+      "min_lead": "A recolha é demasiado cedo. Escolha uma data posterior.",
+      "terms_required": "Aceite as condições de aluguer para continuar.",
+      "max_open_requests": "Já tem dois pedidos em aberto. Retire um antes de enviar outro.",
+      "request_expired": "Este pedido expirou. Comece um novo."
+    },
+    "site": {
+      "not_found": "Não foi possível encontrar este site de aluguer.",
+      "paused": "Esta empresa não está a aceitar reservas de momento.",
+      "not_published": "Este site ainda não está aberto a reservas."
+    },
+    "pricing": {
+      "min_days": "Estas datas são demasiado curtas para a época. Escolha um aluguer mais longo.",
+      "max_days": "Estas datas são demasiado longas para a época. Escolha um aluguer mais curto.",
+      "rental_too_long": "Este aluguer é demasiado longo para reservar online. Contacte a empresa."
+    }
+  },
+  "nav": {
+    "home": "Início",
+    "cars": "Carros",
+    "companies": "Empresas",
+    "contact": "Contacto",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "cookies": "Cookies",
+    "mainAria": "Navegação principal",
+    "footerAria": "Navegação do rodapé"
+  },
+  "meta": {
+    "siteTitle": "Encontre alugueres de carros locais",
+    "siteDescription": "Compare carros de empresas de aluguer parceiras na província de Málaga e continue no site da empresa."
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "Essa página não existe. Volte atrás e procure um carro.",
+    "action": "Voltar ao início"
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, início",
+    "logoAlt": "Benwer Cars"
+  },
+  "locale": {
+    "label": "Idioma",
+    "en": "EN",
+    "es": "ES",
+    "pt": "PT",
+    "enName": "English",
+    "esName": "Español",
+    "ptName": "Português"
+  },
+  "footer": {
+    "tagline": "Compare carros de empresas de aluguer parceiras.",
+    "trust": "Frotas parceiras · Málaga · Alugue no site da empresa",
+    "poweredBy": "Reservado através da Benwer Cars",
+    "explore": "Explorar",
+    "legal": "Legal",
+    "copyright": "© {year} Benwer Cars. Todos os direitos reservados."
+  },
+  "cookieBanner": {
+    "body": "Usamos um cookie de idioma e lembramos esta escolha no seu dispositivo. Os cookies opcionais ficam desligados até os aceitar.",
+    "policy": "Política de cookies",
+    "necessary": "Apenas necessários",
+    "accept": "Aceitar todos"
+  },
+  "actions": {
+    "retry": "Tentar novamente",
+    "back": "Voltar",
+    "viewAll": "Ver tudo"
+  }
+}
