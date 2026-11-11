@@ -7,6 +7,7 @@ export interface BookingSchemaMessages {
   startDate: string;
   endDate: string;
   endAfterStart: string;
+  terms?: string;
 }
 
 const PHONE_PATTERN = /^[+]?[\d\s()-]{6,}$/;
@@ -23,10 +24,15 @@ export function createBookingSchema(messages: BookingSchemaMessages) {
         .regex(PHONE_PATTERN, messages.phone),
       startDate: z.string().min(1, messages.startDate),
       endDate: z.string().min(1, messages.endDate),
+      termsAccepted: z.boolean(),
     })
     .refine((data) => data.endDate > data.startDate, {
       message: messages.endAfterStart,
       path: ["endDate"],
+    })
+    .refine((data) => !messages.terms || data.termsAccepted, {
+      message: messages.terms,
+      path: ["termsAccepted"],
     });
 }
 

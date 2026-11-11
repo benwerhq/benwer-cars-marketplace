@@ -200,7 +200,7 @@ function FuelBadge({ fuel }: { fuel: FuelType }) {
 }
 
 function formatPrice(amount: number, currency: string, locale: string): string {
-  return new Intl.NumberFormat(locale === "es-ES" ? "es-ES" : "en-GB", {
+  return new Intl.NumberFormat(locale, {
     style: "currency",
     currency,
     minimumFractionDigits: 0,

@@ -296,7 +296,14 @@
     "stickyMeta": "{name} · {count, plural, one {# day} other {# days}}",
     "rateTimesDays": "{rate} × {days}",
     "confirm": "Confirm booking",
+    "confirmRequest": "Send request",
+    "requesting": "Sending request…",
     "confirming": "Confirming…",
+    "sitePaused": "Not taking bookings",
+    "insurance": "Insurance",
+    "termsLabel": "Rental terms",
+    "termsAccept": "I accept the",
+    "termsLink": "rental terms",
     "successTitle": "Booking confirmed!",
     "successMessage": "Your confirmation has been sent to {email}.",
     "viewBooking": "View my booking",
@@ -324,6 +331,7 @@
       "startDate": "Select a pick-up date.",
       "endDate": "Select a drop-off date.",
       "endAfterStart": "Drop-off must be after pick-up.",
+      "terms": "Accept the rental terms to continue.",
       "fixErrors": "Please fix the highlighted fields."
     },
     "averageRate": "Average daily rate",
@@ -365,7 +373,10 @@
     "browseMore": "Browse more cars",
     "notFoundTitle": "Reservation not found",
     "notFoundDescription": "Check the link in your confirmation email, or start a new search.",
-    "backHome": "Back to home"
+    "backHome": "Back to home",
+    "requestExpires": "Request expires",
+    "cancelReason": "Cancellation reason",
+    "withdraw": "Withdraw request"
   },
   "companies": {
     "title": "Rental companies",
@@ -520,5 +531,23 @@
         }
       ]
     }
+  },
+  "site": {
+    "logoAlt": "{name} home",
+    "defaultHeadline": "Rent a car with {name}",
+    "footerTagline": "Book directly with this rental company.",
+    "previewBanner": "Preview — this page is not public. Search engines will not index it.",
+    "pausedTitle": "Not taking bookings",
+    "pausedDescription": "This company has paused online bookings. You can still browse the fleet.",
+    "notFoundTitle": "Website not found",
+    "notFoundDescription": "This rental website is not available.",
+    "loadErrorTitle": "Website unavailable",
+    "loadErrorDescription": "We could not load this rental website. Try again shortly.",
+    "search": "Search cars",
+    "searchAria": "Search by dates and branch",
+    "searchTitle": "Search cars",
+    "searchDescription": "Choose dates and a branch to see what is available.",
+    "branch": "Branch",
+    "anyBranch": "Any branch"
   }
 }

@@ -32,4 +32,6 @@ export interface PriceQuoteQuery {
   vehicleId: string;
   startDate: string;
   endDate: string;
+  insurancePackageId?: string;
+  addonIds?: string[];
 }

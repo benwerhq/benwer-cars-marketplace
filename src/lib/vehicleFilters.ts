@@ -155,6 +155,7 @@ export function parseVehicleFilters(
     q,
     companySlugs,
     companySlug: companySlugs?.[0],
+    branchId: searchParams.get(SearchParams.BRANCH) || undefined,
   };
 }
 
@@ -170,6 +171,7 @@ export function applyVehicleFilters(
   setOrDelete(next, SearchParams.SEATS, filters.seats?.toString());
   setOrDelete(next, SearchParams.TRANSMISSION, filters.transmission);
   setOrDelete(next, SearchParams.Q, filters.q);
+  setOrDelete(next, SearchParams.BRANCH, filters.branchId);
   applyCompanySlugs(
     next,
     filters.companySlugs ??

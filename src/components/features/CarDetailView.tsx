@@ -39,6 +39,9 @@ interface CarDetailViewProps {
   initialTo?: string;
   backHref?: string;
   backLabel?: string;
+  bookingsEnabled?: boolean;
+  bookHrefOverride?: string | null;
+  requestMode?: boolean;
 }
 
 export function CarDetailView({
@@ -51,6 +54,9 @@ export function CarDetailView({
   initialTo,
   backHref,
   backLabel,
+  bookingsEnabled = true,
+  bookHrefOverride,
+  requestMode = false,
 }: CarDetailViewProps) {
   const t = useTranslations("carDetail");
   const calendarWindow = availabilityCalendarWindow();
@@ -160,6 +166,9 @@ export function CarDetailView({
           isRangeBlocked={isRangeBlocked}
           isAvailabilityPending={isTenant && isPending}
           isAvailabilityError={isTenant && isError}
+          bookingsEnabled={bookingsEnabled}
+          bookHrefOverride={bookHrefOverride}
+          requestMode={requestMode}
         />
       </div>
     </div>

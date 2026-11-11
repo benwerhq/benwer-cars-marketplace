@@ -10,9 +10,10 @@ import type { BookingFormValues } from "@/lib/bookingSchema";
 
 interface BookingFormProps {
   carHref: string;
+  requireTerms?: boolean;
 }
 
-export function BookingForm({ carHref }: BookingFormProps) {
+export function BookingForm({ carHref, requireTerms = false }: BookingFormProps) {
   const t = useTranslations("booking");
   const {
     register,
@@ -88,6 +89,36 @@ export function BookingForm({ carHref }: BookingFormProps) {
           {...register("guestPhone")}
         />
       </Field>
+
+      {requireTerms ? (
+        <Field
+          label={t("termsLabel")}
+          htmlFor="termsAccepted"
+          error={errors.termsAccepted?.message}
+          required
+        >
+          <label
+            htmlFor="termsAccepted"
+            className="flex cursor-pointer items-start gap-3 text-sm text-foreground"
+          >
+            <input
+              id="termsAccepted"
+              type="checkbox"
+              className="mt-1 h-4 w-4 rounded border-border-strong text-primary focus-visible:ring-2 focus-visible:ring-ring"
+              {...register("termsAccepted")}
+            />
+            <span>
+              {t("termsAccept")}{" "}
+              <Link
+                href="/terms"
+                className="font-medium text-primary hover:text-primary-hover"
+              >
+                {t("termsLink")}
+              </Link>
+            </span>
+          </label>
+        </Field>
+      ) : null}
     </div>
   );
 }

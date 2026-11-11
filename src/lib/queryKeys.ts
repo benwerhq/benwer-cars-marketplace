@@ -15,6 +15,12 @@ function compactQueryFilters<T extends object>(filters?: T): T | undefined {
   return Object.keys(compact).length > 0 ? compact : undefined;
 }
 
+export function siteQueryKey(slug: string, preview?: string) {
+  return preview
+    ? ([QueryKeys.SITE, slug, preview] as const)
+    : ([QueryKeys.SITE, slug] as const);
+}
+
 export function companyQueryKey(slug: string) {
   return [QueryKeys.COMPANY, slug] as const;
 }

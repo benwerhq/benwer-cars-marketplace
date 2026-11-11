@@ -26,6 +26,7 @@ export interface Vehicle {
   deposit: number | null;
   category: string | null;
   mileage: number | null;
+  branchId: string | null;
 }
 
 export interface VehicleFilters {
@@ -40,6 +41,7 @@ export interface VehicleFilters {
   limit?: number;
   companySlug?: string;
   companySlugs?: string[];
+  branchId?: string;
 }
 
 export interface MarketplaceSearchFilters extends VehicleFilters {

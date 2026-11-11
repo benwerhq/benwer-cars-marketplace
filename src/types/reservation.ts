@@ -10,6 +10,9 @@ export interface CreateGuestReservationPayload {
   guestName: string;
   guestEmail: string;
   guestPhone: string;
+  termsAccepted?: boolean;
+  insurancePackageId?: string;
+  pickupBranchId?: string;
 }
 
 export interface GuestReservation {
@@ -27,6 +30,8 @@ export interface GuestReservation {
   guestPhone: string;
   companySlug: string;
   createdAt: string;
+  requestExpiresAt: string | null;
+  cancelReason: string | null;
   vehicle?: Vehicle | null;
   company?: Company | null;
 }

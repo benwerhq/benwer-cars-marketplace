@@ -13,6 +13,17 @@ export enum ReservationStatus {
   CANCELLED = "cancelled",
 }
 
+export enum SiteStatus {
+  DRAFT = "draft",
+  PUBLISHED = "published",
+  PAUSED = "paused",
+}
+
+export enum BookingMode {
+  INSTANT = "instant",
+  REQUEST = "request",
+}
+
 export enum VehicleType {
   CAR = "car",
   SUV = "suv",
@@ -41,6 +52,8 @@ export enum QueryKeys {
   AVAILABILITY = "availability",
   RESERVATION = "reservation",
   PRICE_QUOTE = "price-quote",
+  SITE = "site",
+  INSURANCE = "insurance",
 }
 
 export enum StorageKeys {
@@ -60,6 +73,11 @@ export enum NavRoutes {
   TERMS = "/terms",
   COOKIES = "/cookies",
   CONTACT = "/contact",
+  SITE = "/s/:slug",
+  SITE_SEARCH = "/s/:slug/search",
+  SITE_CAR = "/s/:slug/cars/:id",
+  SITE_BOOK = "/s/:slug/book",
+  SITE_BOOKING = "/s/:slug/booking/:token",
 }
 
 export enum SearchParams {
@@ -74,6 +92,8 @@ export enum SearchParams {
   CAR_ID = "carId",
   COMPANY_SLUG = "companySlug",
   COMPANIES = "companies",
+  PREVIEW = "preview",
+  BRANCH = "branch",
 }
 
 export enum ErrorMessages {
@@ -87,4 +107,11 @@ export enum ErrorMessages {
   PRICING_MIN_DAYS = "errors.pricing.min_days",
   PRICING_MAX_DAYS = "errors.pricing.max_days",
   PRICING_RENTAL_TOO_LONG = "errors.pricing.rental_too_long",
+  RESERVATION_MIN_LEAD = "errors.reservation.min_lead",
+  RESERVATION_TERMS_REQUIRED = "errors.reservation.terms_required",
+  RESERVATION_MAX_OPEN_REQUESTS = "errors.reservation.max_open_requests",
+  RESERVATION_REQUEST_EXPIRED = "errors.reservation.request_expired",
+  SITE_NOT_FOUND = "errors.site.not_found",
+  SITE_PAUSED = "errors.site.paused",
+  SITE_NOT_PUBLISHED = "errors.site.not_published",
 }

@@ -429,6 +429,8 @@ export const mockReservationsApi = {
       guestPhone: payload.guestPhone,
       companySlug,
       createdAt: new Date().toISOString(),
+      requestExpiresAt: null,
+      cancelReason: null,
       vehicle,
       company,
     };

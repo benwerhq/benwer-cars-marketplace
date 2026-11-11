@@ -14,8 +14,10 @@ import { Sheet } from "@/components/ui/Sheet";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { formatSearchDate, parseIsoDate } from "@/lib/dates";
 import { resolveCardCompany } from "@/lib/companyIdentity";
-import { NavRoutes } from "@/enums";
+import { NavRoutes, SearchParams } from "@/enums";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
+import { rangeIncludesUnavailable } from "@/lib/availability";
+import { useAvailability } from "@/hooks/useAvailability";
 import {
   applyVehicleFilters,
   countAdvancedFilters,
@@ -31,12 +33,16 @@ interface CarListViewProps {
   companySlug: string;
   hrefBase: string;
   showDirectoryEmptyAction?: boolean;
+  showDateSearch?: boolean;
+  filterByAvailability?: boolean;
 }
 
 function CarListViewContent({
   companySlug,
   hrefBase,
   showDirectoryEmptyAction = false,
+  showDateSearch = true,
+  filterByAvailability = false,
 }: CarListViewProps) {
   const t = useTranslations("cars");
   const locale = useLocale();
@@ -50,6 +56,18 @@ function CarListViewContent({
     companySlug,
     filters,
   );
+  const hasRange = Boolean(filters.from && filters.to);
+  const availabilityQuery = useAvailability(
+    companySlug,
+    { from: filters.from ?? "", to: filters.to ?? "" },
+    filterByAvailability && hasRange,
+  );
+  const vehicles = filterVehiclesByAvailability(
+    data,
+    availabilityQuery.data,
+    filterByAvailability && hasRange ? filters.from : undefined,
+    filterByAvailability && hasRange ? filters.to : undefined,
+  );
   const companyQuery = useCompany(companySlug);
   const directory = companyQuery.data ? [companyQuery.data] : [];
 
@@ -57,7 +75,7 @@ function CarListViewContent({
   const appliedCount = countAdvancedFilters(filters);
   const fromDate = filters.from ? parseIsoDate(filters.from) : null;
   const toDate = filters.to ? parseIsoDate(filters.to) : null;
-  const count = data?.length ?? 0;
+  const count = vehicles?.length ?? 0;
   const resultsLabel =
     fromDate && toDate
       ? t("resultsForDates", {
@@ -80,6 +98,8 @@ function CarListViewContent({
       location: browse.location,
       from: browse.from,
       to: browse.to,
+      preview: searchParams.get(SearchParams.PREVIEW) || undefined,
+      branch: searchParams.get(SearchParams.BRANCH) || undefined,
     });
   }
 
@@ -102,19 +122,21 @@ function CarListViewContent({
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="rounded-2xl border border-border bg-surface p-2 shadow-md md:p-2.5">
-        <DateRangePopover
-          from={filters.from ?? ""}
-          to={filters.to ?? ""}
-          onChange={(next) =>
-            handleChange({
-              ...filters,
-              from: next.from || undefined,
-              to: next.to || undefined,
-            })
-          }
-        />
-      </div>
+      {showDateSearch ? (
+        <div className="rounded-2xl border border-border bg-surface p-2 shadow-md md:p-2.5">
+          <DateRangePopover
+            from={filters.from ?? ""}
+            to={filters.to ?? ""}
+            onChange={(next) =>
+              handleChange({
+                ...filters,
+                from: next.from || undefined,
+                to: next.to || undefined,
+              })
+            }
+          />
+        </div>
+      ) : null}
       <div className="flex items-center justify-between gap-3">
         {isPending ? (
           <Skeleton className="h-4 w-36" />
@@ -146,8 +168,11 @@ function CarListViewContent({
         </aside>
         <div className="min-w-0 flex-1">
           <CarGridView
-            vehicles={data}
-            isPending={isPending}
+            vehicles={vehicles}
+            isPending={
+              isPending ||
+              (filterByAvailability && hasRange && availabilityQuery.isPending)
+            }
             isError={isError}
             error={error}
             onRetry={refetch}
@@ -232,6 +257,8 @@ export function CarListView({
   companySlug,
   hrefBase,
   showDirectoryEmptyAction,
+  showDateSearch,
+  filterByAvailability,
 }: CarListViewProps) {
   return (
     <Suspense fallback={<CarListViewFallback />}>
@@ -239,7 +266,30 @@ export function CarListView({
         companySlug={companySlug}
         hrefBase={hrefBase}
         showDirectoryEmptyAction={showDirectoryEmptyAction}
+        showDateSearch={showDateSearch}
+        filterByAvailability={filterByAvailability}
       />
     </Suspense>
   );
+}
+
+function filterVehiclesByAvailability(
+  vehicles: Vehicle[] | undefined,
+  ranges: { vehicleId: string; unavailableDates: string[] }[] | undefined,
+  from: string | undefined,
+  to: string | undefined,
+): Vehicle[] | undefined {
+  if (!vehicles || !from || !to || !ranges?.length) {
+    return vehicles;
+  }
+
+  const blocked = new Set(
+    ranges
+      .filter((row) =>
+        rangeIncludesUnavailable(from, to, row.unavailableDates),
+      )
+      .map((row) => row.vehicleId),
+  );
+
+  return vehicles.filter((vehicle) => !blocked.has(vehicle.id));
 }

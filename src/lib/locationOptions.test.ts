@@ -23,6 +23,7 @@ function company(
     websiteUrl: partial.websiteUrl ?? null,
     email: partial.email ?? null,
     phone: partial.phone ?? null,
+    address: partial.address ?? null,
     branding: { primaryColor: "", logoUrl: null },
   };
 }

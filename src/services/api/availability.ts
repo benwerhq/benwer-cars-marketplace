@@ -2,7 +2,7 @@ import type {
   AvailabilityQuery,
   AvailabilityRange,
 } from "@/types/availability";
-import { getOpenApiClient } from "./client";
+import { getOpenApiClient, publicRequest } from "./client";
 import { mapAvailabilityList } from "./mappers";
 
 async function fetchLiveAvailability(
@@ -10,7 +10,11 @@ async function fetchLiveAvailability(
   params: AvailabilityQuery,
 ): Promise<AvailabilityRange[]> {
   if (!params.vehicleId) {
-    return [];
+    const data = await publicRequest<unknown>(
+      `/v1/public/companies/${encodeURIComponent(companySlug)}/availability`,
+      { query: { from: params.from, to: params.to } },
+    );
+    return mapAvailabilityList(data, params);
   }
 
   const { data } = await getOpenApiClient().GET(

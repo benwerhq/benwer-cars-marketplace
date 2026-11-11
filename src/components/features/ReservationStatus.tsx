@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import { CalendarDays, CheckCircle2, Mail } from "lucide-react";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/Button";
 import { useLocale, useTranslations } from "next-intl";
 import { useReservation } from "@/hooks/useReservation";
+import { useWithdrawReservation } from "@/hooks/useWithdrawReservation";
 import { ApiError, getErrorKey } from "@/lib/errors";
 import { StatusBadge } from "@/components/ui/Badge";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -19,6 +22,7 @@ import { cn } from "@/lib/utils";
 interface ReservationStatusProps {
   token: string;
   browseHref?: string | null;
+  allowWithdraw?: boolean;
 }
 
 const STATUS_KEYS = {
@@ -32,12 +36,14 @@ const STATUS_KEYS = {
 export function ReservationStatus({
   token,
   browseHref,
+  allowWithdraw = false,
 }: ReservationStatusProps) {
   const t = useTranslations("reservationStatus");
   const tRoot = useTranslations();
   const tBooking = useTranslations("booking");
   const locale = useLocale();
   const { data, isPending, isError, error, refetch } = useReservation(token);
+  const withdraw = useWithdrawReservation(token);
 
   if (isPending) return <ReservationStatusSkeleton />;
 
@@ -137,6 +143,22 @@ export function ReservationStatus({
           <StatusRow label={t("guest")} value={data.guestName} />
           <StatusRow label={t("email")} value={data.guestEmail} />
           <StatusRow label={t("phone")} value={data.guestPhone} />
+          {data.requestExpiresAt ? (
+            <StatusRow
+              label={t("requestExpires")}
+              value={
+                parseIsoDate(data.requestExpiresAt.slice(0, 10))
+                  ? formatLongDate(
+                      parseIsoDate(data.requestExpiresAt.slice(0, 10)) as Date,
+                      locale,
+                    )
+                  : data.requestExpiresAt
+              }
+            />
+          ) : null}
+          {data.cancelReason ? (
+            <StatusRow label={t("cancelReason")} value={data.cancelReason} />
+          ) : null}
         </dl>
 
         {data.priceBreakdown && data.priceBreakdown.segments.length > 0 ? (
@@ -195,6 +217,23 @@ export function ReservationStatus({
         <p className="max-w-md text-sm text-muted-foreground">
           {t("trustCopy")}
         </p>
+        {allowWithdraw &&
+        data.status !== ReservationStatusEnum.CANCELLED &&
+        data.status !== ReservationStatusEnum.COMPLETED &&
+        (data.status === ReservationStatusEnum.DRAFT ||
+          Boolean(data.requestExpiresAt)) ? (
+          <Button
+            variant="danger"
+            isLoading={withdraw.isPending}
+            onClick={() => {
+              void withdraw.mutateAsync().catch((withdrawError) => {
+                toast.error(tRoot(getErrorKey(withdrawError)));
+              });
+            }}
+          >
+            {t("withdraw")}
+          </Button>
+        ) : null}
         <Link
           href={fleetHref}
           className="inline-flex h-11 cursor-pointer items-center justify-center rounded-md border border-border bg-surface px-6 text-sm font-medium text-foreground transition-colors hover:bg-surface-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"

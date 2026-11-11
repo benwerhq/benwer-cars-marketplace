@@ -14,6 +14,8 @@ import enCommon from "../../messages/en-GB/common.json";
 import enMarketplace from "../../messages/en-GB/marketplace.json";
 import esCommon from "../../messages/es-ES/common.json";
 import esMarketplace from "../../messages/es-ES/marketplace.json";
+import ptCommon from "../../messages/pt-PT/common.json";
+import ptMarketplace from "../../messages/pt-PT/marketplace.json";
 import "./globals.css";
 
 const inter = Inter({
@@ -53,8 +55,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-function resolveLocale(value: string | undefined): "en-GB" | "es-ES" {
-  return value === "es-ES" ? "es-ES" : routing.defaultLocale;
+function resolveLocale(
+  value: string | undefined,
+): (typeof routing.locales)[number] {
+  if (value && routing.locales.includes(value as (typeof routing.locales)[number])) {
+    return value as (typeof routing.locales)[number];
+  }
+
+  return routing.defaultLocale;
 }
 
 export default async function RootLayout({
@@ -67,7 +75,9 @@ export default async function RootLayout({
   const messages =
     locale === "es-ES"
       ? { ...esCommon, ...esMarketplace }
-      : { ...enCommon, ...enMarketplace };
+      : locale === "pt-PT"
+        ? { ...ptCommon, ...ptMarketplace }
+        : { ...enCommon, ...enMarketplace };
 
   return (
     <html lang={locale} className={inter.variable}>
