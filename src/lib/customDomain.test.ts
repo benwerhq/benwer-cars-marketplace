@@ -13,6 +13,10 @@ describe("rewriteCustomDomainPath", () => {
     expect(rewriteCustomDomainPath("/booking/tok", "acme")).toBe(
       "/s/acme/booking/tok",
     );
+    expect(rewriteCustomDomainPath("/owner", "acme")).toBe("/s/acme/owner");
+    expect(rewriteCustomDomainPath("/guest/confirm", "acme")).toBe(
+      "/s/acme/guest/confirm",
+    );
   });
 
   it("never rewrites onto another tenant slug", () => {

@@ -51,7 +51,11 @@ export function rewriteCustomDomainPath(
     path === "/book" ||
     path.startsWith("/book/") ||
     path === "/booking" ||
-    path.startsWith("/booking/")
+    path.startsWith("/booking/") ||
+    path === "/owner" ||
+    path.startsWith("/owner/") ||
+    path === "/guest" ||
+    path.startsWith("/guest/")
   ) {
     return `${siteRoot}${path}`;
   }

@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import { OwnerSignInPanel } from "@/components/features/OwnerSignInPanel";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
-import { siteHomePath, siteOwnerPath, withSiteQuery } from "@/lib/site";
+import {
+  isTenantHostRequest,
+  publicSiteHomeHref,
+  siteOwnerPath,
+} from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 interface Props {
@@ -40,7 +45,11 @@ async function CompanySiteOwnerPage({ params, searchParams }: Props) {
     notFound();
   }
 
-  const homeHref = withSiteQuery(siteHomePath(site.slug), { preview });
+  const homeHref = publicSiteHomeHref(
+    site.slug,
+    isTenantHostRequest(await headers()),
+    { preview },
+  );
 
   return (
     <>

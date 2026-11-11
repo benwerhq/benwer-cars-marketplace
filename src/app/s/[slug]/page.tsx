@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Building2 } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -15,8 +16,9 @@ import { prefetchCompanyFleetState } from "@/lib/prefetchCompanyFleet";
 import {
   SITE_CHANNEL,
   companySlugFromSite,
+  isTenantHostRequest,
+  publicSiteHomeHref,
   siteHomePath,
-  withSiteQuery,
 } from "@/lib/site";
 import { localizedText } from "@/lib/localizedCopy";
 import { isSiteEditMode, parseEditFlag } from "@/lib/siteEdit";
@@ -113,7 +115,8 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
     preview,
     edit: parseEditFlag(query.edit),
   });
-  const homeHref = withSiteQuery(siteHomePath(site.slug), {
+  const onTenantHost = isTenantHostRequest(await headers());
+  const homeHref = publicSiteHomeHref(site.slug, onTenantHost, {
     preview,
     edit: editMode,
   });
@@ -139,6 +142,7 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
       <OwnerHomeRoot
         site={site}
         companySlug={companySlug}
+        homeHref={homeHref}
         preview={preview}
         from={typeof query.from === "string" ? query.from : ""}
         to={typeof query.to === "string" ? query.to : ""}

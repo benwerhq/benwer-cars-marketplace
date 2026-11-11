@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ReservationStatus } from "@/components/features/ReservationStatus";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
-import { siteHomePath, withSiteQuery } from "@/lib/site";
+import { isTenantHostRequest, publicSiteHomeHref } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 interface Props {
@@ -44,7 +45,11 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
     companyName = slug;
   }
 
-  const homeHref = withSiteQuery(siteHomePath(slug), { preview });
+  const homeHref = publicSiteHomeHref(
+    slug,
+    isTenantHostRequest(await headers()),
+    { preview },
+  );
 
   return (
     <>

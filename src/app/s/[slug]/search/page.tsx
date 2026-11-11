@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Building2 } from "lucide-react";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -20,10 +21,11 @@ import {
   canAcceptBookings,
   companySlugFromSite,
   isSitePaused,
+  isTenantHostRequest,
+  publicSiteHomeHref,
   SITE_CHANNEL,
-  siteHomePath,
+  sitePathFromHome,
   siteSearchPath,
-  withSiteQuery,
 } from "@/lib/site";
 import { isSiteEditMode, parseEditFlag } from "@/lib/siteEdit";
 import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
@@ -111,7 +113,8 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
     preview,
     edit: parseEditFlag(query.edit),
   });
-  const homeHref = withSiteQuery(siteHomePath(site.slug), {
+  const onTenantHost = isTenantHostRequest(await headers());
+  const homeHref = publicSiteHomeHref(site.slug, onTenantHost, {
     preview,
     edit: editMode,
   });
@@ -149,7 +152,7 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
         {isSitePaused(site) ? <SitePausedNotice compact /> : null}
         <SiteEditSection section={SiteEditSectionId.SEARCH} enabled={editMode}>
           <SiteSearchForm
-            slug={site.slug}
+            homeHref={homeHref}
             branches={site.branches}
             defaultFrom={from}
             defaultTo={to}
@@ -163,7 +166,7 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
           <HydrationBoundary state={dehydratedState}>
             <CarListView
               companySlug={companySlug}
-              hrefBase={`${siteHomePath(site.slug)}/cars`}
+              hrefBase={sitePathFromHome(homeHref, "/cars")}
               showDateSearch={false}
               filterByAvailability
               channel={SITE_CHANNEL}

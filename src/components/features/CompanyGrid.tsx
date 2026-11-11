@@ -9,7 +9,7 @@ import { ErrorState } from "@/components/ui/ErrorState";
 import { cn } from "@/lib/utils";
 import { getErrorKey } from "@/lib/errors";
 import { NavRoutes } from "@/enums";
-import { buildCompanyHref } from "@/lib/marketplaceSearch";
+import { buildCompanySiteHref } from "@/lib/companySite";
 import type { Company } from "@/types/company";
 
 interface CompanyGridProps {
@@ -84,7 +84,13 @@ export function CompanyGrid({
         <CompanyCard
           key={company.id}
           company={company}
-          href={buildHref?.(company) ?? buildCompanyHref(company.slug)}
+          href={
+            buildHref?.(company) ??
+            buildCompanySiteHref({
+              slug: company.slug,
+              websiteUrl: company.websiteUrl,
+            })
+          }
           viewFleetLabel={viewFleetLabel ?? t("viewFleet")}
           fleetHint={(fleetHint ?? defaultFleetHint)(company)}
           isHighlighted={selectedSlug === company.slug}
