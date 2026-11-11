@@ -1,4 +1,5 @@
 import { NavRoutes, SearchParams } from "@/enums";
+import { buildCompanyCarHref, buildCompanySiteHref } from "@/lib/companySite";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
 
 export function buildBookHref(input: {
@@ -26,11 +27,16 @@ export function buildCarDetailHref(input: {
   to?: string;
   isTenant?: boolean;
 }): string {
-  const path = input.isTenant
-    ? `/cars/${encodeURIComponent(input.carId)}`
-    : `${NavRoutes.COMPANIES}/${encodeURIComponent(input.companySlug)}/cars/${encodeURIComponent(input.carId)}`;
+  if (input.isTenant) {
+    return appendSearchParams(`/cars/${encodeURIComponent(input.carId)}`, {
+      from: input.from,
+      to: input.to,
+    });
+  }
 
-  return appendSearchParams(path, {
+  return buildCompanyCarHref({
+    slug: input.companySlug,
+    vehicleId: input.carId,
     from: input.from,
     to: input.to,
   });
@@ -49,7 +55,8 @@ export function buildFleetHref(input: {
     });
   }
 
-  return appendSearchParams(`${NavRoutes.COMPANIES}/${input.companySlug}`, {
+  return buildCompanySiteHref({
+    slug: input.companySlug,
     from: input.from,
     to: input.to,
   });

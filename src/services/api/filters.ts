@@ -1,5 +1,5 @@
 import { isProvinceWideLocation } from "@/data/malagaCities";
-import { VehicleStatus } from "@/enums";
+import { PublicChannel, VehicleStatus } from "@/enums";
 import type { Company, CompanyListFilters } from "@/types/company";
 import type { Vehicle, VehicleFilters } from "@/types/vehicle";
 
@@ -9,6 +9,10 @@ function normalize(value: string): string {
 
 export function isListedVehicle(vehicle: Vehicle): boolean {
   return vehicle.isPublic && vehicle.status === VehicleStatus.AVAILABLE;
+}
+
+export function isPublicFleetVehicle(vehicle: Vehicle): boolean {
+  return vehicle.isPublic;
 }
 
 export function matchesVehicleFilters(
@@ -68,11 +72,14 @@ export function applyVehicleListFilters(
   vehicles: Vehicle[],
   filters?: VehicleFilters,
 ): Vehicle[] {
+  const includeUnavailable = filters?.channel === PublicChannel.WEBSITE;
   return sortVehicles(
-    vehicles.filter(
-      (vehicle) =>
-        isListedVehicle(vehicle) && matchesVehicleFilters(vehicle, filters),
-    ),
+    vehicles.filter((vehicle) => {
+      const listed = includeUnavailable
+        ? isPublicFleetVehicle(vehicle)
+        : isListedVehicle(vehicle);
+      return listed && matchesVehicleFilters(vehicle, filters);
+    }),
     filters?.sort,
   );
 }

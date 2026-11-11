@@ -21,7 +21,7 @@ import {
 } from "@/lib/dates";
 import { resolveCardCompany } from "@/lib/companyIdentity";
 import { locationLabelFromSlug } from "@/lib/locationOptions";
-import { appendSearchParams } from "@/lib/marketplaceSearch";
+import { buildCompanyCarHref } from "@/lib/companySite";
 import {
   applyVehicleFilters,
   countAdvancedFilters,
@@ -99,14 +99,16 @@ function MarketplaceCarListContent() {
   }
 
   function buildHref(vehicle: Vehicle): string {
-    return appendSearchParams(
-      `${NavRoutes.COMPANIES}/${encodeURIComponent(vehicle.companySlug)}/cars/${encodeURIComponent(vehicle.id)}`,
-      {
-        location,
-        from: browse.from,
-        to: browse.to,
-      },
+    const listed = companiesQuery.data?.find(
+      (company) => company.slug === vehicle.companySlug,
     );
+    return buildCompanyCarHref({
+      slug: vehicle.companySlug,
+      vehicleId: vehicle.id,
+      websiteUrl: listed?.websiteUrl,
+      from: browse.from,
+      to: browse.to,
+    });
   }
 
   function companyFor(vehicle: Vehicle) {
