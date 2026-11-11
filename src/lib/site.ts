@@ -30,6 +30,7 @@ export interface SiteLinkQuery {
   branch?: string;
   preview?: string;
   carId?: string;
+  edit?: boolean;
 }
 
 export function withSiteQuery(path: string, query?: SiteLinkQuery): string {
@@ -47,6 +48,9 @@ export function withSiteQuery(path: string, query?: SiteLinkQuery): string {
   if (query?.carId) {
     url.searchParams.set(SearchParams.CAR_ID, query.carId);
   }
+  if (query?.edit) {
+    url.searchParams.set(SearchParams.EDIT, "1");
+  }
   return `${url.pathname}${url.search}`;
 }
 
@@ -57,6 +61,7 @@ export function siteBookHref(input: {
   to?: string;
   branch?: string;
   preview?: string;
+  edit?: boolean;
 }): string {
   return withSiteQuery(siteBookPath(input.slug), {
     carId: input.carId,
@@ -64,6 +69,7 @@ export function siteBookHref(input: {
     to: input.to,
     branch: input.branch,
     preview: input.preview,
+    edit: input.edit,
   });
 }
 

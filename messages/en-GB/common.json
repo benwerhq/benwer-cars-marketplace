@@ -15,12 +15,24 @@
       "min_lead": "Pick-up is too soon. Choose a later date.",
       "terms_required": "Please accept the rental terms to continue.",
       "max_open_requests": "You already have two open requests. Withdraw one before sending another.",
-      "request_expired": "This request has expired. Start a new one."
+      "request_expired": "This request has expired. Start a new one.",
+      "not_cancellable": "This booking can no longer be cancelled online."
+    },
+    "booking": {
+      "payment_not_required": "No online payment is due for this booking.",
+      "payment_window_elapsed": "The 15-minute payment window has ended. Start a new booking if you still need the car.",
+      "payment_not_open": "Payment is not available for this booking. Try again or contact the company."
+    },
+    "rental_payments": {
+      "already_paid": "This booking is already paid."
     },
     "site": {
       "not_found": "This rental website could not be found.",
       "paused": "This company is not taking bookings right now.",
       "not_published": "This website is not open for bookings yet."
+    },
+    "website_domain": {
+      "not_found": "This website address is not linked to a rental company."
     },
     "pricing": {
       "min_days": "These dates are too short for the season. Choose a longer rental.",
@@ -47,6 +59,10 @@
     "title": "Page not found",
     "description": "That page does not exist. Head back and search for a car.",
     "action": "Back to home"
+  },
+  "hostUnknown": {
+    "title": "This website is not available",
+    "description": "Check the address you typed. This page does not belong to a Benwer Cars rental website."
   },
   "brand": {
     "name": "Benwer Cars",

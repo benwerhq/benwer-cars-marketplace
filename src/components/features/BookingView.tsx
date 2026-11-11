@@ -227,7 +227,10 @@ export function BookingView({
         <ul className="flex flex-wrap gap-2">
           <TrustPill icon={ShieldCheck} label={t("trustNoAccount")} />
           <TrustPill icon={Mail} label={t("trustEmail")} />
-          <TrustPill icon={Wallet} label={t("trustNoPayment")} />
+          <TrustPill
+            icon={Wallet}
+            label={channel ? t("trustCardPayment") : t("trustNoPayment")}
+          />
         </ul>
 
         {days <= 0 ? (

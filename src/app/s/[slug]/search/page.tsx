@@ -4,12 +4,14 @@ import { HydrationBoundary } from "@tanstack/react-query";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SiteEditBanner } from "@/components/layout/SiteEditBanner";
+import { SiteEditSection } from "@/components/layout/SiteEditSection";
 import { SitePausedNotice } from "@/components/features/SitePausedNotice";
 import { SiteSearchForm } from "@/components/features/SiteSearchForm";
 import { CarListView } from "@/components/features/CarListView";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { PageLoadError } from "@/components/ui/PageLoadError";
-import { NavRoutes, SearchParams } from "@/enums";
+import { NavRoutes, SearchParams, SiteEditSection as SiteEditSectionId } from "@/enums";
 import { ApiError } from "@/lib/errors";
 import { logError } from "@/lib/logger";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
@@ -23,6 +25,8 @@ import {
   siteSearchPath,
   withSiteQuery,
 } from "@/lib/site";
+import { isSiteEditMode, parseEditFlag } from "@/lib/siteEdit";
+import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata } from "@/lib/seo";
 
 interface Props {
@@ -39,14 +43,28 @@ export async function generateMetadata({
   const locale = await getLocale();
   const t = await getTranslations("site");
 
-  return buildPageMetadata({
-    title: t("searchTitle"),
-    description: t("searchDescription"),
-    path: siteSearchPath(slug),
-    siteName: t("searchTitle"),
-    locale,
-    noIndex: Boolean(preview),
-  });
+  const path = siteSearchPath(slug);
+  try {
+    const site = await loadPublicSite(slug, preview);
+    return buildPageMetadata({
+      title: t("searchTitle"),
+      description: t("searchDescription"),
+      path,
+      siteName: t("searchTitle"),
+      locale,
+      canonicalUrl: siteCanonicalPageUrl(site.canonicalUrl, path, site.slug),
+      noIndex: Boolean(preview) || parseEditFlag(query.edit),
+    });
+  } catch {
+    return buildPageMetadata({
+      title: t("searchTitle"),
+      description: t("searchDescription"),
+      path,
+      siteName: t("searchTitle"),
+      locale,
+      noIndex: true,
+    });
+  }
 }
 
 async function CompanySiteSearchPage({ params, searchParams }: Props) {
@@ -88,7 +106,15 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
   }
 
   const companySlug = companySlugFromSite(site);
-  const homeHref = withSiteQuery(siteHomePath(site.slug), { preview });
+  const editMode = isSiteEditMode({
+    isPreview: site.isPreview,
+    preview,
+    edit: parseEditFlag(query.edit),
+  });
+  const homeHref = withSiteQuery(siteHomePath(site.slug), {
+    preview,
+    edit: editMode,
+  });
   const from = typeof query.from === "string" ? query.from : "";
   const to = typeof query.to === "string" ? query.to : "";
   const branch =
@@ -104,6 +130,7 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
 
   return (
     <>
+      {editMode ? <SiteEditBanner /> : null}
       <SiteHeader
         companyName={site.company.name}
         logoUrl={site.company.branding.logoUrl}
@@ -120,24 +147,29 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
           </p>
         </div>
         {isSitePaused(site) ? <SitePausedNotice compact /> : null}
-        <SiteSearchForm
-          slug={site.slug}
-          branches={site.branches}
-          defaultFrom={from}
-          defaultTo={to}
-          defaultBranch={branch}
-          preview={preview}
-          disabled={!canAcceptBookings(site)}
-        />
-        <HydrationBoundary state={dehydratedState}>
-          <CarListView
-            companySlug={companySlug}
-            hrefBase={`${siteHomePath(site.slug)}/cars`}
-            showDateSearch={false}
-            filterByAvailability
-            channel={SITE_CHANNEL}
+        <SiteEditSection section={SiteEditSectionId.SEARCH} enabled={editMode}>
+          <SiteSearchForm
+            slug={site.slug}
+            branches={site.branches}
+            defaultFrom={from}
+            defaultTo={to}
+            defaultBranch={branch}
+            preview={preview}
+            edit={editMode}
+            disabled={!canAcceptBookings(site)}
           />
-        </HydrationBoundary>
+        </SiteEditSection>
+        <SiteEditSection section={SiteEditSectionId.FLEET} enabled={editMode}>
+          <HydrationBoundary state={dehydratedState}>
+            <CarListView
+              companySlug={companySlug}
+              hrefBase={`${siteHomePath(site.slug)}/cars`}
+              showDateSearch={false}
+              filterByAvailability
+              channel={SITE_CHANNEL}
+            />
+          </HydrationBoundary>
+        </SiteEditSection>
       </main>
       <SiteFooter companyName={site.company.name} homeHref={homeHref} />
     </>

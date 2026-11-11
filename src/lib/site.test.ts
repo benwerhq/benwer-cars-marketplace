@@ -27,6 +27,7 @@ function site(overrides: Partial<PublicSite> = {}): PublicSite {
     showEmail: false,
     showAddress: false,
     isPreview: false,
+    canonicalUrl: null,
     company: {
       id: "c1",
       slug: "denver-cars",
@@ -76,6 +77,12 @@ describe("site paths", () => {
     expect(withSiteQuery("/s/denver-cars", { preview: "abc" })).toBe(
       "/s/denver-cars?preview=abc",
     );
+  });
+
+  it("keeps edit=1 on site links in draft edit mode", () => {
+    expect(
+      withSiteQuery("/s/denver-cars", { preview: "abc", edit: true }),
+    ).toBe("/s/denver-cars?preview=abc&edit=1");
   });
 });
 

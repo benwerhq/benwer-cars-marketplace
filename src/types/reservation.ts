@@ -1,4 +1,9 @@
-import type { PublicChannel, ReservationStatus } from "@/enums";
+import type {
+  PaymentChannel,
+  PaymentStatus,
+  PublicChannel,
+  ReservationStatus,
+} from "@/enums";
 import type { Company } from "./company";
 import type { PriceBreakdown } from "./pricing";
 import type { Vehicle } from "./vehicle";
@@ -32,6 +37,13 @@ export interface GuestReservation {
   createdAt: string;
   requestExpiresAt: string | null;
   cancelReason: string | null;
+  paymentStatus: PaymentStatus;
+  paymentChannel: PaymentChannel | null;
+  paidAmount: number;
+  advanceDue: number;
+  advanceAuthorized: boolean;
+  paymentExpiresAt: string | null;
+  onlinePaymentRequired: boolean;
   vehicle?: Vehicle | null;
   company?: Company | null;
 }

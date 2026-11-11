@@ -313,6 +313,7 @@
     "trustNoAccount": "Sin crear cuenta",
     "trustEmail": "Confirmación por correo",
     "trustNoPayment": "Sin pago ahora",
+    "trustCardPayment": "Paga con tarjeta después de reservar",
     "trustFooter": "Al confirmar, solicitas este coche para las fechas indicadas. La empresa respetará la reserva.",
     "missingTitle": "Elige un coche para continuar",
     "missingDescription": "Selecciona un vehículo y las fechas antes de completar la reserva.",
@@ -376,7 +377,42 @@
     "backHome": "Volver al inicio",
     "requestExpires": "La solicitud caduca",
     "cancelReason": "Motivo de cancelación",
-    "withdraw": "Retirar solicitud"
+    "withdraw": "Retirar solicitud",
+    "paymentStatus": "Pago",
+    "paidAmount": "Pagado",
+    "payment": {
+      "unpaid": "Pendiente de pago",
+      "partially_paid": "Pago parcial",
+      "paid": "Pagado",
+      "refund_due": "Reembolso pendiente",
+      "authorized": "Tarjeta autorizada"
+    },
+    "reasons": {
+      "unpaid_timeout": "El pago no se completó a tiempo",
+      "request_expired": "La empresa no respondió a tiempo",
+      "request_declined": "La empresa rechazó esta solicitud",
+      "customer_request": "Has retirado esta solicitud"
+    }
+  },
+  "payment": {
+    "title": "Paga el anticipo",
+    "amountDue": "Importe a pagar: {amount}",
+    "countdown": "Completa el pago en {time}",
+    "requestAuthorize": "Autorizamos tu tarjeta ahora y solo se cobra cuando la empresa acepte.",
+    "pay": "Pagar ahora",
+    "paying": "Procesando…",
+    "confirming": "Confirmando el pago",
+    "confirmingHint": "Espera: confirmamos el pago con la empresa, no con el formulario de la tarjeta.",
+    "declined": "La tarjeta fue rechazada. Prueba con otra.",
+    "secure": "Los datos de la tarjeta los gestiona Stripe en modo de prueba.",
+    "cancelBooking": "Cancelar reserva",
+    "cancelTitle": "¿Cancelar esta reserva?",
+    "cancelDescription": "Aplicaremos las normas de cancelación de la empresa. Revisa la tarifa y el reembolso antes de confirmar.",
+    "cancelFee": "Gastos de cancelación",
+    "cancelRefund": "Reembolso",
+    "confirmCancel": "Confirmar cancelación",
+    "keepBooking": "Mantener reserva",
+    "cancelled": "Tu reserva ha sido cancelada."
   },
   "companies": {
     "title": "Empresas de alquiler",
@@ -537,6 +573,21 @@
     "defaultHeadline": "Alquila un coche con {name}",
     "footerTagline": "Reserva directamente con esta empresa de alquiler.",
     "previewBanner": "Vista previa — esta página no es pública. Los buscadores no la indexarán.",
+    "editBanner": "Borrador — los cambios se hacen en el admin de Benwer",
+    "editLink": "Editar",
+    "editContactEmpty": "Los datos de contacto están ocultos. Edítalos en el admin.",
+    "editBranchesEmpty": "Aún no hay sucursales. Añádelas en el admin.",
+    "editRulesHint": "Modo de reserva, antelación y ventana de respuesta.",
+    "editDomainHint": "Dominio propio y URL pública.",
+    "editSection": {
+      "hero": "Portada",
+      "search": "Búsqueda",
+      "fleet": "Flota",
+      "branches": "Sucursales",
+      "contact": "Contacto",
+      "rules": "Normas de reserva",
+      "domain": "Dominio"
+    },
     "pausedTitle": "No acepta reservas",
     "pausedDescription": "Esta empresa ha pausado las reservas online. Aún puedes ver la flota.",
     "notFoundTitle": "Web no encontrada",

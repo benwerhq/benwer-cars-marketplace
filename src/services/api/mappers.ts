@@ -1,7 +1,10 @@
 import { getCityByName, getCityBySlug } from "@/data/malagaCities";
 import { slugifyLocation } from "@/lib/locationOptions";
 import {
+  CaptureMethod,
   FuelType,
+  PaymentChannel,
+  PaymentStatus,
   ReservationStatus,
   TransmissionType,
   VehicleStatus,
@@ -22,6 +25,7 @@ import type {
   PriceSource,
   PriceWarning,
 } from "@/types/pricing";
+import type { GuestCancellationQuote, GuestPayment } from "@/types/payment";
 import type { GuestReservation } from "@/types/reservation";
 import type { PublicSite, SiteBranch } from "@/types/site";
 import type { Vehicle } from "@/types/vehicle";
@@ -149,6 +153,39 @@ function mapReservationStatus(status: string | undefined): ReservationStatus {
   }
 
   return ReservationStatus.CONFIRMED;
+}
+
+function mapPaymentStatus(status: string | undefined): PaymentStatus {
+  if (
+    status &&
+    Object.values(PaymentStatus).includes(status as PaymentStatus)
+  ) {
+    return status as PaymentStatus;
+  }
+
+  return PaymentStatus.UNPAID;
+}
+
+function mapPaymentChannel(value: string | undefined): PaymentChannel | null {
+  if (
+    value &&
+    Object.values(PaymentChannel).includes(value as PaymentChannel)
+  ) {
+    return value as PaymentChannel;
+  }
+
+  return null;
+}
+
+function mapCaptureMethod(value: string | undefined): CaptureMethod | null {
+  if (
+    value &&
+    Object.values(CaptureMethod).includes(value as CaptureMethod)
+  ) {
+    return value as CaptureMethod;
+  }
+
+  return null;
 }
 
 function inferLocationSlug(
@@ -404,14 +441,21 @@ export function mapReservation(
       "",
     companySlug,
     createdAt: readString(row.createdAt) ?? new Date().toISOString(),
-    requestExpiresAt:
-      readString(row.requestExpiresAt) ??
-      readString(row.expiresAt) ??
-      null,
+    requestExpiresAt: readString(row.requestExpiresAt) ?? null,
     cancelReason:
       readString(row.cancelReason) ??
       readString(row.cancellationReason) ??
       null,
+    paymentStatus: mapPaymentStatus(readString(row.paymentStatus)),
+    paymentChannel: mapPaymentChannel(readString(row.paymentChannel)),
+    paidAmount: readNumber(row.paidAmount) ?? 0,
+    advanceDue: readNumber(row.advanceDue) ?? 0,
+    advanceAuthorized: readBoolean(row.advanceAuthorized) ?? false,
+    paymentExpiresAt:
+      readString(row.paymentExpiresAt) ??
+      readString(row.payLinkExpiresAt) ??
+      null,
+    onlinePaymentRequired: readBoolean(row.onlinePaymentRequired) ?? false,
     vehicle: row.vehicle
       ? mapVehicle(row.vehicle, {
           companySlug,
@@ -430,6 +474,69 @@ export function mapReservation(
           )
         : null,
     company: row.company ? mapCompany(row.company) : null,
+  };
+}
+
+export function mapGuestPayment(raw: unknown): GuestPayment {
+  const row = isRecord(raw) ? raw : {};
+  const payment = isRecord(row.payment) ? row.payment : row;
+
+  return {
+    reservationId:
+      readId(payment.reservationId) ?? readId(row.reservationId) ?? "",
+    status: mapPaymentStatus(
+      readString(payment.status) ?? readString(payment.paymentStatus),
+    ),
+    channel: mapPaymentChannel(
+      readString(payment.channel) ?? readString(payment.paymentChannel),
+    ),
+    captureMethod: mapCaptureMethod(readString(payment.captureMethod)),
+    required: readBoolean(payment.required) ?? false,
+    authorized: readBoolean(payment.authorized) ?? false,
+    amount:
+      readNumber(payment.amount) ??
+      readNumber(payment.advanceDue) ??
+      readNumber(payment.due) ??
+      0,
+    paidAmount: readNumber(payment.paidAmount) ?? 0,
+    currency: readString(payment.currency) || "EUR",
+    checkoutUrl:
+      readString(payment.checkoutUrl) ??
+      readString(payment.payLinkUrl) ??
+      null,
+    clientSecret: readString(payment.clientSecret) ?? null,
+    publishableKey: readString(payment.publishableKey) ?? null,
+    connectedAccountId: readString(payment.connectedAccountId) ?? null,
+    expiresAt:
+      readString(payment.expiresAt) ??
+      readString(payment.payLinkExpiresAt) ??
+      null,
+  };
+}
+
+export function mapCancellationQuote(raw: unknown): GuestCancellationQuote {
+  const row = isRecord(raw) ? raw : {};
+
+  return {
+    canOverride: false,
+    canCancel: readBoolean(row.canCancel) ?? true,
+    fee:
+      readNumber(row.fee) ??
+      readNumber(row.cancellationFee) ??
+      readNumber(row.cancellation_fee) ??
+      0,
+    refund:
+      readNumber(row.refund) ??
+      readNumber(row.refundAmount) ??
+      readNumber(row.cancellationRefund) ??
+      0,
+    chargeAmount:
+      readNumber(row.chargeAmount) ??
+      readNumber(row.total) ??
+      readNumber(row.fee) ??
+      readNumber(row.cancellationFee) ??
+      0,
+    currency: readString(row.currency) || "EUR",
   };
 }
 
@@ -605,6 +712,10 @@ export function mapPublicSite(raw: unknown, fallbackSlug?: string): PublicSite {
       readBoolean(row.preview) ??
       readBoolean(row.isPreview) ??
       false,
+    canonicalUrl:
+      readString(nestedSite.canonicalUrl) ??
+      readString(row.canonicalUrl) ??
+      null,
     company: {
       ...company,
       slug: company.slug || slug,

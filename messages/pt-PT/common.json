@@ -15,12 +15,24 @@
       "min_lead": "A recolha é demasiado cedo. Escolha uma data posterior.",
       "terms_required": "Aceite as condições de aluguer para continuar.",
       "max_open_requests": "Já tem dois pedidos em aberto. Retire um antes de enviar outro.",
-      "request_expired": "Este pedido expirou. Comece um novo."
+      "request_expired": "Este pedido expirou. Comece um novo.",
+      "not_cancellable": "Esta reserva já não pode ser cancelada online."
+    },
+    "booking": {
+      "payment_not_required": "Esta reserva não precisa de pagamento online.",
+      "payment_window_elapsed": "Os 15 minutos para pagar terminaram. Comece uma nova reserva se ainda precisar do carro.",
+      "payment_not_open": "O pagamento não está disponível para esta reserva. Tente novamente ou contacte a empresa."
+    },
+    "rental_payments": {
+      "already_paid": "Esta reserva já está paga."
     },
     "site": {
       "not_found": "Não foi possível encontrar este site de aluguer.",
       "paused": "Esta empresa não está a aceitar reservas de momento.",
       "not_published": "Este site ainda não está aberto a reservas."
+    },
+    "website_domain": {
+      "not_found": "Este endereço não está ligado a uma empresa de aluguer."
     },
     "pricing": {
       "min_days": "Estas datas são demasiado curtas para a época. Escolha um aluguer mais longo.",
@@ -47,6 +59,10 @@
     "title": "Página não encontrada",
     "description": "Essa página não existe. Volte atrás e procure um carro.",
     "action": "Voltar ao início"
+  },
+  "hostUnknown": {
+    "title": "Este site não está disponível",
+    "description": "Verifique o endereço. Esta página não pertence a um site de aluguer da Benwer Cars."
   },
   "brand": {
     "name": "Benwer Cars",

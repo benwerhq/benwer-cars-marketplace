@@ -29,6 +29,25 @@ export enum PublicChannel {
   WEBSITE = "website",
 }
 
+export enum PaymentStatus {
+  UNPAID = "unpaid",
+  PARTIALLY_PAID = "partially_paid",
+  PAID = "paid",
+  REFUND_DUE = "refund_due",
+}
+
+export enum PaymentChannel {
+  WALK_IN = "walk_in",
+  PHONE = "phone",
+  CASH = "cash",
+  WEBSITE = "website",
+}
+
+export enum CaptureMethod {
+  MANUAL = "manual",
+  AUTOMATIC = "automatic",
+}
+
 export enum VehicleType {
   CAR = "car",
   SUV = "suv",
@@ -59,6 +78,8 @@ export enum QueryKeys {
   PRICE_QUOTE = "price-quote",
   SITE = "site",
   INSURANCE = "insurance",
+  PAYMENT = "payment",
+  CANCELLATION_QUOTE = "cancellation-quote",
 }
 
 export enum StorageKeys {
@@ -99,6 +120,23 @@ export enum SearchParams {
   COMPANIES = "companies",
   PREVIEW = "preview",
   BRANCH = "branch",
+  EDIT = "edit",
+}
+
+export enum SiteEditTab {
+  LOOK = "look",
+  RULES = "rules",
+  DOMAIN = "domain",
+}
+
+export enum SiteEditSection {
+  HERO = "hero",
+  SEARCH = "search",
+  FLEET = "fleet",
+  BRANCHES = "branches",
+  CONTACT = "contact",
+  RULES = "rules",
+  DOMAIN = "domain",
 }
 
 export enum ErrorMessages {
@@ -119,4 +157,10 @@ export enum ErrorMessages {
   SITE_NOT_FOUND = "errors.site.not_found",
   SITE_PAUSED = "errors.site.paused",
   SITE_NOT_PUBLISHED = "errors.site.not_published",
+  BOOKING_PAYMENT_NOT_REQUIRED = "errors.booking.payment_not_required",
+  BOOKING_PAYMENT_WINDOW_ELAPSED = "errors.booking.payment_window_elapsed",
+  BOOKING_PAYMENT_NOT_OPEN = "errors.booking.payment_not_open",
+  RESERVATION_NOT_CANCELLABLE = "errors.reservation.not_cancellable",
+  RENTAL_PAYMENTS_ALREADY_PAID = "errors.rental_payments.already_paid",
+  WEBSITE_DOMAIN_NOT_FOUND = "errors.website_domain.not_found",
 }
