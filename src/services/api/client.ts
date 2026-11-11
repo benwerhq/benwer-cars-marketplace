@@ -39,6 +39,16 @@ const CODE_ALIASES: Record<string, string> = {
   request_expired: "reservation.request_expired",
   "booking.request_expired": "reservation.request_expired",
   "site.unpublished": "site.not_published",
+  payment_not_required: "booking.payment_not_required",
+  "booking.payment_not_required": "booking.payment_not_required",
+  payment_window_elapsed: "booking.payment_window_elapsed",
+  "booking.payment_window_elapsed": "booking.payment_window_elapsed",
+  payment_not_open: "booking.payment_not_open",
+  "booking.payment_not_open": "booking.payment_not_open",
+  not_cancellable: "reservation.not_cancellable",
+  "reservation.not_cancellable": "reservation.not_cancellable",
+  already_paid: "rental_payments.already_paid",
+  "rental_payments.already_paid": "rental_payments.already_paid",
 };
 
 export function liveApiBaseUrl(): string {

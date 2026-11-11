@@ -15,7 +15,16 @@
       "min_lead": "La recogida es demasiado pronto. Elige una fecha posterior.",
       "terms_required": "Acepta las condiciones de alquiler para continuar.",
       "max_open_requests": "Ya tienes dos solicitudes abiertas. Retira una antes de enviar otra.",
-      "request_expired": "Esta solicitud ha caducado. Empieza una nueva."
+      "request_expired": "Esta solicitud ha caducado. Empieza una nueva.",
+      "not_cancellable": "Esta reserva ya no se puede cancelar en línea."
+    },
+    "booking": {
+      "payment_not_required": "Esta reserva no requiere pago en línea.",
+      "payment_window_elapsed": "Han pasado los 15 minutos para pagar. Empieza una reserva nueva si aún necesitas el coche.",
+      "payment_not_open": "El pago no está disponible para esta reserva. Inténtalo de nuevo o contacta con la empresa."
+    },
+    "rental_payments": {
+      "already_paid": "Esta reserva ya está pagada."
     },
     "site": {
       "not_found": "No se encontró esta web de alquiler.",

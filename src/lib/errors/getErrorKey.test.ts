@@ -20,5 +20,20 @@ describe("getErrorKey", () => {
     expect(getErrorKey(new ApiError(409, "site.paused"))).toBe(
       ErrorMessages.SITE_PAUSED,
     );
+    expect(getErrorKey(new ApiError(409, "booking.payment_window_elapsed"))).toBe(
+      ErrorMessages.BOOKING_PAYMENT_WINDOW_ELAPSED,
+    );
+    expect(getErrorKey(new ApiError(409, "booking.payment_not_required"))).toBe(
+      ErrorMessages.BOOKING_PAYMENT_NOT_REQUIRED,
+    );
+    expect(getErrorKey(new ApiError(409, "booking.payment_not_open"))).toBe(
+      ErrorMessages.BOOKING_PAYMENT_NOT_OPEN,
+    );
+    expect(getErrorKey(new ApiError(409, "reservation.not_cancellable"))).toBe(
+      ErrorMessages.RESERVATION_NOT_CANCELLABLE,
+    );
+    expect(getErrorKey(new ApiError(409, "rental_payments.already_paid"))).toBe(
+      ErrorMessages.RENTAL_PAYMENTS_ALREADY_PAID,
+    );
   });
 });

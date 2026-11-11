@@ -5,6 +5,7 @@ export { availabilityApi } from "./availability";
 export { pricingApi } from "./pricing";
 export { sitesApi } from "./sites";
 export { insuranceApi } from "./insurance";
+export { guestPaymentsApi } from "./payments";
 export {
   contactApi,
   MARKETPLACE_CONTACT_SOURCE,

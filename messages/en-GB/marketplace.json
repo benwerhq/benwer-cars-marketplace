@@ -313,6 +313,7 @@
     "trustNoAccount": "No account needed",
     "trustEmail": "Confirmation by email",
     "trustNoPayment": "No payment now",
+    "trustCardPayment": "Pay by card after booking",
     "trustFooter": "By confirming, you request this car for the dates above. The company will honour the reservation.",
     "missingTitle": "Choose a car to continue",
     "missingDescription": "Pick a vehicle and dates before completing your booking.",
@@ -376,7 +377,42 @@
     "backHome": "Back to home",
     "requestExpires": "Request expires",
     "cancelReason": "Cancellation reason",
-    "withdraw": "Withdraw request"
+    "withdraw": "Withdraw request",
+    "paymentStatus": "Payment",
+    "paidAmount": "Paid",
+    "payment": {
+      "unpaid": "Unpaid",
+      "partially_paid": "Partially paid",
+      "paid": "Paid",
+      "refund_due": "Refund due",
+      "authorized": "Card authorized"
+    },
+    "reasons": {
+      "unpaid_timeout": "Payment was not completed in time",
+      "request_expired": "The company did not answer in time",
+      "request_declined": "The company declined this request",
+      "customer_request": "You withdrew this request"
+    }
+  },
+  "payment": {
+    "title": "Pay the advance",
+    "amountDue": "Amount due: {amount}",
+    "countdown": "Complete payment within {time}",
+    "requestAuthorize": "Your card is authorized now and charged only when the company accepts.",
+    "pay": "Pay now",
+    "paying": "Processing…",
+    "confirming": "Confirming your payment",
+    "confirmingHint": "Please wait — we confirm payment from the company, not from the card form.",
+    "declined": "The card was declined. Try another card.",
+    "secure": "Card details are handled by Stripe in test mode.",
+    "cancelBooking": "Cancel booking",
+    "cancelTitle": "Cancel this booking?",
+    "cancelDescription": "We will apply the company’s cancellation rules. Check the fee and refund before you confirm.",
+    "cancelFee": "Cancellation fee",
+    "cancelRefund": "Refund",
+    "confirmCancel": "Confirm cancellation",
+    "keepBooking": "Keep booking",
+    "cancelled": "Your booking has been cancelled."
   },
   "companies": {
     "title": "Rental companies",

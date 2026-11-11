@@ -2,13 +2,22 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { ReservationStatus, VehicleType } from "@/enums";
-import { BookingMode, SiteStatus } from "@/enums";
+import {
+  BookingMode,
+  CaptureMethod,
+  PaymentChannel,
+  PaymentStatus,
+  ReservationStatus,
+  SiteStatus,
+  VehicleType,
+} from "@/enums";
 import {
   mapAvailability,
   mapAvailabilityList,
+  mapCancellationQuote,
   mapCompany,
   mapCompanyList,
+  mapGuestPayment,
   mapInsurancePackageList,
   mapPriceBreakdown,
   mapPublicSite,
@@ -551,5 +560,68 @@ describe("mapReservation extras", () => {
 
     expect(reservation.requestExpiresAt).toBe("2026-09-21T10:00:00Z");
     expect(reservation.cancelReason).toBe("guest_withdrawn");
+  });
+
+  it("maps guest payment fields on the reservation", () => {
+    const reservation = mapReservation({
+      token: "pay-1",
+      status: "draft",
+      paymentStatus: "unpaid",
+      paymentChannel: "website",
+      paidAmount: 0,
+      advanceDue: 40,
+      advanceAuthorized: false,
+      paymentExpiresAt: "2026-11-11T16:15:00Z",
+      onlinePaymentRequired: true,
+    });
+
+    expect(reservation.paymentStatus).toBe(PaymentStatus.UNPAID);
+    expect(reservation.paymentChannel).toBe(PaymentChannel.WEBSITE);
+    expect(reservation.advanceDue).toBe(40);
+    expect(reservation.onlinePaymentRequired).toBe(true);
+    expect(reservation.paymentExpiresAt).toBe("2026-11-11T16:15:00Z");
+  });
+});
+
+describe("mapGuestPayment", () => {
+  it("maps a Payment Element session and never requires checkout", () => {
+    const payment = mapGuestPayment({
+      reservationId: "res-1",
+      status: "unpaid",
+      channel: "website",
+      captureMethod: "manual",
+      required: true,
+      authorized: false,
+      amount: 40,
+      paidAmount: 0,
+      currency: "EUR",
+      checkoutUrl: "https://checkout.stripe.com/c/pay/cs_test",
+      clientSecret: "pi_test_secret",
+      publishableKey: "pk_test_123",
+      connectedAccountId: "acct_123",
+      expiresAt: "2026-11-11T16:15:00Z",
+    });
+
+    expect(payment.captureMethod).toBe(CaptureMethod.MANUAL);
+    expect(payment.clientSecret).toBe("pi_test_secret");
+    expect(payment.publishableKey).toBe("pk_test_123");
+    expect(payment.connectedAccountId).toBe("acct_123");
+    expect(payment.checkoutUrl).toContain("checkout.stripe.com");
+  });
+});
+
+describe("mapCancellationQuote", () => {
+  it("maps staff quote fields and forces canOverride false", () => {
+    const quote = mapCancellationQuote({
+      canOverride: true,
+      canCancel: true,
+      cancellationFee: 25,
+      refundAmount: 80,
+      currency: "EUR",
+    });
+
+    expect(quote.canOverride).toBe(false);
+    expect(quote.fee).toBe(25);
+    expect(quote.refund).toBe(80);
   });
 });

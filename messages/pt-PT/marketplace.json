@@ -312,7 +312,8 @@
     "backToCar": "Back to {name}",
     "trustNoAccount": "No account needed",
     "trustEmail": "Confirmation by email",
-    "trustNoPayment": "No payment now",
+    "trustNoPayment": "Sem pagamento agora",
+    "trustCardPayment": "Pague com cartão depois da reserva",
     "trustFooter": "By confirming, you request this car for the dates above. The company will honour the reservation.",
     "missingTitle": "Choose a car to continue",
     "missingDescription": "Pick a vehicle and dates before completing your booking.",
@@ -376,7 +377,42 @@
     "backHome": "Back to home",
     "requestExpires": "O pedido caduca",
     "cancelReason": "Motivo de cancelamento",
-    "withdraw": "Retirar pedido"
+    "withdraw": "Retirar pedido",
+    "paymentStatus": "Pagamento",
+    "paidAmount": "Pago",
+    "payment": {
+      "unpaid": "Por pagar",
+      "partially_paid": "Parcialmente pago",
+      "paid": "Pago",
+      "refund_due": "Reembolso pendente",
+      "authorized": "Cartão autorizado"
+    },
+    "reasons": {
+      "unpaid_timeout": "O pagamento não foi concluído a tempo",
+      "request_expired": "A empresa não respondeu a tempo",
+      "request_declined": "A empresa recusou este pedido",
+      "customer_request": "Retirou este pedido"
+    }
+  },
+  "payment": {
+    "title": "Pague o sinal",
+    "amountDue": "Valor a pagar: {amount}",
+    "countdown": "Conclua o pagamento em {time}",
+    "requestAuthorize": "O cartão fica autorizado agora e só é cobrado quando a empresa aceitar.",
+    "pay": "Pagar agora",
+    "paying": "A processar…",
+    "confirming": "A confirmar o pagamento",
+    "confirmingHint": "Aguarde — confirmamos o pagamento junto da empresa, não a partir do formulário do cartão.",
+    "declined": "O cartão foi recusado. Tente outro cartão.",
+    "secure": "Os dados do cartão são tratados pela Stripe em modo de teste.",
+    "cancelBooking": "Cancelar reserva",
+    "cancelTitle": "Cancelar esta reserva?",
+    "cancelDescription": "Aplicamos as regras de cancelamento da empresa. Veja a taxa e o reembolso antes de confirmar.",
+    "cancelFee": "Taxa de cancelamento",
+    "cancelRefund": "Reembolso",
+    "confirmCancel": "Confirmar cancelamento",
+    "keepBooking": "Manter reserva",
+    "cancelled": "A sua reserva foi cancelada."
   },
   "companies": {
     "title": "Rental companies",

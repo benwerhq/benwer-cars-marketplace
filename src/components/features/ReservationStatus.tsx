@@ -1,29 +1,64 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { CalendarDays, CheckCircle2, Mail } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/Button";
+import { Badge, StatusBadge } from "@/components/ui/Badge";
 import { useLocale, useTranslations } from "next-intl";
 import { useReservation } from "@/hooks/useReservation";
 import { useWithdrawReservation } from "@/hooks/useWithdrawReservation";
 import { ApiError, getErrorKey } from "@/lib/errors";
-import { StatusBadge } from "@/components/ui/Badge";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { ErrorState } from "@/components/ui/ErrorState";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { BookingVehiclePreview } from "./BookingVehiclePreview";
+import { GuestCancellationPanel } from "./GuestCancellationPanel";
 import { PriceBreakdownList } from "./PriceBreakdownList";
-import { NavRoutes, ReservationStatus as ReservationStatusEnum } from "@/enums";
+import {
+  NavRoutes,
+  PaymentStatus,
+  ReservationStatus as ReservationStatusEnum,
+} from "@/enums";
 import { countRentalDays, formatLongDate, parseIsoDate } from "@/lib/dates";
+import {
+  canSelfServeCancel,
+  canStartGuestPayment,
+  canWithdrawReservation,
+  needsOnlinePayment,
+} from "@/lib/guestPayment";
 import { formatMoney } from "@/lib/money";
 import { cn } from "@/lib/utils";
+
+const GuestPaymentStep = dynamic(
+  () =>
+    import("./GuestPaymentStep").then((mod) => mod.GuestPaymentStep),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5">
+        <Skeleton className="h-6 w-40" />
+        <Skeleton className="h-4 w-56" />
+        <Skeleton className="h-24 w-full" />
+        <Skeleton className="h-11 w-full" />
+      </div>
+    ),
+  },
+);
 
 interface ReservationStatusProps {
   token: string;
   browseHref?: string | null;
   allowWithdraw?: boolean;
 }
+
+const KNOWN_CANCEL_REASONS = [
+  "unpaid_timeout",
+  "request_expired",
+  "request_declined",
+  "customer_request",
+] as const;
 
 const STATUS_KEYS = {
   [ReservationStatusEnum.DRAFT]: "draft",
@@ -36,13 +71,15 @@ const STATUS_KEYS = {
 export function ReservationStatus({
   token,
   browseHref,
-  allowWithdraw = false,
+  allowWithdraw = true,
 }: ReservationStatusProps) {
   const t = useTranslations("reservationStatus");
   const tRoot = useTranslations();
   const tBooking = useTranslations("booking");
   const locale = useLocale();
-  const { data, isPending, isError, error, refetch } = useReservation(token);
+  const { data, isPending, isError, error, refetch } = useReservation(token, {
+    poll: true,
+  });
   const withdraw = useWithdrawReservation(token);
 
   if (isPending) return <ReservationStatusSkeleton />;
@@ -157,7 +194,26 @@ export function ReservationStatus({
             />
           ) : null}
           {data.cancelReason ? (
-            <StatusRow label={t("cancelReason")} value={data.cancelReason} />
+            <StatusRow
+              label={t("cancelReason")}
+              value={
+                KNOWN_CANCEL_REASONS.includes(
+                  data.cancelReason as (typeof KNOWN_CANCEL_REASONS)[number],
+                )
+                  ? t(`reasons.${data.cancelReason}`)
+                  : data.cancelReason
+              }
+            />
+          ) : null}
+          <StatusRow
+            label={t("paymentStatus")}
+            value={t(`payment.${data.paymentStatus}`)}
+          />
+          {data.paidAmount > 0 ? (
+            <StatusRow
+              label={t("paidAmount")}
+              value={formatMoney(data.paidAmount, data.currency, locale)}
+            />
           ) : null}
         </dl>
 
@@ -203,6 +259,29 @@ export function ReservationStatus({
         </ol>
       </div>
 
+      {canStartGuestPayment(data) ? (
+        <GuestPaymentStep
+          token={token}
+          reservation={data}
+          onSettled={() => {
+            void refetch();
+          }}
+        />
+      ) : needsOnlinePayment(data) ? (
+        <p className="rounded-2xl border border-border bg-surface px-4 py-3 text-sm text-muted-foreground">
+          {tRoot("errors.booking.payment_window_elapsed")}
+        </p>
+      ) : data.paymentStatus === PaymentStatus.PAID ||
+        data.advanceAuthorized ? (
+        <p className="inline-flex items-center justify-center">
+          <Badge variant="success" dot>
+            {data.advanceAuthorized && data.paymentStatus !== PaymentStatus.PAID
+              ? t("payment.authorized")
+              : t("payment.paid")}
+          </Badge>
+        </p>
+      ) : null}
+
       <div className="flex flex-col items-center gap-4 text-center">
         <ul className="flex flex-wrap justify-center gap-2">
           <li className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-muted px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -217,11 +296,7 @@ export function ReservationStatus({
         <p className="max-w-md text-sm text-muted-foreground">
           {t("trustCopy")}
         </p>
-        {allowWithdraw &&
-        data.status !== ReservationStatusEnum.CANCELLED &&
-        data.status !== ReservationStatusEnum.COMPLETED &&
-        (data.status === ReservationStatusEnum.DRAFT ||
-          Boolean(data.requestExpiresAt)) ? (
+        {allowWithdraw && canWithdrawReservation(data) ? (
           <Button
             variant="danger"
             isLoading={withdraw.isPending}
@@ -233,6 +308,9 @@ export function ReservationStatus({
           >
             {t("withdraw")}
           </Button>
+        ) : null}
+        {canSelfServeCancel(data) ? (
+          <GuestCancellationPanel token={token} />
         ) : null}
         <Link
           href={fleetHref}
