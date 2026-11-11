@@ -8,8 +8,9 @@ export function SitePreviewBanner() {
   const t = useTranslations("site");
   const searchParams = useSearchParams();
   const preview = searchParams.get(SearchParams.PREVIEW);
+  const editing = searchParams.get(SearchParams.EDIT) === "1";
 
-  if (!preview) {
+  if (!preview || editing) {
     return null;
   }
 

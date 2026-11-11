@@ -77,6 +77,12 @@ describe("site paths", () => {
       "/s/denver-cars?preview=abc",
     );
   });
+
+  it("keeps edit=1 on site links in draft edit mode", () => {
+    expect(
+      withSiteQuery("/s/denver-cars", { preview: "abc", edit: true }),
+    ).toBe("/s/denver-cars?preview=abc&edit=1");
+  });
 });
 
 describe("site booking rules", () => {
