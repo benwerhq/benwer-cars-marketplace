@@ -22,6 +22,8 @@ export interface Vehicle {
   status: VehicleStatus;
   isPublic: boolean;
   photos: string[];
+  photoUrl?: string | null;
+  categoryImageUrl?: string | null;
   description: string | null;
   color: string | null;
   deposit: number | null;
