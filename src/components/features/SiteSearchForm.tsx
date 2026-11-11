@@ -6,11 +6,11 @@ import { useTranslations } from "next-intl";
 import { DateRangePopover } from "./DateRangePopover";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
-import { siteSearchPath, withSiteQuery } from "@/lib/site";
+import { sitePathFromHome, withSiteQuery } from "@/lib/site";
 import type { SiteBranch } from "@/types/site";
 
 interface SiteSearchFormProps {
-  slug: string;
+  homeHref: string;
   branches: SiteBranch[];
   defaultFrom?: string;
   defaultTo?: string;
@@ -21,7 +21,7 @@ interface SiteSearchFormProps {
 }
 
 export function SiteSearchForm({
-  slug,
+  homeHref,
   branches,
   defaultFrom = "",
   defaultTo = "",
@@ -43,7 +43,7 @@ export function SiteSearchForm({
     }
 
     router.push(
-      withSiteQuery(siteSearchPath(slug), {
+      withSiteQuery(sitePathFromHome(homeHref, "/search"), {
         from: from || undefined,
         to: to || undefined,
         branch: branch || undefined,

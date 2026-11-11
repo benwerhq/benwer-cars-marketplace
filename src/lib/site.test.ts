@@ -12,8 +12,11 @@ import {
   siteGuestBookingsPath,
   siteGuestConfirmPath,
   siteGuestPath,
+  publicSiteHref,
+  publicSiteHomeHref,
   siteHomePath,
   siteOwnerPath,
+  sitePathFromHome,
   withSiteQuery,
 } from "./site";
 import type { PublicSite } from "@/types/site";
@@ -83,6 +86,18 @@ describe("site paths", () => {
       }),
     ).toBe(
       "/s/denver-cars/book?from=2026-09-20&to=2026-09-24&preview=tok&carId=v1",
+    );
+  });
+
+  it("strips /s/{slug} on a tenant host", () => {
+    expect(publicSiteHomeHref("denver-cars", true)).toBe("/");
+    expect(publicSiteHomeHref("denver-cars", false)).toBe("/s/denver-cars");
+    expect(publicSiteHref("/s/denver-cars/owner", "denver-cars", true)).toBe(
+      "/owner",
+    );
+    expect(sitePathFromHome("/", "/cars")).toBe("/cars");
+    expect(sitePathFromHome("/s/denver-cars", "/cars")).toBe(
+      "/s/denver-cars/cars",
     );
   });
 

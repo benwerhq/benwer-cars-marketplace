@@ -1,24 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   UNKNOWN_HOST_PATH,
+  customDomainPublicPath,
   rewriteCustomDomainPath,
 } from "@/lib/customDomain";
 import { lookupPublicHost } from "@/lib/hostLookup";
 import {
+  companySubdomainOrigin,
+  isMarketplaceFrontDoor,
   isPlatformHost,
   normalizeRequestHost,
+  parseSiteFallbackPath,
+  platformExtraHosts,
   resolvePlatformTenantSlug,
+  usesCompanySubdomains,
 } from "@/lib/platformHost";
-import {
-  isTenantHostPublicPath,
-  isTenantInternalPath,
-  toTenantInternalPath,
-} from "@/lib/tenantRouting";
+import { isTenantInternalPath } from "@/lib/tenantRouting";
+
+function hostOptions() {
+  return {
+    extraHosts: platformExtraHosts({
+      appUrl: process.env.NEXT_PUBLIC_APP_URL,
+      platformHosts: process.env.NEXT_PUBLIC_PLATFORM_HOSTS,
+    }),
+  };
+}
 
 export async function proxy(request: NextRequest) {
   const hostname = normalizeRequestHost(request.headers.get("host") ?? "");
   const marketplaceDomain =
     process.env.NEXT_PUBLIC_MARKETPLACE_DOMAIN ?? "benwer.es";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3002";
+  const extra = hostOptions();
   const pathname = request.nextUrl.pathname;
   const requestHeaders = new Headers(request.headers);
 
@@ -26,10 +39,14 @@ export async function proxy(request: NextRequest) {
     requestHeaders.delete("origin");
   }
 
-  let companySlug = resolvePlatformTenantSlug(hostname, marketplaceDomain);
+  let companySlug = resolvePlatformTenantSlug(
+    hostname,
+    marketplaceDomain,
+    extra,
+  );
   let customDomain = false;
 
-  if (!companySlug && !isPlatformHost(hostname, marketplaceDomain)) {
+  if (!companySlug && !isPlatformHost(hostname, marketplaceDomain, extra)) {
     const resolved = await lookupPublicHost(hostname);
     if (!resolved) {
       return unknownHostResponse(request, pathname);
@@ -43,11 +60,33 @@ export async function proxy(request: NextRequest) {
     }
   }
 
+  if (
+    !companySlug &&
+    isMarketplaceFrontDoor(hostname, marketplaceDomain, extra) &&
+    usesCompanySubdomains(hostname, marketplaceDomain)
+  ) {
+    const parsed = parseSiteFallbackPath(pathname);
+    if (parsed) {
+      const destination = new URL(
+        `${companySubdomainOrigin(parsed.slug, marketplaceDomain, appUrl)}${parsed.rest}`,
+      );
+      destination.search = request.nextUrl.search;
+      return NextResponse.redirect(destination, 308);
+    }
+  }
+
   if (companySlug) {
     requestHeaders.set("x-company-slug", companySlug);
   }
 
-  if (customDomain && companySlug) {
+  if (companySlug) {
+    const siteRoot = `/s/${encodeURIComponent(companySlug)}`;
+    if (pathname === siteRoot || pathname.startsWith(`${siteRoot}/`)) {
+      const url = request.nextUrl.clone();
+      url.pathname = customDomainPublicPath(pathname, companySlug);
+      return NextResponse.redirect(url, 308);
+    }
+
     const destination = rewriteCustomDomainPath(pathname, companySlug);
     if (destination === "unknown") {
       return unknownHostResponse(request, pathname);
@@ -60,22 +99,15 @@ export async function proxy(request: NextRequest) {
         request: { headers: requestHeaders },
       });
       response.headers.set("x-company-slug", companySlug);
+      if (customDomain) {
+        response.headers.set("x-site-host", hostname);
+      }
       return response;
     }
   }
 
   if (!companySlug && isTenantInternalPath(pathname)) {
     return NextResponse.redirect(new URL("/", request.url));
-  }
-
-  if (companySlug && !customDomain && isTenantHostPublicPath(pathname)) {
-    const url = request.nextUrl.clone();
-    url.pathname = toTenantInternalPath(pathname);
-    const response = NextResponse.rewrite(url, {
-      request: { headers: requestHeaders },
-    });
-    response.headers.set("x-company-slug", companySlug);
-    return response;
   }
 
   const response = NextResponse.next({

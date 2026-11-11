@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { companiesApi, vehiclesApi } from "@/services/api";
+import { buildCompanySiteHref } from "@/lib/companySite";
 import { absoluteUrl } from "@/lib/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -59,7 +60,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
       },
       {
-        url: absoluteUrl(`/s/${company.slug}`),
+        url: buildCompanySiteHref({
+          slug: company.slug,
+          websiteUrl: company.websiteUrl,
+        }),
         lastModified: now,
         changeFrequency: "daily" as const,
         priority: 0.8,

@@ -13,7 +13,7 @@ import { NavRoutes, SearchParams } from "@/enums";
 import { toCompanyMapPins } from "@/lib/companyMap";
 import { locationLabelFromSlug } from "@/lib/locationOptions";
 import { getErrorKey } from "@/lib/errors";
-import { buildCompanyHref } from "@/lib/marketplaceSearch";
+import { buildCompanySiteHref } from "@/lib/companySite";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import type { Company } from "@/types/company";
 import { cn } from "@/lib/utils";
@@ -55,11 +55,12 @@ export function CompanyDirectory({
   const pins = useMemo(
     () =>
       toCompanyMapPins(companies ?? [], (company) =>
-        buildCompanyHref(company.slug, {
-          location: location ?? undefined,
+        buildCompanySiteHref({
+          slug: company.slug,
+          websiteUrl: company.websiteUrl,
         }),
       ),
-    [companies, location],
+    [companies],
   );
 
   function setMobileView(view: "list" | "map") {
@@ -80,8 +81,9 @@ export function CompanyDirectory({
   }
 
   function companyHref(company: Company): string {
-    return buildCompanyHref(company.slug, {
-      location: location ?? undefined,
+    return buildCompanySiteHref({
+      slug: company.slug,
+      websiteUrl: company.websiteUrl,
     });
   }
 

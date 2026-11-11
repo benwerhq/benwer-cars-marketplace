@@ -8,7 +8,12 @@ import { SitePausedNotice } from "@/components/features/SitePausedNotice";
 import { SiteSearchForm } from "@/components/features/SiteSearchForm";
 import { CarListView } from "@/components/features/CarListView";
 import { SiteLayout } from "@/enums";
-import { SITE_CHANNEL, canAcceptBookings, isSitePaused, siteHomePath } from "@/lib/site";
+import {
+  SITE_CHANNEL,
+  canAcceptBookings,
+  isSitePaused,
+  sitePathFromHome,
+} from "@/lib/site";
 import { cn } from "@/lib/utils";
 import type { PublicSite } from "@/types/site";
 
@@ -24,6 +29,7 @@ interface SiteHomeLayoutsProps {
   site: PublicSite;
   copy: SiteHomeCopy;
   companySlug: string;
+  homeHref: string;
   preview?: string;
   from: string;
   to: string;
@@ -35,6 +41,7 @@ export function SiteHomeLayouts({
   site,
   copy,
   companySlug,
+  homeHref,
   preview,
   from,
   to,
@@ -43,7 +50,7 @@ export function SiteHomeLayouts({
 }: Omit<SiteHomeLayoutsProps, "fleet">) {
   const search = (
     <SiteSearchForm
-      slug={site.slug}
+      homeHref={homeHref}
       branches={site.branches}
       defaultFrom={from}
       defaultTo={to}
@@ -56,7 +63,7 @@ export function SiteHomeLayouts({
     <HydrationBoundary state={dehydratedState}>
       <CarListView
         companySlug={companySlug}
-        hrefBase={`${siteHomePath(site.slug)}/cars`}
+        hrefBase={sitePathFromHome(homeHref, "/cars")}
         showDateSearch={false}
         filterByAvailability
         showDirectoryEmptyAction={false}

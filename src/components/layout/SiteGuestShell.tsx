@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
+import { headers } from "next/headers";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { siteHomePath, withSiteQuery } from "@/lib/site";
+import { isTenantHostRequest, publicSiteHomeHref } from "@/lib/site";
 import type { PublicSite } from "@/types/site";
 
 interface SiteGuestShellProps {
@@ -10,12 +11,13 @@ interface SiteGuestShellProps {
   children: ReactNode;
 }
 
-export function SiteGuestShell({
+export async function SiteGuestShell({
   site,
   preview,
   children,
 }: SiteGuestShellProps) {
-  const homeHref = withSiteQuery(siteHomePath(site.slug), { preview });
+  const onTenantHost = isTenantHostRequest(await headers());
+  const homeHref = publicSiteHomeHref(site.slug, onTenantHost, { preview });
 
   return (
     <>

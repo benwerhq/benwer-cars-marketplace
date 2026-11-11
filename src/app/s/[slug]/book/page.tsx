@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Car } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -13,10 +14,12 @@ import { platformBookingHref } from "@/lib/canonicalUrl";
 import {
   canAcceptBookings,
   companySlugFromSite,
+  isTenantHostRequest,
+  publicSiteHref,
+  publicSiteHomeHref,
   SITE_CHANNEL,
   siteBookHref,
   siteCarPath,
-  siteHomePath,
   withSiteQuery,
 } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
@@ -67,9 +70,10 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
     site = null;
   }
 
+  const onTenantHost = isTenantHostRequest(await headers());
   const homeHref = site
-    ? withSiteQuery(siteHomePath(site.slug), { preview })
-    : `/s/${slug}`;
+    ? publicSiteHomeHref(site.slug, onTenantHost, { preview })
+    : publicSiteHomeHref(slug, onTenantHost);
 
   if (!site) {
     return (
@@ -149,12 +153,16 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
     );
   }
 
-  const carHref = withSiteQuery(siteCarPath(site.slug, vehicle.id), {
-    from,
-    to,
-    branch,
-    preview,
-  });
+  const carHref = publicSiteHref(
+    withSiteQuery(siteCarPath(site.slug, vehicle.id), {
+      from,
+      to,
+      branch,
+      preview,
+    }),
+    site.slug,
+    onTenantHost,
+  );
 
   return (
     <>
@@ -179,14 +187,18 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           channel={SITE_CHANNEL}
           confirmationHref={(token) => platformBookingHref(token)}
           bookHrefBuilder={(nextFrom, nextTo) =>
-            siteBookHref({
-              slug: site.slug,
-              carId: vehicle.id,
-              from: nextFrom,
-              to: nextTo,
-              branch,
-              preview,
-            })
+            publicSiteHref(
+              siteBookHref({
+                slug: site.slug,
+                carId: vehicle.id,
+                from: nextFrom,
+                to: nextTo,
+                branch,
+                preview,
+              }),
+              site.slug,
+              onTenantHost,
+            )
           }
         />
       </main>

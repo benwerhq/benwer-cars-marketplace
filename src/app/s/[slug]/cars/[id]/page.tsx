@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -18,10 +19,11 @@ import {
   companySlugFromSite,
   isRequestBooking,
   isSitePaused,
+  isTenantHostRequest,
+  publicSiteHref,
+  publicSiteHomeHref,
   siteBookHref,
   siteCarPath,
-  siteHomePath,
-  withSiteQuery,
 } from "@/lib/site";
 import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata, carProductJsonLd } from "@/lib/seo";
@@ -110,20 +112,25 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
     notFound();
   }
 
-  const homeHref = withSiteQuery(siteHomePath(site.slug), { preview });
+  const onTenantHost = isTenantHostRequest(await headers());
+  const homeHref = publicSiteHomeHref(site.slug, onTenantHost, { preview });
   const dehydratedState = await prefetchAvailabilityState(
     companySlug,
     vehicle.id,
     SITE_CHANNEL,
   );
-  const bookHref = siteBookHref({
-    slug: site.slug,
-    carId: vehicle.id,
-    from,
-    to,
-    branch,
-    preview,
-  });
+  const bookHref = publicSiteHref(
+    siteBookHref({
+      slug: site.slug,
+      carId: vehicle.id,
+      from,
+      to,
+      branch,
+      preview,
+    }),
+    site.slug,
+    onTenantHost,
+  );
 
   return (
     <>

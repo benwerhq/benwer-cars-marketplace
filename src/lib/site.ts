@@ -1,4 +1,5 @@
 import { BookingMode, PublicChannel, SearchParams, SiteStatus } from "@/enums";
+import { customDomainPublicPath } from "@/lib/customDomain";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
 import type { PublicSite } from "@/types/site";
 
@@ -31,6 +32,52 @@ export function siteOwnerPath(slug: string): string {
 export function ownerHrefFromHome(homeHref: string): string {
   const url = new URL(homeHref, "https://benwer.local");
   return `${url.pathname.replace(/\/$/, "")}/owner${url.search}`;
+}
+
+export function isTenantHostRequest(headersList: Headers): boolean {
+  return Boolean(headersList.get("x-company-slug"));
+}
+
+export function publicSitePath(
+  sitePath: string,
+  slug: string,
+  onTenantHost: boolean,
+): string {
+  return onTenantHost ? customDomainPublicPath(sitePath, slug) : sitePath;
+}
+
+export function publicSiteHref(
+  href: string,
+  slug: string,
+  onTenantHost: boolean,
+): string {
+  if (!onTenantHost) {
+    return href;
+  }
+
+  const url = new URL(href, "https://benwer.local");
+  url.pathname = customDomainPublicPath(url.pathname, slug);
+  return `${url.pathname}${url.search}`;
+}
+
+export function publicSiteHomeHref(
+  slug: string,
+  onTenantHost: boolean,
+  query?: SiteLinkQuery,
+): string {
+  return withSiteQuery(onTenantHost ? "/" : siteHomePath(slug), query);
+}
+
+export function sitePathFromHome(homeHref: string, suffix: string): string {
+  const url = new URL(homeHref, "https://benwer.local");
+  const base = url.pathname.replace(/\/$/, "");
+  const path = suffix.startsWith("/") ? suffix : `/${suffix}`;
+  return `${base}${path}`;
+}
+
+export function siteChildFromHome(homeHref: string, suffix: string): string {
+  const url = new URL(homeHref, "https://benwer.local");
+  return `${sitePathFromHome(homeHref, suffix)}${url.search}`;
 }
 
 export function siteGuestPath(slug: string): string {

@@ -23,6 +23,7 @@ import type { WebsiteSettings } from "@/types/websiteSettings";
 interface OwnerHomeRootProps {
   site: PublicSite;
   companySlug: string;
+  homeHref: string;
   preview?: string;
   from: string;
   to: string;
@@ -33,6 +34,7 @@ interface OwnerHomeRootProps {
 export function OwnerHomeRoot({
   site,
   companySlug,
+  homeHref,
   preview,
   from,
   to,
@@ -83,6 +85,7 @@ export function OwnerHomeRoot({
           site={liveSite}
           copy={copy}
           companySlug={companySlug}
+          homeHref={homeHref}
           preview={preview}
           from={from}
           to={to}
