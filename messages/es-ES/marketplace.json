@@ -599,6 +599,119 @@
     "searchTitle": "Buscar coches",
     "searchDescription": "Elige fechas y sucursal para ver la disponibilidad.",
     "branch": "Sucursal",
-    "anyBranch": "Cualquier sucursal"
+    "anyBranch": "Cualquier sucursal",
+    "ownerSignIn": "Acceso del propietario"
+  },
+  "owner": {
+    "signInTitle": "Acceso del propietario",
+    "signInHint": "Usa tu cuenta de personal de Benwer para esta empresa. Los clientes usan otro acceso.",
+    "signInAction": "Entrar",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "signedInTitle": "Has iniciado sesión",
+    "signedInHint": "Si puedes gestionar esta web, el editor se abre en la portada.",
+    "openEditor": "Abrir el editor",
+    "disabledTitle": "La edición no está disponible",
+    "disabledDescription": "Firebase de personal no está configurado en este marketplace.",
+    "toolbarTitle": "Editor de la web",
+    "unpublished": "Cambios sin publicar",
+    "saved": "Todo guardado",
+    "signOut": "Salir",
+    "layout": "Diseño",
+    "headline": "Titular",
+    "intro": "Introducción",
+    "primaryColor": "Color de marca",
+    "showPhone": "Mostrar teléfono",
+    "showEmail": "Mostrar correo",
+    "showAddress": "Mostrar dirección",
+    "bookingMode": "Modo de reserva",
+    "modeInstant": "Instantánea",
+    "modeRequest": "Solicitud",
+    "status": "Estado del sitio",
+    "statusDraft": "Borrador",
+    "statusPublished": "Publicado",
+    "statusPaused": "Pausado",
+    "minLead": "Horas mínimas de antelación",
+    "requestWindow": "Horas de ventana de solicitud",
+    "domain": "Dominio propio",
+    "save": "Guardar",
+    "discard": "Descartar",
+    "layouts": {
+      "classic": {
+        "name": "Clásico",
+        "hint": "Portada, búsqueda y flota — el diseño actual."
+      },
+      "modern_hero": {
+        "name": "Hero moderno",
+        "hint": "Hero a pantalla con búsqueda superpuesta y columna de contacto."
+      },
+      "minimal_list": {
+        "name": "Lista mínima",
+        "hint": "Página estrecha, cabecera compacta y flota en lista."
+      },
+      "grid_gallery": {
+        "name": "Galería",
+        "hint": "Cabecera oscura y flota centrada en fotos."
+      },
+      "bold_landing": {
+        "name": "Landing fuerte",
+        "hint": "Landing centrada con un panel de marca grande."
+      }
+    },
+    "auth": {
+      "invalidEmail": "Introduce un correo válido.",
+      "tooManyRequests": "Demasiados intentos. Prueba más tarde.",
+      "invalidCredentials": "El correo o la contraseña no son correctos.",
+      "unknown": "No se ha podido entrar. Inténtalo de nuevo."
+    }
+  },
+  "guest": {
+    "signInNav": "Entrar",
+    "myBookings": "Mis reservas",
+    "signInTitle": "Iniciar sesión",
+    "signInHint": "Usa tu cuenta de cliente de esta empresa. No es el acceso del personal.",
+    "signInAction": "Entrar",
+    "createTitle": "Crear una cuenta de cliente",
+    "createHint": "Guarda tus reservas con esta empresa. El personal usa otro acceso.",
+    "createAction": "Crear cuenta",
+    "needAccount": "¿No tienes cuenta? Crea una",
+    "haveAccount": "¿Ya tienes cuenta? Entra",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "bookingsTitle": "Mis reservas",
+    "bookingsMeta": "Reservas vinculadas con esta empresa.",
+    "bookingsHint": "Sesión iniciada como {email} en {company}.",
+    "emptyTitle": "No hay reservas vinculadas",
+    "emptyDescription": "Vincula una reserva con el correo o el token de confirmación. Te enviaremos un enlace.",
+    "bookingFallback": "Reserva",
+    "loadErrorTitle": "No se pudieron cargar las reservas",
+    "linkTitle": "Vincular una reserva",
+    "linkHint": "Introduce el correo de la reserva o el token. Si hay coincidencia te enviaremos un enlace; nunca decimos si la cuenta existe.",
+    "linkEmail": "Correo de la reserva",
+    "linkToken": "Token de la reserva",
+    "linkAction": "Enviar enlace",
+    "linkSent": "Si encontramos una reserva coincidente, enviaremos un enlace de confirmación.",
+    "accountTitle": "Cuenta",
+    "accountHint": "Desvincula las reservas de esta empresa o borra tus datos aquí. El resto de empresas no cambia.",
+    "unlink": "Desvincular reservas",
+    "signOut": "Salir",
+    "erase": "Borrar mis datos aquí",
+    "eraseConfirm": "Sí, borrar mis datos de esta empresa",
+    "confirmTitle": "Vinculando tu reserva",
+    "confirmHint": "Espera mientras asociamos esta reserva a tu cuenta.",
+    "confirmSignIn": "Entra con tu cuenta de cliente para terminar de vincular esta reserva.",
+    "confirmMissing": "Falta el token de confirmación",
+    "confirmMissingHint": "Abre de nuevo el enlace del correo.",
+    "confirmError": "No hemos podido confirmar este enlace",
+    "disabledTitle": "Las cuentas de cliente aún no están disponibles",
+    "disabledDescription": "Esta empresa no ha activado el acceso de clientes. Aún puedes reservar con nombre, correo y teléfono.",
+    "auth": {
+      "invalidEmail": "Introduce un correo válido.",
+      "emailInUse": "Ese correo ya tiene una cuenta de cliente. Entra con ella.",
+      "weakPassword": "Usa una contraseña más larga.",
+      "tooManyRequests": "Demasiados intentos. Prueba de nuevo en unos minutos.",
+      "invalidCredentials": "El correo o la contraseña no son correctos.",
+      "unknown": "No se ha podido entrar. Inténtalo de nuevo."
+    }
   }
 }

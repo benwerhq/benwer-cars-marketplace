@@ -24,6 +24,39 @@ export function siteBookingPath(slug: string, token: string): string {
   return `${siteHomePath(slug)}/booking/${encodeURIComponent(token)}`;
 }
 
+export function siteOwnerPath(slug: string): string {
+  return `${siteHomePath(slug)}/owner`;
+}
+
+export function ownerHrefFromHome(homeHref: string): string {
+  const url = new URL(homeHref, "https://benwer.local");
+  return `${url.pathname.replace(/\/$/, "")}/owner${url.search}`;
+}
+
+export function siteGuestPath(slug: string): string {
+  return `${siteHomePath(slug)}/guest`;
+}
+
+export function siteGuestBookingsPath(slug: string): string {
+  return `${siteGuestPath(slug)}/bookings`;
+}
+
+export function siteGuestConfirmPath(slug: string): string {
+  return `${siteGuestPath(slug)}/confirm`;
+}
+
+export function guestLinksFromHomeHref(homeHref: string): {
+  signIn: string;
+  bookings: string;
+} {
+  const url = new URL(homeHref, "https://benwer.local");
+  const base = url.pathname.replace(/\/$/, "");
+  return {
+    signIn: `${base}/guest${url.search}`,
+    bookings: `${base}/guest/bookings${url.search}`,
+  };
+}
+
 export interface SiteLinkQuery {
   from?: string;
   to?: string;

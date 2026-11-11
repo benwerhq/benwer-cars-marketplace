@@ -11,6 +11,7 @@ import {
   VehicleType,
 } from "@/enums";
 import { BookingMode, SiteStatus } from "@/enums";
+import { parseSiteLayout } from "@/lib/siteLayout";
 import { listingRangeDates } from "@/lib/dates";
 import { toPublicMediaSrc } from "@/lib/media";
 import type {
@@ -26,8 +27,10 @@ import type {
   PriceWarning,
 } from "@/types/pricing";
 import type { GuestCancellationQuote, GuestPayment } from "@/types/payment";
+import type { GuestAccount } from "@/types/guest";
 import type { GuestReservation } from "@/types/reservation";
 import type { PublicSite, SiteBranch } from "@/types/site";
+import type { WebsiteSettings } from "@/types/websiteSettings";
 import type { Vehicle } from "@/types/vehicle";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -477,6 +480,43 @@ export function mapReservation(
   };
 }
 
+export function mapGuestAccount(
+  raw: unknown,
+  fallbackSlug?: string,
+): GuestAccount {
+  const row = isRecord(raw) ? raw : {};
+  const nested = isRecord(row.data) ? row.data : row;
+  const user = isRecord(nested.user) ? nested.user : {};
+  const customer = isRecord(nested.customer) ? nested.customer : {};
+
+  return {
+    email:
+      readString(nested.email) ??
+      readString(user.email) ??
+      readString(customer.email) ??
+      "",
+    linked:
+      readBoolean(nested.linked) ??
+      Boolean(readString(nested.linkedAt) ?? readString(nested.customerId)),
+    companySlug:
+      readString(nested.companySlug) ??
+      (isRecord(nested.company)
+        ? readString(nested.company.slug)
+        : undefined) ??
+      fallbackSlug ??
+      "",
+  };
+}
+
+export function mapGuestReservationList(
+  payload: unknown,
+  fallbackSlug?: string,
+): GuestReservation[] {
+  return unwrapList(payload)
+    .map((row) => mapReservation(row, fallbackSlug))
+    .filter((reservation) => reservation.id || reservation.token);
+}
+
 export function mapGuestPayment(raw: unknown): GuestPayment {
   const row = isRecord(raw) ? raw : {};
   const payment = isRecord(row.payment) ? row.payment : row;
@@ -712,6 +752,11 @@ export function mapPublicSite(raw: unknown, fallbackSlug?: string): PublicSite {
       readBoolean(row.preview) ??
       readBoolean(row.isPreview) ??
       false,
+    layout: parseSiteLayout(
+      readString(nestedSite.layout) ??
+        readString(nestedSite.template) ??
+        readString(row.layout),
+    ),
     canonicalUrl:
       readString(nestedSite.canonicalUrl) ??
       readString(row.canonicalUrl) ??
@@ -721,6 +766,39 @@ export function mapPublicSite(raw: unknown, fallbackSlug?: string): PublicSite {
       slug: company.slug || slug,
     },
     branches,
+  };
+}
+
+export function mapWebsiteSettings(raw: unknown): WebsiteSettings {
+  const row = isRecord(raw) ? raw : {};
+  const nested = isRecord(row.data) ? row.data : isRecord(row.website) ? row.website : row;
+  const role = (readString(nested.role) ?? readString(row.role) ?? "").toLowerCase();
+  const namedRole = ["owner", "admin", "manager"].includes(role);
+  const canEdit = readBoolean(nested.canEdit) ?? (role ? namedRole : true);
+
+  return {
+    layout: parseSiteLayout(
+      readString(nested.layout) ?? readString(nested.template),
+    ),
+    status: mapSiteStatus(readString(nested.status)),
+    bookingMode: mapBookingMode(readString(nested.bookingMode)),
+    minLeadHours: readNumber(nested.minLeadHours) ?? 0,
+    requestWindowHours: readNumber(nested.requestWindowHours) ?? 0,
+    headline: mapLocalizedCopy(nested.headline),
+    intro: mapLocalizedCopy(nested.intro),
+    showPhone: readBoolean(nested.showPhone) ?? false,
+    showEmail: readBoolean(nested.showEmail) ?? false,
+    showAddress: readBoolean(nested.showAddress) ?? false,
+    primaryColor:
+      readString(nested.primaryColor) ??
+      (isRecord(nested.branding) ? readString(nested.branding.primaryColor) : undefined) ??
+      "",
+    domain:
+      readString(nested.domain) ??
+      readString(nested.customDomain) ??
+      readString(nested.canonicalUrl) ??
+      "",
+    canEdit: Boolean(canEdit),
   };
 }
 

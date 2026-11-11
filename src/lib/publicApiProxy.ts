@@ -110,7 +110,40 @@ export function isAllowedPublicApiProxyPath(
     return true;
   }
 
+  if (
+    verb === "POST" &&
+    /^v1\/public\/companies\/[^/]+\/guest\/link(?:\/confirm)?$/.test(
+      normalized,
+    )
+  ) {
+    return true;
+  }
+
+  if (
+    verb === "DELETE" &&
+    /^v1\/public\/companies\/[^/]+\/guest(?:\/link)?$/.test(normalized)
+  ) {
+    return true;
+  }
+
   return false;
+}
+
+export function isAllowedStaffWebsiteProxyPath(
+  method: string,
+  path: string,
+  hasAuthorization: boolean,
+): boolean {
+  if (!hasAuthorization) {
+    return false;
+  }
+
+  const normalized = path.replace(/^\/+/, "");
+  const verb = method.toUpperCase();
+  return (
+    /^v1\/settings\/website(?:\/|$)/.test(normalized) &&
+    (verb === "GET" || verb === "PATCH" || verb === "PUT" || verb === "POST")
+  );
 }
 
 export function isUnreachableError(error: unknown): boolean {

@@ -599,6 +599,119 @@
     "searchTitle": "Search cars",
     "searchDescription": "Choose dates and a branch to see what is available.",
     "branch": "Branch",
-    "anyBranch": "Any branch"
+    "anyBranch": "Any branch",
+    "ownerSignIn": "Owner sign-in"
+  },
+  "owner": {
+    "signInTitle": "Owner sign-in",
+    "signInHint": "Use your Benwer staff account for this company. Guests use a different sign-in.",
+    "signInAction": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "signedInTitle": "You are signed in",
+    "signedInHint": "If you can manage this website, the editor opens on the home page.",
+    "openEditor": "Open website editor",
+    "disabledTitle": "Owner editing is not available",
+    "disabledDescription": "Staff Firebase is not configured on this marketplace.",
+    "toolbarTitle": "Website editor",
+    "unpublished": "Unpublished changes",
+    "saved": "All changes saved",
+    "signOut": "Sign out",
+    "layout": "Layout",
+    "headline": "Headline",
+    "intro": "Intro",
+    "primaryColor": "Brand colour",
+    "showPhone": "Show phone",
+    "showEmail": "Show email",
+    "showAddress": "Show address",
+    "bookingMode": "Booking mode",
+    "modeInstant": "Instant",
+    "modeRequest": "Request",
+    "status": "Site status",
+    "statusDraft": "Draft",
+    "statusPublished": "Published",
+    "statusPaused": "Paused",
+    "minLead": "Minimum lead hours",
+    "requestWindow": "Request window hours",
+    "domain": "Custom domain",
+    "save": "Save",
+    "discard": "Discard",
+    "layouts": {
+      "classic": {
+        "name": "Classic",
+        "hint": "Hero, search, then the fleet — the current default."
+      },
+      "modern_hero": {
+        "name": "Modern hero",
+        "hint": "Full-bleed hero with search overlay and a contact column."
+      },
+      "minimal_list": {
+        "name": "Minimal list",
+        "hint": "Narrow page, compact header, fleet as a simple list."
+      },
+      "grid_gallery": {
+        "name": "Grid gallery",
+        "hint": "Dark masthead and photo-first fleet grid."
+      },
+      "bold_landing": {
+        "name": "Bold landing",
+        "hint": "Large centred landing with a strong brand panel."
+      }
+    },
+    "auth": {
+      "invalidEmail": "Enter a valid email address.",
+      "tooManyRequests": "Too many attempts. Try again later.",
+      "invalidCredentials": "Email or password is not correct.",
+      "unknown": "Could not sign in. Try again."
+    }
+  },
+  "guest": {
+    "signInNav": "Sign in",
+    "myBookings": "My bookings",
+    "signInTitle": "Sign in",
+    "signInHint": "Use your guest account for this rental company. This is not a staff login.",
+    "signInAction": "Sign in",
+    "createTitle": "Create a guest account",
+    "createHint": "Save your bookings with this company. Staff use a different sign-in.",
+    "createAction": "Create account",
+    "needAccount": "Need an account? Create one",
+    "haveAccount": "Already have an account? Sign in",
+    "email": "Email",
+    "password": "Password",
+    "bookingsTitle": "My bookings",
+    "bookingsMeta": "Linked bookings for this rental company.",
+    "bookingsHint": "Signed in as {email} at {company}.",
+    "emptyTitle": "No linked bookings",
+    "emptyDescription": "Link a booking by email or confirmation token. We will email you a confirmation link.",
+    "bookingFallback": "Booking",
+    "loadErrorTitle": "Could not load bookings",
+    "linkTitle": "Link a booking",
+    "linkHint": "Enter the email used to book, or the confirmation token. If we find a match we will email a link — we never say whether an account exists.",
+    "linkEmail": "Booking email",
+    "linkToken": "Booking token",
+    "linkAction": "Send link",
+    "linkSent": "If we find a matching booking, we will email a confirmation link.",
+    "accountTitle": "Account",
+    "accountHint": "Unlink bookings from this company, or erase your guest data here. Other companies are not affected.",
+    "unlink": "Unlink bookings",
+    "signOut": "Sign out",
+    "erase": "Erase my data here",
+    "eraseConfirm": "Yes, erase my data for this company",
+    "confirmTitle": "Linking your booking",
+    "confirmHint": "Please wait while we attach this booking to your account.",
+    "confirmSignIn": "Sign in with your guest account to finish linking this booking.",
+    "confirmMissing": "Missing confirmation token",
+    "confirmMissingHint": "Open the link from your email again.",
+    "confirmError": "We could not confirm this link",
+    "disabledTitle": "Guest accounts are not available yet",
+    "disabledDescription": "This company has not turned on guest sign-in. You can still book with your name, email and phone.",
+    "auth": {
+      "invalidEmail": "Enter a valid email address.",
+      "emailInUse": "That email already has a guest account. Sign in instead.",
+      "weakPassword": "Use a longer password.",
+      "tooManyRequests": "Too many attempts. Try again in a few minutes.",
+      "invalidCredentials": "Email or password is not correct.",
+      "unknown": "Could not sign in. Try again."
+    }
   }
 }

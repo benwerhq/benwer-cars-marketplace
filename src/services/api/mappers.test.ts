@@ -8,6 +8,7 @@ import {
   PaymentChannel,
   PaymentStatus,
   ReservationStatus,
+  SiteLayout,
   SiteStatus,
   VehicleType,
 } from "@/enums";
@@ -17,10 +18,12 @@ import {
   mapCancellationQuote,
   mapCompany,
   mapCompanyList,
+  mapGuestAccount,
   mapGuestPayment,
   mapInsurancePackageList,
   mapPriceBreakdown,
   mapPublicSite,
+  mapWebsiteSettings,
   mapReservation,
   mapVehicle,
   mapVehicleList,
@@ -514,6 +517,21 @@ describe("mapPublicSite", () => {
     ]);
     expect(site.company.slug).toBe("denver-cars");
     expect(site.canonicalUrl).toBe("https://reservas.denver.example");
+    expect(site.layout).toBe(SiteLayout.CLASSIC);
+  });
+});
+
+describe("mapWebsiteSettings", () => {
+  it("maps layout and edit permission", () => {
+    const settings = mapWebsiteSettings({
+      layout: "grid_gallery",
+      role: "owner",
+      headline: { "en-GB": "Hi" },
+      primaryColor: "#123456",
+    });
+    expect(settings.layout).toBe(SiteLayout.GRID_GALLERY);
+    expect(settings.canEdit).toBe(true);
+    expect(settings.primaryColor).toBe("#123456");
   });
 });
 
@@ -548,6 +566,24 @@ describe("mapInsurancePackageList", () => {
         isDefault: true,
       },
     ]);
+  });
+});
+
+describe("mapGuestAccount", () => {
+  it("maps linked guest identity from nested envelopes", () => {
+    const account = mapGuestAccount(
+      {
+        data: {
+          email: "ada@example.com",
+          linkedAt: "2026-11-11T10:00:00Z",
+          companySlug: "denver-cars",
+        },
+      },
+      "fallback",
+    );
+    expect(account.email).toBe("ada@example.com");
+    expect(account.linked).toBe(true);
+    expect(account.companySlug).toBe("denver-cars");
   });
 });
 
