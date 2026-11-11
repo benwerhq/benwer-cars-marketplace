@@ -17,6 +17,7 @@ import {
   mapCancellationQuote,
   mapCompany,
   mapCompanyList,
+  mapGuestAccount,
   mapGuestPayment,
   mapInsurancePackageList,
   mapPriceBreakdown,
@@ -548,6 +549,24 @@ describe("mapInsurancePackageList", () => {
         isDefault: true,
       },
     ]);
+  });
+});
+
+describe("mapGuestAccount", () => {
+  it("maps linked guest identity from nested envelopes", () => {
+    const account = mapGuestAccount(
+      {
+        data: {
+          email: "ada@example.com",
+          linkedAt: "2026-11-11T10:00:00Z",
+          companySlug: "denver-cars",
+        },
+      },
+      "fallback",
+    );
+    expect(account.email).toBe("ada@example.com");
+    expect(account.linked).toBe(true);
+    expect(account.companySlug).toBe("denver-cars");
   });
 });
 

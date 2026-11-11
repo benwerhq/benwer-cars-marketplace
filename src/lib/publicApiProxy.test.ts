@@ -206,6 +206,30 @@ describe("isAllowedPublicApiProxyPath", () => {
     expect(
       isAllowedPublicApiProxyPath("POST", "v1/public/reservations/tok/cancel"),
     ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "POST",
+        "v1/public/companies/denver-cars/guest/link",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "POST",
+        "v1/public/companies/denver-cars/guest/link/confirm",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "DELETE",
+        "v1/public/companies/denver-cars/guest/link",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "DELETE",
+        "v1/public/companies/denver-cars/guest",
+      ),
+    ).toBe(true);
   });
 
   it("rejects authenticated or unknown API paths", () => {

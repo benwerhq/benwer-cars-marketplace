@@ -34,6 +34,12 @@
     "website_domain": {
       "not_found": "This website address is not linked to a rental company."
     },
+    "guest": {
+      "not_configured": "Guest accounts are not available for this company yet.",
+      "not_linked": "No bookings are linked to this account yet.",
+      "invalid_token": "This confirmation link is invalid or has expired.",
+      "unauthenticated": "Sign in to continue."
+    },
     "pricing": {
       "min_days": "These dates are too short for the season. Choose a longer rental.",
       "max_days": "These dates are too long for the season. Choose a shorter rental.",

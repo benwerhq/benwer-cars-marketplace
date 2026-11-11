@@ -25,6 +25,11 @@ export const env = createEnv({
       .url()
       .default("https://cars-admin.benwer.es"),
     NEXT_PUBLIC_MEDIA_ORIGIN: z.string().url().optional(),
+    NEXT_PUBLIC_GUEST_FIREBASE_API_KEY: z.string().min(1).optional(),
+    NEXT_PUBLIC_GUEST_FIREBASE_AUTH_DOMAIN: z.string().min(1).optional(),
+    NEXT_PUBLIC_GUEST_FIREBASE_PROJECT_ID: z.string().min(1).optional(),
+    NEXT_PUBLIC_GUEST_FIREBASE_APP_ID: z.string().min(1).optional(),
+    NEXT_PUBLIC_GUEST_FIREBASE_TENANT_ID: z.string().min(1).optional(),
   },
   runtimeEnv: {
     API_ORIGIN: process.env.API_ORIGIN,
@@ -37,6 +42,16 @@ export const env = createEnv({
     NEXT_PUBLIC_ADMIN_DEMO_URL: process.env.NEXT_PUBLIC_ADMIN_DEMO_URL,
     NEXT_PUBLIC_ADMIN_URL: process.env.NEXT_PUBLIC_ADMIN_URL,
     NEXT_PUBLIC_MEDIA_ORIGIN: process.env.NEXT_PUBLIC_MEDIA_ORIGIN,
+    NEXT_PUBLIC_GUEST_FIREBASE_API_KEY:
+      process.env.NEXT_PUBLIC_GUEST_FIREBASE_API_KEY,
+    NEXT_PUBLIC_GUEST_FIREBASE_AUTH_DOMAIN:
+      process.env.NEXT_PUBLIC_GUEST_FIREBASE_AUTH_DOMAIN,
+    NEXT_PUBLIC_GUEST_FIREBASE_PROJECT_ID:
+      process.env.NEXT_PUBLIC_GUEST_FIREBASE_PROJECT_ID,
+    NEXT_PUBLIC_GUEST_FIREBASE_APP_ID:
+      process.env.NEXT_PUBLIC_GUEST_FIREBASE_APP_ID,
+    NEXT_PUBLIC_GUEST_FIREBASE_TENANT_ID:
+      process.env.NEXT_PUBLIC_GUEST_FIREBASE_TENANT_ID,
   },
   emptyStringAsUndefined: true,
 });

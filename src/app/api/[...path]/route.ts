@@ -39,6 +39,10 @@ async function proxyPublicApi(request: NextRequest, context: RouteContext) {
   if (contentType) {
     headers.set("Content-Type", contentType);
   }
+  const authorization = request.headers.get("Authorization");
+  if (authorization) {
+    headers.set("Authorization", authorization);
+  }
 
   const init: RequestInit = {
     method: request.method,
@@ -74,5 +78,9 @@ export function GET(request: NextRequest, context: RouteContext) {
 }
 
 export function POST(request: NextRequest, context: RouteContext) {
+  return proxyPublicApi(request, context);
+}
+
+export function DELETE(request: NextRequest, context: RouteContext) {
   return proxyPublicApi(request, context);
 }
