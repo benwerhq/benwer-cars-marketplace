@@ -4,6 +4,7 @@ export { useVehicle } from "./useVehicle";
 export { useCompany } from "./useCompany";
 export { useCompanies } from "./useCompanies";
 export { useAvailability } from "./useAvailability";
+export { useFleetAvailability } from "./useFleetAvailability";
 export { useContact } from "./useContact";
 export { useCreateReservation } from "./useCreateReservation";
 export { useReservation } from "./useReservation";

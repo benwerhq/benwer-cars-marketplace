@@ -13,6 +13,7 @@ import { logError } from "@/lib/logger";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
 import { prefetchAvailabilityState } from "@/lib/prefetchAvailability";
 import {
+  SITE_CHANNEL,
   canAcceptBookings,
   companySlugFromSite,
   isRequestBooking,
@@ -43,7 +44,11 @@ export async function generateMetadata({
 
   try {
     const site = await loadPublicSite(slug, preview);
-    const vehicle = await vehiclesApi.getById(companySlugFromSite(site), id);
+    const vehicle = await vehiclesApi.getById(
+      companySlugFromSite(site),
+      id,
+      SITE_CHANNEL,
+    );
     return buildPageMetadata({
       title: tMeta("carTitleTenant", {
         brand: vehicle.brand,
@@ -97,14 +102,18 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
   const companySlug = companySlugFromSite(site);
   let vehicle;
   try {
-    vehicle = await vehiclesApi.getById(companySlug, id);
+    vehicle = await vehiclesApi.getById(companySlug, id, SITE_CHANNEL);
   } catch (error) {
     logError(error, { context: "site_car", slug, id });
     notFound();
   }
 
   const homeHref = withSiteQuery(siteHomePath(site.slug), { preview });
-  const dehydratedState = await prefetchAvailabilityState(companySlug, vehicle.id);
+  const dehydratedState = await prefetchAvailabilityState(
+    companySlug,
+    vehicle.id,
+    SITE_CHANNEL,
+  );
   const bookHref = siteBookHref({
     slug: site.slug,
     carId: vehicle.id,
@@ -141,6 +150,7 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
             bookingsEnabled={canAcceptBookings(site)}
             bookHrefOverride={bookHref}
             requestMode={isRequestBooking(site)}
+            channel={SITE_CHANNEL}
           />
         </HydrationBoundary>
         <JsonLd

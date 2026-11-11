@@ -26,7 +26,7 @@ import { sanitizeDateRange } from "@/lib/availability";
 import { countRentalDays } from "@/lib/dates";
 import { ApiError, applyFieldErrors, getErrorKey } from "@/lib/errors";
 import { formatMoney } from "@/lib/money";
-import { BookingMode, ErrorMessages } from "@/enums";
+import { BookingMode, ErrorMessages, type PublicChannel } from "@/enums";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
 import type { Vehicle } from "@/types/vehicle";
@@ -50,7 +50,7 @@ interface BookingViewProps {
   requireTerms?: boolean;
   bookingMode?: BookingMode;
   bookingsEnabled?: boolean;
-  pickupBranchId?: string;
+  channel?: PublicChannel;
   showInsurance?: boolean;
   confirmationHref?: (token: string) => string;
   bookHrefBuilder?: (from: string, to: string) => string;
@@ -66,7 +66,7 @@ export function BookingView({
   requireTerms = false,
   bookingMode = BookingMode.INSTANT,
   bookingsEnabled = true,
-  pickupBranchId,
+  channel,
   showInsurance = false,
   confirmationHref,
   bookHrefBuilder,
@@ -86,8 +86,8 @@ export function BookingView({
         endDate: t("validation.endDate"),
         endAfterStart: t("validation.endAfterStart"),
         terms: requireTerms ? t("validation.terms") : undefined,
-      }),
-    [requireTerms, t],
+      }, { website: Boolean(channel) }),
+    [channel, requireTerms, t],
   );
 
   const form = useForm<BookingFormValues>({
@@ -100,7 +100,7 @@ export function BookingView({
       guestPhone: "",
       startDate: initialRange.from,
       endDate: initialRange.to,
-      termsAccepted: false,
+      acceptTerms: false,
     },
   });
 
@@ -113,6 +113,7 @@ export function BookingView({
     vehicleId: vehicle.id,
     startDate: days > 0 ? startDate : "",
     endDate: days > 0 ? endDate : "",
+    channel,
   });
   const insuranceQuery = useInsurancePackages(
     showInsurance ? companySlug : "",
@@ -120,6 +121,7 @@ export function BookingView({
       vehicleId: vehicle.id,
       startDate: days > 0 ? startDate : "",
       endDate: days > 0 ? endDate : "",
+      channel,
     },
   );
   const [insurancePackageId, setInsurancePackageId] = useState("");
@@ -177,9 +179,9 @@ export function BookingView({
         guestName: values.guestName,
         guestEmail: values.guestEmail,
         guestPhone: values.guestPhone,
-        termsAccepted: requireTerms ? values.termsAccepted : undefined,
         insurancePackageId: insurancePackageId || undefined,
-        pickupBranchId,
+        channel,
+        acceptTerms: channel ? values.acceptTerms : undefined,
       });
     } catch (error) {
       if (

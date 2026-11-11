@@ -67,5 +67,6 @@ export function priceQuoteQueryKey(
     query.vehicleId,
     query.startDate,
     query.endDate,
+    query.channel ?? null,
   ] as const;
 }

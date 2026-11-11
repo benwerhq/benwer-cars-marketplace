@@ -18,20 +18,37 @@ describe("createBookingSchema", () => {
       guestPhone: "+34 600 000 000",
       startDate: "2026-09-20",
       endDate: "2026-09-24",
-      termsAccepted: false,
+      acceptTerms: false,
     });
     expect(parsed.success).toBe(true);
   });
 
-  it("requires terms when a terms message is provided", () => {
-    const parsed = createBookingSchema({ ...base, terms: "accept" }).safeParse({
-      guestName: "Jane Smith",
-      guestEmail: "jane@example.com",
-      guestPhone: "+34 600 000 000",
-      startDate: "2026-09-20",
-      endDate: "2026-09-24",
-      termsAccepted: false,
-    });
-    expect(parsed.success).toBe(false);
+  it("requires acceptTerms and E.164 phone on the website channel", () => {
+    const schema = createBookingSchema(
+      { ...base, terms: "accept" },
+      { website: true },
+    );
+
+    expect(
+      schema.safeParse({
+        guestName: "Jane Smith",
+        guestEmail: "jane@example.com",
+        guestPhone: "+34600000000",
+        startDate: "2026-09-20",
+        endDate: "2026-09-24",
+        acceptTerms: false,
+      }).success,
+    ).toBe(false);
+
+    expect(
+      schema.safeParse({
+        guestName: "Jane Smith",
+        guestEmail: "jane@example.com",
+        guestPhone: "+34 600 000 000",
+        startDate: "2026-09-20",
+        endDate: "2026-09-24",
+        acceptTerms: true,
+      }).success,
+    ).toBe(true);
   });
 });

@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { BookingMode, SiteStatus } from "@/enums";
+import { PublicChannel } from "@/enums";
 import {
+  SITE_CHANNEL,
   canAcceptBookings,
   companySlugFromSite,
   isRequestBooking,
@@ -46,6 +48,12 @@ function site(overrides: Partial<PublicSite> = {}): PublicSite {
     ...overrides,
   };
 }
+
+describe("SITE_CHANNEL", () => {
+  it("is website so unlisted companies can serve their own site", () => {
+    expect(SITE_CHANNEL).toBe(PublicChannel.WEBSITE);
+  });
+});
 
 describe("site paths", () => {
   it("builds tenant-isolated /s/{slug} routes", () => {

@@ -1,6 +1,8 @@
-import { BookingMode, SearchParams, SiteStatus } from "@/enums";
+import { BookingMode, PublicChannel, SearchParams, SiteStatus } from "@/enums";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
 import type { PublicSite } from "@/types/site";
+
+export const SITE_CHANNEL = PublicChannel.WEBSITE;
 
 export function siteHomePath(slug: string): string {
   return `/s/${encodeURIComponent(slug)}`;

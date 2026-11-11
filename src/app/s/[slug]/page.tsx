@@ -16,6 +16,7 @@ import { logError } from "@/lib/logger";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
 import { prefetchCompanyFleetState } from "@/lib/prefetchCompanyFleet";
 import {
+  SITE_CHANNEL,
   canAcceptBookings,
   companySlugFromSite,
   isSitePaused,
@@ -114,6 +115,7 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
     branchId: typeof query[SearchParams.BRANCH] === "string"
       ? query[SearchParams.BRANCH]
       : undefined,
+    channel: SITE_CHANNEL,
   });
 
   return (
@@ -150,6 +152,7 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
             showDateSearch={false}
             filterByAvailability
             showDirectoryEmptyAction={false}
+            channel={SITE_CHANNEL}
           />
         </HydrationBoundary>
       </main>

@@ -16,12 +16,14 @@ export function useInsurancePackages(
       params.vehicleId,
       params.startDate,
       params.endDate,
+      params.channel ?? null,
     ],
     queryFn: () =>
       insuranceApi.list(companySlug, {
         vehicleId: params.vehicleId,
         startDate: params.startDate,
         endDate: params.endDate,
+        channel: params.channel,
       }),
     enabled:
       Boolean(companySlug) &&

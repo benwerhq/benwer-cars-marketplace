@@ -14,10 +14,10 @@ import { Sheet } from "@/components/ui/Sheet";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { formatSearchDate, parseIsoDate } from "@/lib/dates";
 import { resolveCardCompany } from "@/lib/companyIdentity";
-import { NavRoutes, SearchParams } from "@/enums";
+import { NavRoutes, SearchParams, type PublicChannel } from "@/enums";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
 import { rangeIncludesUnavailable } from "@/lib/availability";
-import { useAvailability } from "@/hooks/useAvailability";
+import { useFleetAvailability } from "@/hooks/useFleetAvailability";
 import {
   applyVehicleFilters,
   countAdvancedFilters,
@@ -35,6 +35,7 @@ interface CarListViewProps {
   showDirectoryEmptyAction?: boolean;
   showDateSearch?: boolean;
   filterByAvailability?: boolean;
+  channel?: PublicChannel;
 }
 
 function CarListViewContent({
@@ -43,6 +44,7 @@ function CarListViewContent({
   showDirectoryEmptyAction = false,
   showDateSearch = true,
   filterByAvailability = false,
+  channel,
 }: CarListViewProps) {
   const t = useTranslations("cars");
   const locale = useLocale();
@@ -54,13 +56,18 @@ function CarListViewContent({
   const [filtersOpen, setFiltersOpen] = useState(false);
   const { data, isPending, isError, error, refetch } = useVehicles(
     companySlug,
-    filters,
+    channel ? { ...filters, channel } : filters,
   );
   const hasRange = Boolean(filters.from && filters.to);
-  const availabilityQuery = useAvailability(
+  const availabilityQuery = useFleetAvailability(
     companySlug,
-    { from: filters.from ?? "", to: filters.to ?? "" },
-    filterByAvailability && hasRange,
+    {
+      from: filters.from ?? "",
+      to: filters.to ?? "",
+      vehicleIds: data?.map((vehicle) => vehicle.id) ?? [],
+      channel,
+    },
+    filterByAvailability && hasRange && Boolean(data?.length),
   );
   const vehicles = filterVehiclesByAvailability(
     data,
@@ -259,6 +266,7 @@ export function CarListView({
   showDirectoryEmptyAction,
   showDateSearch,
   filterByAvailability,
+  channel,
 }: CarListViewProps) {
   return (
     <Suspense fallback={<CarListViewFallback />}>
@@ -268,6 +276,7 @@ export function CarListView({
         showDirectoryEmptyAction={showDirectoryEmptyAction}
         showDateSearch={showDateSearch}
         filterByAvailability={filterByAvailability}
+        channel={channel}
       />
     </Suspense>
   );

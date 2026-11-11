@@ -24,6 +24,11 @@ export enum BookingMode {
   REQUEST = "request",
 }
 
+export enum PublicChannel {
+  MARKETPLACE = "marketplace",
+  WEBSITE = "website",
+}
+
 export enum VehicleType {
   CAR = "car",
   SUV = "suv",

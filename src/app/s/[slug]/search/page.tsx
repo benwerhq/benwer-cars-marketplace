@@ -18,6 +18,7 @@ import {
   canAcceptBookings,
   companySlugFromSite,
   isSitePaused,
+  SITE_CHANNEL,
   siteHomePath,
   siteSearchPath,
   withSiteQuery,
@@ -98,6 +99,7 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
     from: from || undefined,
     to: to || undefined,
     branchId: branch || undefined,
+    channel: SITE_CHANNEL,
   });
 
   return (
@@ -133,6 +135,7 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
             hrefBase={`${siteHomePath(site.slug)}/cars`}
             showDateSearch={false}
             filterByAvailability
+            channel={SITE_CHANNEL}
           />
         </HydrationBoundary>
       </main>

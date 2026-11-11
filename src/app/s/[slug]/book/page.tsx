@@ -12,6 +12,7 @@ import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
 import {
   canAcceptBookings,
   companySlugFromSite,
+  SITE_CHANNEL,
   siteBookHref,
   siteBookingPath,
   siteCarPath,
@@ -124,7 +125,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
 
   let vehicle;
   try {
-    vehicle = await vehiclesApi.getById(companySlug, carId);
+    vehicle = await vehiclesApi.getById(companySlug, carId, SITE_CHANNEL);
   } catch {
     return (
       <>
@@ -175,7 +176,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           showInsurance
           bookingMode={site.bookingMode}
           bookingsEnabled
-          pickupBranchId={branch}
+          channel={SITE_CHANNEL}
           confirmationHref={(token) =>
             withSiteQuery(siteBookingPath(site.slug, token), { preview })
           }
