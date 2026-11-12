@@ -41,3 +41,14 @@ describe("guestAuthErrorKey", () => {
     );
   });
 });
+
+describe("guestAuthErrorKey for Google sign-in", () => {
+  it("maps popup and provider errors", () => {
+    expect(guestAuthErrorKey("auth/popup-closed-by-user")).toBe("guest.auth.popupClosed");
+    expect(guestAuthErrorKey("auth/popup-blocked")).toBe("guest.auth.popupBlocked");
+    expect(guestAuthErrorKey("auth/operation-not-allowed")).toBe("guest.auth.providerUnavailable");
+    expect(guestAuthErrorKey("auth/account-exists-with-different-credential")).toBe(
+      "guest.auth.differentProvider",
+    );
+  });
+});

@@ -4,8 +4,11 @@ import { initializeApp, getApp, getApps, type FirebaseApp } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   type Auth,
   type User,
@@ -94,6 +97,27 @@ export async function guestSignUp(
   }
 
   await createUserWithEmailAndPassword(auth, email, password);
+}
+
+export async function guestSignInWithGoogle(): Promise<void> {
+  const auth = getGuestAuth();
+  if (!auth) {
+    throw new Error("guest.not_configured");
+  }
+
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: "select_account" });
+  await signInWithPopup(auth, provider);
+}
+
+export async function guestSendPasswordReset(email: string, locale: string): Promise<void> {
+  const auth = getGuestAuth();
+  if (!auth) {
+    throw new Error("guest.not_configured");
+  }
+
+  auth.languageCode = locale.split("-")[0] ?? null;
+  await sendPasswordResetEmail(auth, email, { url: window.location.href });
 }
 
 export async function guestSignOut(): Promise<void> {

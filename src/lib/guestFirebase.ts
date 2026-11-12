@@ -52,6 +52,17 @@ export function guestAuthErrorKey(code: string): string {
       return "guest.auth.weakPassword";
     case "auth/too-many-requests":
       return "guest.auth.tooManyRequests";
+    case "auth/popup-closed-by-user":
+    case "auth/cancelled-popup-request":
+      return "guest.auth.popupClosed";
+    case "auth/popup-blocked":
+      return "guest.auth.popupBlocked";
+    case "auth/account-exists-with-different-credential":
+      return "guest.auth.differentProvider";
+    case "auth/operation-not-allowed":
+    case "auth/unauthorized-domain":
+    case "auth/unauthorized-continue-uri":
+      return "guest.auth.providerUnavailable";
     case "auth/network-request-failed":
       return "errors.network";
     case "auth/user-not-found":

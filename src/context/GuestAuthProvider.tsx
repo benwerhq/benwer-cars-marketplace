@@ -17,6 +17,8 @@ import {
   guestSignOut,
   guestSignUp,
   subscribeGuestAuth,
+  guestSendPasswordReset,
+  guestSignInWithGoogle,
 } from "@/lib/guestAuth.client";
 import { isGuestFirebaseConfigured } from "@/lib/guestFirebase";
 import { staffSignOut } from "@/lib/staffAuth.client";
@@ -27,6 +29,8 @@ interface GuestAuthContextValue {
   configured: boolean;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string) => Promise<void>;
+  signInWithGoogle: () => Promise<void>;
+  resetPassword: (email: string, locale: string) => Promise<void>;
   signOut: () => Promise<void>;
 }
 
@@ -38,6 +42,11 @@ async function signInGuest(email: string, password: string): Promise<void> {
 async function signUpGuest(email: string, password: string): Promise<void> {
   await staffSignOut();
   await guestSignUp(email, password);
+}
+
+async function signInGuestWithGoogle(): Promise<void> {
+  await staffSignOut();
+  await guestSignInWithGoogle();
 }
 
 const GuestAuthContext = createContext<GuestAuthContextValue | null>(null);
@@ -70,6 +79,8 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
       configured,
       signIn: signInGuest,
       signUp: signUpGuest,
+      signInWithGoogle: signInGuestWithGoogle,
+      resetPassword: guestSendPasswordReset,
       signOut: guestSignOut,
     }),
     [configured, ready, user],

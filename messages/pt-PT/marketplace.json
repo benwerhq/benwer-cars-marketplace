@@ -643,6 +643,16 @@
     "signedInAs": "Sessão de proprietário"
   },
   "guest": {
+    "googleAction": "Iniciar sessão com Google",
+    "googleCreate": "Continuar com Google",
+    "or": "ou",
+    "forgotPassword": "Esqueceu a palavra-passe?",
+    "resetTitle": "Repor palavra-passe",
+    "resetHint": "Introduza o email e enviaremos um link para escolher uma nova palavra-passe.",
+    "resetAction": "Enviar link",
+    "resetSentTitle": "Verifique o email",
+    "resetSentHint": "Se existir uma conta com esse endereço, enviamos instruções para repor a palavra-passe. Não recebeu? Verifique o spam ou aguarde alguns minutos antes de tentar novamente.",
+    "backToSignIn": "Voltar ao início de sessão",
     "signInNav": "Entrar",
     "myBookings": "As minhas reservas",
     "signInTitle": "Iniciar sessão",
@@ -683,6 +693,10 @@
     "disabledTitle": "As contas de cliente ainda não estão disponíveis",
     "disabledDescription": "Esta empresa ainda não activou o acesso de clientes. Pode continuar a reservar com nome, email e telefone.",
     "auth": {
+      "popupClosed": "O início de sessão foi cancelado.",
+      "popupBlocked": "O navegador bloqueou a janela do Google. Permita janelas pop-up e tente novamente.",
+      "differentProvider": "Este email já inicia sessão de outra forma. Use a sua palavra-passe.",
+      "providerUnavailable": "O início de sessão com Google ainda não está disponível neste site. Use o email e a palavra-passe.",
       "invalidEmail": "Introduza um email válido.",
       "emailInUse": "Esse email já tem uma conta de cliente. Entre com ela.",
       "weakPassword": "Use uma palavra-passe mais longa.",

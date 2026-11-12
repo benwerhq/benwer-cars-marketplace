@@ -643,6 +643,16 @@
     "signedInAs": "Signed in as owner"
   },
   "guest": {
+    "googleAction": "Sign in with Google",
+    "googleCreate": "Continue with Google",
+    "or": "or",
+    "forgotPassword": "Forgot password?",
+    "resetTitle": "Reset your password",
+    "resetHint": "Enter your email address and we'll send you a link to choose a new password.",
+    "resetAction": "Send reset link",
+    "resetSentTitle": "Check your email",
+    "resetSentHint": "If an account exists for that address, we've sent password reset instructions. Didn't receive it? Check your spam folder or wait a few minutes before trying again.",
+    "backToSignIn": "Back to sign in",
     "signInNav": "Sign in",
     "myBookings": "My bookings",
     "signInTitle": "Sign in",
@@ -683,6 +693,10 @@
     "disabledTitle": "Guest accounts are not available yet",
     "disabledDescription": "This company has not turned on guest sign-in. You can still book with your name, email and phone.",
     "auth": {
+      "popupClosed": "Sign-in was cancelled.",
+      "popupBlocked": "Your browser blocked the Google window. Allow pop-ups and try again.",
+      "differentProvider": "This email already signs in another way. Use your password instead.",
+      "providerUnavailable": "Google sign-in isn't available on this site yet. Use your email and password.",
       "invalidEmail": "Enter a valid email address.",
       "emailInUse": "That email already has a guest account. Sign in instead.",
       "weakPassword": "Use a longer password.",
