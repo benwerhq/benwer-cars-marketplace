@@ -1,9 +1,10 @@
+import { SiteStatus } from "@/enums";
+import { serializeAppearance } from "@/lib/siteContent";
 import type { PublicSite } from "@/types/site";
-import type { WebsiteSettings } from "@/types/websiteSettings";
+import type { WebsiteSettings, WebsiteSettingsPatch } from "@/types/websiteSettings";
 
 export function settingsFromSite(site: PublicSite): WebsiteSettings {
   return {
-    layout: site.layout,
     status: site.status,
     bookingMode: site.bookingMode,
     minLeadHours: site.minLeadHours,
@@ -13,20 +14,21 @@ export function settingsFromSite(site: PublicSite): WebsiteSettings {
     showPhone: site.showPhone,
     showEmail: site.showEmail,
     showAddress: site.showAddress,
-    primaryColor: site.company.branding.primaryColor,
-    domain: site.canonicalUrl ?? "",
+    revision: 0,
+    hasUnpublishedChanges: false,
+    canPublish: true,
     content: site.content,
     canEdit: true,
   };
 }
 
-export function applyWebsiteDraft(
-  site: PublicSite,
-  draft: WebsiteSettings,
-): PublicSite {
+export function siteBrandColor(site: PublicSite): string {
+  return site.content.brandColor || site.company.branding.primaryColor;
+}
+
+export function applyWebsiteDraft(site: PublicSite, draft: WebsiteSettings): PublicSite {
   return {
     ...site,
-    layout: draft.layout,
     status: draft.status,
     bookingMode: draft.bookingMode,
     minLeadHours: draft.minLeadHours,
@@ -36,39 +38,34 @@ export function applyWebsiteDraft(
     showPhone: draft.showPhone,
     showEmail: draft.showEmail,
     showAddress: draft.showAddress,
-    canonicalUrl: draft.domain || site.canonicalUrl,
-    content: draft.content,
-    company: {
-      ...site.company,
-      branding: {
-        ...site.company.branding,
-        primaryColor: draft.primaryColor || site.company.branding.primaryColor,
-      },
-    },
+    content: { ...draft.content, reviews: site.content.reviews },
   };
 }
 
-export function websiteDraftDirty(
-  saved: WebsiteSettings,
-  draft: WebsiteSettings,
-): boolean {
-  return JSON.stringify(omitCanEdit(saved)) !== JSON.stringify(omitCanEdit(draft));
-}
-
-function omitCanEdit(value: WebsiteSettings): Omit<WebsiteSettings, "canEdit"> {
+export function toWebsitePatch(draft: WebsiteSettings): WebsiteSettingsPatch {
   return {
-    layout: value.layout,
-    status: value.status,
-    bookingMode: value.bookingMode,
-    minLeadHours: value.minLeadHours,
-    requestWindowHours: value.requestWindowHours,
-    headline: value.headline,
-    intro: value.intro,
-    showPhone: value.showPhone,
-    showEmail: value.showEmail,
-    showAddress: value.showAddress,
-    primaryColor: value.primaryColor,
-    domain: value.domain,
-    content: value.content,
+    revision: draft.revision,
+    bookingMode: draft.bookingMode,
+    minLeadHours: draft.minLeadHours,
+    requestWindowHours: draft.requestWindowHours,
+    headline: draft.headline,
+    intro: draft.intro,
+    showPhone: draft.showPhone,
+    showEmail: draft.showEmail,
+    showAddress: draft.showAddress,
+    layout: "classic",
+    appearance: serializeAppearance(draft.content),
   };
+}
+
+function comparable(value: WebsiteSettings): string {
+  return JSON.stringify({ ...toWebsitePatch(value), revision: 0 });
+}
+
+export function websiteDraftDirty(saved: WebsiteSettings, draft: WebsiteSettings): boolean {
+  return comparable(saved) !== comparable(draft);
+}
+
+export function isLive(status: SiteStatus): boolean {
+  return status === SiteStatus.PUBLISHED;
 }

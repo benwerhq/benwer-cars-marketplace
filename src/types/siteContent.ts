@@ -1,7 +1,9 @@
 import type {
+  SiteBannerPreset,
+  SiteBannerTarget,
   SiteIncludedIcon,
-  SitePaymentMethod,
   SiteIncludedPreset,
+  SitePaymentMethod,
   SiteSectionId,
 } from "@/enums";
 
@@ -14,10 +16,29 @@ export interface SiteSectionConfig {
 
 export interface SiteBanner {
   id: string;
-  imageUrl: string;
-  title: LocalizedCopy;
-  subtitle: LocalizedCopy;
-  linkUrl: string;
+  preset: SiteBannerPreset | null;
+  imageAssetId: string | null;
+  imageUrl: string | null;
+  script: LocalizedCopy;
+  highlight: LocalizedCopy;
+  joiner: LocalizedCopy;
+  boxed: LocalizedCopy;
+  description: LocalizedCopy;
+  ctaLabel: LocalizedCopy;
+  ctaTarget: SiteBannerTarget;
+  ctaUrl: string;
+}
+
+export interface SiteBannerTheme {
+  background: string;
+  highlight: string;
+  highlightText: string;
+  box: string;
+  boxText: string;
+  script: string;
+  text: string;
+  button: string;
+  buttonText: string;
 }
 
 export interface SiteIncludedItem {
@@ -31,19 +52,14 @@ export interface SiteIncludedItem {
 
 export interface SiteReview {
   id: string;
-  author: string;
-  origin: string;
-  date: string;
   rating: number;
   text: string;
-  vehicle: string;
+  createdAt: string;
 }
 
 export interface SiteReviewsContent {
-  score: number | null;
-  count: number | null;
-  sourceLabel: string;
-  sourceUrl: string;
+  average: number | null;
+  count: number;
   items: SiteReview[];
 }
 
@@ -69,9 +85,12 @@ export interface SiteContactContent {
 export interface SiteContent {
   sections: SiteSectionConfig[];
   banners: SiteBanner[];
+  bannerTheme: SiteBannerTheme;
   included: SiteIncludedItem[];
   reviews: SiteReviewsContent;
   app: SiteAppContent;
   faq: SiteFaqItem[];
   contact: SiteContactContent;
+  brandColor: string;
+  raw: Record<string, unknown>;
 }

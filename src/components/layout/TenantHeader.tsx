@@ -37,9 +37,13 @@ export async function TenantHeader({
               branding: { primaryColor: "", logoUrl: logoUrl ?? null },
             }}
             size="sm"
-            className="h-8 w-8 rounded-lg"
+            className="h-9 w-9 rounded-lg"
           />
-          <span className="truncate text-sm font-semibold tracking-tight">
+          <span
+            className={
+              logoUrl ? "sr-only" : "truncate text-sm font-semibold tracking-tight"
+            }
+          >
             {companyName}
           </span>
           <span className="sr-only">{t("logoAlt", { name: companyName })}</span>

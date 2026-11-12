@@ -17,6 +17,16 @@ const SIZE_CLASS = {
   lg: "h-14 w-14 rounded-full text-xl",
 } as const;
 
+const LOGO_HEIGHT = {
+  sm: "h-7",
+  md: "h-12 sm:h-14",
+  lg: "h-14",
+} as const;
+
+export function hasCompanyLogo(company: Pick<Company, "branding">): boolean {
+  return Boolean(company.branding.logoUrl);
+}
+
 export function CompanyMark({
   company,
   size = "md",
@@ -29,21 +39,18 @@ export function CompanyMark({
 
   if (logoSrc && !failed) {
     return (
-      <span
+      // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
+      <img
+        src={logoSrc}
+        alt=""
+        onError={() => setFailed(true)}
         className={cn(
-          "relative flex shrink-0 items-center justify-center overflow-hidden border border-border bg-surface-muted",
-          SIZE_CLASS[size],
+          "block shrink-0 object-contain object-left",
+          LOGO_HEIGHT[size],
           className,
+          "w-auto max-w-[11rem] rounded-none border-0 bg-transparent p-0",
         )}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer */}
-        <img
-          src={logoSrc}
-          alt=""
-          className="h-full w-full object-contain p-1.5"
-          onError={() => setFailed(true)}
-        />
-      </span>
+      />
     );
   }
 

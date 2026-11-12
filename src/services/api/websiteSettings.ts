@@ -31,6 +31,24 @@ export const websiteSettingsApi = {
     return mapWebsiteSettings(data);
   },
 
+  async publish(): Promise<WebsiteSettings> {
+    const headers = await staffHeaders();
+    const data = await publicRequest<unknown>("/v1/settings/website/publish", {
+      method: "POST",
+      headers,
+    });
+    return mapWebsiteSettings(data);
+  },
+
+  async pause(): Promise<WebsiteSettings> {
+    const headers = await staffHeaders();
+    const data = await publicRequest<unknown>("/v1/settings/website/pause", {
+      method: "POST",
+      headers,
+    });
+    return mapWebsiteSettings(data);
+  },
+
   async save(patch: WebsiteSettingsPatch): Promise<WebsiteSettings> {
     const headers = await staffHeaders({
       "Content-Type": "application/json",

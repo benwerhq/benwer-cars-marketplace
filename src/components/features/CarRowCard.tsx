@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Car, Fuel, Settings2, Users } from "lucide-react";
+import { ArrowRight, Car, Fuel, Settings2, Users } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { TransmissionType } from "@/enums";
 import { vehicleImageUrl } from "@/lib/vehicleImage";
@@ -96,31 +96,41 @@ export function CarRowCard({
           </li>
         </ul>
         <div aria-hidden className="flex-1" />
-        <div className="mt-4 flex items-end justify-between gap-3 border-t border-dashed border-border pt-4">
-          <div className="text-xs text-muted-foreground">
-            {vehicle.deposit ? (
-              <p>{t("rowDeposit", { amount: money(vehicle.deposit, vehicle.currency, locale) })}</p>
-            ) : null}
-            <p className={cn("font-semibold", available ? "text-success" : "text-warning")}>
-              {available ? t("rowAvailable") : t("bookUnavailable")}
-            </p>
-          </div>
-          <div className="text-right">
+        <div className="mt-4 flex flex-wrap items-end justify-between gap-3 border-t border-dashed border-border pt-4">
+          <div>
             <p className="leading-none whitespace-nowrap">
               <span className="text-2xl font-semibold tracking-tight text-foreground tabular-nums">
                 {money(vehicle.pricePerDay, vehicle.currency, locale)}
               </span>
               <span className="text-sm text-muted-foreground">{t("perDaySuffix")}</span>
             </p>
-            {days && days > 0 ? (
-              <p className="mt-1 text-xs text-muted-foreground">
-                {t("rowTotal", {
-                  amount: money(vehicle.pricePerDay * days, vehicle.currency, locale),
-                  days,
-                })}
-              </p>
-            ) : null}
+            <p className="mt-1 text-xs text-muted-foreground">
+              {days && days > 0
+                ? t("rowTotal", {
+                    amount: money(vehicle.pricePerDay * days, vehicle.currency, locale),
+                    days,
+                  })
+                : vehicle.deposit
+                  ? t("rowDeposit", {
+                      amount: money(vehicle.deposit, vehicle.currency, locale),
+                    })
+                  : null}
+            </p>
           </div>
+          {available ? (
+            <span className="inline-flex h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/30 transition-all group-hover:bg-primary-hover group-hover:shadow-lg group-hover:shadow-primary/40 motion-safe:group-hover:-translate-y-px">
+              {t("bookNow")}
+              <ArrowRight
+                size={16}
+                aria-hidden
+                className="transition-transform motion-safe:group-hover:translate-x-0.5"
+              />
+            </span>
+          ) : (
+            <span className="inline-flex h-11 items-center rounded-full bg-surface-muted px-5 text-sm font-medium text-muted-foreground">
+              {t("bookUnavailable")}
+            </span>
+          )}
         </div>
       </div>
     </Link>

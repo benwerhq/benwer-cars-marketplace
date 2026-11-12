@@ -181,7 +181,7 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
 
 const NAV_SECTIONS: SiteSectionId[] = [
   SiteSectionId.REVIEWS,
-  SiteSectionId.LOCATIONS,
+  SiteSectionId.BRANCHES,
   SiteSectionId.FAQ,
   SiteSectionId.CONTACT,
 ];

@@ -229,7 +229,10 @@
     },
     "rowDeposit": "Fianza {amount}",
     "rowAvailable": "Disponible en tus fechas",
-    "rowTotal": "{amount} en total · {days, plural, one {# día} other {# días}}"
+    "rowTotal": "{amount} en total · {days, plural, one {# día} other {# días}}",
+    "bookNow": "Reservar",
+    "availableCount": "{count, plural, =0 {Ningún coche disponible} one {# coche disponible} other {# coches disponibles}}",
+    "availableForDates": "{count, plural, =0 {Ningún coche disponible} one {# coche disponible} other {# coches disponibles}} · {from} – {to}"
   },
   "carDetail": {
     "bookNow": "Reservar ahora",
@@ -621,28 +624,6 @@
     "disabledTitle": "La edición no está disponible",
     "disabledDescription": "Firebase de personal no está configurado en este marketplace.",
     "signOut": "Salir",
-    "layouts": {
-      "classic": {
-        "name": "Clásico",
-        "hint": "Portada, búsqueda y flota — el diseño actual."
-      },
-      "modern_hero": {
-        "name": "Hero moderno",
-        "hint": "Hero a pantalla con búsqueda superpuesta y columna de contacto."
-      },
-      "minimal_list": {
-        "name": "Lista mínima",
-        "hint": "Página estrecha, cabecera compacta y flota en lista."
-      },
-      "grid_gallery": {
-        "name": "Galería",
-        "hint": "Cabecera oscura y flota centrada en fotos."
-      },
-      "bold_landing": {
-        "name": "Landing fuerte",
-        "hint": "Landing centrada con un panel de marca grande."
-      }
-    },
     "auth": {
       "invalidEmail": "Introduce un correo válido.",
       "tooManyRequests": "Demasiados intentos. Prueba más tarde.",
@@ -708,7 +689,36 @@
       "next": "Banner siguiente",
       "goTo": "Ver banner {position}",
       "pause": "Pausar banners",
-      "play": "Reproducir banners"
+      "play": "Reproducir banners",
+      "presets": {
+        "airport": {
+          "script": "¿acabas de aterrizar?",
+          "highlight": "Recogida en aeropuerto",
+          "joiner": "en",
+          "boxed": "10 minutos",
+          "description": "Sin colas: firma el contrato en el móvil y sal con seguro a todo riesgo",
+          "ctaLabel": "Reservar ahora"
+        },
+        "weekend": {
+          "script": "reserva este finde",
+          "highlight": "Ahorra un 20%",
+          "joiner": "en",
+          "boxed": "Alquileres de finde",
+          "description": "Recoge el viernes y devuelve el lunes. Silla infantil y conductor adicional incluidos",
+          "ctaLabel": "Ver ofertas"
+        },
+        "roadtrip": {
+          "script": "tu próximo viaje",
+          "highlight": "Empieza aquí",
+          "joiner": "te damos las",
+          "boxed": "Llaves",
+          "description": "Cancelación gratuita hasta 24 h antes, kilómetros ilimitados y sin costes ocultos",
+          "ctaLabel": "Reservar un coche"
+        }
+      },
+      "fallback": {
+        "ctaLabel": "Reservar un coche"
+      }
     },
     "included": {
       "eyebrow": "Incluido en todos los precios",
@@ -745,7 +755,9 @@
       "basedOn": "Basado en {count, plural, one {# opinión} other {# opiniones}}",
       "basedOnSource": "Basado en {count, plural, one {# opinión} other {# opiniones}} en {source}",
       "ratingAria": "Valoración de {rating} sobre 5",
-      "rented": "Alquiló: {vehicle}"
+      "rented": "Alquiló: {vehicle}",
+      "verified": "Alquiler verificado",
+      "distributionAria": "Desglose de valoraciones"
     },
     "app": {
       "title": "Tu reserva, siempre contigo",
@@ -790,10 +802,10 @@
     },
     "nav": {
       "reviews": "Opiniones",
-      "locations": "Oficinas",
       "faq": "Preguntas",
       "contact": "Contacto",
-      "app": "App"
+      "app": "App",
+      "branches": "Oficinas"
     },
     "footer": {
       "contact": "Contacto",
@@ -836,15 +848,15 @@
     },
     "backToSections": "Todas las secciones",
     "sections": {
-      "banners": "Banners y buscador",
       "company": "Empresa",
       "fleet": "Coches",
       "included": "Incluido en el precio",
       "reviews": "Opiniones",
       "app": "App móvil",
-      "locations": "Oficinas",
       "faq": "Preguntas frecuentes",
-      "contact": "Contacto"
+      "contact": "Contacto",
+      "hero": "Banners y buscador",
+      "branches": "Oficinas"
     },
     "sectionsHint": "Activa o desactiva secciones y cambia su orden. Abre una sección para editar su contenido.",
     "orderHint": "Los coches siempre se muestran. Las oficinas vienen de tus sucursales en Benwer admin.",
@@ -874,17 +886,47 @@
     },
     "banners": {
       "title": "Banners",
-      "description": "Hasta {max} imágenes que rotan en la parte superior. El buscador se sitúa encima.",
-      "sizeHint": "Tamaño recomendado: 2496 × 880 px. Deja libres de texto los 90 px inferiores, el buscador los tapa.",
-      "empty": "Aún no hay banners. Se muestra tu color de marca.",
+      "description": "Hasta {max} banners. Los campos vacíos usan el texto por defecto en gris.",
+      "empty": "Sin banners. Se muestra el color de fondo.",
       "item": "Banner {position}",
-      "imageUrl": "URL de la imagen",
-      "imageHint": "Pega el enlace a tu imagen (JPG, PNG o WebP).",
-      "headline": "Titular",
-      "headlineHint": "Opcional. Déjalo vacío si el texto ya está en la imagen.",
-      "subtitle": "Subtítulo",
-      "link": "Enlace",
-      "add": "Añadir banner"
+      "image": "Imagen",
+      "imageHint": "Los collages tienen fondo transparente y se colocan sobre el color del banner.",
+      "add": "Añadir banner",
+      "fields": {
+        "script": "Línea manuscrita",
+        "highlight": "Título destacado",
+        "joiner": "Conector",
+        "boxed": "Título en caja",
+        "description": "Descripción",
+        "ctaLabel": "Texto del botón"
+      },
+      "ctaTarget": "El botón lleva a",
+      "targets": {
+        "fleet": "Tus coches",
+        "contact": "Sección de contacto",
+        "url": "Otra página web"
+      },
+      "ctaUrl": "Dirección web",
+      "ctaUrlHint": "Debe empezar por https://",
+      "presets": {
+        "airport": "Collage aeropuerto",
+        "weekend": "Collage fin de semana",
+        "roadtrip": "Collage viaje"
+      },
+      "colorsTitle": "Colores del banner",
+      "colorsDescription": "Se aplican a todos los banners. El fondo admite cualquier color.",
+      "resetColors": "Restablecer colores",
+      "colors": {
+        "background": "Fondo",
+        "text": "Texto",
+        "highlight": "Caja destacada",
+        "highlightText": "Texto destacado",
+        "box": "Caja blanca",
+        "boxText": "Texto caja blanca",
+        "script": "Texto conector",
+        "button": "Botón",
+        "buttonText": "Texto del botón"
+      }
     },
     "company": {
       "title": "Cabecera de la empresa",
@@ -930,27 +972,11 @@
       "key": "Llave"
     },
     "reviews": {
-      "summaryTitle": "Resumen de valoración",
-      "summaryDescription": "Tu nota global. Déjala vacía para usar la media de las opiniones de abajo.",
-      "score": "Nota (sobre 5)",
-      "count": "Número de opiniones",
-      "source": "Fuente",
-      "sourceUrl": "Enlace a todas las opiniones",
-      "sourceUrlHint": "Por ejemplo, tu página de opiniones de Google Maps.",
-      "itemsTitle": "Opiniones destacadas",
-      "itemsDescription": "Hasta {max} opiniones reales de tus clientes.",
-      "empty": "Aún no hay opiniones. La sección se oculta hasta que añadas una.",
-      "item": "Opinión {position}",
-      "author": "Nombre",
-      "rating": "Valoración",
-      "stars": "{count, plural, one {# estrella} other {# estrellas}}",
-      "origin": "Procedencia",
-      "originPlaceholder": "Madrid, ES",
-      "date": "Fecha",
-      "datePlaceholder": "oct 2025",
-      "vehicle": "Coche alquilado",
-      "text": "Opinión",
-      "add": "Añadir opinión"
+      "title": "Opiniones de clientes",
+      "description": "Los clientes valoran el alquiler al devolver el coche. Solo se muestran las que apruebas.",
+      "summary": "Media de {average} con {count, plural, one {# opinión aprobada} other {# opiniones aprobadas}}",
+      "none": "Aún no hay opiniones aprobadas. La sección se oculta hasta que apruebes una.",
+      "manage": "Aprobar u ocultar opiniones en Benwer admin"
     },
     "app": {
       "storesTitle": "Enlaces a las tiendas",
@@ -989,16 +1015,9 @@
       "custom": "Color personalizado",
       "customHint": "Usa un código hexadecimal, como #4f46e5.",
       "picker": "Elegir color",
-      "layoutTitle": "Diseño",
-      "layoutDescription": "Todos los diseños muestran el mismo contenido, con otra disposición."
+      "lowContrast": "Este color es demasiado claro para texto blanco en botones. Elige uno más oscuro o no se podrá guardar."
     },
     "settings": {
-      "statusTitle": "Estado de la web",
-      "statusDescription": "Las webs en borrador o en pausa no aceptan reservas.",
-      "status": "Estado",
-      "statusPublished": "Publicado",
-      "statusDraft": "Borrador",
-      "statusPaused": "En pausa",
       "bookingTitle": "Reservas",
       "bookingDescription": "Cómo reservan los clientes desde tu web.",
       "bookingMode": "Modo de reserva",
@@ -1012,11 +1031,11 @@
       },
       "minLead": "Antelación mínima",
       "requestWindow": "Plazo de respuesta",
-      "hoursUnit": "En horas",
-      "domainTitle": "Dominio propio",
-      "domainDescription": "Tu propia dirección web. El DNS se configura en Benwer admin.",
-      "domain": "Dominio"
-    }
+      "hoursUnit": "En horas"
+    },
+    "savedNotPublished": "Guardado, sin publicar",
+    "publish": "Publicar",
+    "pause": "Pausar web"
   },
   "marketplaceBanners": {
     "aria": "Destacados de Benwer",

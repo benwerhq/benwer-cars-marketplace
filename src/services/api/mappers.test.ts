@@ -522,16 +522,19 @@ describe("mapPublicSite", () => {
 });
 
 describe("mapWebsiteSettings", () => {
-  it("maps layout and edit permission", () => {
+  it("maps the draft appearance, revision and edit permission", () => {
     const settings = mapWebsiteSettings({
-      layout: "grid_gallery",
       role: "owner",
+      revision: 7,
       headline: { "en-GB": "Hi" },
-      primaryColor: "#123456",
+      appearance: { theme: { primaryColor: "#123456" }, banners: [] },
+      publishedAppearance: { theme: { primaryColor: "#0e7490" }, banners: [] },
     });
-    expect(settings.layout).toBe(SiteLayout.GRID_GALLERY);
     expect(settings.canEdit).toBe(true);
-    expect(settings.primaryColor).toBe("#123456");
+    expect(settings.revision).toBe(7);
+    expect(settings.content.brandColor).toBe("#123456");
+    expect(settings.content.banners).toEqual([]);
+    expect(settings.hasUnpublishedChanges).toBe(true);
   });
 });
 

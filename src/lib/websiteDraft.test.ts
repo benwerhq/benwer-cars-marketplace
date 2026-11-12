@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { BookingMode, SiteLayout, SiteStatus } from "@/enums";
-import { applyWebsiteDraft, settingsFromSite } from "./websiteDraft";
+import {
+  applyWebsiteDraft,
+  settingsFromSite,
+  siteBrandColor,
+  toWebsitePatch,
+  websiteDraftDirty,
+} from "./websiteDraft";
 import type { PublicSite } from "@/types/site";
 import { defaultSiteContent } from "./siteContent";
 
@@ -40,14 +46,24 @@ const site: PublicSite = {
 };
 
 describe("websiteDraft", () => {
-  it("applies a layout preview onto the public site", () => {
-    const draft = {
-      ...settingsFromSite(site),
-      layout: SiteLayout.BOLD_LANDING,
-      primaryColor: "#ff0000",
+  it("previews the draft brand colour and content but keeps the site's live reviews", () => {
+    const draft = settingsFromSite(site);
+    draft.content = {
+      ...draft.content,
+      brandColor: "#ff0000",
+      reviews: { average: 1, count: 1, items: [] },
     };
     const next = applyWebsiteDraft(site, draft);
-    expect(next.layout).toBe(SiteLayout.BOLD_LANDING);
-    expect(next.company.branding.primaryColor).toBe("#ff0000");
+    expect(siteBrandColor(next)).toBe("#ff0000");
+    expect(next.content.reviews).toBe(site.content.reviews);
+  });
+
+  it("marks the draft dirty only when something the API stores changes", () => {
+    const saved = settingsFromSite(site);
+    expect(websiteDraftDirty(saved, { ...saved, revision: 9 })).toBe(false);
+    expect(websiteDraftDirty(saved, { ...saved, showEmail: !saved.showEmail })).toBe(true);
+    const patch = toWebsitePatch(saved);
+    expect(patch.layout).toBe("classic");
+    expect(patch.appearance).toHaveProperty("bannerTheme");
   });
 });

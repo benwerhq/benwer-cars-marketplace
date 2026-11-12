@@ -23,11 +23,11 @@ export function SiteLocationsSection({
   phone,
 }: SiteLocationsSectionProps) {
   const t = useTranslations("siteSections.locations");
-  const headingId = `${SiteSectionId.LOCATIONS}-heading`;
+  const headingId = `${SiteSectionId.BRANCHES}-heading`;
 
   return (
     <section
-      id={SiteSectionId.LOCATIONS}
+      id={SiteSectionId.BRANCHES}
       aria-labelledby={headingId}
       className="flex scroll-mt-24 flex-col gap-8"
     >

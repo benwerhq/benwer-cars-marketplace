@@ -1,40 +1,165 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { SiteBannerTarget } from "@/enums";
 import { useCarousel } from "@/hooks/useCarousel";
 import { localizedText } from "@/lib/localizedCopy";
+import { bannerImageSrc } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
-import type { SiteBanner } from "@/types/siteContent";
+import type { LocalizedCopy, SiteBanner, SiteBannerTheme } from "@/types/siteContent";
+
+type BannerField = "script" | "highlight" | "joiner" | "boxed" | "description" | "ctaLabel";
+
+export function useBannerCopy() {
+  const t = useTranslations("siteSections.banners.presets");
+  const tDefault = useTranslations("siteSections.banners.fallback");
+  const locale = useLocale();
+
+  return (banner: SiteBanner, field: BannerField): string => {
+    const own = localizedText(banner[field] as LocalizedCopy, locale);
+    if (own) {
+      return own;
+    }
+    if (banner.preset) {
+      return t(`${banner.preset}.${field}`);
+    }
+    return field === "ctaLabel" ? tDefault("ctaLabel") : "";
+  };
+}
+
+export function bannerThemeStyle(theme: SiteBannerTheme): CSSProperties {
+  return {
+    "--banner-bg": theme.background,
+    "--banner-highlight": theme.highlight,
+    "--banner-highlight-text": theme.highlightText,
+    "--banner-box": theme.box,
+    "--banner-box-text": theme.boxText,
+    "--banner-script": theme.script,
+    "--banner-text": theme.text,
+    "--banner-button": theme.button,
+    "--banner-button-text": theme.buttonText,
+  } as CSSProperties;
+}
+
+function ctaHref(banner: SiteBanner, homeHref: string): string {
+  const home = homeHref.split("#")[0] ?? homeHref;
+  if (banner.ctaTarget === SiteBannerTarget.URL && banner.ctaUrl) {
+    return banner.ctaUrl;
+  }
+  return `${home}#${banner.ctaTarget === SiteBannerTarget.CONTACT ? "contact" : "fleet"}`;
+}
+
+export function BannerSlideContent({
+  banner,
+  homeHref,
+  active,
+  priority,
+}: {
+  banner: SiteBanner;
+  homeHref: string;
+  active: boolean;
+  priority: boolean;
+}) {
+  const copy = useBannerCopy();
+  const image = bannerImageSrc(banner);
+  const script = copy(banner, "script");
+  const highlight = copy(banner, "highlight");
+  const joiner = copy(banner, "joiner");
+  const boxed = copy(banner, "boxed");
+  const description = copy(banner, "description");
+  const cta = copy(banner, "ctaLabel");
+  const external = banner.ctaTarget === SiteBannerTarget.URL && Boolean(banner.ctaUrl);
+
+  return (
+    <>
+      {image ? (
+        <div className="relative aspect-[16/10] w-full md:absolute md:inset-y-[3%] md:right-[3%] md:aspect-auto md:w-[56%]">
+          <Image
+            src={image}
+            alt=""
+            fill
+            priority={priority}
+            unoptimized
+            sizes="(min-width: 768px) 56vw, 100vw"
+            className="object-contain md:object-right"
+          />
+        </div>
+      ) : null}
+      <div className="relative flex flex-col items-start px-5 pt-4 pb-14 text-(--banner-text) md:absolute md:inset-y-0 md:left-0 md:justify-center md:p-0 md:pl-[3.4cqw]">
+        {script ? (
+          <p className="font-promo-script -rotate-3 text-3xl leading-none text-(--banner-text) md:text-[2.6cqw]">
+            {script}
+          </p>
+        ) : null}
+        {highlight ? (
+          <p className="font-promo-display mt-2 -rotate-2 bg-(--banner-highlight) px-3 py-1 text-4xl leading-none text-(--banner-highlight-text) uppercase md:-ml-[0.6cqw] md:mt-[0.5cqw] md:px-[0.85cqw] md:py-[0.4cqw] md:text-[4.1cqw]">
+            {highlight}
+          </p>
+        ) : null}
+        {joiner || boxed ? (
+          <div className="mt-1.5 flex items-center gap-2 md:mt-[0.2cqw] md:gap-[0.8cqw] md:pl-[1.4cqw]">
+            {joiner ? (
+              <span className="font-promo-script text-3xl leading-none text-(--banner-script) md:text-[2.6cqw]">
+                {joiner}
+              </span>
+            ) : null}
+            {boxed ? (
+              <span className="font-promo-display -rotate-2 bg-(--banner-box) px-3 py-1 text-2xl leading-none text-(--banner-box-text) uppercase md:px-[0.75cqw] md:py-[0.45cqw] md:text-[3.1cqw]">
+                {boxed}
+              </span>
+            ) : null}
+          </div>
+        ) : null}
+        {description ? (
+          <p className="mt-4 max-w-xs text-sm leading-snug md:mt-[1.2cqw] md:max-w-[26cqw] md:text-[1.15cqw]">
+            {description}
+          </p>
+        ) : null}
+        {cta ? (
+          <a
+            href={ctaHref(banner, homeHref)}
+            tabIndex={active ? 0 : -1}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
+            className="mt-4 inline-flex cursor-pointer items-center rounded-sm bg-(--banner-button) px-4 py-2 text-sm font-medium text-(--banner-button-text) transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--banner-highlight) focus-visible:ring-offset-2 focus-visible:ring-offset-(--banner-bg) md:mt-[1.3cqw] md:px-[1.05cqw] md:py-[0.6cqw] md:text-[1.1cqw]"
+          >
+            {cta}
+          </a>
+        ) : null}
+      </div>
+    </>
+  );
+}
 
 interface SiteBannerCarouselProps {
   banners: SiteBanner[];
+  theme: SiteBannerTheme;
   companyName: string;
+  homeHref: string;
 }
 
 export function SiteBannerCarousel({
   banners,
+  theme,
   companyName,
+  homeHref,
 }: SiteBannerCarouselProps) {
   const t = useTranslations("siteSections.banners");
-  const locale = useLocale();
   const count = banners.length;
-  const {
-    active,
-    setIndex,
-    go,
-    paused,
-    togglePaused,
-    reducedMotion,
-    interactionHandlers,
-  } = useCarousel(count);
+  const { active, setIndex, go, paused, togglePaused, reducedMotion, interactionHandlers } =
+    useCarousel(count, 7000);
+  const control =
+    "inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-surface text-foreground shadow-lg transition hover:bg-surface-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
   if (count === 0) {
     return (
       <div
         aria-hidden
-        className="h-56 w-full rounded-3xl bg-gradient-to-br from-primary via-primary/80 to-secondary md:h-80"
+        style={bannerThemeStyle(theme)}
+        className="h-40 w-full rounded-3xl bg-(--banner-bg) md:aspect-[4/1] md:h-auto"
       />
     );
   }
@@ -43,89 +168,36 @@ export function SiteBannerCarousel({
     <section
       aria-roledescription="carousel"
       aria-label={t("aria", { name: companyName })}
+      style={bannerThemeStyle(theme)}
       className="relative"
       {...interactionHandlers}
     >
-      <div className="relative h-56 w-full overflow-hidden rounded-3xl bg-surface-muted md:h-[27.5rem]">
+      <div className="@container relative overflow-hidden rounded-3xl bg-(--banner-bg) md:aspect-[4/1]">
         {banners.map((banner, position) => {
-          const title = localizedText(banner.title, locale);
-          const subtitle = localizedText(banner.subtitle, locale);
-          const slide = (
-            <>
-              {banner.imageUrl ? (
-                <Image
-                  src={banner.imageUrl}
-                  alt={title || t("slideAlt", { position: position + 1, name: companyName })}
-                  fill
-                  sizes="(min-width: 1280px) 1248px, 100vw"
-                  priority={position === 0}
-                  unoptimized
-                  className="object-cover"
-                />
-              ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-secondary" />
-              )}
-              {title || subtitle ? (
-                <div className="absolute inset-x-0 top-0 flex flex-col gap-2 bg-gradient-to-b from-secondary/70 to-transparent p-6 pb-16 text-secondary-foreground md:p-10 md:pb-24">
-                  {title ? (
-                    <p className="max-w-2xl text-2xl font-semibold tracking-tight md:text-4xl">
-                      {title}
-                    </p>
-                  ) : null}
-                  {subtitle ? (
-                    <p className="max-w-xl text-sm md:text-base">{subtitle}</p>
-                  ) : null}
-                </div>
-              ) : null}
-            </>
-          );
-
+          const isActive = position === active;
           return (
             <div
               key={banner.id}
               role="group"
               aria-roledescription="slide"
               aria-label={t("slideLabel", { position: position + 1, count })}
-              aria-hidden={position !== active}
+              aria-hidden={!isActive}
               className={cn(
-                "absolute inset-0 transition-opacity duration-500 motion-reduce:transition-none",
-                position === active ? "opacity-100" : "pointer-events-none opacity-0",
+                "transition-opacity duration-500 motion-reduce:transition-none md:absolute md:inset-0",
+                isActive ? "relative opacity-100" : "pointer-events-none absolute inset-0 opacity-0",
               )}
             >
-              {banner.linkUrl ? (
-                <a
-                  href={banner.linkUrl}
-                  tabIndex={position === active ? 0 : -1}
-                  className="absolute inset-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring"
-                >
-                  {slide}
-                </a>
-              ) : (
-                slide
-              )}
+              <BannerSlideContent
+                banner={banner}
+                homeHref={homeHref}
+                active={isActive}
+                priority={position === 0}
+              />
             </div>
           );
         })}
-      </div>
-      {count > 1 ? (
-        <>
-          <button
-            type="button"
-            onClick={() => go(-1)}
-            aria-label={t("previous")}
-            className="absolute top-1/3 left-3 hidden h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-surface text-foreground shadow-lg transition hover:bg-surface-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:inline-flex lg:-left-5"
-          >
-            <ChevronLeft size={20} aria-hidden />
-          </button>
-          <button
-            type="button"
-            onClick={() => go(1)}
-            aria-label={t("next")}
-            className="absolute top-1/3 right-3 hidden h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-surface text-foreground shadow-lg transition hover:bg-surface-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:inline-flex lg:-right-5"
-          >
-            <ChevronRight size={20} aria-hidden />
-          </button>
-          <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-secondary/50 px-2 py-1.5 backdrop-blur-sm md:bottom-24">
+        {count > 1 ? (
+          <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/30 px-2.5 py-1.5 backdrop-blur-sm md:bottom-[6%]">
             {banners.map((banner, position) => (
               <button
                 key={banner.id}
@@ -134,8 +206,8 @@ export function SiteBannerCarousel({
                 aria-label={t("goTo", { position: position + 1 })}
                 aria-current={position === active}
                 className={cn(
-                  "h-2 cursor-pointer rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                  position === active ? "w-6 bg-secondary-foreground" : "w-2 bg-secondary-foreground/50",
+                  "h-2 cursor-pointer rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
+                  position === active ? "w-6 bg-white" : "w-2 bg-white/50",
                 )}
               />
             ))}
@@ -144,12 +216,32 @@ export function SiteBannerCarousel({
                 type="button"
                 onClick={togglePaused}
                 aria-label={paused ? t("play") : t("pause")}
-                className="ml-1 inline-flex h-5 w-5 cursor-pointer items-center justify-center rounded-full text-secondary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="ml-1 inline-flex h-5 w-5 cursor-pointer items-center justify-center rounded-full text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 {paused ? <Play size={12} aria-hidden /> : <Pause size={12} aria-hidden />}
               </button>
             )}
           </div>
+        ) : null}
+      </div>
+      {count > 1 ? (
+        <>
+          <button
+            type="button"
+            onClick={() => go(-1)}
+            aria-label={t("previous")}
+            className={cn(control, "absolute top-[38%] left-3 hidden md:inline-flex lg:-left-5")}
+          >
+            <ChevronLeft size={20} aria-hidden />
+          </button>
+          <button
+            type="button"
+            onClick={() => go(1)}
+            aria-label={t("next")}
+            className={cn(control, "absolute top-[38%] right-3 hidden md:inline-flex lg:-right-5")}
+          >
+            <ChevronRight size={20} aria-hidden />
+          </button>
         </>
       ) : null}
     </section>

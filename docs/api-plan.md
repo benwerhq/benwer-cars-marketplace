@@ -261,66 +261,29 @@ deploy does not blank the marketplace.
 
 ---
 
-## 9. Website content (API change required)
+## 9. Website appearance (booking sites)
 
-Owners edit their storefront sections in the site editor (`/s/{slug}` in edit mode).
-The marketplace sends everything as one `content` object. **The API must store it,
-validate it and return it unchanged.** Until it does, `PATCH` drops the field and
-every storefront shows the defaults below.
+The storefront and the owner editor use the API's `appearance` object
+(`benwer-cars-api` `src/features/websites`), not a separate content field.
 
-**Endpoints**
+- `GET /v1/settings/website` returns the draft `appearance`, `publishedAppearance`,
+  `revision`, `status` and `canPublish`.
+- `PATCH /v1/settings/website` saves the draft. It needs the current `revision`
+  (stale → `409 website.revision_stale`) and the full `appearance`; the schema is strict.
+- `POST /v1/settings/website/publish` copies the draft to the live site;
+  `POST /v1/settings/website/pause` takes it offline.
+- `GET /v1/public/sites/{slug}` returns the published `appearance` and approved `reviews`
+  (`{ average, count, items[{ rating, text, createdAt }] }`).
 
-- `PATCH /v1/settings/website` accepts `content` next to the existing fields
-  (`headline`, `intro`, `layout`, `primaryColor`, …). Same permissions as today.
-- `GET /v1/settings/website` returns the saved `content`.
-- `GET /v1/public/sites/{slug}` returns the saved `content` (also for signed previews).
+`appearance` holds `hero`, `template` (always `classic` for launch), `theme`
+(brand colour, ≥ 4.5:1 contrast with white), `sections` (`hero, search, company,
+fleet, included, reviews, app, branches, extras, faq, contact`; FAQ items live in the
+`faq` section), `banners` (≤ 3; preset collage or uploaded `website_hero` image,
+localised script/highlight/joiner/boxed/description/CTA text, CTA target),
+`bannerTheme` (nine `#RRGGBB` colours), `included` (≤ 6), `app` (https store links)
+and `contact` (WhatsApp, reply hours, payment methods). Fields the API does not
+know are rejected, so the marketplace round-trips the draft it received.
 
-Store it as one `jsonb` column on the website row. Only whole-object replacement is
-needed; the client always sends the full object.
-
-**Shape**
-
-```jsonc
-{
-  "sections": [ { "id": "banners", "enabled": true } ],   // order = display order
-  "banners": [ { "id": "b1", "imageUrl": "https://…", "title": { "es-ES": "…" },
-                 "subtitle": { "es-ES": "…" }, "linkUrl": "https://…" } ],
-  "included": [ { "id": "fuel", "preset": "fuel", "icon": "fuel",
-                  "title": {}, "text": {}, "tag": { "es-ES": "Sin depósito" } } ],
-  "reviews": { "score": 4.8, "count": 1860, "sourceLabel": "Google",
-               "sourceUrl": "https://…",
-               "items": [ { "id": "r1", "author": "…", "origin": "Madrid, ES",
-                            "date": "oct 2025", "rating": 5, "text": "…", "vehicle": "SEAT Ibiza" } ] },
-  "app": { "iosUrl": "https://apps.apple.com/…", "androidUrl": "https://play.google.com/…",
-           "title": {}, "text": {} },
-  "faq": [ { "id": "q1", "question": { "es-ES": "…" }, "answer": { "es-ES": "…" } } ],
-  "contact": { "whatsapp": "+34600123456", "hours": { "es-ES": "…" } }
-}
-```
-
-Localized fields use the same `{ "es-ES" | "en-GB" | "pt-PT": string }` map as
-`headline` / `intro`. An empty map means "use the default copy".
-
-**Validation the API should enforce** (the client already applies the same rules
-when reading, in `src/lib/siteContent.ts`):
-
-| Field | Rule |
-| --- | --- |
-| `sections[].id` | One of `banners, company, fleet, included, reviews, app, locations, faq, contact`; no duplicates. `fleet` is always enabled. |
-| `banners` | Max 3. |
-| `included` | Max 6. `preset` ∈ `insurance, mileage, fuel, cancellation` or `null`. `icon` ∈ `shield, gauge, fuel, calendar_check, check, car, users, baby, plane, key`. |
-| `reviews.items` | Max 6; `author` and `text` required; `rating` integer 1–5. `score` 0–5, `count` ≥ 0. |
-| `faq` | Max 12; question and answer required. |
-| URLs (`imageUrl`, `linkUrl`, `sourceUrl`, `iosUrl`, `androidUrl`) | `https://` (or `http://` in local) only. Reject `javascript:`, `data:` and protocol-relative URLs. |
-| `contact.whatsapp` | Digits and a leading `+`, 8–15 digits. |
-| Text | Headline-like fields ≤ 140 chars, answers ≤ 800, review text ≤ 1,000. |
-
-**Defaults when `content` is missing**: all sections on in the order above, except
-`included`, which stays **off** until the owner switches it on, because its preset
-promises (unlimited km, full-to-full fuel…) are not true for every company.
-Sections with nothing to show (no reviews, no FAQ, no store links) stay hidden.
-
-**Next step (not in this change):** a banner image upload endpoint
-(`POST /v1/settings/website/banners`, returns a CDN URL). Until then owners paste
-an image URL.
-
+Reviews are written by guests and moderated in Benwer admin; the editor only shows
+the summary. Banner image upload uses `POST /v1/uploads?kind=website_hero`
+(editor upload UI is a follow-up; presets cover launch).

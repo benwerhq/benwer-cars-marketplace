@@ -769,7 +769,10 @@ export function mapPublicSite(raw: unknown, fallbackSlug?: string): PublicSite {
       slug: company.slug || slug,
     },
     branches,
-    content: parseSiteContent(nestedSite.content ?? row.content),
+    content: parseSiteContent(
+      nestedSite.appearance ?? row.appearance,
+      nestedSite.reviews ?? row.reviews,
+    ),
   };
 }
 
@@ -779,30 +782,24 @@ export function mapWebsiteSettings(raw: unknown): WebsiteSettings {
   const role = (readString(nested.role) ?? readString(row.role) ?? "").toLowerCase();
   const namedRole = ["owner", "admin", "manager"].includes(role);
   const canEdit = readBoolean(nested.canEdit) ?? (role ? namedRole : true);
+  const draft = nested.appearance;
+  const published = nested.publishedAppearance;
 
   return {
-    layout: parseSiteLayout(
-      readString(nested.layout) ?? readString(nested.template),
-    ),
     status: mapSiteStatus(readString(nested.status)),
     bookingMode: mapBookingMode(readString(nested.bookingMode)),
     minLeadHours: readNumber(nested.minLeadHours) ?? 0,
-    requestWindowHours: readNumber(nested.requestWindowHours) ?? 0,
+    requestWindowHours: readNumber(nested.requestWindowHours) ?? 24,
     headline: mapLocalizedCopy(nested.headline),
     intro: mapLocalizedCopy(nested.intro),
     showPhone: readBoolean(nested.showPhone) ?? false,
     showEmail: readBoolean(nested.showEmail) ?? false,
     showAddress: readBoolean(nested.showAddress) ?? false,
-    primaryColor:
-      readString(nested.primaryColor) ??
-      (isRecord(nested.branding) ? readString(nested.branding.primaryColor) : undefined) ??
-      "",
-    domain:
-      readString(nested.domain) ??
-      readString(nested.customDomain) ??
-      readString(nested.canonicalUrl) ??
-      "",
-    content: parseSiteContent(nested.content),
+    revision: readNumber(nested.revision) ?? 0,
+    hasUnpublishedChanges:
+      published !== undefined && JSON.stringify(draft) !== JSON.stringify(published),
+    canPublish: readBoolean(nested.canPublish) ?? true,
+    content: parseSiteContent(draft, nested.reviews),
     canEdit: Boolean(canEdit),
   };
 }

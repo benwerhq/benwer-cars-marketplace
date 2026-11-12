@@ -28,15 +28,29 @@ export enum SiteLayout {
 }
 
 export enum SiteSectionId {
-  BANNERS = "banners",
+  HERO = "hero",
+  SEARCH = "search",
   COMPANY = "company",
   FLEET = "fleet",
   INCLUDED = "included",
   REVIEWS = "reviews",
   APP = "app",
-  LOCATIONS = "locations",
+  BRANCHES = "branches",
+  EXTRAS = "extras",
   FAQ = "faq",
   CONTACT = "contact",
+}
+
+export enum SiteBannerPreset {
+  AIRPORT = "airport",
+  WEEKEND = "weekend",
+  ROADTRIP = "roadtrip",
+}
+
+export enum SiteBannerTarget {
+  FLEET = "fleet",
+  CONTACT = "contact",
+  URL = "url",
 }
 
 export enum SiteIncludedPreset {

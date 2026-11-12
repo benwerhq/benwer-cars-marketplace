@@ -79,7 +79,7 @@ function CarListViewContent({
     },
     filterByAvailability && Boolean(data?.length),
   );
-  const vehicles = filterByAvailability
+  const sortedVehicles = filterByAvailability
     ? sortVehiclesByAvailability(
         data,
         availabilityQuery.data,
@@ -87,6 +87,18 @@ function CarListViewContent({
         availabilityRange.to,
       )
     : data;
+  const hideUnavailable = layout === "rows" && filterByAvailability;
+  const vehicles =
+    hideUnavailable && availabilityQuery.data
+      ? sortedVehicles?.filter((vehicle) =>
+          isFleetVehicleAvailable(
+            vehicle,
+            availabilityQuery.data,
+            availabilityRange.from,
+            availabilityRange.to,
+          ),
+        )
+      : sortedVehicles;
   const companyQuery = useCompany(companySlug);
   const directory = companyQuery.data ? [companyQuery.data] : [];
 
@@ -110,7 +122,15 @@ function CarListViewContent({
         ),
       ).length ?? 0)
     : count;
-  const resultsLabel = filterByAvailability
+  const resultsLabel = hideUnavailable
+    ? fromDate && toDate
+      ? t("availableForDates", {
+          count,
+          from: formatSearchDate(fromDate, locale),
+          to: formatSearchDate(toDate, locale),
+        })
+      : t("availableCount", { count })
+    : filterByAvailability
     ? fromDate && toDate
       ? t("fleetSummaryForDates", {
           total: count,

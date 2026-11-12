@@ -229,7 +229,10 @@
     },
     "rowDeposit": "Deposit {amount}",
     "rowAvailable": "Available for your dates",
-    "rowTotal": "{amount} total · {days, plural, one {# day} other {# days}}"
+    "rowTotal": "{amount} total · {days, plural, one {# day} other {# days}}",
+    "bookNow": "Book now",
+    "availableCount": "{count, plural, =0 {No cars available} one {# car available} other {# cars available}}",
+    "availableForDates": "{count, plural, =0 {No cars available} one {# car available} other {# cars available}} · {from} – {to}"
   },
   "carDetail": {
     "bookNow": "Book now",
@@ -621,28 +624,6 @@
     "disabledTitle": "Owner editing is not available",
     "disabledDescription": "Staff Firebase is not configured on this marketplace.",
     "signOut": "Sign out",
-    "layouts": {
-      "classic": {
-        "name": "Classic",
-        "hint": "Hero, search, then the fleet — the current default."
-      },
-      "modern_hero": {
-        "name": "Modern hero",
-        "hint": "Full-bleed hero with search overlay and a contact column."
-      },
-      "minimal_list": {
-        "name": "Minimal list",
-        "hint": "Narrow page, compact header, fleet as a simple list."
-      },
-      "grid_gallery": {
-        "name": "Grid gallery",
-        "hint": "Dark masthead and photo-first fleet grid."
-      },
-      "bold_landing": {
-        "name": "Bold landing",
-        "hint": "Large centred landing with a strong brand panel."
-      }
-    },
     "auth": {
       "invalidEmail": "Enter a valid email address.",
       "tooManyRequests": "Too many attempts. Try again later.",
@@ -708,7 +689,36 @@
       "next": "Next banner",
       "goTo": "Show banner {position}",
       "pause": "Pause banners",
-      "play": "Play banners"
+      "play": "Play banners",
+      "presets": {
+        "airport": {
+          "script": "just landed?",
+          "highlight": "Airport pickup",
+          "joiner": "in",
+          "boxed": "10 minutes",
+          "description": "Skip the queue: sign your contract on your phone and drive off with full insurance",
+          "ctaLabel": "Reserve now"
+        },
+        "weekend": {
+          "script": "book this weekend",
+          "highlight": "Save 20%",
+          "joiner": "on",
+          "boxed": "Weekend rentals",
+          "description": "Pick up Friday, return Monday. Free child seat and an extra driver included",
+          "ctaLabel": "See weekend deals"
+        },
+        "roadtrip": {
+          "script": "your next roadtrip",
+          "highlight": "Starts here",
+          "joiner": "we hand you the",
+          "boxed": "Keys",
+          "description": "Free cancellation up to 24h before pickup, unlimited km and no hidden fees",
+          "ctaLabel": "Book a car"
+        }
+      },
+      "fallback": {
+        "ctaLabel": "Book a car"
+      }
     },
     "included": {
       "eyebrow": "Included in every price",
@@ -745,7 +755,9 @@
       "basedOn": "Based on {count, plural, one {# review} other {# reviews}}",
       "basedOnSource": "Based on {count, plural, one {# review} other {# reviews}} on {source}",
       "ratingAria": "Rated {rating} out of 5",
-      "rented": "Rented: {vehicle}"
+      "rented": "Rented: {vehicle}",
+      "verified": "Verified rental",
+      "distributionAria": "Rating breakdown"
     },
     "app": {
       "title": "Your booking, on the go",
@@ -790,10 +802,10 @@
     },
     "nav": {
       "reviews": "Reviews",
-      "locations": "Locations",
       "faq": "FAQ",
       "contact": "Contact",
-      "app": "App"
+      "app": "App",
+      "branches": "Locations"
     },
     "footer": {
       "contact": "Contact",
@@ -836,15 +848,15 @@
     },
     "backToSections": "All sections",
     "sections": {
-      "banners": "Banners & search",
       "company": "Company",
       "fleet": "Cars",
       "included": "Included in every price",
       "reviews": "Reviews",
       "app": "Mobile app",
-      "locations": "Locations",
       "faq": "FAQ",
-      "contact": "Contact"
+      "contact": "Contact",
+      "hero": "Banners & search",
+      "branches": "Locations"
     },
     "sectionsHint": "Switch sections on or off and change their order. Open a section to edit its content.",
     "orderHint": "Cars always show. Offices come from your branches in Benwer admin.",
@@ -874,17 +886,47 @@
     },
     "banners": {
       "title": "Banners",
-      "description": "Up to {max} slides that rotate at the top of your site. The search bar sits on top of them.",
-      "sizeHint": "Recommended size: 2496 × 880 px. Keep the bottom 90 px free of text, the search bar covers it.",
-      "empty": "No banners yet. Your brand colour is shown instead.",
+      "description": "Up to {max} slides. Empty fields use the default text shown in grey.",
+      "empty": "No banners. The banner area shows your background colour.",
       "item": "Banner {position}",
-      "imageUrl": "Image URL",
-      "imageHint": "Paste a link to your banner image (JPG, PNG or WebP).",
-      "headline": "Headline",
-      "headlineHint": "Optional. Leave empty if the text is already in the image.",
-      "subtitle": "Subtitle",
-      "link": "Link",
-      "add": "Add banner"
+      "image": "Image",
+      "imageHint": "Collages have a transparent background, so they sit on your banner colour.",
+      "add": "Add banner",
+      "fields": {
+        "script": "Handwritten line",
+        "highlight": "Highlighted title",
+        "joiner": "Small connector",
+        "boxed": "Boxed title",
+        "description": "Description",
+        "ctaLabel": "Button text"
+      },
+      "ctaTarget": "Button goes to",
+      "targets": {
+        "fleet": "Your cars",
+        "contact": "Contact section",
+        "url": "Another web page"
+      },
+      "ctaUrl": "Web address",
+      "ctaUrlHint": "Must start with https://",
+      "presets": {
+        "airport": "Airport collage",
+        "weekend": "Weekend collage",
+        "roadtrip": "Road trip collage"
+      },
+      "colorsTitle": "Banner colours",
+      "colorsDescription": "Used by every banner. Any colour works for the background.",
+      "resetColors": "Reset to default colours",
+      "colors": {
+        "background": "Background",
+        "text": "Text",
+        "highlight": "Highlight box",
+        "highlightText": "Highlight text",
+        "box": "White box",
+        "boxText": "White box text",
+        "script": "Connector text",
+        "button": "Button",
+        "buttonText": "Button text"
+      }
     },
     "company": {
       "title": "Company header",
@@ -930,27 +972,11 @@
       "key": "Key"
     },
     "reviews": {
-      "summaryTitle": "Rating summary",
-      "summaryDescription": "Your overall score. Leave empty to use the average of the reviews below.",
-      "score": "Score (out of 5)",
-      "count": "Number of reviews",
-      "source": "Source",
-      "sourceUrl": "Link to all reviews",
-      "sourceUrlHint": "For example, your Google Maps reviews page.",
-      "itemsTitle": "Featured reviews",
-      "itemsDescription": "Up to {max} real reviews from your customers.",
-      "empty": "No reviews yet. The section stays hidden until you add one.",
-      "item": "Review {position}",
-      "author": "Name",
-      "rating": "Rating",
-      "stars": "{count, plural, one {# star} other {# stars}}",
-      "origin": "From",
-      "originPlaceholder": "Manchester, UK",
-      "date": "Date",
-      "datePlaceholder": "Oct 2025",
-      "vehicle": "Car rented",
-      "text": "Review",
-      "add": "Add review"
+      "title": "Guest reviews",
+      "description": "Guests review their rental after returning the car. Only reviews you approve are shown.",
+      "summary": "{average} average from {count, plural, one {# approved review} other {# approved reviews}}",
+      "none": "No approved reviews yet. The section stays hidden until you approve one.",
+      "manage": "Approve or hide reviews in Benwer admin"
     },
     "app": {
       "storesTitle": "Store links",
@@ -989,16 +1015,9 @@
       "custom": "Custom colour",
       "customHint": "Use a hex code, such as #4f46e5.",
       "picker": "Pick a colour",
-      "layoutTitle": "Layout",
-      "layoutDescription": "Every layout shows the same content, in a different arrangement."
+      "lowContrast": "This colour is too light for white text on buttons. Pick a darker one, or saving will fail."
     },
     "settings": {
-      "statusTitle": "Website status",
-      "statusDescription": "Draft and paused sites are not open for bookings.",
-      "status": "Status",
-      "statusPublished": "Live",
-      "statusDraft": "Draft",
-      "statusPaused": "Paused",
       "bookingTitle": "Bookings",
       "bookingDescription": "How customers book from your site.",
       "bookingMode": "Booking mode",
@@ -1012,11 +1031,11 @@
       },
       "minLead": "Minimum notice",
       "requestWindow": "Time to reply",
-      "hoursUnit": "In hours",
-      "domainTitle": "Custom domain",
-      "domainDescription": "Your own web address. DNS setup is done in Benwer admin.",
-      "domain": "Domain"
-    }
+      "hoursUnit": "In hours"
+    },
+    "savedNotPublished": "Saved, not published yet",
+    "publish": "Publish",
+    "pause": "Pause site"
   },
   "marketplaceBanners": {
     "aria": "Benwer highlights",

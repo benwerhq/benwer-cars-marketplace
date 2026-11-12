@@ -27,6 +27,7 @@ import { SiteSectionId, SiteStatus } from "@/enums";
 import { routing } from "@/i18n/routing";
 import {
   FIXED_SITE_SECTIONS,
+  editableSections,
   moveSection,
   sectionHasContent,
   type SiteContentFacts,
@@ -45,19 +46,21 @@ import { ReviewsForm } from "./ReviewsForm";
 import { SettingsForm } from "./SettingsForm";
 
 const SECTION_ICONS: Record<SiteSectionId, LucideIcon> = {
-  [SiteSectionId.BANNERS]: GalleryHorizontal,
+  [SiteSectionId.HERO]: GalleryHorizontal,
+  [SiteSectionId.SEARCH]: GalleryHorizontal,
+  [SiteSectionId.EXTRAS]: ListChecks,
   [SiteSectionId.COMPANY]: Building2,
   [SiteSectionId.FLEET]: Car,
   [SiteSectionId.INCLUDED]: ListChecks,
   [SiteSectionId.REVIEWS]: Star,
   [SiteSectionId.APP]: Smartphone,
-  [SiteSectionId.LOCATIONS]: MapPin,
+  [SiteSectionId.BRANCHES]: MapPin,
   [SiteSectionId.FAQ]: CircleHelp,
   [SiteSectionId.CONTACT]: MessageCircle,
 };
 
 const EDITABLE_SECTIONS: SiteSectionId[] = [
-  SiteSectionId.BANNERS,
+  SiteSectionId.HERO,
   SiteSectionId.COMPANY,
   SiteSectionId.INCLUDED,
   SiteSectionId.REVIEWS,
@@ -82,6 +85,10 @@ interface SiteEditorProps {
   onChange: (next: WebsiteSettings) => void;
   onSave: () => void;
   onDiscard: () => void;
+  onPublish: () => void;
+  onPause: () => void;
+  publishing: boolean;
+  fallbackColor: string;
   onSignOut: () => void;
 }
 
@@ -95,6 +102,10 @@ export function SiteEditor({
   onChange,
   onSave,
   onDiscard,
+  onPublish,
+  onPause,
+  publishing,
+  fallbackColor,
   onSignOut,
 }: SiteEditorProps) {
   const t = useTranslations("siteEditor");
@@ -108,7 +119,7 @@ export function SiteEditor({
 
   function summary(id: SiteSectionId): string {
     switch (id) {
-      case SiteSectionId.BANNERS:
+      case SiteSectionId.HERO:
         return content.banners.length
           ? t("summary.banners", { count: content.banners.length })
           : t("summary.bannersEmpty");
@@ -122,7 +133,7 @@ export function SiteEditor({
         return t("summary.reviews", { count: content.reviews.items.length });
       case SiteSectionId.APP:
         return t("summary.app");
-      case SiteSectionId.LOCATIONS:
+      case SiteSectionId.BRANCHES:
         return t("summary.locations", { count: facts.branchCount });
       case SiteSectionId.FAQ:
         return t("summary.faq", { count: content.faq.length });
@@ -135,12 +146,14 @@ export function SiteEditor({
 
   function sectionForm(id: SiteSectionId) {
     switch (id) {
-      case SiteSectionId.BANNERS:
+      case SiteSectionId.HERO:
         return (
           <BannersForm
             banners={content.banners}
+            theme={content.bannerTheme}
             locale={locale}
             onChange={(banners) => setContent({ banners })}
+            onThemeChange={(bannerTheme) => setContent({ bannerTheme })}
           />
         );
       case SiteSectionId.COMPANY:
@@ -156,7 +169,7 @@ export function SiteEditor({
           />
         );
       case SiteSectionId.REVIEWS:
-        return <ReviewsForm reviews={content.reviews} onChange={(reviews) => setContent({ reviews })} />;
+        return <ReviewsForm reviews={content.reviews} />;
       case SiteSectionId.APP:
         return <AppForm app={content.app} locale={locale} onChange={(app) => setContent({ app })} />;
       case SiteSectionId.FAQ:
@@ -181,7 +194,7 @@ export function SiteEditor({
   return (
     <aside
       aria-label={t("aria")}
-      className="flex w-full flex-col border-b border-border bg-surface-muted lg:sticky lg:top-16 lg:z-30 lg:h-[calc(100dvh-4rem)] lg:w-[26rem] lg:border-b-0 lg:border-l"
+      className="flex w-full flex-col border-b border-border bg-surface-muted lg:sticky lg:top-16 lg:z-30 lg:h-[calc(100dvh-4rem)] lg:w-[34rem] lg:border-b-0 lg:border-l"
     >
       <div className="flex items-center justify-between gap-3 border-b border-border bg-surface px-4 py-3">
         <div className="min-w-0">
@@ -268,7 +281,7 @@ export function SiteEditor({
               <>
                 <p className="text-xs text-muted-foreground">{t("sectionsHint")}</p>
                 <ol className="flex flex-col gap-2">
-                  {content.sections.map((section, index) => {
+                  {editableSections(content.sections).map((section, index, list) => {
                     const Icon = SECTION_ICONS[section.id];
                     const fixed = FIXED_SITE_SECTIONS.includes(section.id);
                     const editable = EDITABLE_SECTIONS.includes(section.id);
@@ -315,7 +328,7 @@ export function SiteEditor({
                           <button
                             type="button"
                             className={iconButton}
-                            disabled={index === content.sections.length - 1}
+                            disabled={index === list.length - 1}
                             onClick={() => setContent({ sections: moveSection(content.sections, section.id, 1) })}
                             aria-label={t("common.moveDown", { item: label })}
                           >
@@ -343,7 +356,7 @@ export function SiteEditor({
             )}
           </Tabs.Content>
           <Tabs.Content value="design" className="flex flex-col gap-3 p-4 focus-visible:outline-none">
-            <DesignForm draft={draft} onChange={onChange} />
+            <DesignForm draft={draft} fallbackColor={fallbackColor} onChange={onChange} />
           </Tabs.Content>
           <Tabs.Content value="settings" className="flex flex-col gap-3 p-4 focus-visible:outline-none">
             <SettingsForm draft={draft} onChange={onChange} />
@@ -359,15 +372,43 @@ export function SiteEditor({
         ) : null}
         <div className="flex items-center justify-between gap-3">
           <p className="text-xs text-muted-foreground" aria-live="polite">
-            {dirty ? t("unsaved") : t("saved")}
+            {dirty
+              ? t("unsaved")
+              : draft.hasUnpublishedChanges
+                ? t("savedNotPublished")
+                : t("saved")}
           </p>
           <div className="flex gap-2">
-            <Button type="button" variant="secondary" size="sm" disabled={!dirty || saving} onClick={onDiscard}>
-              {t("discard")}
-            </Button>
-            <Button type="button" size="sm" isLoading={saving} disabled={!dirty} onClick={onSave}>
-              {t("save")}
-            </Button>
+            {dirty ? (
+              <>
+                <Button type="button" variant="secondary" size="sm" disabled={saving} onClick={onDiscard}>
+                  {t("discard")}
+                </Button>
+                <Button type="button" size="sm" isLoading={saving} onClick={onSave}>
+                  {t("save")}
+                </Button>
+              </>
+            ) : (
+              <>
+                {draft.status === SiteStatus.PUBLISHED ? (
+                  <Button type="button" variant="secondary" size="sm" disabled={publishing} onClick={onPause}>
+                    {t("pause")}
+                  </Button>
+                ) : null}
+                <Button
+                  type="button"
+                  size="sm"
+                  isLoading={publishing}
+                  disabled={
+                    !draft.canPublish ||
+                    (draft.status === SiteStatus.PUBLISHED && !draft.hasUnpublishedChanges)
+                  }
+                  onClick={onPublish}
+                >
+                  {t("publish")}
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>
