@@ -27,7 +27,7 @@ import type {
   PriceWarning,
 } from "@/types/pricing";
 import type { GuestCancellationQuote, GuestPayment } from "@/types/payment";
-import type { GuestAccount } from "@/types/guest";
+import type { GuestAccount, GuestCustomer } from "@/types/guest";
 import type { GuestReservation } from "@/types/reservation";
 import type { PublicSite, SiteBranch } from "@/types/site";
 import type { WebsiteSettings } from "@/types/websiteSettings";
@@ -485,6 +485,24 @@ export function mapReservation(
   };
 }
 
+export function mapGuestCustomer(raw: unknown): GuestCustomer | null {
+  if (!isRecord(raw)) {
+    return null;
+  }
+  const id = readString(raw.id);
+  if (!id) {
+    return null;
+  }
+  const dateOfBirth = readString(raw.dateOfBirth)?.slice(0, 10);
+  return {
+    id,
+    fullName: readString(raw.fullName) ?? readString(raw.name) ?? "",
+    email: readString(raw.email) ?? "",
+    phone: readString(raw.phone) ?? "",
+    ...(dateOfBirth ? { dateOfBirth } : {}),
+  };
+}
+
 export function mapGuestAccount(
   raw: unknown,
   fallbackSlug?: string,
@@ -510,6 +528,8 @@ export function mapGuestAccount(
         : undefined) ??
       fallbackSlug ??
       "",
+    emailVerified: readBoolean(nested.emailVerified) ?? false,
+    customer: mapGuestCustomer(nested.customer),
   };
 }
 

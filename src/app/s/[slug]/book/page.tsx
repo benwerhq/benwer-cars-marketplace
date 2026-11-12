@@ -14,6 +14,7 @@ import { platformBookingHref } from "@/lib/canonicalUrl";
 import {
   canAcceptBookings,
   companySlugFromSite,
+  guestLinksFromHomeHref,
   isTenantHostRequest,
   parseDriverAge,
   publicSiteHref,
@@ -202,6 +203,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           bookingsEnabled
           channel={SITE_CHANNEL}
           returnLocation={returnLocation}
+          guestSignInHref={guestLinksFromHomeHref(homeHref).signIn}
           confirmationBaseUrl={platformBookingHref("").replace(/\/$/, "")}
           bookHrefBase={publicSiteHref(
             siteBookHref({

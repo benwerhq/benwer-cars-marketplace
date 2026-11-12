@@ -353,7 +353,10 @@
     "warningMinDays": "Rentals in this season must last at least {limit, plural, one {# day} other {# days}}. Change your dates to book.",
     "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book.",
     "returnLocation": "Return location",
-    "oneWayFee": "Different return location fee"
+    "oneWayFee": "Different return location fee",
+    "signedInAs": "Signed in as {email}",
+    "signInPrompt": "Have an account?",
+    "signInLink": "Sign in to fill in your details"
   },
   "reservationStatus": {
     "title": "Your reservation",

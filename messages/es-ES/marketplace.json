@@ -353,7 +353,10 @@
     "warningMinDays": "En esta temporada el alquiler debe durar al menos {limit, plural, one {# día} other {# días}}. Cambia las fechas para reservar.",
     "warningMaxDays": "En esta temporada el alquiler puede durar como máximo {limit, plural, one {# día} other {# días}}. Cambia las fechas para reservar.",
     "returnLocation": "Lugar de devolución",
-    "oneWayFee": "Suplemento por devolver en otro lugar"
+    "oneWayFee": "Suplemento por devolver en otro lugar",
+    "signedInAs": "Sesión iniciada como {email}",
+    "signInPrompt": "¿Tienes una cuenta?",
+    "signInLink": "Inicia sesión para rellenar tus datos"
   },
   "reservationStatus": {
     "title": "Tu reserva",

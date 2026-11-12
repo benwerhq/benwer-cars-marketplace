@@ -17,6 +17,8 @@ import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useCreateReservation } from "@/hooks/useCreateReservation";
 import { useInsurancePackages } from "@/hooks/useInsurancePackages";
+import { useGuestPrefill } from "@/hooks/useGuestAccount";
+import { withReturnTo } from "@/lib/returnTo";
 import { useOneWayFee } from "@/hooks/useOneWayFee";
 import { usePriceQuote } from "@/hooks/usePriceQuote";
 import type { SiteBranch } from "@/types/site";
@@ -65,6 +67,8 @@ interface BookingViewProps {
   confirmationBaseUrl?: string;
   bookHrefBase?: string;
   returnLocation?: SiteBranch | null;
+  /** Company-site sign-in page; shows the sign-in link when set. */
+  guestSignInHref?: string;
 }
 
 function withBookingDates(base: string, from: string, to: string): string {
@@ -99,6 +103,7 @@ export function BookingView({
   confirmationBaseUrl,
   bookHrefBase,
   returnLocation = null,
+  guestSignInHref,
 }: BookingViewProps) {
   const router = useRouter();
   const t = useTranslations("booking");
@@ -185,6 +190,26 @@ export function BookingView({
     // Restore once per car; the URL dates are read at mount on purpose.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [draftKey]);
+
+  // Prefill from the signed-in guest. Only empty fields are filled, so what
+  // the guest typed (or restored from the draft) is never overwritten.
+  const prefill = useGuestPrefill(companySlug);
+  useEffect(() => {
+    if (!prefill.signedIn) {
+      return;
+    }
+    const fill = { shouldDirty: true } as const;
+    const fields = [
+      ["guestEmail", prefill.email],
+      ["guestName", prefill.fullName],
+      ["guestPhone", prefill.phone],
+    ] as const;
+    for (const [field, value] of fields) {
+      if (value && !form.getValues(field)) {
+        form.setValue(field, value, fill);
+      }
+    }
+  }, [form, prefill.email, prefill.fullName, prefill.phone, prefill.signedIn]);
 
   // Runs after the restore effect above, which has already read the draft.
   useEffect(() => {
@@ -308,6 +333,36 @@ export function BookingView({
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">{t("subtitle")}</p>
         </div>
+
+        {prefill.available && prefill.ready ? (
+          prefill.signedIn ? (
+            <p className="text-sm text-muted-foreground">
+              {t("signedInAs", { email: prefill.email })}
+            </p>
+          ) : guestSignInHref ? (
+            <p className="text-sm text-muted-foreground">
+              {t("signInPrompt")}{" "}
+              <Link
+                href={guestSignInHref}
+                onClick={(event) => {
+                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) {
+                    return;
+                  }
+                  event.preventDefault();
+                  router.push(
+                    withReturnTo(
+                      guestSignInHref,
+                      `${window.location.pathname}${window.location.search}`,
+                    ),
+                  );
+                }}
+                className="font-medium text-primary hover:text-primary-hover"
+              >
+                {t("signInLink")}
+              </Link>
+            </p>
+          ) : null
+        ) : null}
 
         <ul className="flex flex-wrap gap-2">
           <TrustPill icon={ShieldCheck} label={t("trustNoAccount")} />
