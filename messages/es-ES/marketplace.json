@@ -726,7 +726,9 @@
       "weakPassword": "Usa una contraseña más larga.",
       "tooManyRequests": "Demasiados intentos. Prueba de nuevo en unos minutos.",
       "invalidCredentials": "El correo o la contraseña no son correctos.",
-      "unknown": "No se ha podido entrar. Inténtalo de nuevo."
+      "unknown": "No se ha podido entrar. Inténtalo de nuevo.",
+      "googleDisabled": "El inicio de sesión con Google aún no está activado en este sitio. Usa tu correo y contraseña.",
+      "domainNotAuthorised": "El inicio de sesión con Google aún no está configurado para la dirección de este sitio. Por ahora usa tu correo y contraseña."
     },
     "accountMenu": "Tu cuenta",
     "profileNav": "Perfil",
@@ -743,7 +745,15 @@
     "profileDob": "Fecha de nacimiento",
     "profileSave": "Guardar datos",
     "profileSaved": "Datos guardados.",
-    "profileNotLinked": "Vincula primero tus reservas para guardar aquí tus datos."
+    "profileNotLinked": "Tu nombre y teléfono se guardan aquí después de tu primera reserva con este email. ¿Reservaste con otro email? Vincula esa reserva desde Mis reservas.",
+    "verifyTitle": "Verifica tu email para ver tus reservas",
+    "verifyHint": "Hemos enviado un enlace a {email}. Ábrelo y vuelve aquí. Hasta que verifiques tu email no podemos mostrar tus reservas ni guardar tu nombre y teléfono.",
+    "verifyResend": "Reenviar email",
+    "verifySent": "Email enviado. Revisa tu bandeja de entrada y la carpeta de spam.",
+    "verifyDone": "Ya he verificado mi email",
+    "verifyStillPending": "Tu email aún no está verificado. Abre el enlace del email y vuelve a intentarlo.",
+    "verifyBanner": "Tu cuenta aún no está activa. Verifica {email} para ver tus reservas y usar tus datos guardados.",
+    "verifyBannerAction": "Verificar email"
   },
   "siteSections": {
     "banners": {

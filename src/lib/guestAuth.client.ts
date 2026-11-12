@@ -1,11 +1,18 @@
 "use client";
 
-import { initializeApp, getApp, getApps, type FirebaseApp } from "firebase/app";
+import {
+  FirebaseError,
+  initializeApp,
+  getApp,
+  getApps,
+  type FirebaseApp,
+} from "firebase/app";
 import {
   createUserWithEmailAndPassword,
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendEmailVerification,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -96,7 +103,49 @@ export async function guestSignUp(
     throw new Error("guest.not_configured");
   }
 
-  await createUserWithEmailAndPassword(auth, email, password);
+  const credential = await createUserWithEmailAndPassword(auth, email, password);
+  await sendVerification(credential.user);
+}
+
+const CONTINUE_URL_ERRORS = new Set([
+  "auth/unauthorized-continue-uri",
+  "auth/invalid-continue-uri",
+  "auth/missing-continue-uri",
+]);
+
+async function sendVerification(user: User): Promise<void> {
+  try {
+    await sendEmailVerification(user, { url: window.location.href });
+  } catch (error) {
+    if (error instanceof FirebaseError && CONTINUE_URL_ERRORS.has(error.code)) {
+      await sendEmailVerification(user);
+      return;
+    }
+    throw error;
+  }
+}
+
+export async function guestSendEmailVerification(locale: string): Promise<void> {
+  const auth = getGuestAuth();
+  const user = auth?.currentUser;
+  if (!auth || !user) {
+    throw new Error("guest.unauthenticated");
+  }
+
+  auth.languageCode = locale.split("-")[0] ?? null;
+  await sendVerification(user);
+}
+
+/** Re-reads the user from Firebase and refreshes the ID token so the API sees a newly verified email. */
+export async function guestReloadUser(): Promise<boolean> {
+  const user = getGuestAuth()?.currentUser;
+  if (!user) {
+    return false;
+  }
+
+  await user.reload();
+  await user.getIdToken(true);
+  return user.emailVerified;
 }
 
 export async function guestSignInWithGoogle(): Promise<void> {

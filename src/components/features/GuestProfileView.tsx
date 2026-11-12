@@ -11,8 +11,8 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
 import { useEraseGuest, useUnlinkGuest } from "@/hooks/useGuestAccount";
 import { getErrorKey } from "@/lib/errors";
-import { guestBookingFieldsEnabled } from "@/lib/extras";
 import { GuestDetailsSection } from "./GuestDetailsForm";
+import { GuestVerifyEmailNotice } from "./GuestVerifyEmailNotice";
 
 interface GuestProfileViewProps {
   companySlug: string;
@@ -28,7 +28,7 @@ export function GuestProfileView({
   const t = useTranslations("guest");
   const tRoot = useTranslations();
   const router = useRouter();
-  const { user, ready, configured, signOut } = useGuestAuth();
+  const { user, ready, configured, emailVerified, signOut } = useGuestAuth();
   const unlink = useUnlinkGuest(companySlug);
   const erase = useEraseGuest(companySlug);
   const [confirmErase, setConfirmErase] = useState(false);
@@ -50,6 +50,17 @@ export function GuestProfileView({
     return <GuestSignInPanel />;
   }
 
+  if (!emailVerified) {
+    return (
+      <div className="flex flex-col gap-8">
+        <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+          {t("profileTitle")}
+        </h1>
+        <GuestVerifyEmailNotice companySlug={companySlug} />
+      </div>
+    );
+  }
+
   const error = unlink.error ?? erase.error;
 
   return (
@@ -63,7 +74,7 @@ export function GuestProfileView({
         </p>
       </div>
 
-      {guestBookingFieldsEnabled() ? <GuestDetailsSection companySlug={companySlug} /> : null}
+      <GuestDetailsSection companySlug={companySlug} />
 
       <section className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5">
         <h2 className="text-lg font-semibold text-foreground">{t("accountTitle")}</h2>

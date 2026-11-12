@@ -5,6 +5,7 @@ import { useState, type FormEvent } from "react";
 import { Inbox, Link2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { GuestDisabledState } from "@/components/features/GuestDisabledState";
+import { GuestVerifyEmailNotice } from "./GuestVerifyEmailNotice";
 import { GuestSignInPanel } from "@/components/features/GuestSignInPanel";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -39,7 +40,7 @@ export function GuestBookingsView({
   const tRoot = useTranslations();
   const tStatus = useTranslations("reservationStatus");
   const locale = useLocale();
-  const { user, ready, configured } = useGuestAuth();
+  const { user, ready, configured, emailVerified } = useGuestAuth();
   const account = useGuestAccount(companySlug);
   const reservations = useGuestReservations(companySlug);
   const link = useGuestLink(companySlug);
@@ -66,6 +67,10 @@ export function GuestBookingsView({
 
   if (!user) {
     return <GuestSignInPanel />;
+  }
+
+  if (!emailVerified) {
+    return <GuestVerifyEmailNotice companySlug={companySlug} />;
   }
 
   const listError =

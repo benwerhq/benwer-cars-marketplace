@@ -13,6 +13,8 @@ import { setGuestAccessTokenProvider } from "@/lib/guestAccessToken";
 import {
   getGuestAuth,
   guestIdToken,
+  guestReloadUser,
+  guestSendEmailVerification,
   guestSignIn,
   guestSignOut,
   guestSignUp,
@@ -26,12 +28,15 @@ import { staffSignOut } from "@/lib/staffAuth.client";
 interface GuestAuthContextValue {
   user: User | null;
   ready: boolean;
+  emailVerified: boolean;
   configured: boolean;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string) => Promise<void>;
   signInWithGoogle: () => Promise<void>;
   resetPassword: (email: string, locale: string) => Promise<void>;
   signOut: () => Promise<void>;
+  sendVerificationEmail: (locale: string) => Promise<void>;
+  refreshVerification: () => Promise<boolean>;
 }
 
 async function signInGuest(email: string, password: string): Promise<void> {
@@ -55,6 +60,7 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
   const configured = isGuestFirebaseConfigured();
   const [user, setUser] = useState<User | null>(null);
   const [ready, setReady] = useState(!configured);
+  const [emailVerified, setEmailVerified] = useState(false);
 
   useEffect(() => {
     if (!configured) {
@@ -63,6 +69,7 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
 
     return subscribeGuestAuth((next) => {
       setUser(next);
+      setEmailVerified(Boolean(next?.emailVerified));
       setReady(true);
     });
   }, [configured]);
@@ -82,8 +89,15 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
       signInWithGoogle: signInGuestWithGoogle,
       resetPassword: guestSendPasswordReset,
       signOut: guestSignOut,
+      emailVerified,
+      sendVerificationEmail: guestSendEmailVerification,
+      refreshVerification: async () => {
+        const verified = await guestReloadUser();
+        setEmailVerified(verified);
+        return verified;
+      },
     }),
-    [configured, ready, user],
+    [configured, emailVerified, ready, user],
   );
 
   return (
