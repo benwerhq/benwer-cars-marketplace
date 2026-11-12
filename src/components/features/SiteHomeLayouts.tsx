@@ -27,6 +27,7 @@ import { SiteBannerCarousel } from "./SiteBannerCarousel";
 import { SiteContactSection } from "./SiteContactSection";
 import { SiteFaqSection } from "./SiteFaqSection";
 import { SiteIncludedSection } from "./SiteIncludedSection";
+import { SiteIntroBand, SiteIntroFacts } from "./SiteIntroBand";
 import { SiteLocationsSection } from "./SiteLocationsSection";
 import { SiteReviewsSection } from "./SiteReviewsSection";
 
@@ -220,31 +221,20 @@ function CompanyHeader({ site, copy }: { site: PublicSite; copy: SiteHomeCopy })
   const withLogo = hasCompanyLogo(company);
 
   return (
-    <section className="relative w-full overflow-hidden border-y border-border bg-gradient-to-br from-primary/10 via-background to-background">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-10 md:px-6 md:py-12 lg:px-8">
-        <div className="flex flex-col items-start gap-4">
-          <CompanyMark
-            company={company}
-            size="lg"
-            className={withLogo ? "h-16 max-w-[16rem]" : "h-16 w-16 rounded-2xl text-xl"}
-          />
-          <div className="min-w-0">
-            {withLogo ? null : (
-              <p className="text-sm font-medium text-primary">{site.company.name}</p>
-            )}
-            <h1 className="text-3xl font-semibold tracking-tight text-foreground">
-              {copy.headline}
-            </h1>
-            {copy.intro ? (
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                {copy.intro}
-              </p>
-            ) : null}
-          </div>
-        </div>
-        <ContactRow copy={copy} />
-      </div>
-    </section>
+    <SiteIntroBand
+      mark={
+        <CompanyMark
+          company={company}
+          size="lg"
+          className={withLogo ? "h-16 max-w-[16rem]" : "h-16 w-16 rounded-2xl text-xl"}
+        />
+      }
+      eyebrow={withLogo ? null : site.company.name}
+      title={copy.headline}
+      intro={copy.intro}
+    >
+      <ContactRow copy={copy} />
+    </SiteIntroBand>
   );
 }
 
@@ -256,7 +246,7 @@ function ContactRow({ copy }: { copy: SiteHomeCopy }) {
   }
 
   return (
-    <ul className="flex flex-col gap-2 text-sm text-foreground sm:flex-row sm:flex-wrap sm:gap-6">
+    <SiteIntroFacts>
       {copy.phone ? (
         <li className="inline-flex items-center gap-2">
           <Phone size={16} className="text-primary" aria-hidden />
@@ -298,6 +288,6 @@ function ContactRow({ copy }: { copy: SiteHomeCopy }) {
           </a>
         </li>
       ) : null}
-    </ul>
+    </SiteIntroFacts>
   );
 }

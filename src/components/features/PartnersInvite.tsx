@@ -1,58 +1,91 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, LayoutDashboard, Smartphone, Store } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { buttonVariants } from "@/components/ui/Button";
 import { env } from "@/env";
 import { cn } from "@/lib/utils";
+import { SiteSectionHeading } from "./SiteSectionHeading";
 
+const DEFAULT_PLANS_URL = "https://cars.benwer.es";
 
 export async function PartnersInvite() {
   const t = await getTranslations("partners");
-  const plansHref = env.NEXT_PUBLIC_MARKETING_URL;
+  const tFeatures = await getTranslations("whatYouGet");
+  const plansHref = env.NEXT_PUBLIC_MARKETING_URL || DEFAULT_PLANS_URL;
   const demoHref = env.NEXT_PUBLIC_ADMIN_DEMO_URL;
+  const features = [
+    {
+      icon: LayoutDashboard,
+      title: tFeatures("admin.title"),
+      body: tFeatures("admin.body"),
+    },
+    {
+      icon: Smartphone,
+      title: tFeatures("mobile.title"),
+      body: tFeatures("mobile.body"),
+    },
+    {
+      icon: Store,
+      title: tFeatures("storefront.title"),
+      body: tFeatures("storefront.body"),
+    },
+  ];
 
   return (
     <section
       id="partners"
-      className="rounded-2xl border border-border bg-surface px-4 py-6 text-foreground sm:px-8 sm:py-7"
+      aria-labelledby="partners-heading"
+      className="flex scroll-mt-24 flex-col gap-8 rounded-2xl border border-border bg-surface p-6 md:p-10"
     >
-      <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
-        {t("eyebrow")}
-      </p>
-      <h2 className="mt-2 max-w-2xl text-2xl font-medium tracking-tight sm:text-3xl">
-        {t("title")}
-      </h2>
-      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
-        {t("description")}
-      </p>
-      <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <a
-          href={plansHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={t("ctaAria")}
-          className={cn(
-            buttonVariants({ variant: "primary", size: "lg" }),
-            "w-full sm:w-auto",
-          )}
-        >
-          {t("cta")}
-          <ArrowUpRight size={16} aria-hidden />
-        </a>
-        {demoHref ? (
+      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <SiteSectionHeading
+          id="partners-heading"
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          description={t("description")}
+        />
+        <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
           <a
-            href={demoHref}
+            href={plansHref}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={t("demoAria")}
-            className={cn(
-              buttonVariants({ variant: "secondary", size: "lg" }),
-              "w-full sm:w-auto",
-            )}
+            aria-label={t("ctaAria")}
+            className={cn(buttonVariants({ size: "lg" }), "rounded-full")}
           >
-            {t("demo")}
+            {t("cta")}
+            <ArrowUpRight size={18} aria-hidden />
           </a>
-        ) : null}
+          {demoHref ? (
+            <a
+              href={demoHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("demoAria")}
+              className={cn(
+                buttonVariants({ variant: "secondary", size: "lg" }),
+                "rounded-full",
+              )}
+            >
+              {t("demo")}
+            </a>
+          ) : null}
+        </div>
       </div>
+      <ul className="grid gap-4 md:grid-cols-3">
+        {features.map(({ icon: Icon, title, body }) => (
+          <li
+            key={title}
+            className="flex flex-col rounded-2xl border border-border bg-background p-5"
+          >
+            <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Icon size={20} aria-hidden />
+            </span>
+            <p className="mt-4 text-base font-semibold text-foreground">
+              {title}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">{body}</p>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

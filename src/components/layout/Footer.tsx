@@ -1,9 +1,12 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import { NavRoutes } from "@/enums";
 import { BrandLogo } from "./BrandLogo";
+import { CookieSettingsLink } from "./CookieSettingsLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { siteFooterHeadingClass, siteFooterLinkClass } from "./SiteFooter";
 
 export async function Footer() {
   const year = new Date().getFullYear();
@@ -15,12 +18,12 @@ export async function Footer() {
   return (
     <footer className="mt-auto w-full border-t border-border bg-background">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 md:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div className="flex max-w-xs flex-col gap-3">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))]">
+          <div className="flex max-w-sm flex-col gap-2">
             <BrandLogo
               alt={tBrand("logoAlt")}
               variant="full"
-              className="h-14 w-28"
+              className="h-12 w-24"
             />
             <p className="text-sm text-muted-foreground">
               {tFooter("tagline")}
@@ -29,40 +32,39 @@ export async function Footer() {
               {isTenant ? tFooter("poweredBy") : tFooter("trust")}
             </p>
           </div>
-          <div className="flex flex-wrap gap-10">
-            <FooterGroup label={tFooter("explore")}>
-              <FooterLink href={NavRoutes.HOME}>{tNav("home")}</FooterLink>
-              {isTenant ? (
-                <FooterLink href={`${NavRoutes.HOME}#fleet`}>
-                  {tNav("cars")}
+          <FooterGroup label={tFooter("explore")}>
+            <FooterLink href={NavRoutes.HOME}>{tNav("home")}</FooterLink>
+            {isTenant ? (
+              <FooterLink href={`${NavRoutes.HOME}#fleet`}>
+                {tNav("cars")}
+              </FooterLink>
+            ) : (
+              <>
+                <FooterLink href={NavRoutes.CARS}>{tNav("cars")}</FooterLink>
+                <FooterLink href={NavRoutes.COMPANIES}>
+                  {tNav("companies")}
                 </FooterLink>
-              ) : (
-                <>
-                  <FooterLink href={NavRoutes.CARS}>{tNav("cars")}</FooterLink>
-                  <FooterLink href={NavRoutes.COMPANIES}>
-                    {tNav("companies")}
-                  </FooterLink>
-                </>
-              )}
-              <FooterLink href={NavRoutes.CONTACT}>
-                {tNav("contact")}
-              </FooterLink>
-            </FooterGroup>
-            <FooterGroup label={tFooter("legal")}>
-              <FooterLink href={NavRoutes.PRIVACY}>
-                {tNav("privacy")}
-              </FooterLink>
-              <FooterLink href={NavRoutes.TERMS}>{tNav("terms")}</FooterLink>
-              <FooterLink href={NavRoutes.COOKIES}>
-                {tNav("cookies")}
-              </FooterLink>
-            </FooterGroup>
-          </div>
+              </>
+            )}
+          </FooterGroup>
+          <FooterGroup label={tNav("contact")}>
+            <FooterLink href={NavRoutes.CONTACT}>{tNav("contact")}</FooterLink>
+          </FooterGroup>
+          <FooterGroup label={tFooter("legal")}>
+            <FooterLink href={NavRoutes.PRIVACY}>{tNav("privacy")}</FooterLink>
+            <FooterLink href={NavRoutes.TERMS}>{tNav("terms")}</FooterLink>
+            <FooterLink href={NavRoutes.COOKIES}>{tNav("cookies")}</FooterLink>
+            <CookieSettingsLink
+              className={`${siteFooterLinkClass} cursor-pointer text-left`}
+            />
+          </FooterGroup>
+        </div>
+        <div className="flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-muted-foreground">
+            {tFooter("copyright", { year })}
+          </p>
           <LocaleSwitcher />
         </div>
-        <p className="text-xs text-subtle-foreground">
-          {tFooter("copyright", { year })}
-        </p>
       </div>
     </footer>
   );
@@ -73,13 +75,11 @@ function FooterGroup({
   children,
 }: {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <nav className="flex min-w-36 flex-col gap-2" aria-label={label}>
-      <p className="text-xs font-semibold uppercase tracking-wider text-subtle-foreground">
-        {label}
-      </p>
+    <nav aria-label={label} className="flex flex-col gap-2">
+      <p className={siteFooterHeadingClass}>{label}</p>
       {children}
     </nav>
   );
@@ -87,10 +87,7 @@ function FooterGroup({
 
 function FooterLink({ href, children }: { href: string; children: string }) {
   return (
-    <Link
-      href={href}
-      className="cursor-pointer text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-    >
+    <Link href={href} className={siteFooterLinkClass}>
       {children}
     </Link>
   );

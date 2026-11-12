@@ -1,6 +1,12 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
+export interface SiteSectionHeadingCopy {
+  eyebrow: string;
+  title: string;
+  description?: string;
+}
+
 interface SiteSectionHeadingProps {
   id: string;
   eyebrow: string;

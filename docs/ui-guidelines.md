@@ -83,6 +83,14 @@ Same approach as admin web: `cva` for variants, `cn` for class merge.
 
 ## 5. App layout
 
+### Shared look between marketplace and company sites
+
+The marketplace is styled as if Benwer were one more company site. It reuses the
+company-site building blocks with hardcoded Benwer content (no API data):
+`SiteHeaderShell`, `SiteIntroBand`, `SiteSectionHeading`, `SiteIncludedSection`,
+`SiteAppSection`, `SiteFaqSection`, `PageIntro`, and the `SiteFooter` link styles.
+New marketplace sections should compose these rather than add a separate style.
+
 ### Marketplace layout (`marketplace.benwer.es`)
 
 - **Sticky top header**: Benwer Cars logo + nav (Home, Companies) + locale switcher.

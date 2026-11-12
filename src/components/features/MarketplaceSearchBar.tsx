@@ -95,7 +95,7 @@ function MarketplaceSearchForm({
     <form
       onSubmit={handleSubmit}
       className={cn(
-        "marketplace-search-card min-w-0 w-full rounded-2xl p-2 md:p-2.5",
+        "min-w-0 w-full rounded-[2rem] border border-border bg-surface p-3 shadow-xl md:p-2.5 md:pl-3",
         className,
       )}
     >
@@ -136,11 +136,11 @@ function MarketplaceSearchForm({
           <Button
             type="submit"
             size="lg"
-            className="min-h-11 h-11 w-full shrink-0 rounded-xl md:min-w-28 md:w-auto"
+            className="h-12 w-full shrink-0 rounded-full px-6 text-base font-semibold md:ml-1 md:h-16 md:w-16 md:px-0"
             aria-describedby={dateHint ? hintId : undefined}
           >
-            <Search size={16} aria-hidden />
-            {t("submit")}
+            <Search size={20} aria-hidden />
+            <span className="md:sr-only">{t("submit")}</span>
           </Button>
         </div>
       </div>
@@ -187,7 +187,7 @@ export function MarketplaceSearchBarFallback({
   return (
     <div
       className={cn(
-        "marketplace-search-card min-w-0 w-full rounded-2xl p-2 md:p-2.5",
+        "min-w-0 w-full rounded-[2rem] border border-border bg-surface p-3 shadow-xl md:p-2.5 md:pl-3",
         className,
       )}
     >
@@ -199,7 +199,7 @@ export function MarketplaceSearchBarFallback({
             <Skeleton className="h-11 w-full md:flex-1" />
           </>
         ) : null}
-        <Skeleton className="h-11 w-full md:w-28" />
+        <Skeleton className="h-12 w-full rounded-full md:h-16 md:w-16" />
       </div>
     </div>
   );

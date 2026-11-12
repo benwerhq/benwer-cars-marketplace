@@ -17,7 +17,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { SiteIncludedIcon, SiteSectionId } from "@/enums";
 import { localizedText } from "@/lib/localizedCopy";
 import type { SiteIncludedItem } from "@/types/siteContent";
-import { SiteSectionHeading } from "./SiteSectionHeading";
+import { SiteSectionHeading, type SiteSectionHeadingCopy } from "./SiteSectionHeading";
 
 export const INCLUDED_ICONS: Record<SiteIncludedIcon, LucideIcon> = {
   [SiteIncludedIcon.SHIELD]: ShieldCheck,
@@ -47,7 +47,13 @@ export function useIncludedCopy() {
   };
 }
 
-export function SiteIncludedSection({ items }: { items: SiteIncludedItem[] }) {
+export function SiteIncludedSection({
+  items,
+  heading,
+}: {
+  items: SiteIncludedItem[];
+  heading?: SiteSectionHeadingCopy;
+}) {
   const t = useTranslations("siteSections.included");
   const copyFor = useIncludedCopy();
   const headingId = `${SiteSectionId.INCLUDED}-heading`;
@@ -60,9 +66,9 @@ export function SiteIncludedSection({ items }: { items: SiteIncludedItem[] }) {
     >
       <SiteSectionHeading
         id={headingId}
-        eyebrow={t("eyebrow")}
-        title={t("title")}
-        description={t("description")}
+        eyebrow={heading?.eyebrow ?? t("eyebrow")}
+        title={heading?.title ?? t("title")}
+        description={heading ? heading.description : t("description")}
       />
       <ul className="grid gap-4 sm:grid-cols-2">
         {items.map((item) => {

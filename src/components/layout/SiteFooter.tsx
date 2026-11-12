@@ -22,9 +22,9 @@ interface SiteFooterProps {
   payments?: SitePaymentMethod[];
 }
 
-const linkClass =
+export const siteFooterLinkClass =
   "w-fit text-sm text-foreground hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
-const headingClass =
+export const siteFooterHeadingClass =
   "text-xs font-semibold tracking-wide text-muted-foreground uppercase";
 
 export async function SiteFooter({
@@ -55,49 +55,49 @@ export async function SiteFooter({
             </p>
           </div>
           <nav aria-label={tFooter("explore")} className="flex flex-col gap-2">
-            <p className={headingClass}>{tFooter("explore")}</p>
-            <Link href={`${home}#fleet`} className={linkClass}>
+            <p className={siteFooterHeadingClass}>{tFooter("explore")}</p>
+            <Link href={`${home}#fleet`} className={siteFooterLinkClass}>
               {tNav("cars")}
             </Link>
             {sections.map((id) => (
-              <Link key={id} href={`${home}#${id}`} className={linkClass}>
+              <Link key={id} href={`${home}#${id}`} className={siteFooterLinkClass}>
                 {tSections(`nav.${id}`)}
               </Link>
             ))}
-            <SiteFooterAccountLink homeHref={homeHref} className={linkClass} />
+            <SiteFooterAccountLink homeHref={homeHref} className={siteFooterLinkClass} />
           </nav>
           {hasContact && contact ? (
             <div className="flex flex-col gap-2">
-              <p className={headingClass}>{tSections("footer.contact")}</p>
+              <p className={siteFooterHeadingClass}>{tSections("footer.contact")}</p>
               {contact.phone ? (
-                <a href={`tel:${contact.phone}`} className={linkClass}>
+                <a href={`tel:${contact.phone}`} className={siteFooterLinkClass}>
                   {contact.phone}
                 </a>
               ) : null}
               {whatsapp ? (
-                <a href={whatsapp} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                <a href={whatsapp} target="_blank" rel="noopener noreferrer" className={siteFooterLinkClass}>
                   {tSections("footer.whatsapp")}
                 </a>
               ) : null}
               {contact.email ? (
-                <a href={`mailto:${contact.email}`} className={linkClass}>
+                <a href={`mailto:${contact.email}`} className={siteFooterLinkClass}>
                   {contact.email}
                 </a>
               ) : null}
             </div>
           ) : null}
           <nav aria-label={tFooter("legal")} className="flex flex-col gap-2">
-            <p className={headingClass}>{tFooter("legal")}</p>
-            <Link href={siteChildFromHome(homeHref, "/privacy")} className={linkClass}>
+            <p className={siteFooterHeadingClass}>{tFooter("legal")}</p>
+            <Link href={siteChildFromHome(homeHref, "/privacy")} className={siteFooterLinkClass}>
               {tNav("privacy")}
             </Link>
-            <Link href={siteChildFromHome(homeHref, "/terms")} className={linkClass}>
+            <Link href={siteChildFromHome(homeHref, "/terms")} className={siteFooterLinkClass}>
               {tNav("terms")}
             </Link>
-            <Link href={NavRoutes.COOKIES} className={linkClass}>
+            <Link href={NavRoutes.COOKIES} className={siteFooterLinkClass}>
               {tNav("cookies")}
             </Link>
-            <CookieSettingsLink className={`${linkClass} cursor-pointer text-left`} />
+            <CookieSettingsLink className={`${siteFooterLinkClass} cursor-pointer text-left`} />
           </nav>
         </div>
         {payments.length > 0 ? (

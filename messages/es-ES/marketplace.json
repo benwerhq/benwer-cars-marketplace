@@ -1,5 +1,6 @@
 {
   "home": {
+    "companiesEyebrow": "Empresas",
     "title": "Encuentra tu coche perfecto",
     "subtitle": "Compara coches de empresas de alquiler asociadas y continúa en la web de la empresa.",
     "searchPlaceholder": "¿A dónde vas?",
@@ -12,6 +13,7 @@
     "viewAllCompanies": "Ver todas las empresas"
   },
   "featuredCars": {
+    "eyebrow": "Coches",
     "title": "Coches populares",
     "subtitle": "Anuncios en vivo de flotas asociadas: los mismos coches que las empresas gestionan en administración.",
     "viewAll": "Buscar todos los coches",
@@ -36,6 +38,7 @@
     }
   },
   "faq": {
+    "eyebrow": "Preguntas frecuentes",
     "title": "Antes de reservar",
     "subtitle": "Flotas asociadas, cómo funciona la reserva y qué hace Benwer — y qué no.",
     "items": {
@@ -105,6 +108,7 @@
     "logoAlt": "Logotipo de {name}"
   },
   "howItWorks": {
+    "eyebrow": "Tres pasos",
     "title": "Cómo funciona",
     "subtitle": "Busca coches de empresas de alquiler asociadas en la provincia de Málaga, compara flotas públicas y termina el alquiler con la empresa — sin cuenta en Benwer.",
     "stepLabel": "Paso {number}",
@@ -165,6 +169,7 @@
   },
   "cars": {
     "title": "Coches disponibles",
+    "subtitle": "Todos los coches públicos de las empresas de alquiler asociadas en la provincia de Málaga. Elige tus fechas para ver qué está libre.",
     "searchEmptyTitle": "Ningún coche coincide con esta búsqueda",
     "searchEmptyHint": "Prueba otras fechas u otra ubicación en la provincia de Málaga. Todas las ciudades siguen en la lista, aunque hoy no haya flota.",
     "companiesSelected": "{count, plural, one {# empresa seleccionada} other {# empresas seleccionadas}}",

@@ -5,9 +5,15 @@ import { useLocale, useTranslations } from "next-intl";
 import { SiteSectionId } from "@/enums";
 import { localizedText } from "@/lib/localizedCopy";
 import type { SiteFaqItem } from "@/types/siteContent";
-import { SiteSectionHeading } from "./SiteSectionHeading";
+import { SiteSectionHeading, type SiteSectionHeadingCopy } from "./SiteSectionHeading";
 
-export function SiteFaqSection({ items }: { items: SiteFaqItem[] }) {
+export function SiteFaqSection({
+  items,
+  heading,
+}: {
+  items: SiteFaqItem[];
+  heading?: SiteSectionHeadingCopy;
+}) {
   const t = useTranslations("siteSections.faq");
   const locale = useLocale();
   const headingId = `${SiteSectionId.FAQ}-heading`;
@@ -20,9 +26,9 @@ export function SiteFaqSection({ items }: { items: SiteFaqItem[] }) {
     >
       <SiteSectionHeading
         id={headingId}
-        eyebrow={t("eyebrow")}
-        title={t("title")}
-        description={t("description")}
+        eyebrow={heading?.eyebrow ?? t("eyebrow")}
+        title={heading?.title ?? t("title")}
+        description={heading ? heading.description : t("description")}
       />
       <div className="divide-y divide-border border-y border-border">
         {items.map((item, index) => (
