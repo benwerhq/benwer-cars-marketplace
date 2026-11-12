@@ -1235,5 +1235,21 @@
     "viewBooking": "Ver reserva",
     "partial": "Algunos coches no se han podido reservar. Siguen en tu carrito.",
     "allBooked": "Todo listo. Las confirmaciones van de camino a tu email."
+  },
+  "themePreview": {
+    "title": "Color del tema",
+    "hint": "Solo vista previa: se guarda en este navegador.",
+    "open": "Cambiar color del tema",
+    "reset": "Restablecer",
+    "admin": "Cian (admin web)",
+    "teal": "Verde azulado (actual)",
+    "ocean": "Azul océano",
+    "indigo": "Índigo",
+    "violet": "Violeta",
+    "emerald": "Esmeralda",
+    "forest": "Verde Benwer",
+    "sunset": "Naranja atardecer",
+    "rose": "Rosa",
+    "ink": "Tinta"
   }
 }

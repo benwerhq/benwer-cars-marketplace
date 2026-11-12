@@ -1235,5 +1235,21 @@
     "viewBooking": "View booking",
     "partial": "Some cars could not be booked. They stay in your cart.",
     "allBooked": "All set. Confirmations are on their way to your email."
+  },
+  "themePreview": {
+    "title": "Theme colour",
+    "hint": "Preview only — saved in this browser.",
+    "open": "Change theme colour",
+    "reset": "Reset",
+    "admin": "Admin cyan (admin web)",
+    "teal": "Teal (current)",
+    "ocean": "Ocean blue",
+    "indigo": "Indigo",
+    "violet": "Violet",
+    "emerald": "Emerald",
+    "forest": "Benwer green",
+    "sunset": "Sunset orange",
+    "rose": "Rose",
+    "ink": "Ink"
   }
 }
