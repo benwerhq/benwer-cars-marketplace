@@ -63,17 +63,6 @@ export function BannerSlideContent({
     <>
       {images ? (
         <>
-          <div className="relative mx-auto aspect-square w-full max-w-sm md:hidden">
-            <Image
-              src={images.mobile}
-              alt=""
-              fill
-              priority={priority}
-              unoptimized
-              sizes="100vw"
-              className="object-contain object-center"
-            />
-          </div>
           <div className="absolute inset-y-[4%] right-[2%] hidden w-[60%] md:block">
             <Image
               src={images.desktop}
@@ -87,7 +76,7 @@ export function BannerSlideContent({
           </div>
         </>
       ) : null}
-      <div className="relative flex flex-col items-start px-5 pt-4 pb-14 text-(--banner-text) md:absolute md:inset-y-0 md:left-0 md:justify-center md:p-0 md:pl-[3.4cqw]">
+      <div className="relative flex flex-col items-center px-5 pt-8 pb-14 text-center text-(--banner-text) md:absolute md:inset-y-0 md:left-0 md:items-start md:justify-center md:p-0 md:pl-[3.4cqw] md:text-left">
         {script ? (
           <p className="font-promo-script -rotate-3 text-4xl leading-none text-(--banner-text) md:text-[3cqw]">
             {script}

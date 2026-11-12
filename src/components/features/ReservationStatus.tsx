@@ -13,7 +13,7 @@ import { ApiError, getErrorKey } from "@/lib/errors";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { ErrorState } from "@/components/ui/ErrorState";
 import { Skeleton } from "@/components/ui/Skeleton";
-import { BookingVehiclePreview } from "./BookingVehiclePreview";
+import { ReservationVehicle } from "./ReservationVehicle";
 import { GuestCancellationPanel } from "./GuestCancellationPanel";
 import { PriceBreakdownList } from "./PriceBreakdownList";
 import {
@@ -156,13 +156,12 @@ export function ReservationStatus({
           <StatusBadge status={data.status} label={t(`status.${statusKey}`)} />
         </div>
 
-        {data.vehicle ? (
-          <BookingVehiclePreview
-            vehicle={data.vehicle}
-            companyName={companyName}
-            size="md"
-          />
-        ) : null}
+        <ReservationVehicle
+          companySlug={data.companySlug}
+          vehicleId={data.vehicleId}
+          fallback={data.vehicle ?? null}
+          companyName={companyName}
+        />
 
         <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <StatusRow

@@ -24,7 +24,7 @@ function BannerCopy({ banner, active }: { banner: MarketplaceBanner; active: boo
   } as CSSProperties;
 
   return (
-    <div style={sizes} className="flex flex-col items-start text-promo-foreground">
+    <div style={sizes} className="flex flex-col items-center text-center text-promo-foreground md:items-start md:text-left">
       <p className="font-promo-script -rotate-3 text-3xl leading-none md:text-(length:--banner-script)">
         {t("script")}
       </p>
@@ -87,7 +87,7 @@ export function MarketplaceBannerCarousel({ children }: MarketplaceBannerCarouse
                 isActive ? "relative opacity-100" : "pointer-events-none absolute inset-0 opacity-0",
               )}
             >
-              <div className="relative aspect-[16/9] w-full md:absolute md:inset-0 md:aspect-auto">
+              <div className="relative hidden md:absolute md:inset-0 md:block">
                 <Image
                   src={banner.imageSrc}
                   alt=""
@@ -97,7 +97,7 @@ export function MarketplaceBannerCarousel({ children }: MarketplaceBannerCarouse
                   className="object-cover object-[62%_50%] md:object-center"
                 />
               </div>
-              <div className="relative px-5 pt-5 pb-14 md:absolute md:inset-y-0 md:left-0 md:flex md:items-center md:p-0 md:pl-[3.4cqw]">
+              <div className="relative px-5 pt-8 pb-14 md:absolute md:inset-y-0 md:left-0 md:flex md:items-center md:p-0 md:pl-[3.4cqw]">
                 <BannerCopy banner={banner} active={isActive} />
               </div>
             </div>
