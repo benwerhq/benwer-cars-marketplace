@@ -125,7 +125,7 @@ export function SiteSearchForm({
     return (
       <form
         onSubmit={onSubmit}
-        className="flex flex-col rounded-[2rem] border border-border bg-surface shadow-xl"
+        className="flex flex-col rounded-4xl border border-border bg-surface shadow-xl"
         aria-label={t("searchAria")}
       >
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-border px-5 py-2.5 md:px-6">

@@ -1,6 +1,7 @@
 "use client";
 
 import type { SiteCornerStyle } from "@/enums";
+import { useDocumentCorners } from "@/hooks/useDocumentCorners";
 import { createContext, useContext, useState, type CSSProperties, type ReactNode } from "react";
 
 interface SiteDraftLogo {
@@ -16,6 +17,7 @@ export function SiteDraftLogoProvider({ children }: { children: ReactNode }) {
   const [headerLogo, setHeaderLogo] = useState<string | null | undefined>(undefined);
   const [themeStyle, setThemeStyle] = useState<CSSProperties | undefined>(undefined);
   const [cornerStyle, setCornerStyle] = useState<SiteCornerStyle | undefined>(undefined);
+  useDocumentCorners(cornerStyle);
   return (
     <SiteDraftLogoContext.Provider value={{ headerLogo, setHeaderLogo, setThemeStyle, setCornerStyle }}>
       <div style={themeStyle} data-corners={cornerStyle} className="contents">

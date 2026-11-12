@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { GuestAuthProvider } from "@/context/GuestAuthProvider";
 import { OwnerEditorViewProvider } from "@/context/OwnerEditorViewProvider";
 import { StaffAuthProvider } from "@/context/StaffAuthProvider";
+import { DocumentCorners } from "@/components/layout/DocumentCorners";
 import { GuestVerifyBanner } from "@/components/layout/GuestVerifyBanner";
 import { SitePreviewBanner } from "@/components/layout/SitePreviewBanner";
 import {
@@ -56,6 +57,7 @@ async function SiteLayout({ children, params }: Props) {
             data-corners={corners}
             className="flex min-h-dvh flex-col bg-background"
           >
+            <DocumentCorners corners={corners} />
             <GuestVerifyBanner
               profileHref={guestLinks.profile}
               bookingsHref={guestLinks.bookings}
