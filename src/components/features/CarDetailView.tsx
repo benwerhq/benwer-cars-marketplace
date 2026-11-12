@@ -17,6 +17,7 @@ import {
 } from "@/lib/availability";
 import { vehicleImageUrls } from "@/lib/vehicleImage";
 import { setHrefParams } from "@/lib/booking";
+import type { CarCartContext } from "./BookingWidget";
 import { SearchParams, type PublicChannel } from "@/enums";
 import type { Vehicle } from "@/types/vehicle";
 
@@ -46,6 +47,7 @@ interface CarDetailViewProps {
   bookHrefOverride?: string | null;
   requestMode?: boolean;
   channel?: PublicChannel;
+  cart?: CarCartContext | null;
 }
 
 export function CarDetailView({
@@ -62,6 +64,7 @@ export function CarDetailView({
   bookHrefOverride,
   requestMode = false,
   channel,
+  cart = null,
 }: CarDetailViewProps) {
   const t = useTranslations("carDetail");
   const calendarWindow = availabilityCalendarWindow();
@@ -197,6 +200,7 @@ export function CarDetailView({
           bookingsEnabled={bookingsEnabled}
           bookHrefOverride={bookHref}
           requestMode={requestMode}
+          cart={cart}
         />
       </div>
     </div>

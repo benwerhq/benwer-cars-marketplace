@@ -58,6 +58,7 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
         companyName={companyName}
         logoUrl={logoUrl}
         homeHref={homeHref}
+        cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-12 md:px-6">

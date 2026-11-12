@@ -149,6 +149,7 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
         companyName={site.company.name}
         logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
         homeHref={homeHref}
+        cartSlug={slug}
         fleetHref={fleetHref}
         sections={headerSections}
         phone={phone}

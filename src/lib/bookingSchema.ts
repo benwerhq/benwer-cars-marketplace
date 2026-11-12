@@ -56,3 +56,30 @@ export function createBookingSchema(
 }
 
 export type BookingFormValues = z.infer<ReturnType<typeof createBookingSchema>>;
+
+/** Driver details asked once at cart checkout (website channel rules). */
+export function createGuestDetailsSchema(
+  messages: Pick<BookingSchemaMessages, "nameMin" | "nameMax" | "email" | "phone" | "terms">,
+) {
+  return z
+    .object({
+      guestName: z
+        .string()
+        .trim()
+        .min(1, messages.nameMin)
+        .max(120, messages.nameMax ?? messages.nameMin),
+      guestEmail: z.email(messages.email),
+      guestPhone: z
+        .string()
+        .trim()
+        .transform((value) => value.replace(/[\s()-]/g, ""))
+        .pipe(z.string().regex(E164_PATTERN, messages.phone)),
+      acceptTerms: z.boolean(),
+    })
+    .refine((data) => !messages.terms || data.acceptTerms, {
+      message: messages.terms,
+      path: ["acceptTerms"],
+    });
+}
+
+export type GuestDetailsValues = z.infer<ReturnType<typeof createGuestDetailsSchema>>;

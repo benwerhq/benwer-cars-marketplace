@@ -26,6 +26,7 @@ export async function SiteGuestShell({
         companyName={site.company.name}
         logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
         homeHref={homeHref}
+        cartSlug={site.slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-12 md:px-6">

@@ -106,6 +106,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           companyName={site.company.name}
           logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
           homeHref={homeHref}
+          cartSlug={slug}
           fleetHref={`${homeHref}#fleet`}
         />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
@@ -128,6 +129,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           companyName={site.company.name}
           logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
           homeHref={homeHref}
+          cartSlug={slug}
           fleetHref={`${homeHref}#fleet`}
         />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
@@ -148,6 +150,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           companyName={site.company.name}
           logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
           homeHref={homeHref}
+          cartSlug={slug}
           fleetHref={`${homeHref}#fleet`}
         />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
@@ -187,6 +190,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
         companyName={site.company.name}
         logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
         homeHref={homeHref}
+        cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 pb-28 md:px-6 lg:px-8 lg:pb-16">
