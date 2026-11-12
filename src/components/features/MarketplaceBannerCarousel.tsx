@@ -2,14 +2,13 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { MARKETPLACE_BANNERS, type MarketplaceBanner } from "@/data/marketplaceBanners";
 import { useCarousel } from "@/hooks/useCarousel";
 import { cn } from "@/lib/utils";
 
-function BannerCopy({ banner, active }: { banner: MarketplaceBanner; active: boolean }) {
+function BannerCopy({ banner }: { banner: MarketplaceBanner }) {
   const t = useTranslations(`marketplaceBanners.${banner.id}`);
   const { layout } = banner;
   const sizes = {
@@ -20,7 +19,6 @@ function BannerCopy({ banner, active }: { banner: MarketplaceBanner; active: boo
     "--banner-indent": `${layout.boxedIndent}cqw`,
     "--banner-description": `${layout.description}cqw`,
     "--banner-description-width": `${layout.descriptionWidth}cqw`,
-    "--banner-cta": `${layout.cta}cqw`,
   } as CSSProperties;
 
   return (
@@ -42,13 +40,6 @@ function BannerCopy({ banner, active }: { banner: MarketplaceBanner; active: boo
       <p className="mt-4 max-w-xs text-sm leading-snug md:mt-[1.1cqw] md:max-w-(--banner-description-width) md:text-(length:--banner-description)">
         {t("description")}
       </p>
-      <Link
-        href={banner.href}
-        tabIndex={active ? 0 : -1}
-        className="mt-4 inline-flex cursor-pointer items-center rounded-sm bg-promo-paper px-4 py-2 text-sm font-medium text-promo-ink transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-promo-accent focus-visible:ring-offset-2 focus-visible:ring-offset-promo md:mt-[1cqw] md:px-[1cqw] md:py-[0.55cqw] md:text-(length:--banner-cta)"
-      >
-        {t("cta")}
-      </Link>
     </div>
   );
 }
@@ -98,7 +89,7 @@ export function MarketplaceBannerCarousel({ children }: MarketplaceBannerCarouse
                 />
               </div>
               <div className="relative px-5 pt-8 pb-14 md:absolute md:inset-y-0 md:left-0 md:flex md:items-center md:p-0 md:pl-[3.4cqw]">
-                <BannerCopy banner={banner} active={isActive} />
+                <BannerCopy banner={banner} />
               </div>
             </div>
           );

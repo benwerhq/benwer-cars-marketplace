@@ -1172,24 +1172,21 @@
       "highlight": "Empresas verificadas",
       "joiner": "e",
       "boxed": "Reserva segura",
-      "description": "Avaliações reais, condições claras e contratos digitais que assina no telemóvel",
-      "cta": "Encontrar empresa"
+      "description": "Avaliações reais, condições claras e contratos digitais que assina no telemóvel"
     },
     "prices": {
       "script": "uma só pesquisa",
       "highlight": "Compare preços",
       "joiner": "de",
       "boxed": "Dezenas de empresas",
-      "description": "Veja preços, seguros e cauções reais lado a lado antes de reservar",
-      "cta": "Reservar um carro"
+      "description": "Veja preços, seguros e cauções reais lado a lado antes de reservar"
     },
     "anywhere": {
       "script": "encontre o seu carro",
       "highlight": "Onde quer que vá",
       "joiner": "escolha entre",
       "boxed": "Empresas locais",
-      "description": "Empresas de aluguer de confiança em cidades de Espanha e não só, num só lugar",
-      "cta": "Ver carros"
+      "description": "Empresas de aluguer de confiança em cidades de Espanha e não só, num só lugar"
     }
   },
   "siteLegal": {

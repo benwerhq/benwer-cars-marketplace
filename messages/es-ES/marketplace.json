@@ -1187,24 +1187,21 @@
       "highlight": "Empresas verificadas",
       "joiner": "y",
       "boxed": "Reserva segura",
-      "description": "Opiniones reales, condiciones claras y contratos digitales que firmas desde el móvil",
-      "cta": "Buscar empresa"
+      "description": "Opiniones reales, condiciones claras y contratos digitales que firmas desde el móvil"
     },
     "prices": {
       "script": "una sola búsqueda",
       "highlight": "Compara precios",
       "joiner": "de",
       "boxed": "Decenas de empresas",
-      "description": "Mira precios, seguros y fianzas reales lado a lado antes de reservar",
-      "cta": "Reservar un coche"
+      "description": "Mira precios, seguros y fianzas reales lado a lado antes de reservar"
     },
     "anywhere": {
       "script": "encuentra tu coche",
       "highlight": "Vayas donde vayas",
       "joiner": "elige entre",
       "boxed": "Empresas locales",
-      "description": "Empresas de alquiler de confianza en ciudades de toda España y más allá, en un solo lugar",
-      "cta": "Ver coches"
+      "description": "Empresas de alquiler de confianza en ciudades de toda España y más allá, en un solo lugar"
     }
   },
   "siteLegal": {
