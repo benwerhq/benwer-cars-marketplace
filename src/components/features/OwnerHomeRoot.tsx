@@ -129,6 +129,8 @@ export function OwnerHomeRoot({
   const setThemeStyle = draftLogo?.setThemeStyle;
   const brand = canEdit ? brandColor : null;
   const font = canEdit ? liveSite.content.fontFamily : null;
+  const setCornerStyle = draftLogo?.setCornerStyle;
+  const corners = canEdit ? liveSite.content.cornerStyle : undefined;
   useEffect(() => {
     setHeaderLogo?.(headerLogo);
   }, [setHeaderLogo, headerLogo]);
@@ -142,6 +144,9 @@ export function OwnerHomeRoot({
         : undefined,
     );
   }, [setThemeStyle, brand, font]);
+  useEffect(() => {
+    setCornerStyle?.(corners);
+  }, [setCornerStyle, corners]);
   const mutationError = save.error ?? publish.error ?? pause.error;
   const errorMessage = mutationError ? tRoot(getErrorKey(mutationError)) : null;
   const saveDraft = () => {
@@ -165,6 +170,7 @@ export function OwnerHomeRoot({
   return (
     <div
       style={style}
+      data-corners={liveSite.content.cornerStyle}
       className={cn(
         "bg-background",
         showEditor && showPreview && "lg:grid lg:grid-cols-[minmax(0,1fr)_34rem]",

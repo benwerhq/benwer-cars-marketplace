@@ -1079,6 +1079,18 @@
           "name": "Poppins",
           "hint": "Marcante e acolhedor"
         }
+      },
+      "cornersTitle": "Cantos",
+      "cornersDescription": "Cantos arredondados ou retos em botões, cartões e campos de todo o seu site.",
+      "corners": {
+        "round": {
+          "name": "Arredondados",
+          "hint": "Suaves e acolhedores"
+        },
+        "square": {
+          "name": "Retos",
+          "hint": "Nítidos e minimalistas"
+        }
       }
     },
     "settings": {

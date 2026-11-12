@@ -1,6 +1,7 @@
 import {
   SiteBannerPreset,
   SiteBannerTarget,
+  SiteCornerStyle,
   SiteFontFamily,
   SiteIncludedIcon,
   SiteIncludedPreset,
@@ -20,6 +21,10 @@ import type {
   SiteReviewsContent,
   SiteSectionConfig,
 } from "@/types/siteContent";
+
+const SQUARE_CORNER_RADIUS = "none";
+const DEFAULT_CORNER_RADIUS = "md";
+const ROUND_CORNER_RADII = ["sm", "md", "lg"] as const;
 
 export const SITE_SECTION_ORDER: SiteSectionId[] = [
   SiteSectionId.HERO,
@@ -389,6 +394,8 @@ export function parseSiteContent(appearanceRaw: unknown, reviewsRaw: unknown): S
     },
     brandColor: readColor(theme.primaryColor, ""),
     fontFamily: enumValue(Object.values(SiteFontFamily), theme.fontFamily) ?? SiteFontFamily.SANS,
+    cornerStyle:
+      theme.cornerRadius === SQUARE_CORNER_RADIUS ? SiteCornerStyle.SQUARE : SiteCornerStyle.ROUND,
     allowDifferentReturn: raw.allowDifferentReturn === true,
     logos: parseLogos(raw.logos),
     pageBackground: readColor(raw.pageBackground, DEFAULT_PAGE_BACKGROUND),
@@ -405,6 +412,12 @@ function nullable(value: string): string | null {
 function whatsappNumber(value: string): string | null {
   const digits = value.replace(/[^\d+]/g, "");
   return /^\+?\d{8,15}$/.test(digits) ? digits : null;
+}
+
+function serializeCornerRadius(style: SiteCornerStyle, current: unknown): string {
+  if (style === SiteCornerStyle.SQUARE) return SQUARE_CORNER_RADIUS;
+  const radius = enumValue(ROUND_CORNER_RADII, current);
+  return radius ?? DEFAULT_CORNER_RADIUS;
 }
 
 export function serializeAppearance(content: SiteContent): Record<string, unknown> {
@@ -427,7 +440,7 @@ export function serializeAppearance(content: SiteContent): Record<string, unknow
       primaryColor: brand,
       accentColor: brand,
       fontFamily: content.fontFamily,
-      cornerRadius: enumValue(["none", "sm", "md", "lg"], theme.cornerRadius) ?? "md",
+      cornerRadius: serializeCornerRadius(content.cornerStyle, theme.cornerRadius),
     },
     sections: content.sections.map((section, order) => {
       const existing = rawSections.find((row) => row.id === section.id);

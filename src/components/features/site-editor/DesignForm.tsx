@@ -3,7 +3,7 @@
 import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Input } from "@/components/ui/Input";
-import { SiteFontFamily } from "@/enums";
+import { SiteCornerStyle, SiteFontFamily } from "@/enums";
 import {
   contrastWithWhite,
   isHexColor,
@@ -49,6 +49,8 @@ export function DesignForm({
     onChange({ ...draft, content: withBrandColor(draft.content, brandColor) });
   const setFont = (fontFamily: SiteFontFamily) =>
     onChange({ ...draft, content: { ...draft.content, fontFamily } });
+  const setCorners = (cornerStyle: SiteCornerStyle) =>
+    onChange({ ...draft, content: { ...draft.content, cornerStyle } });
 
   return (
     <>
@@ -142,6 +144,56 @@ export function DesignForm({
                   </span>
                   <span className="text-xs text-muted-foreground">
                     {t(`fonts.${font}.hint`)}
+                  </span>
+                </span>
+                {selected ? (
+                  <Check size={16} className="text-primary" aria-hidden />
+                ) : null}
+              </button>
+            );
+          })}
+        </div>
+      </EditorGroup>
+      <EditorGroup
+        title={t("cornersTitle")}
+        description={t("cornersDescription")}
+      >
+        <div
+          className="grid grid-cols-2 gap-2"
+          role="radiogroup"
+          aria-label={t("cornersTitle")}
+        >
+          {Object.values(SiteCornerStyle).map((corners) => {
+            const selected = draft.content.cornerStyle === corners;
+            return (
+              <button
+                key={corners}
+                type="button"
+                role="radio"
+                aria-checked={selected}
+                onClick={() => setCorners(corners)}
+                className={cn(
+                  "flex cursor-pointer items-center gap-3 rounded-lg border px-3 py-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  selected
+                    ? "border-primary bg-primary/5"
+                    : "border-border hover:bg-surface-hover",
+                )}
+              >
+                <span
+                  aria-hidden
+                  className={cn(
+                    "h-7 w-10 shrink-0 border-2 border-foreground/70 bg-surface",
+                    corners === SiteCornerStyle.ROUND
+                      ? "rounded-lg"
+                      : "rounded-none",
+                  )}
+                />
+                <span className="flex min-w-0 flex-1 flex-col">
+                  <span className="text-sm font-semibold text-foreground">
+                    {t(`corners.${corners}.name`)}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {t(`corners.${corners}.hint`)}
                   </span>
                 </span>
                 {selected ? (

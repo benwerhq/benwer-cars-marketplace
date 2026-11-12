@@ -13,7 +13,7 @@ import {
 } from "@/lib/site";
 import { DEFAULT_PAGE_BACKGROUND, siteFontStack } from "@/lib/siteContent";
 import { siteBrandColor } from "@/lib/websiteDraft";
-import { SiteFontFamily } from "@/enums";
+import { SiteCornerStyle, SiteFontFamily } from "@/enums";
 import { sitesApi } from "@/services/api";
 
 interface Props {
@@ -30,11 +30,13 @@ async function SiteLayout({ children, params }: Props) {
   let brandColor: string | null = null;
   let background = DEFAULT_PAGE_BACKGROUND;
   let font = SiteFontFamily.SANS;
+  let corners = SiteCornerStyle.ROUND;
   try {
     const site = await sitesApi.getBySlug(slug);
     brandColor = siteBrandColor(site) || null;
     background = site.content.pageBackground;
     font = site.content.fontFamily;
+    corners = site.content.cornerStyle;
   } catch {
     brandColor = null;
   }
@@ -49,7 +51,11 @@ async function SiteLayout({ children, params }: Props) {
     <GuestAuthProvider>
       <StaffAuthProvider>
         <OwnerEditorViewProvider>
-          <div style={style} className="flex min-h-dvh flex-col bg-background">
+          <div
+            style={style}
+            data-corners={corners}
+            className="flex min-h-dvh flex-col bg-background"
+          >
             <GuestVerifyBanner
               profileHref={guestLinks.profile}
               bookingsHref={guestLinks.bookings}

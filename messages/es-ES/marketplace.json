@@ -1094,6 +1094,18 @@
           "name": "Poppins",
           "hint": "Llamativa y cercana"
         }
+      },
+      "cornersTitle": "Esquinas",
+      "cornersDescription": "Esquinas redondeadas o rectas en botones, tarjetas y campos de toda tu web.",
+      "corners": {
+        "round": {
+          "name": "Redondeadas",
+          "hint": "Suaves y cercanas"
+        },
+        "square": {
+          "name": "Rectas",
+          "hint": "Nítidas y minimalistas"
+        }
       }
     },
     "settings": {
