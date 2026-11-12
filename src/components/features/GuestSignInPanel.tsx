@@ -91,7 +91,7 @@ export function GuestSignInPanel() {
 
   if (mode === "reset" && resetSentTo) {
     return (
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 mx-auto w-full max-w-md rounded-3xl border border-border bg-surface p-6 shadow-sm md:p-8">
         <div>
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">
             {t("resetSentTitle")}
@@ -113,7 +113,7 @@ export function GuestSignInPanel() {
   const action = mode === "reset" ? t("resetAction") : mode === "up" ? t("createAction") : t("signInAction");
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-4">
+    <form onSubmit={onSubmit} className="flex flex-col gap-4 mx-auto w-full max-w-md rounded-3xl border border-border bg-surface p-6 shadow-sm md:p-8">
       <div>
         <h1 className="text-3xl font-semibold tracking-tight text-foreground">{title}</h1>
         <p className="mt-2 text-sm text-muted-foreground">{hint}</p>
