@@ -1,9 +1,16 @@
 import type { CSSProperties, ReactNode } from "react";
 import { Suspense } from "react";
+import { headers } from "next/headers";
 import { GuestAuthProvider } from "@/context/GuestAuthProvider";
 import { OwnerEditorViewProvider } from "@/context/OwnerEditorViewProvider";
 import { StaffAuthProvider } from "@/context/StaffAuthProvider";
+import { GuestVerifyBanner } from "@/components/layout/GuestVerifyBanner";
 import { SitePreviewBanner } from "@/components/layout/SitePreviewBanner";
+import {
+  guestLinksFromHomeHref,
+  isTenantHostRequest,
+  publicSiteHomeHref,
+} from "@/lib/site";
 import { DEFAULT_PAGE_BACKGROUND, siteFontStack } from "@/lib/siteContent";
 import { siteBrandColor } from "@/lib/websiteDraft";
 import { SiteFontFamily } from "@/enums";
@@ -16,6 +23,10 @@ interface Props {
 
 async function SiteLayout({ children, params }: Props) {
   const { slug } = await params;
+  const onTenantHost = isTenantHostRequest(await headers());
+  const guestLinks = guestLinksFromHomeHref(
+    publicSiteHomeHref(slug, onTenantHost),
+  );
   let brandColor: string | null = null;
   let background = DEFAULT_PAGE_BACKGROUND;
   let font = SiteFontFamily.SANS;
@@ -39,6 +50,10 @@ async function SiteLayout({ children, params }: Props) {
       <StaffAuthProvider>
         <OwnerEditorViewProvider>
           <div style={style} className="flex min-h-dvh flex-col bg-background">
+            <GuestVerifyBanner
+              profileHref={guestLinks.profile}
+              bookingsHref={guestLinks.bookings}
+            />
             <Suspense fallback={null}>
               <SitePreviewBanner />
             </Suspense>

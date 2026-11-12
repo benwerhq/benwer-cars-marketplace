@@ -1,6 +1,6 @@
 "use client";
 
-import { MailCheck } from "lucide-react";
+import { LogOut, MailCheck } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
@@ -18,7 +18,7 @@ export function GuestVerifyEmailNotice({
   const t = useTranslations("guest");
   const tRoot = useTranslations();
   const locale = useLocale();
-  const { user, emailVerified } = useGuestAuth();
+  const { user, emailVerified, signOut } = useGuestAuth();
   const send = useSendGuestVerification();
   const refresh = useRefreshGuestVerification(companySlug);
 
@@ -60,6 +60,10 @@ export function GuestVerifyEmailNotice({
             onClick={() => send.mutate(locale)}
           >
             {t("verifyResend")}
+          </Button>
+          <Button type="button" variant="ghost" onClick={() => void signOut()}>
+            <LogOut size={16} aria-hidden />
+            {t("signOut")}
           </Button>
         </div>
         {send.isSuccess ? (

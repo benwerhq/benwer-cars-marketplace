@@ -749,7 +749,9 @@
     "verifyResend": "Resend email",
     "verifySent": "Email sent. Check your inbox and spam folder.",
     "verifyDone": "I've verified my email",
-    "verifyStillPending": "Your email isn't verified yet. Open the link in the email, then try again."
+    "verifyStillPending": "Your email isn't verified yet. Open the link in the email, then try again.",
+    "verifyBanner": "Your account isn't active yet. Verify {email} to see your bookings and use your saved details.",
+    "verifyBannerAction": "Verify email"
   },
   "siteSections": {
     "banners": {

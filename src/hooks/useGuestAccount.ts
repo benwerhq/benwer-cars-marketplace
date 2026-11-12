@@ -11,12 +11,13 @@ import { guestApi } from "@/services/api/guest";
 import type { GuestLinkPayload } from "@/types/guest";
 
 export function useGuestAccount(companySlug: string) {
-  const { user, ready, configured } = useGuestAuth();
+  const { user, ready, configured, emailVerified } = useGuestAuth();
 
   return useQuery({
     queryKey: guestAccountQueryKey(companySlug),
     queryFn: () => guestApi.me(companySlug),
-    enabled: ready && configured && Boolean(user) && Boolean(companySlug),
+    enabled:
+      ready && configured && Boolean(user) && emailVerified && Boolean(companySlug),
     retry: false,
   });
 }
@@ -28,7 +29,8 @@ export function useGuestAccount(companySlug: string) {
  */
 export function useGuestPrefill(companySlug: string) {
   const auth = useOptionalGuestAuth();
-  const user = auth?.ready && auth.configured ? auth.user : null;
+  const user =
+    auth?.ready && auth.configured && auth.emailVerified ? auth.user : null;
   const account = useQuery({
     queryKey: guestAccountQueryKey(companySlug),
     queryFn: () => guestApi.me(companySlug),
@@ -49,12 +51,13 @@ export function useGuestPrefill(companySlug: string) {
 }
 
 export function useGuestReservations(companySlug: string) {
-  const { user, ready, configured } = useGuestAuth();
+  const { user, ready, configured, emailVerified } = useGuestAuth();
 
   return useQuery({
     queryKey: guestReservationsQueryKey(companySlug),
     queryFn: () => guestApi.listReservations(companySlug),
-    enabled: ready && configured && Boolean(user) && Boolean(companySlug),
+    enabled:
+      ready && configured && Boolean(user) && emailVerified && Boolean(companySlug),
     retry: false,
   });
 }

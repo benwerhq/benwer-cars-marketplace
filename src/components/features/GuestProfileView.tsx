@@ -28,7 +28,7 @@ export function GuestProfileView({
   const t = useTranslations("guest");
   const tRoot = useTranslations();
   const router = useRouter();
-  const { user, ready, configured, signOut } = useGuestAuth();
+  const { user, ready, configured, emailVerified, signOut } = useGuestAuth();
   const unlink = useUnlinkGuest(companySlug);
   const erase = useEraseGuest(companySlug);
   const [confirmErase, setConfirmErase] = useState(false);
@@ -50,6 +50,17 @@ export function GuestProfileView({
     return <GuestSignInPanel />;
   }
 
+  if (!emailVerified) {
+    return (
+      <div className="flex flex-col gap-8">
+        <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+          {t("profileTitle")}
+        </h1>
+        <GuestVerifyEmailNotice companySlug={companySlug} />
+      </div>
+    );
+  }
+
   const error = unlink.error ?? erase.error;
 
   return (
@@ -62,8 +73,6 @@ export function GuestProfileView({
           {t("bookingsHint", { company: companyName, email: user.email ?? "" })}
         </p>
       </div>
-
-      <GuestVerifyEmailNotice companySlug={companySlug} />
 
       <GuestDetailsSection companySlug={companySlug} />
 

@@ -749,7 +749,9 @@
     "verifyResend": "Reenviar email",
     "verifySent": "Email enviado. Revisa tu bandeja de entrada y la carpeta de spam.",
     "verifyDone": "Ya he verificado mi email",
-    "verifyStillPending": "Tu email aún no está verificado. Abre el enlace del email y vuelve a intentarlo."
+    "verifyStillPending": "Tu email aún no está verificado. Abre el enlace del email y vuelve a intentarlo.",
+    "verifyBanner": "Tu cuenta aún no está activa. Verifica {email} para ver tus reservas y usar tus datos guardados.",
+    "verifyBannerAction": "Verificar email"
   },
   "siteSections": {
     "banners": {

@@ -40,7 +40,7 @@ export function GuestBookingsView({
   const tRoot = useTranslations();
   const tStatus = useTranslations("reservationStatus");
   const locale = useLocale();
-  const { user, ready, configured } = useGuestAuth();
+  const { user, ready, configured, emailVerified } = useGuestAuth();
   const account = useGuestAccount(companySlug);
   const reservations = useGuestReservations(companySlug);
   const link = useGuestLink(companySlug);
@@ -67,6 +67,10 @@ export function GuestBookingsView({
 
   if (!user) {
     return <GuestSignInPanel />;
+  }
+
+  if (!emailVerified) {
+    return <GuestVerifyEmailNotice companySlug={companySlug} />;
   }
 
   const listError =
@@ -109,7 +113,6 @@ export function GuestBookingsView({
           </Button>
         )}
       </div>
-      <GuestVerifyEmailNotice companySlug={companySlug} />
 
       {reservations.isLoading ? (
         <div className="flex flex-col gap-3">
