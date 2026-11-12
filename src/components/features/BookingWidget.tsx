@@ -11,6 +11,8 @@ import { addToCart, CART_MAX_ITEMS } from "@/lib/cart";
 import { buildCompanySiteHref } from "@/lib/companySite";
 import { countRentalDays, formatLongDate, parseIsoDate } from "@/lib/dates";
 import { formatMoney } from "@/lib/money";
+import { SITE_CHANNEL } from "@/lib/site";
+import { usePriceQuote } from "@/hooks/usePriceQuote";
 import { cn } from "@/lib/utils";
 import type { Vehicle } from "@/types/vehicle";
 
@@ -71,7 +73,19 @@ export function BookingWidget({
     !isRangeBlocked &&
     !isAvailabilityPending &&
     !isAvailabilityError;
-  const total = canBook ? days * vehicle.pricePerDay : null;
+  // Checkout charges the rate-table quote, so the widget shows the same figures.
+  const quoteQuery = usePriceQuote(companySlug, {
+    vehicleId: vehicle.id,
+    startDate: days > 0 ? from : "",
+    endDate: days > 0 ? to : "",
+    channel: isTenant ? SITE_CHANNEL : undefined,
+  });
+  const quote =
+    days > 0 && !quoteQuery.isPlaceholderData ? quoteQuery.data : undefined;
+  const dailyRate = quote?.averageDailyRate ?? vehicle.pricePerDay;
+  const total = canBook
+    ? (quote?.vehicleSubtotal ?? days * vehicle.pricePerDay)
+    : null;
   const handoffHref = buildCompanySiteHref({
     slug: companySlug,
     websiteUrl: companyWebsiteUrl,
@@ -117,7 +131,7 @@ export function BookingWidget({
   }
 
   const priceFormatted = formatMoney(
-    vehicle.pricePerDay,
+    dailyRate,
     vehicle.currency,
     locale,
   );

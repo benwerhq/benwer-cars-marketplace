@@ -20,6 +20,7 @@ import {
   mapCompanyList,
   mapGuestAccount,
   mapGuestPayment,
+  mapGuestReservationList,
   mapInsurancePackageList,
   mapPriceBreakdown,
   mapPublicSite,
@@ -45,6 +46,20 @@ describe("unwrapList", () => {
 
   it("falls back to a raw array", () => {
     expect(unwrapList([{ id: "1" }])).toEqual([{ id: "1" }]);
+  });
+
+  it("reads response.items from a guest list", () => {
+    expect(unwrapList({ items: [{ id: "1" }] })).toEqual([{ id: "1" }]);
+  });
+});
+
+describe("mapGuestReservationList", () => {
+  it("maps the guest reservations envelope", () => {
+    const list = mapGuestReservationList(
+      { items: [{ id: "r1", token: "t1", status: "pending" }] },
+      "coches",
+    );
+    expect(list.map((reservation) => reservation.id)).toEqual(["r1"]);
   });
 });
 

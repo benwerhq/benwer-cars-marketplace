@@ -5702,7 +5702,11 @@ export interface operations {
     };
     PublicController_companyVehicles: {
         parameters: {
-            query?: never;
+            query?: {
+                /** @description With to, dailyRate is the rate-table average for this stay instead of the car rate. */
+                from?: string;
+                to?: string;
+            };
             header?: never;
             path: {
                 slug: string;
@@ -5723,7 +5727,11 @@ export interface operations {
     };
     PublicController_vehicle: {
         parameters: {
-            query?: never;
+            query?: {
+                /** @description With to, dailyRate is the rate-table average for this stay instead of the car rate. */
+                from?: string;
+                to?: string;
+            };
             header?: never;
             path: {
                 slug: string;
