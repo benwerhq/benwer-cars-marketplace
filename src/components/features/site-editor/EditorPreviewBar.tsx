@@ -4,7 +4,7 @@ import { PencilLine } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { SiteStatus } from "@/enums";
+import { SiteCornerStyle, SiteStatus } from "@/enums";
 import type { WebsiteSettings } from "@/types/websiteSettings";
 import { STATUS_BADGE } from "./SiteEditor";
 
@@ -37,6 +37,7 @@ export function EditorPreviewBar({
     <div
       role="region"
       aria-label={t("previewBarAria")}
+      data-corners={SiteCornerStyle.ROUND}
       className="fixed inset-x-4 bottom-4 z-50 font-sans mx-auto flex max-w-xl flex-col gap-2 rounded-2xl border border-border bg-surface p-3 shadow-xl sm:flex-row sm:items-center sm:justify-between"
     >
       <div className="flex min-w-0 items-center gap-2 px-1">

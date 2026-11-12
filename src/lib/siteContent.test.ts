@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   SiteBannerPreset,
   SiteBannerTarget,
+  SiteCornerStyle,
   SiteIncludedIcon,
   SitePaymentMethod,
   SiteSectionId,
@@ -153,6 +154,35 @@ describe("serializeAppearance", () => {
     expect(banners[0]?.ctaUrl).toBe("https://x.example");
     expect(banners[1]?.ctaUrl).toBeNull();
     expect((appearance.contact as { whatsapp: unknown }).whatsapp).toBeNull();
+  });
+});
+
+describe("corner style", () => {
+  const withRadius = (cornerRadius: string | undefined) => ({
+    ...legacyAppearance,
+    theme: { ...legacyAppearance.theme, cornerRadius },
+  });
+  const savedRadius = (content: ReturnType<typeof parseSiteContent>) =>
+    (serializeAppearance(content).theme as { cornerRadius: string }).cornerRadius;
+
+  it("defaults to round and reads none as square", () => {
+    expect(defaultSiteContent().cornerStyle).toBe(SiteCornerStyle.ROUND);
+    expect(parseSiteContent(withRadius(undefined), undefined).cornerStyle).toBe(
+      SiteCornerStyle.ROUND,
+    );
+    expect(parseSiteContent(withRadius("lg"), undefined).cornerStyle).toBe(SiteCornerStyle.ROUND);
+    expect(parseSiteContent(withRadius("none"), undefined).cornerStyle).toBe(
+      SiteCornerStyle.SQUARE,
+    );
+  });
+
+  it("saves square as none and round as the previous or default radius", () => {
+    const square = parseSiteContent(withRadius("lg"), undefined);
+    expect(savedRadius({ ...square, cornerStyle: SiteCornerStyle.SQUARE })).toBe("none");
+    expect(savedRadius(square)).toBe("lg");
+    const fromSquare = parseSiteContent(withRadius("none"), undefined);
+    expect(savedRadius({ ...fromSquare, cornerStyle: SiteCornerStyle.ROUND })).toBe("md");
+    expect(savedRadius(defaultSiteContent())).toBe("md");
   });
 });
 

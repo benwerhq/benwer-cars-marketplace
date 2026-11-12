@@ -1094,6 +1094,18 @@
           "name": "Poppins",
           "hint": "Bold and friendly"
         }
+      },
+      "cornersTitle": "Corners",
+      "cornersDescription": "Rounded or square corners on buttons, cards and fields across your website.",
+      "corners": {
+        "round": {
+          "name": "Round",
+          "hint": "Soft and friendly"
+        },
+        "square": {
+          "name": "Square",
+          "hint": "Sharp and minimal"
+        }
       }
     },
     "settings": {

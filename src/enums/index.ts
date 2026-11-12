@@ -202,6 +202,11 @@ export enum SearchParams {
   NEXT = "next",
 }
 
+export enum SiteCornerStyle {
+  ROUND = "round",
+  SQUARE = "square",
+}
+
 export enum SiteFontFamily {
   SANS = "sans",
   SERIF = "serif",

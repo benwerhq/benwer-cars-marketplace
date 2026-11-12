@@ -26,7 +26,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Switch } from "@/components/ui/Switch";
-import { SiteSectionId, SiteStatus } from "@/enums";
+import { SiteCornerStyle, SiteSectionId, SiteStatus } from "@/enums";
 import { routing } from "@/i18n/routing";
 import {
   FIXED_SITE_SECTIONS,
@@ -220,6 +220,7 @@ export function SiteEditor({
   return (
     <aside
       aria-label={t("aria")}
+      data-corners={SiteCornerStyle.ROUND}
       className={cn(
         "flex w-full flex-col border-b border-border bg-surface-muted font-sans",
         fullscreen

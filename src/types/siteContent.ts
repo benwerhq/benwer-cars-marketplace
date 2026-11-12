@@ -1,6 +1,7 @@
 import type {
   SiteBannerPreset,
   SiteBannerTarget,
+  SiteCornerStyle,
   SiteFontFamily,
   SiteIncludedIcon,
   SiteIncludedPreset,
@@ -106,6 +107,7 @@ export interface SiteContent {
   contact: SiteContactContent;
   brandColor: string;
   fontFamily: SiteFontFamily;
+  cornerStyle: SiteCornerStyle;
   allowDifferentReturn: boolean;
   logos: SiteLogos;
   pageBackground: string;
