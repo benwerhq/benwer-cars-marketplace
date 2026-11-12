@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { NavRoutes, type SitePaymentMethod, type SiteSectionId } from "@/enums";
-import { guestLinksFromHomeHref, ownerHrefFromHome } from "@/lib/site";
+import { guestLinksFromHomeHref, siteChildFromHome } from "@/lib/site";
 import { whatsappHref } from "@/lib/siteContent";
 import { CookieSettingsLink } from "./CookieSettingsLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -89,22 +89,16 @@ export async function SiteFooter({
           ) : null}
           <nav aria-label={tFooter("legal")} className="flex flex-col gap-2">
             <p className={headingClass}>{tFooter("legal")}</p>
-            <Link href={NavRoutes.PRIVACY} className={linkClass}>
+            <Link href={siteChildFromHome(homeHref, "/privacy")} className={linkClass}>
               {tNav("privacy")}
             </Link>
-            <Link href={NavRoutes.TERMS} className={linkClass}>
+            <Link href={siteChildFromHome(homeHref, "/terms")} className={linkClass}>
               {tNav("terms")}
             </Link>
             <Link href={NavRoutes.COOKIES} className={linkClass}>
               {tNav("cookies")}
             </Link>
             <CookieSettingsLink className={`${linkClass} cursor-pointer text-left`} />
-            <Link
-              href={ownerHrefFromHome(homeHref)}
-              className="w-fit text-xs text-muted-foreground hover:text-foreground"
-            >
-              {tSite("ownerSignIn")}
-            </Link>
           </nav>
         </div>
         {payments.length > 0 ? (

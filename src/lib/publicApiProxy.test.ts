@@ -251,6 +251,13 @@ describe("isAllowedPublicApiProxyPath", () => {
 });
 
 describe("isAllowedStaffWebsiteProxyPath", () => {
+  it("allows staff image uploads for the website editor only with a bearer", () => {
+    expect(isAllowedStaffWebsiteProxyPath("POST", "v1/uploads", true)).toBe(true);
+    expect(isAllowedStaffWebsiteProxyPath("POST", "v1/uploads", false)).toBe(false);
+    expect(isAllowedStaffWebsiteProxyPath("DELETE", "v1/uploads", true)).toBe(false);
+    expect(isAllowedStaffWebsiteProxyPath("GET", "v1/uploads/download", true)).toBe(false);
+  });
+
   it("allows staff website settings only with a bearer", () => {
     expect(
       isAllowedStaffWebsiteProxyPath("GET", "v1/settings/website", true),

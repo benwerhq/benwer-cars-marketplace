@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
-import { Inbox } from "lucide-react";
+import { Inbox, Link2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { GuestDisabledState } from "@/components/features/GuestDisabledState";
 import { GuestSignInPanel } from "@/components/features/GuestSignInPanel";
@@ -19,39 +19,33 @@ import { getErrorKey } from "@/lib/errors";
 import { formatMoney } from "@/lib/money";
 import { siteBookingPath } from "@/lib/site";
 import {
-  useEraseGuest,
   useGuestAccount,
   useGuestLink,
   useGuestReservations,
-  useUnlinkGuest,
 } from "@/hooks/useGuestAccount";
 
 interface GuestBookingsViewProps {
   slug: string;
   companySlug: string;
   companyName: string;
-  showAccount?: boolean;
 }
 
 export function GuestBookingsView({
   slug,
   companySlug,
   companyName,
-  showAccount = true,
 }: GuestBookingsViewProps) {
   const t = useTranslations("guest");
   const tRoot = useTranslations();
   const tStatus = useTranslations("reservationStatus");
   const locale = useLocale();
-  const { user, ready, configured, signOut } = useGuestAuth();
+  const { user, ready, configured } = useGuestAuth();
   const account = useGuestAccount(companySlug);
   const reservations = useGuestReservations(companySlug);
   const link = useGuestLink(companySlug);
-  const unlink = useUnlinkGuest(companySlug);
-  const erase = useEraseGuest(companySlug);
   const [email, setEmail] = useState("");
   const [bookingToken, setBookingToken] = useState("");
-  const [confirmErase, setConfirmErase] = useState(false);
+  const [linkOpen, setLinkOpen] = useState(false);
 
   if (!ready) {
     return (
@@ -90,14 +84,29 @@ export function GuestBookingsView({
   }
 
   return (
-    <div className="flex flex-col gap-10">
-      <div>
-        <h1 className="text-3xl font-semibold tracking-tight text-foreground">
-          {t("bookingsTitle")}
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          {t("bookingsHint", { company: companyName, email: user.email ?? "" })}
-        </p>
+    <div className="flex flex-col gap-8">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div className="min-w-0">
+          <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+            {t("bookingsTitle")}
+          </h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {t("bookingsHint", {
+              company: companyName,
+              email: user.email ?? "",
+            })}
+          </p>
+        </div>
+        {linkOpen || !reservations.data?.length ? null : (
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => setLinkOpen(true)}
+          >
+            <Link2 size={16} aria-hidden />
+            {t("linkTitle")}
+          </Button>
+        )}
       </div>
 
       {reservations.isLoading ? (
@@ -115,7 +124,8 @@ export function GuestBookingsView({
           icon={<Inbox size={28} />}
           title={t("emptyTitle")}
           description={t("emptyDescription")}
-          variant="compact"
+          actionLabel={linkOpen ? undefined : t("linkTitle")}
+          onAction={() => setLinkOpen(true)}
         />
       ) : (
         <ul className="flex flex-col gap-3">
@@ -134,10 +144,8 @@ export function GuestBookingsView({
                       : t("bookingFallback")}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    {start
-                      ? formatLongDate(start, locale)
-                      : item.startDate}{" "}
-                    · {formatMoney(item.totalPrice, item.currency, locale)} ·{" "}
+                    {start ? formatLongDate(start, locale) : item.startDate} ·{" "}
+                    {formatMoney(item.totalPrice, item.currency, locale)} ·{" "}
                     {tStatus(`status.${item.status}`)}
                   </p>
                 </Link>
@@ -147,95 +155,60 @@ export function GuestBookingsView({
         </ul>
       )}
 
-      <form
-        onSubmit={onLink}
-        className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-5"
-      >
-        <div>
-          <h2 className="text-xl font-semibold text-foreground">
-            {t("linkTitle")}
-          </h2>
-          <p className="mt-1 text-sm text-muted-foreground">{t("linkHint")}</p>
-        </div>
-        <Field label={t("linkEmail")} htmlFor="guest-link-email">
-          <Input
-            id="guest-link-email"
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </Field>
-        <Field label={t("linkToken")} htmlFor="guest-link-token">
-          <Input
-            id="guest-link-token"
-            value={bookingToken}
-            onChange={(event) => setBookingToken(event.target.value)}
-          />
-        </Field>
-        {link.isSuccess ? (
-          <p className="text-sm text-muted-foreground">{t("linkSent")}</p>
-        ) : null}
-        {link.isError ? (
-          <p className="text-sm text-danger" role="alert">
-            {tRoot(getErrorKey(link.error))}
-          </p>
-        ) : null}
-        <Button
-          type="submit"
-          isLoading={link.isPending}
-          disabled={!email.trim() && !bookingToken.trim()}
+      {linkOpen ? (
+        <form
+          onSubmit={onLink}
+          className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-5"
         >
-          {t("linkAction")}
-        </Button>
-      </form>
-
-      {showAccount ? (
-        <div className="flex flex-col gap-3 border-t border-border pt-6">
-          <h2 className="text-xl font-semibold text-foreground">
-            {t("accountTitle")}
-          </h2>
-          <p className="text-sm text-muted-foreground">{t("accountHint")}</p>
-          <div className="flex flex-wrap gap-2">
-            <Button
-              type="button"
-              variant="secondary"
-              isLoading={unlink.isPending}
-              onClick={() => {
-                void unlink.mutateAsync();
-              }}
-            >
-              {t("unlink")}
-            </Button>
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={() => {
-                void signOut();
-              }}
-            >
-              {t("signOut")}
-            </Button>
-            <Button
-              type="button"
-              variant="danger"
-              isLoading={erase.isPending}
-              onClick={() => {
-                if (!confirmErase) {
-                  setConfirmErase(true);
-                  return;
-                }
-                void erase.mutateAsync();
-              }}
-            >
-              {confirmErase ? t("eraseConfirm") : t("erase")}
-            </Button>
+          <div>
+            <h2 className="text-xl font-semibold text-foreground">
+              {t("linkTitle")}
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {t("linkHint")}
+            </p>
           </div>
-          {unlink.isError || erase.isError ? (
+          <Field label={t("linkEmail")} htmlFor="guest-link-email">
+            <Input
+              id="guest-link-email"
+              type="email"
+              autoFocus
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </Field>
+          <Field label={t("linkToken")} htmlFor="guest-link-token">
+            <Input
+              id="guest-link-token"
+              value={bookingToken}
+              onChange={(event) => setBookingToken(event.target.value)}
+            />
+          </Field>
+          {link.isSuccess ? (
+            <p className="text-sm text-muted-foreground">{t("linkSent")}</p>
+          ) : null}
+          {link.isError ? (
             <p className="text-sm text-danger" role="alert">
-              {tRoot(getErrorKey(unlink.error ?? erase.error))}
+              {tRoot(getErrorKey(link.error))}
             </p>
           ) : null}
-        </div>
+          <div className="flex flex-wrap gap-2">
+            <Button
+              type="submit"
+              isLoading={link.isPending}
+              disabled={!email.trim() && !bookingToken.trim()}
+            >
+              {t("linkAction")}
+            </Button>
+            <Button
+              type="button"
+              variant="ghost"
+              onClick={() => setLinkOpen(false)}
+            >
+              {t("linkCancel")}
+            </Button>
+          </div>
+        </form>
       ) : null}
     </div>
   );

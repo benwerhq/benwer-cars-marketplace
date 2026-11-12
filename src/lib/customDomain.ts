@@ -9,17 +9,24 @@ export type CustomDomainRewrite = typeof PASSTHROUGH | typeof UNKNOWN | string;
 
 const ALLOWED_PREFIXES = [
   "/api",
-  "/privacy",
-  "/terms",
   "/cookies",
   "/host-unknown",
+  "/images",
+  "/localstack",
+  "/mock-data",
 ];
+
+const STATIC_FILE = /\.(?:webp|png|jpe?g|gif|avif|ico|svg|txt|xml|webmanifest|woff2?)$/i;
 
 export function rewriteCustomDomainPath(
   pathname: string,
   slug: string,
 ): CustomDomainRewrite {
   const path = pathname === "" ? "/" : pathname;
+
+  if (STATIC_FILE.test(path)) {
+    return PASSTHROUGH;
+  }
 
   if (ALLOWED_PREFIXES.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
     return PASSTHROUGH;
@@ -55,7 +62,9 @@ export function rewriteCustomDomainPath(
     path === "/owner" ||
     path.startsWith("/owner/") ||
     path === "/guest" ||
-    path.startsWith("/guest/")
+    path.startsWith("/guest/") ||
+    path === "/privacy" ||
+    path === "/terms"
   ) {
     return `${siteRoot}${path}`;
   }

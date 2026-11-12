@@ -2,16 +2,26 @@
 
 import type { CSSProperties } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { SiteBannerTarget } from "@/enums";
 import { useCarousel } from "@/hooks/useCarousel";
 import { localizedText } from "@/lib/localizedCopy";
 import { bannerImageSrc } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
-import type { LocalizedCopy, SiteBanner, SiteBannerTheme } from "@/types/siteContent";
+import type {
+  LocalizedCopy,
+  SiteBanner,
+  SiteBannerTheme,
+} from "@/types/siteContent";
 
-type BannerField = "script" | "highlight" | "joiner" | "boxed" | "description" | "ctaLabel";
+type BannerField =
+  | "script"
+  | "highlight"
+  | "joiner"
+  | "boxed"
+  | "description"
+  | "ctaLabel";
 
 export function useBannerCopy() {
   const t = useTranslations("siteSections.banners.presets");
@@ -71,7 +81,8 @@ export function BannerSlideContent({
   const boxed = copy(banner, "boxed");
   const description = copy(banner, "description");
   const cta = copy(banner, "ctaLabel");
-  const external = banner.ctaTarget === SiteBannerTarget.URL && Boolean(banner.ctaUrl);
+  const external =
+    banner.ctaTarget === SiteBannerTarget.URL && Boolean(banner.ctaUrl);
 
   return (
     <>
@@ -139,6 +150,7 @@ interface SiteBannerCarouselProps {
   theme: SiteBannerTheme;
   companyName: string;
   homeHref: string;
+  underSearch?: boolean;
 }
 
 export function SiteBannerCarousel({
@@ -146,21 +158,28 @@ export function SiteBannerCarousel({
   theme,
   companyName,
   homeHref,
+  underSearch = false,
 }: SiteBannerCarouselProps) {
   const t = useTranslations("siteSections.banners");
   const count = banners.length;
-  const { active, setIndex, go, paused, togglePaused, reducedMotion, interactionHandlers } =
-    useCarousel(count, 7000);
+  const { active, setIndex, go, interactionHandlers } = useCarousel(count);
   const control =
     "inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-surface text-foreground shadow-lg transition hover:bg-surface-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+
+  const searchSpace = underSearch ? (
+    <div aria-hidden className="h-12 md:h-16" />
+  ) : null;
 
   if (count === 0) {
     return (
       <div
         aria-hidden
         style={bannerThemeStyle(theme)}
-        className="h-40 w-full rounded-3xl bg-(--banner-bg) md:aspect-[4/1] md:h-auto"
-      />
+        className="w-full overflow-hidden rounded-3xl bg-(--banner-bg)"
+      >
+        <div className="h-40 md:aspect-[4/1] md:h-auto" />
+        {searchSpace}
+      </div>
     );
   }
 
@@ -172,57 +191,52 @@ export function SiteBannerCarousel({
       className="relative"
       {...interactionHandlers}
     >
-      <div className="@container relative overflow-hidden rounded-3xl bg-(--banner-bg) md:aspect-[4/1]">
-        {banners.map((banner, position) => {
-          const isActive = position === active;
-          return (
-            <div
-              key={banner.id}
-              role="group"
-              aria-roledescription="slide"
-              aria-label={t("slideLabel", { position: position + 1, count })}
-              aria-hidden={!isActive}
-              className={cn(
-                "transition-opacity duration-500 motion-reduce:transition-none md:absolute md:inset-0",
-                isActive ? "relative opacity-100" : "pointer-events-none absolute inset-0 opacity-0",
-              )}
-            >
-              <BannerSlideContent
-                banner={banner}
-                homeHref={homeHref}
-                active={isActive}
-                priority={position === 0}
-              />
-            </div>
-          );
-        })}
-        {count > 1 ? (
-          <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/30 px-2.5 py-1.5 backdrop-blur-sm md:bottom-[6%]">
-            {banners.map((banner, position) => (
-              <button
+      <div className="overflow-hidden rounded-3xl bg-(--banner-bg)">
+        <div className="@container relative md:aspect-[4/1]">
+          {banners.map((banner, position) => {
+            const isActive = position === active;
+            return (
+              <div
                 key={banner.id}
-                type="button"
-                onClick={() => setIndex(position)}
-                aria-label={t("goTo", { position: position + 1 })}
-                aria-current={position === active}
+                role="group"
+                aria-roledescription="slide"
+                aria-label={t("slideLabel", { position: position + 1, count })}
+                aria-hidden={!isActive}
                 className={cn(
-                  "h-2 cursor-pointer rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
-                  position === active ? "w-6 bg-white" : "w-2 bg-white/50",
+                  "transition-opacity duration-500 motion-reduce:transition-none md:absolute md:inset-0",
+                  isActive
+                    ? "relative opacity-100"
+                    : "pointer-events-none absolute inset-0 opacity-0",
                 )}
-              />
-            ))}
-            {reducedMotion ? null : (
-              <button
-                type="button"
-                onClick={togglePaused}
-                aria-label={paused ? t("play") : t("pause")}
-                className="ml-1 inline-flex h-5 w-5 cursor-pointer items-center justify-center rounded-full text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
-                {paused ? <Play size={12} aria-hidden /> : <Pause size={12} aria-hidden />}
-              </button>
-            )}
-          </div>
-        ) : null}
+                <BannerSlideContent
+                  banner={banner}
+                  homeHref={homeHref}
+                  active={isActive}
+                  priority={position === 0}
+                />
+              </div>
+            );
+          })}
+          {count > 1 ? (
+            <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/30 px-2.5 py-1.5 backdrop-blur-sm md:bottom-[6%]">
+              {banners.map((banner, position) => (
+                <button
+                  key={banner.id}
+                  type="button"
+                  onClick={() => setIndex(position)}
+                  aria-label={t("goTo", { position: position + 1 })}
+                  aria-current={position === active}
+                  className={cn(
+                    "h-2 cursor-pointer rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
+                    position === active ? "w-6 bg-white" : "w-2 bg-white/50",
+                  )}
+                />
+              ))}
+            </div>
+          ) : null}
+        </div>
+        {searchSpace}
       </div>
       {count > 1 ? (
         <>
@@ -230,7 +244,10 @@ export function SiteBannerCarousel({
             type="button"
             onClick={() => go(-1)}
             aria-label={t("previous")}
-            className={cn(control, "absolute top-[38%] left-3 hidden md:inline-flex lg:-left-5")}
+            className={cn(
+              control,
+              "absolute top-[38%] left-3 hidden md:inline-flex lg:-left-5",
+            )}
           >
             <ChevronLeft size={20} aria-hidden />
           </button>
@@ -238,7 +255,10 @@ export function SiteBannerCarousel({
             type="button"
             onClick={() => go(1)}
             aria-label={t("next")}
-            className={cn(control, "absolute top-[38%] right-3 hidden md:inline-flex lg:-right-5")}
+            className={cn(
+              control,
+              "absolute top-[38%] right-3 hidden md:inline-flex lg:-right-5",
+            )}
           >
             <ChevronRight size={20} aria-hidden />
           </button>

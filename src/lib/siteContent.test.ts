@@ -17,6 +17,8 @@ import {
   moveSection,
   parseSiteContent,
   serializeAppearance,
+  siteCompanyLogo,
+  siteHeaderLogo,
   visibleSections,
   whatsappHref,
 } from "./siteContent";
@@ -148,6 +150,51 @@ describe("serializeAppearance", () => {
     expect(banners[0]?.ctaUrl).toBe("https://x.example");
     expect(banners[1]?.ctaUrl).toBeNull();
     expect((appearance.contact as { whatsapp: unknown }).whatsapp).toBeNull();
+  });
+});
+
+describe("site logos, background and legal text", () => {
+  it("keeps the new fields out of saves while the API does not know them", () => {
+    const content = parseSiteContent(legacyAppearance, undefined);
+    expect(content.supportsSiteBranding).toBe(false);
+    expect(content.pageBackground).toBe("#ffffff");
+    const saved = serializeAppearance(content);
+    expect(saved).not.toHaveProperty("logos");
+    expect(saved).not.toHaveProperty("pageBackground");
+    expect(saved).not.toHaveProperty("legal");
+  });
+
+  it("round-trips logos, background and legal text once the API returns them", () => {
+    const content = parseSiteContent(
+      {
+        ...legacyAppearance,
+        logos: {
+          headerAssetId: "asset-1",
+          headerUrl: "https://cdn.example/header.png",
+          companyAssetId: null,
+          companyUrl: null,
+        },
+        pageBackground: "#f8fafc",
+        legal: { privacy: { "en-GB": "We keep your data safe." }, terms: {} },
+      },
+      undefined,
+    );
+    expect(content.supportsSiteBranding).toBe(true);
+    expect(serializeAppearance(content)).toMatchObject({
+      logos: { headerAssetId: "asset-1", companyAssetId: null },
+      pageBackground: "#f8fafc",
+      legal: { privacy: { "en-GB": "We keep your data safe." }, terms: {} },
+    });
+    expect(serializeAppearance(content).logos).not.toHaveProperty("headerUrl");
+  });
+
+  it("defaults both logos to the company logo", () => {
+    const content = parseSiteContent(
+      { ...legacyAppearance, pageBackground: "#ffffff", logos: { headerUrl: "/h.png" } },
+      undefined,
+    );
+    expect(siteHeaderLogo(content, "/company.png")).toBe("/h.png");
+    expect(siteCompanyLogo(content, "/company.png")).toBe("/company.png");
   });
 });
 

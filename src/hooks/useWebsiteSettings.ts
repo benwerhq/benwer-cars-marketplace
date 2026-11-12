@@ -49,3 +49,12 @@ export function usePublishWebsite() {
 export function usePauseWebsite() {
   return useSettingsMutation(() => websiteSettingsApi.pause(), "website_pause");
 }
+
+export function useUploadWebsiteImage(companyId: string) {
+  return useMutation({
+    mutationFn: (file: File) => websiteSettingsApi.uploadImage(companyId, file),
+    onError: (error) => {
+      logError(error, { context: "website_image_upload" });
+    },
+  });
+}

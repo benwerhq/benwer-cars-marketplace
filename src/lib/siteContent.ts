@@ -14,6 +14,8 @@ import type {
   SiteContent,
   SiteFaqItem,
   SiteIncludedItem,
+  SiteLegalContent,
+  SiteLogos,
   SiteReviewsContent,
   SiteSectionConfig,
 } from "@/types/siteContent";
@@ -46,6 +48,8 @@ export const MAX_SITE_BANNERS = 3;
 export const MAX_SITE_INCLUDED = 6;
 export const MAX_SITE_FAQ = 20;
 export const DEFAULT_BRAND_COLOR = "#0e7490";
+export const DEFAULT_PAGE_BACKGROUND = "#ffffff";
+export const MAX_LEGAL_TEXT = 20000;
 
 export const DEFAULT_BANNER_THEME: SiteBannerTheme = {
   background: "#032d2e",
@@ -331,6 +335,21 @@ function parseFaq(sections: unknown): SiteFaqItem[] {
     .slice(0, MAX_SITE_FAQ);
 }
 
+function parseLogos(value: unknown): SiteLogos {
+  const logos = isRecord(value) ? value : {};
+  return {
+    headerAssetId: readString(logos.headerAssetId) || null,
+    headerUrl: readString(logos.headerUrl) || null,
+    companyAssetId: readString(logos.companyAssetId) || null,
+    companyUrl: readString(logos.companyUrl) || null,
+  };
+}
+
+function parseLegal(value: unknown): SiteLegalContent {
+  const legal = isRecord(value) ? value : {};
+  return { privacy: readCopy(legal.privacy), terms: readCopy(legal.terms) };
+}
+
 export function parseSiteContent(appearanceRaw: unknown, reviewsRaw: unknown): SiteContent {
   const raw = isRecord(appearanceRaw) ? appearanceRaw : {};
   const contact = isRecord(raw.contact) ? raw.contact : {};
@@ -354,6 +373,10 @@ export function parseSiteContent(appearanceRaw: unknown, reviewsRaw: unknown): S
     },
     brandColor: readColor(theme.primaryColor, ""),
     allowDifferentReturn: raw.allowDifferentReturn === true,
+    logos: parseLogos(raw.logos),
+    pageBackground: readColor(raw.pageBackground, DEFAULT_PAGE_BACKGROUND),
+    legal: parseLegal(raw.legal),
+    supportsSiteBranding: typeof raw.pageBackground === "string",
     raw,
   };
 }
@@ -424,7 +447,27 @@ export function serializeAppearance(content: SiteContent): Record<string, unknow
       payments: content.contact.payments,
     },
     allowDifferentReturn: content.allowDifferentReturn,
+    ...(content.supportsSiteBranding
+      ? {
+          logos: {
+            headerAssetId: content.logos.headerAssetId,
+            companyAssetId: content.logos.companyAssetId,
+          },
+          pageBackground: isHexColor(content.pageBackground)
+            ? content.pageBackground
+            : DEFAULT_PAGE_BACKGROUND,
+          legal: content.legal,
+        }
+      : {}),
   };
+}
+
+export function siteHeaderLogo(content: SiteContent, companyLogo: string | null): string | null {
+  return content.logos.headerUrl || companyLogo;
+}
+
+export function siteCompanyLogo(content: SiteContent, companyLogo: string | null): string | null {
+  return content.logos.companyUrl || companyLogo;
 }
 
 export interface SiteContentFacts {

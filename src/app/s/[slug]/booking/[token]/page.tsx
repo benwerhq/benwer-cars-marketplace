@@ -7,6 +7,7 @@ import { ReservationStatus } from "@/components/features/ReservationStatus";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
 import { isTenantHostRequest, publicSiteHomeHref } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
+import { siteHeaderLogo } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string; token: string }>;
@@ -40,7 +41,7 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
   try {
     const site = await loadPublicSite(slug, preview);
     companyName = site.company.name;
-    logoUrl = site.company.branding.logoUrl;
+    logoUrl = siteHeaderLogo(site.content, site.company.branding.logoUrl);
   } catch {
     companyName = slug;
   }

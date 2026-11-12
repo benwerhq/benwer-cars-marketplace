@@ -280,10 +280,15 @@ The storefront and the owner editor use the API's `appearance` object
 fleet, included, reviews, app, branches, extras, faq, contact`; FAQ items live in the
 `faq` section), `banners` (≤ 3; preset collage or uploaded `website_hero` image,
 localised script/highlight/joiner/boxed/description/CTA text, CTA target),
-`bannerTheme` (nine `#RRGGBB` colours), `included` (≤ 6), `app` (https store links)
-and `contact` (WhatsApp, reply hours, payment methods). Fields the API does not
+`bannerTheme` (nine `#RRGGBB` colours), `included` (≤ 6), `app` (https store links),
+`contact` (WhatsApp, reply hours, payment methods), `logos` (`headerAssetId`,
+`companyAssetId`: optional `website_hero` uploads that replace the company logo on the
+site only; views add `headerUrl`/`companyUrl`), `pageBackground` (`#RRGGBB`, default
+white) and `legal` (localised plain-text `privacy` and `terms`). The editor sends
+`logos`, `pageBackground` and `legal` only when the API returned them, so it keeps
+saving against an API without them. Fields the API does not
 know are rejected, so the marketplace round-trips the draft it received.
 
 Reviews are written by guests and moderated in Benwer admin; the editor only shows
-the summary. Banner image upload uses `POST /v1/uploads?kind=website_hero`
-(editor upload UI is a follow-up; presets cover launch).
+the summary. Logo upload uses `POST /v1/uploads?kind=website_hero&entityId={companyId}`; the
+response `id` is the asset id (banner image upload UI is a follow-up).

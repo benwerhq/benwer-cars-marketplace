@@ -653,8 +653,8 @@
     "bookingsTitle": "Mis reservas",
     "bookingsMeta": "Reservas vinculadas con esta empresa.",
     "bookingsHint": "Sesión iniciada como {email} en {company}.",
-    "emptyTitle": "No hay reservas vinculadas",
-    "emptyDescription": "Vincula una reserva con el correo o el token de confirmación. Te enviaremos un enlace.",
+    "emptyTitle": "Aún no tienes reservas",
+    "emptyDescription": "¿Ya reservaste? Vincula esa reserva con el email que usaste o su código de confirmación.",
     "bookingFallback": "Reserva",
     "loadErrorTitle": "No se pudieron cargar las reservas",
     "linkTitle": "Vincular una reserva",
@@ -664,7 +664,7 @@
     "linkAction": "Enviar enlace",
     "linkSent": "Si encontramos una reserva coincidente, enviaremos un enlace de confirmación.",
     "accountTitle": "Cuenta",
-    "accountHint": "Desvincula las reservas de esta empresa o borra tus datos aquí. El resto de empresas no cambia.",
+    "accountHint": "Desvincula tus reservas de esta empresa o cierra la sesión.",
     "unlink": "Desvincular reservas",
     "signOut": "Salir",
     "erase": "Borrar mis datos aquí",
@@ -684,7 +684,15 @@
       "tooManyRequests": "Demasiados intentos. Prueba de nuevo en unos minutos.",
       "invalidCredentials": "El correo o la contraseña no son correctos.",
       "unknown": "No se ha podido entrar. Inténtalo de nuevo."
-    }
+    },
+    "accountMenu": "Tu cuenta",
+    "profileNav": "Perfil",
+    "profileTitle": "Perfil",
+    "profileMeta": "Tu cuenta de cliente en esta empresa de alquiler.",
+    "linkCancel": "Cancelar",
+    "unlinked": "Tus reservas ya no están vinculadas a esta cuenta.",
+    "eraseTitle": "Borrar mis datos",
+    "eraseHint": "Borra tus datos de cliente en esta empresa y cierra la sesión. No afecta a otras empresas."
   },
   "siteSections": {
     "banners": {
@@ -694,8 +702,6 @@
       "previous": "Banner anterior",
       "next": "Banner siguiente",
       "goTo": "Ver banner {position}",
-      "pause": "Pausar banners",
-      "play": "Reproducir banners",
       "presets": {
         "airport": {
           "script": "¿acabas de aterrizar?",
@@ -844,7 +850,8 @@
     "tabs": {
       "sections": "Secciones",
       "design": "Diseño",
-      "settings": "Ajustes"
+      "settings": "Ajustes",
+      "legal": "Legal"
     },
     "contentLanguage": "Idioma que editas",
     "locales": {
@@ -1045,7 +1052,38 @@
     },
     "savedNotPublished": "Guardado, sin publicar",
     "publish": "Publicar",
-    "pause": "Pausar web"
+    "pause": "Pausar web",
+    "branding": {
+      "logosTitle": "Logotipos",
+      "logosDescription": "Por defecto se usa el logotipo de tu empresa. Si lo cambias aquí, solo cambia en esta web, no en el logotipo de tu empresa en Benwer admin.",
+      "headerLogo": "Logotipo de la barra superior",
+      "headerLogoHint": "Se muestra en la barra superior de todas las páginas. Funciona mejor un logotipo horizontal.",
+      "companyLogo": "Logotipo de la sección de empresa",
+      "companyLogoHint": "Se muestra sobre tu titular, antes de la sección de empresa.",
+      "usingCompanyLogo": "Usando el logotipo de tu empresa",
+      "customLogo": "Logotipo propio para esta web",
+      "upload": "Subir logotipo",
+      "replace": "Cambiar",
+      "useCompanyLogo": "Usar logotipo de la empresa",
+      "uploadFailed": "No se pudo subir el logotipo. Usa una imagen PNG, JPG o WebP e inténtalo de nuevo.",
+      "tooLarge": "Esta imagen pesa más de 25 MB.",
+      "backgroundTitle": "Fondo de la página",
+      "backgroundDescription": "El color detrás del contenido de tu web.",
+      "backgroundPresets": "Fondos sugeridos",
+      "backgroundCustom": "Fondo personalizado",
+      "backgroundPicker": "Elige un color de fondo",
+      "needsApi": "Disponible cuando esté activa la actualización de la API de Benwer para webs."
+    },
+    "legal": {
+      "hint": "Escribe tu propia política de privacidad y tus condiciones. Deja un idioma vacío para mostrar el texto estándar de Benwer en ese idioma.",
+      "needsApi": "Disponible cuando esté activa la actualización de la API de Benwer para webs.",
+      "privacyTitle": "Política de privacidad",
+      "privacyDescription": "Se muestra en Privacidad, en el pie de tu web.",
+      "termsTitle": "Términos y condiciones",
+      "termsDescription": "Se muestra en Términos, en el pie de tu web.",
+      "text": "Texto",
+      "placeholder": "Texto sin formato. Deja una línea en blanco entre párrafos."
+    }
   },
   "marketplaceBanners": {
     "aria": "Destacados de Benwer",
@@ -1053,8 +1091,6 @@
     "goTo": "Ver banner {position}",
     "previous": "Banner anterior",
     "next": "Banner siguiente",
-    "pause": "Pausar banners",
-    "play": "Reproducir banners",
     "trust": {
       "script": "reserva con confianza",
       "highlight": "Empresas verificadas",
@@ -1079,5 +1115,8 @@
       "description": "Empresas de alquiler de confianza en ciudades de toda España y más allá, en un solo lugar",
       "cta": "Ver coches"
     }
+  },
+  "siteLegal": {
+    "byCompany": "Publicado por {name}."
   }
 }

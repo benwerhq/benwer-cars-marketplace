@@ -17,6 +17,11 @@ describe("rewriteCustomDomainPath", () => {
     expect(rewriteCustomDomainPath("/guest/confirm", "acme")).toBe(
       "/s/acme/guest/confirm",
     );
+    expect(rewriteCustomDomainPath("/guest/profile", "acme")).toBe(
+      "/s/acme/guest/profile",
+    );
+    expect(rewriteCustomDomainPath("/privacy", "acme")).toBe("/s/acme/privacy");
+    expect(rewriteCustomDomainPath("/terms", "acme")).toBe("/s/acme/terms");
   });
 
   it("never rewrites onto another tenant slug", () => {
@@ -24,6 +29,16 @@ describe("rewriteCustomDomainPath", () => {
     expect(rewriteCustomDomainPath("/s/other/cars/v1", "acme")).toBe("unknown");
     expect(rewriteCustomDomainPath("/tenant", "acme")).toBe("unknown");
     expect(rewriteCustomDomainPath("/companies", "acme")).toBe("unknown");
+  });
+
+  it("passes through public static files such as banner images", () => {
+    expect(rewriteCustomDomainPath("/images/banners/site-airport.webp", "acme")).toBe(
+      "passthrough",
+    );
+    expect(rewriteCustomDomainPath("/localstack/bucket/photo.jpg", "acme")).toBe(
+      "passthrough",
+    );
+    expect(rewriteCustomDomainPath("/robots.txt", "acme")).toBe("passthrough");
   });
 
   it("passes through matching /s/{slug} and the same-origin API", () => {

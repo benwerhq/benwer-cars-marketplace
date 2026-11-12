@@ -11,7 +11,6 @@ export async function Footer() {
   const tFooter = await getTranslations("footer");
   const tBrand = await getTranslations("brand");
   const tNav = await getTranslations("nav");
-  const tSite = await getTranslations("site");
 
   return (
     <footer className="mt-auto w-full border-t border-border bg-background">
@@ -57,9 +56,6 @@ export async function Footer() {
               <FooterLink href={NavRoutes.COOKIES}>
                 {tNav("cookies")}
               </FooterLink>
-              {isTenant ? (
-                <FooterLink href="/owner">{tSite("ownerSignIn")}</FooterLink>
-              ) : null}
             </FooterGroup>
           </div>
           <LocaleSwitcher />

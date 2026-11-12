@@ -82,6 +82,18 @@ export interface SiteContactContent {
   payments: SitePaymentMethod[];
 }
 
+export interface SiteLogos {
+  headerAssetId: string | null;
+  headerUrl: string | null;
+  companyAssetId: string | null;
+  companyUrl: string | null;
+}
+
+export interface SiteLegalContent {
+  privacy: LocalizedCopy;
+  terms: LocalizedCopy;
+}
+
 export interface SiteContent {
   sections: SiteSectionConfig[];
   banners: SiteBanner[];
@@ -93,5 +105,9 @@ export interface SiteContent {
   contact: SiteContactContent;
   brandColor: string;
   allowDifferentReturn: boolean;
+  logos: SiteLogos;
+  pageBackground: string;
+  legal: SiteLegalContent;
+  supportsSiteBranding: boolean;
   raw: Record<string, unknown>;
 }

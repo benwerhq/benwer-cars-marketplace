@@ -76,6 +76,7 @@ export function LocalizedField({
   placeholder,
   hint,
   multiline = false,
+  tall = false,
   maxLength,
 }: {
   id: string;
@@ -86,6 +87,7 @@ export function LocalizedField({
   placeholder?: string;
   hint?: string;
   multiline?: boolean;
+  tall?: boolean;
   maxLength?: number;
 }) {
   const text = value[locale] ?? "";
@@ -108,7 +110,7 @@ export function LocalizedField({
           placeholder={placeholder}
           maxLength={maxLength}
           onChange={(event) => update(event.target.value)}
-          className="min-h-20"
+          className={tall ? "min-h-72" : "min-h-20"}
         />
       ) : (
         <Input

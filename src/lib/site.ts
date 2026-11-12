@@ -29,11 +29,6 @@ export function siteOwnerPath(slug: string): string {
   return `${siteHomePath(slug)}/owner`;
 }
 
-export function ownerHrefFromHome(homeHref: string): string {
-  const url = new URL(homeHref, "https://benwer.local");
-  return `${url.pathname.replace(/\/$/, "")}/owner${url.search}`;
-}
-
 export function isTenantHostRequest(headersList: Headers): boolean {
   return Boolean(headersList.get("x-company-slug"));
 }
@@ -92,15 +87,21 @@ export function siteGuestConfirmPath(slug: string): string {
   return `${siteGuestPath(slug)}/confirm`;
 }
 
+export function siteGuestProfilePath(slug: string): string {
+  return `${siteGuestPath(slug)}/profile`;
+}
+
 export function guestLinksFromHomeHref(homeHref: string): {
   signIn: string;
   bookings: string;
+  profile: string;
 } {
   const url = new URL(homeHref, "https://benwer.local");
   const base = url.pathname.replace(/\/$/, "");
   return {
     signIn: `${base}/guest${url.search}`,
     bookings: `${base}/guest/bookings${url.search}`,
+    profile: `${base}/guest/profile${url.search}`,
   };
 }
 

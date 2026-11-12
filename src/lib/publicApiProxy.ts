@@ -140,6 +140,9 @@ export function isAllowedStaffWebsiteProxyPath(
 
   const normalized = path.replace(/^\/+/, "");
   const verb = method.toUpperCase();
+  if (normalized === "v1/uploads") {
+    return verb === "POST";
+  }
   return (
     /^v1\/settings\/website(?:\/|$)/.test(normalized) &&
     (verb === "GET" || verb === "PATCH" || verb === "PUT" || verb === "POST")

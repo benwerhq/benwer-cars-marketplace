@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, type CSSProperties } from "react";
+import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import type { DehydratedState } from "@tanstack/react-query";
 import { SiteEditor } from "@/components/features/site-editor/SiteEditor";
@@ -14,6 +15,7 @@ import {
 } from "@/hooks/useWebsiteSettings";
 import { getErrorKey } from "@/lib/errors";
 import { localizedText } from "@/lib/localizedCopy";
+import { cn } from "@/lib/utils";
 import {
   applyWebsiteDraft,
   settingsFromSite,
@@ -50,6 +52,7 @@ export function OwnerHomeRoot({
   const locale = useLocale();
   const tSite = useTranslations("site");
   const tRoot = useTranslations();
+  const router = useRouter();
   const { user, signOut } = useStaffAuth();
   const settings = useWebsiteSettings();
   const save = useSaveWebsiteSettings();
@@ -88,13 +91,16 @@ export function OwnerHomeRoot({
   };
   const dirty = canEdit && websiteDraftDirty(baseline, draft);
   const brandColor = siteBrandColor(liveSite);
-  const style = brandColor ? ({ "--primary": brandColor } as CSSProperties) : undefined;
+  const style = {
+    "--background": liveSite.content.pageBackground,
+    ...(brandColor ? { "--primary": brandColor } : {}),
+  } as CSSProperties;
   const mutationError = save.error ?? publish.error ?? pause.error;
 
   return (
     <div
       style={style}
-      className={canEdit ? "lg:grid lg:grid-cols-[minmax(0,1fr)_34rem]" : undefined}
+      className={cn("bg-background", canEdit && "lg:grid lg:grid-cols-[minmax(0,1fr)_34rem]")}
     >
       <div>
         <SiteHomeLayouts
@@ -113,7 +119,9 @@ export function OwnerHomeRoot({
       {canEdit ? (
         <SiteEditor
           draft={draft}
+          companyId={site.company.id}
           companyName={liveSite.company.name}
+          companyLogo={site.company.branding.logoUrl}
           facts={{
             branchCount: liveSite.branches.length,
             hasPhone: Boolean(copy.phone),
@@ -124,7 +132,10 @@ export function OwnerHomeRoot({
           error={mutationError ? tRoot(getErrorKey(mutationError)) : null}
           onChange={setOverride}
           onSave={() => {
-            void save.mutateAsync(toWebsitePatch(draft)).then(() => setOverride(null));
+            void save.mutateAsync(toWebsitePatch(draft)).then(() => {
+              setOverride(null);
+              router.refresh();
+            });
           }}
           onPublish={() => {
             void publish.mutateAsync(undefined);

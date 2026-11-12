@@ -1,5 +1,6 @@
 import { ApiError } from "@/lib/errors";
 import { getGuestAccessToken } from "@/lib/guestAccessToken";
+import { isGuestNotLinkedError } from "@/lib/guestAccount";
 import type {
   GuestAccount,
   GuestLinkPayload,
@@ -39,11 +40,18 @@ export const guestApi = {
 
   async listReservations(companySlug: string): Promise<GuestReservation[]> {
     const headers = await guestAuthHeaders();
-    const data = await publicRequest<unknown>(
-      guestPath(companySlug, "/reservations"),
-      { headers },
-    );
-    return mapGuestReservationList(data, companySlug);
+    try {
+      const data = await publicRequest<unknown>(
+        guestPath(companySlug, "/reservations"),
+        { headers },
+      );
+      return mapGuestReservationList(data, companySlug);
+    } catch (error) {
+      if (isGuestNotLinkedError(error)) {
+        return [];
+      }
+      throw error;
+    }
   },
 
   async getReservation(

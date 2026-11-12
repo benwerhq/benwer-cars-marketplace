@@ -14,7 +14,7 @@ import {
   isSitePaused,
   sitePathFromHome,
 } from "@/lib/site";
-import { visibleSections, whatsappHref } from "@/lib/siteContent";
+import { visibleSections, whatsappHref, siteCompanyLogo } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { PublicSite } from "@/types/site";
 import { SiteAppSection } from "./SiteAppSection";
@@ -90,9 +90,10 @@ export function SiteHomeLayouts({
               theme={site.content.bannerTheme}
               companyName={site.company.name}
               homeHref={homeHref}
+              underSearch={showSearch}
             />
             {showSearch ? (
-              <div className="relative z-10 mt-4 md:px-10">
+              <div className="relative z-10 -mt-10 px-2 md:-mt-12 md:px-10">
                 <SiteSearchForm {...searchProps} variant="hero" />
               </div>
             ) : null}
@@ -202,14 +203,21 @@ function LowerSection({
 }
 
 function CompanyHeader({ site, copy }: { site: PublicSite; copy: SiteHomeCopy }) {
-  const withLogo = hasCompanyLogo(site.company);
+  const company = {
+    ...site.company,
+    branding: {
+      ...site.company.branding,
+      logoUrl: siteCompanyLogo(site.content, site.company.branding.logoUrl),
+    },
+  };
+  const withLogo = hasCompanyLogo(company);
 
   return (
-    <section className="relative w-full overflow-hidden border-y border-border bg-gradient-to-br from-primary/10 via-background to-accent-soft">
+    <section className="relative w-full overflow-hidden border-y border-border bg-gradient-to-br from-primary/10 via-background to-background">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-10 md:px-6 md:py-12 lg:px-8">
         <div className={cn("flex gap-4", withLogo ? "flex-col" : "items-start")}>
           <CompanyMark
-            company={site.company}
+            company={company}
             size="lg"
             className={withLogo ? "h-12" : "h-16 w-16 rounded-2xl"}
           />

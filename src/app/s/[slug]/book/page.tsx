@@ -23,6 +23,7 @@ import {
   withSiteQuery,
 } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
+import { siteHeaderLogo } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -98,7 +99,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       <>
         <SiteHeader
           companyName={site.company.name}
-          logoUrl={site.company.branding.logoUrl}
+          logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
           homeHref={homeHref}
           fleetHref={`${homeHref}#fleet`}
         />
@@ -120,7 +121,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       <>
         <SiteHeader
           companyName={site.company.name}
-          logoUrl={site.company.branding.logoUrl}
+          logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
           homeHref={homeHref}
           fleetHref={`${homeHref}#fleet`}
         />
@@ -140,7 +141,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       <>
         <SiteHeader
           companyName={site.company.name}
-          logoUrl={site.company.branding.logoUrl}
+          logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
           homeHref={homeHref}
           fleetHref={`${homeHref}#fleet`}
         />
@@ -178,7 +179,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
     <>
       <SiteHeader
         companyName={site.company.name}
-        logoUrl={site.company.branding.logoUrl}
+        logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
         homeHref={homeHref}
         fleetHref={`${homeHref}#fleet`}
       />

@@ -176,6 +176,7 @@ export enum NavRoutes {
   SITE_GUEST = "/s/:slug/guest",
   SITE_GUEST_BOOKINGS = "/s/:slug/guest/bookings",
   SITE_GUEST_CONFIRM = "/s/:slug/guest/confirm",
+  SITE_GUEST_PROFILE = "/s/:slug/guest/profile",
 }
 
 export enum SearchParams {

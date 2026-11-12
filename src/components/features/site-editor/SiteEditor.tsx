@@ -41,7 +41,9 @@ import { CompanyForm } from "./CompanyForm";
 import { ContactForm } from "./ContactForm";
 import { DesignForm } from "./DesignForm";
 import { FaqForm } from "./FaqForm";
+import { BrandingForm } from "./BrandingForm";
 import { IncludedForm } from "./IncludedForm";
+import { LegalForm } from "./LegalForm";
 import { ReviewsForm } from "./ReviewsForm";
 import { SettingsForm } from "./SettingsForm";
 
@@ -77,7 +79,9 @@ const STATUS_BADGE: Record<SiteStatus, "success" | "warning" | "default"> = {
 
 interface SiteEditorProps {
   draft: WebsiteSettings;
+  companyId: string;
   companyName: string;
+  companyLogo: string | null;
   facts: SiteContentFacts;
   dirty: boolean;
   saving: boolean;
@@ -95,7 +99,9 @@ interface SiteEditorProps {
 
 export function SiteEditor({
   draft,
+  companyId,
   companyName,
+  companyLogo,
   facts,
   dirty,
   saving,
@@ -191,7 +197,7 @@ export function SiteEditor({
 
   const iconButton =
     "inline-flex h-7 w-7 cursor-pointer items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-surface-hover hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-30";
-  const showLocale = tab === "sections" && openSection !== null;
+  const showLocale = (tab === "sections" && openSection !== null) || tab === "legal";
 
   return (
     <aside
@@ -226,7 +232,7 @@ export function SiteEditor({
           aria-label={t("tabsAria")}
           className="flex gap-4 border-b border-border bg-surface px-4"
         >
-          {["sections", "design", "settings"].map((value) => (
+          {["sections", "design", "legal", "settings"].map((value) => (
             <Tabs.Trigger
               key={value}
               value={value}
@@ -359,6 +365,21 @@ export function SiteEditor({
           </Tabs.Content>
           <Tabs.Content value="design" className="flex flex-col gap-3 p-4 focus-visible:outline-none">
             <DesignForm draft={draft} fallbackColor={fallbackColor} onChange={onChange} />
+            <BrandingForm
+              content={content}
+              companyId={companyId}
+              companyName={companyName}
+              companyLogo={companyLogo}
+              onChange={setContent}
+            />
+          </Tabs.Content>
+          <Tabs.Content value="legal" className="flex flex-col gap-3 p-4 focus-visible:outline-none">
+            <LegalForm
+              legal={content.legal}
+              locale={locale}
+              supported={content.supportsSiteBranding}
+              onChange={(legal) => setContent({ legal })}
+            />
           </Tabs.Content>
           <Tabs.Content value="settings" className="flex flex-col gap-3 p-4 focus-visible:outline-none">
             <SettingsForm draft={draft} oneWayRentals={oneWayRentals} onChange={onChange} />

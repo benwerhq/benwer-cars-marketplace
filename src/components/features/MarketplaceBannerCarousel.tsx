@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { MARKETPLACE_BANNERS, type MarketplaceBanner } from "@/data/marketplaceBanners";
 import { useCarousel } from "@/hooks/useCarousel";
@@ -56,8 +56,7 @@ function BannerCopy({ banner, active }: { banner: MarketplaceBanner; active: boo
 export function MarketplaceBannerCarousel() {
   const t = useTranslations("marketplaceBanners");
   const count = MARKETPLACE_BANNERS.length;
-  const { active, setIndex, go, paused, togglePaused, reducedMotion, interactionHandlers } =
-    useCarousel(count, 7000);
+  const { active, setIndex, go, interactionHandlers } = useCarousel(count);
   const control =
     "inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-promo-paper text-promo-ink shadow-lg transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-promo-accent";
 
@@ -113,16 +112,6 @@ export function MarketplaceBannerCarousel() {
               )}
             />
           ))}
-          {reducedMotion ? null : (
-            <button
-              type="button"
-              onClick={togglePaused}
-              aria-label={paused ? t("play") : t("pause")}
-              className="ml-1 inline-flex h-5 w-5 cursor-pointer items-center justify-center rounded-full text-promo-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-promo-accent"
-            >
-              {paused ? <Play size={12} aria-hidden /> : <Pause size={12} aria-hidden />}
-            </button>
-          )}
         </div>
       </div>
       <button

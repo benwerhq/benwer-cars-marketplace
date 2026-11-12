@@ -31,3 +31,8 @@ export interface WebsiteSettingsPatch {
   layout: "classic";
   appearance: Record<string, unknown>;
 }
+
+export interface WebsiteImageUpload {
+  id: string;
+  url: string | null;
+}

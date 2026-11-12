@@ -22,6 +22,7 @@ export {
 } from "./useGuestPayment";
 export {
   useSaveWebsiteSettings,
+  useUploadWebsiteImage,
   useWebsiteSettings,
 } from "./useWebsiteSettings";
 export {

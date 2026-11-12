@@ -1,6 +1,7 @@
 import { ApiError } from "@/lib/errors";
 import { getStaffAccessToken } from "@/lib/staffAccessToken";
 import type {
+  WebsiteImageUpload,
   WebsiteSettings,
   WebsiteSettingsPatch,
 } from "@/types/websiteSettings";
@@ -47,6 +48,22 @@ export const websiteSettingsApi = {
       headers,
     });
     return mapWebsiteSettings(data);
+  },
+
+  async uploadImage(companyId: string, file: File): Promise<WebsiteImageUpload> {
+    const headers = await staffHeaders();
+    const body = new FormData();
+    body.append("file", file);
+    const data = await publicRequest<{ id?: unknown; url?: unknown }>("/v1/uploads", {
+      method: "POST",
+      headers,
+      body,
+      query: { kind: "website_hero", entityId: companyId },
+    });
+    if (typeof data.id !== "string" || !data.id) {
+      throw new ApiError(502, "uploads.missing_id");
+    }
+    return { id: data.id, url: typeof data.url === "string" ? data.url : null };
   },
 
   async save(patch: WebsiteSettingsPatch): Promise<WebsiteSettings> {

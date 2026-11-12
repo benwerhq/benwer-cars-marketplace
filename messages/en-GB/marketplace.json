@@ -653,8 +653,8 @@
     "bookingsTitle": "My bookings",
     "bookingsMeta": "Linked bookings for this rental company.",
     "bookingsHint": "Signed in as {email} at {company}.",
-    "emptyTitle": "No linked bookings",
-    "emptyDescription": "Link a booking by email or confirmation token. We will email you a confirmation link.",
+    "emptyTitle": "No bookings yet",
+    "emptyDescription": "Booked before? Link that booking with the email you used or its confirmation token.",
     "bookingFallback": "Booking",
     "loadErrorTitle": "Could not load bookings",
     "linkTitle": "Link a booking",
@@ -664,7 +664,7 @@
     "linkAction": "Send link",
     "linkSent": "If we find a matching booking, we will email a confirmation link.",
     "accountTitle": "Account",
-    "accountHint": "Unlink bookings from this company, or erase your guest data here. Other companies are not affected.",
+    "accountHint": "Unlink your bookings from this company or sign out.",
     "unlink": "Unlink bookings",
     "signOut": "Sign out",
     "erase": "Erase my data here",
@@ -684,7 +684,15 @@
       "tooManyRequests": "Too many attempts. Try again in a few minutes.",
       "invalidCredentials": "Email or password is not correct.",
       "unknown": "Could not sign in. Try again."
-    }
+    },
+    "accountMenu": "Your account",
+    "profileNav": "Profile",
+    "profileTitle": "Profile",
+    "profileMeta": "Your guest account for this rental company.",
+    "linkCancel": "Cancel",
+    "unlinked": "Your bookings are no longer linked to this account.",
+    "eraseTitle": "Erase my data",
+    "eraseHint": "Deletes your guest data for this company and signs you out. Other companies are not affected."
   },
   "siteSections": {
     "banners": {
@@ -694,8 +702,6 @@
       "previous": "Previous banner",
       "next": "Next banner",
       "goTo": "Show banner {position}",
-      "pause": "Pause banners",
-      "play": "Play banners",
       "presets": {
         "airport": {
           "script": "just landed?",
@@ -844,7 +850,8 @@
     "tabs": {
       "sections": "Sections",
       "design": "Design",
-      "settings": "Settings"
+      "settings": "Settings",
+      "legal": "Legal"
     },
     "contentLanguage": "Editing language",
     "locales": {
@@ -1045,7 +1052,38 @@
     },
     "savedNotPublished": "Saved, not published yet",
     "publish": "Publish",
-    "pause": "Pause site"
+    "pause": "Pause site",
+    "branding": {
+      "logosTitle": "Logos",
+      "logosDescription": "Your company logo is used by default. Replacing a logo here changes this website only, not your company logo in Benwer admin.",
+      "headerLogo": "Top bar logo",
+      "headerLogoHint": "Shown in the bar at the top of every page. A wide logo works best.",
+      "companyLogo": "Company section logo",
+      "companyLogoHint": "Shown above your headline, before the company section.",
+      "usingCompanyLogo": "Using your company logo",
+      "customLogo": "Custom logo for this website",
+      "upload": "Upload logo",
+      "replace": "Replace",
+      "useCompanyLogo": "Use company logo",
+      "uploadFailed": "The logo could not be uploaded. Use a PNG, JPG or WebP image and try again.",
+      "tooLarge": "This image is larger than 25 MB.",
+      "backgroundTitle": "Page background",
+      "backgroundDescription": "The colour behind your website content.",
+      "backgroundPresets": "Suggested backgrounds",
+      "backgroundCustom": "Custom background",
+      "backgroundPicker": "Pick a background colour",
+      "needsApi": "Available once the Benwer API update for websites is live."
+    },
+    "legal": {
+      "hint": "Write your own privacy policy and terms. Leave a language empty to show the standard Benwer text in that language.",
+      "needsApi": "Available once the Benwer API update for websites is live.",
+      "privacyTitle": "Privacy policy",
+      "privacyDescription": "Shown at Privacy in your website footer.",
+      "termsTitle": "Terms and conditions",
+      "termsDescription": "Shown at Terms in your website footer.",
+      "text": "Text",
+      "placeholder": "Plain text. Leave a blank line between paragraphs."
+    }
   },
   "marketplaceBanners": {
     "aria": "Benwer highlights",
@@ -1053,8 +1091,6 @@
     "goTo": "Show banner {position}",
     "previous": "Previous banner",
     "next": "Next banner",
-    "pause": "Pause banners",
-    "play": "Play banners",
     "trust": {
       "script": "book with confidence",
       "highlight": "Verified companies",
@@ -1079,5 +1115,8 @@
       "description": "Trusted rental companies in cities across Spain and beyond, all in one place",
       "cta": "Explore cars"
     }
+  },
+  "siteLegal": {
+    "byCompany": "Published by {name}."
   }
 }
