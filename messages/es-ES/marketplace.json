@@ -358,7 +358,21 @@
     "signInPrompt": "¿Tienes una cuenta?",
     "signInLink": "Inicia sesión para rellenar tus datos",
     "subtitleSignedIn": "Revisa tus datos y confirma.",
-    "trustPaymentAfter": "Los detalles del pago llegan tras reservar"
+    "trustPaymentAfter": "Los detalles del pago llegan tras reservar",
+    "extras": "Extras",
+    "extraPerDay": "{price} / día",
+    "extraFixed": "{price} / alquiler",
+    "tripDetails": "Detalles del viaje",
+    "pickupTime": "Hora de recogida",
+    "returnTime": "Hora de devolución",
+    "timeAny": "Cualquier hora",
+    "flightNumber": "Número de vuelo",
+    "flightNumberHint": "Tu recogida es en un aeropuerto. Añade tu vuelo para que la empresa pueda seguir los retrasos.",
+    "flightNumberOptional": "Añádelo si llegas en avión.",
+    "notes": "Comentarios",
+    "notesPlaceholder": "¿Algo que la empresa deba saber?",
+    "dateOfBirth": "Fecha de nacimiento",
+    "optional": "opcional"
   },
   "reservationStatus": {
     "title": "Tu reserva",
@@ -717,7 +731,15 @@
     "linkCancel": "Cancelar",
     "unlinked": "Tus reservas ya no están vinculadas a esta cuenta.",
     "eraseTitle": "Borrar mis datos",
-    "eraseHint": "Borra tus datos de cliente en esta empresa y cierra la sesión. No afecta a otras empresas."
+    "eraseHint": "Borra tus datos de cliente en esta empresa y cierra la sesión. No afecta a otras empresas.",
+    "profileDetailsTitle": "Tus datos",
+    "profileDetailsHint": "Se usan para rellenar tus reservas con esta empresa.",
+    "profileFullName": "Nombre completo",
+    "profilePhone": "Teléfono",
+    "profileDob": "Fecha de nacimiento",
+    "profileSave": "Guardar datos",
+    "profileSaved": "Datos guardados.",
+    "profileNotLinked": "Vincula primero tus reservas para guardar aquí tus datos."
   },
   "siteSections": {
     "banners": {

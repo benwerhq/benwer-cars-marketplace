@@ -2,7 +2,19 @@
 
 import { SearchParams } from "@/enums";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import {
+  BookingTripFields,
+  EMPTY_TRIP_DETAILS,
+  type BookingTripDetails,
+} from "./BookingTripFields";
+import { useExtras } from "@/hooks/useExtras";
+import {
+  extraLineTotal,
+  extrasTotal,
+  guestBookingFieldsEnabled,
+  isAirportBranch,
+} from "@/lib/extras";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -69,7 +81,11 @@ interface BookingViewProps {
   returnLocation?: SiteBranch | null;
   /** Company-site sign-in page; shows the sign-in link when set. */
   guestSignInHref?: string;
+  /** Where the car is picked up; an airport asks for the flight number. */
+  pickupBranch?: SiteBranch | null;
 }
+
+const noopSubscribe = () => () => {};
 
 function withBookingDates(base: string, from: string, to: string): string {
   const url = new URL(base, window.location.origin);
@@ -104,6 +120,7 @@ export function BookingView({
   bookHrefBase,
   returnLocation = null,
   guestSignInHref,
+  pickupBranch = null,
 }: BookingViewProps) {
   const router = useRouter();
   const t = useTranslations("booking");
@@ -169,6 +186,28 @@ export function BookingView({
     : undefined;
   const insuranceTotal = selectedInsurance?.total ?? 0;
 
+  // Extras are sent as addonIds, which the API already accepts. The trip
+  // fields wait for the API change (see guestBookingFieldsEnabled).
+  const tripFieldsOn = guestBookingFieldsEnabled();
+  const isClient = useSyncExternalStore(noopSubscribe, () => true, () => false);
+  const extrasQuery = useExtras(channel ? companySlug : "", channel);
+  const [addonIds, setAddonIds] = useState<string[]>(
+    () => readBookingDraft(draftKey)?.addonIds ?? [],
+  );
+  const [tripDetails, setTripDetails] = useState<BookingTripDetails>(() => {
+    const draft = readBookingDraft(draftKey);
+    return {
+      pickupTime: draft?.pickupTime ?? "",
+      returnTime: draft?.returnTime ?? "",
+      flightNumber: draft?.flightNumber ?? "",
+      notes: draft?.notes ?? "",
+      dateOfBirth: draft?.dateOfBirth ?? EMPTY_TRIP_DETAILS.dateOfBirth,
+    };
+  });
+  const availableExtras = extrasQuery.data ?? [];
+  const extrasSum = extrasTotal(availableExtras, addonIds, days);
+  const selectedExtras = availableExtras.filter((extra) => addonIds.includes(extra.id));
+
   // Keep what the guest typed across Change dates, back, refresh and a
   // language switch. Dates in the URL win over the saved draft.
   const watchedValues = useWatch({ control: form.control });
@@ -221,8 +260,10 @@ export function BookingView({
       startDate: watchedValues.startDate,
       endDate: watchedValues.endDate,
       insurancePackageId,
+      addonIds,
+      ...tripDetails,
     });
-  }, [draftKey, insurancePackageId, watchedValues]);
+  }, [addonIds, draftKey, insurancePackageId, tripDetails, watchedValues]);
   const oneWayFeeQuery = useOneWayFee(companySlug, {
     vehicleId: vehicle.id,
     startDate: days > 0 ? startDate : "",
@@ -239,7 +280,8 @@ export function BookingView({
       ? formatMoney(
           (quote?.vehicleSubtotal ?? days * vehicle.pricePerDay) +
             (oneWayFee ?? 0) +
-            insuranceTotal,
+            insuranceTotal +
+            extrasSum,
           vehicle.currency,
           locale,
         )
@@ -289,6 +331,16 @@ export function BookingView({
         guestEmail: values.guestEmail,
         guestPhone: values.guestPhone,
         insurancePackageId: insurancePackageId || undefined,
+        addonIds: selectedExtras.map((extra) => extra.id),
+        ...(tripFieldsOn
+          ? {
+              pickupTime: tripDetails.pickupTime || undefined,
+              returnTime: tripDetails.returnTime || undefined,
+              flightNumber: tripDetails.flightNumber || undefined,
+              notes: tripDetails.notes || undefined,
+              dateOfBirth: tripDetails.dateOfBirth || prefill.dateOfBirth || undefined,
+            }
+          : {}),
         returnBranchId: returnLocation?.id,
         channel,
         acceptTerms: channel ? values.acceptTerms : undefined,
@@ -352,6 +404,64 @@ export function BookingView({
           );
         })}
       </fieldset>
+    ) : null;
+
+  const extrasSection =
+    availableExtras.length > 0 ? (
+      <fieldset className="flex flex-col gap-2 rounded-xl border border-border bg-surface p-4">
+        <legend className="px-1 text-sm font-medium text-foreground">{t("extras")}</legend>
+        {availableExtras.map((extra) => {
+          const soldOut = extra.availableQuantity !== null && extra.availableQuantity <= 0;
+          const price = formatMoney(extra.price, vehicle.currency, locale);
+          const description = localizedText(extra.shortDescription, locale);
+          return (
+            <label
+              key={extra.id}
+              className={cn(
+                "flex items-start gap-3 rounded-lg px-2 py-2",
+                soldOut ? "opacity-50" : "cursor-pointer hover:bg-surface-hover",
+              )}
+            >
+              <input
+                type="checkbox"
+                className="mt-1"
+                disabled={soldOut}
+                checked={addonIds.includes(extra.id)}
+                onChange={(event) =>
+                  setAddonIds((current) =>
+                    event.target.checked
+                      ? [...current.filter((id) => id !== extra.id), extra.id].slice(0, 20)
+                      : current.filter((id) => id !== extra.id),
+                  )
+                }
+              />
+              <span className="flex min-w-0 flex-col">
+                <span className="text-sm font-medium text-foreground">
+                  {localizedText(extra.name, locale) || extra.kind}
+                </span>
+                {description ? (
+                  <span className="text-xs text-muted-foreground">{description}</span>
+                ) : null}
+                <span className="text-xs text-muted-foreground">
+                  {extra.type === "per_day"
+                    ? t("extraPerDay", { price })
+                    : t("extraFixed", { price })}
+                </span>
+              </span>
+            </label>
+          );
+        })}
+      </fieldset>
+    ) : null;
+
+  const tripSection =
+    tripFieldsOn && isClient ? (
+      <BookingTripFields
+        value={tripDetails}
+        onChange={(patch) => setTripDetails((current) => ({ ...current, ...patch }))}
+        airport={isAirportBranch(pickupBranch)}
+        dateOfBirthFallback={prefill.dateOfBirth}
+      />
     ) : null;
 
   return (
@@ -458,7 +568,13 @@ export function BookingView({
               <BookingForm
                 carHref={carHref}
                 requireTerms={requireTerms}
-                beforeTerms={insuranceSection}
+                beforeTerms={
+                  <>
+                    {insuranceSection}
+                    {extrasSection}
+                    {tripSection}
+                  </>
+                }
               />
             ) : (
               <p className="rounded-2xl border border-border bg-surface p-5 text-sm text-muted-foreground">
@@ -482,8 +598,8 @@ export function BookingView({
                 quote={quote}
                 returnLocationName={returnLocation?.name}
                 oneWayFee={oneWayFee}
-                extraLines={
-                  selectedInsurance
+                extraLines={[
+                  ...(selectedInsurance
                     ? [
                         {
                           key: "insurance",
@@ -494,8 +610,13 @@ export function BookingView({
                           amount: insuranceTotal,
                         },
                       ]
-                    : []
-                }
+                    : []),
+                  ...selectedExtras.map((extra) => ({
+                    key: `extra-${extra.id}`,
+                    label: localizedText(extra.name, locale) || extra.kind,
+                    amount: extraLineTotal(extra, days),
+                  })),
+                ]}
               />
               <ConfirmButton
                 isBusy={isBusy}

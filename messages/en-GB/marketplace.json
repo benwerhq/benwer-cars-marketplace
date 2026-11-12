@@ -358,7 +358,21 @@
     "signInPrompt": "Have an account?",
     "signInLink": "Sign in to fill in your details",
     "subtitleSignedIn": "Check your details and confirm.",
-    "trustPaymentAfter": "Payment details follow after booking"
+    "trustPaymentAfter": "Payment details follow after booking",
+    "extras": "Extras",
+    "extraPerDay": "{price} / day",
+    "extraFixed": "{price} / rental",
+    "tripDetails": "Trip details",
+    "pickupTime": "Pick-up time",
+    "returnTime": "Drop-off time",
+    "timeAny": "Any time",
+    "flightNumber": "Flight number",
+    "flightNumberHint": "Your pick-up is at an airport. Add your flight so the company can follow delays.",
+    "flightNumberOptional": "Add it if you arrive by plane.",
+    "notes": "Comments",
+    "notesPlaceholder": "Anything the company should know?",
+    "dateOfBirth": "Date of birth",
+    "optional": "optional"
   },
   "reservationStatus": {
     "title": "Your reservation",
@@ -717,7 +731,15 @@
     "linkCancel": "Cancel",
     "unlinked": "Your bookings are no longer linked to this account.",
     "eraseTitle": "Erase my data",
-    "eraseHint": "Deletes your guest data for this company and signs you out. Other companies are not affected."
+    "eraseHint": "Deletes your guest data for this company and signs you out. Other companies are not affected.",
+    "profileDetailsTitle": "Your details",
+    "profileDetailsHint": "Used to fill in your bookings with this company.",
+    "profileFullName": "Full name",
+    "profilePhone": "Phone number",
+    "profileDob": "Date of birth",
+    "profileSave": "Save details",
+    "profileSaved": "Details saved.",
+    "profileNotLinked": "Link your bookings first to save your details here."
   },
   "siteSections": {
     "banners": {

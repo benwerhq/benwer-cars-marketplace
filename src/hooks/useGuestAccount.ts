@@ -88,6 +88,21 @@ export function useConfirmGuestLink(companySlug: string) {
   });
 }
 
+export function useUpdateGuestProfile(companySlug: string) {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (payload: { fullName?: string; phone?: string; dateOfBirth?: string | null }) =>
+      guestApi.updateMe(companySlug, payload),
+    onSuccess: (account) => {
+      queryClient.setQueryData(guestAccountQueryKey(companySlug), account);
+    },
+    onError: (error) => {
+      logError(error, { context: "guest_profile_update", companySlug });
+    },
+  });
+}
+
 export function useUnlinkGuest(companySlug: string) {
   const queryClient = useQueryClient();
 

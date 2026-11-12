@@ -16,9 +16,17 @@ export interface CreateGuestReservationPayload {
   guestEmail: string;
   guestPhone: string;
   insurancePackageId?: string;
+  addonIds?: string[];
   returnBranchId?: string;
   channel?: PublicChannel;
   acceptTerms?: boolean;
+  /** "HH:mm"; needs the guest booking fields API change. */
+  pickupTime?: string;
+  returnTime?: string;
+  flightNumber?: string;
+  notes?: string;
+  /** YYYY-MM-DD */
+  dateOfBirth?: string;
 }
 
 export interface GuestReservation {

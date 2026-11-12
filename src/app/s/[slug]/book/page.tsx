@@ -208,6 +208,11 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           channel={SITE_CHANNEL}
           returnLocation={returnLocation}
           guestSignInHref={guestLinksFromHomeHref(homeHref).signIn}
+          pickupBranch={
+            site.branches.find((item) => item.id === vehicle.branchId) ??
+            site.branches.find((item) => item.id === branch) ??
+            null
+          }
           confirmationBaseUrl={platformBookingHref("").replace(/\/$/, "")}
           bookHrefBase={publicSiteHref(
             siteBookHref({

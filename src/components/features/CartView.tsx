@@ -32,6 +32,7 @@ import { removeFromCart, updateCartItem, useCart, type CartItem } from "@/lib/ca
 import { countRentalDays, startOfToday, toIsoDate } from "@/lib/dates";
 import { getErrorKey } from "@/lib/errors";
 import { localizedText } from "@/lib/localizedCopy";
+import { guestBookingFieldsEnabled, TIME_SLOTS } from "@/lib/extras";
 import { formatMoney } from "@/lib/money";
 import { withReturnTo } from "@/lib/returnTo";
 import { SearchParams, type PublicChannel } from "@/enums";
@@ -190,6 +191,13 @@ export function CartView({
           guestEmail: values.guestEmail,
           guestPhone: values.guestPhone,
           insurancePackageId: item.insurancePackageId || undefined,
+          addonIds: item.addonIds?.length ? item.addonIds : undefined,
+          ...(guestBookingFieldsEnabled()
+            ? {
+                pickupTime: item.pickupTime || undefined,
+                returnTime: item.returnTime || undefined,
+              }
+            : {}),
           returnBranchId: allowDifferentReturn ? item.returnBranch || undefined : undefined,
           channel,
           acceptTerms: values.acceptTerms,
@@ -571,6 +579,44 @@ function CartLine({
               className="h-11"
             />
           </Field>
+          {guestBookingFieldsEnabled() ? (
+            <>
+              <Field label={tBooking("pickupTime")} htmlFor={`pickupTime-${item.id}`}>
+                <select
+                  id={`pickupTime-${item.id}`}
+                  value={item.pickupTime ?? ""}
+                  onChange={(event) =>
+                    updateCartItem(cartSlug, item.id, { pickupTime: event.target.value || undefined })
+                  }
+                  className="h-11 w-full rounded-md border border-border bg-surface px-3 text-sm text-foreground"
+                >
+                  <option value="">{tBooking("timeAny")}</option>
+                  {TIME_SLOTS.map((slot) => (
+                    <option key={slot} value={slot}>
+                      {slot}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label={tBooking("returnTime")} htmlFor={`returnTime-${item.id}`}>
+                <select
+                  id={`returnTime-${item.id}`}
+                  value={item.returnTime ?? ""}
+                  onChange={(event) =>
+                    updateCartItem(cartSlug, item.id, { returnTime: event.target.value || undefined })
+                  }
+                  className="h-11 w-full rounded-md border border-border bg-surface px-3 text-sm text-foreground"
+                >
+                  <option value="">{tBooking("timeAny")}</option>
+                  {TIME_SLOTS.map((slot) => (
+                    <option key={slot} value={slot}>
+                      {slot}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+            </>
+          ) : null}
           {insuranceQuery.data && insuranceQuery.data.length > 0 ? (
             <Field label={t("insurance")} htmlFor={`insurance-${item.id}`} className="sm:col-span-2">
               <select

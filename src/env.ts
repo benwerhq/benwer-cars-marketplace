@@ -29,6 +29,7 @@ export const env = createEnv({
       .url()
       .default(fallbackUrls.admin),
     NEXT_PUBLIC_MEDIA_ORIGIN: z.string().url().optional(),
+    NEXT_PUBLIC_GUEST_BOOKING_FIELDS: z.enum(["true", "false"]).optional(),
     NEXT_PUBLIC_STAFF_FIREBASE_API_KEY: z.string().min(1).optional(),
     NEXT_PUBLIC_STAFF_FIREBASE_AUTH_DOMAIN: z.string().min(1).optional(),
     NEXT_PUBLIC_STAFF_FIREBASE_PROJECT_ID: z.string().min(1).optional(),
@@ -52,6 +53,7 @@ export const env = createEnv({
     NEXT_PUBLIC_ADMIN_DEMO_URL: process.env.NEXT_PUBLIC_ADMIN_DEMO_URL,
     NEXT_PUBLIC_ADMIN_URL: process.env.NEXT_PUBLIC_ADMIN_URL,
     NEXT_PUBLIC_MEDIA_ORIGIN: process.env.NEXT_PUBLIC_MEDIA_ORIGIN,
+    NEXT_PUBLIC_GUEST_BOOKING_FIELDS: process.env.NEXT_PUBLIC_GUEST_BOOKING_FIELDS,
     NEXT_PUBLIC_STAFF_FIREBASE_API_KEY:
       process.env.NEXT_PUBLIC_STAFF_FIREBASE_API_KEY,
     NEXT_PUBLIC_STAFF_FIREBASE_AUTH_DOMAIN:
