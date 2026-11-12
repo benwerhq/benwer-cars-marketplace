@@ -919,7 +919,7 @@
       "empty": "No banners. The banner area shows your background colour.",
       "item": "Banner {position}",
       "image": "Image",
-      "imageHint": "Collages have a transparent background, so they sit on your banner colour.",
+      "imageHint": "Upload a wide image, about 1600 × 560 px. JPG, PNG or WebP up to 25 MB. A transparent PNG sits on your banner colour.",
       "add": "Add banner",
       "fields": {
         "script": "Handwritten line",
@@ -927,11 +927,6 @@
         "joiner": "Small connector",
         "boxed": "Boxed title",
         "description": "Description"
-      },
-      "presets": {
-        "airport": "Airport collage",
-        "weekend": "Weekend collage",
-        "roadtrip": "Road trip collage"
       },
       "colorsTitle": "Banner colours",
       "colorsDescription": "Used by every banner. Any colour works for the background.",
@@ -944,7 +939,12 @@
         "box": "White box",
         "boxText": "White box text",
         "script": "Connector text"
-      }
+      },
+      "noImage": "No image yet",
+      "uploadImage": "Upload image",
+      "replaceImage": "Replace image",
+      "tooLarge": "That file is over 25 MB. Choose a smaller image.",
+      "uploadFailed": "Upload failed. Try again."
     },
     "company": {
       "title": "Company header",

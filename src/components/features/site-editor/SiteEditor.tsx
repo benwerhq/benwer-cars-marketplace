@@ -168,6 +168,7 @@ export function SiteEditor({
       case SiteSectionId.HERO:
         return (
           <BannersForm
+            companyId={companyId}
             banners={content.banners}
             theme={content.bannerTheme}
             locale={locale}

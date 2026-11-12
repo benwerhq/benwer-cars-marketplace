@@ -919,7 +919,7 @@
       "empty": "Sin banners. Se muestra el color de fondo.",
       "item": "Banner {position}",
       "image": "Imagen",
-      "imageHint": "Los collages tienen fondo transparente y se colocan sobre el color del banner.",
+      "imageHint": "Sube una imagen ancha, de unos 1600 × 560 px. JPG, PNG o WebP de hasta 25 MB. Un PNG transparente se muestra sobre el color del banner.",
       "add": "Añadir banner",
       "fields": {
         "script": "Línea manuscrita",
@@ -927,11 +927,6 @@
         "joiner": "Conector",
         "boxed": "Título en caja",
         "description": "Descripción"
-      },
-      "presets": {
-        "airport": "Collage aeropuerto",
-        "weekend": "Collage fin de semana",
-        "roadtrip": "Collage viaje"
       },
       "colorsTitle": "Colores del banner",
       "colorsDescription": "Se aplican a todos los banners. El fondo admite cualquier color.",
@@ -944,7 +939,12 @@
         "box": "Caja blanca",
         "boxText": "Texto caja blanca",
         "script": "Texto conector"
-      }
+      },
+      "noImage": "Aún sin imagen",
+      "uploadImage": "Subir imagen",
+      "replaceImage": "Cambiar imagen",
+      "tooLarge": "El archivo supera los 25 MB. Elige una imagen más pequeña.",
+      "uploadFailed": "No se pudo subir. Inténtalo de nuevo."
     },
     "company": {
       "title": "Cabecera de la empresa",

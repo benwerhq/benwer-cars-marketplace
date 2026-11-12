@@ -919,7 +919,7 @@
       "empty": "Sem banners. É mostrada a cor de fundo.",
       "item": "Banner {position}",
       "image": "Imagem",
-      "imageHint": "As colagens têm fundo transparente e ficam sobre a cor do banner.",
+      "imageHint": "Carregue uma imagem larga, com cerca de 1600 × 560 px. JPG, PNG ou WebP até 25 MB. Um PNG transparente fica sobre a cor do banner.",
       "add": "Adicionar banner",
       "fields": {
         "script": "Linha manuscrita",
@@ -927,11 +927,6 @@
         "joiner": "Conector",
         "boxed": "Título em caixa",
         "description": "Descrição"
-      },
-      "presets": {
-        "airport": "Colagem aeroporto",
-        "weekend": "Colagem fim de semana",
-        "roadtrip": "Colagem viagem"
       },
       "colorsTitle": "Cores do banner",
       "colorsDescription": "Aplicam-se a todos os banners. O fundo aceita qualquer cor.",
@@ -944,7 +939,12 @@
         "box": "Caixa branca",
         "boxText": "Texto da caixa branca",
         "script": "Texto conector"
-      }
+      },
+      "noImage": "Ainda sem imagem",
+      "uploadImage": "Carregar imagem",
+      "replaceImage": "Substituir imagem",
+      "tooLarge": "O ficheiro tem mais de 25 MB. Escolha uma imagem mais pequena.",
+      "uploadFailed": "Não foi possível carregar. Tente novamente."
     },
     "company": {
       "title": "Cabeçalho da empresa",

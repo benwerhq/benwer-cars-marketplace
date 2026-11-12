@@ -1,21 +1,22 @@
 "use client";
 
+import { useRef, useState } from "react";
 import Image from "next/image";
-import { Check, Plus } from "lucide-react";
+import { ImageUp, ImageOff, Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
-import { SiteBannerPreset } from "@/enums";
+import { useUploadWebsiteImage } from "@/hooks/useWebsiteSettings";
 import {
-  BANNER_PRESET_IMAGES,
   DEFAULT_BANNER_THEME,
   MAX_SITE_BANNERS,
+  bannerImages,
+  emptyBanner,
   isHexColor,
   newContentId,
-  presetBanner,
 } from "@/lib/siteContent";
-import { cn } from "@/lib/utils";
 import type { SiteBanner, SiteBannerTheme } from "@/types/siteContent";
 import { useBannerCopy } from "../SiteBannerCarousel";
+import { ACCEPTED_IMAGES, MAX_UPLOAD_BYTES } from "./uploadLimits";
 import {
   EditorGroup,
   ItemCard,
@@ -25,6 +26,7 @@ import {
 } from "./EditorPrimitives";
 
 interface BannersFormProps {
+  companyId: string;
   banners: SiteBanner[];
   theme: SiteBannerTheme;
   locale: string;
@@ -79,7 +81,99 @@ function ColorInput({
   );
 }
 
-export function BannersForm({ banners, theme, locale, onChange, onThemeChange }: BannersFormProps) {
+function BannerImagePicker({
+  banner,
+  companyId,
+  background,
+  onPick,
+}: {
+  banner: SiteBanner;
+  companyId: string;
+  background: string;
+  onPick: (patch: Partial<SiteBanner>) => void;
+}) {
+  const t = useTranslations("siteEditor.banners");
+  const input = useRef<HTMLInputElement>(null);
+  const upload = useUploadWebsiteImage(companyId);
+  const [tooLarge, setTooLarge] = useState(false);
+  const images = bannerImages(banner);
+  const inputId = `banner-${banner.id}-image`;
+
+  async function onFile(file: File | undefined) {
+    if (!file) {
+      return;
+    }
+    setTooLarge(file.size > MAX_UPLOAD_BYTES);
+    if (file.size > MAX_UPLOAD_BYTES) {
+      return;
+    }
+    const result = await upload.mutateAsync(file).catch(() => null);
+    if (result) {
+      onPick({ preset: null, imageAssetId: result.id, imageUrl: result.url });
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-2">
+      <p className="text-xs font-medium text-foreground">{t("image")}</p>
+      <div
+        style={{ backgroundColor: background }}
+        className="relative flex aspect-[4/1] w-full items-center justify-center overflow-hidden rounded-md border border-border"
+      >
+        {images ? (
+          <Image
+            src={images.desktop}
+            alt=""
+            fill
+            unoptimized
+            sizes="30rem"
+            className="object-contain p-1"
+          />
+        ) : (
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-surface/90 px-2.5 py-1 text-xs text-muted-foreground">
+            <ImageOff size={14} aria-hidden />
+            {t("noImage")}
+          </span>
+        )}
+      </div>
+      <p className="text-xs text-muted-foreground">{t("imageHint")}</p>
+      <input
+        ref={input}
+        id={inputId}
+        type="file"
+        accept={ACCEPTED_IMAGES}
+        className="sr-only"
+        tabIndex={-1}
+        onChange={(event) => {
+          void onFile(event.target.files?.[0]);
+          event.target.value = "";
+        }}
+      />
+      <Button
+        type="button"
+        variant="secondary"
+        size="sm"
+        className="w-fit"
+        isLoading={upload.isPending}
+        onClick={() => input.current?.click()}
+      >
+        <ImageUp size={14} aria-hidden />
+        {images ? t("replaceImage") : t("uploadImage")}
+      </Button>
+      {tooLarge ? (
+        <p className="text-xs text-danger" role="alert">
+          {t("tooLarge")}
+        </p>
+      ) : upload.isError ? (
+        <p className="text-xs text-danger" role="alert">
+          {t("uploadFailed")}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+export function BannersForm({ companyId, banners, theme, locale, onChange, onThemeChange }: BannersFormProps) {
   const t = useTranslations("siteEditor.banners");
   const placeholder = useBannerCopy();
 
@@ -124,44 +218,12 @@ export function BannersForm({ banners, theme, locale, onChange, onThemeChange }:
               onMove={(direction) => onChange(moveItem(banners, index, direction))}
               onRemove={() => onChange(banners.filter((_, position) => position !== index))}
             >
-              <fieldset className="flex flex-col gap-2">
-                <legend className="text-xs font-medium text-foreground">{t("image")}</legend>
-                <div className="grid grid-cols-3 gap-2" role="radiogroup" aria-label={t("image")}>
-                  {Object.values(SiteBannerPreset).map((preset) => {
-                    const selected = banner.preset === preset && !banner.imageUrl;
-                    return (
-                      <button
-                        key={preset}
-                        type="button"
-                        role="radio"
-                        aria-checked={selected}
-                        aria-label={t(`presets.${preset}`)}
-                        onClick={() => update({ preset, imageUrl: null, imageAssetId: null })}
-                        style={{ backgroundColor: theme.background }}
-                        className={cn(
-                          "relative aspect-[4/3] cursor-pointer overflow-hidden rounded-md border-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                          selected ? "border-primary" : "border-transparent hover:border-border-strong",
-                        )}
-                      >
-                        <Image
-                          src={BANNER_PRESET_IMAGES[preset]}
-                          alt=""
-                          fill
-                          unoptimized
-                          sizes="8rem"
-                          className="object-contain p-1"
-                        />
-                        {selected ? (
-                          <span className="absolute top-1 right-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                            <Check size={12} aria-hidden />
-                          </span>
-                        ) : null}
-                      </button>
-                    );
-                  })}
-                </div>
-                <p className="text-xs text-muted-foreground">{t("imageHint")}</p>
-              </fieldset>
+              <BannerImagePicker
+                banner={banner}
+                companyId={companyId}
+                background={theme.background}
+                onPick={update}
+              />
               {TEXT_FIELDS.map((field) => (
                 <LocalizedField
                   key={field}
@@ -187,7 +249,7 @@ export function BannersForm({ banners, theme, locale, onChange, onThemeChange }:
             onClick={() =>
               onChange([
                 ...banners,
-                presetBanner(SiteBannerPreset.ROADTRIP, newContentId("banner")),
+                emptyBanner(newContentId("banner")),
               ])
             }
           >

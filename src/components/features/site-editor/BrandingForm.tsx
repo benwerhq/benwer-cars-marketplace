@@ -1,5 +1,6 @@
 "use client";
 
+import { ACCEPTED_IMAGES, MAX_UPLOAD_BYTES } from "./uploadLimits";
 import { useRef, useState } from "react";
 import { Check, ImageUp, RotateCcw } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -13,8 +14,6 @@ import type { SiteContent, SiteLogos } from "@/types/siteContent";
 import { EditorField, EditorGroup } from "./EditorPrimitives";
 
 const BACKGROUND_PRESETS = ["#ffffff", "#fafaf9", "#f8fafc", "#f5f5f4", "#f0fdfa", "#fdf8f0"];
-const ACCEPTED_IMAGES = "image/png,image/jpeg,image/webp";
-const MAX_UPLOAD_BYTES = 25 * 1024 * 1024;
 
 type LogoSlot = "header" | "company";
 

@@ -118,6 +118,10 @@ export function presetBanner(preset: SiteBannerPreset, id: string = preset): Sit
   };
 }
 
+export function emptyBanner(id: string): SiteBanner {
+  return { ...presetBanner(SiteBannerPreset.ROADTRIP, id), preset: null };
+}
+
 export function defaultSiteContent(): SiteContent {
   return parseSiteContent(undefined, undefined);
 }
