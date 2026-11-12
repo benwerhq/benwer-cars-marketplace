@@ -81,6 +81,11 @@ export function unwrapList<T>(payload: unknown): T[] {
     return payload.data as T[];
   }
 
+  // Guest endpoints (e.g. /guest/reservations) answer { items: [...] }.
+  if (isRecord(payload) && Array.isArray(payload.items)) {
+    return payload.items as T[];
+  }
+
   if (Array.isArray(payload)) {
     return payload as T[];
   }

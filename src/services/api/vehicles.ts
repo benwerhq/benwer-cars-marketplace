@@ -25,10 +25,14 @@ async function fetchLiveVehicles(
   filters?: VehicleFilters,
 ): Promise<Vehicle[]> {
   const channel = filters?.channel;
-  const data = channel
+  // With dates the API prices each car for that stay, as checkout does.
+  const stay =
+    filters?.from && filters?.to ? { from: filters.from, to: filters.to } : {};
+  const data =
+    channel || stay.from
     ? await publicRequest<unknown>(
         `/v1/public/companies/${encodeURIComponent(companySlug)}/vehicles`,
-        { query: channelQuery(channel) },
+        { query: { ...channelQuery(channel), ...stay } },
       )
     : (
         await getOpenApiClient().GET("/v1/public/companies/{slug}/vehicles", {
