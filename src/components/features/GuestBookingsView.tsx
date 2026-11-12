@@ -5,6 +5,7 @@ import { useState, type FormEvent } from "react";
 import { Inbox, Link2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { GuestDisabledState } from "@/components/features/GuestDisabledState";
+import { GuestVerifyEmailNotice } from "./GuestVerifyEmailNotice";
 import { GuestSignInPanel } from "@/components/features/GuestSignInPanel";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -108,6 +109,7 @@ export function GuestBookingsView({
           </Button>
         )}
       </div>
+      <GuestVerifyEmailNotice companySlug={companySlug} />
 
       {reservations.isLoading ? (
         <div className="flex flex-col gap-3">

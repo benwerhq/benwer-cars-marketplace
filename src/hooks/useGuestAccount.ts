@@ -142,3 +142,37 @@ export function useEraseGuest(companySlug: string) {
     },
   });
 }
+
+export function useRefreshGuestVerification(companySlug: string) {
+  const { refreshVerification } = useGuestAuth();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: refreshVerification,
+    onSuccess: async (verified) => {
+      if (!verified) {
+        return;
+      }
+      await queryClient.invalidateQueries({
+        queryKey: guestAccountQueryKey(companySlug),
+      });
+      await queryClient.invalidateQueries({
+        queryKey: guestReservationsQueryKey(companySlug),
+      });
+    },
+    onError: (error) => {
+      logError(error, { context: "guest_verify_refresh", companySlug });
+    },
+  });
+}
+
+export function useSendGuestVerification() {
+  const { sendVerificationEmail } = useGuestAuth();
+
+  return useMutation({
+    mutationFn: sendVerificationEmail,
+    onError: (error) => {
+      logError(error, { context: "guest_verify_send" });
+    },
+  });
+}

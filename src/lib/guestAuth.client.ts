@@ -6,6 +6,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendEmailVerification,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -96,7 +97,31 @@ export async function guestSignUp(
     throw new Error("guest.not_configured");
   }
 
-  await createUserWithEmailAndPassword(auth, email, password);
+  const credential = await createUserWithEmailAndPassword(auth, email, password);
+  await sendEmailVerification(credential.user, { url: window.location.href });
+}
+
+export async function guestSendEmailVerification(locale: string): Promise<void> {
+  const auth = getGuestAuth();
+  const user = auth?.currentUser;
+  if (!auth || !user) {
+    throw new Error("guest.unauthenticated");
+  }
+
+  auth.languageCode = locale.split("-")[0] ?? null;
+  await sendEmailVerification(user, { url: window.location.href });
+}
+
+/** Re-reads the user from Firebase and refreshes the ID token so the API sees a newly verified email. */
+export async function guestReloadUser(): Promise<boolean> {
+  const user = getGuestAuth()?.currentUser;
+  if (!user) {
+    return false;
+  }
+
+  await user.reload();
+  await user.getIdToken(true);
+  return user.emailVerified;
 }
 
 export async function guestSignInWithGoogle(): Promise<void> {

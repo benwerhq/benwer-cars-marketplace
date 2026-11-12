@@ -11,8 +11,8 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
 import { useEraseGuest, useUnlinkGuest } from "@/hooks/useGuestAccount";
 import { getErrorKey } from "@/lib/errors";
-import { guestBookingFieldsEnabled } from "@/lib/extras";
 import { GuestDetailsSection } from "./GuestDetailsForm";
+import { GuestVerifyEmailNotice } from "./GuestVerifyEmailNotice";
 
 interface GuestProfileViewProps {
   companySlug: string;
@@ -63,7 +63,9 @@ export function GuestProfileView({
         </p>
       </div>
 
-      {guestBookingFieldsEnabled() ? <GuestDetailsSection companySlug={companySlug} /> : null}
+      <GuestVerifyEmailNotice companySlug={companySlug} />
+
+      <GuestDetailsSection companySlug={companySlug} />
 
       <section className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5">
         <h2 className="text-lg font-semibold text-foreground">{t("accountTitle")}</h2>
