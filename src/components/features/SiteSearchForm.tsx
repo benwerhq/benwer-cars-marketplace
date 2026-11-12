@@ -2,14 +2,15 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { ChevronDown, MapPin, Search, Store, UserRound } from "lucide-react";
+import { ChevronDown, MapPin, Search, Store } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { DateRangePopover } from "./DateRangePopover";
+import { DriverAgeSelect } from "./DriverAgeSelect";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { SelectMenu, type SelectMenuOption } from "@/components/ui/SelectMenu";
 import { Switch } from "@/components/ui/Switch";
-import { DriverAgeBand, SearchParams } from "@/enums";
+import { SearchParams } from "@/enums";
 import { parseDriverAge, sitePathFromHome, withSiteQuery } from "@/lib/site";
 import type { SiteBranch } from "@/types/site";
 
@@ -67,11 +68,6 @@ export function SiteSearchForm({
   function branchLabel(id: string, anyLabel: string): string {
     return branches.find((item) => item.id === id)?.name ?? anyLabel;
   }
-
-  const driverAgeOptions: SelectMenuOption[] = Object.values(DriverAgeBand).map((band) => ({
-    value: band,
-    label: t("driverAgeYears", { band: t(`driverAgeBands.${band}`) }),
-  }));
 
   function onSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -148,27 +144,11 @@ export function SiteSearchForm({
           ) : (
             <span aria-hidden />
           )}
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>{t("driverAge")}</span>
-            <SelectMenu
-              id="site-driver-age"
-              value={driverAge}
-              onValueChange={(next) => setDriverAge(next as DriverAgeBand)}
-              options={driverAgeOptions}
-              ariaLabel={t("driverAge")}
-              align="end"
-              triggerClassName="group inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-muted py-1 pr-2 pl-3 text-sm font-semibold text-foreground transition-colors hover:border-border-strong data-[state=open]:border-border-strong"
-              contentClassName="w-48"
-            >
-              <UserRound size={14} className="text-subtle-foreground" aria-hidden />
-              {t(`driverAgeBands.${driverAge}`)}
-              <ChevronDown
-                size={14}
-                className="text-subtle-foreground transition-transform group-data-[state=open]:rotate-180"
-                aria-hidden
-              />
-            </SelectMenu>
-          </div>
+          <DriverAgeSelect
+            id="site-driver-age"
+            value={driverAge}
+            onChange={setDriverAge}
+          />
         </div>
         <div className="flex flex-col gap-1 p-3 md:flex-row md:items-center md:gap-1 md:p-2.5 md:pl-3">
           {branches.length > 0 ? (

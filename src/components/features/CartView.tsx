@@ -15,6 +15,7 @@ import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useAvailability } from "@/hooks/useAvailability";
+import { useCreateReservation } from "@/hooks/useCreateReservation";
 import { useGuestPrefill } from "@/hooks/useGuestAccount";
 import { useInsurancePackages } from "@/hooks/useInsurancePackages";
 import { useOneWayFee } from "@/hooks/useOneWayFee";
@@ -36,7 +37,6 @@ import { guestBookingFieldsEnabled, TIME_SLOTS } from "@/lib/extras";
 import { formatMoney } from "@/lib/money";
 import { withReturnTo } from "@/lib/returnTo";
 import { SearchParams, type PublicChannel } from "@/enums";
-import { reservationsApi } from "@/services/api";
 import type { SiteBranch } from "@/types/site";
 
 interface CartViewProps {
@@ -167,6 +167,8 @@ export function CartView({
   const grandTotal = liveStates.reduce((sum, state) => sum + (state?.total ?? 0), 0);
   const currency = liveStates.find((state) => state?.currency)?.currency ?? "EUR";
 
+  const createReservation = useCreateReservation({ companySlug });
+
   async function onSubmit(values: GuestDetailsValues) {
     if (submitting || items.length === 0) {
       return;
@@ -183,7 +185,7 @@ export function CartView({
     for (const item of items) {
       const label = states[item.id]?.label ?? item.vehicleId;
       try {
-        const reservation = await reservationsApi.create(companySlug, {
+        const reservation = await createReservation.mutateAsync({
           vehicleId: item.vehicleId,
           startDate: item.from,
           endDate: item.to,

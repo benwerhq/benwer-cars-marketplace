@@ -6,6 +6,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { TransmissionType } from "@/enums";
 import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn } from "@/lib/utils";
+import type { Company } from "@/types/company";
+import { CompanyMark } from "./CompanyMark";
 import type { Vehicle } from "@/types/vehicle";
 import { CarPhoto } from "./CarPhoto";
 
@@ -15,6 +17,7 @@ interface CarRowCardProps {
   days: number | null;
   priority?: boolean;
   available?: boolean;
+  company?: Pick<Company, "name" | "slug" | "branding"> | null;
 }
 
 function money(amount: number, currency: string, locale: string): string {
@@ -32,6 +35,7 @@ export function CarRowCard({
   days,
   priority = false,
   available = true,
+  company,
 }: CarRowCardProps) {
   const t = useTranslations("cars");
   const tDetail = useTranslations("carDetail");
@@ -77,6 +81,12 @@ export function CarRowCard({
         <p className="mt-0.5 text-sm text-muted-foreground">
           {vehicle.year} · {t(`types.${vehicle.type}`)}
         </p>
+        {company ? (
+          <p className="mt-3 flex min-w-0 items-center gap-2 text-sm text-muted-foreground">
+            <CompanyMark company={company} size="sm" />
+            <span className="truncate">{company.name}</span>
+          </p>
+        ) : null}
         <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-foreground">
           <li className="flex items-center gap-2">
             <Users size={15} className="text-subtle-foreground" aria-hidden />

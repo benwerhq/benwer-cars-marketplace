@@ -7,7 +7,6 @@ import { CartView } from "@/components/features/CartView";
 import { SitePausedNotice } from "@/components/features/SitePausedNotice";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
-import { platformBookingHref } from "@/lib/canonicalUrl";
 import {
   canAcceptBookings,
   companySlugFromSite,
@@ -18,6 +17,8 @@ import {
   SITE_CHANNEL,
   siteBookHref,
   siteCarPath,
+  publicSitePath,
+  siteBookingBasePath,
 } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteHeaderLogo } from "@/lib/siteContent";
@@ -97,7 +98,11 @@ async function CompanySiteCartPage({ params, searchParams }: Props) {
             carHrefTemplate={carHrefTemplate}
             bookHrefTemplate={bookHrefTemplate}
             guestSignInHref={guestLinksFromHomeHref(homeHref).signIn}
-            confirmationBaseUrl={platformBookingHref("").replace(/\/$/, "")}
+            confirmationBaseUrl={publicSitePath(
+            siteBookingBasePath(site.slug),
+            site.slug,
+            onTenantHost,
+          )}
           />
         ) : (
           <SitePausedNotice />

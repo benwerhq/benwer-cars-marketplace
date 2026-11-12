@@ -102,6 +102,7 @@ export function CarGrid({
             days={days}
             priority={index === 0}
             available={isAvailable?.(vehicle) ?? true}
+            company={companyFor?.(vehicle)}
           />
         ) : (
           <CarCard

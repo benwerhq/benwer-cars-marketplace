@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { platformBookingHref, siteCanonicalPageUrl } from "./canonicalUrl";
+import { siteCanonicalPageUrl } from "./canonicalUrl";
 
 describe("siteCanonicalPageUrl", () => {
   it("keeps /s/{slug} when canonical is the platform site URL", () => {
@@ -23,13 +23,5 @@ describe("siteCanonicalPageUrl", () => {
         "acme",
       ),
     ).toBe("https://reservas.acme.es/cars/v1");
-  });
-});
-
-describe("platformBookingHref", () => {
-  it("points guest status links at the platform /booking/{token} URL", () => {
-    expect(platformBookingHref("tok-1")).toBe(
-      "http://localhost:3002/booking/tok-1",
-    );
   });
 });

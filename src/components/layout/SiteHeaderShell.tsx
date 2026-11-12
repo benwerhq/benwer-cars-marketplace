@@ -20,7 +20,7 @@ export function SiteHeaderShell({
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full overflow-x-clip border-b border-border bg-primary/5 backdrop-blur-md",
+        "sticky top-0 z-40 w-full overflow-x-clip border-b border-border bg-surface shadow-sm",
         className,
       )}
     >

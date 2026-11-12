@@ -10,7 +10,6 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { vehiclesApi } from "@/services/api";
 import { SearchParams } from "@/enums";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
-import { platformBookingHref } from "@/lib/canonicalUrl";
 import {
   canAcceptBookings,
   companySlugFromSite,
@@ -24,6 +23,8 @@ import {
   siteBookHref,
   siteCarPath,
   withSiteQuery,
+  publicSitePath,
+  siteBookingBasePath,
 } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteHeaderLogo } from "@/lib/siteContent";
@@ -213,7 +214,11 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
             site.branches.find((item) => item.id === branch) ??
             null
           }
-          confirmationBaseUrl={platformBookingHref("").replace(/\/$/, "")}
+          confirmationBaseUrl={publicSitePath(
+            siteBookingBasePath(site.slug),
+            site.slug,
+            onTenantHost,
+          )}
           bookHrefBase={publicSiteHref(
             siteBookHref({
               slug: site.slug,
