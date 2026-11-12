@@ -1,54 +1,25 @@
-import { SearchParams, TransmissionType, VehicleType } from "@/enums";
-import type { VehicleFilters } from "@/types/vehicle";
+import {
+  FuelType,
+  SearchParams,
+  TransmissionType,
+  VehicleCategory,
+  VehicleSort,
+  VehicleType,
+} from "@/enums";
+import type {
+  MarketplaceSearchFilters,
+  Vehicle,
+  VehicleFilters,
+} from "@/types/vehicle";
 
-export const FILTER_VEHICLE_TYPES = [
-  VehicleType.CAR,
-  VehicleType.SUV,
-  VehicleType.VAN,
-] as const;
+export const FILTER_CATEGORIES = Object.values(VehicleCategory);
+export const FILTER_FUELS = Object.values(FuelType);
+export const FILTER_TRANSMISSIONS = Object.values(TransmissionType);
+export const FILTER_SORTS = Object.values(VehicleSort);
 
-const PUBLIC_VEHICLE_TYPE_QUERY = [
-  "economy",
-  "sedan",
-  "suv",
-  "minivan",
-  "van",
-  "other",
-] as const;
-
-export type PublicVehicleTypeQuery = (typeof PUBLIC_VEHICLE_TYPE_QUERY)[number];
-
-const PUBLIC_VEHICLE_TYPE_QUERY_SET = new Set<string>(
-  PUBLIC_VEHICLE_TYPE_QUERY,
-);
-
-export function toPublicVehicleTypeQuery(
-  type: string | undefined,
-): PublicVehicleTypeQuery | undefined {
-  if (!type || type === VehicleType.CAR) {
-    return undefined;
-  }
-
-  if (type === VehicleType.SUV) {
-    return "suv";
-  }
-
-  if (type === VehicleType.VAN) {
-    return "van";
-  }
-
-  if (PUBLIC_VEHICLE_TYPE_QUERY_SET.has(type)) {
-    return type as PublicVehicleTypeQuery;
-  }
-
-  return undefined;
+function normalize(value: string): string {
+  return value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
 }
-
-export const FILTER_SEAT_OPTIONS = [4, 5, 7] as const;
-
-const VEHICLE_TYPE_VALUES = new Set<string>(Object.values(VehicleType));
-const TRANSMISSION_VALUES = new Set<string>(Object.values(TransmissionType));
-const SEAT_VALUES = new Set<number>(FILTER_SEAT_OPTIONS);
 
 function setOrDelete(
   params: URLSearchParams,
@@ -62,33 +33,66 @@ function setOrDelete(
   }
 }
 
-function parseVehicleType(value: string | null): VehicleType | undefined {
-  if (!value || !VEHICLE_TYPE_VALUES.has(value)) {
-    return undefined;
-  }
-
-  return value as VehicleType;
-}
-
-function parseTransmission(value: string | null): TransmissionType | undefined {
-  if (!value || !TRANSMISSION_VALUES.has(value)) {
-    return undefined;
-  }
-
-  return value as TransmissionType;
-}
-
-function parseSeats(value: string | null): number | undefined {
+function parseList(value: string | null): string[] {
   if (!value) {
-    return undefined;
+    return [];
   }
 
-  const seats = Number.parseInt(value, 10);
-  if (!Number.isInteger(seats) || !SEAT_VALUES.has(seats)) {
-    return undefined;
+  return value
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function parseEnumList<T extends string>(
+  value: string | null,
+  allowed: readonly T[],
+): T[] | undefined {
+  const allowedSet = new Set<string>(allowed);
+  const items = [
+    ...new Set(parseList(value).filter((item) => allowedSet.has(item))),
+  ] as T[];
+  return items.length ? items : undefined;
+}
+
+function parseSeatList(value: string | null): number[] | undefined {
+  const seats = [
+    ...new Set(
+      parseList(value)
+        .map((item) => Number.parseInt(item, 10))
+        .filter((item) => Number.isInteger(item) && item > 0),
+    ),
+  ].sort((a, b) => a - b);
+  return seats.length ? seats : undefined;
+}
+
+function serializeList(values: readonly (string | number)[] | undefined) {
+  return values?.length ? values.join(",") : undefined;
+}
+
+function parseCategories(
+  searchParams: Pick<URLSearchParams, "get">,
+): VehicleCategory[] | undefined {
+  const categories = parseEnumList(
+    searchParams.get(SearchParams.CATEGORY),
+    FILTER_CATEGORIES,
+  );
+  if (categories) {
+    return categories;
   }
 
-  return seats;
+  const legacyType = searchParams.get(SearchParams.TYPE);
+  if (legacyType === VehicleType.SUV) {
+    return [VehicleCategory.SUV];
+  }
+  if (legacyType === VehicleType.VAN) {
+    return [VehicleCategory.VAN, VehicleCategory.MINIVAN];
+  }
+  return undefined;
+}
+
+function parseSort(value: string | null): VehicleSort | undefined {
+  return FILTER_SORTS.find((sort) => sort === value);
 }
 
 export function serializeCompanySlugs(slugs: string[]): string {
@@ -139,20 +143,20 @@ function applyCompanySlugs(
 export function parseVehicleFilters(
   searchParams: Pick<URLSearchParams, "get">,
 ): VehicleFilters {
-  const from = searchParams.get(SearchParams.FROM) || undefined;
-  const to = searchParams.get(SearchParams.TO) || undefined;
-  const q = searchParams.get(SearchParams.Q) || undefined;
   const companySlugs = parseCompanySlugs(searchParams);
 
   return {
-    type: parseVehicleType(searchParams.get(SearchParams.TYPE)),
-    seats: parseSeats(searchParams.get(SearchParams.SEATS)),
-    transmission: parseTransmission(
+    categories: parseCategories(searchParams),
+    fuels: parseEnumList(searchParams.get(SearchParams.FUEL), FILTER_FUELS),
+    transmissions: parseEnumList(
       searchParams.get(SearchParams.TRANSMISSION),
+      FILTER_TRANSMISSIONS,
     ),
-    from,
-    to,
-    q,
+    seats: parseSeatList(searchParams.get(SearchParams.SEATS)),
+    sort: parseSort(searchParams.get(SearchParams.SORT)),
+    from: searchParams.get(SearchParams.FROM) || undefined,
+    to: searchParams.get(SearchParams.TO) || undefined,
+    q: searchParams.get(SearchParams.Q) || undefined,
     companySlugs,
     companySlug: companySlugs?.[0],
     branchId: searchParams.get(SearchParams.BRANCH) || undefined,
@@ -165,12 +169,19 @@ export function applyVehicleFilters(
 ): URLSearchParams {
   const next = new URLSearchParams(searchParams.toString());
 
+  next.delete(SearchParams.TYPE);
   setOrDelete(next, SearchParams.FROM, filters.from);
   setOrDelete(next, SearchParams.TO, filters.to);
-  setOrDelete(next, SearchParams.TYPE, filters.type);
-  setOrDelete(next, SearchParams.SEATS, filters.seats?.toString());
-  setOrDelete(next, SearchParams.TRANSMISSION, filters.transmission);
-  setOrDelete(next, SearchParams.Q, filters.q);
+  setOrDelete(next, SearchParams.CATEGORY, serializeList(filters.categories));
+  setOrDelete(next, SearchParams.FUEL, serializeList(filters.fuels));
+  setOrDelete(
+    next,
+    SearchParams.TRANSMISSION,
+    serializeList(filters.transmissions),
+  );
+  setOrDelete(next, SearchParams.SEATS, serializeList(filters.seats));
+  setOrDelete(next, SearchParams.SORT, filters.sort);
+  setOrDelete(next, SearchParams.Q, filters.q?.trim() || undefined);
   setOrDelete(next, SearchParams.BRANCH, filters.branchId);
   applyCompanySlugs(
     next,
@@ -181,49 +192,146 @@ export function applyVehicleFilters(
   return next;
 }
 
-export function hasActiveVehicleFilters(filters: VehicleFilters): boolean {
-  return Boolean(
-    filters.type ||
-    filters.seats ||
-    filters.transmission ||
-    filters.from ||
-    filters.to ||
-    filters.q ||
-    filters.companySlug ||
-    filters.companySlugs?.length,
+export function clearAdvancedFilters(filters: VehicleFilters): VehicleFilters {
+  return {
+    from: filters.from,
+    to: filters.to,
+    branchId: filters.branchId,
+    sort: filters.sort,
+  };
+}
+
+export function countAdvancedFilters(filters: VehicleFilters): number {
+  return (
+    (filters.categories?.length ?? 0) +
+    (filters.fuels?.length ?? 0) +
+    (filters.transmissions?.length ?? 0) +
+    (filters.seats?.length ?? 0) +
+    (filters.companySlugs?.length ?? 0) +
+    (filters.q?.trim() ? 1 : 0)
   );
 }
 
 export function hasActiveAdvancedFilters(filters: VehicleFilters): boolean {
-  return Boolean(
-    filters.type ||
-    filters.seats ||
-    filters.transmission ||
-    filters.q ||
-    filters.companySlugs?.length,
+  return countAdvancedFilters(filters) > 0;
+}
+
+export function fleetFetchFilters(
+  filters: VehicleFilters | undefined,
+): VehicleFilters {
+  return {
+    from: filters?.from,
+    to: filters?.to,
+    branchId: filters?.branchId,
+    channel: filters?.channel,
+  };
+}
+
+const VEHICLE_CATEGORIES = new Set<string>(Object.values(VehicleCategory));
+
+export function marketplaceFetchFilters(
+  filters: MarketplaceSearchFilters | undefined,
+): MarketplaceSearchFilters {
+  return {
+    location: filters?.location,
+    from: filters?.from,
+    to: filters?.to,
+    branchId: filters?.branchId,
+  };
+}
+
+export function vehicleCategoryOf(vehicle: Vehicle): VehicleCategory {
+  if (vehicle.category && VEHICLE_CATEGORIES.has(vehicle.category)) {
+    return vehicle.category as VehicleCategory;
+  }
+
+  if (vehicle.type === VehicleType.SUV) {
+    return VehicleCategory.SUV;
+  }
+
+  if (vehicle.type === VehicleType.VAN) {
+    return VehicleCategory.VAN;
+  }
+
+  return VehicleCategory.OTHER;
+}
+
+function excludedBy<T>(selected: T[] | undefined, value: T): boolean {
+  return Boolean(selected?.length) && !selected?.includes(value);
+}
+
+export function matchesVehicleFilters(
+  vehicle: Vehicle,
+  filters?: VehicleFilters,
+): boolean {
+  if (!filters) {
+    return true;
+  }
+
+  if (
+    excludedBy(filters.categories, vehicleCategoryOf(vehicle)) ||
+    excludedBy(filters.fuels, vehicle.fuel) ||
+    excludedBy(filters.transmissions, vehicle.transmission) ||
+    excludedBy(filters.seats, vehicle.seats) ||
+    excludedBy(filters.companySlugs, vehicle.companySlug)
+  ) {
+    return false;
+  }
+
+  if (
+    filters.branchId &&
+    vehicle.branchId &&
+    vehicle.branchId !== filters.branchId
+  ) {
+    return false;
+  }
+
+  if (filters.q) {
+    const query = normalize(filters.q.trim());
+    const haystack = normalize(
+      `${vehicle.brand} ${vehicle.model} ${vehicle.description ?? ""}`,
+    );
+    if (!haystack.includes(query)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+export function sortVehicles<T extends Vehicle>(
+  vehicles: T[],
+  sort?: VehicleSort,
+): T[] {
+  if (sort === VehicleSort.PRICE_DESC) {
+    return [...vehicles].sort((a, b) => b.pricePerDay - a.pricePerDay);
+  }
+
+  if (sort === VehicleSort.PRICE_ASC) {
+    return [...vehicles].sort((a, b) => a.pricePerDay - b.pricePerDay);
+  }
+
+  return vehicles;
+}
+
+export function refineVehicles<T extends Vehicle>(
+  vehicles: T[],
+  filters: VehicleFilters,
+): T[] {
+  return sortVehicles(
+    vehicles.filter((vehicle) => matchesVehicleFilters(vehicle, filters)),
+    filters.sort,
   );
 }
 
-export function countAdvancedFilters(filters: VehicleFilters): number {
-  let count = 0;
-
-  if (filters.type) {
-    count += 1;
+export function seatOptionsOf(vehicles: Pick<Vehicle, "seats">[]): number[] {
+  const values = new Set<number>();
+  for (const vehicle of vehicles) {
+    if (vehicle.seats > 0) {
+      values.add(vehicle.seats);
+    }
   }
-  if (filters.seats) {
-    count += 1;
-  }
-  if (filters.transmission) {
-    count += 1;
-  }
-  if (filters.q) {
-    count += 1;
-  }
-  if (filters.companySlugs?.length) {
-    count += filters.companySlugs.length;
-  }
-
-  return count;
+  return [...values].sort((a, b) => a - b);
 }
 
 export function parseBrowseParams(searchParams: Pick<URLSearchParams, "get">): {

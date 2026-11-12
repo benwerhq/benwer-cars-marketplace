@@ -1,5 +1,6 @@
 import { isProvinceWideLocation } from "@/data/malagaCities";
 import { PublicChannel, VehicleStatus } from "@/enums";
+import { matchesVehicleFilters, sortVehicles } from "@/lib/vehicleFilters";
 import type { Company, CompanyListFilters } from "@/types/company";
 import type { Vehicle, VehicleFilters } from "@/types/vehicle";
 
@@ -7,65 +8,14 @@ function normalize(value: string): string {
   return value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
 }
 
+export { matchesVehicleFilters, sortVehicles };
+
 export function isListedVehicle(vehicle: Vehicle): boolean {
   return vehicle.isPublic && vehicle.status === VehicleStatus.AVAILABLE;
 }
 
 export function isPublicFleetVehicle(vehicle: Vehicle): boolean {
   return vehicle.isPublic;
-}
-
-export function matchesVehicleFilters(
-  vehicle: Vehicle,
-  filters?: VehicleFilters,
-): boolean {
-  if (!filters) {
-    return true;
-  }
-
-  if (filters.type && vehicle.type !== filters.type) {
-    return false;
-  }
-
-  if (filters.transmission && vehicle.transmission !== filters.transmission) {
-    return false;
-  }
-
-  if (filters.seats && vehicle.seats < filters.seats) {
-    return false;
-  }
-
-  if (
-    filters.branchId &&
-    vehicle.branchId &&
-    vehicle.branchId !== filters.branchId
-  ) {
-    return false;
-  }
-
-  if (filters.q) {
-    const query = normalize(filters.q);
-    const haystack = normalize(
-      `${vehicle.brand} ${vehicle.model} ${vehicle.description ?? ""}`,
-    );
-    if (!haystack.includes(query)) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-export function sortVehicles(vehicles: Vehicle[], sort?: string): Vehicle[] {
-  if (sort === "pricePerDay:desc") {
-    return [...vehicles].sort((a, b) => b.pricePerDay - a.pricePerDay);
-  }
-
-  if (sort === "pricePerDay:asc") {
-    return [...vehicles].sort((a, b) => a.pricePerDay - b.pricePerDay);
-  }
-
-  return vehicles;
 }
 
 export function applyVehicleListFilters(

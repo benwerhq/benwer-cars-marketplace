@@ -128,8 +128,9 @@ function mapFuel(value: string | undefined): FuelType {
       return FuelType.ELECTRIC;
     case FuelType.HYBRID:
     case "hybrid":
-    case "plugin_hybrid":
       return FuelType.HYBRID;
+    case FuelType.PLUGIN_HYBRID:
+      return FuelType.PLUGIN_HYBRID;
     default:
       return FuelType.PETROL;
   }

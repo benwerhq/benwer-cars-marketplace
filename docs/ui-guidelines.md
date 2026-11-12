@@ -146,7 +146,7 @@ New marketplace sections should compose these rather than add a separate style.
 | ------------------------ | ----------------------------------------------------------------------------- |
 | **CarCard**              | Car photo, brand/model/year, price/day, specs badges, "View details" CTA.     |
 | **CarGrid**              | Responsive grid of `CarCard`s. Handles loading (skeleton grid), empty, error. |
-| **FilterBar**            | Date range, vehicle type, seats, transmission. URL-synced via `nuqs`.         |
+| **VehicleFilterToolbar** | Above every car list: search, category, fuel, transmission, seats, company (marketplace), sort — same set as admin `/cars`. Applies instantly, URL-synced. |
 | **CarPhotoGallery**      | Main photo + thumbnail strip. Lightbox on click.                              |
 | **SpecsTable**           | Type, fuel, transmission, seats in a clean grid.                              |
 | **AvailabilityCalendar** | Highlight unavailable dates; user selects a range.                            |

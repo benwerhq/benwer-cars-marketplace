@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 import {
   BookingMode,
   CaptureMethod,
+  FuelType,
   PaymentChannel,
   PaymentStatus,
   ReservationStatus,
@@ -188,6 +189,15 @@ describe("mapVehicleList", () => {
     });
     expect(vehicles.find((vehicle) => vehicle.model === "Ateca")?.type).toBe(
       VehicleType.SUV,
+    );
+  });
+
+  it("keeps plug-in hybrids distinct from hybrids", () => {
+    expect(mapVehicle({ id: "p", fuelType: "plugin_hybrid" }).fuel).toBe(
+      FuelType.PLUGIN_HYBRID,
+    );
+    expect(mapVehicle({ id: "h", fuelType: "hybrid" }).fuel).toBe(
+      FuelType.HYBRID,
     );
   });
 

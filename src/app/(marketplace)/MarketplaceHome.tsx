@@ -128,7 +128,7 @@ export async function MarketplaceHome() {
           id="fleet"
           className="mx-auto flex w-full max-w-7xl scroll-mt-20 flex-col gap-8 px-4 py-10 md:px-6 lg:px-8"
         >
-          <FeaturedCars />
+          <FeaturedCars initialCompanies={companies} />
         </main>
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-20 px-4 pt-8 pb-20 md:px-6 lg:px-8">
           <SiteIncludedSection

@@ -2,6 +2,8 @@ import type {
   FuelType,
   PublicChannel,
   TransmissionType,
+  VehicleCategory,
+  VehicleSort,
   VehicleStatus,
   VehicleType,
 } from "@/enums";
@@ -33,13 +35,14 @@ export interface Vehicle {
 }
 
 export interface VehicleFilters {
-  type?: VehicleType;
-  seats?: number;
-  transmission?: TransmissionType;
+  categories?: VehicleCategory[];
+  fuels?: FuelType[];
+  transmissions?: TransmissionType[];
+  seats?: number[];
   from?: string;
   to?: string;
   q?: string;
-  sort?: string;
+  sort?: VehicleSort;
   cursor?: string;
   limit?: number;
   companySlug?: string;

@@ -177,8 +177,6 @@
     "subtitle": "Every public car from partner rental companies across Málaga province. Pick your dates to see what is free.",
     "searchEmptyTitle": "No cars match this search",
     "searchEmptyHint": "Try different dates or another location in Málaga province. Every city stays in the list — even if no cars are listed there today.",
-    "companiesSelected": "{count, plural, one {# company selected} other {# companies selected}}",
-    "clearCompanies": "Clear companies",
     "resultsInProvince": "{count, plural, one {# car across all locations} other {# cars across all locations}}",
     "resultsInCity": "{count, plural, one {# car in {city}} other {# cars in {city}}}",
     "allCompanies": "All companies",
@@ -192,7 +190,6 @@
     "fleetSummary": "{total, plural, one {# car} other {# cars}} · {available, plural, one {# available} other {# available}}",
     "fleetSummaryForDates": "{total, plural, one {# car} other {# cars}} · {available, plural, one {# available} other {# available}} · {from} – {to}",
     "seats": "{count} seats",
-    "seatsPlus": "{count}+",
     "resultsCount": "{count, plural, one {# car available} other {# cars available}}",
     "resultsForDates": "{count, plural, one {# car} other {# cars}} · {from} – {to}",
     "emptyTitle": "This fleet is not public yet",
@@ -201,22 +198,20 @@
     "noResultsHint": "Try different dates, another location, or fewer filters.",
     "browseCompanies": "Browse companies",
     "clearFilters": "Clear filters",
-    "searchPlaceholder": "Search cars",
-    "showFilters": "Show filters",
-    "hideFilters": "Hide filters",
+    "searchPlaceholder": "Search by make or model",
     "filters": {
       "title": "Filters",
-      "type": "Vehicle type",
       "seats": "Seats",
       "transmission": "Transmission",
       "company": "Company",
       "dates": "Dates",
       "from": "Pick-up date",
       "to": "Drop-off date",
-      "appliedCount": "{count, plural, one {# applied} other {# applied}}",
-      "openAria": "Filters, {count, plural, one {# applied} other {# applied}}",
-      "close": "Close filters",
-      "done": "Done"
+      "category": "Category",
+      "fuel": "Fuel type",
+      "all": "All",
+      "clear": "Clear",
+      "selectedCount": "{count} selected"
     },
     "types": {
       "car": "Car",
@@ -233,14 +228,29 @@
       "petrol": "Petrol",
       "diesel": "Diesel",
       "electric": "Electric",
-      "hybrid": "Hybrid"
+      "hybrid": "Hybrid",
+      "plugin_hybrid": "Plug-in hybrid"
     },
     "rowDeposit": "Deposit {amount}",
     "rowAvailable": "Available for your dates",
     "rowTotal": "{amount} total · {days, plural, one {# day} other {# days}}",
     "bookNow": "Book now",
     "availableCount": "{count, plural, =0 {No cars available} one {# car available} other {# cars available}}",
-    "availableForDates": "{count, plural, =0 {No cars available} one {# car available} other {# cars available}} · {from} – {to}"
+    "availableForDates": "{count, plural, =0 {No cars available} one {# car available} other {# cars available}} · {from} – {to}",
+    "categories": {
+      "economy": "Economy",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "Minivan",
+      "van": "Van",
+      "other": "Other"
+    },
+    "sort": {
+      "label": "Sort by",
+      "recommended": "Recommended",
+      "pricePerDay_asc": "Lowest daily rate",
+      "pricePerDay_desc": "Highest daily rate"
+    }
   },
   "carDetail": {
     "bookNow": "Book now",

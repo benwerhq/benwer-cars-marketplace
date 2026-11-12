@@ -130,6 +130,21 @@ export enum FuelType {
   DIESEL = "diesel",
   ELECTRIC = "electric",
   HYBRID = "hybrid",
+  PLUGIN_HYBRID = "plugin_hybrid",
+}
+
+export enum VehicleCategory {
+  ECONOMY = "economy",
+  SEDAN = "sedan",
+  SUV = "suv",
+  MINIVAN = "minivan",
+  VAN = "van",
+  OTHER = "other",
+}
+
+export enum VehicleSort {
+  PRICE_ASC = "pricePerDay:asc",
+  PRICE_DESC = "pricePerDay:desc",
 }
 
 export enum QueryKeys {
@@ -187,8 +202,11 @@ export enum SearchParams {
   TO = "to",
   VIEW = "view",
   TYPE = "type",
+  CATEGORY = "category",
+  FUEL = "fuel",
   SEATS = "seats",
   TRANSMISSION = "transmission",
+  SORT = "sort",
   Q = "q",
   CAR_ID = "carId",
   COMPANY_SLUG = "companySlug",

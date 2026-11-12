@@ -136,7 +136,6 @@ async function searchLiveMarketplace(
         location,
         from: filters?.from,
         to: filters?.to,
-        q: filters?.q,
       });
   const branchId = filters?.branchId;
   const companies = branchId
@@ -148,13 +147,8 @@ async function searchLiveMarketplace(
   const fleets = await Promise.all(
     companies.map(async (company) => {
       const vehicles = await vehiclesApi.getByCompany(company.slug, {
-        type: filters?.type,
-        seats: filters?.seats,
-        transmission: filters?.transmission,
         from: filters?.from,
         to: filters?.to,
-        q: filters?.q,
-        sort: filters?.sort,
         branchId,
       });
       return vehicles.map((vehicle) => ({ ...vehicle, company }));

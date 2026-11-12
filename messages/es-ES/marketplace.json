@@ -177,8 +177,6 @@
     "subtitle": "Todos los coches públicos de las empresas de alquiler asociadas en la provincia de Málaga. Elige tus fechas para ver qué está libre.",
     "searchEmptyTitle": "Ningún coche coincide con esta búsqueda",
     "searchEmptyHint": "Prueba otras fechas u otra ubicación en la provincia de Málaga. Todas las ciudades siguen en la lista, aunque hoy no haya flota.",
-    "companiesSelected": "{count, plural, one {# empresa seleccionada} other {# empresas seleccionadas}}",
-    "clearCompanies": "Quitar empresas",
     "resultsInProvince": "{count, plural, one {# coche en todas las ubicaciones} other {# coches en todas las ubicaciones}}",
     "resultsInCity": "{count, plural, one {# coche en {city}} other {# coches en {city}}}",
     "allCompanies": "Todas las empresas",
@@ -192,7 +190,6 @@
     "fleetSummary": "{total, plural, one {# coche} other {# coches}} · {available, plural, one {# disponible} other {# disponibles}}",
     "fleetSummaryForDates": "{total, plural, one {# coche} other {# coches}} · {available, plural, one {# disponible} other {# disponibles}} · {from} – {to}",
     "seats": "{count} plazas",
-    "seatsPlus": "{count}+",
     "resultsCount": "{count, plural, one {# coche disponible} other {# coches disponibles}}",
     "resultsForDates": "{count, plural, one {# coche} other {# coches}} · {from} – {to}",
     "emptyTitle": "Esta flota aún no es pública",
@@ -201,22 +198,20 @@
     "noResultsHint": "Prueba otras fechas, otra ubicación o menos filtros.",
     "browseCompanies": "Ver empresas",
     "clearFilters": "Borrar filtros",
-    "searchPlaceholder": "Buscar coches",
-    "showFilters": "Mostrar filtros",
-    "hideFilters": "Ocultar filtros",
+    "searchPlaceholder": "Buscar por marca o modelo",
     "filters": {
       "title": "Filtros",
-      "type": "Tipo de vehículo",
       "seats": "Plazas",
       "transmission": "Transmisión",
       "company": "Empresa",
       "dates": "Fechas",
       "from": "Fecha de recogida",
       "to": "Fecha de devolución",
-      "appliedCount": "{count, plural, one {# aplicado} other {# aplicados}}",
-      "openAria": "Filtros, {count, plural, one {# aplicado} other {# aplicados}}",
-      "close": "Cerrar filtros",
-      "done": "Listo"
+      "category": "Categoría",
+      "fuel": "Combustible",
+      "all": "Todos",
+      "clear": "Borrar",
+      "selectedCount": "{count} seleccionados"
     },
     "types": {
       "car": "Coche",
@@ -233,14 +228,29 @@
       "petrol": "Gasolina",
       "diesel": "Diésel",
       "electric": "Eléctrico",
-      "hybrid": "Híbrido"
+      "hybrid": "Híbrido",
+      "plugin_hybrid": "Híbrido enchufable"
     },
     "rowDeposit": "Fianza {amount}",
     "rowAvailable": "Disponible en tus fechas",
     "rowTotal": "{amount} en total · {days, plural, one {# día} other {# días}}",
     "bookNow": "Reservar",
     "availableCount": "{count, plural, =0 {Ningún coche disponible} one {# coche disponible} other {# coches disponibles}}",
-    "availableForDates": "{count, plural, =0 {Ningún coche disponible} one {# coche disponible} other {# coches disponibles}} · {from} – {to}"
+    "availableForDates": "{count, plural, =0 {Ningún coche disponible} one {# coche disponible} other {# coches disponibles}} · {from} – {to}",
+    "categories": {
+      "economy": "Económico",
+      "sedan": "Berlina",
+      "suv": "SUV",
+      "minivan": "Monovolumen",
+      "van": "Furgoneta",
+      "other": "Otro"
+    },
+    "sort": {
+      "label": "Ordenar por",
+      "recommended": "Recomendados",
+      "pricePerDay_asc": "Menor precio/día",
+      "pricePerDay_desc": "Mayor precio/día"
+    }
   },
   "carDetail": {
     "bookNow": "Reservar ahora",
