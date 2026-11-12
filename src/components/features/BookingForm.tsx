@@ -2,11 +2,12 @@
 
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { useFormContext } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import { BookingDateFields } from "./BookingDateFields";
 import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
+import { PhoneInput } from "@/components/ui/PhoneInput";
 import type { BookingFormValues } from "@/lib/bookingSchema";
 
 interface BookingFormProps {
@@ -24,6 +25,7 @@ export function BookingForm({
   const t = useTranslations("booking");
   const {
     register,
+    control,
     formState: { errors },
   } = useFormContext<BookingFormValues>();
 
@@ -83,17 +85,21 @@ export function BookingForm({
         label={t("guestPhone")}
         htmlFor="guestPhone"
         hint={t("guestPhoneHint")}
-        error={errors.guestPhone?.message}
         required
       >
-        <Input
-          id="guestPhone"
-          type="tel"
-          autoComplete="tel"
-          inputMode="tel"
-          placeholder={t("guestPhonePlaceholder")}
-          className="h-11"
-          {...register("guestPhone")}
+        <Controller
+          name="guestPhone"
+          control={control}
+          render={({ field }) => (
+            <PhoneInput
+              id="guestPhone"
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
+              error={errors.guestPhone?.message}
+              required
+            />
+          )}
         />
       </Field>
 

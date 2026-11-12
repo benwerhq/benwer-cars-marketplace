@@ -136,7 +136,13 @@
     "pickupTrigger": "Fecha de recogida, {date}",
     "dropoffTrigger": "Fecha de devolución, {date}",
     "calendarLabel": "Seleccionar fechas",
-    "submit": "Buscar"
+    "submit": "Buscar",
+    "returnLocationLabel": "Lugar de devolución",
+    "differentReturn": "Devolver en otro lugar",
+    "branchChoose": "Elige un lugar",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Cargando ubicaciones…",
+    "branchAnyHint": "Todas las oficinas con coches"
   },
   "browseLocation": {
     "title": "Explorar por ciudad",
@@ -428,7 +434,8 @@
     },
     "insurance": "Seguro",
     "extras": "Extras",
-    "fees": "Cargos de recogida y devolución"
+    "fees": "Cargos de recogida y devolución",
+    "priceTitle": "Resumen del precio"
   },
   "payment": {
     "title": "Paga el anticipo",
@@ -756,7 +763,9 @@
     "profileEdit": "Editar datos",
     "profileCancel": "Cancelar",
     "profileEmail": "Email",
-    "profileEmpty": "Sin añadir"
+    "profileEmpty": "Sin añadir",
+    "bookingsUpcoming": "Próximas",
+    "bookingsPast": "Anteriores"
   },
   "siteSections": {
     "banners": {

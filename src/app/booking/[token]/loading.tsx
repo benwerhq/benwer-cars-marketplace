@@ -6,7 +6,7 @@ function BookingStatusLoading() {
   return (
     <>
       <MarketplaceHeader />
-      <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-12 md:px-6">
+      <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10 md:px-6 md:py-12">
         <ReservationStatusSkeleton />
       </main>
       <Footer />

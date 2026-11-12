@@ -5,14 +5,17 @@ import { Pencil } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
+import { DatePicker } from "@/components/ui/DatePicker";
 import { Input } from "@/components/ui/Input";
+import { PhoneInput } from "@/components/ui/PhoneInput";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useGuestAccount, useUpdateGuestProfile } from "@/hooks/useGuestAccount";
 import { formatLongDate, parseIsoDate } from "@/lib/dates";
 import { getErrorKey } from "@/lib/errors";
+import { phoneValidityOfStored, type PhoneValidity } from "@/lib/phone";
 import type { GuestCustomer } from "@/types/guest";
 
-const E164 = /^\+[1-9]\d{1,14}$/;
+const BIRTH_DATE_START = new Date(1920, 0, 1);
 
 /** Name, phone and date of birth saved on the company's customer record. */
 export function GuestDetailsSection({ companySlug }: { companySlug: string }) {
@@ -115,18 +118,21 @@ function GuestDetailsForm({
   const t = useTranslations("guest");
   const tBooking = useTranslations("booking");
   const tRoot = useTranslations();
+  const locale = useLocale();
   const update = useUpdateGuestProfile(companySlug);
   const [fullName, setFullName] = useState(customer.fullName);
   const [phone, setPhone] = useState(customer.phone);
+  const [phoneStatus, setPhoneStatus] = useState<PhoneValidity>(() =>
+    phoneValidityOfStored(customer.phone),
+  );
   const [dateOfBirth, setDateOfBirth] = useState(customer.dateOfBirth ?? "");
   const [errors, setErrors] = useState<{ fullName?: string; phone?: string }>({});
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const cleanPhone = phone.trim().replace(/[\s()-]/g, "");
     const next = {
       fullName: fullName.trim() ? undefined : tBooking("validation.nameMin"),
-      phone: !cleanPhone || E164.test(cleanPhone) ? undefined : tBooking("validation.phone"),
+      phone: phoneStatus === "invalid" ? tBooking("validation.phone") : undefined,
     };
     setErrors(next);
     if (next.fullName || next.phone) {
@@ -135,7 +141,7 @@ function GuestDetailsForm({
     update.mutate(
       {
         fullName: fullName.trim(),
-        phone: cleanPhone || undefined,
+        phone: phone || undefined,
         dateOfBirth: dateOfBirth || null,
       },
       { onSuccess: onDone },
@@ -154,25 +160,25 @@ function GuestDetailsForm({
           className="h-11"
         />
       </Field>
-      <Field label={t("profilePhone")} htmlFor="profilePhone" error={errors.phone}>
-        <Input
+      <Field label={t("profilePhone")} htmlFor="profilePhone">
+        <PhoneInput
           id="profilePhone"
-          type="tel"
-          autoComplete="tel"
-          inputMode="tel"
-          placeholder={tBooking("guestPhonePlaceholder")}
           value={phone}
-          onChange={(event) => setPhone(event.target.value)}
-          className="h-11"
+          onChange={setPhone}
+          onValidityChange={setPhoneStatus}
+          error={errors.phone}
         />
       </Field>
       <Field label={t("profileDob")} htmlFor="profileDob">
-        <Input
+        <DatePicker
           id="profileDob"
-          type="date"
-          max={new Date().toISOString().slice(0, 10)}
           value={dateOfBirth}
-          onChange={(event) => setDateOfBirth(event.target.value)}
+          onChange={setDateOfBirth}
+          fromDate={BIRTH_DATE_START}
+          toDate={new Date()}
+          selectableMonthYear
+          clearable
+          locale={locale}
           className="h-11"
         />
       </Field>

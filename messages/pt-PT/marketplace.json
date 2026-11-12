@@ -133,7 +133,13 @@
     "dropoffTrigger": "Drop-off date, {date}",
     "calendarLabel": "Select dates",
     "submit": "Search",
-    "datesRequired": "Add pick-up and drop-off dates to search"
+    "datesRequired": "Add pick-up and drop-off dates to search",
+    "returnLocationLabel": "Local de devolução",
+    "differentReturn": "Devolver noutro local",
+    "branchChoose": "Escolha um local",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "A carregar locais…",
+    "branchAnyHint": "Todos os balcões com carros"
   },
   "browseLocation": {
     "title": "Browse by location",
@@ -426,7 +432,8 @@
     },
     "insurance": "Seguro",
     "extras": "Extras",
-    "fees": "Taxas de levantamento e devolução"
+    "fees": "Taxas de levantamento e devolução",
+    "priceTitle": "Resumo do preço"
   },
   "payment": {
     "title": "Pague o sinal",
@@ -741,7 +748,9 @@
     "profileDob": "Data de nascimento",
     "profileSave": "Guardar dados",
     "profileSaved": "Dados guardados.",
-    "profileNotLinked": "Associe primeiro as suas reservas para guardar aqui os seus dados."
+    "profileNotLinked": "Associe primeiro as suas reservas para guardar aqui os seus dados.",
+    "bookingsUpcoming": "Próximas",
+    "bookingsPast": "Anteriores"
   },
   "siteSections": {
     "banners": {

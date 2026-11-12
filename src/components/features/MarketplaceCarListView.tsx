@@ -68,9 +68,14 @@ function MarketplaceCarListContent() {
   const fromDate = filters.from ? parseIsoDate(filters.from) : null;
   const toDate = filters.to ? parseIsoDate(filters.to) : null;
   const count = data?.length ?? 0;
-  const cityLabel = !isProvinceWideLocation(location)
-    ? locationLabelFromSlug(location, locale)
-    : null;
+  const branchName = companiesQuery.data
+    ?.flatMap((company) => company.branches)
+    .find((branch) => branch.id === filters.branchId)?.name;
+  const cityLabel =
+    branchName ??
+    (!isProvinceWideLocation(location)
+      ? locationLabelFromSlug(location, locale)
+      : null);
   const placeLabel = cityLabel
     ? t("resultsInCity", {
         count,
@@ -107,7 +112,12 @@ function MarketplaceCarListContent() {
       websiteUrl: listed?.websiteUrl,
       from: browse.from,
       to: browse.to,
-      params: { [SearchParams.DRIVER_AGE]: driverAge },
+      params: {
+        [SearchParams.DRIVER_AGE]: driverAge,
+        [SearchParams.BRANCH]: filters.branchId,
+        [SearchParams.RETURN_BRANCH]:
+          searchParams.get(SearchParams.RETURN_BRANCH) ?? undefined,
+      },
     });
   }
 
@@ -119,6 +129,7 @@ function MarketplaceCarListContent() {
     handleChange({
       from: filters.from,
       to: filters.to,
+      branchId: filters.branchId,
     });
   }
 

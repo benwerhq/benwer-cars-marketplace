@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { Inbox, Link2 } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+import type { GuestReservation } from "@/types/reservation";
 import { GuestDisabledState } from "@/components/features/GuestDisabledState";
+import { GuestBookingCard } from "./GuestBookingCard";
 import { GuestVerifyEmailNotice } from "./GuestVerifyEmailNotice";
 import { GuestSignInPanel } from "@/components/features/GuestSignInPanel";
 import { Button } from "@/components/ui/Button";
@@ -14,10 +15,10 @@ import { Input } from "@/components/ui/Input";
 import { PageLoadError } from "@/components/ui/PageLoadError";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
-import { formatLongDate, parseIsoDate } from "@/lib/dates";
+import { ReservationStatus } from "@/enums";
+import { startOfToday, toIsoDate } from "@/lib/dates";
 import { isGuestNotConfiguredError } from "@/lib/guestAccount";
 import { getErrorKey } from "@/lib/errors";
-import { formatMoney } from "@/lib/money";
 import { siteBookingPath } from "@/lib/site";
 import {
   useGuestAccount,
@@ -38,8 +39,6 @@ export function GuestBookingsView({
 }: GuestBookingsViewProps) {
   const t = useTranslations("guest");
   const tRoot = useTranslations();
-  const tStatus = useTranslations("reservationStatus");
-  const locale = useLocale();
   const { user, ready, configured, emailVerified } = useGuestAuth();
   const account = useGuestAccount(companySlug);
   const reservations = useGuestReservations(companySlug);
@@ -133,31 +132,29 @@ export function GuestBookingsView({
           onAction={() => setLinkOpen(true)}
         />
       ) : (
-        <ul className="flex flex-col gap-3">
-          {reservations.data.map((item) => {
-            const start = parseIsoDate(item.startDate);
-            const href = siteBookingPath(slug, item.token || item.id);
-            return (
-              <li key={item.id || item.token}>
-                <Link
-                  href={href}
-                  className="flex flex-col gap-1 rounded-xl border border-border bg-surface px-4 py-3 transition-colors hover:border-primary/40"
-                >
-                  <p className="text-sm font-semibold text-foreground">
-                    {item.vehicle
-                      ? `${item.vehicle.brand} ${item.vehicle.model}`
-                      : t("bookingFallback")}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {start ? formatLongDate(start, locale) : item.startDate} ·{" "}
-                    {formatMoney(item.totalPrice, item.currency, locale)} ·{" "}
-                    {tStatus(`status.${item.status}`)}
-                  </p>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="flex flex-col gap-8">
+          {splitBookings(reservations.data).map((group) =>
+            group.items.length ? (
+              <section key={group.key} className="flex flex-col gap-3">
+                <h2 className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">
+                  {t(group.key)}{" "}
+                  <span className="font-normal">({group.items.length})</span>
+                </h2>
+                <ul className="flex flex-col gap-4">
+                  {group.items.map((item) => (
+                    <li key={item.id || item.token}>
+                      <GuestBookingCard
+                        reservation={item}
+                        companySlug={companySlug}
+                        href={siteBookingPath(slug, item.token || item.id)}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null,
+          )}
+        </div>
       )}
 
       {linkOpen ? (
@@ -217,4 +214,25 @@ export function GuestBookingsView({
       ) : null}
     </div>
   );
+}
+
+const FINISHED_STATUSES: ReadonlySet<ReservationStatus> = new Set([
+  ReservationStatus.COMPLETED,
+  ReservationStatus.CANCELLED,
+]);
+
+function splitBookings(items: GuestReservation[]) {
+  const today = toIsoDate(startOfToday());
+  const isPast = (item: GuestReservation) =>
+    FINISHED_STATUSES.has(item.status) || item.endDate < today;
+  const upcoming = items
+    .filter((item) => !isPast(item))
+    .sort((a, b) => a.startDate.localeCompare(b.startDate));
+  const past = items
+    .filter(isPast)
+    .sort((a, b) => b.startDate.localeCompare(a.startDate));
+  return [
+    { key: "bookingsUpcoming" as const, items: upcoming },
+    { key: "bookingsPast" as const, items: past },
+  ];
 }

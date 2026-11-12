@@ -3,6 +3,12 @@ export interface CompanyBranding {
   logoUrl: string | null;
 }
 
+export interface CompanyBranch {
+  id: string;
+  name: string;
+  address: string;
+}
+
 export interface Company {
   id: string;
   slug: string;
@@ -19,6 +25,8 @@ export interface Company {
   phone: string | null;
   address: string | null;
   branding: CompanyBranding;
+  branches: CompanyBranch[];
+  allowDifferentReturn: boolean;
 }
 
 export interface CompanyListFilters {

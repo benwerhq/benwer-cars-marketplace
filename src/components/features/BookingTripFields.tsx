@@ -1,6 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { DatePicker } from "@/components/ui/DatePicker";
 import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { TIME_SLOTS } from "@/lib/extras";
@@ -38,6 +39,7 @@ export function BookingTripFields({
   dateOfBirthFallback?: string;
 }) {
   const t = useTranslations("booking");
+  const locale = useLocale();
 
   return (
     <fieldset className="flex flex-col gap-4 rounded-xl border border-border bg-surface p-4">
@@ -93,12 +95,15 @@ export function BookingTripFields({
         />
       </Field>
       <Field label={`${t("dateOfBirth")} (${t("optional")})`} htmlFor="dateOfBirth">
-        <Input
+        <DatePicker
           id="dateOfBirth"
-          type="date"
-          max={new Date().toISOString().slice(0, 10)}
           value={value.dateOfBirth || dateOfBirthFallback}
-          onChange={(event) => onChange({ dateOfBirth: event.target.value })}
+          onChange={(dateOfBirth) => onChange({ dateOfBirth })}
+          fromDate={new Date(1920, 0, 1)}
+          toDate={new Date()}
+          selectableMonthYear
+          clearable
+          locale={locale}
           className="h-11"
         />
       </Field>

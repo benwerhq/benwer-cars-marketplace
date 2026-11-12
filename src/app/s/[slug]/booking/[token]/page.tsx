@@ -61,9 +61,10 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
         cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}
       />
-      <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-12 md:px-6">
+      <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10 md:px-6 md:py-12">
         <ReservationStatus
           token={token}
+          companySlug={slug}
           browseHref={homeHref}
           allowWithdraw
         />
