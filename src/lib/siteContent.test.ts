@@ -238,7 +238,7 @@ describe("helpers", () => {
     if (!banner) throw new Error("missing banner");
     expect(bannerImages(banner)).toEqual({
       mobile: "/images/banners/site-airport.webp",
-      desktop: "/images/banners/site-airport.webp",
+      desktop: "/images/banners/site-airport-desktop.webp",
     });
     expect(bannerImages({ ...banner, imageUrl: "https://cdn.example/a.png" })).toEqual({
       mobile: "https://cdn.example/a.png",

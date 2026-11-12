@@ -69,7 +69,11 @@ export interface BannerImages {
   desktop: string;
 }
 
-const BANNER_PRESET_DESKTOP_IMAGES: Partial<Record<SiteBannerPreset, string>> = {};
+const BANNER_PRESET_DESKTOP_IMAGES: Record<SiteBannerPreset, string> = {
+  [SiteBannerPreset.AIRPORT]: "/images/banners/site-airport-desktop.webp",
+  [SiteBannerPreset.WEEKEND]: "/images/banners/site-weekend-desktop.webp",
+  [SiteBannerPreset.ROADTRIP]: "/images/banners/site-roadtrip-desktop.webp",
+};
 
 export const BANNER_PRESET_IMAGES: Record<SiteBannerPreset, string> = {
   [SiteBannerPreset.AIRPORT]: "/images/banners/site-airport.webp",
@@ -565,7 +569,7 @@ export function bannerImages(banner: SiteBanner): BannerImages | null {
     return null;
   }
   const mobile = BANNER_PRESET_IMAGES[banner.preset];
-  return { mobile, desktop: BANNER_PRESET_DESKTOP_IMAGES[banner.preset] ?? mobile };
+  return { mobile, desktop: BANNER_PRESET_DESKTOP_IMAGES[banner.preset] };
 }
 
 function relativeLuminance(hex: string): number {
