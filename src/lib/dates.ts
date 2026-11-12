@@ -116,3 +116,19 @@ export function listingRangeDates(from: string, to: string): string[] {
 
   return dates;
 }
+
+export interface DateParts {
+  weekday: string;
+  day: string;
+  monthYear: string;
+}
+
+export function formatDateParts(date: Date, locale: string): DateParts {
+  const dateLocale =
+    DATE_LOCALES[locale as keyof typeof DATE_LOCALES] ?? DATE_LOCALES["en-GB"];
+  return {
+    weekday: format(date, "EEE", { locale: dateLocale }),
+    day: format(date, "d", { locale: dateLocale }),
+    monthYear: format(date, "MMM yyyy", { locale: dateLocale }),
+  };
+}

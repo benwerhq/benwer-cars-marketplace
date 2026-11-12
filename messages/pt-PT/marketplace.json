@@ -432,7 +432,8 @@
     },
     "insurance": "Seguro",
     "extras": "Extras",
-    "fees": "Taxas de levantamento e devolução"
+    "fees": "Taxas de levantamento e devolução",
+    "priceTitle": "Resumo do preço"
   },
   "payment": {
     "title": "Pague o sinal",
@@ -747,7 +748,9 @@
     "profileDob": "Data de nascimento",
     "profileSave": "Guardar dados",
     "profileSaved": "Dados guardados.",
-    "profileNotLinked": "Associe primeiro as suas reservas para guardar aqui os seus dados."
+    "profileNotLinked": "Associe primeiro as suas reservas para guardar aqui os seus dados.",
+    "bookingsUpcoming": "Próximas",
+    "bookingsPast": "Anteriores"
   },
   "siteSections": {
     "banners": {

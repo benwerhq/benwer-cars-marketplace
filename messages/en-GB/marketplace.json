@@ -434,7 +434,8 @@
     },
     "insurance": "Insurance",
     "extras": "Extras",
-    "fees": "Pickup and return fees"
+    "fees": "Pickup and return fees",
+    "priceTitle": "Price summary"
   },
   "payment": {
     "title": "Pay the advance",
@@ -762,7 +763,9 @@
     "profileEdit": "Edit details",
     "profileCancel": "Cancel",
     "profileEmail": "Email",
-    "profileEmpty": "Not added"
+    "profileEmpty": "Not added",
+    "bookingsUpcoming": "Upcoming",
+    "bookingsPast": "Past"
   },
   "siteSections": {
     "banners": {
