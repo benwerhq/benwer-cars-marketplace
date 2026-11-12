@@ -45,3 +45,6 @@ export function tabForSection(section: SiteEditSection): SiteEditTab {
 
   return SiteEditTab.LOOK;
 }
+
+export const OPEN_OWNER_EDITOR_EVENT = "benwer:open-owner-editor";
+export const OWNER_EDITOR_HASH = "editor";

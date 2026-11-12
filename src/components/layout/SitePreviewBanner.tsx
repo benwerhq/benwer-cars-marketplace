@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { useStaffAuth } from "@/context/StaffAuthProvider";
 import { SearchParams } from "@/enums";
 
 export function SitePreviewBanner() {
@@ -9,8 +10,9 @@ export function SitePreviewBanner() {
   const searchParams = useSearchParams();
   const preview = searchParams.get(SearchParams.PREVIEW);
   const editing = searchParams.get(SearchParams.EDIT) === "1";
+  const staff = useStaffAuth();
 
-  if (!preview || editing) {
+  if (!preview || editing || !staff.ready || staff.user) {
     return null;
   }
 

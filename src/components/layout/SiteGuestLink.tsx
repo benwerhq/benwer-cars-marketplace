@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { CalendarCheck, LogOut, PencilRuler, ShieldCheck, UserRound } from "lucide-react";
+import { CalendarCheck, LogOut, PencilRuler, UserRound } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { IconTooltip } from "@/components/ui/IconTooltip";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
 import { useStaffAuth } from "@/context/StaffAuthProvider";
 import { guestLinksFromHomeHref } from "@/lib/site";
+import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { cn } from "@/lib/utils";
 import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
 
@@ -20,7 +21,7 @@ export function SiteGuestLink({ homeHref }: { homeHref: string }) {
   const links = guestLinksFromHomeHref(homeHref);
 
   if (staff.ready && staff.user) {
-    return <OwnerMenu homeHref={homeHref} email={staff.user.email} onSignOut={staff.signOut} />;
+    return null;
   }
 
   if (!ready || !user) {
@@ -86,17 +87,33 @@ export function SiteGuestLink({ homeHref }: { homeHref: string }) {
   );
 }
 
-function OwnerMenu({
-  homeHref,
-  email,
-  onSignOut,
-}: {
-  homeHref: string;
-  email: string | null;
-  onSignOut: () => Promise<void>;
-}) {
+function initials(email: string | null): string {
+  const name = (email ?? "").split("@")[0] ?? "";
+  const parts = name.split(/[^a-zA-Z]+/).filter(Boolean);
+  const letters =
+    parts.length > 1 ? `${parts[0]?.[0] ?? ""}${parts[1]?.[0] ?? ""}` : (parts[0] ?? "").slice(0, 2);
+  return letters.toUpperCase() || "?";
+}
+
+function openEditor(router: ReturnType<typeof useRouter>, homeHref: string) {
+  const handled = !window.dispatchEvent(
+    new Event(OPEN_OWNER_EDITOR_EVENT, { cancelable: true }),
+  );
+  if (!handled) {
+    router.push(`${homeHref}#${OWNER_EDITOR_HASH}`);
+  }
+}
+
+export function SiteOwnerMenu({ homeHref }: { homeHref: string }) {
   const t = useTranslations("owner");
   const router = useRouter();
+  const staff = useStaffAuth();
+
+  if (!staff.ready || !staff.user) {
+    return null;
+  }
+
+  const email = staff.user.email;
 
   return (
     <DropdownMenu.Root modal={false}>
@@ -105,9 +122,9 @@ function OwnerMenu({
           <button
             type="button"
             aria-label={t("accountMenu")}
-            className={cn(HEADER_ICON_BUTTON, "text-primary")}
+            className="inline-flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground ring-2 ring-surface transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <ShieldCheck size={16} aria-hidden />
+            {initials(email)}
           </button>
         </DropdownMenu.Trigger>
       </IconTooltip>
@@ -121,17 +138,15 @@ function OwnerMenu({
               {email}
             </DropdownMenu.Label>
           ) : null}
-          <DropdownMenu.Item asChild className={MENU_ITEM}>
-            <Link href={homeHref}>
-              <PencilRuler size={15} aria-hidden />
-              {t("openEditor")}
-            </Link>
+          <DropdownMenu.Item className={MENU_ITEM} onSelect={() => openEditor(router, homeHref)}>
+            <PencilRuler size={15} aria-hidden />
+            {t("openEditor")}
           </DropdownMenu.Item>
           <DropdownMenu.Separator className="my-1 h-px bg-border" />
           <DropdownMenu.Item
             className={MENU_ITEM}
             onSelect={() => {
-              void onSignOut().then(() => router.push(homeHref));
+              void staff.signOut().then(() => router.push(homeHref));
             }}
           >
             <LogOut size={15} aria-hidden />

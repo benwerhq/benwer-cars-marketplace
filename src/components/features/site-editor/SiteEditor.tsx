@@ -427,7 +427,13 @@ export function SiteEditor({
             />
           </Tabs.Content>
           <Tabs.Content value="settings" className="flex flex-col gap-3 p-4 focus-visible:outline-none">
-            <SettingsForm draft={draft} oneWayRentals={oneWayRentals} onChange={onChange} />
+            <SettingsForm
+              draft={draft}
+              oneWayRentals={oneWayRentals}
+              onChange={onChange}
+              statusBusy={publishing}
+              onEnabledChange={(enabled) => (enabled ? onPublish() : onPause())}
+            />
           </Tabs.Content>
         </div>
       </Tabs.Root>
@@ -458,11 +464,6 @@ export function SiteEditor({
               </>
             ) : (
               <>
-                {draft.status === SiteStatus.PUBLISHED ? (
-                  <Button type="button" variant="secondary" size="sm" disabled={publishing} onClick={onPause}>
-                    {t("pause")}
-                  </Button>
-                ) : null}
                 <Button
                   type="button"
                   size="sm"

@@ -1039,6 +1039,9 @@
       }
     },
     "settings": {
+      "websiteTitle": "Website",
+      "websiteEnabled": "Booking website on",
+      "websiteEnabledHint": "When this is on, guests can see and book on your published site. Turning it on also publishes your saved changes. This is the same switch as in Benwer admin.",
       "bookingTitle": "Bookings",
       "bookingDescription": "How customers book from your site.",
       "bookingMode": "Booking mode",
@@ -1060,7 +1063,6 @@
     },
     "savedNotPublished": "Saved, not published yet",
     "publish": "Publish",
-    "pause": "Pause site",
     "branding": {
       "logosTitle": "Logos",
       "logosDescription": "Your company logo is used by default. Replacing a logo here changes this website only, not your company logo in Benwer admin.",

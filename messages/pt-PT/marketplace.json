@@ -1039,6 +1039,9 @@
       }
     },
     "settings": {
+      "websiteTitle": "Site",
+      "websiteEnabled": "Site de reservas ligado",
+      "websiteEnabledHint": "Quando isto está ligado, os clientes podem ver o site publicado e reservar nele. Ao ligar, as alterações guardadas também são publicadas. É o mesmo interruptor que no Benwer admin.",
       "bookingTitle": "Reservas",
       "bookingDescription": "Como os clientes reservam no seu site.",
       "bookingMode": "Modo de reserva",
@@ -1060,7 +1063,6 @@
     },
     "savedNotPublished": "Guardado, por publicar",
     "publish": "Publicar",
-    "pause": "Pausar site",
     "branding": {
       "logosTitle": "Logótipos",
       "logosDescription": "Por omissão é usado o logótipo da sua empresa. Se o substituir aqui, muda apenas neste site, não no logótipo da empresa no Benwer admin.",

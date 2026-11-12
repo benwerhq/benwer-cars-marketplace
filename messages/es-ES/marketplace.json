@@ -1039,6 +1039,9 @@
       }
     },
     "settings": {
+      "websiteTitle": "Sitio web",
+      "websiteEnabled": "Web de reservas activada",
+      "websiteEnabledHint": "Si está activada, los clientes pueden ver tu sitio publicado y reservar en él. Al activarla también se publican los cambios guardados. Es el mismo interruptor que en Benwer admin.",
       "bookingTitle": "Reservas",
       "bookingDescription": "Cómo reservan los clientes desde tu web.",
       "bookingMode": "Modo de reserva",
@@ -1060,7 +1063,6 @@
     },
     "savedNotPublished": "Guardado, sin publicar",
     "publish": "Publicar",
-    "pause": "Pausar web",
     "branding": {
       "logosTitle": "Logotipos",
       "logosDescription": "Por defecto se usa el logotipo de tu empresa. Si lo cambias aquí, solo cambia en esta web, no en el logotipo de tu empresa en Benwer admin.",

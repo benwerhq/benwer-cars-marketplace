@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { BookingMode } from "@/enums";
+import { BookingMode, SiteStatus } from "@/enums";
 import { cn } from "@/lib/utils";
 import type { WebsiteSettings } from "@/types/websiteSettings";
 import { EditorGroup, SwitchRow, TextField } from "./EditorPrimitives";
@@ -10,6 +10,8 @@ interface SettingsFormProps {
   draft: WebsiteSettings;
   oneWayRentals: boolean;
   onChange: (next: WebsiteSettings) => void;
+  statusBusy: boolean;
+  onEnabledChange: (enabled: boolean) => void;
 }
 
 function hours(value: string, min: number, max: number): number {
@@ -24,11 +26,23 @@ export function SettingsForm({
   draft,
   oneWayRentals,
   onChange,
+  statusBusy,
+  onEnabledChange,
 }: SettingsFormProps) {
   const t = useTranslations("siteEditor.settings");
 
   return (
     <>
+      <EditorGroup title={t("websiteTitle")}>
+        <SwitchRow
+          id="settings-website-enabled"
+          label={t("websiteEnabled")}
+          description={t("websiteEnabledHint")}
+          checked={draft.status === SiteStatus.PUBLISHED}
+          disabled={statusBusy || (draft.status !== SiteStatus.PUBLISHED && !draft.canPublish)}
+          onCheckedChange={onEnabledChange}
+        />
+      </EditorGroup>
       <EditorGroup
         title={t("bookingTitle")}
         description={t("bookingDescription")}

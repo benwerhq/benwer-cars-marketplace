@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { LocaleSwitcher } from "./LocaleSwitcher";
-import { SiteGuestLink } from "./SiteGuestLink";
+import { SiteGuestLink, SiteOwnerMenu } from "./SiteGuestLink";
 import { SiteHeaderMark } from "./SiteHeaderMark";
 import { SiteNav } from "./SiteNav";
 import type { SiteSectionId } from "@/enums";
@@ -57,6 +57,7 @@ export async function SiteHeader({
           ) : null}
           <SiteGuestLink homeHref={homeHref} />
           <LocaleSwitcher />
+          <SiteOwnerMenu homeHref={homeHref} />
         </div>
       </div>
     </header>

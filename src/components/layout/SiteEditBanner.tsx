@@ -1,7 +1,15 @@
-import { getTranslations } from "next-intl/server";
+"use client";
 
-export async function SiteEditBanner() {
-  const t = await getTranslations("site");
+import { useTranslations } from "next-intl";
+import { useStaffAuth } from "@/context/StaffAuthProvider";
+
+export function SiteEditBanner() {
+  const t = useTranslations("site");
+  const staff = useStaffAuth();
+
+  if (!staff.ready || staff.user) {
+    return null;
+  }
 
   return (
     <div

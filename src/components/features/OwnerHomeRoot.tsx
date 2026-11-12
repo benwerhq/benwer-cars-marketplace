@@ -17,6 +17,7 @@ import {
   useWebsiteSettings,
 } from "@/hooks/useWebsiteSettings";
 import { getErrorKey } from "@/lib/errors";
+import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { localizedText } from "@/lib/localizedCopy";
 import { siteFontStack, siteHeaderLogo } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
@@ -71,6 +72,23 @@ export function OwnerHomeRoot({
   const [view, setView] = useState(EditorView.SPLIT);
 
   const canEdit = Boolean(user && settings.data?.canEdit);
+  useEffect(() => {
+    if (!canEdit) {
+      return;
+    }
+    const showEditor = () =>
+      setView((current) => (current === EditorView.PREVIEW ? EditorView.SPLIT : current));
+    const onOpen = (event: Event) => {
+      event.preventDefault();
+      showEditor();
+    };
+    if (window.location.hash === `#${OWNER_EDITOR_HASH}`) {
+      showEditor();
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    window.addEventListener(OPEN_OWNER_EDITOR_EVENT, onOpen);
+    return () => window.removeEventListener(OPEN_OWNER_EDITOR_EVENT, onOpen);
+  }, [canEdit]);
   const liveSite = canEdit ? applyWebsiteDraft(site, draft) : site;
   const draftLogo = useSiteDraftLogo();
   const setHeaderLogo = draftLogo?.setHeaderLogo;
