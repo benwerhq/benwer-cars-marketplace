@@ -17,7 +17,7 @@ import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import { CarPhoto } from "./CarPhoto";
-import { CompanyMark } from "./CompanyMark";
+import { CompanyEyebrow } from "./CompanyEyebrow";
 import type { Company } from "@/types/company";
 import type { Vehicle } from "@/types/vehicle";
 import { FuelType, TransmissionType, VehicleType } from "@/enums";
@@ -105,6 +105,9 @@ export function CarCard({
 
       <div className="flex min-w-0 flex-1 flex-col gap-3 p-4">
         <div className="min-w-0">
+          {company ? (
+            <CompanyEyebrow company={company} className="mb-2" />
+          ) : null}
           <h3 className="text-base font-semibold leading-tight text-foreground">
             {name}
           </h3>
@@ -112,15 +115,6 @@ export function CarCard({
             {vehicle.year} &middot; {t(`types.${vehicle.type}`)}
           </p>
         </div>
-
-        {company ? (
-          <p className="flex min-w-0 items-center gap-2">
-            <CompanyMark company={company} size="sm" />
-            <span className="truncate text-xs text-muted-foreground">
-              {company.name}
-            </span>
-          </p>
-        ) : null}
 
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="default" className="gap-1">

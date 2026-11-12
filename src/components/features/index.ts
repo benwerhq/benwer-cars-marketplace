@@ -5,6 +5,7 @@ export { CarListView } from "./CarListView";
 export { MarketplaceCarListView } from "./MarketplaceCarListView";
 export { FilterBar, FilterBarSkeleton } from "./FilterBar";
 export { FilterRail, FilterRailSkeleton } from "./FilterRail";
+export { CompanyEyebrow } from "./CompanyEyebrow";
 export { CompanyMark } from "./CompanyMark";
 export { CompanyCombobox } from "./CompanyCombobox";
 export { CompanyFilterGroup } from "./CompanyFilterGroup";

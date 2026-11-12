@@ -7,7 +7,7 @@ import { TransmissionType } from "@/enums";
 import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
-import { CompanyMark } from "./CompanyMark";
+import { CompanyEyebrow } from "./CompanyEyebrow";
 import type { Vehicle } from "@/types/vehicle";
 import { CarPhoto } from "./CarPhoto";
 
@@ -77,16 +77,11 @@ export function CarRowCard({
         ) : null}
       </div>
       <div className="flex min-w-0 flex-col p-5">
+        {company ? <CompanyEyebrow company={company} className="mb-2" /> : null}
         <h3 className="text-lg font-semibold tracking-tight text-foreground">{name}</h3>
         <p className="mt-0.5 text-sm text-muted-foreground">
           {vehicle.year} · {t(`types.${vehicle.type}`)}
         </p>
-        {company ? (
-          <p className="mt-3 flex min-w-0 items-center gap-2 text-sm text-muted-foreground">
-            <CompanyMark company={company} size="sm" />
-            <span className="truncate">{company.name}</span>
-          </p>
-        ) : null}
         <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-foreground">
           <li className="flex items-center gap-2">
             <Users size={15} className="text-subtle-foreground" aria-hidden />
