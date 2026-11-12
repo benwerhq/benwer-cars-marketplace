@@ -557,8 +557,19 @@ export function whatsappHref(number: string, message = ""): string | null {
   return `https://wa.me/${digits}${query}`;
 }
 
+export const PLACEHOLDER_ANDROID_APP_URL =
+  "https://play.google.com/apps/testing/com.benwer.cars.admin";
+
+export function siteAppLinks(app: SiteAppContent): { iosUrl: string; androidUrl: string } {
+  if (app.iosUrl || app.androidUrl) {
+    return { iosUrl: app.iosUrl, androidUrl: app.androidUrl };
+  }
+  return { iosUrl: "", androidUrl: PLACEHOLDER_ANDROID_APP_URL };
+}
+
 export function appQrTarget(app: SiteAppContent): string {
-  return app.androidUrl || app.iosUrl;
+  const links = siteAppLinks(app);
+  return links.androidUrl || links.iosUrl;
 }
 
 export function bannerImages(banner: SiteBanner): BannerImages | null {

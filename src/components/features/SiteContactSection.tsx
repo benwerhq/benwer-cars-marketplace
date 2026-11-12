@@ -26,7 +26,7 @@ export function SiteContactSection({
   const locale = useLocale();
   const headingId = `${SiteSectionId.CONTACT}-heading`;
   const whatsapp = whatsappHref(
-    contact.whatsapp,
+    contact.whatsapp || phone || "",
     t("whatsappMessage", { name: companyName }),
   );
   const hours = localizedText(contact.hours, locale);
@@ -69,7 +69,7 @@ export function SiteContactSection({
             {phone}
           </a>
         ) : null}
-        {email && !whatsapp ? (
+        {email ? (
           <a
             href={`mailto:${email}`}
             className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "rounded-full")}

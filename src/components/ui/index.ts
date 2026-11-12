@@ -8,3 +8,4 @@ export { EmptyState } from "./EmptyState";
 export { ErrorState } from "./ErrorState";
 export { PageLoadError } from "./PageLoadError";
 export { Sheet } from "./Sheet";
+export { SelectMenu, type SelectMenuOption } from "./SelectMenu";

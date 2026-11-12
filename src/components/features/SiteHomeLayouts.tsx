@@ -214,11 +214,11 @@ function CompanyHeader({ site, copy }: { site: PublicSite; copy: SiteHomeCopy })
   return (
     <section className="relative w-full overflow-hidden border-y border-border bg-gradient-to-br from-primary/10 via-background to-background">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-10 md:px-6 md:py-12 lg:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+        <div className="flex flex-col items-start gap-4">
           <CompanyMark
             company={company}
             size="lg"
-            className={withLogo ? "h-20 max-w-[16rem]" : "h-20 w-20 rounded-2xl text-2xl"}
+            className={withLogo ? "h-16 max-w-[16rem]" : "h-16 w-16 rounded-2xl text-xl"}
           />
           <div className="min-w-0">
             {withLogo ? null : (

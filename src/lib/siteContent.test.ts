@@ -8,7 +8,9 @@ import {
 } from "@/enums";
 import {
   DEFAULT_BANNER_THEME,
+  PLACEHOLDER_ANDROID_APP_URL,
   SITE_SECTION_ORDER,
+  appQrTarget,
   bannerImages,
   contrastWithWhite,
   defaultSiteContent,
@@ -17,6 +19,7 @@ import {
   moveSection,
   parseSiteContent,
   serializeAppearance,
+  siteAppLinks,
   siteCompanyLogo,
   siteHeaderLogo,
   visibleSections,
@@ -263,5 +266,19 @@ describe("helpers", () => {
     expect(isSafeUrl("/offers")).toBe(true);
     expect(isSafeUrl("//evil.example")).toBe(false);
     expect(isSafeUrl("data:text/html,hi")).toBe(false);
+  });
+});
+
+describe("siteAppLinks", () => {
+  const app = { iosUrl: "", androidUrl: "", title: {}, text: {} };
+
+  it("uses the placeholder Android link when no store link is set", () => {
+    expect(siteAppLinks(app)).toEqual({ iosUrl: "", androidUrl: PLACEHOLDER_ANDROID_APP_URL });
+    expect(appQrTarget(app)).toBe(PLACEHOLDER_ANDROID_APP_URL);
+  });
+
+  it("keeps the company's own links", () => {
+    const own = { ...app, iosUrl: "https://apps.apple.com/app/x" };
+    expect(siteAppLinks(own)).toEqual({ iosUrl: "https://apps.apple.com/app/x", androidUrl: "" });
   });
 });

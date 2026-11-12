@@ -617,6 +617,7 @@
     "differentReturn": "Return to a different location",
     "returnSame": "Same as pick-up",
     "driverAge": "Driver's age",
+    "driverAgeYears": "{band} years",
     "driverAgeBands": {
       "18-24": "18–24",
       "25-69": "25–69",
@@ -773,6 +774,7 @@
       "emptyText": "Guests can review their rental once they return the car. Approved reviews appear here."
     },
     "app": {
+      "eyebrow": "Mobile app",
       "title": "Your booking, on the go",
       "text": "Check in online, see your pick-up details and message us, all from your phone.",
       "platformBoth": "iOS & Android",
@@ -983,7 +985,7 @@
     },
     "app": {
       "storesTitle": "Store links",
-      "storesDescription": "A missing store shows as greyed out. With no links, the section shows as coming soon.",
+      "storesDescription": "A missing store shows as greyed out. With no links, the section uses the Benwer test app on Google Play for now.",
       "ios": "App Store link",
       "android": "Google Play link",
       "qrHint": "The QR code opens the Google Play link, or the App Store link if there is no Google Play link.",

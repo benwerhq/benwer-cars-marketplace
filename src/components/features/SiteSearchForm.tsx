@@ -2,11 +2,12 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { MapPin, Search } from "lucide-react";
+import { ChevronDown, MapPin, Search, Store, UserRound } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { DateRangePopover } from "./DateRangePopover";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
+import { SelectMenu, type SelectMenuOption } from "@/components/ui/SelectMenu";
 import { Switch } from "@/components/ui/Switch";
 import { DriverAgeBand, SearchParams } from "@/enums";
 import { parseDriverAge, sitePathFromHome, withSiteQuery } from "@/lib/site";
@@ -51,6 +52,27 @@ export function SiteSearchForm({
     parseDriverAge(searchParams.get(SearchParams.DRIVER_AGE)),
   );
 
+  function branchOptions(anyLabel: string): SelectMenuOption[] {
+    return [
+      { value: "", label: anyLabel, icon: <Store size={18} aria-hidden /> },
+      ...branches.map((item) => ({
+        value: item.id,
+        label: item.name,
+        description: item.address,
+        icon: <MapPin size={18} aria-hidden />,
+      })),
+    ];
+  }
+
+  function branchLabel(id: string, anyLabel: string): string {
+    return branches.find((item) => item.id === id)?.name ?? anyLabel;
+  }
+
+  const driverAgeOptions: SelectMenuOption[] = Object.values(DriverAgeBand).map((band) => ({
+    value: band,
+    label: t("driverAgeYears", { band: t(`driverAgeBands.${band}`) }),
+  }));
+
   function onSubmit(event: React.FormEvent) {
     event.preventDefault();
     if (disabled) {
@@ -80,28 +102,28 @@ export function SiteSearchForm({
       onChange: (next: string) => void,
       anyLabel: string,
     ) => (
-      <label
-        htmlFor={id}
-        className="flex min-w-0 cursor-pointer items-center gap-3 rounded-2xl px-4 py-2.5 transition-colors hover:bg-surface-hover md:flex-1"
+      <SelectMenu
+        id={id}
+        value={value}
+        onValueChange={onChange}
+        options={branchOptions(anyLabel)}
+        ariaLabel={label}
+        triggerClassName="group flex min-w-0 items-center gap-3 rounded-2xl px-4 py-2.5 transition-colors hover:bg-surface-hover data-[state=open]:bg-surface-hover md:flex-1"
+        contentClassName="w-[min(100vw-2rem,22rem)]"
       >
         <MapPin size={22} strokeWidth={1.5} className="shrink-0 text-subtle-foreground" aria-hidden />
         <span className="flex min-w-0 flex-1 flex-col">
           <span className="text-xs text-muted-foreground">{label}</span>
-          <select
-            id={id}
-            value={value}
-            onChange={(event) => onChange(event.target.value)}
-            className="-ml-1 w-full cursor-pointer truncate bg-transparent text-base font-semibold text-foreground focus-visible:outline-none"
-          >
-            <option value="">{anyLabel}</option>
-            {branches.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.name}
-              </option>
-            ))}
-          </select>
+          <span className="truncate text-base font-semibold text-foreground">
+            {branchLabel(value, anyLabel)}
+          </span>
         </span>
-      </label>
+        <ChevronDown
+          size={18}
+          className="shrink-0 text-subtle-foreground transition-transform group-data-[state=open]:rotate-180"
+          aria-hidden
+        />
+      </SelectMenu>
     );
 
     return (
@@ -126,24 +148,27 @@ export function SiteSearchForm({
           ) : (
             <span aria-hidden />
           )}
-          <label
-            htmlFor="site-driver-age"
-            className="flex cursor-pointer items-center gap-1.5 text-sm text-muted-foreground"
-          >
-            {t("driverAge")}
-            <select
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <span>{t("driverAge")}</span>
+            <SelectMenu
               id="site-driver-age"
               value={driverAge}
-              onChange={(event) => setDriverAge(event.target.value as DriverAgeBand)}
-              className="cursor-pointer rounded-md bg-transparent py-0.5 text-sm font-medium text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              onValueChange={(next) => setDriverAge(next as DriverAgeBand)}
+              options={driverAgeOptions}
+              ariaLabel={t("driverAge")}
+              align="end"
+              triggerClassName="group inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-muted py-1 pr-2 pl-3 text-sm font-semibold text-foreground transition-colors hover:border-border-strong data-[state=open]:border-border-strong"
+              contentClassName="w-48"
             >
-              {Object.values(DriverAgeBand).map((band) => (
-                <option key={band} value={band}>
-                  {t(`driverAgeBands.${band}`)}
-                </option>
-              ))}
-            </select>
-          </label>
+              <UserRound size={14} className="text-subtle-foreground" aria-hidden />
+              {t(`driverAgeBands.${driverAge}`)}
+              <ChevronDown
+                size={14}
+                className="text-subtle-foreground transition-transform group-data-[state=open]:rotate-180"
+                aria-hidden
+              />
+            </SelectMenu>
+          </div>
         </div>
         <div className="flex flex-col gap-1 p-3 md:flex-row md:items-center md:gap-1 md:p-2.5 md:pl-3">
           {branches.length > 0 ? (
@@ -205,19 +230,21 @@ export function SiteSearchForm({
       </div>
       {branches.length > 0 ? (
         <Field label={t("branch")} htmlFor="site-branch" className="md:w-56">
-          <select
+          <SelectMenu
             id="site-branch"
             value={branch}
-            onChange={(event) => setBranch(event.target.value)}
-            className="flex h-11 w-full rounded-md border border-border-strong bg-surface px-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            onValueChange={setBranch}
+            options={branchOptions(t("anyBranch"))}
+            triggerClassName="group flex h-11 w-full items-center justify-between gap-2 rounded-md border border-border-strong bg-surface px-3 text-sm text-foreground"
+            contentClassName="w-[min(100vw-2rem,22rem)]"
           >
-            <option value="">{t("anyBranch")}</option>
-            {branches.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.name}
-              </option>
-            ))}
-          </select>
+            <span className="truncate">{branchLabel(branch, t("anyBranch"))}</span>
+            <ChevronDown
+              size={16}
+              className="shrink-0 text-subtle-foreground transition-transform group-data-[state=open]:rotate-180"
+              aria-hidden
+            />
+          </SelectMenu>
         </Field>
       ) : null}
       <Button type="submit" size="lg" className="h-11" disabled={disabled}>

@@ -617,6 +617,7 @@
     "differentReturn": "Devolver noutro local",
     "returnSame": "O mesmo do levantamento",
     "driverAge": "Idade do condutor",
+    "driverAgeYears": "{band} anos",
     "driverAgeBands": {
       "18-24": "18–24",
       "25-69": "25–69",
@@ -773,6 +774,7 @@
       "emptyText": "Os clientes podem avaliar o aluguer depois de devolverem o carro. As avaliações aprovadas aparecem aqui."
     },
     "app": {
+      "eyebrow": "App móvel",
       "title": "A sua reserva, sempre consigo",
       "text": "Faça o check-in online, consulte os dados de levantamento e fale connosco, tudo a partir do telemóvel.",
       "platformBoth": "iOS e Android",
@@ -983,7 +985,7 @@
     },
     "app": {
       "storesTitle": "Links das lojas",
-      "storesDescription": "Uma loja sem link aparece a cinzento. Sem links, a secção aparece como brevemente.",
+      "storesDescription": "Uma loja sem link aparece a cinzento. Sem links, a secção usa por agora a app de teste da Benwer no Google Play.",
       "ios": "Link da App Store",
       "android": "Link do Google Play",
       "qrHint": "O código QR abre o link do Google Play, ou o da App Store se não houver do Google Play.",

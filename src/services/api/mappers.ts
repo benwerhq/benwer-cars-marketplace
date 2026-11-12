@@ -31,6 +31,8 @@ import type { GuestAccount } from "@/types/guest";
 import type { GuestReservation } from "@/types/reservation";
 import type { PublicSite, SiteBranch } from "@/types/site";
 import type { WebsiteSettings } from "@/types/websiteSettings";
+import type { SiteContent } from "@/types/siteContent";
+import { withDemoReviews } from "@/lib/demoReviews";
 import { parseSiteContent } from "@/lib/siteContent";
 import type { Vehicle } from "@/types/vehicle";
 
@@ -773,11 +775,15 @@ export function mapPublicSite(raw: unknown, fallbackSlug?: string): PublicSite {
       readBoolean(nestedSite.allowDifferentReturn) ?? readBoolean(row.allowDifferentReturn) ?? false,
     oneWayRentals:
       readBoolean(nestedSite.oneWayRentals) ?? readBoolean(row.oneWayRentals) ?? false,
-    content: parseSiteContent(
-      nestedSite.appearance ?? row.appearance,
-      nestedSite.reviews ?? row.reviews,
+    content: withSiteDemoReviews(
+      company.id,
+      parseSiteContent(nestedSite.appearance ?? row.appearance, nestedSite.reviews ?? row.reviews),
     ),
   };
+}
+
+function withSiteDemoReviews(companyId: string, content: SiteContent): SiteContent {
+  return { ...content, reviews: withDemoReviews(companyId, content.reviews) };
 }
 
 export function mapWebsiteSettings(raw: unknown): WebsiteSettings {
