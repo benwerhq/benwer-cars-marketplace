@@ -111,6 +111,8 @@ export function BookingForm({ carHref, requireTerms = false }: BookingFormProps)
               {t("termsAccept")}{" "}
               <Link
                 href="/terms"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-medium text-primary hover:text-primary-hover"
               >
                 {t("termsLink")}

@@ -15,7 +15,9 @@ import {
   canAcceptBookings,
   companySlugFromSite,
   isTenantHostRequest,
+  parseDriverAge,
   publicSiteHref,
+  queryString,
   publicSiteHomeHref,
   SITE_CHANNEL,
   siteBookHref,
@@ -68,6 +70,8 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
     typeof query[SearchParams.RETURN_BRANCH] === "string"
       ? query[SearchParams.RETURN_BRANCH]
       : undefined;
+  const ageParam = queryString(query, SearchParams.DRIVER_AGE);
+  const driverAge = ageParam ? parseDriverAge(ageParam) : undefined;
 
   let site = null;
   try {
@@ -169,6 +173,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       to,
       branch,
       returnBranch,
+      driverAge,
       preview,
     }),
     site.slug,
@@ -204,6 +209,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
               carId: vehicle.id,
               branch,
               returnBranch,
+              driverAge,
               preview,
             }),
             site.slug,

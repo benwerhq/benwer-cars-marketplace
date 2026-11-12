@@ -19,6 +19,8 @@ interface BookingSummaryProps {
   quote?: PriceBreakdown | null;
   returnLocationName?: string;
   oneWayFee?: number | null;
+  /** Insurance, extras and other priced lines added on top of the rental. */
+  extraLines?: { key: string; label: string; amount: number }[];
   className?: string;
 }
 
@@ -31,6 +33,7 @@ export function BookingSummary({
   quote,
   returnLocationName,
   oneWayFee = null,
+  extraLines = [],
   className,
 }: BookingSummaryProps) {
   const t = useTranslations("booking");
@@ -47,9 +50,12 @@ export function BookingSummary({
     vehicle.currency,
     locale,
   );
+  const extrasSum = extraLines.reduce((sum, line) => sum + line.amount, 0);
   const total = hasDates
     ? formatMoney(
-        (priced?.vehicleSubtotal ?? days * vehicle.pricePerDay) + (oneWayFee ?? 0),
+        (priced?.vehicleSubtotal ?? days * vehicle.pricePerDay) +
+          (oneWayFee ?? 0) +
+          extrasSum,
         vehicle.currency,
         locale,
       )
@@ -133,6 +139,20 @@ export function BookingSummary({
           </span>
         </div>
       ) : null}
+
+      {hasDates
+        ? extraLines.map((line) => (
+            <div
+              key={line.key}
+              className="flex items-center justify-between gap-4 text-sm"
+            >
+              <span className="text-muted-foreground">{line.label}</span>
+              <span className="font-medium tabular-nums text-foreground">
+                {formatMoney(line.amount, vehicle.currency, locale)}
+              </span>
+            </div>
+          ))
+        : null}
 
       {total ? (
         <div className="flex flex-col gap-1 border-t border-border pt-4">

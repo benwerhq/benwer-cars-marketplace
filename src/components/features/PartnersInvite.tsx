@@ -4,11 +4,10 @@ import { buttonVariants } from "@/components/ui/Button";
 import { env } from "@/env";
 import { cn } from "@/lib/utils";
 
-const DEFAULT_PLANS_URL = "https://cars.benwer.es";
 
 export async function PartnersInvite() {
   const t = await getTranslations("partners");
-  const plansHref = env.NEXT_PUBLIC_MARKETING_URL || DEFAULT_PLANS_URL;
+  const plansHref = env.NEXT_PUBLIC_MARKETING_URL;
   const demoHref = env.NEXT_PUBLIC_ADMIN_DEMO_URL;
 
   return (

@@ -163,6 +163,7 @@ function CarListViewContent({
       preview: searchParams.get(SearchParams.PREVIEW) || undefined,
       branch: searchParams.get(SearchParams.BRANCH) || undefined,
       return: searchParams.get(SearchParams.RETURN_BRANCH) || undefined,
+      age: searchParams.get(SearchParams.DRIVER_AGE) || undefined,
     });
   }
 

@@ -197,6 +197,7 @@ export enum SearchParams {
   DRIVER_AGE = "age",
   EDIT = "edit",
   TOKEN = "token",
+  NEXT = "next",
 }
 
 export enum SiteFontFamily {

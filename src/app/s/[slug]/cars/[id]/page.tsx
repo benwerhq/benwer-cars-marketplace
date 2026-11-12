@@ -20,8 +20,10 @@ import {
   isRequestBooking,
   isSitePaused,
   isTenantHostRequest,
+  parseDriverAge,
   publicSiteHref,
   publicSiteHomeHref,
+  queryString,
   siteBookHref,
   siteCarPath,
 } from "@/lib/site";
@@ -102,6 +104,8 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
     typeof query[SearchParams.RETURN_BRANCH] === "string"
       ? query[SearchParams.RETURN_BRANCH]
       : undefined;
+  const ageParam = queryString(query, SearchParams.DRIVER_AGE);
+  const driverAge = ageParam ? parseDriverAge(ageParam) : undefined;
 
   let site;
   try {
@@ -134,6 +138,7 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
       to,
       branch,
       returnBranch: site.allowDifferentReturn ? returnBranch : undefined,
+      driverAge,
       preview,
     }),
     site.slug,

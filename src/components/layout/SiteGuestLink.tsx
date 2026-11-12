@@ -9,6 +9,7 @@ import { IconTooltip } from "@/components/ui/IconTooltip";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
 import { useStaffAuth } from "@/context/StaffAuthProvider";
 import { guestLinksFromHomeHref, publicHomeFromHome } from "@/lib/site";
+import { currentReturnTo, withReturnTo } from "@/lib/returnTo";
 import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { cn } from "@/lib/utils";
 import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
@@ -28,6 +29,13 @@ export function SiteGuestLink({ homeHref }: { homeHref: string }) {
     return (
       <Link
         href={links.signIn}
+        onClick={(event) => {
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) {
+            return;
+          }
+          event.preventDefault();
+          router.push(withReturnTo(links.signIn, currentReturnTo()));
+        }}
         className={cn(
           "inline-flex cursor-pointer items-center rounded-full border border-border bg-surface px-3.5 py-1.5 text-sm font-medium whitespace-nowrap text-foreground transition-colors",
           "hover:bg-surface-hover",

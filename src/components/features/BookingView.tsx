@@ -21,6 +21,12 @@ import { useOneWayFee } from "@/hooks/useOneWayFee";
 import { usePriceQuote } from "@/hooks/usePriceQuote";
 import type { SiteBranch } from "@/types/site";
 import { buildBookHref } from "@/lib/booking";
+import {
+  bookingDraftKey,
+  clearBookingDraft,
+  readBookingDraft,
+  writeBookingDraft,
+} from "@/lib/bookingDraft";
 import { localizedText } from "@/lib/localizedCopy";
 import {
   createBookingSchema,
@@ -147,7 +153,51 @@ export function BookingView({
       channel,
     },
   );
-  const [insurancePackageId, setInsurancePackageId] = useState("");
+  const draftKey = bookingDraftKey(companySlug, vehicle.id);
+  // The insurance list only renders after a client fetch, so reading the
+  // draft here cannot cause a hydration mismatch.
+  const [insurancePackageId, setInsurancePackageId] = useState(
+    () => readBookingDraft(draftKey)?.insurancePackageId ?? "",
+  );
+  const selectedInsurance = insurancePackageId
+    ? (insuranceQuery.data ?? []).find((pack) => pack.packageId === insurancePackageId)
+    : undefined;
+  const insuranceTotal = selectedInsurance?.total ?? 0;
+
+  // Keep what the guest typed across Change dates, back, refresh and a
+  // language switch. Dates in the URL win over the saved draft.
+  const watchedValues = useWatch({ control: form.control });
+
+  useEffect(() => {
+    const draft = readBookingDraft(draftKey);
+    if (draft) {
+      const fill = { shouldDirty: true } as const;
+      if (draft.guestName) form.setValue("guestName", draft.guestName, fill);
+      if (draft.guestEmail) form.setValue("guestEmail", draft.guestEmail, fill);
+      if (draft.guestPhone) form.setValue("guestPhone", draft.guestPhone, fill);
+      if (draft.acceptTerms) form.setValue("acceptTerms", true, fill);
+      if (!initialRange.from && !initialRange.to) {
+        const saved = sanitizeDateRange(draft.startDate ?? "", draft.endDate ?? "");
+        if (saved.from) form.setValue("startDate", saved.from, fill);
+        if (saved.to) form.setValue("endDate", saved.to, fill);
+      }
+    }
+    // Restore once per car; the URL dates are read at mount on purpose.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [draftKey]);
+
+  // Runs after the restore effect above, which has already read the draft.
+  useEffect(() => {
+    writeBookingDraft(draftKey, {
+      guestName: watchedValues.guestName,
+      guestEmail: watchedValues.guestEmail,
+      guestPhone: watchedValues.guestPhone,
+      acceptTerms: watchedValues.acceptTerms,
+      startDate: watchedValues.startDate,
+      endDate: watchedValues.endDate,
+      insurancePackageId,
+    });
+  }, [draftKey, insurancePackageId, watchedValues]);
   const oneWayFeeQuery = useOneWayFee(companySlug, {
     vehicleId: vehicle.id,
     startDate: days > 0 ? startDate : "",
@@ -162,7 +212,9 @@ export function BookingView({
   const total =
     days > 0
       ? formatMoney(
-          (quote?.vehicleSubtotal ?? days * vehicle.pricePerDay) + (oneWayFee ?? 0),
+          (quote?.vehicleSubtotal ?? days * vehicle.pricePerDay) +
+            (oneWayFee ?? 0) +
+            insuranceTotal,
           vehicle.currency,
           locale,
         )
@@ -187,6 +239,7 @@ export function BookingView({
   const { mutateAsync, isPending } = useCreateReservation({
     companySlug,
     onSuccess: (reservation) => {
+      clearBookingDraft(draftKey);
       router.push(
         confirmationBaseUrl
           ? `${confirmationBaseUrl.replace(/\/$/, "")}/${encodeURIComponent(reservation.token)}`
@@ -361,6 +414,20 @@ export function BookingView({
                 quote={quote}
                 returnLocationName={returnLocation?.name}
                 oneWayFee={oneWayFee}
+                extraLines={
+                  selectedInsurance
+                    ? [
+                        {
+                          key: "insurance",
+                          label:
+                            localizedText(selectedInsurance.name, locale) ||
+                            selectedInsurance.code ||
+                            t("insurance"),
+                          amount: insuranceTotal,
+                        },
+                      ]
+                    : []
+                }
               />
               <ConfirmButton
                 isBusy={isBusy}

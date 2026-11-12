@@ -24,7 +24,7 @@ import { localizedText } from "@/lib/localizedCopy";
 import { isSiteEditMode, parseEditFlag } from "@/lib/siteEdit";
 import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata } from "@/lib/seo";
-import { visibleSections, siteHeaderLogo } from "@/lib/siteContent";
+import { hasSiteAppLinks, visibleSections, siteHeaderLogo } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -130,8 +130,9 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
     hasEmail: Boolean(email),
   });
   const headerSections = navSections.filter((id) => NAV_SECTIONS.includes(id));
+  const showApp = site.isPreview || hasSiteAppLinks(site.content.app);
   const footerSections = navSections.filter(
-    (id) => NAV_SECTIONS.includes(id) || id === SiteSectionId.APP,
+    (id) => NAV_SECTIONS.includes(id) || (id === SiteSectionId.APP && showApp),
   );
   const dehydratedState = await prefetchCompanyFleetState(site.company, {
     from: typeof query.from === "string" ? query.from : undefined,

@@ -1,7 +1,8 @@
 import { SiteEditSection, SiteEditTab } from "@/enums";
+import { defaultPublicUrls } from "@/lib/envDefaults";
 import { previewQueryValue } from "@/lib/publicChannel";
 
-export const DEFAULT_ADMIN_ORIGIN = "https://cars-admin.benwer.es";
+export const DEFAULT_ADMIN_ORIGIN = defaultPublicUrls().admin;
 
 export function parseEditFlag(
   value: string | string[] | undefined,

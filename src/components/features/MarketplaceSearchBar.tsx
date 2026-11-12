@@ -71,6 +71,8 @@ function MarketplaceSearchForm({
       router.push(
         buildCompaniesSearchHref({
           location: location || DEFAULT_CITY_SLUG,
+          from: hasDates ? from : undefined,
+          to: hasDates ? to : undefined,
           view,
         }),
       );
