@@ -55,6 +55,13 @@ export interface GuestReservation {
   onlinePaymentRequired: boolean;
   /** Insurance chosen at booking; its total is included in totalPrice. */
   insurance?: { name: Record<string, string> | null; code: string; total: number } | null;
+  /** Booked extras, sent by the API with its grand total; included in totalPrice. */
+  extrasTotal?: number | null;
+  /** Pickup and return fees (e.g. one-way), sent with the grand total; included in totalPrice. */
+  feesTotal?: number | null;
+  /** HH:MM chosen by the guest, when any. */
+  pickupTime?: string | null;
+  returnTime?: string | null;
   vehicle?: Vehicle | null;
   company?: Company | null;
 }

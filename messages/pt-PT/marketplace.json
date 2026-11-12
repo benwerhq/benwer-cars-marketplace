@@ -424,7 +424,9 @@
       "request_declined": "A empresa recusou este pedido",
       "customer_request": "Retirou este pedido"
     },
-    "insurance": "Seguro"
+    "insurance": "Seguro",
+    "extras": "Extras",
+    "fees": "Taxas de levantamento e devolução"
   },
   "payment": {
     "title": "Pague o sinal",

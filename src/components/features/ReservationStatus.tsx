@@ -61,6 +61,10 @@ const KNOWN_CANCEL_REASONS = [
   "customer_request",
 ] as const;
 
+function withTime(date: string, time: string | null | undefined): string {
+  return time ? `${date} · ${time}` : date;
+}
+
 const STATUS_KEYS = {
   [ReservationStatusEnum.DRAFT]: "draft",
   [ReservationStatusEnum.CONFIRMED]: "confirmed",
@@ -163,11 +167,17 @@ export function ReservationStatus({
         <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <StatusRow
             label={t("pickup")}
-            value={fromDate ? formatLongDate(fromDate, locale) : data.startDate}
+            value={withTime(
+              fromDate ? formatLongDate(fromDate, locale) : data.startDate,
+              data.pickupTime,
+            )}
           />
           <StatusRow
             label={t("dropoff")}
-            value={toDate ? formatLongDate(toDate, locale) : data.endDate}
+            value={withTime(
+              toDate ? formatLongDate(toDate, locale) : data.endDate,
+              data.returnTime,
+            )}
           />
           {days > 0 ? (
             <StatusRow
@@ -237,6 +247,24 @@ export function ReservationStatus({
             </span>
             <span className="font-medium tabular-nums text-foreground">
               {formatMoney(data.insurance.total, data.currency, locale)}
+            </span>
+          </div>
+        ) : null}
+
+        {data.extrasTotal ? (
+          <div className="flex items-center justify-between gap-4 text-sm">
+            <span className="text-muted-foreground">{t("extras")}</span>
+            <span className="font-medium tabular-nums text-foreground">
+              {formatMoney(data.extrasTotal, data.currency, locale)}
+            </span>
+          </div>
+        ) : null}
+
+        {data.feesTotal ? (
+          <div className="flex items-center justify-between gap-4 text-sm">
+            <span className="text-muted-foreground">{t("fees")}</span>
+            <span className="font-medium tabular-nums text-foreground">
+              {formatMoney(data.feesTotal, data.currency, locale)}
             </span>
           </div>
         ) : null}

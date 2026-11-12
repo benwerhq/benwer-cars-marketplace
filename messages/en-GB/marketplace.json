@@ -424,7 +424,9 @@
       "request_declined": "The company declined this request",
       "customer_request": "You withdrew this request"
     },
-    "insurance": "Insurance"
+    "insurance": "Insurance",
+    "extras": "Extras",
+    "fees": "Pickup and return fees"
   },
   "payment": {
     "title": "Pay the advance",

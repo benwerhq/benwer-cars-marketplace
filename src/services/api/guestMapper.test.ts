@@ -54,6 +54,42 @@ describe("mapReservation insurance", () => {
       mapReservation({ grandTotal: 170, totalAmount: 126, insurance: { total: 24 } }).totalPrice,
     ).toBe(170);
   });
+
+  it("falls back to car plus insurance when grandTotal is null", () => {
+    const reservation = mapReservation({
+      grandTotal: null,
+      totalAmount: 126,
+      extrasTotal: null,
+      insurance: { total: 24 },
+    });
+    expect(reservation.totalPrice).toBe(150);
+    expect(reservation.extrasTotal).toBeNull();
+  });
+
+  it("maps extras, fees, times and the car year from the API", () => {
+    const reservation = mapReservation({
+      grandTotal: 180,
+      totalAmount: 126,
+      extrasTotal: 15,
+      feesTotal: 15,
+      pickupTime: "10:00",
+      returnTime: null,
+      vehicleMake: "SEAT",
+      vehicleModel: "Leon",
+      vehicleYear: 2023,
+      guestPhone: "+34600000000",
+      insurance: { total: 24 },
+    });
+    expect(reservation).toMatchObject({
+      totalPrice: 180,
+      extrasTotal: 15,
+      feesTotal: 15,
+      pickupTime: "10:00",
+      returnTime: null,
+      guestPhone: "+34600000000",
+    });
+    expect(reservation.vehicle?.year).toBe(2023);
+  });
 });
 
 describe("mapGuestCustomer", () => {

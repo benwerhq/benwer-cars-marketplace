@@ -420,6 +420,7 @@ export function mapReservation(
   const row = isRecord(raw) ? raw : {};
   const customer = isRecord(row.customer) ? row.customer : {};
   const insurance = mapReservationInsurance(row.insurance);
+  const grandTotal = readNumber(row.grandTotal);
   const companySlug =
     readString(row.companySlug) ??
     (isRecord(row.company) ? readString(row.company.slug) : undefined) ??
@@ -433,15 +434,20 @@ export function mapReservation(
     vehicleId: readString(row.vehicleId) ?? readString(row.vehicleID) ?? "",
     startDate: readString(row.startDate) ?? "",
     endDate: readString(row.endDate) ?? "",
-    // The public reservation's totalAmount is the vehicle subtotal only; add
-    // the insurance it returns separately unless a grand total is sent.
+    // The API grand total covers car, insurance, extras, fees and adjustments.
+    // Older responses only send totalAmount (the car alone), so add the
+    // insurance they return separately.
     totalPrice:
-      readNumber(row.grandTotal) ??
+      grandTotal ??
       (readNumber(row.totalPrice) ??
         readNumber(row.totalAmount) ??
         readNumber(row.total) ??
         0) + (insurance?.total ?? 0),
     insurance,
+    extrasTotal: grandTotal === undefined ? null : (readNumber(row.extrasTotal) ?? null),
+    feesTotal: grandTotal === undefined ? null : (readNumber(row.feesTotal) ?? null),
+    pickupTime: readString(row.pickupTime) ?? null,
+    returnTime: readString(row.returnTime) ?? null,
     priceBreakdown: mapPriceBreakdown(row.priceBreakdown),
     currency: readString(row.currency) || "EUR",
     guestName: readString(row.guestName) ?? readString(customer.name) ?? "",
@@ -479,6 +485,7 @@ export function mapReservation(
               id: readString(row.vehicleId) ?? readString(row.vehicleID),
               make: readString(row.vehicleMake),
               model: readString(row.vehicleModel),
+              year: readNumber(row.vehicleYear),
               dailyRate: readNumber(row.dailyRate),
               currency: readString(row.currency),
             },

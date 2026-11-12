@@ -424,7 +424,9 @@
       "request_declined": "La empresa rechazó esta solicitud",
       "customer_request": "Has retirado esta solicitud"
     },
-    "insurance": "Seguro"
+    "insurance": "Seguro",
+    "extras": "Extras",
+    "fees": "Cargos de recogida y devolución"
   },
   "payment": {
     "title": "Paga el anticipo",
