@@ -8,11 +8,14 @@ import {
   ArrowUp,
   Car,
   ChevronRight,
+  Eye,
   CircleHelp,
   Building2,
   GalleryHorizontal,
   ListChecks,
   LogOut,
+  Maximize2,
+  Minimize2,
   MapPin,
   MessageCircle,
   Smartphone,
@@ -71,7 +74,7 @@ const EDITABLE_SECTIONS: SiteSectionId[] = [
   SiteSectionId.CONTACT,
 ];
 
-const STATUS_BADGE: Record<SiteStatus, "success" | "warning" | "default"> = {
+export const STATUS_BADGE: Record<SiteStatus, "success" | "warning" | "default"> = {
   [SiteStatus.PUBLISHED]: "success",
   [SiteStatus.PAUSED]: "warning",
   [SiteStatus.DRAFT]: "default",
@@ -81,6 +84,7 @@ interface SiteEditorProps {
   draft: WebsiteSettings;
   companyId: string;
   companyName: string;
+  companyDescription: string;
   companyLogo: string | null;
   facts: SiteContentFacts;
   dirty: boolean;
@@ -95,12 +99,16 @@ interface SiteEditorProps {
   fallbackColor: string;
   oneWayRentals: boolean;
   onSignOut: () => void;
+  fullscreen: boolean;
+  onToggleFullscreen: () => void;
+  onPreview: () => void;
 }
 
 export function SiteEditor({
   draft,
   companyId,
   companyName,
+  companyDescription,
   companyLogo,
   facts,
   dirty,
@@ -115,6 +123,9 @@ export function SiteEditor({
   fallbackColor,
   oneWayRentals,
   onSignOut,
+  fullscreen,
+  onToggleFullscreen,
+  onPreview,
 }: SiteEditorProps) {
   const t = useTranslations("siteEditor");
   const uiLocale = useLocale();
@@ -166,7 +177,13 @@ export function SiteEditor({
         );
       case SiteSectionId.COMPANY:
         return (
-          <CompanyForm draft={draft} locale={locale} companyName={companyName} onChange={onChange} />
+          <CompanyForm
+            draft={draft}
+            locale={locale}
+            companyName={companyName}
+            companyDescription={companyDescription}
+            onChange={onChange}
+          />
         );
       case SiteSectionId.INCLUDED:
         return (
@@ -202,7 +219,12 @@ export function SiteEditor({
   return (
     <aside
       aria-label={t("aria")}
-      className="flex w-full flex-col border-b border-border bg-surface-muted lg:sticky lg:top-16 lg:z-30 lg:h-[calc(100dvh-4rem)] lg:w-[34rem] lg:border-b-0 lg:border-l"
+      className={cn(
+        "flex w-full flex-col border-b border-border bg-surface-muted font-sans",
+        fullscreen
+          ? "mx-auto min-h-[calc(100dvh-4rem)] max-w-3xl lg:border-x"
+          : "lg:sticky lg:top-16 lg:z-30 lg:h-[calc(100dvh-4rem)] lg:w-[34rem] lg:border-b-0 lg:border-l",
+      )}
     >
       <div className="flex items-center justify-between gap-3 border-b border-border bg-surface px-4 py-3">
         <div className="min-w-0">
@@ -214,10 +236,33 @@ export function SiteEditor({
           </div>
           <p className="truncate text-xs text-muted-foreground">{companyName}</p>
         </div>
-        <Button type="button" variant="ghost" size="sm" onClick={onSignOut}>
-          <LogOut size={14} aria-hidden />
-          {t("signOut")}
-        </Button>
+        <div className="flex shrink-0 items-center gap-1">
+          <Button type="button" variant="secondary" size="sm" onClick={onPreview}>
+            <Eye size={14} aria-hidden />
+            {t("preview")}
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            onClick={onToggleFullscreen}
+            aria-pressed={fullscreen}
+            aria-label={fullscreen ? t("exitFullscreen") : t("fullscreen")}
+            title={fullscreen ? t("exitFullscreen") : t("fullscreen")}
+          >
+            {fullscreen ? <Minimize2 size={14} aria-hidden /> : <Maximize2 size={14} aria-hidden />}
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            onClick={onSignOut}
+            aria-label={t("signOut")}
+            title={t("signOut")}
+          >
+            <LogOut size={14} aria-hidden />
+          </Button>
+        </div>
       </div>
 
       <Tabs.Root

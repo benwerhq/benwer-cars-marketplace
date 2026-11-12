@@ -12,6 +12,7 @@ import type { User } from "firebase/auth";
 import { guestSignOut } from "@/lib/guestAuth.client";
 import { setStaffAccessTokenProvider } from "@/lib/staffAccessToken";
 import {
+  getStaffAuth,
   staffIdToken,
   staffSignInWithToken,
   staffSignOut,
@@ -57,9 +58,9 @@ export function StaffAuthProvider({ children }: { children: ReactNode }) {
   }, [user]);
 
   useEffect(() => {
-    setStaffAccessTokenProvider(() => staffIdToken(user));
+    setStaffAccessTokenProvider(() => staffIdToken(getStaffAuth()?.currentUser ?? null));
     return () => setStaffAccessTokenProvider(null);
-  }, [user]);
+  }, []);
 
   const value = useMemo<StaffAuthContextValue>(
     () => ({

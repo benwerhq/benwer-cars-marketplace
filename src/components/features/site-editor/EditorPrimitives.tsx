@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Input } from "@/components/ui/Input";
 import { Switch } from "@/components/ui/Switch";
 import { Textarea } from "@/components/ui/Textarea";
+import { localizedText } from "@/lib/localizedCopy";
 import { cn } from "@/lib/utils";
 import type { LocalizedCopy } from "@/types/siteContent";
 
@@ -74,6 +75,7 @@ export function LocalizedField({
   locale,
   onChange,
   placeholder,
+  defaultText = "",
   hint,
   multiline = false,
   tall = false,
@@ -85,12 +87,13 @@ export function LocalizedField({
   locale: string;
   onChange: (next: LocalizedCopy) => void;
   placeholder?: string;
+  defaultText?: string;
   hint?: string;
   multiline?: boolean;
   tall?: boolean;
   maxLength?: number;
 }) {
-  const text = value[locale] ?? "";
+  const text = value[locale] || localizedText(value, locale).trim() || defaultText;
   const update = (next: string) => {
     const copy = { ...value };
     if (next) {

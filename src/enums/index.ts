@@ -199,6 +199,18 @@ export enum SearchParams {
   TOKEN = "token",
 }
 
+export enum SiteFontFamily {
+  SANS = "sans",
+  SERIF = "serif",
+  DISPLAY = "display",
+}
+
+export enum EditorView {
+  SPLIT = "split",
+  FULLSCREEN = "fullscreen",
+  PREVIEW = "preview",
+}
+
 export enum DriverAgeBand {
   UNDER_25 = "18-24",
   STANDARD = "25-69",

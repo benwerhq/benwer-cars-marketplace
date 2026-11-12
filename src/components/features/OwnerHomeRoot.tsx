@@ -4,10 +4,12 @@ import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import type { DehydratedState } from "@tanstack/react-query";
+import { EditorPreviewBar } from "@/components/features/site-editor/EditorPreviewBar";
 import { SiteEditor } from "@/components/features/site-editor/SiteEditor";
 import { SiteHomeLayouts } from "@/components/features/SiteHomeLayouts";
 import { useSiteDraftLogo } from "@/context/SiteDraftLogoProvider";
 import { useStaffAuth } from "@/context/StaffAuthProvider";
+import { EditorView } from "@/enums";
 import {
   usePauseWebsite,
   usePublishWebsite,
@@ -16,7 +18,7 @@ import {
 } from "@/hooks/useWebsiteSettings";
 import { getErrorKey } from "@/lib/errors";
 import { localizedText } from "@/lib/localizedCopy";
-import { siteHeaderLogo } from "@/lib/siteContent";
+import { siteFontStack, siteHeaderLogo } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import {
   applyWebsiteDraft,
@@ -66,6 +68,7 @@ export function OwnerHomeRoot({
   );
   const [override, setOverride] = useState<WebsiteSettings | null>(null);
   const draft = override ?? baseline;
+  const [view, setView] = useState(EditorView.SPLIT);
 
   const canEdit = Boolean(user && settings.data?.canEdit);
   const liveSite = canEdit ? applyWebsiteDraft(site, draft) : site;
@@ -74,9 +77,6 @@ export function OwnerHomeRoot({
   const headerLogo = canEdit
     ? siteHeaderLogo(liveSite.content, site.company.branding.logoUrl)
     : undefined;
-  useEffect(() => {
-    setHeaderLogo?.(headerLogo);
-  }, [setHeaderLogo, headerLogo]);
   const copy = {
     headline:
       localizedText(liveSite.headline, locale) ||
@@ -104,15 +104,48 @@ export function OwnerHomeRoot({
   const style = {
     "--background": liveSite.content.pageBackground,
     ...(brandColor ? { "--primary": brandColor } : {}),
+    fontFamily: siteFontStack(liveSite.content.fontFamily),
   } as CSSProperties;
+  const setThemeStyle = draftLogo?.setThemeStyle;
+  const brand = canEdit ? brandColor : null;
+  const font = canEdit ? liveSite.content.fontFamily : null;
+  useEffect(() => {
+    setHeaderLogo?.(headerLogo);
+  }, [setHeaderLogo, headerLogo]);
+  useEffect(() => {
+    setThemeStyle?.(
+      font
+        ? ({
+            ...(brand ? { "--primary": brand } : {}),
+            fontFamily: siteFontStack(font),
+          } as CSSProperties)
+        : undefined,
+    );
+  }, [setThemeStyle, brand, font]);
   const mutationError = save.error ?? publish.error ?? pause.error;
+  const errorMessage = mutationError ? tRoot(getErrorKey(mutationError)) : null;
+  const saveDraft = () => {
+    void save.mutateAsync(toWebsitePatch(draft)).then(() => {
+      setOverride(null);
+      router.refresh();
+    });
+  };
+  const publishDraft = () => {
+    void publish.mutateAsync(undefined);
+  };
+  const showPreview = !canEdit || view !== EditorView.FULLSCREEN;
+  const showEditor = canEdit && view !== EditorView.PREVIEW;
 
   return (
     <div
       style={style}
-      className={cn("bg-background", canEdit && "lg:grid lg:grid-cols-[minmax(0,1fr)_34rem]")}
+      className={cn(
+        "bg-background",
+        showEditor && showPreview && "lg:grid lg:grid-cols-[minmax(0,1fr)_34rem]",
+        canEdit && view === EditorView.PREVIEW && "pb-36 sm:pb-24",
+      )}
     >
-      <div>
+      <div className={cn(!showPreview && "hidden")}>
         <SiteHomeLayouts
           site={liveSite}
           copy={copy}
@@ -126,11 +159,24 @@ export function OwnerHomeRoot({
           dehydratedState={dehydratedState}
         />
       </div>
-      {canEdit ? (
+      {canEdit && view === EditorView.PREVIEW ? (
+        <EditorPreviewBar
+          draft={draft}
+          dirty={dirty}
+          saving={save.isPending}
+          publishing={publish.isPending}
+          error={errorMessage}
+          onEdit={() => setView(EditorView.SPLIT)}
+          onSave={saveDraft}
+          onPublish={publishDraft}
+        />
+      ) : null}
+      {showEditor ? (
         <SiteEditor
           draft={draft}
           companyId={site.company.id}
           companyName={liveSite.company.name}
+          companyDescription={liveSite.company.description ?? ""}
           companyLogo={site.company.branding.logoUrl}
           facts={{
             branchCount: liveSite.branches.length,
@@ -139,17 +185,10 @@ export function OwnerHomeRoot({
           }}
           dirty={dirty}
           saving={save.isPending}
-          error={mutationError ? tRoot(getErrorKey(mutationError)) : null}
+          error={errorMessage}
           onChange={setOverride}
-          onSave={() => {
-            void save.mutateAsync(toWebsitePatch(draft)).then(() => {
-              setOverride(null);
-              router.refresh();
-            });
-          }}
-          onPublish={() => {
-            void publish.mutateAsync(undefined);
-          }}
+          onSave={saveDraft}
+          onPublish={publishDraft}
           onPause={() => {
             void pause.mutateAsync(undefined);
           }}
@@ -160,6 +199,11 @@ export function OwnerHomeRoot({
           onSignOut={() => {
             void signOut();
           }}
+          fullscreen={view === EditorView.FULLSCREEN}
+          onToggleFullscreen={() =>
+            setView(view === EditorView.FULLSCREEN ? EditorView.SPLIT : EditorView.FULLSCREEN)
+          }
+          onPreview={() => setView(EditorView.PREVIEW)}
         />
       ) : null}
     </div>

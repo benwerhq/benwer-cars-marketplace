@@ -101,6 +101,7 @@
   --color-promo-accent: var(--promo-accent);
   --color-promo-ink: var(--promo-ink);
   --color-promo-paper: var(--promo-paper);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-promo-display: var(--font-bebas);
   --font-promo-script: var(--font-caveat);
 }

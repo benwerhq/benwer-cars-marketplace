@@ -11,6 +11,7 @@ import {
 import type { User } from "firebase/auth";
 import { setGuestAccessTokenProvider } from "@/lib/guestAccessToken";
 import {
+  getGuestAuth,
   guestIdToken,
   guestSignIn,
   guestSignOut,
@@ -58,9 +59,9 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
   }, [configured]);
 
   useEffect(() => {
-    setGuestAccessTokenProvider(() => guestIdToken(user));
+    setGuestAccessTokenProvider(() => guestIdToken(getGuestAuth()?.currentUser ?? null));
     return () => setGuestAccessTokenProvider(null);
-  }, [user]);
+  }, []);
 
   const value = useMemo<GuestAuthContextValue>(
     () => ({

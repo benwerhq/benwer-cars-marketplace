@@ -1,6 +1,7 @@
 import type {
   SiteBannerPreset,
   SiteBannerTarget,
+  SiteFontFamily,
   SiteIncludedIcon,
   SiteIncludedPreset,
   SitePaymentMethod,
@@ -104,6 +105,7 @@ export interface SiteContent {
   faq: SiteFaqItem[];
   contact: SiteContactContent;
   brandColor: string;
+  fontFamily: SiteFontFamily;
   allowDifferentReturn: boolean;
   logos: SiteLogos;
   pageBackground: string;

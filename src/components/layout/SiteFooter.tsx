@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { NavRoutes, type SitePaymentMethod, type SiteSectionId } from "@/enums";
-import { guestLinksFromHomeHref, siteChildFromHome } from "@/lib/site";
+import { siteChildFromHome } from "@/lib/site";
 import { whatsappHref } from "@/lib/siteContent";
 import { CookieSettingsLink } from "./CookieSettingsLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { SiteFooterAccountLink } from "./SiteFooterAccountLink";
 
 interface SiteFooterContact {
   phone: string | null;
@@ -63,6 +64,7 @@ export async function SiteFooter({
                 {tSections(`nav.${id}`)}
               </Link>
             ))}
+            <SiteFooterAccountLink homeHref={homeHref} className={linkClass} />
           </nav>
           {hasContact && contact ? (
             <div className="flex flex-col gap-2">
@@ -82,9 +84,6 @@ export async function SiteFooter({
                   {contact.email}
                 </a>
               ) : null}
-              <Link href={guestLinksFromHomeHref(homeHref).bookings} className={linkClass}>
-                {tSections("footer.manageBooking")}
-              </Link>
             </div>
           ) : null}
           <nav aria-label={tFooter("legal")} className="flex flex-col gap-2">

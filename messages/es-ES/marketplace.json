@@ -824,7 +824,6 @@
     "footer": {
       "contact": "Contacto",
       "whatsapp": "WhatsApp",
-      "manageBooking": "Mis reservas",
       "copyright": "© {year} {name}",
       "weAccept": "Aceptamos",
       "rating": "{score} · {count, plural, one {# opinión} other {# opiniones}}"
@@ -1014,12 +1013,28 @@
     },
     "design": {
       "colorTitle": "Color de marca",
-      "colorDescription": "Se usa en botones, enlaces y elementos destacados.",
+      "colorDescription": "Se usa en botones, enlaces y elementos destacados. El fondo de los banners sigue este color; puedes ajustarlo en Banners.",
       "presets": "Colores sugeridos",
       "custom": "Color personalizado",
       "customHint": "Usa un código hexadecimal, como #4f46e5.",
       "picker": "Elegir color",
-      "lowContrast": "Este color es demasiado claro para texto blanco en botones. Elige uno más oscuro o no se podrá guardar."
+      "lowContrast": "Este color es demasiado claro para texto blanco en botones. Elige uno más oscuro o no se podrá guardar.",
+      "fontTitle": "Tipografía",
+      "fontDescription": "Se usa en todo el texto de tu web.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Limpia y moderna"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Clásica y elegante"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Llamativa y cercana"
+        }
+      }
     },
     "settings": {
       "bookingTitle": "Reservas",
@@ -1066,15 +1081,21 @@
       "needsApi": "Disponible cuando esté activa la actualización de la API de Benwer para webs."
     },
     "legal": {
-      "hint": "Escribe tu propia política de privacidad y tus condiciones. Deja un idioma vacío para mostrar el texto estándar de Benwer en ese idioma.",
+      "hint": "Cada página empieza con el texto estándar, así puedes cambiar solo lo que necesites. Vacía un campo para volver al texto estándar.",
       "needsApi": "Disponible cuando esté activa la actualización de la API de Benwer para webs.",
       "privacyTitle": "Política de privacidad",
       "privacyDescription": "Se muestra en Privacidad, en el pie de tu web.",
       "termsTitle": "Términos y condiciones",
       "termsDescription": "Se muestra en Términos, en el pie de tu web.",
       "text": "Texto",
-      "placeholder": "Texto sin formato. Deja una línea en blanco entre párrafos."
-    }
+      "pageTitle": "Título de la página"
+    },
+    "preview": "Vista previa",
+    "fullscreen": "Editor a pantalla completa",
+    "exitFullscreen": "Mostrar la vista previa junto al editor",
+    "previewBarAria": "Controles de vista previa",
+    "previewing": "Estás viendo una vista previa de tu web",
+    "backToEdit": "Editar"
   },
   "marketplaceBanners": {
     "aria": "Destacados de Benwer",

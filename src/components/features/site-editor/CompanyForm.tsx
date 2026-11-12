@@ -8,10 +8,17 @@ interface CompanyFormProps {
   draft: WebsiteSettings;
   locale: string;
   companyName: string;
+  companyDescription: string;
   onChange: (next: WebsiteSettings) => void;
 }
 
-export function CompanyForm({ draft, locale, companyName, onChange }: CompanyFormProps) {
+export function CompanyForm({
+  draft,
+  locale,
+  companyName,
+  companyDescription,
+  onChange,
+}: CompanyFormProps) {
   const t = useTranslations("siteEditor.company");
 
   return (
@@ -23,7 +30,7 @@ export function CompanyForm({ draft, locale, companyName, onChange }: CompanyFor
           value={draft.headline}
           locale={locale}
           maxLength={120}
-          placeholder={t("headlinePlaceholder", { name: companyName })}
+          defaultText={t("headlinePlaceholder", { name: companyName })}
           onChange={(headline) => onChange({ ...draft, headline })}
         />
         <LocalizedField
@@ -33,6 +40,7 @@ export function CompanyForm({ draft, locale, companyName, onChange }: CompanyFor
           locale={locale}
           maxLength={600}
           multiline
+          defaultText={companyDescription}
           hint={t("introHint")}
           onChange={(intro) => onChange({ ...draft, intro })}
         />

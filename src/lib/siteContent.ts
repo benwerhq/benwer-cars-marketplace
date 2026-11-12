@@ -1,6 +1,7 @@
 import {
   SiteBannerPreset,
   SiteBannerTarget,
+  SiteFontFamily,
   SiteIncludedIcon,
   SiteIncludedPreset,
   SitePaymentMethod,
@@ -379,6 +380,7 @@ export function parseSiteContent(appearanceRaw: unknown, reviewsRaw: unknown): S
       ),
     },
     brandColor: readColor(theme.primaryColor, ""),
+    fontFamily: enumValue(Object.values(SiteFontFamily), theme.fontFamily) ?? SiteFontFamily.SANS,
     allowDifferentReturn: raw.allowDifferentReturn === true,
     logos: parseLogos(raw.logos),
     pageBackground: readColor(raw.pageBackground, DEFAULT_PAGE_BACKGROUND),
@@ -416,7 +418,7 @@ export function serializeAppearance(content: SiteContent): Record<string, unknow
     theme: {
       primaryColor: brand,
       accentColor: brand,
-      fontFamily: enumValue(["sans", "serif", "display"], theme.fontFamily) ?? "sans",
+      fontFamily: content.fontFamily,
       cornerRadius: enumValue(["none", "sm", "md", "lg"], theme.cornerRadius) ?? "md",
     },
     sections: content.sections.map((section, order) => {
@@ -588,4 +590,24 @@ export function newContentId(prefix: string): string {
       ? crypto.randomUUID().slice(0, 8)
       : Math.random().toString(36).slice(2, 10);
   return `${prefix}-${random}`.toLowerCase();
+}
+
+const SITE_FONT_VARIABLES: Record<SiteFontFamily, string> = {
+  [SiteFontFamily.SANS]: "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
+  [SiteFontFamily.SERIF]: "var(--font-lora), ui-serif, Georgia, serif",
+  [SiteFontFamily.DISPLAY]: "var(--font-poppins), ui-sans-serif, system-ui, sans-serif",
+};
+
+export function siteFontStack(family: SiteFontFamily): string {
+  return SITE_FONT_VARIABLES[family];
+}
+
+export function withBrandColor(content: SiteContent, brandColor: string): SiteContent {
+  return {
+    ...content,
+    brandColor,
+    bannerTheme: isHexColor(brandColor)
+      ? { ...content.bannerTheme, background: brandColor }
+      : content.bannerTheme,
+  };
 }

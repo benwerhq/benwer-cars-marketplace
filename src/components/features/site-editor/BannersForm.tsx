@@ -171,7 +171,7 @@ export function BannersForm({ banners, theme, locale, onChange, onThemeChange }:
                   locale={locale}
                   maxLength={MAX_LENGTH[field]}
                   multiline={field === "description"}
-                  placeholder={banner.preset ? placeholder({ ...banner, [field]: {} }, field) : ""}
+                  defaultText={banner.preset ? placeholder({ ...banner, [field]: {} }, field) : ""}
                   onChange={(value) => update({ [field]: value })}
                 />
               ))}

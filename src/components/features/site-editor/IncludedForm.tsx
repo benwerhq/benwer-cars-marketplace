@@ -71,7 +71,7 @@ export function IncludedForm({ items, locale, onChange }: IncludedFormProps) {
               value={item.title}
               locale={locale}
               maxLength={40}
-              placeholder={placeholder.title}
+              defaultText={placeholder.title}
               onChange={(title) => update({ title })}
             />
             <LocalizedField
@@ -80,7 +80,7 @@ export function IncludedForm({ items, locale, onChange }: IncludedFormProps) {
               value={item.text}
               locale={locale}
               maxLength={90}
-              placeholder={placeholder.text}
+              defaultText={placeholder.text}
               onChange={(text) => update({ text })}
             />
             <LocalizedField
@@ -89,7 +89,7 @@ export function IncludedForm({ items, locale, onChange }: IncludedFormProps) {
               value={item.tag}
               locale={locale}
               maxLength={24}
-              placeholder={placeholder.tag}
+              defaultText={placeholder.tag}
               hint={t("tagHint")}
               onChange={(tag) => update({ tag })}
             />

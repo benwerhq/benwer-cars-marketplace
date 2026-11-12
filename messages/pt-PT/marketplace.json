@@ -824,7 +824,6 @@
     "footer": {
       "contact": "Contacto",
       "whatsapp": "WhatsApp",
-      "manageBooking": "As minhas reservas",
       "copyright": "© {year} {name}",
       "weAccept": "Aceitamos",
       "rating": "{score} · {count, plural, one {# avaliação} other {# avaliações}}"
@@ -1014,12 +1013,28 @@
     },
     "design": {
       "colorTitle": "Cor da marca",
-      "colorDescription": "Usada em botões, links e destaques do site.",
+      "colorDescription": "Usada em botões, links e destaques do site. O fundo dos banners acompanha esta cor; pode ajustá-lo em Banners.",
       "presets": "Cores sugeridas",
       "custom": "Cor personalizada",
       "customHint": "Use um código hexadecimal, como #4f46e5.",
       "picker": "Escolher cor",
-      "lowContrast": "Esta cor é demasiado clara para texto branco nos botões. Escolha uma mais escura ou não será possível guardar."
+      "lowContrast": "Esta cor é demasiado clara para texto branco nos botões. Escolha uma mais escura ou não será possível guardar.",
+      "fontTitle": "Tipo de letra",
+      "fontDescription": "Usado em todo o texto do seu site.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Limpo e moderno"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Clássico e elegante"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Marcante e acolhedor"
+        }
+      }
     },
     "settings": {
       "bookingTitle": "Reservas",
@@ -1066,15 +1081,21 @@
       "needsApi": "Disponível quando a atualização da API Benwer para sites estiver ativa."
     },
     "legal": {
-      "hint": "Escreva a sua própria política de privacidade e termos. Deixe um idioma vazio para mostrar o texto padrão da Benwer nesse idioma.",
+      "hint": "Cada página começa com o texto padrão, para alterar apenas o que precisar. Limpe um campo para voltar ao texto padrão.",
       "needsApi": "Disponível quando a atualização da API Benwer para sites estiver ativa.",
       "privacyTitle": "Política de privacidade",
       "privacyDescription": "Aparece em Privacidade, no rodapé do seu site.",
       "termsTitle": "Termos e condições",
       "termsDescription": "Aparece em Termos, no rodapé do seu site.",
       "text": "Texto",
-      "placeholder": "Texto simples. Deixe uma linha em branco entre parágrafos."
-    }
+      "pageTitle": "Título da página"
+    },
+    "preview": "Pré-visualizar",
+    "fullscreen": "Editor em ecrã inteiro",
+    "exitFullscreen": "Mostrar a pré-visualização ao lado do editor",
+    "previewBarAria": "Controlos de pré-visualização",
+    "previewing": "Está a pré-visualizar o seu site",
+    "backToEdit": "Editar"
   },
   "marketplaceBanners": {
     "aria": "Destaques Benwer",

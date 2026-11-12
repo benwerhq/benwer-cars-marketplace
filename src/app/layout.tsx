@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Caveat, Inter } from "next/font/google";
+import { Bebas_Neue, Caveat, Inter, Lora, Poppins } from "next/font/google";
 import { cookies } from "next/headers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -21,7 +21,20 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-sans",
+  variable: "--font-inter",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-lora",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 const bebasNeue = Bebas_Neue({
@@ -96,7 +109,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${bebasNeue.variable} ${caveat.variable}`}
+      className={`${inter.variable} ${lora.variable} ${poppins.variable} ${bebasNeue.variable} ${caveat.variable}`}
     >
       <body className="flex min-h-dvh flex-col bg-background text-foreground antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>

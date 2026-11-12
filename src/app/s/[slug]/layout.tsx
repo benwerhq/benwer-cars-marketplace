@@ -3,7 +3,9 @@ import { Suspense } from "react";
 import { GuestAuthProvider } from "@/context/GuestAuthProvider";
 import { StaffAuthProvider } from "@/context/StaffAuthProvider";
 import { SitePreviewBanner } from "@/components/layout/SitePreviewBanner";
-import { DEFAULT_PAGE_BACKGROUND } from "@/lib/siteContent";
+import { DEFAULT_PAGE_BACKGROUND, siteFontStack } from "@/lib/siteContent";
+import { siteBrandColor } from "@/lib/websiteDraft";
+import { SiteFontFamily } from "@/enums";
 import { sitesApi } from "@/services/api";
 
 interface Props {
@@ -15,10 +17,12 @@ async function SiteLayout({ children, params }: Props) {
   const { slug } = await params;
   let brandColor: string | null = null;
   let background = DEFAULT_PAGE_BACKGROUND;
+  let font = SiteFontFamily.SANS;
   try {
     const site = await sitesApi.getBySlug(slug);
-    brandColor = site.company.branding.primaryColor || null;
+    brandColor = siteBrandColor(site) || null;
     background = site.content.pageBackground;
+    font = site.content.fontFamily;
   } catch {
     brandColor = null;
   }
@@ -26,6 +30,7 @@ async function SiteLayout({ children, params }: Props) {
   const style = {
     "--background": background,
     ...(brandColor ? { "--primary": brandColor } : {}),
+    fontFamily: siteFontStack(font),
   } as CSSProperties;
 
   return (

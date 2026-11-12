@@ -824,7 +824,6 @@
     "footer": {
       "contact": "Contact",
       "whatsapp": "WhatsApp",
-      "manageBooking": "My bookings",
       "copyright": "© {year} {name}",
       "weAccept": "We accept",
       "rating": "{score} · {count, plural, one {# review} other {# reviews}}"
@@ -1014,12 +1013,28 @@
     },
     "design": {
       "colorTitle": "Brand colour",
-      "colorDescription": "Used for buttons, links and highlights across your site.",
+      "colorDescription": "Used for buttons, links and highlights across your site. The banner background follows this colour; you can still fine-tune it under Banners.",
       "presets": "Suggested colours",
       "custom": "Custom colour",
       "customHint": "Use a hex code, such as #4f46e5.",
       "picker": "Pick a colour",
-      "lowContrast": "This colour is too light for white text on buttons. Pick a darker one, or saving will fail."
+      "lowContrast": "This colour is too light for white text on buttons. Pick a darker one, or saving will fail.",
+      "fontTitle": "Font",
+      "fontDescription": "Used for all text on your website.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Clean and modern"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Classic and elegant"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Bold and friendly"
+        }
+      }
     },
     "settings": {
       "bookingTitle": "Bookings",
@@ -1066,15 +1081,21 @@
       "needsApi": "Available once the Benwer API update for websites is live."
     },
     "legal": {
-      "hint": "Write your own privacy policy and terms. Leave a language empty to show the standard Benwer text in that language.",
+      "hint": "Each page starts with the standard text, so you can change just the parts you need. Clear a field to go back to the standard text.",
       "needsApi": "Available once the Benwer API update for websites is live.",
       "privacyTitle": "Privacy policy",
       "privacyDescription": "Shown at Privacy in your website footer.",
       "termsTitle": "Terms and conditions",
       "termsDescription": "Shown at Terms in your website footer.",
       "text": "Text",
-      "placeholder": "Plain text. Leave a blank line between paragraphs."
-    }
+      "pageTitle": "Page title"
+    },
+    "preview": "Preview",
+    "fullscreen": "Full-screen editor",
+    "exitFullscreen": "Show preview beside the editor",
+    "previewBarAria": "Preview controls",
+    "previewing": "You are previewing your website",
+    "backToEdit": "Edit"
   },
   "marketplaceBanners": {
     "aria": "Benwer highlights",

@@ -42,7 +42,7 @@ export function AppForm({ app, locale, onChange }: AppFormProps) {
           value={app.title}
           locale={locale}
           maxLength={60}
-          placeholder={tSite("title")}
+          defaultText={tSite("title")}
           onChange={(title) => onChange({ ...app, title })}
         />
         <LocalizedField
@@ -52,7 +52,7 @@ export function AppForm({ app, locale, onChange }: AppFormProps) {
           locale={locale}
           maxLength={160}
           multiline
-          placeholder={tSite("text")}
+          defaultText={tSite("text")}
           onChange={(text) => onChange({ ...app, text })}
         />
       </EditorGroup>
