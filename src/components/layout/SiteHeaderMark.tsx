@@ -19,7 +19,7 @@ export function SiteHeaderMark({ companyName, logoUrl }: SiteHeaderMarkProps) {
         size="sm"
         className="h-9 w-9 rounded-lg"
       />
-      <span className={src ? "sr-only" : "truncate text-sm font-semibold tracking-tight"}>
+      <span className="truncate text-sm font-semibold tracking-tight">
         {companyName}
       </span>
     </>
