@@ -1,4 +1,4 @@
-import { BookingMode, PublicChannel, SearchParams, SiteStatus } from "@/enums";
+import { BookingMode, DriverAgeBand, PublicChannel, SearchParams, SiteStatus } from "@/enums";
 import { customDomainPublicPath } from "@/lib/customDomain";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
 import type { PublicSite } from "@/types/site";
@@ -110,6 +110,7 @@ export interface SiteLinkQuery {
   to?: string;
   branch?: string;
   returnBranch?: string;
+  driverAge?: DriverAgeBand;
   preview?: string;
   carId?: string;
   edit?: boolean;
@@ -126,6 +127,9 @@ export function withSiteQuery(path: string, query?: SiteLinkQuery): string {
   }
   if (query?.returnBranch && query.returnBranch !== query.branch) {
     url.searchParams.set(SearchParams.RETURN_BRANCH, query.returnBranch);
+  }
+  if (query?.driverAge && query.driverAge !== DriverAgeBand.STANDARD) {
+    url.searchParams.set(SearchParams.DRIVER_AGE, query.driverAge);
   }
   if (query?.preview) {
     url.searchParams.set(SearchParams.PREVIEW, query.preview);
@@ -189,4 +193,10 @@ export function parsePreviewToken(
 
 export function companySlugFromSite(site: PublicSite): string {
   return site.company.slug || site.slug;
+}
+
+export function parseDriverAge(value: string | null | undefined): DriverAgeBand {
+  return (Object.values(DriverAgeBand) as string[]).includes(value ?? "")
+    ? (value as DriverAgeBand)
+    : DriverAgeBand.STANDARD;
 }

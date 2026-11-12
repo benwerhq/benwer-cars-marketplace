@@ -614,16 +614,18 @@
     "anyBranch": "Qualquer local",
     "ownerSignIn": "Acesso do proprietário",
     "returnBranch": "Local de devolução",
-    "sameReturn": "Devolver no mesmo local",
     "differentReturn": "Devolver noutro local",
-    "returnSame": "O mesmo do levantamento"
+    "returnSame": "O mesmo do levantamento",
+    "driverAge": "Idade do condutor",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
   },
   "owner": {
-    "signInTitle": "Acesso do proprietário",
-    "signInHint": "Use a conta de staff da Benwer desta empresa. Os clientes usam outro acesso.",
-    "signInAction": "Entrar",
-    "email": "Email",
-    "password": "Palavra-passe",
+    "signInTitle": "Editar o seu site",
+    "signInHint": "Os proprietários abrem o editor do site a partir do Benwer admin. Use o botão «Editar site» e terá sessão iniciada aqui automaticamente.",
     "signedInTitle": "Sessão iniciada",
     "signedInHint": "Se puder gerir este site, o editor abre na página inicial.",
     "openEditor": "Abrir o editor",
@@ -631,11 +633,14 @@
     "disabledDescription": "O Firebase de staff não está configurado neste marketplace.",
     "signOut": "Sair",
     "auth": {
-      "invalidEmail": "Introduza um email válido.",
       "tooManyRequests": "Demasiadas tentativas. Tente mais tarde.",
-      "invalidCredentials": "O email ou a palavra-passe não estão correctos.",
-      "unknown": "Não foi possível entrar. Tente novamente."
-    }
+      "unknown": "Não foi possível entrar. Tente novamente.",
+      "invalidToken": "Este link de acesso expirou ou já foi usado. Abra novamente o editor a partir do Benwer admin."
+    },
+    "signingIn": "A iniciar sessão…",
+    "openAdmin": "Abrir o Benwer admin",
+    "accountMenu": "Conta de proprietário",
+    "signedInAs": "Sessão de proprietário"
   },
   "guest": {
     "signInNav": "Entrar",
@@ -708,28 +713,22 @@
           "highlight": "Levantamento no aeroporto",
           "joiner": "em",
           "boxed": "10 minutos",
-          "description": "Sem filas: assine o contrato no telemóvel e saia com seguro completo",
-          "ctaLabel": "Reservar agora"
+          "description": "Sem filas: assine o contrato no telemóvel e saia com seguro completo"
         },
         "weekend": {
           "script": "reserve este fim de semana",
           "highlight": "Poupe 20%",
           "joiner": "em",
           "boxed": "Fins de semana",
-          "description": "Levante na sexta e devolva na segunda. Cadeira de criança e condutor extra incluídos",
-          "ctaLabel": "Ver ofertas"
+          "description": "Levante na sexta e devolva na segunda. Cadeira de criança e condutor extra incluídos"
         },
         "roadtrip": {
           "script": "a sua próxima viagem",
           "highlight": "Começa aqui",
           "joiner": "entregamos as",
           "boxed": "Chaves",
-          "description": "Cancelamento gratuito até 24 h antes, quilómetros ilimitados e sem custos escondidos",
-          "ctaLabel": "Reservar um carro"
+          "description": "Cancelamento gratuito até 24 h antes, quilómetros ilimitados e sem custos escondidos"
         }
-      },
-      "fallback": {
-        "ctaLabel": "Reservar um carro"
       }
     },
     "included": {
@@ -769,7 +768,9 @@
       "ratingAria": "Avaliação de {rating} em 5",
       "rented": "Alugou: {vehicle}",
       "verified": "Aluguer verificado",
-      "distributionAria": "Distribuição das avaliações"
+      "distributionAria": "Distribuição das avaliações",
+      "emptyTitle": "Ainda sem avaliações",
+      "emptyText": "Os clientes podem avaliar o aluguer depois de devolverem o carro. As avaliações aprovadas aparecem aqui."
     },
     "app": {
       "title": "A sua reserva, sempre consigo",
@@ -790,7 +791,8 @@
         "name": "Google Play",
         "aria": "Disponível no Google Play",
         "unavailable": "Ainda não disponível no Google Play"
-      }
+      },
+      "comingSoon": "Brevemente"
     },
     "locations": {
       "eyebrow": "Lojas",
@@ -910,17 +912,8 @@
         "highlight": "Título destacado",
         "joiner": "Conector",
         "boxed": "Título em caixa",
-        "description": "Descrição",
-        "ctaLabel": "Texto do botão"
+        "description": "Descrição"
       },
-      "ctaTarget": "O botão leva a",
-      "targets": {
-        "fleet": "Os seus carros",
-        "contact": "Secção de contacto",
-        "url": "Outra página web"
-      },
-      "ctaUrl": "Endereço web",
-      "ctaUrlHint": "Tem de começar por https://",
       "presets": {
         "airport": "Colagem aeroporto",
         "weekend": "Colagem fim de semana",
@@ -936,9 +929,7 @@
         "highlightText": "Texto destacado",
         "box": "Caixa branca",
         "boxText": "Texto da caixa branca",
-        "script": "Texto conector",
-        "button": "Botão",
-        "buttonText": "Texto do botão"
+        "script": "Texto conector"
       }
     },
     "company": {
@@ -988,12 +979,12 @@
       "title": "Avaliações de clientes",
       "description": "Os clientes avaliam o aluguer após devolverem o carro. Só são mostradas as que aprovar.",
       "summary": "Média de {average} com {count, plural, one {# avaliação aprovada} other {# avaliações aprovadas}}",
-      "none": "Ainda não há avaliações aprovadas. A secção fica oculta até aprovar uma.",
+      "none": "Ainda sem avaliações aprovadas. Os clientes veem uma breve nota até aprovar uma.",
       "manage": "Aprovar ou ocultar avaliações no Benwer admin"
     },
     "app": {
       "storesTitle": "Links das lojas",
-      "storesDescription": "A secção aparece quando adiciona pelo menos um link. A loja em falta aparece a cinzento.",
+      "storesDescription": "Uma loja sem link aparece a cinzento. Sem links, a secção aparece como brevemente.",
       "ios": "Link da App Store",
       "android": "Link do Google Play",
       "qrHint": "O código QR abre o link do Google Play, ou o da App Store se não houver do Google Play.",

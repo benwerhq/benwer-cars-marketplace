@@ -89,7 +89,6 @@ export function SiteHomeLayouts({
               banners={site.content.banners}
               theme={site.content.bannerTheme}
               companyName={site.company.name}
-              homeHref={homeHref}
               underSearch={showSearch}
             />
             {showSearch ? (
@@ -214,22 +213,22 @@ function CompanyHeader({ site, copy }: { site: PublicSite; copy: SiteHomeCopy })
 
   return (
     <section className="relative w-full overflow-hidden border-y border-border bg-gradient-to-br from-primary/10 via-background to-background">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-10 md:px-6 md:py-12 lg:px-8">
-        <div className={cn("flex gap-4", withLogo ? "flex-col" : "items-start")}>
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-10 md:px-6 md:py-12 lg:px-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
           <CompanyMark
             company={company}
             size="lg"
-            className={withLogo ? "h-12" : "h-16 w-16 rounded-2xl"}
+            className={withLogo ? "h-20 max-w-[16rem]" : "h-20 w-20 rounded-2xl text-2xl"}
           />
           <div className="min-w-0">
             {withLogo ? null : (
               <p className="text-sm font-medium text-primary">{site.company.name}</p>
             )}
-            <h1 className="mt-1 text-3xl font-semibold tracking-tight text-foreground">
+            <h1 className="text-3xl font-semibold tracking-tight text-foreground">
               {copy.headline}
             </h1>
             {copy.intro ? (
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 {copy.intro}
               </p>
             ) : null}

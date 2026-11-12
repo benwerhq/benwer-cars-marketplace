@@ -1,32 +1,58 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { ExternalLink, Loader2, Shield } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { Field } from "@/components/ui/Field";
-import { Input } from "@/components/ui/Input";
-import { useStaffAuth } from "@/context/StaffAuthProvider";
-import { staffFirebaseErrorKey } from "@/lib/staffAuth.client";
-import { isStaffFirebaseConfigured } from "@/lib/staffFirebase";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { Shield } from "lucide-react";
+import { useStaffAuth } from "@/context/StaffAuthProvider";
+import { env } from "@/env";
+import { logError } from "@/lib/logger";
+import { staffFirebaseErrorKey } from "@/lib/staffAuth.client";
+import { isStaffFirebaseConfigured, ownerTokenFromHash } from "@/lib/staffFirebase";
 
 interface OwnerSignInPanelProps {
   homeHref: string;
+}
+
+function subscribeToHash(onChange: () => void): () => void {
+  window.addEventListener("hashchange", onChange);
+  return () => window.removeEventListener("hashchange", onChange);
 }
 
 export function OwnerSignInPanel({ homeHref }: OwnerSignInPanelProps) {
   const t = useTranslations("owner");
   const tRoot = useTranslations();
   const router = useRouter();
-  const { signIn, user, ready } = useStaffAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [busy, setBusy] = useState(false);
+  const { signInWithToken, user, ready } = useStaffAuth();
   const [errorKey, setErrorKey] = useState<string | null>(null);
+  const consumed = useRef(false);
+  const configured = isStaffFirebaseConfigured();
+  const token = ownerTokenFromHash(
+    useSyncExternalStore(subscribeToHash, () => window.location.hash, () => ""),
+  );
 
-  if (!isStaffFirebaseConfigured()) {
+  useEffect(() => {
+    if (!configured || !token || consumed.current) {
+      return;
+    }
+    consumed.current = true;
+    const clearToken = () =>
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    signInWithToken(token)
+      .then(() => {
+        clearToken();
+        router.replace(homeHref);
+      })
+      .catch((error: unknown) => {
+        clearToken();
+        logError(error, { context: "owner_token_sign_in" });
+        setErrorKey(staffFirebaseErrorKey(error));
+      });
+  }, [configured, homeHref, router, signInWithToken, token]);
+
+  if (!configured) {
     return (
       <EmptyState
         icon={<Shield size={28} />}
@@ -36,7 +62,16 @@ export function OwnerSignInPanel({ homeHref }: OwnerSignInPanelProps) {
     );
   }
 
-  if (ready && user) {
+  if (token && !errorKey) {
+    return (
+      <div className="flex flex-col items-center gap-3 py-12 text-center" role="status">
+        <Loader2 size={28} className="animate-spin text-primary motion-reduce:animate-none" aria-hidden />
+        <p className="text-sm text-muted-foreground">{t("signingIn")}</p>
+      </div>
+    );
+  }
+
+  if (ready && user && !errorKey) {
     return (
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-semibold tracking-tight text-foreground">
@@ -50,56 +85,24 @@ export function OwnerSignInPanel({ homeHref }: OwnerSignInPanelProps) {
     );
   }
 
-  async function onSubmit(event: FormEvent) {
-    event.preventDefault();
-    setBusy(true);
-    setErrorKey(null);
-    try {
-      await signIn(email, password);
-      router.push(homeHref);
-    } catch (error) {
-      setErrorKey(staffFirebaseErrorKey(error));
-    } finally {
-      setBusy(false);
-    }
-  }
-
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-4">
-      <div>
-        <h1 className="text-3xl font-semibold tracking-tight text-foreground">
-          {t("signInTitle")}
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">{t("signInHint")}</p>
-      </div>
-      <Field label={t("email")} htmlFor="owner-email" required>
-        <Input
-          id="owner-email"
-          type="email"
-          autoComplete="username"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          required
-        />
-      </Field>
-      <Field label={t("password")} htmlFor="owner-password" required>
-        <Input
-          id="owner-password"
-          type="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-          required
-        />
-      </Field>
+    <div className="flex flex-col gap-4">
+      <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+        {t("signInTitle")}
+      </h1>
+      <p className="text-sm text-muted-foreground">{t("signInHint")}</p>
       {errorKey ? (
-        <p className="text-sm text-danger" role="alert">
+        <p role="alert" className="rounded-md bg-danger-soft px-3 py-2 text-sm text-danger">
           {tRoot(errorKey)}
         </p>
       ) : null}
-      <Button type="submit" isLoading={busy}>
-        {t("signInAction")}
-      </Button>
-    </form>
+      <a
+        href={env.NEXT_PUBLIC_ADMIN_URL}
+        className="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      >
+        {t("openAdmin")}
+        <ExternalLink size={15} aria-hidden />
+      </a>
+    </div>
   );
 }

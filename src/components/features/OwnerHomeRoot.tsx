@@ -1,11 +1,12 @@
 "use client";
 
-import { useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import type { DehydratedState } from "@tanstack/react-query";
 import { SiteEditor } from "@/components/features/site-editor/SiteEditor";
 import { SiteHomeLayouts } from "@/components/features/SiteHomeLayouts";
+import { useSiteDraftLogo } from "@/context/SiteDraftLogoProvider";
 import { useStaffAuth } from "@/context/StaffAuthProvider";
 import {
   usePauseWebsite,
@@ -15,6 +16,7 @@ import {
 } from "@/hooks/useWebsiteSettings";
 import { getErrorKey } from "@/lib/errors";
 import { localizedText } from "@/lib/localizedCopy";
+import { siteHeaderLogo } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import {
   applyWebsiteDraft,
@@ -67,6 +69,14 @@ export function OwnerHomeRoot({
 
   const canEdit = Boolean(user && settings.data?.canEdit);
   const liveSite = canEdit ? applyWebsiteDraft(site, draft) : site;
+  const draftLogo = useSiteDraftLogo();
+  const setHeaderLogo = draftLogo?.setHeaderLogo;
+  const headerLogo = canEdit
+    ? siteHeaderLogo(liveSite.content, site.company.branding.logoUrl)
+    : undefined;
+  useEffect(() => {
+    setHeaderLogo?.(headerLogo);
+  }, [setHeaderLogo, headerLogo]);
   const copy = {
     headline:
       localizedText(liveSite.headline, locale) ||

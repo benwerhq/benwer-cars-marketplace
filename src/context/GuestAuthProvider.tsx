@@ -18,6 +18,7 @@ import {
   subscribeGuestAuth,
 } from "@/lib/guestAuth.client";
 import { isGuestFirebaseConfigured } from "@/lib/guestFirebase";
+import { staffSignOut } from "@/lib/staffAuth.client";
 
 interface GuestAuthContextValue {
   user: User | null;
@@ -26,6 +27,16 @@ interface GuestAuthContextValue {
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
+}
+
+async function signInGuest(email: string, password: string): Promise<void> {
+  await staffSignOut();
+  await guestSignIn(email, password);
+}
+
+async function signUpGuest(email: string, password: string): Promise<void> {
+  await staffSignOut();
+  await guestSignUp(email, password);
 }
 
 const GuestAuthContext = createContext<GuestAuthContextValue | null>(null);
@@ -56,8 +67,8 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
       user,
       ready,
       configured,
-      signIn: guestSignIn,
-      signUp: guestSignUp,
+      signIn: signInGuest,
+      signUp: signUpGuest,
       signOut: guestSignOut,
     }),
     [configured, ready, user],

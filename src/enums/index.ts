@@ -194,8 +194,15 @@ export enum SearchParams {
   PREVIEW = "preview",
   BRANCH = "branch",
   RETURN_BRANCH = "return",
+  DRIVER_AGE = "age",
   EDIT = "edit",
   TOKEN = "token",
+}
+
+export enum DriverAgeBand {
+  UNDER_25 = "18-24",
+  STANDARD = "25-69",
+  OVER_69 = "70+",
 }
 
 export enum SiteEditTab {

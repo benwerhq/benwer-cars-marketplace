@@ -63,6 +63,13 @@ export const DEFAULT_BANNER_THEME: SiteBannerTheme = {
   buttonText: "#102018",
 };
 
+export interface BannerImages {
+  mobile: string;
+  desktop: string;
+}
+
+const BANNER_PRESET_DESKTOP_IMAGES: Partial<Record<SiteBannerPreset, string>> = {};
+
 export const BANNER_PRESET_IMAGES: Record<SiteBannerPreset, string> = {
   [SiteBannerPreset.AIRPORT]: "/images/banners/site-airport.webp",
   [SiteBannerPreset.WEEKEND]: "/images/banners/site-weekend.webp",
@@ -484,10 +491,6 @@ export function sectionHasContent(
   switch (id) {
     case SiteSectionId.INCLUDED:
       return content.included.length > 0;
-    case SiteSectionId.REVIEWS:
-      return content.reviews.items.length > 0;
-    case SiteSectionId.APP:
-      return Boolean(content.app.iosUrl || content.app.androidUrl);
     case SiteSectionId.BRANCHES:
       return facts.branchCount > 0;
     case SiteSectionId.FAQ:
@@ -552,8 +555,15 @@ export function appQrTarget(app: SiteAppContent): string {
   return app.androidUrl || app.iosUrl;
 }
 
-export function bannerImageSrc(banner: SiteBanner): string | null {
-  return banner.imageUrl || (banner.preset ? BANNER_PRESET_IMAGES[banner.preset] : null);
+export function bannerImages(banner: SiteBanner): BannerImages | null {
+  if (banner.imageUrl) {
+    return { mobile: banner.imageUrl, desktop: banner.imageUrl };
+  }
+  if (!banner.preset) {
+    return null;
+  }
+  const mobile = BANNER_PRESET_IMAGES[banner.preset];
+  return { mobile, desktop: BANNER_PRESET_DESKTOP_IMAGES[banner.preset] ?? mobile };
 }
 
 function relativeLuminance(hex: string): number {

@@ -1,14 +1,15 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { MapPin, Search } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { DateRangePopover } from "./DateRangePopover";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
-import { sitePathFromHome, withSiteQuery } from "@/lib/site";
-import { cn } from "@/lib/utils";
+import { Switch } from "@/components/ui/Switch";
+import { DriverAgeBand, SearchParams } from "@/enums";
+import { parseDriverAge, sitePathFromHome, withSiteQuery } from "@/lib/site";
 import type { SiteBranch } from "@/types/site";
 
 interface SiteSearchFormProps {
@@ -45,6 +46,10 @@ export function SiteSearchForm({
   const [branch, setBranch] = useState(defaultBranch);
   const [differentReturn, setDifferentReturn] = useState(Boolean(defaultReturnBranch));
   const [returnBranch, setReturnBranch] = useState(defaultReturnBranch);
+  const searchParams = useSearchParams();
+  const [driverAge, setDriverAge] = useState(() =>
+    parseDriverAge(searchParams.get(SearchParams.DRIVER_AGE)),
+  );
 
   function onSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -59,6 +64,7 @@ export function SiteSearchForm({
         branch: branch || undefined,
         returnBranch:
           allowDifferentReturn && differentReturn && returnBranch ? returnBranch : undefined,
+        driverAge,
         preview,
         edit,
       }),
@@ -104,31 +110,41 @@ export function SiteSearchForm({
         className="flex flex-col rounded-[2rem] border border-border bg-surface shadow-xl"
         aria-label={t("searchAria")}
       >
-        {showReturnToggle ? (
-          <div
-            role="radiogroup"
-            aria-label={t("returnBranch")}
-            className="flex flex-wrap gap-2 border-b border-border px-5 py-3 md:px-6"
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-border px-5 py-2.5 md:px-6">
+          {showReturnToggle ? (
+            <label
+              htmlFor="site-different-return"
+              className="flex cursor-pointer items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Switch
+                id="site-different-return"
+                checked={differentReturn}
+                onCheckedChange={setDifferentReturn}
+              />
+              {t("differentReturn")}
+            </label>
+          ) : (
+            <span aria-hidden />
+          )}
+          <label
+            htmlFor="site-driver-age"
+            className="flex cursor-pointer items-center gap-1.5 text-sm text-muted-foreground"
           >
-            {[false, true].map((different) => (
-              <button
-                key={String(different)}
-                type="button"
-                role="radio"
-                aria-checked={differentReturn === different}
-                onClick={() => setDifferentReturn(different)}
-                className={cn(
-                  "cursor-pointer rounded-full border px-4 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                  differentReturn === different
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-border text-foreground hover:bg-surface-hover",
-                )}
-              >
-                {different ? t("differentReturn") : t("sameReturn")}
-              </button>
-            ))}
-          </div>
-        ) : null}
+            {t("driverAge")}
+            <select
+              id="site-driver-age"
+              value={driverAge}
+              onChange={(event) => setDriverAge(event.target.value as DriverAgeBand)}
+              className="cursor-pointer rounded-md bg-transparent py-0.5 text-sm font-medium text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {Object.values(DriverAgeBand).map((band) => (
+                <option key={band} value={band}>
+                  {t(`driverAgeBands.${band}`)}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
         <div className="flex flex-col gap-1 p-3 md:flex-row md:items-center md:gap-1 md:p-2.5 md:pl-3">
           {branches.length > 0 ? (
             <>

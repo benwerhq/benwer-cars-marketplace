@@ -9,7 +9,7 @@ import {
 import {
   DEFAULT_BANNER_THEME,
   SITE_SECTION_ORDER,
-  bannerImageSrc,
+  bannerImages,
   contrastWithWhite,
   defaultSiteContent,
   editableSections,
@@ -204,11 +204,24 @@ describe("visibleSections", () => {
     expect(visible).toContain(SiteSectionId.HERO);
     expect(visible).toContain(SiteSectionId.FLEET);
     expect(visible).toContain(SiteSectionId.BRANCHES);
-    expect(visible).not.toContain(SiteSectionId.REVIEWS);
-    expect(visible).not.toContain(SiteSectionId.APP);
     expect(visible).not.toContain(SiteSectionId.FAQ);
     expect(visible).not.toContain(SiteSectionId.EXTRAS);
     expect(visible).not.toContain(SiteSectionId.INCLUDED);
+  });
+
+  it("keeps enabled reviews and app sections so they can show their empty state", () => {
+    const content = defaultSiteContent();
+    const enabled = {
+      ...content,
+      sections: content.sections.map((section) =>
+        section.id === SiteSectionId.REVIEWS || section.id === SiteSectionId.APP
+          ? { ...section, enabled: true }
+          : section,
+      ),
+    };
+    const visible = visibleSections(enabled, facts);
+    expect(visible).toContain(SiteSectionId.REVIEWS);
+    expect(visible).toContain(SiteSectionId.APP);
   });
 });
 
@@ -223,10 +236,14 @@ describe("helpers", () => {
   it("uses the uploaded image before the preset collage", () => {
     const [banner] = defaultSiteContent().banners;
     if (!banner) throw new Error("missing banner");
-    expect(bannerImageSrc(banner)).toBe("/images/banners/site-airport.webp");
-    expect(bannerImageSrc({ ...banner, imageUrl: "https://cdn.example/a.png" })).toBe(
-      "https://cdn.example/a.png",
-    );
+    expect(bannerImages(banner)).toEqual({
+      mobile: "/images/banners/site-airport.webp",
+      desktop: "/images/banners/site-airport.webp",
+    });
+    expect(bannerImages({ ...banner, imageUrl: "https://cdn.example/a.png" })).toEqual({
+      mobile: "https://cdn.example/a.png",
+      desktop: "https://cdn.example/a.png",
+    });
   });
 
   it("builds WhatsApp links only for plausible numbers", () => {

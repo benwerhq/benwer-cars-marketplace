@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Check, Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
-import { SiteBannerPreset, SiteBannerTarget } from "@/enums";
+import { SiteBannerPreset } from "@/enums";
 import {
   BANNER_PRESET_IMAGES,
   DEFAULT_BANNER_THEME,
@@ -17,12 +17,9 @@ import { cn } from "@/lib/utils";
 import type { SiteBanner, SiteBannerTheme } from "@/types/siteContent";
 import { useBannerCopy } from "../SiteBannerCarousel";
 import {
-  EditorField,
   EditorGroup,
   ItemCard,
   LocalizedField,
-  TextField,
-  editorSelectClass,
   moveItem,
   replaceItem,
 } from "./EditorPrimitives";
@@ -43,18 +40,15 @@ const THEME_FIELDS: (keyof SiteBannerTheme)[] = [
   "box",
   "boxText",
   "script",
-  "button",
-  "buttonText",
 ];
 
-const TEXT_FIELDS = ["script", "highlight", "joiner", "boxed", "description", "ctaLabel"] as const;
+const TEXT_FIELDS = ["script", "highlight", "joiner", "boxed", "description"] as const;
 const MAX_LENGTH: Record<(typeof TEXT_FIELDS)[number], number> = {
   script: 60,
   highlight: 60,
   joiner: 60,
   boxed: 60,
   description: 200,
-  ctaLabel: 30,
 };
 
 function ColorInput({
@@ -181,33 +175,6 @@ export function BannersForm({ banners, theme, locale, onChange, onThemeChange }:
                   onChange={(value) => update({ [field]: value })}
                 />
               ))}
-              <EditorField label={t("ctaTarget")} htmlFor={`banner-${banner.id}-target`}>
-                <select
-                  id={`banner-${banner.id}-target`}
-                  className={editorSelectClass}
-                  value={banner.ctaTarget}
-                  onChange={(event) =>
-                    update({ ctaTarget: event.target.value as SiteBannerTarget })
-                  }
-                >
-                  {Object.values(SiteBannerTarget).map((target) => (
-                    <option key={target} value={target}>
-                      {t(`targets.${target}`)}
-                    </option>
-                  ))}
-                </select>
-              </EditorField>
-              {banner.ctaTarget === SiteBannerTarget.URL ? (
-                <TextField
-                  id={`banner-${banner.id}-url`}
-                  label={t("ctaUrl")}
-                  type="url"
-                  value={banner.ctaUrl}
-                  placeholder="https://"
-                  hint={t("ctaUrlHint")}
-                  onChange={(ctaUrl) => update({ ctaUrl })}
-                />
-              ) : null}
             </ItemCard>
           );
         })}

@@ -1,6 +1,6 @@
 "use client";
 
-import { BadgeCheck, Star } from "lucide-react";
+import { BadgeCheck, MessageSquareQuote, Star } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { SiteSectionId } from "@/enums";
 import { cn } from "@/lib/utils";
@@ -39,6 +39,28 @@ export function SiteReviewsSection({ reviews }: { reviews: SiteReviewsContent })
   const t = useTranslations("siteSections.reviews");
   const locale = useLocale();
   const headingId = `${SiteSectionId.REVIEWS}-heading`;
+
+  if (reviews.items.length === 0) {
+    return (
+      <section
+        id={SiteSectionId.REVIEWS}
+        aria-labelledby={headingId}
+        className="flex scroll-mt-24 flex-col gap-8"
+      >
+        <SiteSectionHeading id={headingId} eyebrow={t("eyebrow")} title={t("title")} />
+        <div className="flex flex-col items-start gap-3 rounded-2xl border border-dashed border-border-strong bg-surface-muted p-6 sm:flex-row sm:items-center md:p-8">
+          <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <MessageSquareQuote size={22} aria-hidden />
+          </span>
+          <div>
+            <p className="text-base font-semibold text-foreground">{t("emptyTitle")}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{t("emptyText")}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   const average =
     reviews.average ??
     reviews.items.reduce((sum, item) => sum + item.rating, 0) /

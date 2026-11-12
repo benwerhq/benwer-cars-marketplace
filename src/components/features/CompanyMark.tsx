@@ -32,23 +32,23 @@ export function CompanyMark({
   size = "md",
   className,
 }: CompanyMarkProps) {
-  const [failed, setFailed] = useState(false);
+  const [failedSrc, setFailedSrc] = useState<string | null>(null);
   const logoSrc = company.branding.logoUrl
     ? toPublicMediaSrc(company.branding.logoUrl)
     : null;
 
-  if (logoSrc && !failed) {
+  if (logoSrc && failedSrc !== logoSrc) {
     return (
       // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
       <img
         src={logoSrc}
         alt=""
-        onError={() => setFailed(true)}
+        onError={() => setFailedSrc(logoSrc)}
         className={cn(
-          "block shrink-0 object-contain object-left",
+          "block max-w-[11rem] shrink-0 object-contain object-left",
           LOGO_HEIGHT[size],
           className,
-          "w-auto max-w-[11rem] rounded-none border-0 bg-transparent p-0",
+          "w-auto rounded-none border-0 bg-transparent p-0",
         )}
       />
     );

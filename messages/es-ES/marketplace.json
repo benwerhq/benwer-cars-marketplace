@@ -614,16 +614,18 @@
     "anyBranch": "Cualquier ubicación",
     "ownerSignIn": "Acceso del propietario",
     "returnBranch": "Lugar de devolución",
-    "sameReturn": "Devolver en el mismo lugar",
-    "differentReturn": "Devolver en otro lugar",
-    "returnSame": "El mismo de recogida"
+    "differentReturn": "Devolver en otra oficina",
+    "returnSame": "El mismo de recogida",
+    "driverAge": "Edad del conductor",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
   },
   "owner": {
-    "signInTitle": "Acceso del propietario",
-    "signInHint": "Usa tu cuenta de personal de Benwer para esta empresa. Los clientes usan otro acceso.",
-    "signInAction": "Entrar",
-    "email": "Correo electrónico",
-    "password": "Contraseña",
+    "signInTitle": "Edita tu web",
+    "signInHint": "Los propietarios abren el editor de la web desde Benwer admin. Usa el botón «Editar web» y accederás aquí automáticamente.",
     "signedInTitle": "Has iniciado sesión",
     "signedInHint": "Si puedes gestionar esta web, el editor se abre en la portada.",
     "openEditor": "Abrir el editor",
@@ -631,11 +633,14 @@
     "disabledDescription": "Firebase de personal no está configurado en este marketplace.",
     "signOut": "Salir",
     "auth": {
-      "invalidEmail": "Introduce un correo válido.",
       "tooManyRequests": "Demasiados intentos. Prueba más tarde.",
-      "invalidCredentials": "El correo o la contraseña no son correctos.",
-      "unknown": "No se ha podido entrar. Inténtalo de nuevo."
-    }
+      "unknown": "No se ha podido entrar. Inténtalo de nuevo.",
+      "invalidToken": "Este enlace de acceso ha caducado o ya se ha usado. Vuelve a abrir el editor desde Benwer admin."
+    },
+    "signingIn": "Iniciando sesión…",
+    "openAdmin": "Abrir Benwer admin",
+    "accountMenu": "Cuenta de propietario",
+    "signedInAs": "Sesión de propietario"
   },
   "guest": {
     "signInNav": "Entrar",
@@ -708,28 +713,22 @@
           "highlight": "Recogida en aeropuerto",
           "joiner": "en",
           "boxed": "10 minutos",
-          "description": "Sin colas: firma el contrato en el móvil y sal con seguro a todo riesgo",
-          "ctaLabel": "Reservar ahora"
+          "description": "Sin colas: firma el contrato en el móvil y sal con seguro a todo riesgo"
         },
         "weekend": {
           "script": "reserva este finde",
           "highlight": "Ahorra un 20%",
           "joiner": "en",
           "boxed": "Alquileres de finde",
-          "description": "Recoge el viernes y devuelve el lunes. Silla infantil y conductor adicional incluidos",
-          "ctaLabel": "Ver ofertas"
+          "description": "Recoge el viernes y devuelve el lunes. Silla infantil y conductor adicional incluidos"
         },
         "roadtrip": {
           "script": "tu próximo viaje",
           "highlight": "Empieza aquí",
           "joiner": "te damos las",
           "boxed": "Llaves",
-          "description": "Cancelación gratuita hasta 24 h antes, kilómetros ilimitados y sin costes ocultos",
-          "ctaLabel": "Reservar un coche"
+          "description": "Cancelación gratuita hasta 24 h antes, kilómetros ilimitados y sin costes ocultos"
         }
-      },
-      "fallback": {
-        "ctaLabel": "Reservar un coche"
       }
     },
     "included": {
@@ -769,7 +768,9 @@
       "ratingAria": "Valoración de {rating} sobre 5",
       "rented": "Alquiló: {vehicle}",
       "verified": "Alquiler verificado",
-      "distributionAria": "Desglose de valoraciones"
+      "distributionAria": "Desglose de valoraciones",
+      "emptyTitle": "Aún no hay opiniones",
+      "emptyText": "Los clientes pueden valorar su alquiler al devolver el coche. Aquí aparecerán las opiniones aprobadas."
     },
     "app": {
       "title": "Tu reserva, siempre contigo",
@@ -790,7 +791,8 @@
         "name": "Google Play",
         "aria": "Disponible en Google Play",
         "unavailable": "Aún no disponible en Google Play"
-      }
+      },
+      "comingSoon": "Próximamente"
     },
     "locations": {
       "eyebrow": "Oficinas",
@@ -910,17 +912,8 @@
         "highlight": "Título destacado",
         "joiner": "Conector",
         "boxed": "Título en caja",
-        "description": "Descripción",
-        "ctaLabel": "Texto del botón"
+        "description": "Descripción"
       },
-      "ctaTarget": "El botón lleva a",
-      "targets": {
-        "fleet": "Tus coches",
-        "contact": "Sección de contacto",
-        "url": "Otra página web"
-      },
-      "ctaUrl": "Dirección web",
-      "ctaUrlHint": "Debe empezar por https://",
       "presets": {
         "airport": "Collage aeropuerto",
         "weekend": "Collage fin de semana",
@@ -936,9 +929,7 @@
         "highlightText": "Texto destacado",
         "box": "Caja blanca",
         "boxText": "Texto caja blanca",
-        "script": "Texto conector",
-        "button": "Botón",
-        "buttonText": "Texto del botón"
+        "script": "Texto conector"
       }
     },
     "company": {
@@ -988,12 +979,12 @@
       "title": "Opiniones de clientes",
       "description": "Los clientes valoran el alquiler al devolver el coche. Solo se muestran las que apruebas.",
       "summary": "Media de {average} con {count, plural, one {# opinión aprobada} other {# opiniones aprobadas}}",
-      "none": "Aún no hay opiniones aprobadas. La sección se oculta hasta que apruebes una.",
+      "none": "Aún no hay opiniones aprobadas. Los clientes verán un breve aviso hasta que apruebes una.",
       "manage": "Aprobar u ocultar opiniones en Benwer admin"
     },
     "app": {
       "storesTitle": "Enlaces a las tiendas",
-      "storesDescription": "La sección aparece cuando añades al menos un enlace. La tienda que falte se muestra en gris.",
+      "storesDescription": "Una tienda sin enlace aparece en gris. Sin enlaces, la sección aparece como próximamente.",
       "ios": "Enlace del App Store",
       "android": "Enlace de Google Play",
       "qrHint": "El código QR abre el enlace de Google Play, o el del App Store si no hay de Google Play.",

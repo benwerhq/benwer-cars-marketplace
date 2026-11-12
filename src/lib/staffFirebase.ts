@@ -44,18 +44,22 @@ export function isStaffFirebaseConfigured(): boolean {
 
 export function staffAuthErrorKey(code: string): string {
   switch (code) {
-    case "auth/invalid-email":
-      return "owner.auth.invalidEmail";
     case "auth/too-many-requests":
       return "owner.auth.tooManyRequests";
     case "auth/network-request-failed":
       return "errors.network";
-    case "auth/user-not-found":
-    case "auth/wrong-password":
-    case "auth/invalid-credential":
-    case "auth/invalid-login-credentials":
-      return "owner.auth.invalidCredentials";
+    case "auth/invalid-custom-token":
+    case "auth/custom-token-mismatch":
+    case "auth/user-disabled":
+      return "owner.auth.invalidToken";
     default:
       return "owner.auth.unknown";
   }
+}
+
+export const OWNER_TOKEN_HASH_KEY = "token";
+
+export function ownerTokenFromHash(hash: string): string | null {
+  const params = new URLSearchParams(hash.replace(/^#/, ""));
+  return params.get(OWNER_TOKEN_HASH_KEY)?.trim() || null;
 }

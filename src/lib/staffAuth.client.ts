@@ -4,7 +4,7 @@ import { getApp, getApps, initializeApp, type FirebaseApp } from "firebase/app";
 import {
   getAuth,
   onAuthStateChanged,
-  signInWithEmailAndPassword,
+  signInWithCustomToken,
   signOut,
   type Auth,
   type User,
@@ -71,16 +71,13 @@ export function subscribeStaffAuth(
   return onAuthStateChanged(auth, onUser);
 }
 
-export async function staffSignIn(
-  email: string,
-  password: string,
-): Promise<void> {
+export async function staffSignInWithToken(token: string): Promise<void> {
   const auth = getStaffAuth();
   if (!auth) {
     throw new Error("staff.not_configured");
   }
 
-  await signInWithEmailAndPassword(auth, email, password);
+  await signInWithCustomToken(auth, token);
 }
 
 export async function staffSignOut(): Promise<void> {

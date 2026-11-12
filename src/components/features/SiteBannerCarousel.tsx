@@ -4,10 +4,9 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { SiteBannerTarget } from "@/enums";
 import { useCarousel } from "@/hooks/useCarousel";
 import { localizedText } from "@/lib/localizedCopy";
-import { bannerImageSrc } from "@/lib/siteContent";
+import { bannerImages } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type {
   LocalizedCopy,
@@ -15,17 +14,10 @@ import type {
   SiteBannerTheme,
 } from "@/types/siteContent";
 
-type BannerField =
-  | "script"
-  | "highlight"
-  | "joiner"
-  | "boxed"
-  | "description"
-  | "ctaLabel";
+type BannerField = "script" | "highlight" | "joiner" | "boxed" | "description";
 
 export function useBannerCopy() {
   const t = useTranslations("siteSections.banners.presets");
-  const tDefault = useTranslations("siteSections.banners.fallback");
   const locale = useLocale();
 
   return (banner: SiteBanner, field: BannerField): string => {
@@ -36,7 +28,7 @@ export function useBannerCopy() {
     if (banner.preset) {
       return t(`${banner.preset}.${field}`);
     }
-    return field === "ctaLabel" ? tDefault("ctaLabel") : "";
+    return "";
   };
 }
 
@@ -49,96 +41,81 @@ export function bannerThemeStyle(theme: SiteBannerTheme): CSSProperties {
     "--banner-box-text": theme.boxText,
     "--banner-script": theme.script,
     "--banner-text": theme.text,
-    "--banner-button": theme.button,
-    "--banner-button-text": theme.buttonText,
   } as CSSProperties;
-}
-
-function ctaHref(banner: SiteBanner, homeHref: string): string {
-  const home = homeHref.split("#")[0] ?? homeHref;
-  if (banner.ctaTarget === SiteBannerTarget.URL && banner.ctaUrl) {
-    return banner.ctaUrl;
-  }
-  return `${home}#${banner.ctaTarget === SiteBannerTarget.CONTACT ? "contact" : "fleet"}`;
 }
 
 export function BannerSlideContent({
   banner,
-  homeHref,
-  active,
   priority,
 }: {
   banner: SiteBanner;
-  homeHref: string;
-  active: boolean;
   priority: boolean;
 }) {
   const copy = useBannerCopy();
-  const image = bannerImageSrc(banner);
+  const images = bannerImages(banner);
   const script = copy(banner, "script");
   const highlight = copy(banner, "highlight");
   const joiner = copy(banner, "joiner");
   const boxed = copy(banner, "boxed");
   const description = copy(banner, "description");
-  const cta = copy(banner, "ctaLabel");
-  const external =
-    banner.ctaTarget === SiteBannerTarget.URL && Boolean(banner.ctaUrl);
 
   return (
     <>
-      {image ? (
-        <div className="relative aspect-[16/10] w-full md:absolute md:inset-y-[3%] md:right-[3%] md:aspect-auto md:w-[56%]">
-          <Image
-            src={image}
-            alt=""
-            fill
-            priority={priority}
-            unoptimized
-            sizes="(min-width: 768px) 56vw, 100vw"
-            className="object-contain md:object-right"
-          />
-        </div>
+      {images ? (
+        <>
+          <div className="relative mx-auto aspect-square w-full max-w-sm md:hidden">
+            <Image
+              src={images.mobile}
+              alt=""
+              fill
+              priority={priority}
+              unoptimized
+              sizes="100vw"
+              className="object-contain object-center"
+            />
+          </div>
+          <div className="absolute inset-y-[4%] right-[2%] hidden w-[60%] md:block">
+            <Image
+              src={images.desktop}
+              alt=""
+              fill
+              priority={priority}
+              unoptimized
+              sizes="60vw"
+              className="object-contain object-center"
+            />
+          </div>
+        </>
       ) : null}
       <div className="relative flex flex-col items-start px-5 pt-4 pb-14 text-(--banner-text) md:absolute md:inset-y-0 md:left-0 md:justify-center md:p-0 md:pl-[3.4cqw]">
         {script ? (
-          <p className="font-promo-script -rotate-3 text-3xl leading-none text-(--banner-text) md:text-[2.6cqw]">
+          <p className="font-promo-script -rotate-3 text-4xl leading-none text-(--banner-text) md:text-[3cqw]">
             {script}
           </p>
         ) : null}
         {highlight ? (
-          <p className="font-promo-display mt-2 -rotate-2 bg-(--banner-highlight) px-3 py-1 text-4xl leading-none text-(--banner-highlight-text) uppercase md:-ml-[0.6cqw] md:mt-[0.5cqw] md:px-[0.85cqw] md:py-[0.4cqw] md:text-[4.1cqw]">
+          <p className="font-promo-display mt-2 -rotate-2 bg-(--banner-highlight) px-3 py-1 text-5xl leading-none text-(--banner-highlight-text) uppercase md:-ml-[0.6cqw] md:mt-[0.5cqw] md:px-[0.85cqw] md:py-[0.4cqw] md:text-[4.7cqw]">
             {highlight}
           </p>
         ) : null}
         {joiner || boxed ? (
           <div className="mt-1.5 flex items-center gap-2 md:mt-[0.2cqw] md:gap-[0.8cqw] md:pl-[1.4cqw]">
             {joiner ? (
-              <span className="font-promo-script text-3xl leading-none text-(--banner-script) md:text-[2.6cqw]">
+              <span className="font-promo-script text-4xl leading-none text-(--banner-script) md:text-[3cqw]">
                 {joiner}
               </span>
             ) : null}
             {boxed ? (
-              <span className="font-promo-display -rotate-2 bg-(--banner-box) px-3 py-1 text-2xl leading-none text-(--banner-box-text) uppercase md:px-[0.75cqw] md:py-[0.45cqw] md:text-[3.1cqw]">
+              <span className="font-promo-display -rotate-2 bg-(--banner-box) px-3 py-1 text-3xl leading-none text-(--banner-box-text) uppercase md:px-[0.75cqw] md:py-[0.45cqw] md:text-[3.6cqw]">
                 {boxed}
               </span>
             ) : null}
           </div>
         ) : null}
         {description ? (
-          <p className="mt-4 max-w-xs text-sm leading-snug md:mt-[1.2cqw] md:max-w-[26cqw] md:text-[1.15cqw]">
+          <p className="mt-4 max-w-sm text-base leading-snug md:mt-[1.2cqw] md:max-w-[30cqw] md:text-[1.4cqw]">
             {description}
           </p>
-        ) : null}
-        {cta ? (
-          <a
-            href={ctaHref(banner, homeHref)}
-            tabIndex={active ? 0 : -1}
-            target={external ? "_blank" : undefined}
-            rel={external ? "noopener noreferrer" : undefined}
-            className="mt-4 inline-flex cursor-pointer items-center rounded-sm bg-(--banner-button) px-4 py-2 text-sm font-medium text-(--banner-button-text) transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--banner-highlight) focus-visible:ring-offset-2 focus-visible:ring-offset-(--banner-bg) md:mt-[1.3cqw] md:px-[1.05cqw] md:py-[0.6cqw] md:text-[1.1cqw]"
-          >
-            {cta}
-          </a>
         ) : null}
       </div>
     </>
@@ -149,7 +126,6 @@ interface SiteBannerCarouselProps {
   banners: SiteBanner[];
   theme: SiteBannerTheme;
   companyName: string;
-  homeHref: string;
   underSearch?: boolean;
 }
 
@@ -157,7 +133,6 @@ export function SiteBannerCarousel({
   banners,
   theme,
   companyName,
-  homeHref,
   underSearch = false,
 }: SiteBannerCarouselProps) {
   const t = useTranslations("siteSections.banners");
@@ -209,12 +184,7 @@ export function SiteBannerCarousel({
                     : "pointer-events-none absolute inset-0 opacity-0",
                 )}
               >
-                <BannerSlideContent
-                  banner={banner}
-                  homeHref={homeHref}
-                  active={isActive}
-                  priority={position === 0}
-                />
+                <BannerSlideContent banner={banner} priority={position === 0} />
               </div>
             );
           })}

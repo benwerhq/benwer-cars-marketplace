@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { staffFirebaseWebConfig } from "./staffFirebase";
+import { ownerTokenFromHash, staffAuthErrorKey, staffFirebaseWebConfig } from "./staffFirebase";
 
 describe("staffFirebaseWebConfig", () => {
   it("requires the staff web SDK fields", () => {
@@ -18,5 +18,21 @@ describe("staffFirebaseWebConfig", () => {
         appId: "1:2:web:3",
       })?.projectId,
     ).toBe("staff");
+  });
+});
+
+describe("ownerTokenFromHash", () => {
+  it("reads the admin hand-off token from the URL fragment", () => {
+    expect(ownerTokenFromHash("#token=abc.def")).toBe("abc.def");
+    expect(ownerTokenFromHash("token=abc")).toBe("abc");
+    expect(ownerTokenFromHash("#token=")).toBeNull();
+    expect(ownerTokenFromHash("")).toBeNull();
+  });
+});
+
+describe("staffAuthErrorKey", () => {
+  it("treats rejected hand-off tokens as expired links", () => {
+    expect(staffAuthErrorKey("auth/invalid-custom-token")).toBe("owner.auth.invalidToken");
+    expect(staffAuthErrorKey("auth/whatever")).toBe("owner.auth.unknown");
   });
 });

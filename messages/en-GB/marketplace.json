@@ -613,17 +613,19 @@
     "branch": "Pick-up location",
     "anyBranch": "Any location",
     "ownerSignIn": "Owner sign-in",
-    "returnBranch": "Return location",
-    "sameReturn": "Same return location",
-    "differentReturn": "Different return location",
-    "returnSame": "Same as pick-up"
+    "returnBranch": "Drop-off location",
+    "differentReturn": "Return to a different location",
+    "returnSame": "Same as pick-up",
+    "driverAge": "Driver's age",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
   },
   "owner": {
-    "signInTitle": "Owner sign-in",
-    "signInHint": "Use your Benwer staff account for this company. Guests use a different sign-in.",
-    "signInAction": "Sign in",
-    "email": "Email",
-    "password": "Password",
+    "signInTitle": "Edit your website",
+    "signInHint": "Owners open the website editor from Benwer admin. Use the “Edit website” button there and you will be signed in here automatically.",
     "signedInTitle": "You are signed in",
     "signedInHint": "If you can manage this website, the editor opens on the home page.",
     "openEditor": "Open website editor",
@@ -631,11 +633,14 @@
     "disabledDescription": "Staff Firebase is not configured on this marketplace.",
     "signOut": "Sign out",
     "auth": {
-      "invalidEmail": "Enter a valid email address.",
       "tooManyRequests": "Too many attempts. Try again later.",
-      "invalidCredentials": "Email or password is not correct.",
-      "unknown": "Could not sign in. Try again."
-    }
+      "unknown": "Could not sign in. Try again.",
+      "invalidToken": "This sign-in link has expired or was already used. Open the editor again from Benwer admin."
+    },
+    "signingIn": "Signing you in…",
+    "openAdmin": "Open Benwer admin",
+    "accountMenu": "Owner account",
+    "signedInAs": "Signed in as owner"
   },
   "guest": {
     "signInNav": "Sign in",
@@ -708,28 +713,22 @@
           "highlight": "Airport pickup",
           "joiner": "in",
           "boxed": "10 minutes",
-          "description": "Skip the queue: sign your contract on your phone and drive off with full insurance",
-          "ctaLabel": "Reserve now"
+          "description": "Skip the queue: sign your contract on your phone and drive off with full insurance"
         },
         "weekend": {
           "script": "book this weekend",
           "highlight": "Save 20%",
           "joiner": "on",
           "boxed": "Weekend rentals",
-          "description": "Pick up Friday, return Monday. Free child seat and an extra driver included",
-          "ctaLabel": "See weekend deals"
+          "description": "Pick up Friday, return Monday. Free child seat and an extra driver included"
         },
         "roadtrip": {
           "script": "your next roadtrip",
           "highlight": "Starts here",
           "joiner": "we hand you the",
           "boxed": "Keys",
-          "description": "Free cancellation up to 24h before pickup, unlimited km and no hidden fees",
-          "ctaLabel": "Book a car"
+          "description": "Free cancellation up to 24h before pickup, unlimited km and no hidden fees"
         }
-      },
-      "fallback": {
-        "ctaLabel": "Book a car"
       }
     },
     "included": {
@@ -769,7 +768,9 @@
       "ratingAria": "Rated {rating} out of 5",
       "rented": "Rented: {vehicle}",
       "verified": "Verified rental",
-      "distributionAria": "Rating breakdown"
+      "distributionAria": "Rating breakdown",
+      "emptyTitle": "No reviews yet",
+      "emptyText": "Guests can review their rental once they return the car. Approved reviews appear here."
     },
     "app": {
       "title": "Your booking, on the go",
@@ -790,7 +791,8 @@
         "name": "Google Play",
         "aria": "Get it on Google Play",
         "unavailable": "Not available on Google Play yet"
-      }
+      },
+      "comingSoon": "Coming soon"
     },
     "locations": {
       "eyebrow": "Locations",
@@ -910,17 +912,8 @@
         "highlight": "Highlighted title",
         "joiner": "Small connector",
         "boxed": "Boxed title",
-        "description": "Description",
-        "ctaLabel": "Button text"
+        "description": "Description"
       },
-      "ctaTarget": "Button goes to",
-      "targets": {
-        "fleet": "Your cars",
-        "contact": "Contact section",
-        "url": "Another web page"
-      },
-      "ctaUrl": "Web address",
-      "ctaUrlHint": "Must start with https://",
       "presets": {
         "airport": "Airport collage",
         "weekend": "Weekend collage",
@@ -936,9 +929,7 @@
         "highlightText": "Highlight text",
         "box": "White box",
         "boxText": "White box text",
-        "script": "Connector text",
-        "button": "Button",
-        "buttonText": "Button text"
+        "script": "Connector text"
       }
     },
     "company": {
@@ -988,12 +979,12 @@
       "title": "Guest reviews",
       "description": "Guests review their rental after returning the car. Only reviews you approve are shown.",
       "summary": "{average} average from {count, plural, one {# approved review} other {# approved reviews}}",
-      "none": "No approved reviews yet. The section stays hidden until you approve one.",
+      "none": "No approved reviews yet. Guests see a short note until you approve one.",
       "manage": "Approve or hide reviews in Benwer admin"
     },
     "app": {
       "storesTitle": "Store links",
-      "storesDescription": "The section shows once you add at least one link. A missing store shows as greyed out.",
+      "storesDescription": "A missing store shows as greyed out. With no links, the section shows as coming soon.",
       "ios": "App Store link",
       "android": "Google Play link",
       "qrHint": "The QR code opens the Google Play link, or the App Store link if there is no Google Play link.",

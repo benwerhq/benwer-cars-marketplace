@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { CompanyMark } from "@/components/features/CompanyMark";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteGuestLink } from "./SiteGuestLink";
+import { SiteHeaderMark } from "./SiteHeaderMark";
 import { SiteNav } from "./SiteNav";
 import type { SiteSectionId } from "@/enums";
 import { cn } from "@/lib/utils";
@@ -41,21 +41,7 @@ export async function SiteHeader({
           href={homeHref}
           className="flex min-w-0 items-center gap-2.5 text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
-          <CompanyMark
-            company={{
-              name: companyName,
-              branding: { primaryColor: "", logoUrl: logoUrl ?? null },
-            }}
-            size="sm"
-            className="h-9 w-9 rounded-lg"
-          />
-          <span
-            className={
-              logoUrl ? "sr-only" : "truncate text-sm font-semibold tracking-tight"
-            }
-          >
-            {companyName}
-          </span>
+          <SiteHeaderMark companyName={companyName} logoUrl={logoUrl ?? null} />
           <span className="sr-only">{t("logoAlt", { name: companyName })}</span>
         </Link>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-4">

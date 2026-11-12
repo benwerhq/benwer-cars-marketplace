@@ -19,7 +19,9 @@ export function SiteAppSection({ app }: { app: SiteAppContent }) {
       ? t("platformBoth")
       : app.androidUrl
         ? t("platformAndroid")
-        : t("platformIos");
+        : app.iosUrl
+          ? t("platformIos")
+          : t("comingSoon");
   const qrTarget = appQrTarget(app);
 
   return (
