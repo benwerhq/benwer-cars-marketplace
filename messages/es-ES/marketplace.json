@@ -585,7 +585,6 @@
     "defaultHeadline": "Alquila un coche con {name}",
     "footerTagline": "Reserva directamente con esta empresa de alquiler.",
     "previewBanner": "Vista previa — esta página no es pública. Los buscadores no la indexarán.",
-    "editBanner": "Borrador — los cambios se hacen en el admin de Benwer",
     "editLink": "Editar",
     "editContactEmpty": "Los datos de contacto están ocultos. Edítalos en el admin.",
     "editBranchesEmpty": "Aún no hay sucursales. Añádelas en el admin.",
@@ -1085,13 +1084,18 @@
       "needsApi": "Disponible cuando esté activa la actualización de la API de Benwer para webs."
     },
     "legal": {
-      "hint": "Cada página empieza con el texto estándar, así puedes cambiar solo lo que necesites. Vacía un campo para volver al texto estándar.",
+      "hint": "Cada página empieza con el texto estándar, así puedes cambiar solo lo que necesites. Añade una sección por cada subtítulo. «Volver al texto estándar» deshace tus cambios.",
       "needsApi": "Disponible cuando esté activa la actualización de la API de Benwer para webs.",
       "privacyTitle": "Política de privacidad",
       "privacyDescription": "Se muestra en Privacidad, en el pie de tu web.",
       "termsTitle": "Términos y condiciones",
       "termsDescription": "Se muestra en Términos, en el pie de tu web.",
       "text": "Texto",
+      "intro": "Introducción",
+      "subtitle": "Subtítulo",
+      "sectionItem": "Sección {position}",
+      "addSection": "Añadir sección",
+      "reset": "Volver al texto estándar",
       "pageTitle": "Título de la página"
     },
     "preview": "Vista previa",

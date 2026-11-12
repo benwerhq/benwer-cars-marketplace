@@ -5,7 +5,6 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteDraftLogoProvider } from "@/context/SiteDraftLogoProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { SiteEditBanner } from "@/components/layout/SiteEditBanner";
 import { OwnerHomeRoot } from "@/components/features/OwnerHomeRoot";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { PageLoadError } from "@/components/ui/PageLoadError";
@@ -145,7 +144,6 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
 
   return (
     <SiteDraftLogoProvider>
-      {editMode ? <SiteEditBanner /> : null}
       <SiteHeader
         companyName={site.company.name}
         logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}

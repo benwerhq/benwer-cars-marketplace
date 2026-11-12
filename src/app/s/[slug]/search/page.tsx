@@ -5,7 +5,6 @@ import { HydrationBoundary } from "@tanstack/react-query";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { SiteEditBanner } from "@/components/layout/SiteEditBanner";
 import { SiteEditSection } from "@/components/layout/SiteEditSection";
 import { SitePausedNotice } from "@/components/features/SitePausedNotice";
 import { SiteSearchForm } from "@/components/features/SiteSearchForm";
@@ -138,7 +137,6 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
 
   return (
     <>
-      {editMode ? <SiteEditBanner /> : null}
       <SiteHeader
         companyName={site.company.name}
         logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}

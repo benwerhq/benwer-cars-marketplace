@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import { IconTooltip } from "@/components/ui/IconTooltip";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
 import { useStaffAuth } from "@/context/StaffAuthProvider";
-import { guestLinksFromHomeHref } from "@/lib/site";
+import { guestLinksFromHomeHref, publicHomeFromHome } from "@/lib/site";
 import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { cn } from "@/lib/utils";
 import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
@@ -146,7 +146,7 @@ export function SiteOwnerMenu({ homeHref }: { homeHref: string }) {
           <DropdownMenu.Item
             className={MENU_ITEM}
             onSelect={() => {
-              void staff.signOut().then(() => router.push(homeHref));
+              void staff.signOut().then(() => router.replace(publicHomeFromHome(homeHref)));
             }}
           >
             <LogOut size={15} aria-hidden />

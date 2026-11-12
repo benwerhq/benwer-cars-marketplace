@@ -70,6 +70,10 @@ export function sitePathFromHome(homeHref: string, suffix: string): string {
   return `${base}${path}`;
 }
 
+export function publicHomeFromHome(homeHref: string): string {
+  return new URL(homeHref, "https://benwer.local").pathname;
+}
+
 export function siteChildFromHome(homeHref: string, suffix: string): string {
   const url = new URL(homeHref, "https://benwer.local");
   return `${sitePathFromHome(homeHref, suffix)}${url.search}`;

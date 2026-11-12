@@ -79,8 +79,49 @@ export function joinLegalCopy(
   return joined;
 }
 
-export function legalTemplateText(lede: string, sections: LegalSection[]): string {
-  return [lede, ...sections.map((section) => `${section.title}\n${section.body}`)]
+const SECTION_PREFIX = "## ";
+
+export interface LegalBlocks {
+  intro: string;
+  sections: LegalSection[];
+}
+
+export function parseLegalBlocks(body: string): LegalBlocks {
+  const blocks: LegalBlocks = { intro: "", sections: [] };
+  const intro: string[] = [];
+  let current: { title: string; lines: string[] } | null = null;
+  const flush = () => {
+    if (current) {
+      blocks.sections.push({ title: current.title, body: current.lines.join("\n").trim() });
+    }
+  };
+
+  for (const line of body.split("\n")) {
+    if (line.startsWith(SECTION_PREFIX.trimEnd())) {
+      flush();
+      current = { title: line.replace(/^##\s?/, "").trim(), lines: [] };
+    } else if (current) {
+      current.lines.push(line);
+    } else {
+      intro.push(line);
+    }
+  }
+  flush();
+  blocks.intro = intro.join("\n").trim();
+  return blocks;
+}
+
+export function serializeLegalBlocks({ intro, sections }: LegalBlocks): string {
+  return [
+    intro.trim(),
+    ...sections.map((section) =>
+      `${SECTION_PREFIX}${section.title.trim()}\n${section.body.trim()}`.trim(),
+    ),
+  ]
     .filter(Boolean)
     .join("\n\n");
+}
+
+export function legalTemplateText(lede: string, sections: LegalSection[]): string {
+  return serializeLegalBlocks({ intro: lede, sections });
 }

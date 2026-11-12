@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { joinLegalCopy, readLegalSections, splitLegalCopy, splitLegalText } from "./legal";
+import {
+  joinLegalCopy,
+  parseLegalBlocks,
+  readLegalSections,
+  serializeLegalBlocks,
+  splitLegalCopy,
+  splitLegalText,
+} from "./legal";
 
 describe("readLegalSections", () => {
   it("keeps titled sections with body copy", () => {
@@ -37,5 +44,27 @@ describe("legal page titles", () => {
     expect(title).toEqual({ "en-GB": "Privacy" });
     expect(joinLegalCopy(title, body)).toEqual(copy);
     expect(joinLegalCopy({ "en-GB": "Only title" }, {})).toEqual({ "en-GB": "# Only title" });
+  });
+});
+
+describe("legal blocks", () => {
+  const text = "We rent cars.\n\n## Who we are\nA Málaga company.\n\nFamily run.\n\n## Your data\nWe keep it safe.";
+
+  it("splits ## subtitles into sections", () => {
+    expect(parseLegalBlocks(text)).toEqual({
+      intro: "We rent cars.",
+      sections: [
+        { title: "Who we are", body: "A Málaga company.\n\nFamily run." },
+        { title: "Your data", body: "We keep it safe." },
+      ],
+    });
+  });
+
+  it("round-trips through serialize", () => {
+    expect(serializeLegalBlocks(parseLegalBlocks(text))).toBe(text);
+  });
+
+  it("treats text without subtitles as the intro", () => {
+    expect(parseLegalBlocks("Just text")).toEqual({ intro: "Just text", sections: [] });
   });
 });

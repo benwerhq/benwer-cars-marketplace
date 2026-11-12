@@ -585,7 +585,6 @@
     "defaultHeadline": "Rent a car with {name}",
     "footerTagline": "Book directly with this rental company.",
     "previewBanner": "Preview — this page is not public. Search engines will not index it.",
-    "editBanner": "Draft preview — changes are made in Benwer admin",
     "editLink": "Edit",
     "editContactEmpty": "Contact details are hidden. Edit them in admin.",
     "editBranchesEmpty": "No branches yet. Add them in admin.",
@@ -1085,13 +1084,18 @@
       "needsApi": "Available once the Benwer API update for websites is live."
     },
     "legal": {
-      "hint": "Each page starts with the standard text, so you can change just the parts you need. Clear a field to go back to the standard text.",
+      "hint": "Each page starts with the standard text, so you can change just the parts you need. Add a section for each subtitle. “Back to standard text” undoes your changes.",
       "needsApi": "Available once the Benwer API update for websites is live.",
       "privacyTitle": "Privacy policy",
       "privacyDescription": "Shown at Privacy in your website footer.",
       "termsTitle": "Terms and conditions",
       "termsDescription": "Shown at Terms in your website footer.",
       "text": "Text",
+      "intro": "Introduction",
+      "subtitle": "Subtitle",
+      "sectionItem": "Section {position}",
+      "addSection": "Add section",
+      "reset": "Back to standard text",
       "pageTitle": "Page title"
     },
     "preview": "Preview",

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { BookingMode, SiteLayout, SiteStatus } from "@/enums";
 import { PublicChannel } from "@/enums";
 import {
+  publicHomeFromHome,
   SITE_CHANNEL,
   canAcceptBookings,
   companySlugFromSite,
@@ -141,5 +142,12 @@ describe("site booking rules", () => {
         }),
       ),
     ).toBe("company-from-api");
+  });
+});
+
+describe("publicHomeFromHome", () => {
+  it("drops preview and edit query params", () => {
+    expect(publicHomeFromHome("/s/coches?preview=abc&edit=1")).toBe("/s/coches");
+    expect(publicHomeFromHome("/?preview=abc")).toBe("/");
   });
 });

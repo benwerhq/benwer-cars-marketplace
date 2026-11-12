@@ -7,6 +7,7 @@ import type { DehydratedState } from "@tanstack/react-query";
 import { EditorPreviewBar } from "@/components/features/site-editor/EditorPreviewBar";
 import { SiteEditor } from "@/components/features/site-editor/SiteEditor";
 import { SiteHomeLayouts } from "@/components/features/SiteHomeLayouts";
+import { useOwnerEditorView } from "@/context/OwnerEditorViewProvider";
 import { useSiteDraftLogo } from "@/context/SiteDraftLogoProvider";
 import { useStaffAuth } from "@/context/StaffAuthProvider";
 import { EditorView } from "@/enums";
@@ -17,6 +18,7 @@ import {
   useWebsiteSettings,
 } from "@/hooks/useWebsiteSettings";
 import { getErrorKey } from "@/lib/errors";
+import { publicHomeFromHome } from "@/lib/site";
 import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { localizedText } from "@/lib/localizedCopy";
 import { siteFontStack, siteHeaderLogo } from "@/lib/siteContent";
@@ -153,6 +155,12 @@ export function OwnerHomeRoot({
   };
   const showPreview = !canEdit || view !== EditorView.FULLSCREEN;
   const showEditor = canEdit && view !== EditorView.PREVIEW;
+  const { setEditorView } = useOwnerEditorView();
+  const previewing = canEdit && view === EditorView.PREVIEW;
+  useEffect(() => {
+    setEditorView({ editorOpen: showEditor, previewing });
+    return () => setEditorView({ editorOpen: false, previewing: false });
+  }, [setEditorView, showEditor, previewing]);
 
   return (
     <div
@@ -215,7 +223,7 @@ export function OwnerHomeRoot({
           oneWayRentals={site.oneWayRentals}
           onDiscard={() => setOverride(null)}
           onSignOut={() => {
-            void signOut();
+            void signOut().then(() => router.replace(publicHomeFromHome(homeHref)));
           }}
           fullscreen={view === EditorView.FULLSCREEN}
           onToggleFullscreen={() =>

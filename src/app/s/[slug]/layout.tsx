@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { Suspense } from "react";
 import { GuestAuthProvider } from "@/context/GuestAuthProvider";
+import { OwnerEditorViewProvider } from "@/context/OwnerEditorViewProvider";
 import { StaffAuthProvider } from "@/context/StaffAuthProvider";
 import { SitePreviewBanner } from "@/components/layout/SitePreviewBanner";
 import { DEFAULT_PAGE_BACKGROUND, siteFontStack } from "@/lib/siteContent";
@@ -36,12 +37,14 @@ async function SiteLayout({ children, params }: Props) {
   return (
     <GuestAuthProvider>
       <StaffAuthProvider>
-        <div style={style} className="flex min-h-dvh flex-col bg-background">
-          <Suspense fallback={null}>
-            <SitePreviewBanner />
-          </Suspense>
-          {children}
-        </div>
+        <OwnerEditorViewProvider>
+          <div style={style} className="flex min-h-dvh flex-col bg-background">
+            <Suspense fallback={null}>
+              <SitePreviewBanner />
+            </Suspense>
+            {children}
+          </div>
+        </OwnerEditorViewProvider>
       </StaffAuthProvider>
     </GuestAuthProvider>
   );

@@ -23,15 +23,19 @@ export function LegalArticle({
           {title}
         </h1>
         <p className="text-sm text-muted-foreground">{updated}</p>
-        <p className="text-base leading-relaxed text-muted-foreground">
-          {lede}
-        </p>
+        {lede ? (
+          <p className="whitespace-pre-line text-base leading-relaxed text-muted-foreground">
+            {lede}
+          </p>
+        ) : null}
       </header>
-      {sections.map((section) => (
-        <section key={section.title} className="flex flex-col gap-2">
-          <h2 className="text-xl font-semibold text-foreground">
-            {section.title}
-          </h2>
+      {sections.map((section, index) => (
+        <section key={`${index}-${section.title}`} className="flex flex-col gap-2">
+          {section.title ? (
+            <h2 className="text-xl font-semibold text-foreground">
+              {section.title}
+            </h2>
+          ) : null}
           <p className="whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
             {section.body}
           </p>

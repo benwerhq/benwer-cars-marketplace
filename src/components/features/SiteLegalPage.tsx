@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import { LegalArticle } from "@/components/layout/LegalArticle";
 import { SiteGuestShell } from "@/components/layout/SiteGuestShell";
-import { readLegalSections, splitLegalText } from "@/lib/legal";
+import { parseLegalBlocks, readLegalSections, splitLegalText } from "@/lib/legal";
 import { loadPublicSite } from "@/lib/loadPublicSite";
 import { localizedText } from "@/lib/localizedCopy";
 import { buildPageMetadata } from "@/lib/seo";
@@ -63,15 +63,12 @@ export async function SiteLegalPage({
   return (
     <SiteGuestShell site={site} preview={preview}>
       {own.body ? (
-        <article className="flex flex-col gap-6">
-          <header className="flex flex-col gap-2">
-            <h1 className="text-3xl font-semibold tracking-tight text-foreground">{title}</h1>
-            <p className="text-sm text-muted-foreground">
-              {tSite("byCompany", { name: site.company.name })}
-            </p>
-          </header>
-          <div className="whitespace-pre-line text-sm leading-relaxed text-foreground">{own.body}</div>
-        </article>
+        <LegalArticle
+          title={title}
+          lede={parseLegalBlocks(own.body).intro}
+          updated={tSite("byCompany", { name: site.company.name })}
+          sections={parseLegalBlocks(own.body).sections}
+        />
       ) : (
         <LegalArticle
           title={title}
