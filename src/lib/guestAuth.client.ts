@@ -1,6 +1,12 @@
 "use client";
 
-import { initializeApp, getApp, getApps, type FirebaseApp } from "firebase/app";
+import {
+  FirebaseError,
+  initializeApp,
+  getApp,
+  getApps,
+  type FirebaseApp,
+} from "firebase/app";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -98,7 +104,25 @@ export async function guestSignUp(
   }
 
   const credential = await createUserWithEmailAndPassword(auth, email, password);
-  await sendEmailVerification(credential.user, { url: window.location.href });
+  await sendVerification(credential.user);
+}
+
+const CONTINUE_URL_ERRORS = new Set([
+  "auth/unauthorized-continue-uri",
+  "auth/invalid-continue-uri",
+  "auth/missing-continue-uri",
+]);
+
+async function sendVerification(user: User): Promise<void> {
+  try {
+    await sendEmailVerification(user, { url: window.location.href });
+  } catch (error) {
+    if (error instanceof FirebaseError && CONTINUE_URL_ERRORS.has(error.code)) {
+      await sendEmailVerification(user);
+      return;
+    }
+    throw error;
+  }
 }
 
 export async function guestSendEmailVerification(locale: string): Promise<void> {
@@ -109,7 +133,7 @@ export async function guestSendEmailVerification(locale: string): Promise<void> 
   }
 
   auth.languageCode = locale.split("-")[0] ?? null;
-  await sendEmailVerification(user, { url: window.location.href });
+  await sendVerification(user);
 }
 
 /** Re-reads the user from Firebase and refreshes the ID token so the API sees a newly verified email. */
