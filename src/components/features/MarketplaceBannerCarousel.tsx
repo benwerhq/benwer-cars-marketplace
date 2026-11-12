@@ -1,6 +1,6 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -53,7 +53,11 @@ function BannerCopy({ banner, active }: { banner: MarketplaceBanner; active: boo
   );
 }
 
-export function MarketplaceBannerCarousel() {
+interface MarketplaceBannerCarouselProps {
+  children?: ReactNode;
+}
+
+export function MarketplaceBannerCarousel({ children }: MarketplaceBannerCarouselProps) {
   const t = useTranslations("marketplaceBanners");
   const count = MARKETPLACE_BANNERS.length;
   const { active, setIndex, go, interactionHandlers } = useCarousel(count);
@@ -67,7 +71,8 @@ export function MarketplaceBannerCarousel() {
       className="relative mx-auto w-full max-w-7xl px-4 pt-6 md:px-6 lg:px-8"
       {...interactionHandlers}
     >
-      <div className="@container relative overflow-hidden rounded-2xl bg-promo md:aspect-[4/1]">
+      <div className="overflow-hidden rounded-3xl bg-promo">
+      <div className="@container relative md:aspect-[4/1]">
         {MARKETPLACE_BANNERS.map((banner, position) => {
           const isActive = position === active;
           return (
@@ -114,11 +119,16 @@ export function MarketplaceBannerCarousel() {
           ))}
         </div>
       </div>
+      {children ? <div aria-hidden className="h-12 md:h-16" /> : null}
+      </div>
+      {children ? (
+        <div className="relative z-10 -mt-10 px-2 md:-mt-12 md:px-10">{children}</div>
+      ) : null}
       <button
         type="button"
         onClick={() => go(-1)}
         aria-label={t("previous")}
-        className={cn(control, "absolute top-1/2 left-1 hidden md:inline-flex lg:left-3")}
+        className={cn(control, "absolute top-[38%] left-1 hidden md:inline-flex lg:left-3")}
       >
         <ChevronLeft size={20} aria-hidden />
       </button>
@@ -126,7 +136,7 @@ export function MarketplaceBannerCarousel() {
         type="button"
         onClick={() => go(1)}
         aria-label={t("next")}
-        className={cn(control, "absolute top-1/2 right-1 hidden md:inline-flex lg:right-3")}
+        className={cn(control, "absolute top-[38%] right-1 hidden md:inline-flex lg:right-3")}
       >
         <ChevronRight size={20} aria-hidden />
       </button>

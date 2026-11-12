@@ -1,5 +1,6 @@
 {
   "home": {
+    "companiesEyebrow": "Companies",
     "title": "Find your perfect car",
     "subtitle": "Compare cars from partner rental companies, then continue on the company's site.",
     "searchPlaceholder": "Where are you going?",
@@ -12,6 +13,7 @@
     "viewAllCompanies": "View all companies"
   },
   "featuredCars": {
+    "eyebrow": "Cars",
     "title": "Popular cars",
     "subtitle": "Live listings from partner fleets — the same cars companies manage in admin.",
     "viewAll": "Search all cars",
@@ -36,6 +38,7 @@
     }
   },
   "faq": {
+    "eyebrow": "FAQ",
     "title": "Before you book",
     "subtitle": "Partner fleets, how booking works, and what Benwer does — and does not — handle.",
     "items": {
@@ -105,6 +108,7 @@
     "logoAlt": "{name} logo"
   },
   "howItWorks": {
+    "eyebrow": "Three steps",
     "title": "How it works",
     "subtitle": "Search cars from partner rental companies in Málaga province, compare public fleets side by side, then finish the hire with the company — no Benwer account needed.",
     "stepLabel": "Step {number}",
@@ -165,6 +169,7 @@
   },
   "cars": {
     "title": "Available cars",
+    "subtitle": "Every public car from partner rental companies across Málaga province. Pick your dates to see what is free.",
     "searchEmptyTitle": "No cars match this search",
     "searchEmptyHint": "Try different dates or another location in Málaga province. Every city stays in the list — even if no cars are listed there today.",
     "companiesSelected": "{count, plural, one {# company selected} other {# companies selected}}",

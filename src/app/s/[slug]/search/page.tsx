@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { Building2 } from "lucide-react";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { getLocale, getTranslations } from "next-intl/server";
+import { PageIntro } from "@/components/layout/PageIntro";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteEditSection } from "@/components/layout/SiteEditSection";
@@ -146,14 +147,10 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
         phone={site.showPhone ? site.company.phone : null}
       />
       <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-8 px-4 py-8 md:px-6 lg:px-8">
-        <div>
-          <h1 className="text-3xl font-semibold tracking-tight text-foreground">
-            {t("searchTitle")}
-          </h1>
-          <p className="mt-2 text-sm text-muted-foreground">
-            {t("searchDescription")}
-          </p>
-        </div>
+        <PageIntro
+          title={t("searchTitle")}
+          description={t("searchDescription")}
+        />
         {isSitePaused(site) ? <SitePausedNotice compact /> : null}
         <SiteEditSection section={SiteEditSectionId.SEARCH} enabled={editMode}>
           <SiteSearchForm

@@ -112,37 +112,6 @@ body {
   color: var(--foreground);
 }
 
-.marketplace-search-hero {
-  background-image: linear-gradient(to bottom right, #f0fdfa, #ffffff, #f8fafc);
-}
-
-.marketplace-search-hero-title {
-  color: var(--foreground);
-}
-
-.marketplace-search-hero-subtitle {
-  color: var(--muted-foreground);
-}
-
-.marketplace-search-card {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  box-shadow: 0 8px 30px rgb(15 23 42 / 0.04);
-}
-
-.dark .marketplace-search-hero {
-  background-image: linear-gradient(
-    to bottom right,
-    color-mix(in oklab, var(--primary) 16%, var(--background)),
-    var(--surface),
-    color-mix(in oklab, var(--info) 12%, var(--background))
-  );
-}
-
-.dark .marketplace-search-card {
-  box-shadow: 0 8px 30px rgb(0 0 0 / 0.28);
-}
-
 .marketplace-day-picker.rdp-root {
   --rdp-accent-color: var(--primary);
   --rdp-accent-background-color: color-mix(

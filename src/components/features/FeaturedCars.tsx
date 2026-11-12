@@ -6,10 +6,11 @@ import { useMarketplaceVehicles } from "@/hooks/useMarketplaceVehicles";
 import { NavRoutes } from "@/enums";
 import { buildCompanyCarHref } from "@/lib/companySite";
 import { CarGridView } from "./CarGrid";
+import { SiteSectionHeading } from "./SiteSectionHeading";
 import type { Vehicle } from "@/types/vehicle";
 
 const FEATURED_LIMIT = 4;
-const FEATURED_GRID_CLASS = "sm:grid-cols-2 xl:grid-cols-4";
+const FEATURED_GRID_CLASS = "gap-5 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2";
 
 export function FeaturedCars() {
   const t = useTranslations("featuredCars");
@@ -37,21 +38,24 @@ export function FeaturedCars() {
   }
 
   return (
-    <section className="flex flex-col gap-6">
-      <div className="flex flex-col gap-1">
-        <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-          <h2 className="min-w-0 text-xl font-semibold text-foreground">
-            {t("title")}
-          </h2>
+    <section
+      aria-labelledby="popular-cars-heading"
+      className="flex flex-col gap-8"
+    >
+      <SiteSectionHeading
+        id="popular-cars-heading"
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        description={t("subtitle")}
+        action={
           <Link
             href={NavRoutes.CARS}
-            className="shrink-0 cursor-pointer text-sm font-medium text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="cursor-pointer text-sm font-semibold text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
             {t("viewAll")}
           </Link>
-        </div>
-        <p className="text-sm text-muted-foreground">{t("subtitle")}</p>
-      </div>
+        }
+      />
       <CarGridView
         vehicles={vehicles}
         isPending={isPending}
@@ -66,6 +70,7 @@ export function FeaturedCars() {
         emptyActionHref={NavRoutes.CARS}
         className={FEATURED_GRID_CLASS}
         skeletonCount={FEATURED_LIMIT}
+        variant="row"
       />
     </section>
   );
