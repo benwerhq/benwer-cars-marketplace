@@ -237,6 +237,12 @@ describe("isAllowedPublicApiProxyPath", () => {
         "v1/public/companies/denver-cars/guest",
       ),
     ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "PATCH",
+        "v1/public/companies/denver-cars/guest/me",
+      ),
+    ).toBe(true);
   });
 
   it("rejects authenticated or unknown API paths", () => {
@@ -247,6 +253,12 @@ describe("isAllowedPublicApiProxyPath", () => {
     expect(isAllowedPublicApiProxyPath("POST", "v1/public/companies")).toBe(
       false,
     );
+    expect(
+      isAllowedPublicApiProxyPath(
+        "PATCH",
+        "v1/public/companies/denver-cars/guest",
+      ),
+    ).toBe(false);
   });
 });
 

@@ -126,6 +126,13 @@ export function isAllowedPublicApiProxyPath(
     return true;
   }
 
+  if (
+    verb === "PATCH" &&
+    /^v1\/public\/companies\/[^/]+\/guest\/me$/.test(normalized)
+  ) {
+    return true;
+  }
+
   return false;
 }
 
