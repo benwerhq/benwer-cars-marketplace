@@ -1187,24 +1187,21 @@
       "highlight": "Verified companies",
       "joiner": "and",
       "boxed": "Secure booking",
-      "description": "Real reviews, clear terms and digital contracts you sign from your phone",
-      "cta": "Find a company"
+      "description": "Real reviews, clear terms and digital contracts you sign from your phone"
     },
     "prices": {
       "script": "one search",
       "highlight": "Compare prices",
       "joiner": "from",
       "boxed": "Dozens of companies",
-      "description": "See real prices, insurance and deposits side by side before you book",
-      "cta": "Book a car"
+      "description": "See real prices, insurance and deposits side by side before you book"
     },
     "anywhere": {
       "script": "find your ride",
       "highlight": "Anywhere you go",
       "joiner": "compare",
       "boxed": "Local rental companies",
-      "description": "Trusted rental companies in cities across Spain and beyond, all in one place",
-      "cta": "Explore cars"
+      "description": "Trusted rental companies in cities across Spain and beyond, all in one place"
     }
   },
   "siteLegal": {
