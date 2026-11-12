@@ -351,7 +351,9 @@
     "weekendRate": "Fin de semana",
     "segmentDetail": "{range} · {days} × {rate}",
     "warningMinDays": "En esta temporada el alquiler debe durar al menos {limit, plural, one {# día} other {# días}}. Cambia las fechas para reservar.",
-    "warningMaxDays": "En esta temporada el alquiler puede durar como máximo {limit, plural, one {# día} other {# días}}. Cambia las fechas para reservar."
+    "warningMaxDays": "En esta temporada el alquiler puede durar como máximo {limit, plural, one {# día} other {# días}}. Cambia las fechas para reservar.",
+    "returnLocation": "Lugar de devolución",
+    "oneWayFee": "Suplemento por devolver en otro lugar"
   },
   "reservationStatus": {
     "title": "Tu reserva",
@@ -605,12 +607,16 @@
     "loadErrorTitle": "Web no disponible",
     "loadErrorDescription": "No hemos podido cargar esta web de alquiler. Inténtalo de nuevo.",
     "search": "Buscar coches",
-    "searchAria": "Buscar por fechas y sucursal",
+    "searchAria": "Buscar por fechas y ubicación",
     "searchTitle": "Buscar coches",
-    "searchDescription": "Elige fechas y sucursal para ver la disponibilidad.",
-    "branch": "Sucursal",
-    "anyBranch": "Cualquier sucursal",
-    "ownerSignIn": "Acceso del propietario"
+    "searchDescription": "Elige fechas y ubicación para ver la disponibilidad.",
+    "branch": "Lugar de recogida",
+    "anyBranch": "Cualquier ubicación",
+    "ownerSignIn": "Acceso del propietario",
+    "returnBranch": "Lugar de devolución",
+    "sameReturn": "Devolver en el mismo lugar",
+    "differentReturn": "Devolver en otro lugar",
+    "returnSame": "El mismo de recogida"
   },
   "owner": {
     "signInTitle": "Acceso del propietario",
@@ -1031,7 +1037,11 @@
       },
       "minLead": "Antelación mínima",
       "requestWindow": "Plazo de respuesta",
-      "hoursUnit": "En horas"
+      "hoursUnit": "En horas",
+      "differentReturnTitle": "Devolución en otro lugar",
+      "differentReturnLabel": "Permitir devolver en otro lugar",
+      "differentReturnHint": "El cliente elige dónde devolver al buscar. Se suma la tarifa de solo ida de Benwer admin.",
+      "differentReturnOff": "Activa los alquileres de solo ida en Benwer admin para ofrecerlo."
     },
     "savedNotPublished": "Guardado, sin publicar",
     "publish": "Publicar",

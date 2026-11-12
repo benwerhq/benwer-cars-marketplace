@@ -351,7 +351,9 @@
     "weekendRate": "Weekend",
     "segmentDetail": "{range} · {days} × {rate}",
     "warningMinDays": "Rentals in this season must last at least {limit, plural, one {# day} other {# days}}. Change your dates to book.",
-    "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book."
+    "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book.",
+    "returnLocation": "Local de devolução",
+    "oneWayFee": "Taxa de devolução noutro local"
   },
   "reservationStatus": {
     "title": "Your reservation",
@@ -605,12 +607,16 @@
     "loadErrorTitle": "Site indisponível",
     "loadErrorDescription": "Não foi possível carregar este site de aluguer. Tente novamente.",
     "search": "Procurar carros",
-    "searchAria": "Procurar por datas e sucursal",
+    "searchAria": "Procurar por datas e local",
     "searchTitle": "Procurar carros",
-    "searchDescription": "Escolha datas e sucursal para ver a disponibilidade.",
-    "branch": "Sucursal",
-    "anyBranch": "Qualquer sucursal",
-    "ownerSignIn": "Acesso do proprietário"
+    "searchDescription": "Escolha datas e local para ver a disponibilidade.",
+    "branch": "Local de levantamento",
+    "anyBranch": "Qualquer local",
+    "ownerSignIn": "Acesso do proprietário",
+    "returnBranch": "Local de devolução",
+    "sameReturn": "Devolver no mesmo local",
+    "differentReturn": "Devolver noutro local",
+    "returnSame": "O mesmo do levantamento"
   },
   "owner": {
     "signInTitle": "Acesso do proprietário",
@@ -1031,7 +1037,11 @@
       },
       "minLead": "Antecedência mínima",
       "requestWindow": "Prazo de resposta",
-      "hoursUnit": "Em horas"
+      "hoursUnit": "Em horas",
+      "differentReturnTitle": "Devolução noutro local",
+      "differentReturnLabel": "Permitir devolver noutro local",
+      "differentReturnHint": "O cliente escolhe onde devolver ao pesquisar. É somada a taxa de só ida do Benwer admin.",
+      "differentReturnOff": "Ative os alugueres só de ida no Benwer admin para oferecer isto."
     },
     "savedNotPublished": "Guardado, por publicar",
     "publish": "Publicar",

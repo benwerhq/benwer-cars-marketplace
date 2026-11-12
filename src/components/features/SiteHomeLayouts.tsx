@@ -44,6 +44,7 @@ interface SiteHomeLayoutsProps {
   from: string;
   to: string;
   branch: string;
+  returnBranch?: string;
   dehydratedState: DehydratedState;
 }
 
@@ -56,6 +57,7 @@ export function SiteHomeLayouts({
   from,
   to,
   branch,
+  returnBranch = "",
   dehydratedState,
 }: SiteHomeLayoutsProps) {
   const searchProps = {
@@ -64,6 +66,8 @@ export function SiteHomeLayouts({
     defaultFrom: from,
     defaultTo: to,
     defaultBranch: branch,
+    defaultReturnBranch: returnBranch,
+    allowDifferentReturn: site.allowDifferentReturn,
     preview,
     disabled: !canAcceptBookings(site),
   };

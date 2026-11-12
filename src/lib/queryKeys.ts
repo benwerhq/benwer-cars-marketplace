@@ -81,6 +81,21 @@ export function guestReservationsQueryKey(companySlug: string) {
   return [QueryKeys.GUEST_RESERVATIONS, companySlug] as const;
 }
 
+export function oneWayFeeQueryKey(
+  companySlug: string,
+  query: PriceQuoteQuery & { returnBranchId: string },
+) {
+  return [
+    QueryKeys.ONE_WAY_FEE,
+    companySlug,
+    query.vehicleId,
+    query.startDate,
+    query.endDate,
+    query.returnBranchId,
+    query.channel ?? null,
+  ] as const;
+}
+
 export function priceQuoteQueryKey(
   companySlug: string,
   query: PriceQuoteQuery,

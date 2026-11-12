@@ -63,6 +63,11 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       ? query[SearchParams.BRANCH]
       : undefined;
 
+  const returnParam =
+    typeof query[SearchParams.RETURN_BRANCH] === "string"
+      ? query[SearchParams.RETURN_BRANCH]
+      : undefined;
+
   let site = null;
   try {
     site = await loadPublicSite(slug, preview);
@@ -153,11 +158,16 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
     );
   }
 
+  const returnLocation = site.allowDifferentReturn
+    ? site.branches.find((item) => item.id === returnParam) ?? null
+    : null;
+  const returnBranch = returnLocation?.id;
   const carHref = publicSiteHref(
     withSiteQuery(siteCarPath(site.slug, vehicle.id), {
       from,
       to,
       branch,
+      returnBranch,
       preview,
     }),
     site.slug,
@@ -185,21 +195,19 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           bookingMode={site.bookingMode}
           bookingsEnabled
           channel={SITE_CHANNEL}
-          confirmationHref={(token) => platformBookingHref(token)}
-          bookHrefBuilder={(nextFrom, nextTo) =>
-            publicSiteHref(
-              siteBookHref({
-                slug: site.slug,
-                carId: vehicle.id,
-                from: nextFrom,
-                to: nextTo,
-                branch,
-                preview,
-              }),
-              site.slug,
-              onTenantHost,
-            )
-          }
+          returnLocation={returnLocation}
+          confirmationBaseUrl={platformBookingHref("").replace(/\/$/, "")}
+          bookHrefBase={publicSiteHref(
+            siteBookHref({
+              slug: site.slug,
+              carId: vehicle.id,
+              branch,
+              returnBranch,
+              preview,
+            }),
+            site.slug,
+            onTenantHost,
+          )}
         />
       </main>
       <SiteFooter companyName={site.company.name} homeHref={homeHref} />

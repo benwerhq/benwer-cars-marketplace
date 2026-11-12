@@ -17,6 +17,7 @@ function reservationBody(payload: CreateGuestReservationPayload) {
     ...(payload.insurancePackageId
       ? { insurancePackageId: payload.insurancePackageId }
       : {}),
+    ...(payload.returnBranchId ? { returnBranchId: payload.returnBranchId } : {}),
     ...(payload.channel ? { channel: payload.channel } : {}),
     ...(payload.acceptTerms !== undefined
       ? { acceptTerms: payload.acceptTerms }

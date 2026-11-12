@@ -9,6 +9,7 @@ export { useContact } from "./useContact";
 export { useCreateReservation } from "./useCreateReservation";
 export { useReservation } from "./useReservation";
 export { usePriceQuote } from "./usePriceQuote";
+export { useOneWayFee } from "./useOneWayFee";
 export { useMediaQuery } from "./useMediaQuery";
 export { useSite } from "./useSite";
 export { useWithdrawReservation } from "./useWithdrawReservation";

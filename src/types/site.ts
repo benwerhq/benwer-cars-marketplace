@@ -24,6 +24,8 @@ export interface PublicSite {
   layout: SiteLayout;
   company: Company;
   branches: SiteBranch[];
+  allowDifferentReturn: boolean;
+  oneWayRentals: boolean;
   content: SiteContent;
 }
 

@@ -124,6 +124,10 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
     typeof query[SearchParams.BRANCH] === "string"
       ? query[SearchParams.BRANCH]
       : "";
+  const returnBranch =
+    typeof query[SearchParams.RETURN_BRANCH] === "string"
+      ? query[SearchParams.RETURN_BRANCH]
+      : "";
   const dehydratedState = await prefetchCompanyFleetState(site.company, {
     from: from || undefined,
     to: to || undefined,
@@ -139,6 +143,7 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
         logoUrl={site.company.branding.logoUrl}
         homeHref={homeHref}
         fleetHref={`${homeHref}#fleet`}
+        phone={site.showPhone ? site.company.phone : null}
       />
       <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-8 px-4 py-8 md:px-6 lg:px-8">
         <div>
@@ -157,14 +162,18 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
             defaultFrom={from}
             defaultTo={to}
             defaultBranch={branch}
+            defaultReturnBranch={returnBranch}
+            allowDifferentReturn={site.allowDifferentReturn}
             preview={preview}
             edit={editMode}
             disabled={!canAcceptBookings(site)}
+            variant="hero"
           />
         </SiteEditSection>
         <SiteEditSection section={SiteEditSectionId.FLEET} enabled={editMode}>
           <HydrationBoundary state={dehydratedState}>
             <CarListView
+              layout="rows"
               companySlug={companySlug}
               hrefBase={sitePathFromHome(homeHref, "/cars")}
               showDateSearch={false}

@@ -38,6 +38,8 @@ function site(overrides: Partial<PublicSite> = {}): PublicSite {
     canonicalUrl: null,
     layout: SiteLayout.CLASSIC,
     content: defaultSiteContent(),
+    allowDifferentReturn: false,
+    oneWayRentals: false,
     company: {
       id: "c1",
       slug: "denver-cars",

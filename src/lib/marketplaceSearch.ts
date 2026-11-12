@@ -14,6 +14,7 @@ export function appendSearchParams(
     companySlugs?: string[];
     preview?: string;
     branch?: string;
+    return?: string;
   },
 ): string {
   const params = new URLSearchParams();
@@ -50,6 +51,10 @@ export function appendSearchParams(
 
   if (input?.branch) {
     params.set(SearchParams.BRANCH, input.branch);
+  }
+
+  if (input?.return) {
+    params.set(SearchParams.RETURN_BRANCH, input.return);
   }
 
   const query = params.toString();

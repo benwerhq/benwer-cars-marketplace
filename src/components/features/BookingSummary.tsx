@@ -17,6 +17,8 @@ interface BookingSummaryProps {
   to?: string;
   carHref: string;
   quote?: PriceBreakdown | null;
+  returnLocationName?: string;
+  oneWayFee?: number | null;
   className?: string;
 }
 
@@ -27,6 +29,8 @@ export function BookingSummary({
   to,
   carHref,
   quote,
+  returnLocationName,
+  oneWayFee = null,
   className,
 }: BookingSummaryProps) {
   const t = useTranslations("booking");
@@ -45,7 +49,7 @@ export function BookingSummary({
   );
   const total = hasDates
     ? formatMoney(
-        priced?.vehicleSubtotal ?? days * vehicle.pricePerDay,
+        (priced?.vehicleSubtotal ?? days * vehicle.pricePerDay) + (oneWayFee ?? 0),
         vehicle.currency,
         locale,
       )
@@ -103,6 +107,9 @@ export function BookingSummary({
             label={t("duration")}
             value={t("nights", { count: days })}
           />
+          {returnLocationName ? (
+            <SummaryRow label={t("returnLocation")} value={returnLocationName} />
+          ) : null}
           <SummaryRow
             label={
               (priced?.segments.length ?? 0) > 1 ? t("averageRate") : t("rate")
@@ -117,6 +124,15 @@ export function BookingSummary({
       ) : null}
 
       {priced ? <PriceWarnings warnings={priced.warnings} /> : null}
+
+      {hasDates && oneWayFee ? (
+        <div className="flex items-center justify-between gap-4 text-sm">
+          <span className="text-muted-foreground">{t("oneWayFee")}</span>
+          <span className="font-medium tabular-nums text-foreground">
+            {formatMoney(oneWayFee, vehicle.currency, locale)}
+          </span>
+        </div>
+      ) : null}
 
       {total ? (
         <div className="flex flex-col gap-1 border-t border-border pt-4">

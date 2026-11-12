@@ -353,6 +353,7 @@ export function parseSiteContent(appearanceRaw: unknown, reviewsRaw: unknown): S
       ),
     },
     brandColor: readColor(theme.primaryColor, ""),
+    allowDifferentReturn: raw.allowDifferentReturn === true,
     raw,
   };
 }
@@ -422,6 +423,7 @@ export function serializeAppearance(content: SiteContent): Record<string, unknow
       hours: content.contact.hours,
       payments: content.contact.payments,
     },
+    allowDifferentReturn: content.allowDifferentReturn,
   };
 }
 

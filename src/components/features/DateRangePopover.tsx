@@ -32,7 +32,7 @@ function SearchFieldDivider() {
   return (
     <div
       aria-hidden
-      className="bg-border h-px w-full md:mx-0 md:my-1.5 md:h-auto md:w-px md:self-stretch"
+      className="bg-border h-px w-full md:mx-0 md:my-2 md:h-auto md:w-px md:self-stretch"
     />
   );
 }
@@ -51,6 +51,7 @@ export function DateRangePopover({
   const locale = useLocale();
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
+  const [activeField, setActiveField] = useState<"from" | "to">("from");
   const isOpen = open ?? uncontrolledOpen;
 
   function setOpen(next: boolean) {
@@ -85,6 +86,7 @@ export function DateRangePopover({
     const nextTo =
       range.to && range.to >= range.from ? toIsoDate(range.to) : "";
     onChange({ from: nextFrom, to: nextTo });
+    setActiveField(nextTo ? "from" : "to");
 
     if (nextFrom && nextTo) {
       setOpen(false);
@@ -94,14 +96,14 @@ export function DateRangePopover({
   return (
     <Popover.Root open={isOpen} onOpenChange={setOpen}>
       <Popover.Anchor asChild>
-        <div className="flex min-w-0 flex-1 flex-col md:flex-row md:items-stretch">
+        <div className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-stretch">
           <div className="min-w-0 md:flex-1">
             <SearchFieldSegment
               icon={<Calendar size={16} aria-hidden />}
               label={t("pickupLabel")}
               value={fromValue}
               isPlaceholder={!fromDate}
-              isActive={isOpen}
+              isActive={isOpen && activeField === "from"}
               tone={invalid && !fromDate ? "warning" : "default"}
               aria-expanded={isOpen}
               aria-haspopup="dialog"
@@ -109,7 +111,10 @@ export function DateRangePopover({
               aria-required={required || undefined}
               aria-describedby={describedBy}
               aria-label={t("pickupTrigger", { date: fromValue })}
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                setActiveField("from");
+                setOpen(true);
+              }}
             />
           </div>
           <SearchFieldDivider />
@@ -119,7 +124,7 @@ export function DateRangePopover({
               label={t("dropoffLabel")}
               value={toValue}
               isPlaceholder={!toDate}
-              isActive={isOpen}
+              isActive={isOpen && activeField === "to"}
               tone={invalid && !toDate ? "warning" : "default"}
               aria-expanded={isOpen}
               aria-haspopup="dialog"
@@ -127,7 +132,10 @@ export function DateRangePopover({
               aria-required={required || undefined}
               aria-describedby={describedBy}
               aria-label={t("dropoffTrigger", { date: toValue })}
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                setActiveField(fromDate ? "to" : "from");
+                setOpen(true);
+              }}
             />
           </div>
         </div>

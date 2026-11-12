@@ -92,5 +92,6 @@ export interface SiteContent {
   faq: SiteFaqItem[];
   contact: SiteContactContent;
   brandColor: string;
+  allowDifferentReturn: boolean;
   raw: Record<string, unknown>;
 }

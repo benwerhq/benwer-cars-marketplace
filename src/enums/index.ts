@@ -140,6 +140,7 @@ export enum QueryKeys {
   AVAILABILITY = "availability",
   RESERVATION = "reservation",
   PRICE_QUOTE = "price-quote",
+  ONE_WAY_FEE = "one-way-fee",
   SITE = "site",
   WEBSITE_SETTINGS = "website-settings",
   INSURANCE = "insurance",
@@ -191,6 +192,7 @@ export enum SearchParams {
   COMPANIES = "companies",
   PREVIEW = "preview",
   BRANCH = "branch",
+  RETURN_BRANCH = "return",
   EDIT = "edit",
   TOKEN = "token",
 }

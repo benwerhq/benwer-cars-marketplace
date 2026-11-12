@@ -16,6 +16,7 @@ export interface CreateGuestReservationPayload {
   guestEmail: string;
   guestPhone: string;
   insurancePackageId?: string;
+  returnBranchId?: string;
   channel?: PublicChannel;
   acceptTerms?: boolean;
 }

@@ -190,6 +190,12 @@ describe("isAllowedPublicApiProxyPath", () => {
         "v1/public/companies/med-rentacar/reservations",
       ),
     ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath("POST", "v1/public/companies/med-rentacar/quotes"),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath("POST", "v1/public/companies/med-rentacar/quotes/x"),
+    ).toBe(false);
     expect(isAllowedPublicApiProxyPath("POST", "v1/contact")).toBe(true);
     expect(isAllowedPublicApiProxyPath("GET", "v1/public/hosts")).toBe(true);
     expect(

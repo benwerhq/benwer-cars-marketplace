@@ -165,6 +165,11 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
             ? query[SearchParams.BRANCH]
             : ""
         }
+        returnBranch={
+          typeof query[SearchParams.RETURN_BRANCH] === "string"
+            ? query[SearchParams.RETURN_BRANCH]
+            : ""
+        }
         dehydratedState={dehydratedState}
       />
       <SiteFooter

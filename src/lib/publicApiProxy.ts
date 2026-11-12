@@ -96,7 +96,7 @@ export function isAllowedPublicApiProxyPath(
 
   if (
     verb === "POST" &&
-    /^v1\/public\/companies\/[^/]+\/reservations$/.test(normalized)
+    /^v1\/public\/companies\/[^/]+\/(reservations|quotes)$/.test(normalized)
   ) {
     return true;
   }

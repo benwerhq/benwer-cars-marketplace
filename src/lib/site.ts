@@ -108,6 +108,7 @@ export interface SiteLinkQuery {
   from?: string;
   to?: string;
   branch?: string;
+  returnBranch?: string;
   preview?: string;
   carId?: string;
   edit?: boolean;
@@ -121,6 +122,9 @@ export function withSiteQuery(path: string, query?: SiteLinkQuery): string {
   const url = new URL(href, "https://benwer.local");
   if (query?.branch) {
     url.searchParams.set(SearchParams.BRANCH, query.branch);
+  }
+  if (query?.returnBranch && query.returnBranch !== query.branch) {
+    url.searchParams.set(SearchParams.RETURN_BRANCH, query.returnBranch);
   }
   if (query?.preview) {
     url.searchParams.set(SearchParams.PREVIEW, query.preview);
@@ -140,6 +144,7 @@ export function siteBookHref(input: {
   from?: string;
   to?: string;
   branch?: string;
+  returnBranch?: string;
   preview?: string;
   edit?: boolean;
 }): string {
@@ -148,6 +153,7 @@ export function siteBookHref(input: {
     from: input.from,
     to: input.to,
     branch: input.branch,
+    returnBranch: input.returnBranch,
     preview: input.preview,
     edit: input.edit,
   });

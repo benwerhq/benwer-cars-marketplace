@@ -351,7 +351,9 @@
     "weekendRate": "Weekend",
     "segmentDetail": "{range} · {days} × {rate}",
     "warningMinDays": "Rentals in this season must last at least {limit, plural, one {# day} other {# days}}. Change your dates to book.",
-    "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book."
+    "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book.",
+    "returnLocation": "Return location",
+    "oneWayFee": "Different return location fee"
   },
   "reservationStatus": {
     "title": "Your reservation",
@@ -605,12 +607,16 @@
     "loadErrorTitle": "Website unavailable",
     "loadErrorDescription": "We could not load this rental website. Try again shortly.",
     "search": "Search cars",
-    "searchAria": "Search by dates and branch",
+    "searchAria": "Search by dates and location",
     "searchTitle": "Search cars",
-    "searchDescription": "Choose dates and a branch to see what is available.",
-    "branch": "Branch",
-    "anyBranch": "Any branch",
-    "ownerSignIn": "Owner sign-in"
+    "searchDescription": "Choose dates and a location to see what is available.",
+    "branch": "Pick-up location",
+    "anyBranch": "Any location",
+    "ownerSignIn": "Owner sign-in",
+    "returnBranch": "Return location",
+    "sameReturn": "Same return location",
+    "differentReturn": "Different return location",
+    "returnSame": "Same as pick-up"
   },
   "owner": {
     "signInTitle": "Owner sign-in",
@@ -1031,7 +1037,11 @@
       },
       "minLead": "Minimum notice",
       "requestWindow": "Time to reply",
-      "hoursUnit": "In hours"
+      "hoursUnit": "In hours",
+      "differentReturnTitle": "Return at another location",
+      "differentReturnLabel": "Let guests return at a different location",
+      "differentReturnHint": "Guests choose a return location when they search. The one-way fee from Benwer admin is added to the price.",
+      "differentReturnOff": "Turn on one-way rentals in Benwer admin to offer this."
     },
     "savedNotPublished": "Saved, not published yet",
     "publish": "Publish",

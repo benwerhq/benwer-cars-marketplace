@@ -39,6 +39,7 @@ export function applyWebsiteDraft(site: PublicSite, draft: WebsiteSettings): Pub
     showEmail: draft.showEmail,
     showAddress: draft.showAddress,
     content: { ...draft.content, reviews: site.content.reviews },
+    allowDifferentReturn: site.oneWayRentals && draft.content.allowDifferentReturn,
   };
 }
 

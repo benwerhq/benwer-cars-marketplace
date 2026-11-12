@@ -769,6 +769,10 @@ export function mapPublicSite(raw: unknown, fallbackSlug?: string): PublicSite {
       slug: company.slug || slug,
     },
     branches,
+    allowDifferentReturn:
+      readBoolean(nestedSite.allowDifferentReturn) ?? readBoolean(row.allowDifferentReturn) ?? false,
+    oneWayRentals:
+      readBoolean(nestedSite.oneWayRentals) ?? readBoolean(row.oneWayRentals) ?? false,
     content: parseSiteContent(
       nestedSite.appearance ?? row.appearance,
       nestedSite.reviews ?? row.reviews,

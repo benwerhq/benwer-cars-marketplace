@@ -32,6 +32,7 @@ interface OwnerHomeRootProps {
   from: string;
   to: string;
   branch: string;
+  returnBranch?: string;
   dehydratedState: DehydratedState;
 }
 
@@ -43,6 +44,7 @@ export function OwnerHomeRoot({
   from,
   to,
   branch,
+  returnBranch,
   dehydratedState,
 }: OwnerHomeRootProps) {
   const locale = useLocale();
@@ -104,6 +106,7 @@ export function OwnerHomeRoot({
           from={from}
           to={to}
           branch={branch}
+          returnBranch={returnBranch}
           dehydratedState={dehydratedState}
         />
       </div>
@@ -131,6 +134,7 @@ export function OwnerHomeRoot({
           }}
           publishing={publish.isPending || pause.isPending}
           fallbackColor={site.company.branding.primaryColor}
+          oneWayRentals={site.oneWayRentals}
           onDiscard={() => setOverride(null)}
           onSignOut={() => {
             void signOut();

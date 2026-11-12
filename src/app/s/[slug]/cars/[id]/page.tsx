@@ -97,6 +97,11 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
       ? query[SearchParams.BRANCH]
       : undefined;
 
+  const returnBranch =
+    typeof query[SearchParams.RETURN_BRANCH] === "string"
+      ? query[SearchParams.RETURN_BRANCH]
+      : undefined;
+
   let site;
   try {
     site = await loadPublicSite(slug, preview);
@@ -127,6 +132,7 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
       from,
       to,
       branch,
+      returnBranch: site.allowDifferentReturn ? returnBranch : undefined,
       preview,
     }),
     site.slug,

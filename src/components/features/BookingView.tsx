@@ -1,5 +1,7 @@
 "use client";
 
+import { SearchParams } from "@/enums";
+
 import { useEffect, useMemo, useState } from "react";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,7 +17,9 @@ import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useCreateReservation } from "@/hooks/useCreateReservation";
 import { useInsurancePackages } from "@/hooks/useInsurancePackages";
+import { useOneWayFee } from "@/hooks/useOneWayFee";
 import { usePriceQuote } from "@/hooks/usePriceQuote";
+import type { SiteBranch } from "@/types/site";
 import { buildBookHref } from "@/lib/booking";
 import { localizedText } from "@/lib/localizedCopy";
 import {
@@ -52,8 +56,26 @@ interface BookingViewProps {
   bookingsEnabled?: boolean;
   channel?: PublicChannel;
   showInsurance?: boolean;
-  confirmationHref?: (token: string) => string;
-  bookHrefBuilder?: (from: string, to: string) => string;
+  confirmationBaseUrl?: string;
+  bookHrefBase?: string;
+  returnLocation?: SiteBranch | null;
+}
+
+function withBookingDates(base: string, from: string, to: string): string {
+  const url = new URL(base, window.location.origin);
+  for (const [key, value] of [
+    [SearchParams.FROM, from],
+    [SearchParams.TO, to],
+  ] as const) {
+    if (value) {
+      url.searchParams.set(key, value);
+    } else {
+      url.searchParams.delete(key);
+    }
+  }
+  return url.origin === window.location.origin
+    ? `${url.pathname}${url.search}`
+    : url.toString();
 }
 
 export function BookingView({
@@ -68,8 +90,9 @@ export function BookingView({
   bookingsEnabled = true,
   channel,
   showInsurance = false,
-  confirmationHref,
-  bookHrefBuilder,
+  confirmationBaseUrl,
+  bookHrefBase,
+  returnLocation = null,
 }: BookingViewProps) {
   const router = useRouter();
   const t = useTranslations("booking");
@@ -125,13 +148,21 @@ export function BookingView({
     },
   );
   const [insurancePackageId, setInsurancePackageId] = useState("");
+  const oneWayFeeQuery = useOneWayFee(companySlug, {
+    vehicleId: vehicle.id,
+    startDate: days > 0 ? startDate : "",
+    endDate: days > 0 ? endDate : "",
+    returnBranchId: returnLocation?.id ?? "",
+    channel,
+  });
+  const oneWayFee = returnLocation ? (oneWayFeeQuery.data ?? null) : null;
   const quote =
     days > 0 && quoteQuery.data?.totalDays === days ? quoteQuery.data : null;
   const lengthBlocked = (quote?.warnings.length ?? 0) > 0;
   const total =
     days > 0
       ? formatMoney(
-          quote?.vehicleSubtotal ?? days * vehicle.pricePerDay,
+          (quote?.vehicleSubtotal ?? days * vehicle.pricePerDay) + (oneWayFee ?? 0),
           vehicle.currency,
           locale,
         )
@@ -139,8 +170,8 @@ export function BookingView({
   const dailyRate = formatMoney(vehicle.pricePerDay, vehicle.currency, locale);
 
   useEffect(() => {
-    const nextHref = bookHrefBuilder
-      ? bookHrefBuilder(startDate, endDate)
+    const nextHref = bookHrefBase
+      ? withBookingDates(bookHrefBase, startDate, endDate)
       : buildBookHref({
           companySlug,
           carId: vehicle.id,
@@ -151,14 +182,14 @@ export function BookingView({
     if (current !== nextHref) {
       router.replace(nextHref, { scroll: false });
     }
-  }, [bookHrefBuilder, companySlug, endDate, router, startDate, vehicle.id]);
+  }, [bookHrefBase, companySlug, endDate, router, startDate, vehicle.id]);
 
   const { mutateAsync, isPending } = useCreateReservation({
     companySlug,
     onSuccess: (reservation) => {
       router.push(
-        confirmationHref
-          ? confirmationHref(reservation.token)
+        confirmationBaseUrl
+          ? `${confirmationBaseUrl.replace(/\/$/, "")}/${encodeURIComponent(reservation.token)}`
           : `/booking/${reservation.token}`,
       );
     },
@@ -180,6 +211,7 @@ export function BookingView({
         guestEmail: values.guestEmail,
         guestPhone: values.guestPhone,
         insurancePackageId: insurancePackageId || undefined,
+        returnBranchId: returnLocation?.id,
         channel,
         acceptTerms: channel ? values.acceptTerms : undefined,
       });
@@ -327,6 +359,8 @@ export function BookingView({
                 to={endDate}
                 carHref={carHref}
                 quote={quote}
+                returnLocationName={returnLocation?.name}
+                oneWayFee={oneWayFee}
               />
               <ConfirmButton
                 isBusy={isBusy}

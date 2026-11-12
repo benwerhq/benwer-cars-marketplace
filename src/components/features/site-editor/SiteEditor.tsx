@@ -89,6 +89,7 @@ interface SiteEditorProps {
   onPause: () => void;
   publishing: boolean;
   fallbackColor: string;
+  oneWayRentals: boolean;
   onSignOut: () => void;
 }
 
@@ -106,6 +107,7 @@ export function SiteEditor({
   onPause,
   publishing,
   fallbackColor,
+  oneWayRentals,
   onSignOut,
 }: SiteEditorProps) {
   const t = useTranslations("siteEditor");
@@ -359,7 +361,7 @@ export function SiteEditor({
             <DesignForm draft={draft} fallbackColor={fallbackColor} onChange={onChange} />
           </Tabs.Content>
           <Tabs.Content value="settings" className="flex flex-col gap-3 p-4 focus-visible:outline-none">
-            <SettingsForm draft={draft} onChange={onChange} />
+            <SettingsForm draft={draft} oneWayRentals={oneWayRentals} onChange={onChange} />
           </Tabs.Content>
         </div>
       </Tabs.Root>

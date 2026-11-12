@@ -162,6 +162,7 @@ function CarListViewContent({
       to: browse.to,
       preview: searchParams.get(SearchParams.PREVIEW) || undefined,
       branch: searchParams.get(SearchParams.BRANCH) || undefined,
+      return: searchParams.get(SearchParams.RETURN_BRANCH) || undefined,
     });
   }
 
