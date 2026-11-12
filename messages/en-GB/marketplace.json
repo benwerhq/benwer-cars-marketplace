@@ -744,7 +744,6 @@
     "profilePhone": "Phone number",
     "profileDob": "Date of birth",
     "profileSave": "Save details",
-    "profileSaved": "Details saved.",
     "profileNotLinked": "Your name and phone are saved here after your first booking with this email. Already booked with another email? Link that booking from My bookings.",
     "verifyTitle": "Verify your email to see your bookings",
     "verifyHint": "We sent a link to {email}. Open it, then come back here. Until your email is verified we can't show your bookings or save your name and phone.",
@@ -753,7 +752,11 @@
     "verifyDone": "I've verified my email",
     "verifyStillPending": "Your email isn't verified yet. Open the link in the email, then try again.",
     "verifyBanner": "Your account isn't active yet. Verify {email} to see your bookings and use your saved details.",
-    "verifyBannerAction": "Verify email"
+    "verifyBannerAction": "Verify email",
+    "profileEdit": "Edit details",
+    "profileCancel": "Cancel",
+    "profileEmail": "Email",
+    "profileEmpty": "Not added"
   },
   "siteSections": {
     "banners": {
