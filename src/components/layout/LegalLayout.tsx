@@ -1,10 +1,14 @@
 import type { ReactNode } from "react";
 import { headers } from "next/headers";
 import { MarketplaceHeader } from "./MarketplaceHeader";
-import { TenantHeader } from "./TenantHeader";
+import { SiteFooter } from "./SiteFooter";
+import { SiteHeader } from "./SiteHeader";
 import { Footer } from "./Footer";
-import { companiesApi } from "@/services/api";
+import { loadPublicSite } from "@/lib/loadPublicSite";
+import { publicSiteHomeHref } from "@/lib/site";
+import { siteHeaderLogo } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
+import type { PublicSite } from "@/types/site";
 
 interface LegalLayoutProps {
   children: ReactNode;
@@ -16,23 +20,23 @@ export async function LegalLayout({
   width = "article",
 }: LegalLayoutProps) {
   const tenantSlug = (await headers()).get("x-company-slug");
-  let companyName = tenantSlug ?? "";
-  let logoUrl: string | null = null;
-
-  if (tenantSlug) {
-    try {
-      const company = await companiesApi.getBySlug(tenantSlug);
-      companyName = company.name;
-      logoUrl = company.branding.logoUrl;
-    } catch {
-      companyName = tenantSlug;
-    }
-  }
+  const site = tenantSlug ? await loadSiteOrNull(tenantSlug) : null;
+  const homeHref = tenantSlug ? publicSiteHomeHref(tenantSlug, true) : null;
+  const companyName = site?.company.name ?? tenantSlug ?? "";
 
   return (
     <>
-      {tenantSlug ? (
-        <TenantHeader companyName={companyName} logoUrl={logoUrl} />
+      {homeHref ? (
+        <SiteHeader
+          companyName={companyName}
+          logoUrl={
+            site
+              ? siteHeaderLogo(site.content, site.company.branding.logoUrl)
+              : null
+          }
+          homeHref={homeHref}
+          fleetHref={`${homeHref}#fleet`}
+        />
       ) : (
         <MarketplaceHeader />
       )}
@@ -44,7 +48,23 @@ export async function LegalLayout({
       >
         {children}
       </main>
-      <Footer />
+      {homeHref ? (
+        <SiteFooter
+          companyName={companyName}
+          homeHref={homeHref}
+          description={site?.company.description}
+        />
+      ) : (
+        <Footer />
+      )}
     </>
   );
+}
+
+async function loadSiteOrNull(slug: string): Promise<PublicSite | null> {
+  try {
+    return await loadPublicSite(slug);
+  } catch {
+    return null;
+  }
 }

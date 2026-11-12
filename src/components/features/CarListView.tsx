@@ -242,7 +242,11 @@ function CarListViewContent({
             error={error}
             onRetry={refetch}
             buildHref={buildHref}
-            companyFor={(vehicle) => resolveCardCompany(vehicle, directory)}
+            companyFor={
+              rows
+                ? undefined
+                : (vehicle) => resolveCardCompany(vehicle, directory)
+            }
             isAvailable={
               filterByAvailability
                 ? (vehicle) =>

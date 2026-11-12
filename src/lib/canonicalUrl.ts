@@ -29,7 +29,3 @@ export function siteCanonicalPageUrl(
     return absoluteUrl(sitePath);
   }
 }
-
-export function platformBookingHref(token: string): string {
-  return absoluteUrl(`/booking/${encodeURIComponent(token)}`);
-}

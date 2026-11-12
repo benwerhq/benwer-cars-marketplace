@@ -21,8 +21,12 @@ export function siteBookPath(slug: string): string {
   return `${siteHomePath(slug)}/book`;
 }
 
+export function siteBookingBasePath(slug: string): string {
+  return `${siteHomePath(slug)}/booking`;
+}
+
 export function siteBookingPath(slug: string, token: string): string {
-  return `${siteHomePath(slug)}/booking/${encodeURIComponent(token)}`;
+  return `${siteBookingBasePath(slug)}/${encodeURIComponent(token)}`;
 }
 
 export function siteOwnerPath(slug: string): string {

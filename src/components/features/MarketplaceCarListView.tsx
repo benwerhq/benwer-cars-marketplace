@@ -2,12 +2,11 @@
 
 import { Suspense, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Car, SlidersHorizontal } from "lucide-react";
+import { SlidersHorizontal } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useCompanies } from "@/hooks/useCompanies";
 import { useMarketplaceVehicles } from "@/hooks/useMarketplaceVehicles";
 import { CarGridSkeleton, CarGridView } from "./CarGrid";
-import { EmptyState } from "@/components/ui/EmptyState";
 import { FilterRail, FilterRailSkeleton } from "./FilterRail";
 import { Button } from "@/components/ui/Button";
 import { Sheet } from "@/components/ui/Sheet";
@@ -15,6 +14,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { isProvinceWideLocation, resolveCitySlug } from "@/data/malagaCities";
 import { NavRoutes, SearchParams } from "@/enums";
 import {
+  countRentalDays,
   formatSearchDate,
   hasCompleteSearchDates,
   parseIsoDate,
@@ -31,7 +31,7 @@ import {
 } from "@/lib/vehicleFilters";
 import type { Vehicle } from "@/types/vehicle";
 
-const RESULTS_GRID_CLASS = "sm:grid-cols-2 xl:grid-cols-3";
+const RESULTS_GRID_CLASS = "gap-5 sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1";
 
 function MarketplaceCarListContent() {
   const t = useTranslations("cars");
@@ -48,10 +48,9 @@ function MarketplaceCarListContent() {
     ...filters,
     location,
   };
-  const { data, isPending, isError, error, refetch } = useMarketplaceVehicles(
-    marketplaceFilters,
-    hasDates,
-  );
+  const { data, isPending, isError, error, refetch } =
+    useMarketplaceVehicles(marketplaceFilters);
+  const driverAge = searchParams.get(SearchParams.DRIVER_AGE) ?? undefined;
   const companiesQuery = useCompanies(
     hasDates
       ? {
@@ -108,6 +107,7 @@ function MarketplaceCarListContent() {
       websiteUrl: listed?.websiteUrl,
       from: browse.from,
       to: browse.to,
+      params: { [SearchParams.DRIVER_AGE]: driverAge },
     });
   }
 
@@ -135,16 +135,12 @@ function MarketplaceCarListContent() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between gap-3">
-        {hasDates ? (
-          isPending ? (
-            <Skeleton className="h-4 w-36" />
-          ) : isError ? (
-            <span />
-          ) : (
-            <p className="text-sm text-muted-foreground">{resultsLabel}</p>
-          )
+        {isPending ? (
+          <Skeleton className="h-4 w-36" />
+        ) : isError ? (
+          <span />
         ) : (
-          <span className="lg:hidden" />
+          <p className="text-sm text-muted-foreground">{resultsLabel}</p>
         )}
         <Button
           type="button"
@@ -168,31 +164,29 @@ function MarketplaceCarListContent() {
           <div className="sticky top-20">{filterRail("desktop")}</div>
         </aside>
         <div className="min-w-0 flex-1">
-          {hasDates ? (
-            <CarGridView
-              vehicles={data}
-              isPending={isPending}
-              isError={isError}
-              error={error}
-              onRetry={refetch}
-              buildHref={buildHref}
-              companyFor={companyFor}
-              emptyTitle={t("searchEmptyTitle")}
-              emptyHint={t("searchEmptyHint")}
-              emptyActionLabel={
-                hasFilters ? t("clearFilters") : t("browseCompanies")
-              }
-              emptyActionHref={hasFilters ? undefined : NavRoutes.COMPANIES}
-              onClearFilters={hasFilters ? clearAdvancedFilters : undefined}
-              className={RESULTS_GRID_CLASS}
-            />
-          ) : (
-            <EmptyState
-              icon={<Car size={28} />}
-              title={t("datesRequiredTitle")}
-              description={t("datesRequiredHint")}
-            />
-          )}
+          <CarGridView
+            vehicles={data}
+            isPending={isPending}
+            isError={isError}
+            error={error}
+            onRetry={refetch}
+            buildHref={buildHref}
+            companyFor={companyFor}
+            emptyTitle={t("searchEmptyTitle")}
+            emptyHint={t("searchEmptyHint")}
+            emptyActionLabel={
+              hasFilters ? t("clearFilters") : t("browseCompanies")
+            }
+            emptyActionHref={hasFilters ? undefined : NavRoutes.COMPANIES}
+            onClearFilters={hasFilters ? clearAdvancedFilters : undefined}
+            className={RESULTS_GRID_CLASS}
+            variant="row"
+            days={
+              hasDates && filters.from && filters.to
+                ? countRentalDays(filters.from, filters.to)
+                : null
+            }
+          />
         </div>
       </div>
       <Sheet

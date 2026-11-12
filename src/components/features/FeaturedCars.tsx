@@ -9,7 +9,6 @@ import { CarGridView } from "./CarGrid";
 import { SiteSectionHeading } from "./SiteSectionHeading";
 import type { Vehicle } from "@/types/vehicle";
 
-const FEATURED_LIMIT = 4;
 const FEATURED_GRID_CLASS = "gap-5 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2";
 
 export function FeaturedCars() {
@@ -17,7 +16,6 @@ export function FeaturedCars() {
   const { data, isPending, isError, error, refetch } = useMarketplaceVehicles(
     {},
   );
-  const vehicles = data?.slice(0, FEATURED_LIMIT);
 
   function buildHref(vehicle: Vehicle): string {
     const company = companyFor(vehicle);
@@ -57,7 +55,7 @@ export function FeaturedCars() {
         }
       />
       <CarGridView
-        vehicles={vehicles}
+        vehicles={data}
         isPending={isPending}
         isError={isError}
         error={error}
@@ -69,7 +67,7 @@ export function FeaturedCars() {
         emptyActionLabel={t("viewAll")}
         emptyActionHref={NavRoutes.CARS}
         className={FEATURED_GRID_CLASS}
-        skeletonCount={FEATURED_LIMIT}
+        skeletonCount={4}
         variant="row"
       />
     </section>

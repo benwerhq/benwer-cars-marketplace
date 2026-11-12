@@ -14,8 +14,8 @@
   },
   "featuredCars": {
     "eyebrow": "Cars",
-    "title": "Popular cars",
-    "subtitle": "Live listings from partner fleets — the same cars companies manage in admin.",
+    "title": "Available cars",
+    "subtitle": "Every car partner companies have published, side by side. Pick one to book on the company's own site.",
     "viewAll": "Search all cars",
     "emptyTitle": "No cars listed yet",
     "emptyHint": "Public fleets will appear here when companies publish them."
@@ -136,8 +136,7 @@
     "pickupTrigger": "Pick-up date, {date}",
     "dropoffTrigger": "Drop-off date, {date}",
     "calendarLabel": "Select dates",
-    "submit": "Search",
-    "datesRequired": "Add pick-up and drop-off dates to search"
+    "submit": "Search"
   },
   "browseLocation": {
     "title": "Browse by location",
@@ -194,8 +193,6 @@
     "emptyHint": "This company is listed, but its cars are not published on Benwer yet. That is expected until vehicles are marked public — not a broken page.",
     "noResults": "No cars match this search",
     "noResultsHint": "Try different dates, another location, or fewer filters.",
-    "datesRequiredTitle": "Add your travel dates",
-    "datesRequiredHint": "Choose pick-up and drop-off dates to see cars. You can also change location in the search above.",
     "browseCompanies": "Browse companies",
     "clearFilters": "Clear filters",
     "searchPlaceholder": "Search cars",

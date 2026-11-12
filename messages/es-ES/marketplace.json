@@ -14,8 +14,8 @@
   },
   "featuredCars": {
     "eyebrow": "Coches",
-    "title": "Coches populares",
-    "subtitle": "Anuncios en vivo de flotas asociadas: los mismos coches que las empresas gestionan en administración.",
+    "title": "Coches disponibles",
+    "subtitle": "Todos los coches que han publicado las empresas asociadas, en un mismo lugar. Elige uno y resérvalo en la web de la empresa.",
     "viewAll": "Buscar todos los coches",
     "emptyTitle": "Aún no hay coches",
     "emptyHint": "Las flotas públicas aparecerán aquí cuando las empresas las publiquen."
@@ -136,8 +136,7 @@
     "pickupTrigger": "Fecha de recogida, {date}",
     "dropoffTrigger": "Fecha de devolución, {date}",
     "calendarLabel": "Seleccionar fechas",
-    "submit": "Buscar",
-    "datesRequired": "Añade las fechas de recogida y devolución para buscar"
+    "submit": "Buscar"
   },
   "browseLocation": {
     "title": "Explorar por ciudad",
@@ -194,8 +193,6 @@
     "emptyHint": "La empresa está listada, pero sus coches no están publicados en Benwer. Es lo esperado hasta que los marquen como públicos: la página no está rota.",
     "noResults": "Ningún coche coincide con esta búsqueda",
     "noResultsHint": "Prueba otras fechas, otra ubicación o menos filtros.",
-    "datesRequiredTitle": "Añade tus fechas de viaje",
-    "datesRequiredHint": "Elige las fechas de recogida y devolución para ver coches. También puedes cambiar la ubicación en la búsqueda de arriba.",
     "browseCompanies": "Ver empresas",
     "clearFilters": "Borrar filtros",
     "searchPlaceholder": "Buscar coches",

@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { buildPageMetadata } from "@/lib/seo";
@@ -6,7 +7,9 @@ import { MarketplaceHeader } from "@/components/layout/MarketplaceHeader";
 import { TenantHeader } from "@/components/layout/TenantHeader";
 import { Footer } from "@/components/layout/Footer";
 import { ReservationStatus } from "@/components/features/ReservationStatus";
-import { companiesApi } from "@/services/api";
+import { companiesApi, reservationsApi } from "@/services/api";
+import { buildCompanySiteHref } from "@/lib/companySite";
+import { logError } from "@/lib/logger";
 import { NavRoutes } from "@/enums";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -33,6 +36,13 @@ async function BookingStatusPage({ params }: Props) {
   const headersList = await headers();
   const tenantSlug = headersList.get("x-company-slug");
   const isTenant = Boolean(tenantSlug);
+
+  if (!isTenant) {
+    const companySiteHref = await companySiteBookingHref(token);
+    if (companySiteHref) {
+      redirect(companySiteHref);
+    }
+  }
 
   let companyName = tenantSlug ?? "";
   let logoUrl: string | null = null;
@@ -62,6 +72,24 @@ async function BookingStatusPage({ params }: Props) {
       <Footer />
     </>
   );
+}
+
+async function companySiteBookingHref(token: string): Promise<string | null> {
+  try {
+    const reservation = await reservationsApi.getByToken(token);
+    if (!reservation.companySlug) {
+      return null;
+    }
+    const company = await companiesApi.getBySlug(reservation.companySlug);
+    return buildCompanySiteHref({
+      slug: reservation.companySlug,
+      websiteUrl: company.websiteUrl,
+      path: `/booking/${encodeURIComponent(token)}`,
+    });
+  } catch (error) {
+    logError(error, { context: "booking_site_redirect" });
+    return null;
+  }
 }
 
 export default BookingStatusPage;
