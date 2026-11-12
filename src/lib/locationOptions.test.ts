@@ -25,6 +25,8 @@ function company(
     phone: partial.phone ?? null,
     address: partial.address ?? null,
     branding: { primaryColor: "", logoUrl: null },
+    branches: [],
+    allowDifferentReturn: false,
   };
 }
 

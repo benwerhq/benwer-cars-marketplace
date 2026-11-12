@@ -51,6 +51,8 @@ const listed: Company = {
     primaryColor: "#7c3aed",
     logoUrl: "/localstack/public-benwer-cars/seed/logos/med-rentacar.svg",
   },
+  branches: [],
+  allowDifferentReturn: false,
 };
 
 describe("resolveCardCompany", () => {

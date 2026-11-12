@@ -43,6 +43,8 @@ const site: PublicSite = {
     phone: null,
     address: null,
     branding: { primaryColor: "#111111", logoUrl: null },
+    branches: [],
+    allowDifferentReturn: false,
   },
   branches: [],
 };

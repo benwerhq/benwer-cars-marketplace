@@ -3,11 +3,19 @@
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { BranchCombobox } from "./BranchCombobox";
 import { CityCombobox } from "./CityCombobox";
 import { DateRangePopover } from "./DateRangePopover";
 import { DriverAgeSelect } from "./DriverAgeSelect";
 import { Skeleton } from "@/components/ui/Skeleton";
+import { Switch } from "@/components/ui/Switch";
+import { useCompanies } from "@/hooks/useCompanies";
+import {
+  branchOptionsFromCompanies,
+  companyForBranch,
+  returnBranchOptions,
+} from "@/lib/branchOptions";
 import { DEFAULT_CITY_SLUG, resolveCitySlug } from "@/data/malagaCities";
 import { DriverAgeBand, NavRoutes, SearchParams } from "@/enums";
 import { hasCompleteSearchDates } from "@/lib/dates";
@@ -35,9 +43,13 @@ function MarketplaceSearchForm({
   initialFrom,
   initialTo,
   initialDriverAge,
+  initialBranch,
+  initialReturnBranch,
   view,
   target = "cars",
 }: MarketplaceSearchBarProps & {
+  initialBranch: string;
+  initialReturnBranch: string;
   initialLocation: string;
   initialFrom: string;
   initialTo: string;
@@ -51,8 +63,39 @@ function MarketplaceSearchForm({
   const [from, setFrom] = useState(initialFrom);
   const [to, setTo] = useState(initialTo);
   const [driverAge, setDriverAge] = useState(initialDriverAge);
+  const [branch, setBranch] = useState(initialBranch);
+  const [returnBranch, setReturnBranch] = useState(initialReturnBranch);
+  const [differentReturn, setDifferentReturn] = useState(
+    Boolean(initialReturnBranch),
+  );
+  const locale = useLocale();
   const hasDates = hasCompleteSearchDates(from, to);
   const isCars = target === "cars";
+  const companiesQuery = useCompanies();
+  const companies = companiesQuery.data ?? [];
+  const branchOptions = branchOptionsFromCompanies(companies, locale);
+  const returnOptions = returnBranchOptions(companyForBranch(companies, branch));
+  const canReturnElsewhere = isCars && returnOptions.length > 0;
+  const returnElsewhere =
+    canReturnElsewhere && differentReturn && Boolean(returnBranch);
+
+  function changeBranch(next: string) {
+    setBranch(next);
+    const nextReturns = returnBranchOptions(companyForBranch(companies, next));
+    if (!nextReturns.some((option) => option.id === returnBranch)) {
+      setReturnBranch("");
+      setDifferentReturn(false);
+    }
+  }
+
+  function toggleDifferentReturn(next: boolean) {
+    setDifferentReturn(next);
+    if (next && !returnBranch) {
+      setReturnBranch(
+        returnOptions.find((option) => option.id !== branch)?.id ?? "",
+      );
+    }
+  }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -73,8 +116,14 @@ function MarketplaceSearchForm({
       ...parseVehicleFilters(searchParams),
       from: hasDates ? from : undefined,
       to: hasDates ? to : undefined,
+      branchId: branch || undefined,
     });
     next.set(SearchParams.LOCATION, location || DEFAULT_CITY_SLUG);
+    if (returnElsewhere && returnBranch !== branch) {
+      next.set(SearchParams.RETURN_BRANCH, returnBranch);
+    } else {
+      next.delete(SearchParams.RETURN_BRANCH);
+    }
     next.set(SearchParams.DRIVER_AGE, driverAge);
     router.push(`${NavRoutes.CARS}?${next.toString()}`);
   }
@@ -86,7 +135,25 @@ function MarketplaceSearchForm({
       className={cn(CARD_CLASS, className)}
     >
       {isCars ? (
-        <div className={TOP_BAR_CLASS}>
+        <div
+          className={cn(
+            TOP_BAR_CLASS,
+            canReturnElsewhere && "justify-between",
+          )}
+        >
+          {canReturnElsewhere ? (
+            <label
+              htmlFor="marketplace-different-return"
+              className="inline-flex cursor-pointer items-center gap-2.5 text-sm text-foreground"
+            >
+              <Switch
+                id="marketplace-different-return"
+                checked={differentReturn}
+                onCheckedChange={toggleDifferentReturn}
+              />
+              {t("differentReturn")}
+            </label>
+          ) : null}
           <DriverAgeSelect
             id="marketplace-driver-age"
             value={driverAge}
@@ -96,13 +163,33 @@ function MarketplaceSearchForm({
       ) : null}
       <div className={ROW_CLASS}>
         <div className="min-w-0 md:flex-1">
-          <CityCombobox
-            value={location}
-            onChange={setLocation}
-            from={isCars ? from : undefined}
-            to={isCars ? to : undefined}
-          />
+          {isCars ? (
+            <BranchCombobox
+              label={t("locationLabel")}
+              value={branch}
+              options={branchOptions}
+              onChange={changeBranch}
+              anyLabel={t("allLocations")}
+              anyHint={t("branchAnyHint")}
+              loading={companiesQuery.isPending}
+            />
+          ) : (
+            <CityCombobox value={location} onChange={setLocation} />
+          )}
         </div>
+        {canReturnElsewhere && differentReturn ? (
+          <>
+            <span aria-hidden className={DIVIDER_CLASS} />
+            <div className="min-w-0 md:flex-1">
+              <BranchCombobox
+                label={t("returnLocationLabel")}
+                value={returnBranch}
+                options={returnOptions}
+                onChange={setReturnBranch}
+              />
+            </div>
+          </>
+        ) : null}
         {isCars ? (
           <>
             <span aria-hidden className={DIVIDER_CLASS} />
@@ -140,15 +227,19 @@ export function MarketplaceSearchBar({
   const toParam = searchParams.get(SearchParams.TO) ?? "";
   const viewParam = searchParams.get(SearchParams.VIEW) ?? "";
   const ageParam = searchParams.get(SearchParams.DRIVER_AGE);
+  const branchParam = searchParams.get(SearchParams.BRANCH) ?? "";
+  const returnParam = searchParams.get(SearchParams.RETURN_BRANCH) ?? "";
 
   return (
     <MarketplaceSearchForm
-      key={`${locationParam ?? ""}|${fromParam}|${toParam}|${viewParam}|${ageParam ?? ""}|${target}`}
+      key={`${locationParam ?? ""}|${fromParam}|${toParam}|${viewParam}|${ageParam ?? ""}|${branchParam}|${returnParam}|${target}`}
       className={className}
       initialLocation={resolveCitySlug(locationParam)}
       initialFrom={fromParam}
       initialTo={toParam}
       initialDriverAge={parseDriverAge(ageParam)}
+      initialBranch={branchParam}
+      initialReturnBranch={returnParam}
       view={viewParam || undefined}
       target={target}
     />

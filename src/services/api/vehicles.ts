@@ -124,7 +124,7 @@ async function searchLiveMarketplace(
     : filters?.companySlug
       ? [filters.companySlug]
       : [];
-  const companies = selectedSlugs.length
+  const listed = selectedSlugs.length
     ? (
         await Promise.all(
           selectedSlugs.map((slug) =>
@@ -138,6 +138,12 @@ async function searchLiveMarketplace(
         to: filters?.to,
         q: filters?.q,
       });
+  const branchId = filters?.branchId;
+  const companies = branchId
+    ? listed.filter((company) =>
+        company.branches.some((branch) => branch.id === branchId),
+      )
+    : listed;
 
   const fleets = await Promise.all(
     companies.map(async (company) => {
@@ -149,6 +155,7 @@ async function searchLiveMarketplace(
         to: filters?.to,
         q: filters?.q,
         sort: filters?.sort,
+        branchId,
       });
       return vehicles.map((vehicle) => ({ ...vehicle, company }));
     }),

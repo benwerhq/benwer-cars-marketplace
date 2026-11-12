@@ -136,7 +136,13 @@
     "pickupTrigger": "Pick-up date, {date}",
     "dropoffTrigger": "Drop-off date, {date}",
     "calendarLabel": "Select dates",
-    "submit": "Search"
+    "submit": "Search",
+    "returnLocationLabel": "Drop-off location",
+    "differentReturn": "Return to a different location",
+    "branchChoose": "Choose a location",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Loading locations…",
+    "branchAnyHint": "Every branch with cars"
   },
   "browseLocation": {
     "title": "Browse by location",

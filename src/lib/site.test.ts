@@ -57,6 +57,8 @@ function site(overrides: Partial<PublicSite> = {}): PublicSite {
       phone: null,
       address: null,
       branding: { primaryColor: "", logoUrl: null },
+      branches: [],
+      allowDifferentReturn: false,
     },
     branches: [],
     ...overrides,

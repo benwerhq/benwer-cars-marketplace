@@ -136,7 +136,13 @@
     "pickupTrigger": "Fecha de recogida, {date}",
     "dropoffTrigger": "Fecha de devolución, {date}",
     "calendarLabel": "Seleccionar fechas",
-    "submit": "Buscar"
+    "submit": "Buscar",
+    "returnLocationLabel": "Lugar de devolución",
+    "differentReturn": "Devolver en otro lugar",
+    "branchChoose": "Elige un lugar",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Cargando ubicaciones…",
+    "branchAnyHint": "Todas las oficinas con coches"
   },
   "browseLocation": {
     "title": "Explorar por ciudad",

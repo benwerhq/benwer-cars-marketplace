@@ -18,7 +18,7 @@ import type {
   AvailabilityQuery,
   AvailabilityRange,
 } from "@/types/availability";
-import type { Company } from "@/types/company";
+import type { Company, CompanyBranch } from "@/types/company";
 import type { InsurancePackageQuote } from "@/types/insurance";
 import type {
   PriceBreakdown,
@@ -320,6 +320,20 @@ function readPhotos(row: Record<string, unknown>): string[] {
   return [...new Set(collected)];
 }
 
+function mapCompanyBranches(raw: unknown): CompanyBranch[] {
+  if (!Array.isArray(raw)) {
+    return [];
+  }
+  return raw.flatMap((item: unknown) => {
+    const row = isRecord(item) ? item : {};
+    const id = readId(row.id);
+    const name = readString(row.name);
+    return id && name
+      ? [{ id, name, address: readString(row.address) ?? "" }]
+      : [];
+  });
+}
+
 export function mapCompany(raw: unknown): Company {
   const row = isRecord(raw) ? raw : {};
   const branding = isRecord(row.branding) ? row.branding : {};
@@ -363,6 +377,8 @@ export function mapCompany(raw: unknown): Company {
         readPhotoUrl(row.logo) ??
         null,
     },
+    branches: mapCompanyBranches(row.branches),
+    allowDifferentReturn: readBoolean(row.allowDifferentReturn) ?? false,
   };
 }
 
