@@ -16,12 +16,15 @@ import { prefetchAvailabilityState } from "@/lib/prefetchAvailability";
 import {
   SITE_CHANNEL,
   canAcceptBookings,
+  cartHrefFromHome,
   companySlugFromSite,
   isRequestBooking,
   isSitePaused,
   isTenantHostRequest,
+  parseDriverAge,
   publicSiteHref,
   publicSiteHomeHref,
+  queryString,
   siteBookHref,
   siteCarPath,
 } from "@/lib/site";
@@ -102,6 +105,8 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
     typeof query[SearchParams.RETURN_BRANCH] === "string"
       ? query[SearchParams.RETURN_BRANCH]
       : undefined;
+  const ageParam = queryString(query, SearchParams.DRIVER_AGE);
+  const driverAge = ageParam ? parseDriverAge(ageParam) : undefined;
 
   let site;
   try {
@@ -134,6 +139,7 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
       to,
       branch,
       returnBranch: site.allowDifferentReturn ? returnBranch : undefined,
+      driverAge,
       preview,
     }),
     site.slug,
@@ -146,6 +152,7 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
         companyName={site.company.name}
         logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
         homeHref={homeHref}
+        cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 md:px-6 lg:px-8">
@@ -168,6 +175,13 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
             bookHrefOverride={bookHref}
             requestMode={isRequestBooking(site)}
             channel={SITE_CHANNEL}
+            cart={{
+              slug,
+              href: cartHrefFromHome(homeHref),
+              branch,
+              returnBranch: site.allowDifferentReturn ? returnBranch : undefined,
+              driverAge,
+            }}
           />
         </HydrationBoundary>
         <JsonLd

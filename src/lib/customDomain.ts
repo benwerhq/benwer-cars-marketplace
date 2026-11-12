@@ -64,7 +64,8 @@ export function rewriteCustomDomainPath(
     path === "/guest" ||
     path.startsWith("/guest/") ||
     path === "/privacy" ||
-    path === "/terms"
+    path === "/terms" ||
+    path === "/cart"
   ) {
     return `${siteRoot}${path}`;
   }

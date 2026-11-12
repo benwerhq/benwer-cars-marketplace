@@ -93,6 +93,14 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
+/**
+ * Guest auth when this page has a GuestAuthProvider (company sites), or null
+ * (the marketplace /book page has no guest accounts).
+ */
+export function useOptionalGuestAuth(): GuestAuthContextValue | null {
+  return useContext(GuestAuthContext);
+}
+
 export function useGuestAuth(): GuestAuthContextValue {
   const value = useContext(GuestAuthContext);
   if (!value) {

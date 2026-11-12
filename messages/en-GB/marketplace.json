@@ -353,7 +353,26 @@
     "warningMinDays": "Rentals in this season must last at least {limit, plural, one {# day} other {# days}}. Change your dates to book.",
     "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book.",
     "returnLocation": "Return location",
-    "oneWayFee": "Different return location fee"
+    "oneWayFee": "Different return location fee",
+    "signedInAs": "Signed in as {email}",
+    "signInPrompt": "Have an account?",
+    "signInLink": "Sign in to fill in your details",
+    "subtitleSignedIn": "Check your details and confirm.",
+    "trustPaymentAfter": "Payment details follow after booking",
+    "extras": "Extras",
+    "extraPerDay": "{price} / day",
+    "extraFixed": "{price} / rental",
+    "tripDetails": "Trip details",
+    "pickupTime": "Pick-up time",
+    "returnTime": "Drop-off time",
+    "timeAny": "Any time",
+    "flightNumber": "Flight number",
+    "flightNumberHint": "Your pick-up is at an airport. Add your flight so the company can follow delays.",
+    "flightNumberOptional": "Add it if you arrive by plane.",
+    "notes": "Comments",
+    "notesPlaceholder": "Anything the company should know?",
+    "dateOfBirth": "Date of birth",
+    "optional": "optional"
   },
   "reservationStatus": {
     "title": "Your reservation",
@@ -404,7 +423,10 @@
       "request_expired": "The company did not answer in time",
       "request_declined": "The company declined this request",
       "customer_request": "You withdrew this request"
-    }
+    },
+    "insurance": "Insurance",
+    "extras": "Extras",
+    "fees": "Pickup and return fees"
   },
   "payment": {
     "title": "Pay the advance",
@@ -711,7 +733,15 @@
     "linkCancel": "Cancel",
     "unlinked": "Your bookings are no longer linked to this account.",
     "eraseTitle": "Erase my data",
-    "eraseHint": "Deletes your guest data for this company and signs you out. Other companies are not affected."
+    "eraseHint": "Deletes your guest data for this company and signs you out. Other companies are not affected.",
+    "profileDetailsTitle": "Your details",
+    "profileDetailsHint": "Used to fill in your bookings with this company.",
+    "profileFullName": "Full name",
+    "profilePhone": "Phone number",
+    "profileDob": "Date of birth",
+    "profileSave": "Save details",
+    "profileSaved": "Details saved.",
+    "profileNotLinked": "Link your bookings first to save your details here."
   },
   "siteSections": {
     "banners": {
@@ -1152,5 +1182,43 @@
   },
   "siteLegal": {
     "byCompany": "Published by {name}."
+  },
+  "cart": {
+    "title": "Your cart",
+    "subtitle": "Book several cars in one go. Your driver details are asked once.",
+    "notHeld": "Cars in your cart are not held until you book. Availability and prices are checked again at checkout.",
+    "empty": "Your cart is empty",
+    "emptyHint": "Add cars from the fleet to book them together.",
+    "browse": "Browse the fleet",
+    "add": "Add to cart",
+    "added": "Added to your cart",
+    "view": "View cart",
+    "open": "Cart, {count, plural, one {# car} other {# cars}}",
+    "full": "Your cart is full (max {max} cars).",
+    "remove": "Remove",
+    "edit": "Edit",
+    "done": "Done",
+    "bookOnly": "Book just this car",
+    "from": "Pick-up",
+    "to": "Drop-off",
+    "insurance": "Insurance",
+    "noInsurance": "No extra insurance",
+    "oneWayFee": "One-way fee",
+    "checking": "Checking availability...",
+    "unavailable": "Not available for these dates. Change the dates or remove it.",
+    "invalidDates": "Choose valid dates for this car.",
+    "vehicleMissing": "This car is no longer offered.",
+    "total": "Total for {count, plural, one {# car} other {# cars}}",
+    "checkoutTitle": "Driver details",
+    "checkoutHint": "Used for every booking in your cart.",
+    "bookAll": "Book {count, plural, one {# car} other {# cars}}",
+    "booking": "Booking...",
+    "fixItems": "Fix or remove the cars that can't be booked first.",
+    "resultsTitle": "Your bookings",
+    "resultBooked": "booked",
+    "resultFailed": "not booked",
+    "viewBooking": "View booking",
+    "partial": "Some cars could not be booked. They stay in your cart.",
+    "allBooked": "All set. Confirmations are on their way to your email."
   }
 }

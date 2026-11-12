@@ -52,15 +52,19 @@ export function CompanyDirectory({
       ? locationLabelFromSlug(location, locale)
       : null;
 
+  const searchFrom = searchParams.get(SearchParams.FROM) || undefined;
+  const searchTo = searchParams.get(SearchParams.TO) || undefined;
   const pins = useMemo(
     () =>
       toCompanyMapPins(companies ?? [], (company) =>
         buildCompanySiteHref({
           slug: company.slug,
           websiteUrl: company.websiteUrl,
+          from: searchFrom,
+          to: searchTo,
         }),
       ),
-    [companies],
+    [companies, searchFrom, searchTo],
   );
 
   function setMobileView(view: "list" | "map") {
@@ -84,6 +88,8 @@ export function CompanyDirectory({
     return buildCompanySiteHref({
       slug: company.slug,
       websiteUrl: company.websiteUrl,
+      from: searchFrom,
+      to: searchTo,
     });
   }
 

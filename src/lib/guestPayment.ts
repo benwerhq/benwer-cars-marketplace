@@ -1,5 +1,6 @@
 import {
   CaptureMethod,
+  PaymentChannel,
   PaymentStatus,
   ReservationStatus,
 } from "@/enums";
@@ -82,9 +83,13 @@ export function needsOnlinePayment(reservation: GuestReservation): boolean {
     return false;
   }
 
+  // advanceDue is computed from the company's settings for every booking,
+  // even ones confirmed without online payment (no Stripe account, payments
+  // feature off). Only website-channel bookings can be paid online.
   return (
     reservation.onlinePaymentRequired ||
-    reservation.advanceDue > 0
+    (reservation.advanceDue > 0 &&
+      reservation.paymentChannel === PaymentChannel.WEBSITE)
   );
 }
 

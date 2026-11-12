@@ -804,6 +804,91 @@
           "public"
         ]
       }
+    },
+    "/v1/public/companies/{slug}/guest/me": {
+      "get": {
+        "operationId": "GuestsController_me",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "minLength": 1,
+              "maxLength": 120,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuestMeDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Guest identity at this company",
+        "tags": [
+          "public"
+        ]
+      },
+      "patch": {
+        "operationId": "GuestsController_updateMe",
+        "description": "Requires a linked guest (guest.not_linked otherwise). Only the sent fields change. Email is not editable here.",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "minLength": 1,
+              "maxLength": 120,
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateGuestProfileDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuestMeDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Update the linked customer's name, phone or date of birth",
+        "tags": [
+          "public"
+        ]
+      }
     }
   },
   "components": {
@@ -2472,6 +2557,32 @@
             "type": "string",
             "format": "uuid",
             "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "pickupTime": {
+            "type": "string",
+            "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+            "description": "Local time at the branch, HH:MM (24h)."
+          },
+          "returnTime": {
+            "type": "string",
+            "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+            "description": "Local time at the branch, HH:MM (24h)."
+          },
+          "flightNumber": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9 -]{1,15}$",
+            "description": "Arrival flight, saved as a staff note on the booking."
+          },
+          "notes": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "Guest comments, saved as a staff note on the booking."
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+            "description": "Main driver's date of birth. Fills the customer record when it has none."
           }
         },
         "required": [
@@ -11526,6 +11637,41 @@
               "source"
             ],
             "nullable": true
+          },
+          "guestPhone": {
+            "type": "string",
+            "nullable": true,
+            "description": "Phone on the booking customer, E.164."
+          },
+          "vehicleYear": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Null for bookings without an assigned car."
+          },
+          "pickupTime": {
+            "type": "string",
+            "nullable": true,
+            "description": "HH:MM at the pickup branch, when the guest chose one."
+          },
+          "returnTime": {
+            "type": "string",
+            "nullable": true,
+            "description": "HH:MM at the return branch, when the guest chose one."
+          },
+          "extrasTotal": {
+            "type": "number",
+            "nullable": true,
+            "description": "Booked extras. Null when not computed for this view."
+          },
+          "feesTotal": {
+            "type": "number",
+            "nullable": true,
+            "description": "Location fees such as a one-way return. Null when not computed for this view."
+          },
+          "grandTotal": {
+            "type": "number",
+            "nullable": true,
+            "description": "Everything the guest owes: car, insurance, extras, fees and staff adjustments. Null when not computed for this view."
           }
         },
         "required": [
@@ -11543,7 +11689,14 @@
           "totalDays",
           "totalAmount",
           "status",
-          "insurance"
+          "insurance",
+          "guestPhone",
+          "vehicleYear",
+          "pickupTime",
+          "returnTime",
+          "extrasTotal",
+          "feesTotal",
+          "grandTotal"
         ]
       },
       "ImpersonateDto": {
@@ -23951,6 +24104,87 @@
           "resetsAt",
           "plan"
         ]
+      },
+      "GuestMeDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailVerified": {
+            "type": "boolean"
+          },
+          "linked": {
+            "type": "boolean"
+          },
+          "customer": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "fullName": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string",
+                "nullable": true
+              },
+              "phone": {
+                "type": "string"
+              },
+              "dateOfBirth": {
+                "type": "string",
+                "format": "date",
+                "nullable": true
+              }
+            },
+            "required": [
+              "id",
+              "fullName",
+              "email",
+              "phone",
+              "dateOfBirth"
+            ],
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "email",
+          "emailVerified",
+          "linked",
+          "customer"
+        ]
+      },
+      "UpdateGuestProfileDto": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "phone": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 40
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+            "nullable": true,
+            "description": "null clears it."
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {

@@ -3,6 +3,7 @@ import { Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteGuestLink, SiteOwnerMenu } from "./SiteGuestLink";
+import { SiteCartLink } from "./SiteCartLink";
 import { SiteHeaderMark } from "./SiteHeaderMark";
 import { SiteNav } from "./SiteNav";
 import type { SiteSectionId } from "@/enums";
@@ -15,6 +16,8 @@ interface SiteHeaderProps {
   fleetHref: string;
   sections?: SiteSectionId[];
   phone?: string | null;
+  /** Company site slug; shows the cart icon when set. */
+  cartSlug?: string;
   className?: string;
 }
 
@@ -25,6 +28,7 @@ export async function SiteHeader({
   fleetHref,
   sections,
   phone,
+  cartSlug,
   className,
 }: SiteHeaderProps) {
   const t = await getTranslations("site");
@@ -55,6 +59,7 @@ export async function SiteHeader({
               {phone}
             </a>
           ) : null}
+          {cartSlug ? <SiteCartLink slug={cartSlug} homeHref={homeHref} /> : null}
           <SiteGuestLink homeHref={homeHref} />
           <LocaleSwitcher />
           <SiteOwnerMenu homeHref={homeHref} />

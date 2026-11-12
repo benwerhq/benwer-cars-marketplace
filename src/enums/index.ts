@@ -177,6 +177,7 @@ export enum NavRoutes {
   SITE_GUEST_BOOKINGS = "/s/:slug/guest/bookings",
   SITE_GUEST_CONFIRM = "/s/:slug/guest/confirm",
   SITE_GUEST_PROFILE = "/s/:slug/guest/profile",
+  SITE_CART = "/s/:slug/cart",
 }
 
 export enum SearchParams {
@@ -197,6 +198,7 @@ export enum SearchParams {
   DRIVER_AGE = "age",
   EDIT = "edit",
   TOKEN = "token",
+  NEXT = "next",
 }
 
 export enum SiteFontFamily {

@@ -14,7 +14,12 @@ import {
   isSitePaused,
   sitePathFromHome,
 } from "@/lib/site";
-import { visibleSections, whatsappHref, siteCompanyLogo } from "@/lib/siteContent";
+import {
+  hasSiteAppLinks,
+  visibleSections,
+  whatsappHref,
+  siteCompanyLogo,
+} from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { PublicSite } from "@/types/site";
 import { SiteAppSection } from "./SiteAppSection";
@@ -176,7 +181,10 @@ function LowerSection({
     case SiteSectionId.REVIEWS:
       return <SiteReviewsSection reviews={site.content.reviews} />;
     case SiteSectionId.APP:
-      return <SiteAppSection app={site.content.app} />;
+      // Owners still see the section in the editor preview to fill it in.
+      return hasSiteAppLinks(site.content.app) || site.isPreview ? (
+        <SiteAppSection app={site.content.app} />
+      ) : null;
     case SiteSectionId.BRANCHES:
       return (
         <SiteLocationsSection

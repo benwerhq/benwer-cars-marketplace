@@ -17,7 +17,13 @@ function reservationBody(payload: CreateGuestReservationPayload) {
     ...(payload.insurancePackageId
       ? { insurancePackageId: payload.insurancePackageId }
       : {}),
+    ...(payload.addonIds?.length ? { addonIds: payload.addonIds.slice(0, 20) } : {}),
     ...(payload.returnBranchId ? { returnBranchId: payload.returnBranchId } : {}),
+    ...(payload.pickupTime ? { pickupTime: payload.pickupTime } : {}),
+    ...(payload.returnTime ? { returnTime: payload.returnTime } : {}),
+    ...(payload.flightNumber?.trim() ? { flightNumber: payload.flightNumber.trim() } : {}),
+    ...(payload.notes?.trim() ? { notes: payload.notes.trim() } : {}),
+    ...(payload.dateOfBirth ? { dateOfBirth: payload.dateOfBirth } : {}),
     ...(payload.channel ? { channel: payload.channel } : {}),
     ...(payload.acceptTerms !== undefined
       ? { acceptTerms: payload.acceptTerms }

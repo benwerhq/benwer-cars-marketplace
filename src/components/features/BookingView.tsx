@@ -2,7 +2,19 @@
 
 import { SearchParams } from "@/enums";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import {
+  BookingTripFields,
+  EMPTY_TRIP_DETAILS,
+  type BookingTripDetails,
+} from "./BookingTripFields";
+import { useExtras } from "@/hooks/useExtras";
+import {
+  extraLineTotal,
+  extrasTotal,
+  guestBookingFieldsEnabled,
+  isAirportBranch,
+} from "@/lib/extras";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -17,10 +29,18 @@ import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useCreateReservation } from "@/hooks/useCreateReservation";
 import { useInsurancePackages } from "@/hooks/useInsurancePackages";
+import { useGuestPrefill } from "@/hooks/useGuestAccount";
+import { withReturnTo } from "@/lib/returnTo";
 import { useOneWayFee } from "@/hooks/useOneWayFee";
 import { usePriceQuote } from "@/hooks/usePriceQuote";
 import type { SiteBranch } from "@/types/site";
 import { buildBookHref } from "@/lib/booking";
+import {
+  bookingDraftKey,
+  clearBookingDraft,
+  readBookingDraft,
+  writeBookingDraft,
+} from "@/lib/bookingDraft";
 import { localizedText } from "@/lib/localizedCopy";
 import {
   createBookingSchema,
@@ -59,7 +79,13 @@ interface BookingViewProps {
   confirmationBaseUrl?: string;
   bookHrefBase?: string;
   returnLocation?: SiteBranch | null;
+  /** Company-site sign-in page; shows the sign-in link when set. */
+  guestSignInHref?: string;
+  /** Where the car is picked up; an airport asks for the flight number. */
+  pickupBranch?: SiteBranch | null;
 }
+
+const noopSubscribe = () => () => {};
 
 function withBookingDates(base: string, from: string, to: string): string {
   const url = new URL(base, window.location.origin);
@@ -93,6 +119,8 @@ export function BookingView({
   confirmationBaseUrl,
   bookHrefBase,
   returnLocation = null,
+  guestSignInHref,
+  pickupBranch = null,
 }: BookingViewProps) {
   const router = useRouter();
   const t = useTranslations("booking");
@@ -147,7 +175,95 @@ export function BookingView({
       channel,
     },
   );
-  const [insurancePackageId, setInsurancePackageId] = useState("");
+  const draftKey = bookingDraftKey(companySlug, vehicle.id);
+  // The insurance list only renders after a client fetch, so reading the
+  // draft here cannot cause a hydration mismatch.
+  const [insurancePackageId, setInsurancePackageId] = useState(
+    () => readBookingDraft(draftKey)?.insurancePackageId ?? "",
+  );
+  const selectedInsurance = insurancePackageId
+    ? (insuranceQuery.data ?? []).find((pack) => pack.packageId === insurancePackageId)
+    : undefined;
+  const insuranceTotal = selectedInsurance?.total ?? 0;
+
+  // Extras are sent as addonIds, which the API already accepts. The trip
+  // fields wait for the API change (see guestBookingFieldsEnabled).
+  const tripFieldsOn = guestBookingFieldsEnabled();
+  const isClient = useSyncExternalStore(noopSubscribe, () => true, () => false);
+  const extrasQuery = useExtras(channel ? companySlug : "", channel);
+  const [addonIds, setAddonIds] = useState<string[]>(
+    () => readBookingDraft(draftKey)?.addonIds ?? [],
+  );
+  const [tripDetails, setTripDetails] = useState<BookingTripDetails>(() => {
+    const draft = readBookingDraft(draftKey);
+    return {
+      pickupTime: draft?.pickupTime ?? "",
+      returnTime: draft?.returnTime ?? "",
+      flightNumber: draft?.flightNumber ?? "",
+      notes: draft?.notes ?? "",
+      dateOfBirth: draft?.dateOfBirth ?? EMPTY_TRIP_DETAILS.dateOfBirth,
+    };
+  });
+  const availableExtras = extrasQuery.data ?? [];
+  const extrasSum = extrasTotal(availableExtras, addonIds, days);
+  const selectedExtras = availableExtras.filter((extra) => addonIds.includes(extra.id));
+
+  // Keep what the guest typed across Change dates, back, refresh and a
+  // language switch. Dates in the URL win over the saved draft.
+  const watchedValues = useWatch({ control: form.control });
+
+  useEffect(() => {
+    const draft = readBookingDraft(draftKey);
+    if (draft) {
+      const fill = { shouldDirty: true } as const;
+      if (draft.guestName) form.setValue("guestName", draft.guestName, fill);
+      if (draft.guestEmail) form.setValue("guestEmail", draft.guestEmail, fill);
+      if (draft.guestPhone) form.setValue("guestPhone", draft.guestPhone, fill);
+      if (draft.acceptTerms) form.setValue("acceptTerms", true, fill);
+      if (!initialRange.from && !initialRange.to) {
+        const saved = sanitizeDateRange(draft.startDate ?? "", draft.endDate ?? "");
+        if (saved.from) form.setValue("startDate", saved.from, fill);
+        if (saved.to) form.setValue("endDate", saved.to, fill);
+      }
+    }
+    // Restore once per car; the URL dates are read at mount on purpose.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [draftKey]);
+
+  // Prefill from the signed-in guest. Only empty fields are filled, so what
+  // the guest typed (or restored from the draft) is never overwritten.
+  const prefill = useGuestPrefill(companySlug);
+  useEffect(() => {
+    if (!prefill.signedIn) {
+      return;
+    }
+    const fill = { shouldDirty: true } as const;
+    const fields = [
+      ["guestEmail", prefill.email],
+      ["guestName", prefill.fullName],
+      ["guestPhone", prefill.phone],
+    ] as const;
+    for (const [field, value] of fields) {
+      if (value && !form.getValues(field)) {
+        form.setValue(field, value, fill);
+      }
+    }
+  }, [form, prefill.email, prefill.fullName, prefill.phone, prefill.signedIn]);
+
+  // Runs after the restore effect above, which has already read the draft.
+  useEffect(() => {
+    writeBookingDraft(draftKey, {
+      guestName: watchedValues.guestName,
+      guestEmail: watchedValues.guestEmail,
+      guestPhone: watchedValues.guestPhone,
+      acceptTerms: watchedValues.acceptTerms,
+      startDate: watchedValues.startDate,
+      endDate: watchedValues.endDate,
+      insurancePackageId,
+      addonIds,
+      ...tripDetails,
+    });
+  }, [addonIds, draftKey, insurancePackageId, tripDetails, watchedValues]);
   const oneWayFeeQuery = useOneWayFee(companySlug, {
     vehicleId: vehicle.id,
     startDate: days > 0 ? startDate : "",
@@ -162,7 +278,10 @@ export function BookingView({
   const total =
     days > 0
       ? formatMoney(
-          (quote?.vehicleSubtotal ?? days * vehicle.pricePerDay) + (oneWayFee ?? 0),
+          (quote?.vehicleSubtotal ?? days * vehicle.pricePerDay) +
+            (oneWayFee ?? 0) +
+            insuranceTotal +
+            extrasSum,
           vehicle.currency,
           locale,
         )
@@ -187,6 +306,7 @@ export function BookingView({
   const { mutateAsync, isPending } = useCreateReservation({
     companySlug,
     onSuccess: (reservation) => {
+      clearBookingDraft(draftKey);
       router.push(
         confirmationBaseUrl
           ? `${confirmationBaseUrl.replace(/\/$/, "")}/${encodeURIComponent(reservation.token)}`
@@ -211,6 +331,16 @@ export function BookingView({
         guestEmail: values.guestEmail,
         guestPhone: values.guestPhone,
         insurancePackageId: insurancePackageId || undefined,
+        addonIds: selectedExtras.map((extra) => extra.id),
+        ...(tripFieldsOn
+          ? {
+              pickupTime: tripDetails.pickupTime || undefined,
+              returnTime: tripDetails.returnTime || undefined,
+              flightNumber: tripDetails.flightNumber || undefined,
+              notes: tripDetails.notes || undefined,
+              dateOfBirth: tripDetails.dateOfBirth || prefill.dateOfBirth || undefined,
+            }
+          : {}),
         returnBranchId: returnLocation?.id,
         channel,
         acceptTerms: channel ? values.acceptTerms : undefined,
@@ -238,6 +368,102 @@ export function BookingView({
 
   const carName = `${vehicle.brand} ${vehicle.model}`;
 
+  // Shown inside the form, above the terms checkbox, so the guest picks
+  // cover before accepting the terms.
+  const insuranceSection =
+    showInsurance && insuranceQuery.data && insuranceQuery.data.length > 0 ? (
+      <fieldset className="flex flex-col gap-2 rounded-xl border border-border bg-surface p-4">
+        <legend className="px-1 text-sm font-medium text-foreground">
+          {t("insurance")}
+        </legend>
+        {insuranceQuery.data.map((pack) => {
+          const name =
+            localizedText(pack.name, locale) || pack.code || pack.packageId;
+          return (
+            <label
+              key={pack.packageId}
+              className="flex cursor-pointer items-start gap-3 rounded-lg px-2 py-2 hover:bg-surface-hover"
+            >
+              <input
+                type="radio"
+                name="insurancePackageId"
+                value={pack.packageId}
+                checked={insurancePackageId === pack.packageId}
+                onChange={() => setInsurancePackageId(pack.packageId)}
+                className="mt-1"
+              />
+              <span className="flex min-w-0 flex-col">
+                <span className="text-sm font-medium text-foreground">
+                  {name}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {formatMoney(pack.total, vehicle.currency, locale)}
+                </span>
+              </span>
+            </label>
+          );
+        })}
+      </fieldset>
+    ) : null;
+
+  const extrasSection =
+    availableExtras.length > 0 ? (
+      <fieldset className="flex flex-col gap-2 rounded-xl border border-border bg-surface p-4">
+        <legend className="px-1 text-sm font-medium text-foreground">{t("extras")}</legend>
+        {availableExtras.map((extra) => {
+          const soldOut = extra.availableQuantity !== null && extra.availableQuantity <= 0;
+          const price = formatMoney(extra.price, vehicle.currency, locale);
+          const description = localizedText(extra.shortDescription, locale);
+          return (
+            <label
+              key={extra.id}
+              className={cn(
+                "flex items-start gap-3 rounded-lg px-2 py-2",
+                soldOut ? "opacity-50" : "cursor-pointer hover:bg-surface-hover",
+              )}
+            >
+              <input
+                type="checkbox"
+                className="mt-1"
+                disabled={soldOut}
+                checked={addonIds.includes(extra.id)}
+                onChange={(event) =>
+                  setAddonIds((current) =>
+                    event.target.checked
+                      ? [...current.filter((id) => id !== extra.id), extra.id].slice(0, 20)
+                      : current.filter((id) => id !== extra.id),
+                  )
+                }
+              />
+              <span className="flex min-w-0 flex-col">
+                <span className="text-sm font-medium text-foreground">
+                  {localizedText(extra.name, locale) || extra.kind}
+                </span>
+                {description ? (
+                  <span className="text-xs text-muted-foreground">{description}</span>
+                ) : null}
+                <span className="text-xs text-muted-foreground">
+                  {extra.type === "per_day"
+                    ? t("extraPerDay", { price })
+                    : t("extraFixed", { price })}
+                </span>
+              </span>
+            </label>
+          );
+        })}
+      </fieldset>
+    ) : null;
+
+  const tripSection =
+    tripFieldsOn && isClient ? (
+      <BookingTripFields
+        value={tripDetails}
+        onChange={(patch) => setTripDetails((current) => ({ ...current, ...patch }))}
+        airport={isAirportBranch(pickupBranch)}
+        dateOfBirthFallback={prefill.dateOfBirth}
+      />
+    ) : null;
+
   return (
     <FormProvider {...form}>
       <div className="flex flex-col gap-6">
@@ -253,15 +479,49 @@ export function BookingView({
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">
             {t("title")}
           </h1>
-          <p className="mt-2 text-sm text-muted-foreground">{t("subtitle")}</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {prefill.signedIn ? t("subtitleSignedIn") : t("subtitle")}
+          </p>
         </div>
 
+        {prefill.available && prefill.ready ? (
+          prefill.signedIn ? (
+            <p className="text-sm text-muted-foreground">
+              {t("signedInAs", { email: prefill.email })}
+            </p>
+          ) : guestSignInHref ? (
+            <p className="text-sm text-muted-foreground">
+              {t("signInPrompt")}{" "}
+              <Link
+                href={guestSignInHref}
+                onClick={(event) => {
+                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) {
+                    return;
+                  }
+                  event.preventDefault();
+                  router.push(
+                    withReturnTo(
+                      guestSignInHref,
+                      `${window.location.pathname}${window.location.search}`,
+                    ),
+                  );
+                }}
+                className="font-medium text-primary hover:text-primary-hover"
+              >
+                {t("signInLink")}
+              </Link>
+            </p>
+          ) : null
+        ) : null}
+
         <ul className="flex flex-wrap gap-2">
-          <TrustPill icon={ShieldCheck} label={t("trustNoAccount")} />
+          {prefill.signedIn ? null : (
+            <TrustPill icon={ShieldCheck} label={t("trustNoAccount")} />
+          )}
           <TrustPill icon={Mail} label={t("trustEmail")} />
           <TrustPill
             icon={Wallet}
-            label={channel ? t("trustCardPayment") : t("trustNoPayment")}
+            label={channel ? t("trustPaymentAfter") : t("trustNoPayment")}
           />
         </ul>
 
@@ -305,46 +565,23 @@ export function BookingView({
         >
           <div className="lg:col-span-3">
             {bookingsEnabled ? (
-              <BookingForm carHref={carHref} requireTerms={requireTerms} />
+              <BookingForm
+                carHref={carHref}
+                requireTerms={requireTerms}
+                beforeTerms={
+                  <>
+                    {insuranceSection}
+                    {extrasSection}
+                    {tripSection}
+                  </>
+                }
+              />
             ) : (
               <p className="rounded-2xl border border-border bg-surface p-5 text-sm text-muted-foreground">
                 {t("sitePaused")}
               </p>
             )}
-            {showInsurance && insuranceQuery.data && insuranceQuery.data.length > 0 ? (
-              <fieldset className="mt-4 flex flex-col gap-2 rounded-2xl border border-border bg-surface p-5">
-                <legend className="text-sm font-medium text-foreground">
-                  {t("insurance")}
-                </legend>
-                {insuranceQuery.data.map((pack) => {
-                  const name =
-                    localizedText(pack.name, locale) || pack.code || pack.packageId;
-                  return (
-                    <label
-                      key={pack.packageId}
-                      className="flex cursor-pointer items-start gap-3 rounded-lg px-2 py-2 hover:bg-surface-hover"
-                    >
-                      <input
-                        type="radio"
-                        name="insurancePackageId"
-                        value={pack.packageId}
-                        checked={insurancePackageId === pack.packageId}
-                        onChange={() => setInsurancePackageId(pack.packageId)}
-                        className="mt-1"
-                      />
-                      <span className="flex min-w-0 flex-col">
-                        <span className="text-sm font-medium text-foreground">
-                          {name}
-                        </span>
-                        <span className="text-xs text-muted-foreground">
-                          {formatMoney(pack.total, vehicle.currency, locale)}
-                        </span>
-                      </span>
-                    </label>
-                  );
-                })}
-              </fieldset>
-            ) : null}
+
             <p className="mt-4 hidden text-xs text-muted-foreground lg:block">
               {t("trustFooter")}
             </p>
@@ -361,6 +598,25 @@ export function BookingView({
                 quote={quote}
                 returnLocationName={returnLocation?.name}
                 oneWayFee={oneWayFee}
+                extraLines={[
+                  ...(selectedInsurance
+                    ? [
+                        {
+                          key: "insurance",
+                          label:
+                            localizedText(selectedInsurance.name, locale) ||
+                            selectedInsurance.code ||
+                            t("insurance"),
+                          amount: insuranceTotal,
+                        },
+                      ]
+                    : []),
+                  ...selectedExtras.map((extra) => ({
+                    key: `extra-${extra.id}`,
+                    label: localizedText(extra.name, locale) || extra.kind,
+                    amount: extraLineTotal(extra, days),
+                  })),
+                ]}
               />
               <ConfirmButton
                 isBusy={isBusy}

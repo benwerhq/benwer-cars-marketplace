@@ -27,7 +27,7 @@ import type {
   PriceWarning,
 } from "@/types/pricing";
 import type { GuestCancellationQuote, GuestPayment } from "@/types/payment";
-import type { GuestAccount } from "@/types/guest";
+import type { GuestAccount, GuestCustomer } from "@/types/guest";
 import type { GuestReservation } from "@/types/reservation";
 import type { PublicSite, SiteBranch } from "@/types/site";
 import type { WebsiteSettings } from "@/types/websiteSettings";
@@ -419,6 +419,8 @@ export function mapReservation(
 ): GuestReservation {
   const row = isRecord(raw) ? raw : {};
   const customer = isRecord(row.customer) ? row.customer : {};
+  const insurance = mapReservationInsurance(row.insurance);
+  const grandTotal = readNumber(row.grandTotal);
   const companySlug =
     readString(row.companySlug) ??
     (isRecord(row.company) ? readString(row.company.slug) : undefined) ??
@@ -432,12 +434,20 @@ export function mapReservation(
     vehicleId: readString(row.vehicleId) ?? readString(row.vehicleID) ?? "",
     startDate: readString(row.startDate) ?? "",
     endDate: readString(row.endDate) ?? "",
+    // The API grand total covers car, insurance, extras, fees and adjustments.
+    // Older responses only send totalAmount (the car alone), so add the
+    // insurance they return separately.
     totalPrice:
-      readNumber(row.totalPrice) ??
-      readNumber(row.grandTotal) ??
-      readNumber(row.totalAmount) ??
-      readNumber(row.total) ??
-      0,
+      grandTotal ??
+      (readNumber(row.totalPrice) ??
+        readNumber(row.totalAmount) ??
+        readNumber(row.total) ??
+        0) + (insurance?.total ?? 0),
+    insurance,
+    extrasTotal: grandTotal === undefined ? null : (readNumber(row.extrasTotal) ?? null),
+    feesTotal: grandTotal === undefined ? null : (readNumber(row.feesTotal) ?? null),
+    pickupTime: readString(row.pickupTime) ?? null,
+    returnTime: readString(row.returnTime) ?? null,
     priceBreakdown: mapPriceBreakdown(row.priceBreakdown),
     currency: readString(row.currency) || "EUR",
     guestName: readString(row.guestName) ?? readString(customer.name) ?? "",
@@ -475,6 +485,7 @@ export function mapReservation(
               id: readString(row.vehicleId) ?? readString(row.vehicleID),
               make: readString(row.vehicleMake),
               model: readString(row.vehicleModel),
+              year: readNumber(row.vehicleYear),
               dailyRate: readNumber(row.dailyRate),
               currency: readString(row.currency),
             },
@@ -482,6 +493,38 @@ export function mapReservation(
           )
         : null,
     company: row.company ? mapCompany(row.company) : null,
+  };
+}
+
+function mapReservationInsurance(
+  raw: unknown,
+): { name: Record<string, string> | null; code: string; total: number } | null {
+  if (!isRecord(raw)) {
+    return null;
+  }
+  const total = readNumber(raw.total) ?? 0;
+  return {
+    name: readStringRecord(raw.name),
+    code: readString(raw.code) ?? "",
+    total,
+  };
+}
+
+export function mapGuestCustomer(raw: unknown): GuestCustomer | null {
+  if (!isRecord(raw)) {
+    return null;
+  }
+  const id = readString(raw.id);
+  if (!id) {
+    return null;
+  }
+  const dateOfBirth = readString(raw.dateOfBirth)?.slice(0, 10);
+  return {
+    id,
+    fullName: readString(raw.fullName) ?? readString(raw.name) ?? "",
+    email: readString(raw.email) ?? "",
+    phone: readString(raw.phone) ?? "",
+    ...(dateOfBirth ? { dateOfBirth } : {}),
   };
 }
 
@@ -510,6 +553,8 @@ export function mapGuestAccount(
         : undefined) ??
       fallbackSlug ??
       "",
+    emailVerified: readBoolean(nested.emailVerified) ?? false,
+    customer: mapGuestCustomer(nested.customer),
   };
 }
 

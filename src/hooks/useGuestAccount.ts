@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useGuestAuth } from "@/context/GuestAuthProvider";
+import { useGuestAuth, useOptionalGuestAuth } from "@/context/GuestAuthProvider";
 import { logError } from "@/lib/logger";
 import {
   guestAccountQueryKey,
@@ -19,6 +19,33 @@ export function useGuestAccount(companySlug: string) {
     enabled: ready && configured && Boolean(user) && Boolean(companySlug),
     retry: false,
   });
+}
+
+/**
+ * The signed-in guest for prefilling a booking, on pages that may or may not
+ * have guest auth. Email comes from Firebase; name and phone from the
+ * company's linked customer record.
+ */
+export function useGuestPrefill(companySlug: string) {
+  const auth = useOptionalGuestAuth();
+  const user = auth?.ready && auth.configured ? auth.user : null;
+  const account = useQuery({
+    queryKey: guestAccountQueryKey(companySlug),
+    queryFn: () => guestApi.me(companySlug),
+    enabled: Boolean(user) && Boolean(companySlug),
+    retry: false,
+  });
+  const customer = user ? (account.data?.customer ?? null) : null;
+
+  return {
+    available: Boolean(auth?.configured),
+    ready: auth ? auth.ready : true,
+    email: user?.email ?? "",
+    fullName: customer?.fullName || user?.displayName || "",
+    phone: customer?.phone || "",
+    dateOfBirth: customer?.dateOfBirth || "",
+    signedIn: Boolean(user),
+  };
 }
 
 export function useGuestReservations(companySlug: string) {
@@ -57,6 +84,21 @@ export function useConfirmGuestLink(companySlug: string) {
     },
     onError: (error) => {
       logError(error, { context: "guest_link_confirm", companySlug });
+    },
+  });
+}
+
+export function useUpdateGuestProfile(companySlug: string) {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (payload: { fullName?: string; phone?: string; dateOfBirth?: string | null }) =>
+      guestApi.updateMe(companySlug, payload),
+    onSuccess: (account) => {
+      queryClient.setQueryData(guestAccountQueryKey(companySlug), account);
+    },
+    onError: (error) => {
+      logError(error, { context: "guest_profile_update", companySlug });
     },
   });
 }

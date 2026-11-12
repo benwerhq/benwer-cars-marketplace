@@ -15,6 +15,7 @@ export function appendSearchParams(
     preview?: string;
     branch?: string;
     return?: string;
+    age?: string;
   },
 ): string {
   const params = new URLSearchParams();
@@ -55,6 +56,10 @@ export function appendSearchParams(
 
   if (input?.return) {
     params.set(SearchParams.RETURN_BRANCH, input.return);
+  }
+
+  if (input?.age) {
+    params.set(SearchParams.DRIVER_AGE, input.age);
   }
 
   const query = params.toString();

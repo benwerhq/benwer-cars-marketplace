@@ -22,6 +22,7 @@ describe("rewriteCustomDomainPath", () => {
     );
     expect(rewriteCustomDomainPath("/privacy", "acme")).toBe("/s/acme/privacy");
     expect(rewriteCustomDomainPath("/terms", "acme")).toBe("/s/acme/terms");
+    expect(rewriteCustomDomainPath("/cart", "acme")).toBe("/s/acme/cart");
   });
 
   it("never rewrites onto another tenant slug", () => {

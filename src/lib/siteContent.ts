@@ -561,14 +561,14 @@ export function whatsappHref(number: string, message = ""): string | null {
   return `https://wa.me/${digits}${query}`;
 }
 
-export const PLACEHOLDER_ANDROID_APP_URL =
-  "https://play.google.com/apps/testing/com.benwer.cars.admin";
-
 export function siteAppLinks(app: SiteAppContent): { iosUrl: string; androidUrl: string } {
-  if (app.iosUrl || app.androidUrl) {
-    return { iosUrl: app.iosUrl, androidUrl: app.androidUrl };
-  }
-  return { iosUrl: "", androidUrl: PLACEHOLDER_ANDROID_APP_URL };
+  return { iosUrl: app.iosUrl || "", androidUrl: app.androidUrl || "" };
+}
+
+/** The get-the-app section only shows when the company set a store link. */
+export function hasSiteAppLinks(app: SiteAppContent): boolean {
+  const links = siteAppLinks(app);
+  return Boolean(links.iosUrl || links.androidUrl);
 }
 
 export function appQrTarget(app: SiteAppContent): string {

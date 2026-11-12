@@ -89,6 +89,18 @@ describe("guestPayment", () => {
     ).toBe(true);
   });
 
+  it("does not offer online payment for bookings confirmed without it", () => {
+    expect(
+      needsOnlinePayment(
+        reservation({
+          onlinePaymentRequired: false,
+          paymentChannel: null,
+          advanceDue: 30,
+        }),
+      ),
+    ).toBe(false);
+  });
+
   it("treats webhook-confirmed paid or authorized states as settled", () => {
     expect(isPaymentSettled(payment({ authorized: true }))).toBe(true);
     expect(isPaymentSettled(payment({ status: PaymentStatus.PAID }))).toBe(true);

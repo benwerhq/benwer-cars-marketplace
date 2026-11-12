@@ -103,6 +103,20 @@ export const guestApi = {
     });
   },
 
+  /** Needs the API's PATCH guest/me (guest booking fields change). */
+  async updateMe(
+    companySlug: string,
+    payload: { fullName?: string; phone?: string; dateOfBirth?: string | null },
+  ): Promise<GuestAccount> {
+    const headers = await guestAuthHeaders({ "Content-Type": "application/json" });
+    const data = await publicRequest<unknown>(guestPath(companySlug, "/me"), {
+      method: "PATCH",
+      headers,
+      body: JSON.stringify(payload),
+    });
+    return mapGuestAccount(data, companySlug);
+  },
+
   async unlink(companySlug: string): Promise<void> {
     const headers = await guestAuthHeaders();
     await publicRequest<unknown>(guestPath(companySlug, "/link"), {

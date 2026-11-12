@@ -8,7 +8,7 @@ import {
 } from "@/enums";
 import {
   DEFAULT_BANNER_THEME,
-  PLACEHOLDER_ANDROID_APP_URL,
+  hasSiteAppLinks,
   SITE_SECTION_ORDER,
   appQrTarget,
   bannerImages,
@@ -272,9 +272,10 @@ describe("helpers", () => {
 describe("siteAppLinks", () => {
   const app = { iosUrl: "", androidUrl: "", title: {}, text: {} };
 
-  it("uses the placeholder Android link when no store link is set", () => {
-    expect(siteAppLinks(app)).toEqual({ iosUrl: "", androidUrl: PLACEHOLDER_ANDROID_APP_URL });
-    expect(appQrTarget(app)).toBe(PLACEHOLDER_ANDROID_APP_URL);
+  it("has no links (and hides the section) when no store link is set", () => {
+    expect(siteAppLinks(app)).toEqual({ iosUrl: "", androidUrl: "" });
+    expect(appQrTarget(app)).toBe("");
+    expect(hasSiteAppLinks(app)).toBe(false);
   });
 
   it("keeps the company's own links", () => {

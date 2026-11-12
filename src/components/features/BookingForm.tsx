@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { useFormContext } from "react-hook-form";
 import { useTranslations } from "next-intl";
@@ -11,9 +12,15 @@ import type { BookingFormValues } from "@/lib/bookingSchema";
 interface BookingFormProps {
   carHref: string;
   requireTerms?: boolean;
+  /** Rendered after the driver details and before the terms checkbox. */
+  beforeTerms?: ReactNode;
 }
 
-export function BookingForm({ carHref, requireTerms = false }: BookingFormProps) {
+export function BookingForm({
+  carHref,
+  requireTerms = false,
+  beforeTerms,
+}: BookingFormProps) {
   const t = useTranslations("booking");
   const {
     register,
@@ -90,6 +97,8 @@ export function BookingForm({ carHref, requireTerms = false }: BookingFormProps)
         />
       </Field>
 
+      {beforeTerms}
+
       {requireTerms ? (
         <Field
           label={t("termsLabel")}
@@ -111,6 +120,8 @@ export function BookingForm({ carHref, requireTerms = false }: BookingFormProps)
               {t("termsAccept")}{" "}
               <Link
                 href="/terms"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-medium text-primary hover:text-primary-hover"
               >
                 {t("termsLink")}

@@ -14,8 +14,11 @@ import { platformBookingHref } from "@/lib/canonicalUrl";
 import {
   canAcceptBookings,
   companySlugFromSite,
+  guestLinksFromHomeHref,
   isTenantHostRequest,
+  parseDriverAge,
   publicSiteHref,
+  queryString,
   publicSiteHomeHref,
   SITE_CHANNEL,
   siteBookHref,
@@ -68,6 +71,8 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
     typeof query[SearchParams.RETURN_BRANCH] === "string"
       ? query[SearchParams.RETURN_BRANCH]
       : undefined;
+  const ageParam = queryString(query, SearchParams.DRIVER_AGE);
+  const driverAge = ageParam ? parseDriverAge(ageParam) : undefined;
 
   let site = null;
   try {
@@ -101,6 +106,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           companyName={site.company.name}
           logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
           homeHref={homeHref}
+          cartSlug={slug}
           fleetHref={`${homeHref}#fleet`}
         />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
@@ -123,6 +129,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           companyName={site.company.name}
           logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
           homeHref={homeHref}
+          cartSlug={slug}
           fleetHref={`${homeHref}#fleet`}
         />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
@@ -143,6 +150,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           companyName={site.company.name}
           logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
           homeHref={homeHref}
+          cartSlug={slug}
           fleetHref={`${homeHref}#fleet`}
         />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
@@ -169,6 +177,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       to,
       branch,
       returnBranch,
+      driverAge,
       preview,
     }),
     site.slug,
@@ -181,6 +190,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
         companyName={site.company.name}
         logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
         homeHref={homeHref}
+        cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 pb-28 md:px-6 lg:px-8 lg:pb-16">
@@ -197,6 +207,12 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           bookingsEnabled
           channel={SITE_CHANNEL}
           returnLocation={returnLocation}
+          guestSignInHref={guestLinksFromHomeHref(homeHref).signIn}
+          pickupBranch={
+            site.branches.find((item) => item.id === vehicle.branchId) ??
+            site.branches.find((item) => item.id === branch) ??
+            null
+          }
           confirmationBaseUrl={platformBookingHref("").replace(/\/$/, "")}
           bookHrefBase={publicSiteHref(
             siteBookHref({
@@ -204,6 +220,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
               carId: vehicle.id,
               branch,
               returnBranch,
+              driverAge,
               preview,
             }),
             site.slug,

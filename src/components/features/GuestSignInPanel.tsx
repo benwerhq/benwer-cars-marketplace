@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import { returnToFromLocation } from "@/lib/returnTo";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
 import { firebaseErrorMessageKey } from "@/lib/guestAuth.client";
 import { Button } from "@/components/ui/Button";
@@ -15,7 +17,17 @@ export function GuestSignInPanel() {
   const t = useTranslations("guest");
   const tRoot = useTranslations();
   const locale = useLocale();
+  const router = useRouter();
   const { signIn, signUp, signInWithGoogle, resetPassword } = useGuestAuth();
+
+  // Back to where the guest was (e.g. the booking with its dates) when the
+  // sign-in link carried a validated same-site ?next= path.
+  function returnAfterAuth() {
+    const next = returnToFromLocation();
+    if (next) {
+      router.replace(next);
+    }
+  }
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState<PanelMode>("in");
@@ -40,8 +52,10 @@ export function GuestSignInPanel() {
         setResetSentTo(email.trim());
       } else if (mode === "up") {
         await signUp(email, password);
+        returnAfterAuth();
       } else {
         await signIn(email, password);
+        returnAfterAuth();
       }
     } catch (error) {
       setErrorKey(firebaseErrorMessageKey(error));
@@ -55,6 +69,7 @@ export function GuestSignInPanel() {
     setErrorKey(null);
     try {
       await signInWithGoogle();
+      returnAfterAuth();
     } catch (error) {
       setErrorKey(firebaseErrorMessageKey(error));
     } finally {

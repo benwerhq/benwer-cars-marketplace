@@ -314,6 +314,27 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/public/companies/{slug}/guest/me": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Guest identity at this company */
+        get: operations["GuestsController_me"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /**
+         * Update the linked customer's name, phone or date of birth
+         * @description Requires a linked guest (guest.not_linked otherwise). Only the sent fields change. Email is not editable here.
+         */
+        patch: operations["GuestsController_updateMe"];
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -691,6 +712,19 @@ export interface components {
             endDate: string;
             /** Format: uuid */
             insurancePackageId?: string;
+            /** @description Local time at the branch, HH:MM (24h). */
+            pickupTime?: string;
+            /** @description Local time at the branch, HH:MM (24h). */
+            returnTime?: string;
+            /** @description Arrival flight, saved as a staff note on the booking. */
+            flightNumber?: string;
+            /** @description Guest comments, saved as a staff note on the booking. */
+            notes?: string;
+            /**
+             * Format: date
+             * @description Main driver's date of birth. Fills the customer record when it has none.
+             */
+            dateOfBirth?: string;
         };
         CreateInspectionDto: {
             /** @enum {string} */
@@ -2655,6 +2689,20 @@ export interface components {
                 /** @enum {string} */
                 source: "package" | "legacy_addon" | "legacy_waiver" | "legacy_none";
             } | null;
+            /** @description Phone on the booking customer, E.164. */
+            guestPhone: string | null;
+            /** @description Null for bookings without an assigned car. */
+            vehicleYear: number | null;
+            /** @description HH:MM at the pickup branch, when the guest chose one. */
+            pickupTime: string | null;
+            /** @description HH:MM at the return branch, when the guest chose one. */
+            returnTime: string | null;
+            /** @description Booked extras. Null when not computed for this view. */
+            extrasTotal: number | null;
+            /** @description Location fees such as a one-way return. Null when not computed for this view. */
+            feesTotal: number | null;
+            /** @description Everything the guest owes: car, insurance, extras, fees and staff adjustments. Null when not computed for this view. */
+            grandTotal: number | null;
         };
         ImpersonateDto: {
             /** Format: uuid */
@@ -5391,6 +5439,31 @@ export interface components {
             /** @enum {string} */
             plan: "growth" | "fleet";
         };
+        GuestMeDto: {
+            /** Format: uuid */
+            id: string;
+            email: string | null;
+            emailVerified: boolean;
+            linked: boolean;
+            customer: {
+                /** Format: uuid */
+                id: string;
+                fullName: string;
+                email: string | null;
+                phone: string;
+                /** Format: date */
+                dateOfBirth: string | null;
+            } | null;
+        };
+        UpdateGuestProfileDto: {
+            fullName?: string;
+            phone?: string;
+            /**
+             * Format: date
+             * @description null clears it.
+             */
+            dateOfBirth?: string | null;
+        };
     };
     responses: never;
     parameters: never;
@@ -5787,6 +5860,52 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["GuestReservationDto"];
+                };
+            };
+        };
+    };
+    GuestsController_me: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GuestMeDto"];
+                };
+            };
+        };
+    };
+    GuestsController_updateMe: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateGuestProfileDto"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GuestMeDto"];
                 };
             };
         };
