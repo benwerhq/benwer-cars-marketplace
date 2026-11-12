@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { returnToFromLocation } from "@/lib/returnTo";
+import { logError } from "@/lib/logger";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
 import { firebaseErrorMessageKey } from "@/lib/guestAuth.client";
 import { Button } from "@/components/ui/Button";
@@ -71,6 +72,7 @@ export function GuestSignInPanel() {
       await signInWithGoogle();
       returnAfterAuth();
     } catch (error) {
+      logError(error, { context: "guest_google_sign_in" });
       setErrorKey(firebaseErrorMessageKey(error));
     } finally {
       setGoogleBusy(false);

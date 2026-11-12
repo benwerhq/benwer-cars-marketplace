@@ -60,7 +60,9 @@ export function guestAuthErrorKey(code: string): string {
     case "auth/account-exists-with-different-credential":
       return "guest.auth.differentProvider";
     case "auth/operation-not-allowed":
+      return "guest.auth.googleDisabled";
     case "auth/unauthorized-domain":
+      return "guest.auth.domainNotAuthorised";
     case "auth/unauthorized-continue-uri":
       return "guest.auth.providerUnavailable";
     case "auth/network-request-failed":

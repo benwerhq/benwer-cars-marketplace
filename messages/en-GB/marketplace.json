@@ -726,7 +726,9 @@
       "weakPassword": "Use a longer password.",
       "tooManyRequests": "Too many attempts. Try again in a few minutes.",
       "invalidCredentials": "Email or password is not correct.",
-      "unknown": "Could not sign in. Try again."
+      "unknown": "Could not sign in. Try again.",
+      "googleDisabled": "Google sign-in isn't turned on for this site yet. Use your email and password.",
+      "domainNotAuthorised": "Google sign-in isn't set up for this site's address yet. Use your email and password for now."
     },
     "accountMenu": "Your account",
     "profileNav": "Profile",

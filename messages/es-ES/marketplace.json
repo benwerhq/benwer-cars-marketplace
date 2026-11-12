@@ -726,7 +726,9 @@
       "weakPassword": "Usa una contraseña más larga.",
       "tooManyRequests": "Demasiados intentos. Prueba de nuevo en unos minutos.",
       "invalidCredentials": "El correo o la contraseña no son correctos.",
-      "unknown": "No se ha podido entrar. Inténtalo de nuevo."
+      "unknown": "No se ha podido entrar. Inténtalo de nuevo.",
+      "googleDisabled": "El inicio de sesión con Google aún no está activado en este sitio. Usa tu correo y contraseña.",
+      "domainNotAuthorised": "El inicio de sesión con Google aún no está configurado para la dirección de este sitio. Por ahora usa tu correo y contraseña."
     },
     "accountMenu": "Tu cuenta",
     "profileNav": "Perfil",
