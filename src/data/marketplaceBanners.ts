@@ -24,8 +24,8 @@ export const MARKETPLACE_BANNERS: MarketplaceBanner[] = [
       joiner: 2.3,
       boxed: 2.95,
       boxedIndent: 1.4,
-      description: 1.15,
-      descriptionWidth: 20,
+      description: 1.5,
+      descriptionWidth: 25,
     },
   },
   {
@@ -37,8 +37,8 @@ export const MARKETPLACE_BANNERS: MarketplaceBanner[] = [
       joiner: 2.4,
       boxed: 2.1,
       boxedIndent: 0,
-      description: 0.98,
-      descriptionWidth: 19.5,
+      description: 1.3,
+      descriptionWidth: 21.5,
     },
   },
   {
@@ -50,8 +50,8 @@ export const MARKETPLACE_BANNERS: MarketplaceBanner[] = [
       joiner: 2.3,
       boxed: 1.75,
       boxedIndent: 0,
-      description: 1,
-      descriptionWidth: 21,
+      description: 1.3,
+      descriptionWidth: 21.5,
     },
   },
 ];

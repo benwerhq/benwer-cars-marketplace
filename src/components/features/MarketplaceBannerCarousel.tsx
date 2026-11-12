@@ -37,7 +37,7 @@ function BannerCopy({ banner }: { banner: MarketplaceBanner }) {
           {t("boxed")}
         </span>
       </div>
-      <p className="mt-4 max-w-xs text-sm leading-snug md:mt-[1.1cqw] md:max-w-(--banner-description-width) md:text-(length:--banner-description)">
+      <p className="mt-4 max-w-xs text-sm leading-snug text-balance md:mt-[1.1cqw] md:max-w-(--banner-description-width) md:text-(length:--banner-description)">
         {t("description")}
       </p>
     </div>
