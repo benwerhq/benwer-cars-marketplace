@@ -109,5 +109,16 @@
     "retry": "Tentar novamente",
     "back": "Voltar",
     "viewAll": "Ver tudo"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Indicativo, {country} {dial}",
+    "search": "Pesquisar países",
+    "countries": "Países",
+    "noResults": "Nenhum país corresponde",
+    "invalid": "Introduza um número de telefone válido.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Limpar data"
   }
 }

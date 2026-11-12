@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FormProvider, useForm, useFormContext, useWatch } from "react-hook-form";
+import { Controller, FormProvider, useForm, useFormContext, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, Info, ShoppingCart, Trash2, XCircle } from "lucide-react";
 import { toast } from "sonner";
@@ -12,7 +12,9 @@ import { BookingVehiclePreview } from "./BookingVehiclePreview";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Field } from "@/components/ui/Field";
+import { DatePicker } from "@/components/ui/DatePicker";
 import { Input } from "@/components/ui/Input";
+import { PhoneInput } from "@/components/ui/PhoneInput";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useAvailability } from "@/hooks/useAvailability";
 import { useCreateReservation } from "@/hooks/useCreateReservation";
@@ -30,7 +32,7 @@ import {
 } from "@/lib/bookingDraft";
 import { createGuestDetailsSchema, type GuestDetailsValues } from "@/lib/bookingSchema";
 import { removeFromCart, updateCartItem, useCart, type CartItem } from "@/lib/cart";
-import { countRentalDays, startOfToday, toIsoDate } from "@/lib/dates";
+import { countRentalDays, parseIsoDate, startOfToday, toIsoDate } from "@/lib/dates";
 import { getErrorKey } from "@/lib/errors";
 import { localizedText } from "@/lib/localizedCopy";
 import { guestBookingFieldsEnabled, TIME_SLOTS } from "@/lib/extras";
@@ -382,6 +384,7 @@ function GuestDetailsFields() {
   const t = useTranslations("booking");
   const {
     register,
+    control,
     formState: { errors },
   } = useFormContext<GuestDetailsValues>();
 
@@ -419,17 +422,21 @@ function GuestDetailsFields() {
         label={t("guestPhone")}
         htmlFor="cartGuestPhone"
         hint={t("guestPhoneHint")}
-        error={errors.guestPhone?.message}
         required
       >
-        <Input
-          id="cartGuestPhone"
-          type="tel"
-          autoComplete="tel"
-          inputMode="tel"
-          placeholder={t("guestPhonePlaceholder")}
-          className="h-11"
-          {...register("guestPhone")}
+        <Controller
+          name="guestPhone"
+          control={control}
+          render={({ field }) => (
+            <PhoneInput
+              id="cartGuestPhone"
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
+              error={errors.guestPhone?.message}
+              required
+            />
+          )}
         />
       </Field>
       <Field label={t("termsLabel")} htmlFor="cartAcceptTerms" error={errors.acceptTerms?.message} required>
@@ -562,22 +569,22 @@ function CartLine({
       {editing ? (
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <Field label={t("from")} htmlFor={`from-${item.id}`}>
-            <Input
+            <DatePicker
               id={`from-${item.id}`}
-              type="date"
-              min={toIsoDate(startOfToday())}
+              fromDate={startOfToday()}
               value={item.from}
-              onChange={(event) => updateCartItem(cartSlug, item.id, { from: event.target.value })}
+              onChange={(from) => updateCartItem(cartSlug, item.id, { from })}
+              locale={locale}
               className="h-11"
             />
           </Field>
           <Field label={t("to")} htmlFor={`to-${item.id}`}>
-            <Input
+            <DatePicker
               id={`to-${item.id}`}
-              type="date"
-              min={item.from || toIsoDate(startOfToday())}
+              fromDate={item.from ? parseIsoDate(item.from) ?? startOfToday() : startOfToday()}
               value={item.to}
-              onChange={(event) => updateCartItem(cartSlug, item.id, { to: event.target.value })}
+              onChange={(to) => updateCartItem(cartSlug, item.id, { to })}
+              locale={locale}
               className="h-11"
             />
           </Field>
