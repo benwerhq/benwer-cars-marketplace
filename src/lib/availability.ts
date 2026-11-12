@@ -13,7 +13,7 @@ import type {
   AvailabilityRange,
 } from "@/types/availability";
 
-export const AVAILABILITY_WINDOW_MONTHS = 3;
+export const AVAILABILITY_WINDOW_MONTHS = 12;
 
 export function availabilityCalendarWindow(today = startOfToday()): {
   from: string;
