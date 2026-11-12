@@ -1,9 +1,11 @@
 import { getTranslations } from "next-intl/server";
 import { NavRoutes } from "@/enums";
+import { env } from "@/env";
 import { BrandLogo } from "./BrandLogo";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { MarketplaceNav } from "./MarketplaceNav";
 import { SiteHeaderShell } from "./SiteHeaderShell";
+import { ThemePreviewPicker } from "./ThemePreviewPicker";
 
 interface MarketplaceHeaderProps {
   className?: string;
@@ -34,6 +36,7 @@ export async function MarketplaceHeader({ className }: MarketplaceHeaderProps) {
     >
       <MarketplaceNav />
       <LocaleSwitcher />
+      {env.NEXT_PUBLIC_ENV === "production" ? null : <ThemePreviewPicker />}
     </SiteHeaderShell>
   );
 }
