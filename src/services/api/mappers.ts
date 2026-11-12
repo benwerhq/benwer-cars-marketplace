@@ -419,6 +419,7 @@ export function mapReservation(
 ): GuestReservation {
   const row = isRecord(raw) ? raw : {};
   const customer = isRecord(row.customer) ? row.customer : {};
+  const insurance = mapReservationInsurance(row.insurance);
   const companySlug =
     readString(row.companySlug) ??
     (isRecord(row.company) ? readString(row.company.slug) : undefined) ??
@@ -432,12 +433,15 @@ export function mapReservation(
     vehicleId: readString(row.vehicleId) ?? readString(row.vehicleID) ?? "",
     startDate: readString(row.startDate) ?? "",
     endDate: readString(row.endDate) ?? "",
+    // The public reservation's totalAmount is the vehicle subtotal only; add
+    // the insurance it returns separately unless a grand total is sent.
     totalPrice:
-      readNumber(row.totalPrice) ??
       readNumber(row.grandTotal) ??
-      readNumber(row.totalAmount) ??
-      readNumber(row.total) ??
-      0,
+      (readNumber(row.totalPrice) ??
+        readNumber(row.totalAmount) ??
+        readNumber(row.total) ??
+        0) + (insurance?.total ?? 0),
+    insurance,
     priceBreakdown: mapPriceBreakdown(row.priceBreakdown),
     currency: readString(row.currency) || "EUR",
     guestName: readString(row.guestName) ?? readString(customer.name) ?? "",
@@ -482,6 +486,20 @@ export function mapReservation(
           )
         : null,
     company: row.company ? mapCompany(row.company) : null,
+  };
+}
+
+function mapReservationInsurance(
+  raw: unknown,
+): { name: Record<string, string> | null; code: string; total: number } | null {
+  if (!isRecord(raw)) {
+    return null;
+  }
+  const total = readNumber(raw.total) ?? 0;
+  return {
+    name: readStringRecord(raw.name),
+    code: readString(raw.code) ?? "",
+    total,
   };
 }
 

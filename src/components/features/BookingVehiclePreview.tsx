@@ -47,7 +47,9 @@ export function BookingVehiclePreview({
       </div>
       <div className="min-w-0">
         <p className="truncate text-sm font-semibold text-foreground">{name}</p>
-        <p className="text-xs text-muted-foreground">{vehicle.year}</p>
+        {vehicle.year > 0 ? (
+          <p className="text-xs text-muted-foreground">{vehicle.year}</p>
+        ) : null}
         {companyName ? (
           <p className="mt-0.5 truncate text-xs text-muted-foreground">
             {companyName}

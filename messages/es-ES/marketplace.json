@@ -356,7 +356,9 @@
     "oneWayFee": "Suplemento por devolver en otro lugar",
     "signedInAs": "Sesión iniciada como {email}",
     "signInPrompt": "¿Tienes una cuenta?",
-    "signInLink": "Inicia sesión para rellenar tus datos"
+    "signInLink": "Inicia sesión para rellenar tus datos",
+    "subtitleSignedIn": "Revisa tus datos y confirma.",
+    "trustPaymentAfter": "Los detalles del pago llegan tras reservar"
   },
   "reservationStatus": {
     "title": "Tu reserva",
@@ -407,7 +409,8 @@
       "request_expired": "La empresa no respondió a tiempo",
       "request_declined": "La empresa rechazó esta solicitud",
       "customer_request": "Has retirado esta solicitud"
-    }
+    },
+    "insurance": "Seguro"
   },
   "payment": {
     "title": "Paga el anticipo",

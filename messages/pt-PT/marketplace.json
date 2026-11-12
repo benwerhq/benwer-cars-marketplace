@@ -356,7 +356,9 @@
     "oneWayFee": "Taxa de devolução noutro local",
     "signedInAs": "Sessão iniciada como {email}",
     "signInPrompt": "Tem conta?",
-    "signInLink": "Inicie sessão para preencher os seus dados"
+    "signInLink": "Inicie sessão para preencher os seus dados",
+    "subtitleSignedIn": "Confirme os seus dados e conclua.",
+    "trustPaymentAfter": "Os detalhes do pagamento seguem após a reserva"
   },
   "reservationStatus": {
     "title": "Your reservation",
@@ -407,7 +409,8 @@
       "request_expired": "A empresa não respondeu a tempo",
       "request_declined": "A empresa recusou este pedido",
       "customer_request": "Retirou este pedido"
-    }
+    },
+    "insurance": "Seguro"
   },
   "payment": {
     "title": "Pague o sinal",

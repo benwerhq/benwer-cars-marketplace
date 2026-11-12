@@ -65,6 +65,9 @@ export function BookingDateFields() {
     <div className="flex flex-col gap-3">
       <p className="text-sm text-muted-foreground">{t("datesHint")}</p>
       <Popover.Root open={open} onOpenChange={setOpen}>
+        {/* The popover needs an anchor: without one Radix places the
+            calendar at the top-left of the page, off-screen. */}
+        <Popover.Anchor asChild>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Field
             label={t("startDate")}
@@ -101,13 +104,16 @@ export function BookingDateFields() {
             />
           </Field>
         </div>
+        </Popover.Anchor>
         <Popover.Portal>
           <Popover.Content
             align="start"
+            side="bottom"
             sideOffset={8}
             collisionPadding={16}
+            avoidCollisions
             className={cn(
-              "z-50 rounded-xl border border-border bg-surface p-3 shadow-md outline-none",
+              "z-[60] max-h-[var(--radix-popover-content-available-height)] overflow-auto rounded-xl border border-border bg-surface p-3 shadow-md outline-none",
               "w-[min(100vw-1.5rem,20rem)] md:w-[min(100vw-1.5rem,42rem)]",
             )}
           >

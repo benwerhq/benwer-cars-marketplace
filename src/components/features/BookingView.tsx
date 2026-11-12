@@ -316,6 +316,44 @@ export function BookingView({
 
   const carName = `${vehicle.brand} ${vehicle.model}`;
 
+  // Shown inside the form, above the terms checkbox, so the guest picks
+  // cover before accepting the terms.
+  const insuranceSection =
+    showInsurance && insuranceQuery.data && insuranceQuery.data.length > 0 ? (
+      <fieldset className="flex flex-col gap-2 rounded-xl border border-border bg-surface p-4">
+        <legend className="px-1 text-sm font-medium text-foreground">
+          {t("insurance")}
+        </legend>
+        {insuranceQuery.data.map((pack) => {
+          const name =
+            localizedText(pack.name, locale) || pack.code || pack.packageId;
+          return (
+            <label
+              key={pack.packageId}
+              className="flex cursor-pointer items-start gap-3 rounded-lg px-2 py-2 hover:bg-surface-hover"
+            >
+              <input
+                type="radio"
+                name="insurancePackageId"
+                value={pack.packageId}
+                checked={insurancePackageId === pack.packageId}
+                onChange={() => setInsurancePackageId(pack.packageId)}
+                className="mt-1"
+              />
+              <span className="flex min-w-0 flex-col">
+                <span className="text-sm font-medium text-foreground">
+                  {name}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {formatMoney(pack.total, vehicle.currency, locale)}
+                </span>
+              </span>
+            </label>
+          );
+        })}
+      </fieldset>
+    ) : null;
+
   return (
     <FormProvider {...form}>
       <div className="flex flex-col gap-6">
@@ -331,7 +369,9 @@ export function BookingView({
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">
             {t("title")}
           </h1>
-          <p className="mt-2 text-sm text-muted-foreground">{t("subtitle")}</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {prefill.signedIn ? t("subtitleSignedIn") : t("subtitle")}
+          </p>
         </div>
 
         {prefill.available && prefill.ready ? (
@@ -365,11 +405,13 @@ export function BookingView({
         ) : null}
 
         <ul className="flex flex-wrap gap-2">
-          <TrustPill icon={ShieldCheck} label={t("trustNoAccount")} />
+          {prefill.signedIn ? null : (
+            <TrustPill icon={ShieldCheck} label={t("trustNoAccount")} />
+          )}
           <TrustPill icon={Mail} label={t("trustEmail")} />
           <TrustPill
             icon={Wallet}
-            label={channel ? t("trustCardPayment") : t("trustNoPayment")}
+            label={channel ? t("trustPaymentAfter") : t("trustNoPayment")}
           />
         </ul>
 
@@ -413,46 +455,17 @@ export function BookingView({
         >
           <div className="lg:col-span-3">
             {bookingsEnabled ? (
-              <BookingForm carHref={carHref} requireTerms={requireTerms} />
+              <BookingForm
+                carHref={carHref}
+                requireTerms={requireTerms}
+                beforeTerms={insuranceSection}
+              />
             ) : (
               <p className="rounded-2xl border border-border bg-surface p-5 text-sm text-muted-foreground">
                 {t("sitePaused")}
               </p>
             )}
-            {showInsurance && insuranceQuery.data && insuranceQuery.data.length > 0 ? (
-              <fieldset className="mt-4 flex flex-col gap-2 rounded-2xl border border-border bg-surface p-5">
-                <legend className="text-sm font-medium text-foreground">
-                  {t("insurance")}
-                </legend>
-                {insuranceQuery.data.map((pack) => {
-                  const name =
-                    localizedText(pack.name, locale) || pack.code || pack.packageId;
-                  return (
-                    <label
-                      key={pack.packageId}
-                      className="flex cursor-pointer items-start gap-3 rounded-lg px-2 py-2 hover:bg-surface-hover"
-                    >
-                      <input
-                        type="radio"
-                        name="insurancePackageId"
-                        value={pack.packageId}
-                        checked={insurancePackageId === pack.packageId}
-                        onChange={() => setInsurancePackageId(pack.packageId)}
-                        className="mt-1"
-                      />
-                      <span className="flex min-w-0 flex-col">
-                        <span className="text-sm font-medium text-foreground">
-                          {name}
-                        </span>
-                        <span className="text-xs text-muted-foreground">
-                          {formatMoney(pack.total, vehicle.currency, locale)}
-                        </span>
-                      </span>
-                    </label>
-                  );
-                })}
-              </fieldset>
-            ) : null}
+
             <p className="mt-4 hidden text-xs text-muted-foreground lg:block">
               {t("trustFooter")}
             </p>

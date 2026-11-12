@@ -356,7 +356,9 @@
     "oneWayFee": "Different return location fee",
     "signedInAs": "Signed in as {email}",
     "signInPrompt": "Have an account?",
-    "signInLink": "Sign in to fill in your details"
+    "signInLink": "Sign in to fill in your details",
+    "subtitleSignedIn": "Check your details and confirm.",
+    "trustPaymentAfter": "Payment details follow after booking"
   },
   "reservationStatus": {
     "title": "Your reservation",
@@ -407,7 +409,8 @@
       "request_expired": "The company did not answer in time",
       "request_declined": "The company declined this request",
       "customer_request": "You withdrew this request"
-    }
+    },
+    "insurance": "Insurance"
   },
   "payment": {
     "title": "Pay the advance",

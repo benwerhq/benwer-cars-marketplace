@@ -29,6 +29,7 @@ import {
   needsOnlinePayment,
 } from "@/lib/guestPayment";
 import { formatMoney } from "@/lib/money";
+import { localizedText } from "@/lib/localizedCopy";
 import { cn } from "@/lib/utils";
 
 const GuestPaymentStep = dynamic(
@@ -179,7 +180,9 @@ export function ReservationStatus({
           ) : null}
           <StatusRow label={t("guest")} value={data.guestName} />
           <StatusRow label={t("email")} value={data.guestEmail} />
-          <StatusRow label={t("phone")} value={data.guestPhone} />
+          {data.guestPhone ? (
+            <StatusRow label={t("phone")} value={data.guestPhone} />
+          ) : null}
           {data.requestExpiresAt ? (
             <StatusRow
               label={t("requestExpires")}
@@ -223,6 +226,19 @@ export function ReservationStatus({
             currency={data.currency}
             className="border-t border-border pt-4"
           />
+        ) : null}
+
+        {data.insurance ? (
+          <div className="flex items-center justify-between gap-4 text-sm">
+            <span className="text-muted-foreground">
+              {localizedText(data.insurance.name, locale) ||
+                data.insurance.code ||
+                t("insurance")}
+            </span>
+            <span className="font-medium tabular-nums text-foreground">
+              {formatMoney(data.insurance.total, data.currency, locale)}
+            </span>
+          </div>
         ) : null}
 
         <div className="flex items-center justify-between border-t border-border pt-4">

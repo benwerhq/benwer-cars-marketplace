@@ -45,6 +45,8 @@ export interface GuestReservation {
   advanceAuthorized: boolean;
   paymentExpiresAt: string | null;
   onlinePaymentRequired: boolean;
+  /** Insurance chosen at booking; its total is included in totalPrice. */
+  insurance?: { name: Record<string, string> | null; code: string; total: number } | null;
   vehicle?: Vehicle | null;
   company?: Company | null;
 }

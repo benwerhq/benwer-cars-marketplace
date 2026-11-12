@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { mapGuestAccount, mapGuestCustomer } from "./mappers";
+import { mapGuestAccount, mapGuestCustomer, mapReservation } from "./mappers";
 
 describe("mapGuestAccount", () => {
   it("maps the linked customer used to prefill bookings", () => {
@@ -35,6 +35,24 @@ describe("mapGuestAccount", () => {
 
   it("has no customer when the guest is not linked", () => {
     expect(mapGuestAccount({ email: "a@b.c", linked: false, customer: null }).customer).toBeNull();
+  });
+});
+
+describe("mapReservation insurance", () => {
+  it("adds the insurance total to the vehicle subtotal", () => {
+    const reservation = mapReservation({
+      token: "t1",
+      totalAmount: 126,
+      insurance: { code: "MEDIUM", name: { en: "Medium" }, total: 24 },
+    });
+    expect(reservation.totalPrice).toBe(150);
+    expect(reservation.insurance).toEqual({ code: "MEDIUM", name: { en: "Medium" }, total: 24 });
+  });
+
+  it("uses a grand total as is when the API sends one", () => {
+    expect(
+      mapReservation({ grandTotal: 170, totalAmount: 126, insurance: { total: 24 } }).totalPrice,
+    ).toBe(170);
   });
 });
 
