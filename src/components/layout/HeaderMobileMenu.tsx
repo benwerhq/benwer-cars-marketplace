@@ -22,6 +22,16 @@ export interface HeaderMenuLink {
   isActive: boolean;
 }
 
+export function headerNavLinkClass(isActive: boolean): string {
+  return cn(
+    "inline-flex cursor-pointer items-center rounded-full px-2.5 py-1.5 text-sm whitespace-nowrap transition-colors",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+    isActive
+      ? "bg-primary/10 font-medium text-primary"
+      : "text-muted-foreground hover:bg-surface-hover hover:text-foreground",
+  );
+}
+
 export const MENU_SEPARATOR = "my-1 h-px bg-border";
 
 export const MENU_LABEL = "truncate px-2.5 pt-2 pb-1 text-xs font-medium text-muted-foreground";

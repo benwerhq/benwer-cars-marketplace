@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { CalendarCheck, LogIn, LogOut, PencilRuler, UserRound } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -12,12 +12,17 @@ import { guestLinksFromHomeHref, publicHomeFromHome } from "@/lib/site";
 import { currentReturnTo, withReturnTo } from "@/lib/returnTo";
 import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { cn } from "@/lib/utils";
-import { MENU_LABEL, MENU_SEPARATOR } from "./HeaderMobileMenu";
+import { MENU_LABEL, MENU_SEPARATOR, headerNavLinkClass } from "./HeaderMobileMenu";
 import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
+
+function pathOnly(href: string): string {
+  return href.split(/[?#]/)[0] || "/";
+}
 
 export function SiteGuestLink({ homeHref }: { homeHref: string }) {
   const t = useTranslations("guest");
   const router = useRouter();
+  const pathname = usePathname();
   const { user, ready, signOut } = useGuestAuth();
   const staff = useStaffAuth();
   const links = guestLinksFromHomeHref(homeHref);
@@ -37,11 +42,8 @@ export function SiteGuestLink({ homeHref }: { homeHref: string }) {
           event.preventDefault();
           router.push(withReturnTo(links.signIn, currentReturnTo()));
         }}
-        className={cn(
-          "inline-flex cursor-pointer items-center rounded-full border border-border bg-surface px-3.5 py-1.5 text-sm font-medium whitespace-nowrap text-foreground transition-colors",
-          "hover:bg-surface-hover",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-        )}
+        aria-current={pathname === pathOnly(links.signIn) ? "page" : undefined}
+        className={headerNavLinkClass(pathname === pathOnly(links.signIn))}
       >
         {t("signInNav")}
       </Link>
@@ -52,15 +54,10 @@ export function SiteGuestLink({ homeHref }: { homeHref: string }) {
     <>
       <Link
         href={links.bookings}
-        aria-label={t("myBookings")}
-        className={cn(
-          "inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-border bg-surface px-2.5 py-1.5 text-sm font-medium whitespace-nowrap text-foreground transition-colors sm:px-3.5",
-          "hover:bg-surface-hover",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-        )}
+        aria-current={pathname === pathOnly(links.bookings) ? "page" : undefined}
+        className={headerNavLinkClass(pathname === pathOnly(links.bookings))}
       >
-        <CalendarCheck size={15} aria-hidden />
-        <span className="max-sm:sr-only">{t("myBookings")}</span>
+        {t("myBookings")}
       </Link>
       <DropdownMenu.Root modal={false}>
         <IconTooltip label={t("accountMenu")}>

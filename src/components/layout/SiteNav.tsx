@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
@@ -64,7 +65,12 @@ export function SiteMobileMenu({ phone, cartSlug, ...nav }: SiteMobileMenuProps)
   );
 }
 
-export function SiteNav({ homeHref, fleetHref, sections = [] }: SiteNavProps) {
+export function SiteNav({
+  homeHref,
+  fleetHref,
+  sections = [],
+  children,
+}: SiteNavProps & { children?: ReactNode }) {
   const t = useTranslations("nav");
   const tSections = useTranslations("siteSections.nav");
   const pathname = usePathname();
@@ -116,6 +122,7 @@ export function SiteNav({ homeHref, fleetHref, sections = [] }: SiteNavProps) {
           {link.label}
         </Link>
       ))}
+      {children}
       {menuLinks.length > 0 ? (
         <DropdownMenu.Root modal={false}>
           <DropdownMenu.Trigger asChild>

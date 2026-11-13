@@ -1,4 +1,3 @@
-import { Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -8,7 +7,6 @@ import { SiteHeaderMark } from "./SiteHeaderMark";
 import { SiteHeaderShell } from "./SiteHeaderShell";
 import { SiteMobileMenu, SiteNav } from "./SiteNav";
 import type { SiteSectionId } from "@/enums";
-import { formatPhoneDisplay, phoneTelHref } from "@/lib/phone";
 
 interface SiteHeaderProps {
   companyName: string;
@@ -60,21 +58,13 @@ export async function SiteHeader({
         </>
       }
     >
-      <SiteNav homeHref={homeHref} fleetHref={fleetHref} sections={sections} />
-      {phone ? (
-        <a
-          href={phoneTelHref(phone)}
-          className="hidden items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring xl:inline-flex"
-        >
-          <Phone size={15} aria-hidden />
-          {formatPhoneDisplay(phone)}
-        </a>
-      ) : null}
-      {cartSlug ? <SiteCartLink slug={cartSlug} homeHref={homeHref} /> : null}
-      <SiteGuestLink homeHref={homeHref} />
+      <SiteNav homeHref={homeHref} fleetHref={fleetHref} sections={sections}>
+        <SiteGuestLink homeHref={homeHref} />
+      </SiteNav>
       <ColorSchemeSwitcher />
       <LocaleSwitcher />
       <SiteOwnerMenu homeHref={homeHref} />
+      {cartSlug ? <SiteCartLink slug={cartSlug} homeHref={homeHref} /> : null}
     </SiteHeaderShell>
   );
 }
