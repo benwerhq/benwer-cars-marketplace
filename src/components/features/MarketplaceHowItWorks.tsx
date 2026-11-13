@@ -5,7 +5,6 @@ import {
   CalendarDays,
   CarFront,
   Check,
-  ChevronRight,
   MapPin,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
@@ -21,15 +20,15 @@ function StepArrow() {
   return (
     <span
       aria-hidden
-      className="pointer-events-none absolute -top-3 left-[calc(50%+2.75rem)] hidden h-10 w-[calc(100%-5.5rem+2.5rem)] text-primary md:block"
+      className="pointer-events-none absolute -top-2 left-[calc(50%+3.75rem)] hidden h-9 w-[calc(100%-7.5rem+2.5rem)] text-primary md:block"
     >
       <svg
-        viewBox="0 0 100 40"
+        viewBox="0 0 100 36"
         preserveAspectRatio="none"
         className="h-full w-full overflow-visible"
       >
         <path
-          d="M0 40 C 25 0, 75 0, 99 38"
+          d="M0 34 C 30 0, 70 0, 100 34"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -38,11 +37,12 @@ function StepArrow() {
           vectorEffect="non-scaling-stroke"
         />
       </svg>
-      <ChevronRight
-        size={20}
-        strokeWidth={2.5}
-        className="absolute -right-1.5 -bottom-2 rotate-[55deg]"
-      />
+      <svg
+        viewBox="0 0 10 10"
+        className="absolute -right-1 -bottom-1 h-3 w-3 rotate-[35deg]"
+      >
+        <path d="M0 0 L10 5 L0 10 Z" fill="currentColor" />
+      </svg>
     </span>
   );
 }
