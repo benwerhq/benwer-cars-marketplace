@@ -1,5 +1,7 @@
 import { ColorScheme, StorageKeys } from "@/enums";
 
+export const COLOR_SCHEME_CHANGE_EVENT = "benwer:color-scheme";
+
 const DARK_QUERY = "(prefers-color-scheme: dark)";
 const ONE_YEAR_SECONDS = 60 * 60 * 24 * 365;
 

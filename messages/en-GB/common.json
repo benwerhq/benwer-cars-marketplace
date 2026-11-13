@@ -84,6 +84,14 @@
     "homeAria": "Benwer Cars, home",
     "logoAlt": "Benwer Cars"
   },
+  "darkPalette": {
+    "label": "Dark palette (preview)",
+    "hint": "Testing only — not shown in production.",
+    "stone": "Warm stone (current)",
+    "slate": "Slate",
+    "graphite": "Graphite",
+    "teal": "Deep teal"
+  },
   "colorScheme": {
     "toDark": "Switch to dark mode",
     "toLight": "Switch to light mode"

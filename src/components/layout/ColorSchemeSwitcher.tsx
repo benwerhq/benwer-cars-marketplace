@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { IconTooltip } from "@/components/ui/IconTooltip";
 import { ColorScheme } from "@/enums";
 import {
+  COLOR_SCHEME_CHANGE_EVENT,
   applyColorScheme,
   readColorSchemeCookie,
   resolveColorScheme,
@@ -15,16 +16,14 @@ import {
 import { cn } from "@/lib/utils";
 import { HEADER_ICON_BUTTON } from "./LocaleSwitcher";
 
-const CHANGE_EVENT = "benwer:color-scheme";
-
 function subscribe(onChange: () => void): () => void {
-  window.addEventListener(CHANGE_EVENT, onChange);
+  window.addEventListener(COLOR_SCHEME_CHANGE_EVENT, onChange);
   const stopSystem = subscribeToSystemScheme(() => {
     applyColorScheme(resolveColorScheme(readColorSchemeCookie()));
     onChange();
   });
   return () => {
-    window.removeEventListener(CHANGE_EVENT, onChange);
+    window.removeEventListener(COLOR_SCHEME_CHANGE_EVENT, onChange);
     stopSystem();
   };
 }
@@ -51,7 +50,7 @@ export function ColorSchemeSwitcher({ className }: ColorSchemeSwitcherProps) {
     const next = isDark ? ColorScheme.LIGHT : ColorScheme.DARK;
     writeColorSchemeCookie(next);
     applyColorScheme(next);
-    window.dispatchEvent(new Event(CHANGE_EVENT));
+    window.dispatchEvent(new Event(COLOR_SCHEME_CHANGE_EVENT));
   }
 
   return (
