@@ -740,7 +740,8 @@
     "signingIn": "Iniciando sesión…",
     "openAdmin": "Abrir Benwer admin",
     "accountMenu": "Cuenta de propietario",
-    "signedInAs": "Sesión de propietario"
+    "signedInAs": "Sesión de propietario",
+    "guestSignedOut": "Se ha cerrado tu sesión de cliente. En este navegador no puede haber a la vez una sesión de propietario y otra de cliente."
   },
   "guest": {
     "googleAction": "Iniciar sesión con Google",

@@ -740,7 +740,8 @@
     "signingIn": "Signing you in…",
     "openAdmin": "Open Benwer admin",
     "accountMenu": "Owner account",
-    "signedInAs": "Signed in as owner"
+    "signedInAs": "Signed in as owner",
+    "guestSignedOut": "You were signed out of your guest account. Owner and guest sessions can't be open at the same time in this browser."
   },
   "guest": {
     "googleAction": "Sign in with Google",

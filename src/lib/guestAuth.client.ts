@@ -113,13 +113,24 @@ const CONTINUE_URL_ERRORS = new Set([
   "auth/missing-continue-uri",
 ]);
 
+/**
+ * Where the verification email's "Continue" button leads: the guest area of the site the guest signed up on
+ * (`/guest` on a company domain, `/s/{slug}/guest` on the marketplace). The query string is dropped so preview
+ * or booking tokens never end up in the email link.
+ */
+export function guestContinueUrl(): string {
+  const { origin, pathname } = window.location;
+  const guestBase = /^(.*?\/guest)(?:\/|$)/.exec(pathname)?.[1];
+  return `${origin}${guestBase ?? "/guest"}`;
+}
+
 async function sendVerification(user: User): Promise<void> {
   const auth = getGuestAuth();
   if (auth && !auth.languageCode) {
     auth.languageCode = document.documentElement.lang.split("-")[0] || null;
   }
   try {
-    await sendEmailVerification(user, { url: window.location.href });
+    await sendEmailVerification(user, { url: guestContinueUrl() });
   } catch (error) {
     if (error instanceof FirebaseError && CONTINUE_URL_ERRORS.has(error.code)) {
       await sendEmailVerification(user);
@@ -138,6 +149,17 @@ export async function guestSendEmailVerification(locale: string): Promise<void> 
 
   auth.languageCode = locale.split("-")[0] ?? null;
   await sendVerification(user);
+}
+
+/** Whether a guest is signed in on this browser, once Firebase has restored any saved session. */
+export async function guestHasSession(): Promise<boolean> {
+  const auth = getGuestAuth();
+  if (!auth) {
+    return false;
+  }
+
+  await auth.authStateReady();
+  return auth.currentUser !== null;
 }
 
 /** Re-reads the user from Firebase and refreshes the ID token so the API sees a newly verified email. */

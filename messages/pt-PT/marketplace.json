@@ -742,7 +742,8 @@
     "signingIn": "A iniciar sessão…",
     "openAdmin": "Abrir o Benwer admin",
     "accountMenu": "Conta de proprietário",
-    "signedInAs": "Sessão de proprietário"
+    "signedInAs": "Sessão de proprietário",
+    "guestSignedOut": "A sua sessão de cliente foi terminada. Neste navegador não é possível ter ao mesmo tempo uma sessão de proprietário e outra de cliente."
   },
   "guest": {
     "googleAction": "Iniciar sessão com Google",
