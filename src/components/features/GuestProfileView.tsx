@@ -13,6 +13,7 @@ import { useEraseGuest } from "@/hooks/useGuestAccount";
 import { getErrorKey } from "@/lib/errors";
 import { GuestDetailsSection } from "./GuestDetailsForm";
 import { GuestVerifyEmailNotice } from "./GuestVerifyEmailNotice";
+import { useReturnAfterSignIn } from "@/hooks/useReturnAfterSignIn";
 
 interface GuestProfileViewProps {
   companySlug: string;
@@ -29,10 +30,11 @@ export function GuestProfileView({
   const tRoot = useTranslations();
   const router = useRouter();
   const { user, ready, configured, emailVerified, signOut } = useGuestAuth();
+  const returning = useReturnAfterSignIn(Boolean(user));
   const erase = useEraseGuest(companySlug);
   const [confirmErase, setConfirmErase] = useState(false);
 
-  if (!ready) {
+  if (!ready || returning) {
     return (
       <div className="flex flex-col gap-3">
         <Skeleton className="h-8 w-48" />

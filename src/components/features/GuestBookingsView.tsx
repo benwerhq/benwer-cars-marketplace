@@ -25,6 +25,7 @@ import {
   useGuestLink,
   useGuestReservations,
 } from "@/hooks/useGuestAccount";
+import { useReturnAfterSignIn } from "@/hooks/useReturnAfterSignIn";
 
 interface GuestBookingsViewProps {
   slug: string;
@@ -40,6 +41,7 @@ export function GuestBookingsView({
   const t = useTranslations("guest");
   const tRoot = useTranslations();
   const { user, ready, configured, emailVerified } = useGuestAuth();
+  const returning = useReturnAfterSignIn(Boolean(user));
   const account = useGuestAccount(companySlug);
   const reservations = useGuestReservations(companySlug);
   const link = useGuestLink(companySlug);
@@ -47,7 +49,7 @@ export function GuestBookingsView({
   const [bookingToken, setBookingToken] = useState("");
   const [linkOpen, setLinkOpen] = useState(false);
 
-  if (!ready) {
+  if (!ready || returning) {
     return (
       <div className="flex flex-col gap-3">
         <Skeleton className="h-8 w-48" />

@@ -11,6 +11,7 @@ import { useGuestAuth } from "@/context/GuestAuthProvider";
 import { isGuestNotConfiguredError } from "@/lib/guestAccount";
 import { getErrorKey } from "@/lib/errors";
 import { useConfirmGuestLink } from "@/hooks/useGuestAccount";
+import { useReturnAfterSignIn } from "@/hooks/useReturnAfterSignIn";
 
 interface GuestConfirmViewProps {
   companySlug: string;
@@ -27,6 +28,7 @@ export function GuestConfirmView({
   const tRoot = useTranslations();
   const router = useRouter();
   const { user, ready, configured } = useGuestAuth();
+  const returning = useReturnAfterSignIn(Boolean(user));
   const { mutateAsync, isError, error } = useConfirmGuestLink(companySlug);
   const started = useRef(false);
 
@@ -43,7 +45,7 @@ export function GuestConfirmView({
       .catch(() => undefined);
   }, [bookingsHref, configured, mutateAsync, ready, router, token, user]);
 
-  if (!ready) {
+  if (!ready || returning) {
     return <Skeleton className="h-32 w-full" />;
   }
 
