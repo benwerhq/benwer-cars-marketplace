@@ -11,7 +11,6 @@ import {
   VehicleFilterToolbar,
   VehicleFilterToolbarSkeleton,
   VehicleResultsBar,
-  VehicleResultsBarSkeleton,
 } from "./VehicleFilterToolbar";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { formatSearchDate, parseIsoDate } from "@/lib/dates";
@@ -204,25 +203,27 @@ function CarListViewContent({
         filters={filters}
         onChange={handleChange}
         vehicles={allVehicles}
-      />
-      <VehicleResultsBar
-        filters={filters}
-        onChange={handleChange}
-        summary={
-          isLoading ? (
-            <Skeleton className="h-4 w-36" />
-          ) : isError ? null : (
-            <p
-              className={
-                rows
-                  ? "text-base text-muted-foreground"
-                  : "text-sm text-muted-foreground"
-              }
-              aria-live="polite"
-            >
-              {resultsLabel}
-            </p>
-          )
+        footer={
+          <VehicleResultsBar
+            filters={filters}
+            onChange={handleChange}
+            summary={
+              isLoading ? (
+                <Skeleton className="h-4 w-36" />
+              ) : isError ? null : (
+                <p
+                  className={
+                    rows
+                      ? "text-base text-muted-foreground"
+                      : "text-sm text-muted-foreground"
+                  }
+                  aria-live="polite"
+                >
+                  {resultsLabel}
+                </p>
+              )
+            }
+          />
         }
       />
       <CarGridView
@@ -269,7 +270,6 @@ function CarListViewFallback() {
   return (
     <div className="flex flex-col gap-6">
       <VehicleFilterToolbarSkeleton />
-      <VehicleResultsBarSkeleton />
       <CarGridSkeleton className={RESULTS_GRID_CLASS} />
     </div>
   );

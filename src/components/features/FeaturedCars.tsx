@@ -21,7 +21,6 @@ import {
   VehicleFilterToolbar,
   VehicleFilterToolbarSkeleton,
   VehicleResultsBar,
-  VehicleResultsBarSkeleton,
 } from "./VehicleFilterToolbar";
 import type { Company } from "@/types/company";
 import type { Vehicle, VehicleFilters } from "@/types/vehicle";
@@ -77,18 +76,20 @@ function FeaturedCarsContent({ initialCompanies }: FeaturedCarsProps) {
         onChange={handleChange}
         vehicles={allVehicles}
         companies={companiesQuery.data ?? initialCompanies}
-      />
-      <VehicleResultsBar
-        filters={filters}
-        onChange={handleChange}
-        summary={
-          isPending ? (
-            <Skeleton className="h-4 w-36" />
-          ) : isError ? null : (
-            <p className="text-sm text-muted-foreground" aria-live="polite">
-              {tCars("resultsCount", { count: data?.length ?? 0 })}
-            </p>
-          )
+        footer={
+          <VehicleResultsBar
+            filters={filters}
+            onChange={handleChange}
+            summary={
+              isPending ? (
+                <Skeleton className="h-4 w-36" />
+              ) : isError ? null : (
+                <p className="text-sm text-muted-foreground" aria-live="polite">
+                  {tCars("resultsCount", { count: data?.length ?? 0 })}
+                </p>
+              )
+            }
+          />
         }
       />
       <CarGridView
@@ -156,7 +157,6 @@ function FeaturedCarsFallback() {
   return (
     <div className="flex flex-col gap-5">
       <VehicleFilterToolbarSkeleton />
-      <VehicleResultsBarSkeleton />
       <CarGridSkeleton className={FEATURED_GRID_CLASS} count={4} />
     </div>
   );

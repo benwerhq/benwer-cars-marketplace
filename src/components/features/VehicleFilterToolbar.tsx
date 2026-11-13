@@ -28,6 +28,7 @@ interface VehicleFilterToolbarProps {
   onChange: (filters: VehicleFilters) => void;
   vehicles?: Vehicle[];
   companies?: Company[];
+  footer?: ReactNode;
   className?: string;
 }
 
@@ -36,6 +37,7 @@ export function VehicleFilterToolbar({
   onChange,
   vehicles = [],
   companies,
+  footer,
   className,
 }: VehicleFilterToolbarProps) {
   const t = useTranslations("cars");
@@ -79,110 +81,115 @@ export function VehicleFilterToolbar({
       role="search"
       aria-label={t("filters.title")}
       className={cn(
-        "flex flex-wrap items-center gap-2 rounded-2xl border border-border bg-surface p-2",
+        "flex flex-col gap-3 rounded-2xl border border-border bg-surface p-3 md:p-4",
         className,
       )}
     >
-      <div className="relative w-full min-w-0 sm:w-auto sm:min-w-56 sm:flex-1">
-        <Search
-          size={16}
-          className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-subtle-foreground"
-          aria-hidden
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="relative w-full min-w-0 sm:w-auto sm:min-w-56 sm:flex-1">
+          <Search
+            size={16}
+            className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-subtle-foreground"
+            aria-hidden
+          />
+          <input
+            type="search"
+            value={draft}
+            onChange={(event) => setDraft(event.target.value)}
+            placeholder={t("searchPlaceholder")}
+            aria-label={t("searchPlaceholder")}
+            className="h-11 w-full rounded-full border border-border-strong bg-background pr-3 pl-9 text-sm text-foreground placeholder:text-subtle-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-9"
+          />
+        </div>
+        <MultiSelectFilter
+          label={t("filters.category")}
+          options={FILTER_CATEGORIES.map((category) => ({
+            value: category,
+            label: t(`categories.${category}`),
+          }))}
+          value={filters.categories ?? []}
+          onChange={(categories) =>
+            onChange({
+              ...filters,
+              categories: categories.length ? categories : undefined,
+            })
+          }
         />
-        <input
-          type="search"
-          value={draft}
-          onChange={(event) => setDraft(event.target.value)}
-          placeholder={t("searchPlaceholder")}
-          aria-label={t("searchPlaceholder")}
-          className="h-11 w-full rounded-full border border-border-strong bg-background pr-3 pl-9 text-sm text-foreground placeholder:text-subtle-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-9"
+        <MultiSelectFilter
+          label={t("filters.fuel")}
+          options={FILTER_FUELS.map((fuel) => ({
+            value: fuel,
+            label: t(`fuel.${fuel}`),
+          }))}
+          value={filters.fuels ?? []}
+          onChange={(fuels) =>
+            onChange({ ...filters, fuels: fuels.length ? fuels : undefined })
+          }
         />
+        <MultiSelectFilter
+          label={t("filters.transmission")}
+          options={FILTER_TRANSMISSIONS.map((transmission) => ({
+            value: transmission,
+            label: t(`transmission.${transmission}`),
+          }))}
+          value={filters.transmissions ?? []}
+          onChange={(transmissions) =>
+            onChange({
+              ...filters,
+              transmissions: transmissions.length ? transmissions : undefined,
+            })
+          }
+        />
+        {seatOptions.length > 0 ? (
+          <MultiSelectFilter
+            label={t("filters.seats")}
+            options={seatOptions.map((seats) => ({
+              value: String(seats),
+              label: String(seats),
+            }))}
+            value={(filters.seats ?? []).map(String)}
+            onChange={(values) =>
+              onChange({
+                ...filters,
+                seats: values.length
+                  ? values.map(Number).sort((a, b) => a - b)
+                  : undefined,
+              })
+            }
+          />
+        ) : null}
+        {companies && companies.length > 1 ? (
+          <MultiSelectFilter
+            label={t("filters.company")}
+            options={companies.map((company) => ({
+              value: company.slug,
+              label: company.name,
+            }))}
+            value={filters.companySlugs ?? []}
+            onChange={(companySlugs) =>
+              onChange({
+                ...filters,
+                companySlugs: companySlugs.length ? companySlugs : undefined,
+                companySlug: companySlugs[0],
+              })
+            }
+          />
+        ) : null}
+        {hasFilters ? (
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            onClick={() => onChange(clearAdvancedFilters(filters))}
+            className="min-h-11 rounded-full md:min-h-9"
+          >
+            <X size={14} aria-hidden />
+            {t("clearFilters")}
+          </Button>
+        ) : null}
       </div>
-      <MultiSelectFilter
-        label={t("filters.category")}
-        options={FILTER_CATEGORIES.map((category) => ({
-          value: category,
-          label: t(`categories.${category}`),
-        }))}
-        value={filters.categories ?? []}
-        onChange={(categories) =>
-          onChange({
-            ...filters,
-            categories: categories.length ? categories : undefined,
-          })
-        }
-      />
-      <MultiSelectFilter
-        label={t("filters.fuel")}
-        options={FILTER_FUELS.map((fuel) => ({
-          value: fuel,
-          label: t(`fuel.${fuel}`),
-        }))}
-        value={filters.fuels ?? []}
-        onChange={(fuels) =>
-          onChange({ ...filters, fuels: fuels.length ? fuels : undefined })
-        }
-      />
-      <MultiSelectFilter
-        label={t("filters.transmission")}
-        options={FILTER_TRANSMISSIONS.map((transmission) => ({
-          value: transmission,
-          label: t(`transmission.${transmission}`),
-        }))}
-        value={filters.transmissions ?? []}
-        onChange={(transmissions) =>
-          onChange({
-            ...filters,
-            transmissions: transmissions.length ? transmissions : undefined,
-          })
-        }
-      />
-      {seatOptions.length > 0 ? (
-        <MultiSelectFilter
-          label={t("filters.seats")}
-          options={seatOptions.map((seats) => ({
-            value: String(seats),
-            label: String(seats),
-          }))}
-          value={(filters.seats ?? []).map(String)}
-          onChange={(values) =>
-            onChange({
-              ...filters,
-              seats: values.length
-                ? values.map(Number).sort((a, b) => a - b)
-                : undefined,
-            })
-          }
-        />
-      ) : null}
-      {companies && companies.length > 1 ? (
-        <MultiSelectFilter
-          label={t("filters.company")}
-          options={companies.map((company) => ({
-            value: company.slug,
-            label: company.name,
-          }))}
-          value={filters.companySlugs ?? []}
-          onChange={(companySlugs) =>
-            onChange({
-              ...filters,
-              companySlugs: companySlugs.length ? companySlugs : undefined,
-              companySlug: companySlugs[0],
-            })
-          }
-        />
-      ) : null}
-      {hasFilters ? (
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          onClick={() => onChange(clearAdvancedFilters(filters))}
-          className="min-h-11 rounded-full md:min-h-9"
-        >
-          <X size={14} aria-hidden />
-          {t("clearFilters")}
-        </Button>
+      {footer ? (
+        <div className="border-t border-border pt-3">{footer}</div>
       ) : null}
     </div>
   );
@@ -278,15 +285,20 @@ export function VehicleFilterToolbarSkeleton({
   return (
     <div
       className={cn(
-        "flex flex-wrap items-center gap-2 rounded-2xl border border-border bg-surface p-2",
+        "flex flex-col gap-3 rounded-2xl border border-border bg-surface p-3 md:p-4",
         className,
       )}
     >
-      <Skeleton className="h-11 w-full rounded-full sm:w-auto sm:min-w-56 sm:flex-1 md:h-9" />
-      <Skeleton className="h-9 w-32 rounded-full" />
-      <Skeleton className="h-9 w-28 rounded-full" />
-      <Skeleton className="h-9 w-36 rounded-full" />
-      <Skeleton className="h-9 w-24 rounded-full" />
+      <div className="flex flex-wrap items-center gap-2">
+        <Skeleton className="h-11 w-full rounded-full sm:w-auto sm:min-w-56 sm:flex-1 md:h-9" />
+        <Skeleton className="h-9 w-32 rounded-full" />
+        <Skeleton className="h-9 w-28 rounded-full" />
+        <Skeleton className="h-9 w-36 rounded-full" />
+        <Skeleton className="h-9 w-24 rounded-full" />
+      </div>
+      <div className="border-t border-border pt-3">
+        <VehicleResultsBarSkeleton />
+      </div>
     </div>
   );
 }
