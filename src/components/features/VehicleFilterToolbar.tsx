@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowUpDown, ChevronDown, Search, X } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { MultiSelectFilter } from "@/components/ui/MultiSelectFilter";
 import { SelectMenu } from "@/components/ui/SelectMenu";
@@ -14,12 +14,14 @@ import {
   FILTER_SORTS,
   FILTER_TRANSMISSIONS,
   categoryOptionsOf,
+  groupOptionsOf,
   clearAdvancedFilters,
   fuelOptionsOf,
   hasActiveAdvancedFilters,
   seatOptionsOf,
   transmissionOptionsOf,
 } from "@/lib/vehicleFilters";
+import { localizedText } from "@/lib/localizedCopy";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
 import type { Vehicle, VehicleFilters } from "@/types/vehicle";
@@ -32,6 +34,7 @@ interface VehicleFilterToolbarProps {
   vehicles?: Vehicle[];
   companies?: Company[];
   footer?: ReactNode;
+  groupFilter?: boolean;
   className?: string;
 }
 
@@ -41,9 +44,11 @@ export function VehicleFilterToolbar({
   vehicles = [],
   companies,
   footer,
+  groupFilter = false,
   className,
 }: VehicleFilterToolbarProps) {
   const t = useTranslations("cars");
+  const locale = useLocale();
   const urlKey = JSON.stringify(urlFilters);
   const [pending, setPending] = useState<{
     baseKey: string;
@@ -61,6 +66,9 @@ export function VehicleFilterToolbar({
   const categoryOptions = hasFleet
     ? categoryOptionsOf(vehicles, filters.categories)
     : FILTER_CATEGORIES;
+  const groupOptions = groupFilter
+    ? groupOptionsOf(vehicles, filters.groups)
+    : [];
   const fuelOptions = hasFleet
     ? fuelOptionsOf(vehicles, filters.fuels)
     : FILTER_FUELS;
@@ -126,20 +134,40 @@ export function VehicleFilterToolbar({
             className="h-11 w-full rounded-full border border-border-strong bg-background pr-3 pl-9 text-sm text-foreground placeholder:text-subtle-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-9"
           />
         </div>
-        <MultiSelectFilter
-          label={t("filters.category")}
-          options={categoryOptions.map((category) => ({
-            value: category,
-            label: t(`categories.${category}`),
-          }))}
-          value={filters.categories ?? []}
-          onChange={(categories) =>
-            onChange({
-              ...filters,
-              categories: categories.length ? categories : undefined,
-            })
-          }
-        />
+        {groupOptions.length > 0 ? (
+          <MultiSelectFilter
+            label={t("filters.category")}
+            options={groupOptions.map((group) => ({
+              value: group.id,
+              label:
+                localizedText(group.name, locale) ||
+                group.code ||
+                t("categories.other"),
+            }))}
+            value={filters.groups ?? []}
+            onChange={(groups) =>
+              onChange({
+                ...filters,
+                groups: groups.length ? groups : undefined,
+              })
+            }
+          />
+        ) : (
+          <MultiSelectFilter
+            label={t("filters.category")}
+            options={categoryOptions.map((category) => ({
+              value: category,
+              label: t(`categories.${category}`),
+            }))}
+            value={filters.categories ?? []}
+            onChange={(categories) =>
+              onChange({
+                ...filters,
+                categories: categories.length ? categories : undefined,
+              })
+            }
+          />
+        )}
         <MultiSelectFilter
           label={t("filters.fuel")}
           options={fuelOptions.map((fuel) => ({

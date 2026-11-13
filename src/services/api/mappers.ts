@@ -34,7 +34,7 @@ import type { WebsiteSettings } from "@/types/websiteSettings";
 import type { SiteContent } from "@/types/siteContent";
 import { withDemoReviews } from "@/lib/demoReviews";
 import { parseSiteContent } from "@/lib/siteContent";
-import type { Vehicle } from "@/types/vehicle";
+import type { Vehicle, VehicleGroup } from "@/types/vehicle";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
@@ -388,6 +388,22 @@ export interface VehicleMapOptions {
   currency?: string;
 }
 
+function mapVehicleGroup(raw: unknown): VehicleGroup | null {
+  if (!isRecord(raw)) {
+    return null;
+  }
+  const id = readId(raw.id);
+  if (!id) {
+    return null;
+  }
+  return {
+    id,
+    name: readStringRecord(raw.name) ?? {},
+    code: readString(raw.code) ?? null,
+    sortOrder: readNumber(raw.sortOrder) ?? 0,
+  };
+}
+
 export function mapVehicle(
   raw: unknown,
   options?: VehicleMapOptions | string,
@@ -422,6 +438,7 @@ export function mapVehicle(
     color: readString(row.color) ?? null,
     deposit: readNumber(row.deposit) ?? null,
     category: readString(row.category) ?? null,
+    group: mapVehicleGroup(row.group),
     mileage:
       readNumber(row.currentMileage) ??
       readNumber(row.mileage) ??

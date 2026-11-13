@@ -32,10 +32,19 @@ export interface Vehicle {
   category: string | null;
   mileage: number | null;
   branchId: string | null;
+  group?: VehicleGroup | null;
+}
+
+export interface VehicleGroup {
+  id: string;
+  name: Record<string, string>;
+  code: string | null;
+  sortOrder: number;
 }
 
 export interface VehicleFilters {
   categories?: VehicleCategory[];
+  groups?: string[];
   fuels?: FuelType[];
   transmissions?: TransmissionType[];
   seats?: number[];

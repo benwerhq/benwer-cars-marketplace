@@ -211,6 +211,7 @@ function CarListViewContent({
         filters={filters}
         onChange={handleChange}
         vehicles={allVehicles}
+        groupFilter
         footer={
           <VehicleResultsBar
             filters={filters}

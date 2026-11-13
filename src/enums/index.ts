@@ -203,6 +203,7 @@ export enum SearchParams {
   VIEW = "view",
   TYPE = "type",
   CATEGORY = "category",
+  GROUP = "group",
   FUEL = "fuel",
   SEATS = "seats",
   TRANSMISSION = "transmission",

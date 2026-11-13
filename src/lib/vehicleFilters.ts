@@ -10,6 +10,7 @@ import type {
   MarketplaceSearchFilters,
   Vehicle,
   VehicleFilters,
+  VehicleGroup,
 } from "@/types/vehicle";
 
 export const FILTER_CATEGORIES = Object.values(VehicleCategory);
@@ -147,6 +148,9 @@ export function parseVehicleFilters(
 
   return {
     categories: parseCategories(searchParams),
+    groups: parseList(searchParams.get(SearchParams.GROUP)).length
+      ? [...new Set(parseList(searchParams.get(SearchParams.GROUP)))]
+      : undefined,
     fuels: parseEnumList(searchParams.get(SearchParams.FUEL), FILTER_FUELS),
     transmissions: parseEnumList(
       searchParams.get(SearchParams.TRANSMISSION),
@@ -173,6 +177,7 @@ export function applyVehicleFilters(
   setOrDelete(next, SearchParams.FROM, filters.from);
   setOrDelete(next, SearchParams.TO, filters.to);
   setOrDelete(next, SearchParams.CATEGORY, serializeList(filters.categories));
+  setOrDelete(next, SearchParams.GROUP, serializeList(filters.groups));
   setOrDelete(next, SearchParams.FUEL, serializeList(filters.fuels));
   setOrDelete(
     next,
@@ -204,6 +209,7 @@ export function clearAdvancedFilters(filters: VehicleFilters): VehicleFilters {
 export function countAdvancedFilters(filters: VehicleFilters): number {
   return (
     (filters.categories?.length ?? 0) +
+    (filters.groups?.length ?? 0) +
     (filters.fuels?.length ?? 0) +
     (filters.transmissions?.length ?? 0) +
     (filters.seats?.length ?? 0) +
@@ -270,6 +276,7 @@ export function matchesVehicleFilters(
 
   if (
     excludedBy(filters.categories, vehicleCategoryOf(vehicle)) ||
+    excludedBy(filters.groups, vehicle.group?.id ?? "") ||
     excludedBy(filters.fuels, vehicle.fuel) ||
     excludedBy(filters.transmissions, vehicle.transmission) ||
     excludedBy(filters.seats, vehicle.seats) ||
@@ -342,6 +349,23 @@ export function categoryOptionsOf(
     vehicles.map(vehicleCategoryOf),
     selected,
   );
+}
+
+export function groupOptionsOf(
+  vehicles: Pick<Vehicle, "group">[],
+  selected?: string[],
+): VehicleGroup[] {
+  const groups = new Map<string, VehicleGroup>();
+  for (const vehicle of vehicles) {
+    if (vehicle.group) {
+      groups.set(vehicle.group.id, vehicle.group);
+    }
+  }
+  const missing = (selected ?? []).filter((id) => !groups.has(id));
+  return [
+    ...[...groups.values()].sort((a, b) => a.sortOrder - b.sortOrder),
+    ...missing.map((id) => ({ id, name: {}, code: null, sortOrder: 0 })),
+  ];
 }
 
 export function fuelOptionsOf(
