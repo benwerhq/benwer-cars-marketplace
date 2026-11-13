@@ -18,7 +18,7 @@ import {
   useWebsiteSettings,
 } from "@/hooks/useWebsiteSettings";
 import { getErrorKey } from "@/lib/errors";
-import { publicHomeFromHome } from "@/lib/site";
+import { publicHomeFromHome, siteIntroAddress } from "@/lib/site";
 import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { localizedText } from "@/lib/localizedCopy";
 import { siteFontStack, siteHeaderLogo } from "@/lib/siteContent";
@@ -108,7 +108,9 @@ export function OwnerHomeRoot({
     phone: liveSite.showPhone ? liveSite.company.phone : null,
     email: liveSite.showEmail ? liveSite.company.email : null,
     address: liveSite.showAddress
-      ? liveSite.company.address || liveSite.company.location
+      ? siteIntroAddress(liveSite.branches) ||
+        liveSite.company.address ||
+        liveSite.company.location
       : null,
     whatsapp: liveSite.content.contact.whatsapp || null,
     rating:

@@ -1,7 +1,7 @@
 import { BookingMode, DriverAgeBand, PublicChannel, SearchParams, SiteStatus } from "@/enums";
 import { customDomainPublicPath } from "@/lib/customDomain";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
-import type { PublicSite } from "@/types/site";
+import type { PublicSite, SiteBranch } from "@/types/site";
 
 export const SITE_CHANNEL = PublicChannel.WEBSITE;
 
@@ -228,4 +228,15 @@ export function parseDriverAge(value: string | null | undefined): DriverAgeBand 
   return (Object.values(DriverAgeBand) as string[]).includes(value ?? "")
     ? (value as DriverAgeBand)
     : DriverAgeBand.STANDARD;
+}
+
+export function siteIntroAddress(
+  branches: Pick<SiteBranch, "name" | "address">[],
+): string | null {
+  const [only, ...rest] = branches;
+  if (only && rest.length === 0) {
+    return only.address || only.name || null;
+  }
+  const names = branches.map((branch) => branch.name).filter(Boolean);
+  return names.length ? names.join(" · ") : null;
 }

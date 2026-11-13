@@ -3,6 +3,7 @@ import { BookingMode, SiteLayout, SiteStatus } from "@/enums";
 import { PublicChannel } from "@/enums";
 import {
   publicHomeFromHome,
+  siteIntroAddress,
   SITE_CHANNEL,
   canAcceptBookings,
   companySlugFromSite,
@@ -151,5 +152,26 @@ describe("publicHomeFromHome", () => {
   it("drops preview and edit query params", () => {
     expect(publicHomeFromHome("/s/coches?preview=abc&edit=1")).toBe("/s/coches");
     expect(publicHomeFromHome("/?preview=abc")).toBe("/");
+  });
+});
+
+describe("siteIntroAddress", () => {
+  it("uses the address of a single branch", () => {
+    expect(
+      siteIntroAddress([{ name: "Headquarters", address: "Calle Larios 10" }]),
+    ).toBe("Calle Larios 10");
+  });
+
+  it("names every branch when there are several", () => {
+    expect(
+      siteIntroAddress([
+        { name: "Headquarters", address: "Calle Larios 10" },
+        { name: "Málaga Airport", address: "Av. García Morato" },
+      ]),
+    ).toBe("Headquarters · Málaga Airport");
+  });
+
+  it("returns null without branches", () => {
+    expect(siteIntroAddress([])).toBeNull();
   });
 });
