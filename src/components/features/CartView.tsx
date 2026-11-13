@@ -32,7 +32,7 @@ import {
 } from "@/lib/bookingDraft";
 import { createGuestDetailsSchema, type GuestDetailsValues } from "@/lib/bookingSchema";
 import { removeFromCart, updateCartItem, useCart, type CartItem } from "@/lib/cart";
-import { countRentalDays, parseIsoDate, startOfToday, toIsoDate } from "@/lib/dates";
+import { countRentalDays, formatLongDate, parseIsoDate, startOfToday, toIsoDate } from "@/lib/dates";
 import { getErrorKey } from "@/lib/errors";
 import { localizedText } from "@/lib/localizedCopy";
 import { guestBookingFieldsEnabled, TIME_SLOTS } from "@/lib/extras";
@@ -68,6 +68,11 @@ interface CheckoutResult {
   label: string;
   token?: string;
   error?: string;
+}
+
+function cartDate(iso: string, locale: string): string {
+  const date = parseIsoDate(iso);
+  return date ? formatLongDate(date, locale) : iso;
 }
 
 function fillTemplate(template: string, carId: string): string {
@@ -653,9 +658,9 @@ function CartLine({
       ) : (
         <dl className="grid grid-cols-2 gap-2 text-sm">
           <dt className="text-muted-foreground">{t("from")}</dt>
-          <dd className="text-right font-medium text-foreground">{item.from}</dd>
+          <dd className="text-right font-medium text-foreground">{cartDate(item.from, locale)}</dd>
           <dt className="text-muted-foreground">{t("to")}</dt>
-          <dd className="text-right font-medium text-foreground">{item.to}</dd>
+          <dd className="text-right font-medium text-foreground">{cartDate(item.to, locale)}</dd>
           {returnBranch ? (
             <>
               <dt className="text-muted-foreground">{tBooking("returnLocation")}</dt>

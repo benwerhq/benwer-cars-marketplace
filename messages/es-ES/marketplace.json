@@ -436,7 +436,8 @@
     "notes": "Comentarios",
     "notesPlaceholder": "¿Algo que la empresa deba saber?",
     "dateOfBirth": "Fecha de nacimiento",
-    "optional": "opcional"
+    "optional": "opcional",
+    "extraSoldOut": "No disponible para estas fechas"
   },
   "reservationStatus": {
     "title": "Tu reserva",
@@ -1114,7 +1115,8 @@
       "description": "Los clientes valoran el alquiler al devolver el coche. Solo se muestran las que apruebas.",
       "summary": "Media de {average} con {count, plural, one {# opinión aprobada} other {# opiniones aprobadas}}",
       "none": "Aún no hay opiniones aprobadas. Los clientes verán un breve aviso hasta que apruebes una.",
-      "manage": "Aprobar u ocultar opiniones en Benwer admin"
+      "manage": "Aprobar u ocultar opiniones en Benwer admin",
+      "demo": "Son opiniones de demostración que se muestran en esta empresa de prueba hasta que apruebes opiniones reales en Benwer admin."
     },
     "app": {
       "storesTitle": "Enlaces a las tiendas",
@@ -1249,7 +1251,8 @@
       "sectionItem": "Sección {position}",
       "addSection": "Añadir sección",
       "reset": "Volver al texto estándar",
-      "pageTitle": "Título de la página"
+      "pageTitle": "Título de la página",
+      "privacyLooksLikeTerms": "Tu política de privacidad tiene el mismo texto que las condiciones. Usa \"Volver al texto estándar\" en Política de privacidad o escribe tu propio texto de privacidad y guarda."
     },
     "preview": "Vista previa",
     "fullscreen": "Editor a pantalla completa",
@@ -1287,7 +1290,34 @@
     }
   },
   "siteLegal": {
-    "byCompany": "Publicado por {name}."
+    "byCompany": "Publicado por {name}.",
+    "cookies": {
+      "title": "Política de cookies",
+      "lede": "Cómo {name} usa cookies y tecnologías similares en este sitio web.",
+      "updated": "Publicado por {name}.",
+      "sections": [
+        {
+          "title": "Qué usamos",
+          "body": "Las cookies son pequeños archivos de texto que se guardan en tu dispositivo. Este sitio también usa almacenamiento similar, como el almacenamiento local, para recordar tus preferencias, tu carrito y tu sesión."
+        },
+        {
+          "title": "Estrictamente necesarias",
+          "body": "Una cookie de idioma permite mostrar el sitio en tu idioma, y tu elección en el aviso de cookies se guarda para no preguntarte en cada visita. Si inicias sesión, el proveedor de acceso guarda una sesión en tu dispositivo para mantenerte conectado. Los pagos con tarjeta los gestiona Stripe, que puede usar sus propias cookies para prevenir el fraude."
+        },
+        {
+          "title": "Cookies opcionales",
+          "body": "Las cookies opcionales (por ejemplo, de analítica) permanecen desactivadas salvo que elijas Aceptar todas. Hoy este sitio no usa cookies de analítica ni de marketing."
+        },
+        {
+          "title": "Gestionar las cookies",
+          "body": "Usa el enlace de configuración de cookies del pie de página para cambiar tu elección. También puedes borrar las cookies y los datos del sitio desde tu navegador. Bloquear el almacenamiento estrictamente necesario puede cerrar tu sesión o vaciar tu carrito."
+        },
+        {
+          "title": "Más información",
+          "body": "Consulta la política de privacidad para saber cómo {name} trata los datos personales, o usa los datos de contacto del pie de página."
+        }
+      ]
+    }
   },
   "cart": {
     "title": "Tu carrito",

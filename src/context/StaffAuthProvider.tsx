@@ -9,7 +9,6 @@ import {
   type ReactNode,
 } from "react";
 import type { User } from "firebase/auth";
-import { guestSignOut } from "@/lib/guestAuth.client";
 import { setStaffAccessTokenProvider } from "@/lib/staffAccessToken";
 import {
   getStaffAuth,
@@ -26,11 +25,6 @@ interface StaffAuthContextValue {
   configured: boolean;
   signInWithToken: (token: string) => Promise<void>;
   signOut: () => Promise<void>;
-}
-
-async function signInOwnerWithToken(token: string): Promise<void> {
-  await guestSignOut();
-  await staffSignInWithToken(token);
 }
 
 const StaffAuthContext = createContext<StaffAuthContextValue | null>(null);
@@ -52,12 +46,6 @@ export function StaffAuthProvider({ children }: { children: ReactNode }) {
   }, [configured]);
 
   useEffect(() => {
-    if (user) {
-      void guestSignOut();
-    }
-  }, [user]);
-
-  useEffect(() => {
     setStaffAccessTokenProvider(() => staffIdToken(getStaffAuth()?.currentUser ?? null));
     return () => setStaffAccessTokenProvider(null);
   }, []);
@@ -67,7 +55,7 @@ export function StaffAuthProvider({ children }: { children: ReactNode }) {
       user,
       ready,
       configured,
-      signInWithToken: signInOwnerWithToken,
+      signInWithToken: staffSignInWithToken,
       signOut: staffSignOut,
     }),
     [configured, ready, user],

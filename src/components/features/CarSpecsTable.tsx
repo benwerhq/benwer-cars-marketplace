@@ -4,7 +4,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { formatMoney } from "@/lib/money";
 import type { Vehicle } from "@/types/vehicle";
-import { TransmissionType } from "@/enums";
+import { TransmissionType, VehicleCategory } from "@/enums";
+import { vehicleCategoryOf } from "@/lib/vehicleFilters";
 
 interface CarSpecsTableProps {
   vehicle: Vehicle;
@@ -25,8 +26,13 @@ export function CarSpecsTable({ vehicle, className }: CarSpecsTableProps) {
       value: tCars(`types.${vehicle.type}`),
       titleCase: false,
     },
-    vehicle.category && vehicle.category !== vehicle.type
-      ? { label: t("category"), value: vehicle.category, titleCase: true }
+    vehicleCategoryOf(vehicle) !== VehicleCategory.OTHER &&
+    String(vehicleCategoryOf(vehicle)) !== String(vehicle.type)
+      ? {
+          label: t("category"),
+          value: tCars(`categories.${vehicleCategoryOf(vehicle)}`),
+          titleCase: false,
+        }
       : null,
     {
       label: t("transmission"),

@@ -262,6 +262,14 @@ export function vehicleCategoryOf(vehicle: Vehicle): VehicleCategory {
   return VehicleCategory.OTHER;
 }
 
+/** The `cars` message key for a vehicle's badge: its filterable category, else its body type. */
+export function vehicleLabelKey(vehicle: Vehicle): string {
+  const category = vehicleCategoryOf(vehicle);
+  return category === VehicleCategory.OTHER
+    ? `types.${vehicle.type}`
+    : `categories.${category}`;
+}
+
 function excludedBy<T>(selected: T[] | undefined, value: T): boolean {
   return Boolean(selected?.length) && !selected?.includes(value);
 }

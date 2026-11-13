@@ -1,5 +1,7 @@
 import type { SiteReviewsContent } from "@/types/siteContent";
 
+const DEMO_REVIEW_PREFIX = "demo-review-";
+
 const BENWER_HQ_COMPANY_ID = "c1000000-0000-7000-8000-000000000001";
 
 const BENWER_HQ_REVIEWS: SiteReviewsContent = {
@@ -41,4 +43,8 @@ export function withDemoReviews(
     return reviews;
   }
   return BENWER_HQ_REVIEWS;
+}
+
+export function isDemoReviews(reviews: SiteReviewsContent): boolean {
+  return reviews.items.some((item) => item.id.startsWith(DEMO_REVIEW_PREFIX));
 }

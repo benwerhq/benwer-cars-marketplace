@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { SiteSectionId } from "@/enums";
 import { cn } from "@/lib/utils";
+import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
 
 interface SiteNavProps {
   homeHref: string;
@@ -12,12 +15,19 @@ interface SiteNavProps {
   sections?: SiteSectionId[];
 }
 
+const FLEET_SEGMENT = /\/(?:cars|search)(?:\/|$)/;
+
+function pathOf(href: string): string {
+  return href.split(/[?#]/)[0] || "/";
+}
+
 export function SiteNav({ homeHref, fleetHref, sections = [] }: SiteNavProps) {
   const t = useTranslations("nav");
   const tSections = useTranslations("siteSections.nav");
   const pathname = usePathname();
-  const isHome = pathname === homeHref.split("?")[0];
-  const fleetPath = fleetHref.split("?")[0] ?? "";
+  const homePath = pathOf(homeHref);
+  const isHome = pathname === homePath;
+  const sectionBase = homeHref.split("#")[0];
 
   const links = [
     {
@@ -30,19 +40,20 @@ export function SiteNav({ homeHref, fleetHref, sections = [] }: SiteNavProps) {
     {
       href: fleetHref,
       label: t("cars"),
-      isActive:
-        pathname.includes("/cars") ||
-        pathname.includes("/book") ||
-        pathname.includes("/search") ||
-        pathname.startsWith(fleetPath),
+      isActive: FLEET_SEGMENT.test(pathname),
     },
     ...sections.map((id) => ({
-      href: `${homeHref.split("#")[0]}#${id}`,
+      href: `${sectionBase}#${id}`,
       label: tSections(id),
       isActive: false,
       hideOnMobile: true,
       hideBelowLarge: true,
     })),
+  ];
+
+  const menuLinks = [
+    ...(sections.length > 0 ? [] : [{ href: homeHref, label: t("home"), smOnly: true }]),
+    ...sections.map((id) => ({ href: `${sectionBase}#${id}`, label: tSections(id), smOnly: false })),
   ];
 
   return (
@@ -65,6 +76,31 @@ export function SiteNav({ homeHref, fleetHref, sections = [] }: SiteNavProps) {
           {link.label}
         </Link>
       ))}
+      {menuLinks.length > 0 ? (
+        <DropdownMenu.Root modal={false}>
+          <DropdownMenu.Trigger asChild>
+            <button
+              type="button"
+              aria-label={t("menu")}
+              className={cn(
+                HEADER_ICON_BUTTON,
+                sections.length > 0 ? "lg:hidden" : "sm:hidden",
+              )}
+            >
+              <Menu size={16} aria-hidden />
+            </button>
+          </DropdownMenu.Trigger>
+          <DropdownMenu.Portal>
+            <DropdownMenu.Content align="end" sideOffset={6} className={MENU_CONTENT}>
+              {menuLinks.map((link) => (
+                <DropdownMenu.Item key={link.href} asChild className={MENU_ITEM}>
+                  <Link href={link.href}>{link.label}</Link>
+                </DropdownMenu.Item>
+              ))}
+            </DropdownMenu.Content>
+          </DropdownMenu.Portal>
+        </DropdownMenu.Root>
+      ) : null}
     </nav>
   );
 }

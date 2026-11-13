@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Car, Fuel, Settings2, Users } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { TransmissionType } from "@/enums";
+import { vehicleLabelKey } from "@/lib/vehicleFilters";
 import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
@@ -80,7 +81,7 @@ export function CarRowCard({
         {company ? <CompanyEyebrow company={company} className="mb-2" /> : null}
         <h3 className="text-lg font-semibold tracking-tight text-foreground">{name}</h3>
         <p className="mt-0.5 text-sm text-muted-foreground">
-          {vehicle.year} · {t(`types.${vehicle.type}`)}
+          {vehicle.year} · {t(vehicleLabelKey(vehicle))}
         </p>
         <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-foreground">
           <li className="flex items-center gap-2">

@@ -446,6 +446,9 @@ export function BookingView({
                     ? t("extraPerDay", { price })
                     : t("extraFixed", { price })}
                 </span>
+                {soldOut ? (
+                  <span className="text-xs font-medium text-foreground">{t("extraSoldOut")}</span>
+                ) : null}
               </span>
             </label>
           );

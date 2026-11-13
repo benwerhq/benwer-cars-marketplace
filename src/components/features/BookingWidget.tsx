@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowUpRight, ShoppingCart } from "lucide-react";
+import { ArrowUpRight, Check, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
@@ -62,6 +63,15 @@ export function BookingWidget({
 }: BookingWidgetProps) {
   const t = useTranslations("booking");
   const tCart = useTranslations("cart");
+  const [justAdded, setJustAdded] = useState(false);
+
+  useEffect(() => {
+    if (!justAdded) {
+      return;
+    }
+    const timer = window.setTimeout(() => setJustAdded(false), 2500);
+    return () => window.clearTimeout(timer);
+  }, [justAdded]);
   const router = useRouter();
   const tCars = useTranslations("cars");
   const tDetail = useTranslations("carDetail");
@@ -125,6 +135,7 @@ export function BookingWidget({
       toast.error(tCart("full", { max: CART_MAX_ITEMS }));
       return;
     }
+    setJustAdded(true);
     toast.success(tCart("added"), {
       action: { label: tCart("view"), onClick: () => router.push(cart.href) },
     });
@@ -220,8 +231,12 @@ export function BookingWidget({
             onClick={handleAddToCart}
             className="hidden h-11 w-full lg:inline-flex"
           >
-            <ShoppingCart size={16} aria-hidden />
-            {tCart("add")}
+            {justAdded ? (
+              <Check size={16} aria-hidden />
+            ) : (
+              <ShoppingCart size={16} aria-hidden />
+            )}
+            <span aria-live="polite">{justAdded ? tCart("added") : tCart("add")}</span>
           </Button>
         ) : null}
       </div>
@@ -249,10 +264,14 @@ export function BookingWidget({
               variant="secondary"
               disabled={!canAddToCart}
               onClick={handleAddToCart}
-              aria-label={tCart("add")}
+              aria-label={justAdded ? tCart("added") : tCart("add")}
               className="h-11 w-11 shrink-0 px-0"
             >
-              <ShoppingCart size={18} aria-hidden />
+              {justAdded ? (
+                <Check size={18} aria-hidden />
+              ) : (
+                <ShoppingCart size={18} aria-hidden />
+              )}
             </Button>
           ) : null}
           <BookingCta

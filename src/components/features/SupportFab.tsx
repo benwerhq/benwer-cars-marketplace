@@ -58,7 +58,7 @@ export function SupportFab({ whatsappHref }: SupportFabProps) {
   return (
     <div
       ref={rootRef}
-      className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 size-14 sm:right-6 sm:bottom-6"
+      className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 size-12 sm:right-6 sm:bottom-6 sm:size-14"
     >
       <div
         id="support-menu"
@@ -99,7 +99,7 @@ export function SupportFab({ whatsappHref }: SupportFabProps) {
         aria-expanded={open}
         aria-haspopup="menu"
         aria-controls="support-menu"
-        className="inline-flex size-14 cursor-pointer items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="inline-flex size-12 sm:size-14 cursor-pointer items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         {open ? <X size={22} aria-hidden /> : <Headset size={22} aria-hidden />}
       </button>

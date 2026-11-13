@@ -209,6 +209,7 @@ export function OwnerHomeRoot({
       {showEditor ? (
         <SiteEditor
           draft={draft}
+          reviews={liveSite.content.reviews}
           companyId={site.company.id}
           companyName={liveSite.company.name}
           companyDescription={liveSite.company.description ?? ""}

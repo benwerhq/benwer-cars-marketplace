@@ -13,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { vehicleLabelKey } from "@/lib/vehicleFilters";
 import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
@@ -91,7 +92,7 @@ export function CarCard({
           variant="default"
           className="absolute left-3 top-3 border border-border bg-surface/90 backdrop-blur-sm"
         >
-          {t(`types.${vehicle.type}`)}
+          {t(vehicleLabelKey(vehicle))}
         </Badge>
         {!available ? (
           <Badge
@@ -112,7 +113,7 @@ export function CarCard({
             {name}
           </h3>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            {vehicle.year} &middot; {t(`types.${vehicle.type}`)}
+            {vehicle.year} &middot; {t(vehicleLabelKey(vehicle))}
           </p>
         </div>
 

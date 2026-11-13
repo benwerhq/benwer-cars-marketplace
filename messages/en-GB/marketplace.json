@@ -436,7 +436,8 @@
     "notes": "Comments",
     "notesPlaceholder": "Anything the company should know?",
     "dateOfBirth": "Date of birth",
-    "optional": "optional"
+    "optional": "optional",
+    "extraSoldOut": "Not available for these dates"
   },
   "reservationStatus": {
     "title": "Your reservation",
@@ -1114,7 +1115,8 @@
       "description": "Guests review their rental after returning the car. Only reviews you approve are shown.",
       "summary": "{average} average from {count, plural, one {# approved review} other {# approved reviews}}",
       "none": "No approved reviews yet. Guests see a short note until you approve one.",
-      "manage": "Approve or hide reviews in Benwer admin"
+      "manage": "Approve or hide reviews in Benwer admin",
+      "demo": "These are demo reviews shown on this test company until you approve real ones in Benwer admin."
     },
     "app": {
       "storesTitle": "Store links",
@@ -1249,7 +1251,8 @@
       "sectionItem": "Section {position}",
       "addSection": "Add section",
       "reset": "Back to standard text",
-      "pageTitle": "Page title"
+      "pageTitle": "Page title",
+      "privacyLooksLikeTerms": "Your privacy policy has the same text as the terms. Use \"Back to standard text\" under Privacy policy, or write your own privacy text, then save."
     },
     "preview": "Preview",
     "fullscreen": "Full-screen editor",
@@ -1287,7 +1290,34 @@
     }
   },
   "siteLegal": {
-    "byCompany": "Published by {name}."
+    "byCompany": "Published by {name}.",
+    "cookies": {
+      "title": "Cookie policy",
+      "lede": "How {name} uses cookies and similar technologies on this website.",
+      "updated": "Published by {name}.",
+      "sections": [
+        {
+          "title": "What we use",
+          "body": "Cookies are small text files stored on your device. This website also uses similar storage, such as local storage, to remember your choices, your cart and your sign-in."
+        },
+        {
+          "title": "Strictly necessary",
+          "body": "A language cookie lets the site show your language, and your cookie-banner choice is stored so we do not ask again on every visit. If you sign in, the sign-in provider stores a session on your device so you stay signed in. Card payments are handled by Stripe, which may set its own cookies to prevent fraud."
+        },
+        {
+          "title": "Optional cookies",
+          "body": "Optional cookies (for example analytics) stay off unless you choose Accept all. This website does not set analytics or marketing cookies today."
+        },
+        {
+          "title": "Managing cookies",
+          "body": "Use the cookie settings link in the footer to change your choice. You can also delete cookies and site data in your browser. Blocking strictly necessary storage may sign you out or empty your cart."
+        },
+        {
+          "title": "More information",
+          "body": "See the privacy policy for how {name} handles personal data, or use the contact details in the footer."
+        }
+      ]
+    }
   },
   "cart": {
     "title": "Your cart",

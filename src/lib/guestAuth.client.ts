@@ -114,6 +114,10 @@ const CONTINUE_URL_ERRORS = new Set([
 ]);
 
 async function sendVerification(user: User): Promise<void> {
+  const auth = getGuestAuth();
+  if (auth && !auth.languageCode) {
+    auth.languageCode = document.documentElement.lang.split("-")[0] || null;
+  }
   try {
     await sendEmailVerification(user, { url: window.location.href });
   } catch (error) {

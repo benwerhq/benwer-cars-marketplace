@@ -94,7 +94,7 @@ function GuestDetailsSummary({
           <dd
             className={
               row.value
-                ? "mt-0.5 truncate text-sm font-medium text-foreground"
+                ? "mt-0.5 text-sm font-medium [overflow-wrap:anywhere] text-foreground"
                 : "mt-0.5 text-sm text-subtle-foreground"
             }
           >

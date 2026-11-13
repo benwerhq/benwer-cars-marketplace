@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { NavRoutes, type SitePaymentMethod, type SiteSectionId } from "@/enums";
+import { type SitePaymentMethod, type SiteSectionId } from "@/enums";
 import { siteChildFromHome } from "@/lib/site";
 import { whatsappHref } from "@/lib/siteContent";
 import { CookieSettingsLink } from "./CookieSettingsLink";
@@ -94,7 +94,7 @@ export async function SiteFooter({
             <Link href={siteChildFromHome(homeHref, "/terms")} className={siteFooterLinkClass}>
               {tNav("terms")}
             </Link>
-            <Link href={NavRoutes.COOKIES} className={siteFooterLinkClass}>
+            <Link href={siteChildFromHome(homeHref, "/cookies")} className={siteFooterLinkClass}>
               {tNav("cookies")}
             </Link>
             <CookieSettingsLink className={`${siteFooterLinkClass} cursor-pointer text-left`} />

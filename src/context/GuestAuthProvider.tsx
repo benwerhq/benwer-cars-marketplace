@@ -23,7 +23,6 @@ import {
   guestSignInWithGoogle,
 } from "@/lib/guestAuth.client";
 import { isGuestFirebaseConfigured } from "@/lib/guestFirebase";
-import { staffSignOut } from "@/lib/staffAuth.client";
 
 interface GuestAuthContextValue {
   user: User | null;
@@ -37,21 +36,6 @@ interface GuestAuthContextValue {
   signOut: () => Promise<void>;
   sendVerificationEmail: (locale: string) => Promise<void>;
   refreshVerification: () => Promise<boolean>;
-}
-
-async function signInGuest(email: string, password: string): Promise<void> {
-  await staffSignOut();
-  await guestSignIn(email, password);
-}
-
-async function signUpGuest(email: string, password: string): Promise<void> {
-  await staffSignOut();
-  await guestSignUp(email, password);
-}
-
-async function signInGuestWithGoogle(): Promise<void> {
-  await staffSignOut();
-  await guestSignInWithGoogle();
 }
 
 const GuestAuthContext = createContext<GuestAuthContextValue | null>(null);
@@ -75,6 +59,31 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
   }, [configured]);
 
   useEffect(() => {
+    if (!user || emailVerified) {
+      return;
+    }
+
+    const recheck = () => {
+      if (document.visibilityState !== "visible") {
+        return;
+      }
+      void guestReloadUser()
+        .then((verified) => {
+          if (verified) {
+            setEmailVerified(true);
+          }
+        })
+        .catch(() => undefined);
+    };
+    window.addEventListener("focus", recheck);
+    document.addEventListener("visibilitychange", recheck);
+    return () => {
+      window.removeEventListener("focus", recheck);
+      document.removeEventListener("visibilitychange", recheck);
+    };
+  }, [emailVerified, user]);
+
+  useEffect(() => {
     setGuestAccessTokenProvider(() => guestIdToken(getGuestAuth()?.currentUser ?? null));
     return () => setGuestAccessTokenProvider(null);
   }, []);
@@ -84,9 +93,9 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
       user,
       ready,
       configured,
-      signIn: signInGuest,
-      signUp: signUpGuest,
-      signInWithGoogle: signInGuestWithGoogle,
+      signIn: guestSignIn,
+      signUp: guestSignUp,
+      signInWithGoogle: guestSignInWithGoogle,
       resetPassword: guestSendPasswordReset,
       signOut: guestSignOut,
       emailVerified,

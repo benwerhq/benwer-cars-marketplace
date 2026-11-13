@@ -80,3 +80,49 @@ export async function SiteLegalPage({
     </SiteGuestShell>
   );
 }
+
+export async function siteCookiesMetadata(slug: string, preview?: string): Promise<Metadata> {
+  const locale = await getLocale();
+  const t = await getTranslations("siteLegal.cookies");
+  let siteName = slug;
+  try {
+    siteName = (await loadPublicSite(slug, preview)).company.name;
+  } catch {
+    siteName = slug;
+  }
+
+  return buildPageMetadata({
+    title: t("title"),
+    description: t("lede", { name: siteName }),
+    path: `${siteHomePath(slug)}/cookies`,
+    siteName,
+    locale,
+    noIndex: Boolean(preview),
+  });
+}
+
+export async function SiteCookiesPage({ slug, preview }: { slug: string; preview?: string }) {
+  let site;
+  try {
+    site = await loadPublicSite(slug, preview);
+  } catch {
+    notFound();
+  }
+
+  const t = await getTranslations("siteLegal.cookies");
+  const name = site.company.name;
+
+  return (
+    <SiteGuestShell site={site} preview={preview}>
+      <LegalArticle
+        title={t("title")}
+        lede={t("lede", { name })}
+        updated={t("updated", { name })}
+        sections={readLegalSections(t.raw("sections")).map((section) => ({
+          title: section.title.replaceAll("{name}", name),
+          body: section.body.replaceAll("{name}", name),
+        }))}
+      />
+    </SiteGuestShell>
+  );
+}

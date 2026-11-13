@@ -21,11 +21,11 @@ export function SiteGuestLink({ homeHref }: { homeHref: string }) {
   const staff = useStaffAuth();
   const links = guestLinksFromHomeHref(homeHref);
 
-  if (staff.ready && staff.user) {
-    return null;
-  }
-
   if (!ready || !user) {
+    if (staff.ready && staff.user) {
+      return null;
+    }
+
     return (
       <Link
         href={links.signIn}
