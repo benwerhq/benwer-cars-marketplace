@@ -104,6 +104,15 @@ company-site building blocks with hardcoded Benwer content (no API data):
 `SiteAppSection`, `SiteFaqSection`, `PageIntro`, and the `SiteFooter` link styles.
 New marketplace sections should compose these rather than add a separate style.
 
+### Header on phones (all headers)
+
+Below `sm`, every header (marketplace, tenant, company site) shows only the logo
+and one hamburger (`HeaderMobileMenu`, passed to `SiteHeaderShell` as the
+required `mobileMenu`). Everything else lives inside it, no exceptions: nav
+links, site sections, phone, cart, sign-in/account and owner actions, the
+colour-scheme toggle and the language choices. Never add a header control that
+stays visible on phones; add it to the mobile menu too.
+
 ### Marketplace layout (`marketplace.benwer.es`)
 
 - **Sticky top header**: Benwer Cars logo + nav (Home, Companies) + locale switcher.

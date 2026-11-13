@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { CalendarCheck, LogOut, PencilRuler, UserRound } from "lucide-react";
+import { CalendarCheck, LogIn, LogOut, PencilRuler, UserRound } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { IconTooltip } from "@/components/ui/IconTooltip";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
@@ -12,6 +12,7 @@ import { guestLinksFromHomeHref, publicHomeFromHome } from "@/lib/site";
 import { currentReturnTo, withReturnTo } from "@/lib/returnTo";
 import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { cn } from "@/lib/utils";
+import { MENU_LABEL, MENU_SEPARATOR } from "./HeaderMobileMenu";
 import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
 
 export function SiteGuestLink({ homeHref }: { homeHref: string }) {
@@ -177,5 +178,83 @@ export function SiteOwnerMenu({ homeHref }: { homeHref: string }) {
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
+  );
+}
+
+export function SiteAccountMenuItems({ homeHref }: { homeHref: string }) {
+  const tGuest = useTranslations("guest");
+  const tOwner = useTranslations("owner");
+  const router = useRouter();
+  const guest = useGuestAuth();
+  const staff = useStaffAuth();
+  const links = guestLinksFromHomeHref(homeHref);
+
+  if (staff.ready && staff.user) {
+    return (
+      <>
+        <DropdownMenu.Separator className={MENU_SEPARATOR} />
+        <DropdownMenu.Label className={MENU_LABEL}>
+          {staff.user.email ?? tOwner("signedInAs")}
+        </DropdownMenu.Label>
+        <DropdownMenu.Item className={MENU_ITEM} onSelect={() => openEditor(router, homeHref)}>
+          <PencilRuler size={15} aria-hidden />
+          {tOwner("openEditor")}
+        </DropdownMenu.Item>
+        <DropdownMenu.Item
+          className={MENU_ITEM}
+          onSelect={() => {
+            void staff.signOut().then(() => router.replace(publicHomeFromHome(homeHref)));
+          }}
+        >
+          <LogOut size={15} aria-hidden />
+          {tOwner("signOut")}
+        </DropdownMenu.Item>
+      </>
+    );
+  }
+
+  if (!guest.ready || !guest.user) {
+    return (
+      <>
+        <DropdownMenu.Separator className={MENU_SEPARATOR} />
+        <DropdownMenu.Item
+          className={MENU_ITEM}
+          onSelect={() => router.push(withReturnTo(links.signIn, currentReturnTo()))}
+        >
+          <LogIn size={15} aria-hidden />
+          {tGuest("signInNav")}
+        </DropdownMenu.Item>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <DropdownMenu.Separator className={MENU_SEPARATOR} />
+      {guest.user.email ? (
+        <DropdownMenu.Label className={MENU_LABEL}>{guest.user.email}</DropdownMenu.Label>
+      ) : null}
+      <DropdownMenu.Item asChild className={MENU_ITEM}>
+        <Link href={links.bookings}>
+          <CalendarCheck size={15} aria-hidden />
+          {tGuest("myBookings")}
+        </Link>
+      </DropdownMenu.Item>
+      <DropdownMenu.Item asChild className={MENU_ITEM}>
+        <Link href={links.profile}>
+          <UserRound size={15} aria-hidden />
+          {tGuest("profileNav")}
+        </Link>
+      </DropdownMenu.Item>
+      <DropdownMenu.Item
+        className={MENU_ITEM}
+        onSelect={() => {
+          void guest.signOut().then(() => router.push(homeHref));
+        }}
+      >
+        <LogOut size={15} aria-hidden />
+        {tGuest("signOut")}
+      </DropdownMenu.Item>
+    </>
   );
 }

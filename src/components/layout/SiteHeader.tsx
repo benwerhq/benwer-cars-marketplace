@@ -6,7 +6,7 @@ import { SiteGuestLink, SiteOwnerMenu } from "./SiteGuestLink";
 import { SiteCartLink } from "./SiteCartLink";
 import { SiteHeaderMark } from "./SiteHeaderMark";
 import { SiteHeaderShell } from "./SiteHeaderShell";
-import { SiteNav } from "./SiteNav";
+import { SiteMobileMenu, SiteNav } from "./SiteNav";
 import type { SiteSectionId } from "@/enums";
 import { formatPhoneDisplay, phoneTelHref } from "@/lib/phone";
 
@@ -40,6 +40,15 @@ export async function SiteHeader({
     <SiteHeaderShell
       homeHref={homeHref}
       className={className}
+      mobileMenu={
+        <SiteMobileMenu
+          homeHref={homeHref}
+          fleetHref={fleetHref}
+          sections={sections}
+          phone={phone}
+          cartSlug={cartSlug}
+        />
+      }
       brand={
         <>
           <SiteHeaderMark

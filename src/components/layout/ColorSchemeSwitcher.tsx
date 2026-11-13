@@ -40,7 +40,7 @@ interface ColorSchemeSwitcherProps {
   className?: string;
 }
 
-export function ColorSchemeSwitcher({ className }: ColorSchemeSwitcherProps) {
+export function useColorSchemeToggle() {
   const t = useTranslations("colorScheme");
   const current = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const isDark = current === ColorScheme.DARK;
@@ -52,6 +52,12 @@ export function ColorSchemeSwitcher({ className }: ColorSchemeSwitcherProps) {
     applyColorScheme(next);
     window.dispatchEvent(new Event(COLOR_SCHEME_CHANGE_EVENT));
   }
+
+  return { current, isDark, label, toggle };
+}
+
+export function ColorSchemeSwitcher({ className }: ColorSchemeSwitcherProps) {
+  const { current, isDark, label, toggle } = useColorSchemeToggle();
 
   return (
     <IconTooltip label={label}>

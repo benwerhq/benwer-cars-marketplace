@@ -3,7 +3,7 @@ import { NavRoutes } from "@/enums";
 import { BrandLogo } from "./BrandLogo";
 import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
 import { LocaleSwitcher } from "./LocaleSwitcher";
-import { MarketplaceNav } from "./MarketplaceNav";
+import { MarketplaceMobileMenu, MarketplaceNav } from "./MarketplaceNav";
 import { SiteHeaderShell } from "./SiteHeaderShell";
 
 interface MarketplaceHeaderProps {
@@ -18,6 +18,7 @@ export async function MarketplaceHeader({ className }: MarketplaceHeaderProps) {
       homeHref={NavRoutes.HOME}
       homeAriaLabel={t("homeAria")}
       className={className}
+      mobileMenu={<MarketplaceMobileMenu />}
       brand={
         <>
           <BrandLogo

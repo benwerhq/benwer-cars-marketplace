@@ -6,6 +6,7 @@ interface SiteHeaderShellProps {
   homeHref: string;
   brand: ReactNode;
   children: ReactNode;
+  mobileMenu: ReactNode;
   homeAriaLabel?: string;
   className?: string;
 }
@@ -14,6 +15,7 @@ export function SiteHeaderShell({
   homeHref,
   brand,
   children,
+  mobileMenu,
   homeAriaLabel,
   className,
 }: SiteHeaderShellProps) {
@@ -32,9 +34,10 @@ export function SiteHeaderShell({
         >
           {brand}
         </Link>
-        <div className="flex shrink-0 items-center gap-1.5 sm:gap-4">
+        <div className="flex shrink-0 items-center gap-4 max-sm:hidden">
           {children}
         </div>
+        <div className="flex shrink-0 items-center sm:hidden">{mobileMenu}</div>
       </div>
     </header>
   );

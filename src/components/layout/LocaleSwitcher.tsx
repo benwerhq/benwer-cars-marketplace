@@ -10,7 +10,7 @@ import { setLocaleCookie } from "@/i18n/setLocale";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-const LOCALE_NAME_KEYS = {
+export const LOCALE_NAME_KEYS = {
   "en-GB": "enName",
   "es-ES": "esName",
   "pt-PT": "ptName",
@@ -29,13 +29,14 @@ interface LocaleSwitcherProps {
   className?: string;
 }
 
-export function LocaleSwitcher({ className }: LocaleSwitcherProps) {
-  const t = useTranslations("locale");
+export type AppLocale = (typeof routing.locales)[number];
+
+export function useLocaleSelect() {
   const locale = useLocale();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
-  function select(next: (typeof routing.locales)[number]) {
+  function select(next: AppLocale) {
     if (next === locale) {
       return;
     }
@@ -44,6 +45,13 @@ export function LocaleSwitcher({ className }: LocaleSwitcherProps) {
       router.refresh();
     });
   }
+
+  return { locale, select, isPending };
+}
+
+export function LocaleSwitcher({ className }: LocaleSwitcherProps) {
+  const t = useTranslations("locale");
+  const { locale, select, isPending } = useLocaleSelect();
 
   return (
     <DropdownMenu.Root modal={false}>

@@ -2,21 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { NavRoutes } from "@/enums";
 import { cn } from "@/lib/utils";
-import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
+import { HeaderMobileMenu, type HeaderMenuLink } from "./HeaderMobileMenu";
 
-/** Links that do not fit the header on phones; they move into the menu button there. */
-const MOBILE_MENU_ROUTES: string[] = [NavRoutes.HOME, NavRoutes.CONTACT];
-
-export function MarketplaceNav() {
+export function useMarketplaceLinks(): HeaderMenuLink[] {
   const t = useTranslations("nav");
   const pathname = usePathname();
 
-  const links = [
+  return [
     {
       href: NavRoutes.HOME,
       label: t("home"),
@@ -38,6 +33,15 @@ export function MarketplaceNav() {
       isActive: pathname === NavRoutes.CONTACT,
     },
   ];
+}
+
+export function MarketplaceMobileMenu() {
+  return <HeaderMobileMenu links={useMarketplaceLinks()} />;
+}
+
+export function MarketplaceNav() {
+  const t = useTranslations("nav");
+  const links = useMarketplaceLinks();
 
   return (
     <nav className="flex items-center gap-1" aria-label={t("mainAria")}>
@@ -49,7 +53,6 @@ export function MarketplaceNav() {
           className={cn(
             "inline-flex cursor-pointer items-center rounded-full px-2.5 py-1.5 text-sm whitespace-nowrap transition-colors",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-            MOBILE_MENU_ROUTES.includes(link.href) && "max-sm:hidden",
             link.isActive
               ? "bg-primary/10 font-medium text-primary"
               : "text-muted-foreground hover:bg-surface-hover hover:text-foreground",
@@ -58,33 +61,6 @@ export function MarketplaceNav() {
           {link.label}
         </Link>
       ))}
-      <DropdownMenu.Root modal={false}>
-        <DropdownMenu.Trigger asChild>
-          <button
-            type="button"
-            aria-label={t("menu")}
-            className={cn(HEADER_ICON_BUTTON, "sm:hidden")}
-          >
-            <Menu size={16} aria-hidden />
-          </button>
-        </DropdownMenu.Trigger>
-        <DropdownMenu.Portal>
-          <DropdownMenu.Content align="end" sideOffset={6} className={MENU_CONTENT}>
-            {links
-              .filter((link) => MOBILE_MENU_ROUTES.includes(link.href))
-              .map((link) => (
-                <DropdownMenu.Item key={link.href} asChild className={MENU_ITEM}>
-                  <Link
-                    href={link.href}
-                    aria-current={link.isActive ? "page" : undefined}
-                  >
-                    {link.label}
-                  </Link>
-                </DropdownMenu.Item>
-              ))}
-          </DropdownMenu.Content>
-        </DropdownMenu.Portal>
-      </DropdownMenu.Root>
     </nav>
   );
 }

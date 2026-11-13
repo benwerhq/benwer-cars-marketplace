@@ -4,7 +4,7 @@ import { NavRoutes } from "@/enums";
 import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteHeaderShell } from "./SiteHeaderShell";
-import { TenantNav } from "./TenantNav";
+import { TenantMobileMenu, TenantNav } from "./TenantNav";
 
 interface TenantHeaderProps {
   companyName: string;
@@ -25,6 +25,7 @@ export async function TenantHeader({
     <SiteHeaderShell
       homeHref={NavRoutes.HOME}
       className={className}
+      mobileMenu={<TenantMobileMenu />}
       brand={
         <>
           <CompanyMark
