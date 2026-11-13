@@ -66,21 +66,8 @@
     }
   },
   "appBanner": {
-    "eyebrow": "En tu teléfono",
     "title": "La app de Benwer Cars",
-    "comingSoon": "Próximamente",
-    "description": "Busca flotas asociadas sobre la marcha y ten a mano los detalles de tu viaje, para continuar en el teléfono donde lo dejaste. Los enlaces a las tiendas se abrirán aquí cuando la app esté disponible.",
-    "scanToDownload": "Escanea para descargar",
-    "appStore": {
-      "prefix": "Descárgala en",
-      "name": "App Store",
-      "aria": "Descargar en App Store, próximamente"
-    },
-    "googlePlay": {
-      "prefix": "Disponible en",
-      "name": "Google Play",
-      "aria": "Disponible en Google Play, próximamente"
-    }
+    "description": "Lleva Benwer Cars en el móvil. La app de Android está en pruebas en Google Play: únete y ayúdanos a mejorarla."
   },
   "partners": {
     "eyebrow": "Para empresas de alquiler de coches",
@@ -1269,19 +1256,37 @@
     "allBooked": "Todo listo. Las confirmaciones van de camino a tu email."
   },
   "themePreview": {
-    "title": "Color del tema",
+    "title": "Colores del tema",
     "hint": "Solo vista previa: se guarda en este navegador.",
-    "open": "Cambiar color del tema",
+    "open": "Cambiar colores del tema",
     "reset": "Restablecer",
-    "admin": "Cian (admin web)",
-    "teal": "Verde azulado (actual)",
-    "ocean": "Azul océano",
-    "indigo": "Índigo",
-    "violet": "Violeta",
-    "emerald": "Esmeralda",
-    "forest": "Verde Benwer",
-    "sunset": "Naranja atardecer",
-    "rose": "Rosa",
-    "ink": "Tinta"
+    "primaryTitle": "Color principal",
+    "primaryPicker": "Elegir el color principal",
+    "backgroundTitle": "Fondo",
+    "backgroundPicker": "Elegir el color de fondo",
+    "custom": "Personalizado",
+    "hexLabel": "Código hexadecimal de {name}",
+    "hexHint": "Elige, escribe o pega un código hexadecimal, p. ej. #0E7490.",
+    "hexInvalid": "Usa un código hexadecimal como #0E7490 o #FFF.",
+    "presets": {
+      "admin": "Cian (admin web)",
+      "teal": "Verde azulado (actual)",
+      "ocean": "Azul océano",
+      "indigo": "Índigo",
+      "violet": "Violeta",
+      "emerald": "Esmeralda",
+      "forest": "Verde Benwer",
+      "sunset": "Naranja atardecer",
+      "rose": "Rosa",
+      "ink": "Tinta"
+    },
+    "backgrounds": {
+      "white": "Blanco (actual)",
+      "stone": "Piedra",
+      "slate": "Pizarra",
+      "sand": "Arena",
+      "mint": "Menta",
+      "cream": "Crema"
+    }
   }
 }

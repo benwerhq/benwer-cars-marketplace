@@ -165,6 +165,10 @@ export enum QueryKeys {
   GUEST_RESERVATIONS = "guest-reservations",
 }
 
+export enum AppStoreLinks {
+  ANDROID_TESTING = "https://play.google.com/apps/testing/com.benwer.cars.admin",
+}
+
 export enum StorageKeys {
   LOCALE = "NEXT_LOCALE",
   COOKIE_CONSENT = "benwer-cookie-consent",

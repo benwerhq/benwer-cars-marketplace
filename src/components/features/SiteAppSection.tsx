@@ -10,15 +10,7 @@ import { appQrTarget, siteAppLinks } from "@/lib/siteContent";
 import type { SiteAppContent } from "@/types/siteContent";
 import { SiteSectionHeading } from "./SiteSectionHeading";
 
-export function SiteAppSection({
-  app,
-  eyebrow,
-  badge,
-}: {
-  app: SiteAppContent;
-  eyebrow?: string;
-  badge?: string;
-}) {
+export function SiteAppSection({ app }: { app: SiteAppContent }) {
   const t = useTranslations("siteSections.app");
   const locale = useLocale();
   const headingId = `${SiteSectionId.APP}-heading`;
@@ -39,12 +31,12 @@ export function SiteAppSection({
     >
       <SiteSectionHeading
         id={headingId}
-        eyebrow={eyebrow ?? t("eyebrow")}
+        eyebrow={t("eyebrow")}
         title={localizedText(app.title, locale) || t("title")}
       />
       <div className="flex flex-col gap-6 rounded-2xl border border-border bg-surface p-6 sm:flex-row sm:items-center sm:justify-between md:p-8">
         <div className="min-w-0">
-          <Badge variant="info">{badge ?? platform}</Badge>
+          <Badge variant="info">{platform}</Badge>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
             {localizedText(app.text, locale) || t("text")}
           </p>

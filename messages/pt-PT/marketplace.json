@@ -63,21 +63,8 @@
     }
   },
   "appBanner": {
-    "eyebrow": "On your phone",
-    "title": "The Benwer Cars app",
-    "comingSoon": "Coming soon",
-    "description": "Search partner fleets on the go and keep your trip details handy — so you can pick up where you left off on your phone. Store links will open here when the app is live.",
-    "scanToDownload": "Scan to download",
-    "appStore": {
-      "prefix": "Download on the",
-      "name": "App Store",
-      "aria": "Download on the App Store, coming soon"
-    },
-    "googlePlay": {
-      "prefix": "Get it on",
-      "name": "Google Play",
-      "aria": "Get it on Google Play, coming soon"
-    }
+    "title": "A app Benwer Cars",
+    "description": "Tenha a Benwer Cars no telemóvel. A app Android está em testes no Google Play — junte-se e ajude-nos a melhorá-la."
   },
   "partners": {
     "eyebrow": "For car rental companies",
@@ -133,9 +120,8 @@
     "pickupTrigger": "Pick-up date, {date}",
     "dropoffTrigger": "Drop-off date, {date}",
     "calendarLabel": "Select dates",
-    "datesRequired": "Escolha as datas de levantamento e devolução para pesquisar.",
-    "submit": "Search",
     "datesRequired": "Add pick-up and drop-off dates to search",
+    "submit": "Search",
     "returnLocationLabel": "Local de devolução",
     "differentReturn": "Devolver noutro local",
     "returnSame": "Igual ao levantamento",
@@ -1252,5 +1238,39 @@
     "viewBooking": "Ver reserva",
     "partial": "Alguns carros não puderam ser reservados. Continuam no seu carrinho.",
     "allBooked": "Tudo pronto. As confirmações estão a caminho do seu email."
+  },
+  "themePreview": {
+    "title": "Cores do tema",
+    "hint": "Apenas pré-visualização — guardado neste navegador.",
+    "open": "Alterar cores do tema",
+    "reset": "Repor",
+    "primaryTitle": "Cor principal",
+    "primaryPicker": "Escolher a cor principal",
+    "backgroundTitle": "Fundo",
+    "backgroundPicker": "Escolher a cor de fundo",
+    "custom": "Personalizada",
+    "hexLabel": "Código hexadecimal de {name}",
+    "hexHint": "Escolha, escreva ou cole um código hexadecimal, p. ex. #0E7490.",
+    "hexInvalid": "Use um código hexadecimal como #0E7490 ou #FFF.",
+    "presets": {
+      "admin": "Ciano (admin web)",
+      "teal": "Verde-azulado (atual)",
+      "ocean": "Azul oceano",
+      "indigo": "Índigo",
+      "violet": "Violeta",
+      "emerald": "Esmeralda",
+      "forest": "Verde Benwer",
+      "sunset": "Laranja pôr do sol",
+      "rose": "Rosa",
+      "ink": "Tinta"
+    },
+    "backgrounds": {
+      "white": "Branco (atual)",
+      "stone": "Pedra",
+      "slate": "Ardósia",
+      "sand": "Areia",
+      "mint": "Menta",
+      "cream": "Creme"
+    }
   }
 }

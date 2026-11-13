@@ -7,13 +7,13 @@ import { useTranslations } from "next-intl";
 import { CompanyMark } from "@/components/features/CompanyMark";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import { BACKGROUND_PRESETS } from "@/data/themePresets";
 import { useUploadWebsiteImage } from "@/hooks/useWebsiteSettings";
 import { DEFAULT_PAGE_BACKGROUND, isHexColor } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { SiteContent, SiteLogos } from "@/types/siteContent";
 import { EditorField, EditorGroup } from "./EditorPrimitives";
 
-const BACKGROUND_PRESETS = ["#ffffff", "#fafaf9", "#f8fafc", "#f5f5f4", "#f0fdfa", "#fdf8f0"];
 
 type LogoSlot = "header" | "company";
 
@@ -67,7 +67,7 @@ export function BrandingForm({
       </EditorGroup>
       <EditorGroup title={t("backgroundTitle")} description={t("backgroundDescription")}>
         <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t("backgroundPresets")}>
-          {BACKGROUND_PRESETS.map((preset) => {
+          {BACKGROUND_PRESETS.map(({ color: preset }) => {
             const selected = preset.toLowerCase() === background.toLowerCase();
             return (
               <button

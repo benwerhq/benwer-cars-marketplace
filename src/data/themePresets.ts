@@ -49,3 +49,19 @@ export const THEME_PRESETS: readonly ThemePreset[] = [
   { id: "rose", primary: "#be123c", primaryHover: "#9f1239", ring: "#f43f5e" },
   { id: "ink", primary: "#0f172a", primaryHover: "#1e293b", ring: "#475569" },
 ];
+
+export interface BackgroundPreset {
+  id: string;
+  color: string;
+}
+
+export const DEFAULT_BACKGROUND_PRESET_ID = "white";
+
+export const BACKGROUND_PRESETS: readonly BackgroundPreset[] = [
+  { id: DEFAULT_BACKGROUND_PRESET_ID, color: "#ffffff" },
+  { id: "stone", color: "#fafaf9" },
+  { id: "slate", color: "#f8fafc" },
+  { id: "sand", color: "#f5f5f4" },
+  { id: "mint", color: "#f0fdfa" },
+  { id: "cream", color: "#fdf8f0" },
+];

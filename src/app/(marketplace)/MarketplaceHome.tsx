@@ -19,7 +19,7 @@ import {
   SiteIntroFacts,
 } from "@/components/features/SiteIntroBand";
 import { SiteSectionHeading } from "@/components/features/SiteSectionHeading";
-import { NavRoutes, SiteIncludedIcon } from "@/enums";
+import { AppStoreLinks, NavRoutes, SiteIncludedIcon } from "@/enums";
 import { prefetchMarketplaceHomeState } from "@/lib/prefetchMarketplaceHome";
 import { buildPageMetadata } from "@/lib/seo";
 import type {
@@ -84,7 +84,7 @@ export async function MarketplaceHome() {
 
   const app: SiteAppContent = {
     iosUrl: "",
-    androidUrl: "",
+    androidUrl: AppStoreLinks.ANDROID_TESTING,
     title: copy(tApp("title")),
     text: copy(tApp("description")),
   };
@@ -164,11 +164,7 @@ export async function MarketplaceHome() {
             />
           </section>
           <PartnersInvite />
-          <SiteAppSection
-            app={app}
-            eyebrow={tApp("eyebrow")}
-            badge={tApp("comingSoon")}
-          />
+          <SiteAppSection app={app} />
           <SiteFaqSection
             items={faq}
             heading={{
