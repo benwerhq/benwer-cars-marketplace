@@ -1327,40 +1327,6 @@
     "partial": "Algunos coches no se han podido reservar. Siguen en tu carrito.",
     "allBooked": "Todo listo. Las confirmaciones van de camino a tu email."
   },
-  "themePreview": {
-    "title": "Colores del tema",
-    "hint": "Solo vista previa: se guarda en este navegador.",
-    "open": "Cambiar colores del tema",
-    "reset": "Restablecer",
-    "primaryTitle": "Color principal",
-    "primaryPicker": "Elegir el color principal",
-    "backgroundTitle": "Fondo",
-    "backgroundPicker": "Elegir el color de fondo",
-    "custom": "Personalizado",
-    "hexLabel": "Código hexadecimal de {name}",
-    "hexHint": "Elige, escribe o pega un código hexadecimal, p. ej. #0E7490.",
-    "hexInvalid": "Usa un código hexadecimal como #0E7490 o #FFF.",
-    "presets": {
-      "admin": "Cian (admin web)",
-      "teal": "Verde azulado (actual)",
-      "ocean": "Azul océano",
-      "indigo": "Índigo",
-      "violet": "Violeta",
-      "emerald": "Esmeralda",
-      "forest": "Verde Benwer",
-      "sunset": "Naranja atardecer",
-      "rose": "Rosa",
-      "ink": "Tinta"
-    },
-    "backgrounds": {
-      "white": "Blanco (actual)",
-      "stone": "Piedra",
-      "slate": "Pizarra",
-      "sand": "Arena",
-      "mint": "Menta",
-      "cream": "Crema"
-    }
-  },
   "support": {
     "fabLabel": "Soporte",
     "fabCloseLabel": "Cerrar menú de soporte",

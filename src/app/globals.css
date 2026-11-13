@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: light;
-  --page-background: var(--preview-page-background, #ffffff);
+  --page-background: #f8fafc;
   --background: var(--page-background);
   --surface: #ffffff;
   --surface-muted: #f5f5f4;

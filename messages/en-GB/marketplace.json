@@ -1327,40 +1327,6 @@
     "partial": "Some cars could not be booked. They stay in your cart.",
     "allBooked": "All set. Confirmations are on their way to your email."
   },
-  "themePreview": {
-    "title": "Theme colours",
-    "hint": "Preview only — saved in this browser.",
-    "open": "Change theme colours",
-    "reset": "Reset",
-    "primaryTitle": "Main colour",
-    "primaryPicker": "Pick a main colour",
-    "backgroundTitle": "Background",
-    "backgroundPicker": "Pick a background colour",
-    "custom": "Custom",
-    "hexLabel": "{name} hex code",
-    "hexHint": "Pick, type or paste a hex code, e.g. #0E7490.",
-    "hexInvalid": "Use a hex code such as #0E7490 or #FFF.",
-    "presets": {
-      "admin": "Admin cyan (admin web)",
-      "teal": "Teal (current)",
-      "ocean": "Ocean blue",
-      "indigo": "Indigo",
-      "violet": "Violet",
-      "emerald": "Emerald",
-      "forest": "Benwer green",
-      "sunset": "Sunset orange",
-      "rose": "Rose",
-      "ink": "Ink"
-    },
-    "backgrounds": {
-      "white": "White (current)",
-      "stone": "Stone",
-      "slate": "Slate",
-      "sand": "Sand",
-      "mint": "Mint",
-      "cream": "Cream"
-    }
-  },
   "support": {
     "fabLabel": "Support",
     "fabCloseLabel": "Close support menu",

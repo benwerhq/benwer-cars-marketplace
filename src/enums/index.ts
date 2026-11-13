@@ -172,7 +172,6 @@ export enum AppStoreLinks {
 export enum StorageKeys {
   LOCALE = "NEXT_LOCALE",
   COOKIE_CONSENT = "benwer-cookie-consent",
-  THEME_PREVIEW = "benwer-theme-preview",
   COLOR_SCHEME = "benwer-color-scheme",
 }
 
