@@ -19,10 +19,7 @@ import {
   searchRecordToURLSearchParams,
 } from "@/lib/prefetchCompanyFleet";
 import { buildPageMetadata } from "@/lib/seo";
-import {
-  fleetFetchFilters,
-  parseVehicleFilters,
-} from "@/lib/vehicleFilters";
+import { fleetFetchFilters, parseVehicleFilters } from "@/lib/vehicleFilters";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -151,6 +148,7 @@ async function CompanyPage({ params, searchParams }: Props) {
               path: "/cars",
             })}
             showDirectoryEmptyAction
+            filterByAvailability
           />
         </HydrationBoundary>
       </main>

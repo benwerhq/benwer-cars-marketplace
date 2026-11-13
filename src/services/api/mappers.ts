@@ -699,6 +699,9 @@ export function mapAvailability(
   return {
     vehicleId: readString(row.vehicleId) ?? "",
     unavailableDates: unavailable,
+    available: readBoolean(row.available),
+    from: range?.from,
+    to: range?.to,
   };
 }
 

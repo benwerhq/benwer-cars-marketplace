@@ -140,6 +140,8 @@
     "submit": "Buscar",
     "returnLocationLabel": "Lugar de devolución",
     "differentReturn": "Devolver en otro lugar",
+    "returnSame": "Igual que la recogida",
+    "returnNotOffered": "{company} no permite devolver el coche en otro lugar.",
     "branchChoose": "Elige un lugar",
     "branchTrigger": "{label}, {name}",
     "branchLoading": "Cargando ubicaciones…",

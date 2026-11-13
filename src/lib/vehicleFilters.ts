@@ -324,6 +324,48 @@ export function refineVehicles<T extends Vehicle>(
   );
 }
 
+function presentOptions<T extends string>(
+  allowed: readonly T[],
+  present: Iterable<T>,
+  selected: readonly T[] | undefined,
+): T[] {
+  const keep = new Set<T>([...present, ...(selected ?? [])]);
+  return allowed.filter((value) => keep.has(value));
+}
+
+export function categoryOptionsOf(
+  vehicles: Vehicle[],
+  selected?: VehicleCategory[],
+): VehicleCategory[] {
+  return presentOptions(
+    FILTER_CATEGORIES,
+    vehicles.map(vehicleCategoryOf),
+    selected,
+  );
+}
+
+export function fuelOptionsOf(
+  vehicles: Pick<Vehicle, "fuel">[],
+  selected?: FuelType[],
+): FuelType[] {
+  return presentOptions(
+    FILTER_FUELS,
+    vehicles.map((vehicle) => vehicle.fuel),
+    selected,
+  );
+}
+
+export function transmissionOptionsOf(
+  vehicles: Pick<Vehicle, "transmission">[],
+  selected?: TransmissionType[],
+): TransmissionType[] {
+  return presentOptions(
+    FILTER_TRANSMISSIONS,
+    vehicles.map((vehicle) => vehicle.transmission),
+    selected,
+  );
+}
+
 export function seatOptionsOf(vehicles: Pick<Vehicle, "seats">[]): number[] {
   const values = new Set<number>();
   for (const vehicle of vehicles) {

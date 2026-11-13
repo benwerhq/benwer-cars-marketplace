@@ -392,8 +392,20 @@ describe("mapAvailability", () => {
     });
 
     expect(rows).toEqual([
-      { vehicleId: "v1", unavailableDates: ["2026-09-20", "2026-09-21"] },
-      { vehicleId: "v2", unavailableDates: [] },
+      {
+        vehicleId: "v1",
+        unavailableDates: ["2026-09-20", "2026-09-21"],
+        available: false,
+        from: "2026-09-20",
+        to: "2026-09-22",
+      },
+      {
+        vehicleId: "v2",
+        unavailableDates: [],
+        available: true,
+        from: "2026-09-20",
+        to: "2026-09-22",
+      },
     ]);
   });
 });

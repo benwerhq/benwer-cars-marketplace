@@ -78,28 +78,23 @@ function MarketplaceSearchForm({
   const companiesQuery = useCompanies();
   const companies = companiesQuery.data ?? [];
   const branchOptions = branchOptionsFromCompanies(companies, locale);
-  const returnOptions = returnBranchOptions(
-    companyForBranch(companies, branch),
-  );
-  const canReturnElsewhere = isCars && returnOptions.length > 0;
-  const returnElsewhere =
-    canReturnElsewhere && differentReturn && Boolean(returnBranch);
+  const pickupCompany = companyForBranch(companies, branch);
+  const returnOptions = returnOptionsFor(branch);
+  const returnNotOffered =
+    differentReturn && Boolean(pickupCompany) && returnOptions.length === 0;
+  const returnElsewhere = isCars && differentReturn && Boolean(returnBranch);
+
+  function returnOptionsFor(pickupBranch: string) {
+    const company = companyForBranch(companies, pickupBranch);
+    return company
+      ? returnBranchOptions(company)
+      : companies.flatMap((item) => returnBranchOptions(item));
+  }
 
   function changeBranch(next: string) {
     setBranch(next);
-    const nextReturns = returnBranchOptions(companyForBranch(companies, next));
-    if (!nextReturns.some((option) => option.id === returnBranch)) {
+    if (!returnOptionsFor(next).some((option) => option.id === returnBranch)) {
       setReturnBranch("");
-      setDifferentReturn(false);
-    }
-  }
-
-  function toggleDifferentReturn(next: boolean) {
-    setDifferentReturn(next);
-    if (next && !returnBranch) {
-      setReturnBranch(
-        returnOptions.find((option) => option.id !== branch)?.id ?? "",
-      );
     }
   }
 
@@ -134,6 +129,10 @@ function MarketplaceSearchForm({
     next.set(SearchParams.LOCATION, location || DEFAULT_CITY_SLUG);
     if (returnElsewhere && returnBranch !== branch) {
       next.set(SearchParams.RETURN_BRANCH, returnBranch);
+      const returnCompany = companyForBranch(companies, returnBranch);
+      if (!branch && returnCompany) {
+        next.set(SearchParams.COMPANIES, returnCompany.slug);
+      }
     } else {
       next.delete(SearchParams.RETURN_BRANCH);
     }
@@ -156,22 +155,18 @@ function MarketplaceSearchForm({
       className={cn(CARD_CLASS, className)}
     >
       {isCars ? (
-        <div
-          className={cn(TOP_BAR_CLASS, canReturnElsewhere && "justify-between")}
-        >
-          {canReturnElsewhere ? (
-            <label
-              htmlFor="marketplace-different-return"
-              className="inline-flex cursor-pointer items-center gap-2.5 text-sm text-foreground"
-            >
-              <Switch
-                id="marketplace-different-return"
-                checked={differentReturn}
-                onCheckedChange={toggleDifferentReturn}
-              />
-              {t("differentReturn")}
-            </label>
-          ) : null}
+        <div className={cn(TOP_BAR_CLASS, "justify-between")}>
+          <label
+            htmlFor="marketplace-different-return"
+            className="inline-flex cursor-pointer items-center gap-2.5 text-sm text-foreground"
+          >
+            <Switch
+              id="marketplace-different-return"
+              checked={differentReturn}
+              onCheckedChange={setDifferentReturn}
+            />
+            {t("differentReturn")}
+          </label>
           <DriverAgeSelect
             id="marketplace-driver-age"
             value={driverAge}
@@ -195,16 +190,24 @@ function MarketplaceSearchForm({
             <CityCombobox value={location} onChange={setLocation} />
           )}
         </div>
-        {canReturnElsewhere && differentReturn ? (
+        {isCars && differentReturn ? (
           <>
             <span aria-hidden className={DIVIDER_CLASS} />
             <div className="min-w-0 md:flex-1">
-              <BranchCombobox
-                label={t("returnLocationLabel")}
-                value={returnBranch}
-                options={returnOptions}
-                onChange={setReturnBranch}
-              />
+              {returnNotOffered && pickupCompany ? (
+                <p className="px-4 py-2.5 text-sm text-muted-foreground">
+                  {t("returnNotOffered", { company: pickupCompany.name })}
+                </p>
+              ) : (
+                <BranchCombobox
+                  label={t("returnLocationLabel")}
+                  value={returnBranch}
+                  options={returnOptions}
+                  onChange={setReturnBranch}
+                  anyLabel={t("returnSame")}
+                  loading={companiesQuery.isPending}
+                />
+              )}
             </div>
           </>
         ) : null}

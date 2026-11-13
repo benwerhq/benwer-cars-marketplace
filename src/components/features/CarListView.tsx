@@ -29,6 +29,7 @@ import {
   parseBrowseParams,
   parseVehicleFilters,
 } from "@/lib/vehicleFilters";
+import type { AvailabilityRange } from "@/types/availability";
 import type { Vehicle, VehicleFilters } from "@/types/vehicle";
 
 const RESULTS_GRID_CLASS = "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
@@ -300,7 +301,7 @@ export function CarListView({
 
 function sortVehiclesByAvailability(
   vehicles: Vehicle[] | undefined,
-  ranges: { vehicleId: string; unavailableDates: string[] }[] | undefined,
+  ranges: AvailabilityRange[] | undefined,
   from: string,
   to: string,
 ): Vehicle[] | undefined {

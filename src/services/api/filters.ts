@@ -1,5 +1,5 @@
 import { isProvinceWideLocation } from "@/data/malagaCities";
-import { PublicChannel, VehicleStatus } from "@/enums";
+import { VehicleStatus } from "@/enums";
 import { matchesVehicleFilters, sortVehicles } from "@/lib/vehicleFilters";
 import type { Company, CompanyListFilters } from "@/types/company";
 import type { Vehicle, VehicleFilters } from "@/types/vehicle";
@@ -22,14 +22,12 @@ export function applyVehicleListFilters(
   vehicles: Vehicle[],
   filters?: VehicleFilters,
 ): Vehicle[] {
-  const includeUnavailable = filters?.channel === PublicChannel.WEBSITE;
   return sortVehicles(
-    vehicles.filter((vehicle) => {
-      const listed = includeUnavailable
-        ? isPublicFleetVehicle(vehicle)
-        : isListedVehicle(vehicle);
-      return listed && matchesVehicleFilters(vehicle, filters);
-    }),
+    vehicles.filter(
+      (vehicle) =>
+        isPublicFleetVehicle(vehicle) &&
+        matchesVehicleFilters(vehicle, filters),
+    ),
     filters?.sort,
   );
 }

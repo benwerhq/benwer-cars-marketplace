@@ -13,9 +13,12 @@ import {
   FILTER_FUELS,
   FILTER_SORTS,
   FILTER_TRANSMISSIONS,
+  categoryOptionsOf,
   clearAdvancedFilters,
+  fuelOptionsOf,
   hasActiveAdvancedFilters,
   seatOptionsOf,
+  transmissionOptionsOf,
 } from "@/lib/vehicleFilters";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
@@ -33,15 +36,37 @@ interface VehicleFilterToolbarProps {
 }
 
 export function VehicleFilterToolbar({
-  filters,
-  onChange,
+  filters: urlFilters,
+  onChange: emitChange,
   vehicles = [],
   companies,
   footer,
   className,
 }: VehicleFilterToolbarProps) {
   const t = useTranslations("cars");
+  const urlKey = JSON.stringify(urlFilters);
+  const [pending, setPending] = useState<{
+    baseKey: string;
+    filters: VehicleFilters;
+  } | null>(null);
+  const filters =
+    pending && pending.baseKey === urlKey ? pending.filters : urlFilters;
+
+  function onChange(next: VehicleFilters) {
+    setPending({ baseKey: urlKey, filters: next });
+    emitChange(next);
+  }
   const seatOptions = seatOptionsOf(vehicles);
+  const hasFleet = vehicles.length > 0;
+  const categoryOptions = hasFleet
+    ? categoryOptionsOf(vehicles, filters.categories)
+    : FILTER_CATEGORIES;
+  const fuelOptions = hasFleet
+    ? fuelOptionsOf(vehicles, filters.fuels)
+    : FILTER_FUELS;
+  const transmissionOptions = hasFleet
+    ? transmissionOptionsOf(vehicles, filters.transmissions)
+    : FILTER_TRANSMISSIONS;
   const hasFilters = hasActiveAdvancedFilters(filters);
   const latest = useRef({ filters, onChange });
   const [draft, setDraft] = useState(filters.q ?? "");
@@ -103,7 +128,7 @@ export function VehicleFilterToolbar({
         </div>
         <MultiSelectFilter
           label={t("filters.category")}
-          options={FILTER_CATEGORIES.map((category) => ({
+          options={categoryOptions.map((category) => ({
             value: category,
             label: t(`categories.${category}`),
           }))}
@@ -117,7 +142,7 @@ export function VehicleFilterToolbar({
         />
         <MultiSelectFilter
           label={t("filters.fuel")}
-          options={FILTER_FUELS.map((fuel) => ({
+          options={fuelOptions.map((fuel) => ({
             value: fuel,
             label: t(`fuel.${fuel}`),
           }))}
@@ -128,7 +153,7 @@ export function VehicleFilterToolbar({
         />
         <MultiSelectFilter
           label={t("filters.transmission")}
-          options={FILTER_TRANSMISSIONS.map((transmission) => ({
+          options={transmissionOptions.map((transmission) => ({
             value: transmission,
             label: t(`transmission.${transmission}`),
           }))}

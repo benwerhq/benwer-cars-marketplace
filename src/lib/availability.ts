@@ -95,6 +95,16 @@ export function isFleetVehicleAvailable(
   from: string,
   to: string,
 ): boolean {
+  const exact = ranges?.find(
+    (row) =>
+      row.vehicleId === vehicle.id &&
+      row.available !== undefined &&
+      row.from === from &&
+      row.to === to,
+  );
+  if (exact) {
+    return exact.available === true;
+  }
   const hasRow = ranges?.some((row) => row.vehicleId === vehicle.id) ?? false;
   if (hasRow) {
     return !rangeIncludesUnavailable(

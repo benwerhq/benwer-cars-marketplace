@@ -30,15 +30,15 @@ async function fetchLiveVehicles(
     filters?.from && filters?.to ? { from: filters.from, to: filters.to } : {};
   const data =
     channel || stay.from
-    ? await publicRequest<unknown>(
-        `/v1/public/companies/${encodeURIComponent(companySlug)}/vehicles`,
-        { query: { ...channelQuery(channel), ...stay } },
-      )
-    : (
-        await getOpenApiClient().GET("/v1/public/companies/{slug}/vehicles", {
-          params: { path: { slug: companySlug } },
-        })
-      ).data;
+      ? await publicRequest<unknown>(
+          `/v1/public/companies/${encodeURIComponent(companySlug)}/vehicles`,
+          { query: { ...channelQuery(channel), ...stay } },
+        )
+      : (
+          await getOpenApiClient().GET("/v1/public/companies/{slug}/vehicles", {
+            params: { path: { slug: companySlug } },
+          })
+        ).data;
 
   return applyVehicleListFilters(
     mapVehicleList(data, { companySlug }),
@@ -144,6 +144,11 @@ async function searchLiveMarketplace(
       )
     : listed;
 
+  const freeIds =
+    filters?.from && filters?.to
+      ? await fetchFreeVehicleIds(filters.from, filters.to)
+      : null;
+
   const fleets = await Promise.all(
     companies.map(async (company) => {
       const vehicles = await vehiclesApi.getByCompany(company.slug, {
@@ -151,9 +156,21 @@ async function searchLiveMarketplace(
         to: filters?.to,
         branchId,
       });
-      return vehicles.map((vehicle) => ({ ...vehicle, company }));
+      return vehicles
+        .filter((vehicle) => !freeIds || freeIds.has(vehicle.id))
+        .map((vehicle) => ({ ...vehicle, company }));
     }),
   );
 
   return fleets.flat();
+}
+
+async function fetchFreeVehicleIds(
+  from: string,
+  to: string,
+): Promise<Set<string>> {
+  const data = await publicRequest<unknown>("/v1/public/vehicles", {
+    query: { from, to },
+  });
+  return new Set(mapVehicleList(data).map((vehicle) => vehicle.id));
 }

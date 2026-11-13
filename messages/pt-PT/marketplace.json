@@ -137,6 +137,8 @@
     "datesRequired": "Add pick-up and drop-off dates to search",
     "returnLocationLabel": "Local de devolução",
     "differentReturn": "Devolver noutro local",
+    "returnSame": "Igual ao levantamento",
+    "returnNotOffered": "{company} não permite devolver o carro noutro local.",
     "branchChoose": "Escolha um local",
     "branchTrigger": "{label}, {name}",
     "branchLoading": "A carregar locais…",

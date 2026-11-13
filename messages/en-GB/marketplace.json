@@ -140,6 +140,8 @@
     "submit": "Search",
     "returnLocationLabel": "Drop-off location",
     "differentReturn": "Return to a different location",
+    "returnSame": "Same as pick-up",
+    "returnNotOffered": "{company} doesn't offer returns at another location.",
     "branchChoose": "Choose a location",
     "branchTrigger": "{label}, {name}",
     "branchLoading": "Loading locations…",
