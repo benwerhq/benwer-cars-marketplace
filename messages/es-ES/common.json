@@ -84,14 +84,6 @@
     "homeAria": "Benwer Cars, inicio",
     "logoAlt": "Benwer Cars"
   },
-  "darkPalette": {
-    "label": "Paleta oscura (vista previa)",
-    "hint": "Solo para pruebas — no se muestra en producción.",
-    "stone": "Piedra cálida (actual)",
-    "slate": "Pizarra",
-    "graphite": "Grafito",
-    "teal": "Verde azulado"
-  },
   "colorScheme": {
     "toDark": "Cambiar a modo oscuro",
     "toLight": "Cambiar a modo claro"

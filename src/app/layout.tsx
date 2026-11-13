@@ -7,8 +7,6 @@ import { Toaster } from "sonner";
 import { QueryProvider } from "@/context/QueryProvider";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CookieBannerHost } from "@/components/features/CookieBannerHost";
-import { DarkPalettePreview } from "@/components/layout/DarkPalettePreview";
-import { env } from "@/env";
 import { StorageKeys } from "@/enums";
 import { routing } from "@/i18n/routing";
 import {
@@ -137,7 +135,6 @@ export default async function RootLayout({
             />
             {children}
             <CookieBannerHost />
-            {env.NEXT_PUBLIC_ENV === "production" ? null : <DarkPalettePreview />}
             <Toaster richColors position="top-right" />
           </QueryProvider>
         </NextIntlClientProvider>

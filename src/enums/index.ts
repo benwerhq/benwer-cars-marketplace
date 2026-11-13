@@ -173,19 +173,11 @@ export enum StorageKeys {
   LOCALE = "NEXT_LOCALE",
   COOKIE_CONSENT = "benwer-cookie-consent",
   COLOR_SCHEME = "benwer-color-scheme",
-  DARK_PALETTE = "benwer-dark-palette",
 }
 
 export enum ColorScheme {
   LIGHT = "light",
   DARK = "dark",
-}
-
-export enum DarkPalette {
-  STONE = "stone",
-  SLATE = "slate",
-  GRAPHITE = "graphite",
-  TEAL = "teal",
 }
 
 export enum NavRoutes {
