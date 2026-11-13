@@ -49,19 +49,24 @@ export function CarPhotoGallery({
       )}
     >
       <div className="group relative aspect-[16/10] min-h-48 w-full overflow-hidden rounded-xl bg-surface-muted">
-        <CarPhoto
-          key={activePhoto}
-          src={activePhoto}
-          alt={t("photoAlt", { name: alt, index: activeIndex + 1 })}
-          priority
-          sizes="(min-width: 768px) 48rem, calc(100vw - 2rem)"
-          fallback={
-            <div className="flex h-48 w-full flex-col items-center justify-center gap-2">
-              <Car size={28} className="text-primary/40" aria-hidden />
-              <p className="text-sm text-muted-foreground">{t("photoEmpty")}</p>
-            </div>
-          }
-        />
+        <div className="absolute inset-x-[12%] inset-y-[10%]">
+          <CarPhoto
+            key={activePhoto}
+            src={activePhoto}
+            alt={t("photoAlt", { name: alt, index: activeIndex + 1 })}
+            priority
+            sizes="(min-width: 768px) 36rem, 76vw"
+            className="object-contain"
+            fallback={
+              <div className="flex h-full w-full flex-col items-center justify-center gap-2">
+                <Car size={28} className="text-primary/40" aria-hidden />
+                <p className="text-sm text-muted-foreground">
+                  {t("photoEmpty")}
+                </p>
+              </div>
+            }
+          />
+        </div>
 
         {photos.length > 1 ? (
           <>

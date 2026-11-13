@@ -9,6 +9,8 @@ import { CarGridSkeleton, CarGridView } from "./CarGrid";
 import {
   VehicleFilterToolbar,
   VehicleFilterToolbarSkeleton,
+  VehicleResultsBar,
+  VehicleResultsBarSkeleton,
 } from "./VehicleFilterToolbar";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { isProvinceWideLocation, resolveCitySlug } from "@/data/malagaCities";
@@ -135,15 +137,19 @@ function MarketplaceCarListContent() {
         vehicles={allVehicles}
         companies={companiesQuery.data}
       />
-      <div className="flex min-h-5 items-center">
-        {isPending ? (
-          <Skeleton className="h-4 w-36" />
-        ) : isError ? null : (
-          <p className="text-sm text-muted-foreground" aria-live="polite">
-            {resultsLabel}
-          </p>
-        )}
-      </div>
+      <VehicleResultsBar
+        filters={filters}
+        onChange={handleChange}
+        summary={
+          isPending ? (
+            <Skeleton className="h-4 w-36" />
+          ) : isError ? null : (
+            <p className="text-sm text-muted-foreground" aria-live="polite">
+              {resultsLabel}
+            </p>
+          )
+        }
+      />
       <CarGridView
         vehicles={data}
         isPending={isPending}
@@ -173,7 +179,7 @@ function MarketplaceCarListFallback() {
   return (
     <div className="flex flex-col gap-5">
       <VehicleFilterToolbarSkeleton />
-      <Skeleton className="h-4 w-36" />
+      <VehicleResultsBarSkeleton />
       <CarGridSkeleton className={RESULTS_GRID_CLASS} />
     </div>
   );

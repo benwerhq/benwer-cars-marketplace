@@ -136,6 +136,7 @@
     "pickupTrigger": "Pick-up date, {date}",
     "dropoffTrigger": "Drop-off date, {date}",
     "calendarLabel": "Select dates",
+    "datesRequired": "Choose your pick-up and drop-off dates to search.",
     "submit": "Search",
     "returnLocationLabel": "Drop-off location",
     "differentReturn": "Return to a different location",

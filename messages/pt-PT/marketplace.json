@@ -132,6 +132,7 @@
     "pickupTrigger": "Pick-up date, {date}",
     "dropoffTrigger": "Drop-off date, {date}",
     "calendarLabel": "Select dates",
+    "datesRequired": "Escolha as datas de levantamento e devolução para pesquisar.",
     "submit": "Search",
     "datesRequired": "Add pick-up and drop-off dates to search",
     "returnLocationLabel": "Local de devolução",

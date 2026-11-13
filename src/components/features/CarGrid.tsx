@@ -169,19 +169,21 @@ export function CarGridView({
     return <ErrorState message={t(getErrorKey(error))} onRetry={onRetry} />;
   }
   return (
-    <CarGrid
-      vehicles={vehicles ?? []}
-      buildHref={buildHref}
-      companyFor={companyFor}
-      isAvailable={isAvailable}
-      onClearFilters={onClearFilters}
-      emptyTitle={emptyTitle}
-      emptyHint={emptyHint}
-      emptyActionLabel={emptyActionLabel}
-      emptyActionHref={emptyActionHref}
-      className={className}
-      variant={variant}
-      days={days}
-    />
+    <div className="motion-safe:animate-fade-in">
+      <CarGrid
+        vehicles={vehicles ?? []}
+        buildHref={buildHref}
+        companyFor={companyFor}
+        isAvailable={isAvailable}
+        onClearFilters={onClearFilters}
+        emptyTitle={emptyTitle}
+        emptyHint={emptyHint}
+        emptyActionLabel={emptyActionLabel}
+        emptyActionHref={emptyActionHref}
+        className={className}
+        variant={variant}
+        days={days}
+      />
+    </div>
   );
 }

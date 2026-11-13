@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Search } from "lucide-react";
+import { Loader2, Search } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BranchCombobox } from "./BranchCombobox";
 import { CityCombobox } from "./CityCombobox";
@@ -35,6 +35,7 @@ const ROW_CLASS =
   "flex min-w-0 flex-col gap-1 p-3 md:flex-row md:items-center md:gap-1 md:p-2.5 md:pl-3";
 const TOP_BAR_CLASS =
   "flex flex-wrap items-center justify-end gap-x-6 gap-y-2 border-b border-border px-5 py-2.5 md:px-6";
+const DATES_HINT_ID = "marketplace-dates-hint";
 const DIVIDER_CLASS = "hidden w-px self-stretch bg-border md:my-2 md:block";
 
 function MarketplaceSearchForm({
@@ -69,12 +70,17 @@ function MarketplaceSearchForm({
     Boolean(initialReturnBranch),
   );
   const locale = useLocale();
+  const [isSearching, startSearch] = useTransition();
+  const [datesOpen, setDatesOpen] = useState(false);
+  const [datesMissing, setDatesMissing] = useState(false);
   const hasDates = hasCompleteSearchDates(from, to);
   const isCars = target === "cars";
   const companiesQuery = useCompanies();
   const companies = companiesQuery.data ?? [];
   const branchOptions = branchOptionsFromCompanies(companies, locale);
-  const returnOptions = returnBranchOptions(companyForBranch(companies, branch));
+  const returnOptions = returnBranchOptions(
+    companyForBranch(companies, branch),
+  );
   const canReturnElsewhere = isCars && returnOptions.length > 0;
   const returnElsewhere =
     canReturnElsewhere && differentReturn && Boolean(returnBranch);
@@ -101,14 +107,21 @@ function MarketplaceSearchForm({
     event.preventDefault();
 
     if (!isCars) {
-      router.push(
-        buildCompaniesSearchHref({
-          location: location || DEFAULT_CITY_SLUG,
-          from: hasDates ? from : undefined,
-          to: hasDates ? to : undefined,
-          view,
-        }),
+      startSearch(() =>
+        router.push(
+          buildCompaniesSearchHref({
+            location: location || DEFAULT_CITY_SLUG,
+            from: hasDates ? from : undefined,
+            to: hasDates ? to : undefined,
+            view,
+          }),
+        ),
       );
+      return;
+    }
+    if (!hasDates) {
+      setDatesMissing(true);
+      setDatesOpen(true);
       return;
     }
 
@@ -125,7 +138,15 @@ function MarketplaceSearchForm({
       next.delete(SearchParams.RETURN_BRANCH);
     }
     next.set(SearchParams.DRIVER_AGE, driverAge);
-    router.push(`${NavRoutes.CARS}?${next.toString()}`);
+    startSearch(() => router.push(`${NavRoutes.CARS}?${next.toString()}`));
+  }
+
+  function changeDates(next: { from: string; to: string }) {
+    setFrom(next.from);
+    setTo(next.to);
+    if (hasCompleteSearchDates(next.from, next.to)) {
+      setDatesMissing(false);
+    }
   }
 
   return (
@@ -136,10 +157,7 @@ function MarketplaceSearchForm({
     >
       {isCars ? (
         <div
-          className={cn(
-            TOP_BAR_CLASS,
-            canReturnElsewhere && "justify-between",
-          )}
+          className={cn(TOP_BAR_CLASS, canReturnElsewhere && "justify-between")}
         >
           {canReturnElsewhere ? (
             <label
@@ -197,22 +215,43 @@ function MarketplaceSearchForm({
               <DateRangePopover
                 from={from}
                 to={to}
-                onChange={(next) => {
-                  setFrom(next.from);
-                  setTo(next.to);
-                }}
+                onChange={changeDates}
+                required
+                invalid={datesMissing}
+                open={datesOpen}
+                onOpenChange={setDatesOpen}
+                describedBy={datesMissing ? DATES_HINT_ID : undefined}
               />
             </div>
           </>
         ) : null}
         <button
           type="submit"
+          aria-busy={isSearching}
           className="inline-flex h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full bg-primary px-6 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:ml-2 md:h-16 md:w-16 md:px-0"
         >
-          <Search size={22} strokeWidth={2.25} aria-hidden />
+          {isSearching ? (
+            <Loader2
+              size={22}
+              strokeWidth={2.25}
+              className="animate-spin motion-reduce:animate-none"
+              aria-hidden
+            />
+          ) : (
+            <Search size={22} strokeWidth={2.25} aria-hidden />
+          )}
           <span className="md:sr-only">{t("submit")}</span>
         </button>
       </div>
+      {datesMissing ? (
+        <p
+          id={DATES_HINT_ID}
+          role="alert"
+          className="px-5 pb-3 text-sm font-medium text-warning md:px-6"
+        >
+          {t("datesRequired")}
+        </p>
+      ) : null}
     </form>
   );
 }

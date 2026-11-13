@@ -16,14 +16,18 @@ import {
 } from "@/lib/vehicleFilters";
 import { CarGridSkeleton, CarGridView } from "./CarGrid";
 import { SiteSectionHeading } from "./SiteSectionHeading";
+import { Skeleton } from "@/components/ui/Skeleton";
 import {
   VehicleFilterToolbar,
   VehicleFilterToolbarSkeleton,
+  VehicleResultsBar,
+  VehicleResultsBarSkeleton,
 } from "./VehicleFilterToolbar";
 import type { Company } from "@/types/company";
 import type { Vehicle, VehicleFilters } from "@/types/vehicle";
 
-const FEATURED_GRID_CLASS = "gap-5 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2";
+const FEATURED_GRID_CLASS =
+  "gap-5 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2";
 
 interface FeaturedCarsProps {
   initialCompanies?: Company[];
@@ -73,6 +77,19 @@ function FeaturedCarsContent({ initialCompanies }: FeaturedCarsProps) {
         onChange={handleChange}
         vehicles={allVehicles}
         companies={companiesQuery.data ?? initialCompanies}
+      />
+      <VehicleResultsBar
+        filters={filters}
+        onChange={handleChange}
+        summary={
+          isPending ? (
+            <Skeleton className="h-4 w-36" />
+          ) : isError ? null : (
+            <p className="text-sm text-muted-foreground" aria-live="polite">
+              {tCars("resultsCount", { count: data?.length ?? 0 })}
+            </p>
+          )
+        }
       />
       <CarGridView
         vehicles={data}
@@ -139,6 +156,7 @@ function FeaturedCarsFallback() {
   return (
     <div className="flex flex-col gap-5">
       <VehicleFilterToolbarSkeleton />
+      <VehicleResultsBarSkeleton />
       <CarGridSkeleton className={FEATURED_GRID_CLASS} count={4} />
     </div>
   );

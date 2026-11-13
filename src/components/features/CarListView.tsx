@@ -10,6 +10,8 @@ import { DateRangePopover } from "./DateRangePopover";
 import {
   VehicleFilterToolbar,
   VehicleFilterToolbarSkeleton,
+  VehicleResultsBar,
+  VehicleResultsBarSkeleton,
 } from "./VehicleFilterToolbar";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { formatSearchDate, parseIsoDate } from "@/lib/dates";
@@ -77,11 +79,16 @@ function CarListViewContent({
     {
       from: availabilityRange.from,
       to: availabilityRange.to,
-      vehicleIds: data?.map((vehicle) => vehicle.id) ?? [],
+      vehicleIds: allVehicles?.map((vehicle) => vehicle.id) ?? [],
       channel,
     },
-    filterByAvailability && Boolean(data?.length),
+    filterByAvailability && Boolean(allVehicles?.length),
   );
+  const isLoading =
+    isPending ||
+    (filterByAvailability &&
+      Boolean(allVehicles?.length) &&
+      availabilityQuery.isPending);
   const sortedVehicles = filterByAvailability
     ? sortVehiclesByAvailability(
         data,
@@ -112,7 +119,10 @@ function CarListViewContent({
   const rows = layout === "rows";
   const days =
     fromDate && toDate
-      ? Math.max(1, Math.round((toDate.getTime() - fromDate.getTime()) / DAY_MS))
+      ? Math.max(
+          1,
+          Math.round((toDate.getTime() - fromDate.getTime()) / DAY_MS),
+        )
       : null;
   const availableCount = filterByAvailability
     ? (vehicles?.filter((vehicle) =>
@@ -133,21 +143,21 @@ function CarListViewContent({
         })
       : t("availableCount", { count })
     : filterByAvailability
-    ? fromDate && toDate
-      ? t("fleetSummaryForDates", {
-          total: count,
-          available: availableCount,
-          from: formatSearchDate(fromDate, locale),
-          to: formatSearchDate(toDate, locale),
-        })
-      : t("fleetSummary", { total: count, available: availableCount })
-    : fromDate && toDate
-      ? t("resultsForDates", {
-          count,
-          from: formatSearchDate(fromDate, locale),
-          to: formatSearchDate(toDate, locale),
-        })
-      : t("resultsCount", { count });
+      ? fromDate && toDate
+        ? t("fleetSummaryForDates", {
+            total: count,
+            available: availableCount,
+            from: formatSearchDate(fromDate, locale),
+            to: formatSearchDate(toDate, locale),
+          })
+        : t("fleetSummary", { total: count, available: availableCount })
+      : fromDate && toDate
+        ? t("resultsForDates", {
+            count,
+            from: formatSearchDate(fromDate, locale),
+            to: formatSearchDate(toDate, locale),
+          })
+        : t("resultsCount", { count });
 
   function handleChange(next: VehicleFilters) {
     const params = applyVehicleFilters(searchParams, next);
@@ -195,25 +205,29 @@ function CarListViewContent({
         onChange={handleChange}
         vehicles={allVehicles}
       />
-      <div className="flex min-h-5 items-center">
-        {isPending ? (
-          <Skeleton className="h-4 w-36" />
-        ) : isError ? null : (
-          <p
-            className={
-              rows
-                ? "text-base text-muted-foreground"
-                : "text-sm text-muted-foreground"
-            }
-            aria-live="polite"
-          >
-            {resultsLabel}
-          </p>
-        )}
-      </div>
+      <VehicleResultsBar
+        filters={filters}
+        onChange={handleChange}
+        summary={
+          isLoading ? (
+            <Skeleton className="h-4 w-36" />
+          ) : isError ? null : (
+            <p
+              className={
+                rows
+                  ? "text-base text-muted-foreground"
+                  : "text-sm text-muted-foreground"
+              }
+              aria-live="polite"
+            >
+              {resultsLabel}
+            </p>
+          )
+        }
+      />
       <CarGridView
         vehicles={vehicles}
-        isPending={isPending}
+        isPending={isLoading}
         isError={isError}
         error={error}
         onRetry={refetch}
@@ -255,7 +269,7 @@ function CarListViewFallback() {
   return (
     <div className="flex flex-col gap-6">
       <VehicleFilterToolbarSkeleton />
-      <Skeleton className="h-4 w-36" />
+      <VehicleResultsBarSkeleton />
       <CarGridSkeleton className={RESULTS_GRID_CLASS} />
     </div>
   );
