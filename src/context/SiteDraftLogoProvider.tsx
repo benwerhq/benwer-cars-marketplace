@@ -20,7 +20,12 @@ export function SiteDraftLogoProvider({ children }: { children: ReactNode }) {
   useDocumentCorners(cornerStyle);
   return (
     <SiteDraftLogoContext.Provider value={{ headerLogo, setHeaderLogo, setThemeStyle, setCornerStyle }}>
-      <div style={themeStyle} data-corners={cornerStyle} className="contents">
+      <div
+        style={themeStyle}
+        data-corners={cornerStyle}
+        data-brand={themeStyle && "--site-primary" in themeStyle ? "" : undefined}
+        className="contents"
+      >
         {children}
       </div>
     </SiteDraftLogoContext.Provider>

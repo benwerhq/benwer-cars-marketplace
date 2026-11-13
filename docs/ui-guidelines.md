@@ -42,6 +42,14 @@ is identical.
 
 Never hardcode a color. Components never branch on theme in JS.
 
+**Colour scheme.** `ColorSchemeSwitcher` (light / dark / system) sits in every
+header — marketplace, tenant subdomain and company site (custom domain). The
+choice lives in the `benwer-color-scheme` cookie; the root layout adds `.dark`
+server-side, and for `system` a tiny pre-paint script checks
+`prefers-color-scheme`. Default is light. Company sites pass their colours as
+`--site-primary` / `--site-page-background` (with `data-brand` / `.site-canvas`)
+so dark mode can replace the page background and lighten the brand colour.
+
 ---
 
 ## 3. Foundations

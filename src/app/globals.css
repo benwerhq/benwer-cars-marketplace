@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
+  color-scheme: light;
+  --page-background: #ffffff;
+  --background: var(--page-background);
   --surface: #ffffff;
   --surface-muted: #f5f5f4;
   --surface-hover: #f0fdfa;
@@ -37,7 +41,9 @@
 }
 
 .dark {
-  --background: #1c1917;
+  color-scheme: dark;
+  --page-background: #1c1917;
+  --background: var(--page-background);
   --surface: #292524;
   --surface-muted: #35302c;
   --surface-hover: #44403c;
@@ -114,6 +120,23 @@
       opacity: 1;
     }
   }
+}
+
+.site-canvas {
+  --background: var(--site-page-background, var(--page-background));
+}
+
+.dark .site-canvas {
+  --background: var(--page-background);
+}
+
+[data-brand] {
+  --primary: var(--site-primary);
+}
+
+.dark [data-brand] {
+  --primary: color-mix(in oklab, var(--site-primary) 75%, white);
+  --primary-foreground: #ffffff;
 }
 
 html,

@@ -43,8 +43,8 @@ async function SiteLayout({ children, params }: Props) {
   }
 
   const style = {
-    "--background": background,
-    ...(brandColor ? { "--primary": brandColor } : {}),
+    "--site-page-background": background,
+    ...(brandColor ? { "--site-primary": brandColor } : {}),
     fontFamily: siteFontStack(font),
   } as CSSProperties;
 
@@ -55,7 +55,8 @@ async function SiteLayout({ children, params }: Props) {
           <div
             style={style}
             data-corners={corners}
-            className="flex min-h-dvh flex-col bg-background"
+            data-brand={brandColor ? "" : undefined}
+            className="site-canvas flex min-h-dvh flex-col bg-background"
           >
             <DocumentCorners corners={corners} />
             <GuestVerifyBanner

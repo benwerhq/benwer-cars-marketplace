@@ -9,6 +9,11 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CookieBannerHost } from "@/components/features/CookieBannerHost";
 import { StorageKeys } from "@/enums";
 import { routing } from "@/i18n/routing";
+import {
+  parseColorScheme,
+  serverDarkClass,
+  systemColorSchemeScript,
+} from "@/lib/colorScheme";
 import { buildPageMetadata, getSiteUrl, websiteJsonLd } from "@/lib/seo";
 import enCommon from "../../messages/en-GB/common.json";
 import enMarketplace from "../../messages/en-GB/marketplace.json";
@@ -99,6 +104,8 @@ export default async function RootLayout({
 }) {
   const cookieStore = await cookies();
   const locale = resolveLocale(cookieStore.get(StorageKeys.LOCALE)?.value);
+  const colorScheme = parseColorScheme(cookieStore.get(StorageKeys.COLOR_SCHEME)?.value);
+  const colorSchemeScript = systemColorSchemeScript(colorScheme);
   const messages =
     locale === "es-ES"
       ? { ...esCommon, ...esMarketplace }
@@ -109,8 +116,14 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${lora.variable} ${poppins.variable} ${bebasNeue.variable} ${caveat.variable}`}
+      className={`${inter.variable} ${lora.variable} ${poppins.variable} ${bebasNeue.variable} ${caveat.variable} ${serverDarkClass(colorScheme)}`}
+      suppressHydrationWarning
     >
+      {colorSchemeScript ? (
+        <head>
+          <script dangerouslySetInnerHTML={{ __html: colorSchemeScript }} />
+        </head>
+      ) : null}
       <body className="flex min-h-dvh flex-col bg-background text-foreground antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <QueryProvider>

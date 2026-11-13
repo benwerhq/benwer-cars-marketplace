@@ -124,8 +124,8 @@ export function OwnerHomeRoot({
   const dirty = canEdit && websiteDraftDirty(baseline, draft);
   const brandColor = siteBrandColor(liveSite);
   const style = {
-    "--background": liveSite.content.pageBackground,
-    ...(brandColor ? { "--primary": brandColor } : {}),
+    "--site-page-background": liveSite.content.pageBackground,
+    ...(brandColor ? { "--site-primary": brandColor } : {}),
     fontFamily: siteFontStack(liveSite.content.fontFamily),
   } as CSSProperties;
   const setThemeStyle = draftLogo?.setThemeStyle;
@@ -140,7 +140,7 @@ export function OwnerHomeRoot({
     setThemeStyle?.(
       font
         ? ({
-            ...(brand ? { "--primary": brand } : {}),
+            ...(brand ? { "--site-primary": brand } : {}),
             fontFamily: siteFontStack(font),
           } as CSSProperties)
         : undefined,
@@ -173,8 +173,9 @@ export function OwnerHomeRoot({
     <div
       style={style}
       data-corners={liveSite.content.cornerStyle}
+      data-brand={brandColor ? "" : undefined}
       className={cn(
-        "bg-background",
+        "site-canvas bg-background",
         showEditor && showPreview && "lg:grid lg:grid-cols-[minmax(0,1fr)_34rem]",
         canEdit && view === EditorView.PREVIEW && "pb-36 sm:pb-24",
       )}

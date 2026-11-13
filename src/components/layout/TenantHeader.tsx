@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { CompanyMark } from "@/components/features/CompanyMark";
 import { NavRoutes } from "@/enums";
+import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteHeaderShell } from "./SiteHeaderShell";
 import { TenantNav } from "./TenantNav";
@@ -40,6 +41,7 @@ export async function TenantHeader({
       }
     >
       <TenantNav />
+      <ColorSchemeSwitcher />
       <LocaleSwitcher />
     </SiteHeaderShell>
   );

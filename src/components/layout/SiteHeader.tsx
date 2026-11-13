@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteGuestLink, SiteOwnerMenu } from "./SiteGuestLink";
 import { SiteCartLink } from "./SiteCartLink";
@@ -55,6 +56,7 @@ export async function SiteHeader({
       ) : null}
       {cartSlug ? <SiteCartLink slug={cartSlug} homeHref={homeHref} /> : null}
       <SiteGuestLink homeHref={homeHref} />
+      <ColorSchemeSwitcher />
       <LocaleSwitcher />
       <SiteOwnerMenu homeHref={homeHref} />
     </SiteHeaderShell>
