@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { formatMoney } from "@/lib/money";
 import type { Vehicle } from "@/types/vehicle";
 import { TransmissionType, VehicleCategory } from "@/enums";
+import { vehicleColorLabel } from "@/lib/vehicleColor";
 import { vehicleCategoryOf } from "@/lib/vehicleFilters";
 
 interface CarSpecsTableProps {
@@ -16,6 +17,7 @@ export function CarSpecsTable({ vehicle, className }: CarSpecsTableProps) {
   const t = useTranslations("carDetail");
   const tCars = useTranslations("cars");
   const locale = useLocale();
+  const colorLabel = vehicleColorLabel(vehicle.color, tCars);
 
   const specs = [
     vehicle.year > 0
@@ -55,8 +57,8 @@ export function CarSpecsTable({ vehicle, className }: CarSpecsTableProps) {
           titleCase: false,
         }
       : null,
-    vehicle.color
-      ? { label: t("color"), value: vehicle.color, titleCase: true }
+    colorLabel
+      ? { label: t("color"), value: colorLabel, titleCase: false }
       : null,
     vehicle.deposit != null
       ? {

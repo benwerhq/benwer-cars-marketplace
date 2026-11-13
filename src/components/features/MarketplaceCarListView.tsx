@@ -14,7 +14,11 @@ import {
   VehicleResultsBar,
 } from "./VehicleFilterToolbar";
 import { Skeleton } from "@/components/ui/Skeleton";
-import { isProvinceWideLocation, resolveCitySlug } from "@/data/malagaCities";
+import {
+  isProvinceWideLocation,
+  resolveCitySlug,
+  toApiLocation,
+} from "@/data/malagaCities";
 import { NavRoutes, SearchParams } from "@/enums";
 import {
   countRentalDays,
@@ -98,9 +102,13 @@ function MarketplaceCarListContent() {
       : placeLabel;
 
   function handleChange(next: typeof filters) {
+    // applyVehicleFilters keeps the URL's own params; never add the default "All locations" slug.
     const params = applyVehicleFilters(searchParams, next);
-    if (location) {
-      params.set(SearchParams.LOCATION, location);
+    const pickedLocation = toApiLocation(browse.location);
+    if (pickedLocation) {
+      params.set(SearchParams.LOCATION, pickedLocation);
+    } else {
+      params.delete(SearchParams.LOCATION);
     }
     const query = params.toString();
     router.replace(query ? `${pathname}?${query}` : pathname, {

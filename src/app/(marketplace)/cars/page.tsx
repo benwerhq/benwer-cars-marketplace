@@ -9,11 +9,12 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
-  const t = await getTranslations("home");
+  const t = await getTranslations("cars");
+  const tSeo = await getTranslations("seo");
   const tBrand = await getTranslations("brand");
 
   return buildPageMetadata({
-    title: t("title"),
+    title: tSeo("carsTitle"),
     description: t("subtitle"),
     path: "/cars",
     siteName: tBrand("name"),

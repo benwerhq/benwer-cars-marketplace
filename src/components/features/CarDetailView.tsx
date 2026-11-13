@@ -15,6 +15,7 @@ import {
   sanitizeDateRange,
   unavailableDatesForVehicle,
 } from "@/lib/availability";
+import { vehicleColorLabel } from "@/lib/vehicleColor";
 import { vehicleImageUrls } from "@/lib/vehicleImage";
 import { setHrefParams } from "@/lib/booking";
 import type { CarCartContext } from "./BookingWidget";
@@ -67,6 +68,7 @@ export function CarDetailView({
   cart = null,
 }: CarDetailViewProps) {
   const t = useTranslations("carDetail");
+  const tCars = useTranslations("cars");
   const calendarWindow = availabilityCalendarWindow();
   const { data, isPending, isError, refetch } = useAvailability(
     companySlug,
@@ -146,7 +148,10 @@ export function CarDetailView({
             {vehicle.brand} {vehicle.model}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            {[vehicle.year > 0 ? String(vehicle.year) : null, vehicle.color]
+            {[
+              vehicle.year > 0 ? String(vehicle.year) : null,
+              vehicleColorLabel(vehicle.color, tCars),
+            ]
               .filter(Boolean)
               .join(" · ")}
           </p>

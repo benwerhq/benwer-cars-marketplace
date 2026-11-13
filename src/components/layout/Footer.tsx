@@ -75,7 +75,9 @@ export async function Footer() {
             />
           </FooterGroup>
         </div>
-        <div className="flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div
+          className={`flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between ${isTenant ? "" : "max-sm:pb-16"}`}
+        >
           <p className="text-xs text-muted-foreground">
             {tFooter("copyright", { year })}
           </p>

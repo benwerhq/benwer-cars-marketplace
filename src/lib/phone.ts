@@ -171,3 +171,15 @@ export function phoneInvalidErrorCode(error: unknown): boolean {
       item.code === PHONE_INVALID_CODE,
   );
 }
+
+/** Readable phone for display, e.g. "+34 952 00 01 00"; anything unparseable is shown as stored. */
+export function formatPhoneDisplay(value: string): string {
+  const parsed = parsePhoneNumberFromString(value.trim(), DEFAULT_PHONE_COUNTRY);
+  return parsed?.isValid() ? parsed.formatInternational() : value;
+}
+
+/** `tel:` link with only dialable characters (E.164 when the number parses). */
+export function phoneTelHref(value: string): string {
+  const parsed = parsePhoneNumberFromString(value.trim(), DEFAULT_PHONE_COUNTRY);
+  return `tel:${parsed?.isValid() ? parsed.number : value.replace(/[^\d+]/g, "")}`;
+}

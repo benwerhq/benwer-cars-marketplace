@@ -9,7 +9,7 @@ import { CheckCircle2, Info, ShoppingCart, Trash2, XCircle } from "lucide-react"
 import { toast } from "sonner";
 import { useLocale, useTranslations } from "next-intl";
 import { BookingVehiclePreview } from "./BookingVehiclePreview";
-import { Button } from "@/components/ui/Button";
+import { Button, buttonVariants } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Field } from "@/components/ui/Field";
 import { DatePicker } from "@/components/ui/DatePicker";
@@ -566,7 +566,13 @@ function CartLine({
           <BookingVehiclePreview vehicle={vehicle} size="md" />
         </Link>
       ) : vehicleQuery.isPending ? (
-        <Skeleton className="h-16 w-full" />
+        <div className="flex items-center gap-3" aria-hidden>
+          <Skeleton className="h-20 w-28 shrink-0 rounded-lg sm:h-24 sm:w-36" />
+          <div className="flex flex-1 flex-col gap-2">
+            <Skeleton className="h-4 w-2/3" />
+            <Skeleton className="h-3 w-1/4" />
+          </div>
+        </div>
       ) : (
         <p className="text-sm text-danger">{t("vehicleMissing")}</p>
       )}
@@ -710,15 +716,12 @@ function CartLine({
         <Button type="button" variant="secondary" size="sm" onClick={() => setEditing((value) => !value)}>
           {editing ? t("done") : t("edit")}
         </Button>
-        <Link
-          href={bookHref}
-          className="inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-primary hover:text-primary-hover"
-        >
+        <Link href={bookHref} className={buttonVariants({ variant: "secondary", size: "sm" })}>
           {t("bookOnly")}
         </Link>
         <Button
           type="button"
-          variant="ghost"
+          variant="secondary"
           size="sm"
           onClick={() => removeFromCart(cartSlug, item.id)}
           className="ml-auto"

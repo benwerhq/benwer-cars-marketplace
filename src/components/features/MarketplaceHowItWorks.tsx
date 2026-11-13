@@ -47,15 +47,7 @@ function StepArrow() {
   );
 }
 
-function PreviewCar({
-  name,
-  specs,
-  price,
-}: {
-  name: string;
-  specs: string;
-  price: string;
-}) {
+function PreviewCar({ name, specs }: { name: string; specs: string }) {
   return (
     <div className="flex items-center gap-3">
       <span className="inline-flex h-10 w-14 shrink-0 items-center justify-center rounded-lg bg-surface-muted text-subtle-foreground">
@@ -69,7 +61,8 @@ function PreviewCar({
           {specs}
         </span>
       </span>
-      <span className="shrink-0 text-sm font-bold text-primary">{price}</span>
+      {/* Illustrative only: no made-up price, just where the daily rate shows. */}
+      <span className="h-3 w-12 shrink-0 rounded-full bg-primary/20" />
     </div>
   );
 }
@@ -102,12 +95,10 @@ export async function MarketplaceHowItWorks() {
           <PreviewCar
             name={t("preview.carA")}
             specs={t("preview.carASpecs")}
-            price={t("preview.carAPrice")}
           />
           <PreviewCar
             name={t("preview.carB")}
             specs={t("preview.carBSpecs")}
-            price={t("preview.carBPrice")}
           />
         </div>
       ),
@@ -159,7 +150,10 @@ export async function MarketplaceHowItWorks() {
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground md:text-base">
               {t(`${key}Body`)}
             </p>
-            <div aria-hidden className={PREVIEW_CARD}>
+            <div aria-hidden className={cn(PREVIEW_CARD, "relative")}>
+              <span className="absolute -top-2.5 right-3 rounded-full border border-border bg-surface px-2 py-0.5 text-[10px] font-semibold tracking-wide text-muted-foreground uppercase">
+                {t("preview.example")}
+              </span>
               {preview}
             </div>
           </li>

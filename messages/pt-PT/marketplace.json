@@ -51,16 +51,16 @@
       "navCalendar": "Calendário",
       "navReservations": "Reservas",
       "calendarTitle": "Disponibilidade",
-      "calendarMonth": "Julho",
+      "calendarMonth": "Próximas 2 semanas",
       "viaBenwer": "Via Benwer",
       "direct": "Direta",
       "free": "Livre",
-      "carA": "Fiat 500",
-      "carB": "Seat Ibiza",
-      "carC": "VW T-Roc",
-      "carD": "Peugeot 2008",
+      "carA": "Compacto",
+      "carB": "Citadino",
+      "carC": "SUV",
+      "carD": "Crossover",
       "phoneTitle": "Hoje",
-      "phoneDate": "Seg 14 jul",
+      "phoneDate": "Segunda-feira",
       "pickUp": "Levantamento",
       "return": "Devolução",
       "checkedOut": "Entregue",
@@ -74,9 +74,9 @@
       "storeHeadline": "Alugue um carro em Málaga",
       "storeSearch": "Levantamento e datas",
       "storeSearchCta": "Pesquisar",
-      "storePrice": "desde 29 €/dia",
-      "carE": "Toyota Yaris",
-      "carF": "Renault Clio"
+      "storePrice": "Ver preços",
+      "carE": "Utilitário",
+      "carF": "Carrinha"
     }
   },
   "faq": {
@@ -127,7 +127,8 @@
     "carTitle": "{brand} {model} — {company}",
     "carTitleTenant": "{brand} {model} ({year})",
     "carDescription": "Alugue um {brand} {model} da {company}.",
-    "carDescriptionSpecs": "Alugue um {brand} {model} — {seats, plural, one {# lugar} other {# lugares}}, {transmission}."
+    "carDescriptionSpecs": "Alugue um {brand} {model} — {seats, plural, one {# lugar} other {# lugares}}, {transmission}.",
+    "carsTitle": "Carros de aluguer na província de Málaga"
   },
   "tenant": {
     "notFoundTitle": "Empresa não encontrada",
@@ -149,15 +150,14 @@
     "cta": "Começar a pesquisar",
     "preview": {
       "place": "Aeroporto de Málaga",
-      "dates": "12–19 jul · 7 dias",
-      "carA": "Fiat 500",
+      "dates": "sex → sex · 7 dias",
+      "carA": "Carro compacto",
       "carASpecs": "4 lugares · Manual",
-      "carAPrice": "29 €/dia",
-      "carB": "VW T-Roc",
+      "carB": "SUV familiar",
       "carBSpecs": "5 lugares · Automático",
-      "carBPrice": "48 €/dia",
       "confirmed": "Reserva confirmada",
-      "confirmedDetail": "Levantamento às 10:00"
+      "confirmedDetail": "Levantamento às 10:00",
+      "example": "Exemplo"
     },
     "eyebrow": "Três passos"
   },
@@ -204,7 +204,7 @@
     "viewToggleAria": "Mostrar empresas em lista ou no mapa",
     "regionAria": "Mapa de empresas de aluguer na província de Málaga",
     "pinAria": "{name} em {city}",
-    "fleetHint": "{count, plural, one {# carro disponível} other {# carros disponíveis}}",
+    "fleetHint": "{count, plural, =0 {Ainda sem carros publicados} one {# carro disponível} other {# carros disponíveis}}",
     "fleetHintUnknown": "Ver carros disponíveis",
     "viewFleet": "Ver frota",
     "closePin": "Fechar",
@@ -231,7 +231,7 @@
     "perDaySuffix": " / dia",
     "viewDetails": "Ver detalhes",
     "notAvailableForDates": "Não disponível nestas datas",
-    "bookUnavailable": "Reservar agora",
+    "bookUnavailable": "Ver carro",
     "fleetSummary": "{total, plural, one {# carro} other {# carros}} · {available, plural, one {# disponível} other {# disponíveis}}",
     "fleetSummaryForDates": "{total, plural, one {# carro} other {# carros}} · {available, plural, one {# disponível} other {# disponíveis}} · {from} – {to}",
     "seats": "{count} lugares",
@@ -298,7 +298,24 @@
       "pricePerDay_asc": "Menor preço/dia",
       "pricePerDay_desc": "Maior preço/dia"
     },
-    "subtitle": "Todos os carros públicos de empresas de aluguer parceiras na província de Málaga. Escolha as datas para ver o que está livre."
+    "subtitle": "Todos os carros públicos de empresas de aluguer parceiras na província de Málaga. Escolha as datas para ver o que está livre.",
+    "colors": {
+      "white": "Branco",
+      "black": "Preto",
+      "silver": "Prateado",
+      "grey": "Cinzento",
+      "red": "Vermelho",
+      "blue": "Azul",
+      "green": "Verde",
+      "orange": "Laranja",
+      "yellow": "Amarelo",
+      "brown": "Castanho",
+      "beige": "Bege",
+      "gold": "Dourado",
+      "purple": "Roxo"
+    },
+    "viewCar": "Ver carro",
+    "opensCompanySite": "(abre o site da empresa)"
   },
   "carDetail": {
     "bookNow": "Reservar agora",
@@ -535,7 +552,9 @@
     "loadErrorDescription": "Não foi possível carregar esta empresa de aluguer a partir do catálogo em direto. Tente novamente — não mostramos carros de exemplo quando a API falha.",
     "browseCars": "Ver carros",
     "featuredEmpty": "Ainda não há empresas em destaque",
-    "featuredEmptyHint": "Volte em breve ou veja carros de frotas locais."
+    "featuredEmptyHint": "Volte em breve ou veja carros de frotas locais.",
+    "locationUnknown": "Localização não indicada",
+    "noDescription": "Ainda sem descrição."
   },
   "contact": {
     "title": "Contacte-nos",
@@ -836,7 +855,8 @@
     "profileEdit": "Editar dados",
     "profileCancel": "Cancelar",
     "profileEmail": "Email",
-    "profileEmpty": "Não adicionado"
+    "profileEmpty": "Não adicionado",
+    "ownerSignedOut": "A sua sessão no editor do site foi terminada. Neste navegador não é possível ter ao mesmo tempo uma sessão de proprietário e outra de cliente."
   },
   "siteSections": {
     "banners": {
@@ -1282,15 +1302,15 @@
       "script": "uma só pesquisa",
       "highlight": "Compare preços",
       "joiner": "de",
-      "boxed": "Dezenas de empresas",
-      "description": "Veja preços, seguros e cauções reais lado a lado antes de reservar"
+      "boxed": "Empresas parceiras",
+      "description": "Veja preços, seguros e cauções de empresas de aluguer parceiras, lado a lado, antes de reservar"
     },
     "anywhere": {
       "script": "encontre o seu carro",
-      "highlight": "Onde quer que vá",
-      "joiner": "escolha entre",
+      "highlight": "Por toda a Málaga",
+      "joiner": "com",
       "boxed": "Empresas locais",
-      "description": "Empresas de aluguer de confiança em cidades de Espanha e não só, num só lugar"
+      "description": "Empresas de aluguer parceiras em localidades de toda a província de Málaga, num só lugar"
     }
   },
   "siteLegal": {

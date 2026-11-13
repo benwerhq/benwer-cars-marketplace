@@ -8,6 +8,7 @@ import { CompaniesMap } from "./CompaniesMap";
 import { CompanyGrid, CompanyGridSkeleton } from "./CompanyGrid";
 import { Button } from "@/components/ui/Button";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { Skeleton } from "@/components/ui/Skeleton";
 import { isProvinceWideLocation } from "@/data/malagaCities";
 import { NavRoutes, SearchParams } from "@/enums";
 import { toCompanyMapPins } from "@/lib/companyMap";
@@ -53,8 +54,11 @@ export function CompanyDirectory({
   );
   const [highlightedSlug, setHighlightedSlug] = useState<string | null>(null);
 
-  const showMapPane =
-    isDesktop || searchParams.get(SearchParams.VIEW) === "map";
+  // Local state answers the tap immediately; the URL is kept in sync without a navigation round trip.
+  const [mobileView, setMobileViewState] = useState<"list" | "map">(
+    searchParams.get(SearchParams.VIEW) === "map" ? "map" : "list",
+  );
+  const showMapPane = isDesktop || mobileView === "map";
   const cityLabel =
     location && !isProvinceWideLocation(location)
       ? locationLabelFromSlug(location, locale)
@@ -83,12 +87,12 @@ export function CompanyDirectory({
       params.delete(SearchParams.VIEW);
     }
 
+    setMobileViewState(view);
     const query = params.toString();
-    router.replace(
+    window.history.replaceState(
+      null,
+      "",
       query ? `${NavRoutes.COMPANIES}?${query}` : NavRoutes.COMPANIES,
-      {
-        scroll: false,
-      },
     );
   }
 
@@ -114,9 +118,14 @@ export function CompanyDirectory({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted-foreground">
-          {isPending ? t("loading") : resultsLabel}
-        </p>
+        {isPending ? (
+          <div role="status" className="flex items-center">
+            <span className="sr-only">{t("loading")}</span>
+            <Skeleton className="h-4 w-48" />
+          </div>
+        ) : (
+          <p className="text-sm text-muted-foreground">{resultsLabel}</p>
+        )}
         <div
           className="grid grid-cols-2 rounded-lg border border-border bg-surface p-1 lg:hidden"
           role="group"
@@ -127,7 +136,7 @@ export function CompanyDirectory({
             variant={showMapPane ? "ghost" : "secondary"}
             size="sm"
             aria-pressed={!showMapPane}
-            className="min-h-11"
+            className="min-h-11 touch-manipulation"
             onClick={() => setMobileView("list")}
           >
             <List size={16} aria-hidden />
@@ -138,7 +147,7 @@ export function CompanyDirectory({
             variant={showMapPane ? "secondary" : "ghost"}
             size="sm"
             aria-pressed={showMapPane}
-            className="min-h-11"
+            className="min-h-11 touch-manipulation"
             onClick={() => setMobileView("map")}
           >
             <MapPinned size={16} aria-hidden />

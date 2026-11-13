@@ -15,7 +15,7 @@ import {
   companyForBranch,
   returnBranchOptions,
 } from "@/lib/branchOptions";
-import { DEFAULT_CITY_SLUG, resolveCitySlug } from "@/data/malagaCities";
+import { resolveCitySlug, toApiLocation } from "@/data/malagaCities";
 import { DriverAgeBand, NavRoutes, SearchParams } from "@/enums";
 import { hasCompleteSearchDates } from "@/lib/dates";
 import { buildCompaniesSearchHref } from "@/lib/marketplaceSearch";
@@ -104,7 +104,7 @@ function MarketplaceSearchForm({
       startSearch(() =>
         router.push(
           buildCompaniesSearchHref({
-            location: branch ? undefined : location || DEFAULT_CITY_SLUG,
+            location: branch ? undefined : location,
             branch: branch || undefined,
             from: hasDates ? from : undefined,
             to: hasDates ? to : undefined,
@@ -126,7 +126,12 @@ function MarketplaceSearchForm({
       to: hasDates ? to : undefined,
       branchId: branch || undefined,
     });
-    next.set(SearchParams.LOCATION, location || DEFAULT_CITY_SLUG);
+    const pickedLocation = toApiLocation(location);
+    if (pickedLocation) {
+      next.set(SearchParams.LOCATION, pickedLocation);
+    } else {
+      next.delete(SearchParams.LOCATION);
+    }
     if (returnElsewhere && returnBranch !== branch) {
       next.set(SearchParams.RETURN_BRANCH, returnBranch);
       const returnCompany = companyForBranch(companies, returnBranch);

@@ -5,6 +5,7 @@ import { SiteEditSection } from "@/components/layout/SiteEditSection";
 import { SiteEditSection as SiteEditSectionId } from "@/enums";
 import { localizedText } from "@/lib/localizedCopy";
 import type { PublicSite } from "@/types/site";
+import { formatPhoneDisplay, phoneTelHref } from "@/lib/phone";
 
 interface SiteHeroProps {
   site: PublicSite;
@@ -56,8 +57,8 @@ export async function SiteHero({ site, editMode = false }: SiteHeroProps) {
               {phone ? (
                 <li className="inline-flex items-center gap-2">
                   <Phone size={16} className="text-primary" aria-hidden />
-                  <a href={`tel:${phone}`} className="hover:text-primary">
-                    {phone}
+                  <a href={phoneTelHref(phone)} className="hover:text-primary">
+                    {formatPhoneDisplay(phone)}
                   </a>
                 </li>
               ) : null}

@@ -7,6 +7,7 @@ import {
   Car,
   CarFront,
   ChevronRight,
+  ExternalLink,
   Fuel,
   Truck,
   Users,
@@ -15,7 +16,7 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import { vehicleLabelKey } from "@/lib/vehicleFilters";
 import { vehicleImageUrl } from "@/lib/vehicleImage";
-import { cn } from "@/lib/utils";
+import { cn, isExternalHref } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import { CarPhoto } from "./CarPhoto";
 import { CompanyEyebrow } from "./CompanyEyebrow";
@@ -61,6 +62,8 @@ export function CarCard({
   const locale = useLocale();
   const primaryPhoto = vehicleImageUrl(vehicle);
   const name = `${vehicle.brand} ${vehicle.model}`;
+  const external = isExternalHref(href);
+  const ActionIcon = external ? ExternalLink : ChevronRight;
 
   return (
     <Link
@@ -144,8 +147,9 @@ export function CarCard({
           {available ? (
             <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
               {t("viewDetails")}
-              <ChevronRight
-                size={16}
+              {external ? <span className="sr-only">{t("opensCompanySite")}</span> : null}
+              <ActionIcon
+                size={external ? 14 : 16}
                 aria-hidden
                 className="transition-transform motion-safe:group-hover:translate-x-0.5"
               />

@@ -343,8 +343,16 @@ function BookingCta({
     );
   }
 
+  // Disabled state keeps readable contrast (no faded white-on-pink): muted text on a muted surface.
   return (
-    <Button disabled className={cn("h-11 w-full", className)}>
+    <Button
+      disabled
+      variant="secondary"
+      className={cn(
+        "h-11 w-full bg-surface-muted text-muted-foreground disabled:opacity-100",
+        className,
+      )}
+    >
       {label}
     </Button>
   );

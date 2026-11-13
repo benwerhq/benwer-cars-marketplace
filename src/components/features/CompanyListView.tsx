@@ -29,7 +29,10 @@ function FeaturedCompanyResults({
 }) {
   const t = useTranslations("companies");
   const { data, isPending, isError, error, refetch } = useCompanies();
-  const companies = data ?? initialCompanies;
+  // Featured companies are only the ones with public cars to look at.
+  const companies = (data ?? initialCompanies)?.filter(
+    (company) => company.vehicleCount !== 0,
+  );
   const waiting = isPending && !initialCompanies;
 
   return (
