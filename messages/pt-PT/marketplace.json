@@ -24,16 +24,25 @@
     "title": "What you get",
     "subtitle": "One stack for the office, the yard, and travellers searching Málaga.",
     "admin": {
-      "title": "Full admin system",
-      "body": "Manage cars, prices, availability, and reservations from one operations dashboard — the same catalogue the marketplace reads."
+      "title": "Sistema de gestão completo",
+      "body": "Gira carros, preços, disponibilidade e reservas num só painel — o mesmo catálogo que o marketplace lê."
     },
     "mobile": {
-      "title": "Mobile application",
-      "body": "Staff can check cars in and out and stay on top of the day’s bookings from a phone, not only from a desk."
+      "title": "App móvel para a equipa",
+      "body": "Registe entregas e devoluções e veja as reservas do dia a partir do parque."
     },
     "storefront": {
-      "title": "Branded storefront",
-      "body": "A marketplace listing plus a company page (and optional subdomain) so travellers reach your fleet, then finish on your site."
+      "title": "Montra com a sua marca",
+      "body": "Um perfil no marketplace e o seu próprio site com subdomínio."
+    },
+    "preview": {
+      "utilisation": "Ocupação",
+      "utilisationValue": "82%",
+      "pickups": "Levantamentos hoje",
+      "pickupsValue": "14",
+      "revenue": "Este mês",
+      "revenueValue": "9,4 mil €",
+      "domain": "asuaempresa.benwer.es"
     }
   },
   "faq": {
@@ -67,13 +76,13 @@
     "description": "Tenha a Benwer Cars no telemóvel. A app Android está em testes no Google Play — junte-se e ajude-nos a melhorá-la."
   },
   "partners": {
-    "eyebrow": "For car rental companies",
-    "title": "Turn empty days into bookings",
-    "description": "Travellers already search Benwer for cars in Málaga. Publish your fleet once and fill days that would otherwise sit empty.",
-    "cta": "Learn more",
-    "ctaAria": "Learn more on the Benwer marketing site (opens in a new tab)",
-    "demo": "View live demo",
-    "demoAria": "View the live demo (opens in a new tab)"
+    "eyebrow": "Para empresas de aluguer de carros",
+    "title": "Transforme dias vazios em reservas",
+    "description": "Os viajantes já procuram carros em Málaga na Benwer. Publique a sua frota uma vez e preencha os dias que ficariam vazios.",
+    "cta": "Saber mais",
+    "ctaAria": "Saber mais no site da Benwer (abre num novo separador)",
+    "demo": "Ver demonstração",
+    "demoAria": "Ver a demonstração (abre num novo separador)"
   },
   "seo": {
     "companyTitle": "{name} — Car rentals",
@@ -93,15 +102,29 @@
     "logoAlt": "{name} logo"
   },
   "howItWorks": {
-    "title": "How it works",
-    "subtitle": "Search cars from partner rental companies in Málaga province, compare public fleets side by side, then finish the hire with the company — no Benwer account needed.",
-    "stepLabel": "Step {number}",
-    "searchTitle": "Search dates and place",
-    "searchBody": "Choose a city on the Costa del Sol and the days you need the car. Every result comes from a Benwer partner that has published its fleet — not from unverified private listings.",
-    "compareTitle": "Compare real cars",
-    "compareBody": "See make, model, seats, transmission, and daily rate. Open a listing for photos, specs, and availability from the same catalogue the partner company manages in admin.",
-    "continueTitle": "Book with the company",
-    "continueBody": "Continue on the rental company’s own site to confirm pick-up, insurance, and payment. Benwer is how you find a car from a partner fleet; the company honours the hire."
+    "title": "Como funciona",
+    "subtitle": "Compare frotas parceiras em Málaga e reserve diretamente com a empresa. Sem conta Benwer.",
+    "stepLabel": "Passo {number}",
+    "searchTitle": "Escolha datas e local",
+    "searchBody": "Escolha uma localidade da Costa del Sol e os dias de que precisa. Só aparecem frotas de parceiros verificados.",
+    "compareTitle": "Compare carros reais",
+    "compareBody": "Lugares, caixa, fotos e preço por dia, lado a lado de cada parceiro.",
+    "continueTitle": "Reserve com a empresa",
+    "continueBody": "Confirme o levantamento, o seguro e o pagamento com a empresa de aluguer dona do carro.",
+    "cta": "Começar a pesquisar",
+    "preview": {
+      "place": "Aeroporto de Málaga",
+      "dates": "12–19 jul · 7 dias",
+      "carA": "Fiat 500",
+      "carASpecs": "4 lugares · Manual",
+      "carAPrice": "29 €/dia",
+      "carB": "VW T-Roc",
+      "carBSpecs": "5 lugares · Automático",
+      "carBPrice": "48 €/dia",
+      "confirmed": "Reserva confirmada",
+      "confirmedDetail": "Levantamento às 10:00"
+    },
+    "eyebrow": "Três passos"
   },
   "search": {
     "locationLabel": "Pick-up location",

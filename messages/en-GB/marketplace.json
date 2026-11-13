@@ -30,12 +30,21 @@
       "body": "Manage cars, prices, availability, and reservations from one operations dashboard — the same catalogue the marketplace reads."
     },
     "mobile": {
-      "title": "Mobile application",
-      "body": "Staff can check cars in and out and stay on top of the day’s bookings from a phone, not only from a desk."
+      "title": "Mobile app for staff",
+      "body": "Check cars in and out and see today’s bookings from the yard."
     },
     "storefront": {
       "title": "Branded storefront",
-      "body": "A marketplace listing plus a company page (and optional subdomain) so travellers reach your fleet, then finish on your site."
+      "body": "A marketplace listing plus your own site and subdomain."
+    },
+    "preview": {
+      "utilisation": "Utilisation",
+      "utilisationValue": "82%",
+      "pickups": "Pick-ups today",
+      "pickupsValue": "14",
+      "revenue": "This month",
+      "revenueValue": "€9.4k",
+      "domain": "yourcompany.benwer.es"
     }
   },
   "faq": {
@@ -98,14 +107,27 @@
   "howItWorks": {
     "eyebrow": "Three steps",
     "title": "How it works",
-    "subtitle": "Search cars from partner rental companies in Málaga province, compare public fleets side by side, then finish the hire with the company — no Benwer account needed.",
+    "subtitle": "Compare partner fleets across Málaga, then book directly with the company. No Benwer account needed.",
     "stepLabel": "Step {number}",
-    "searchTitle": "Search dates and place",
-    "searchBody": "Choose a city on the Costa del Sol and the days you need the car. Every result comes from a Benwer partner that has published its fleet — not from unverified private listings.",
+    "searchTitle": "Pick dates and place",
+    "searchBody": "Choose a Costa del Sol town and the days you need. Only verified partner fleets show up.",
     "compareTitle": "Compare real cars",
-    "compareBody": "See make, model, seats, transmission, and daily rate. Open a listing for photos, specs, and availability from the same catalogue the partner company manages in admin.",
+    "compareBody": "Seats, gearbox, photos and the daily rate, side by side from every partner.",
     "continueTitle": "Book with the company",
-    "continueBody": "Continue on the rental company’s own site to confirm pick-up, insurance, and payment. Benwer is how you find a car from a partner fleet; the company honours the hire."
+    "continueBody": "Confirm pick-up, insurance and payment with the rental company that owns the car.",
+    "cta": "Start searching",
+    "preview": {
+      "place": "Málaga Airport",
+      "dates": "12–19 Jul · 7 days",
+      "carA": "Fiat 500",
+      "carASpecs": "4 seats · Manual",
+      "carAPrice": "€29/day",
+      "carB": "VW T-Roc",
+      "carBSpecs": "5 seats · Automatic",
+      "carBPrice": "€48/day",
+      "confirmed": "Booking confirmed",
+      "confirmedDetail": "Pick-up at 10:00"
+    }
   },
   "search": {
     "locationLabel": "Pick-up location",

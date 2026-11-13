@@ -10,30 +10,23 @@ import { CompanyListView } from "@/components/features/CompanyListView";
 import { FeaturedCars } from "@/components/features/FeaturedCars";
 import { MarketplaceBannerCarousel } from "@/components/features/MarketplaceBannerCarousel";
 import { MarketplaceHeroSearch } from "@/components/features/MarketplaceHeroSearch";
+import { MarketplaceHowItWorks } from "@/components/features/MarketplaceHowItWorks";
 import { PartnersInvite } from "@/components/features/PartnersInvite";
 import { SiteAppSection } from "@/components/features/SiteAppSection";
 import { SiteFaqSection } from "@/components/features/SiteFaqSection";
-import { SiteIncludedSection } from "@/components/features/SiteIncludedSection";
 import {
   SiteIntroBand,
   SiteIntroFacts,
 } from "@/components/features/SiteIntroBand";
 import { SiteSectionHeading } from "@/components/features/SiteSectionHeading";
-import { AppStoreLinks, NavRoutes, SiteIncludedIcon } from "@/enums";
+import { AppStoreLinks, NavRoutes } from "@/enums";
 import { prefetchMarketplaceHomeState } from "@/lib/prefetchMarketplaceHome";
 import { buildPageMetadata } from "@/lib/seo";
 import type {
   LocalizedCopy,
   SiteAppContent,
   SiteFaqItem,
-  SiteIncludedItem,
 } from "@/types/siteContent";
-
-const STEPS = [
-  { key: "search", icon: SiteIncludedIcon.CALENDAR_CHECK },
-  { key: "compare", icon: SiteIncludedIcon.CAR },
-  { key: "continue", icon: SiteIncludedIcon.KEY },
-] as const;
 
 const FAQ_KEYS = [
   "partners",
@@ -61,20 +54,10 @@ export async function MarketplaceHome() {
   const locale = await getLocale();
   const t = await getTranslations("home");
   const tBrand = await getTranslations("brand");
-  const tSteps = await getTranslations("howItWorks");
   const tFaq = await getTranslations("faq");
   const tApp = await getTranslations("appBanner");
   const { dehydratedState, companies } = await prefetchMarketplaceHomeState();
   const copy = (text: string): LocalizedCopy => ({ [locale]: text });
-
-  const steps: SiteIncludedItem[] = STEPS.map(({ key, icon }) => ({
-    id: key,
-    preset: null,
-    icon,
-    title: copy(tSteps(`${key}Title`)),
-    text: copy(tSteps(`${key}Body`)),
-    tag: {},
-  }));
 
   const faq: SiteFaqItem[] = FAQ_KEYS.map((key) => ({
     id: key,
@@ -131,14 +114,7 @@ export async function MarketplaceHome() {
           <FeaturedCars initialCompanies={companies} />
         </main>
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-20 px-4 pt-8 pb-20 md:px-6 lg:px-8">
-          <SiteIncludedSection
-            items={steps}
-            heading={{
-              eyebrow: tSteps("eyebrow"),
-              title: tSteps("title"),
-              description: tSteps("subtitle"),
-            }}
-          />
+          <MarketplaceHowItWorks />
           <section
             aria-labelledby="companies-heading"
             className="flex flex-col gap-8"

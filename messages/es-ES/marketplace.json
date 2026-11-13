@@ -30,12 +30,21 @@
       "body": "Gestiona coches, precios, disponibilidad y reservas desde un solo panel de operaciones: el mismo catálogo que lee el marketplace."
     },
     "mobile": {
-      "title": "Aplicación móvil",
-      "body": "El equipo puede entregar y recoger coches y seguir las reservas del día desde el teléfono, no solo desde el escritorio."
+      "title": "App móvil para el equipo",
+      "body": "Registra entregas y devoluciones y consulta las reservas del día desde la campa."
     },
     "storefront": {
-      "title": "Escaparate de marca",
-      "body": "Un listado en el marketplace y una página de empresa (con subdominio opcional) para que los viajeros lleguen a tu flota y terminen en tu web."
+      "title": "Escaparate con tu marca",
+      "body": "Un perfil en el marketplace y tu propia web con subdominio."
+    },
+    "preview": {
+      "utilisation": "Ocupación",
+      "utilisationValue": "82 %",
+      "pickups": "Recogidas hoy",
+      "pickupsValue": "14",
+      "revenue": "Este mes",
+      "revenueValue": "9,4k €",
+      "domain": "tuempresa.benwer.es"
     }
   },
   "faq": {
@@ -98,14 +107,27 @@
   "howItWorks": {
     "eyebrow": "Tres pasos",
     "title": "Cómo funciona",
-    "subtitle": "Busca coches de empresas de alquiler asociadas en la provincia de Málaga, compara flotas públicas y termina el alquiler con la empresa — sin cuenta en Benwer.",
+    "subtitle": "Compara flotas asociadas en Málaga y reserva directamente con la empresa. Sin cuenta de Benwer.",
     "stepLabel": "Paso {number}",
-    "searchTitle": "Busca fechas y lugar",
-    "searchBody": "Elige una ciudad de la Costa del Sol y los días que necesitas el coche. Cada resultado proviene de un socio de Benwer que ha publicado su flota, no de anuncios privados sin verificar.",
+    "searchTitle": "Elige fechas y lugar",
+    "searchBody": "Escoge una localidad de la Costa del Sol y los días que necesitas. Solo aparecen flotas de socios verificados.",
     "compareTitle": "Compara coches reales",
-    "compareBody": "Consulta marca, modelo, plazas, transmisión y tarifa diaria. Abre un anuncio para ver fotos, ficha y disponibilidad del mismo catálogo que la empresa asociada gestiona en administración.",
+    "compareBody": "Plazas, cambio, fotos y precio por día, lado a lado de cada socio.",
     "continueTitle": "Reserva con la empresa",
-    "continueBody": "Continúa en la web de la empresa de alquiler para confirmar recogida, seguro y pago. Benwer te ayuda a encontrar un coche de una flota asociada; la empresa formaliza el alquiler."
+    "continueBody": "Confirma la recogida, el seguro y el pago con la empresa de alquiler propietaria del coche.",
+    "cta": "Empezar a buscar",
+    "preview": {
+      "place": "Aeropuerto de Málaga",
+      "dates": "12–19 jul · 7 días",
+      "carA": "Fiat 500",
+      "carASpecs": "4 plazas · Manual",
+      "carAPrice": "29 €/día",
+      "carB": "VW T-Roc",
+      "carBSpecs": "5 plazas · Automático",
+      "carBPrice": "48 €/día",
+      "confirmed": "Reserva confirmada",
+      "confirmedDetail": "Recogida a las 10:00"
+    }
   },
   "search": {
     "locationLabel": "Lugar de recogida",
