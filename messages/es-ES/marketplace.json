@@ -13,6 +13,7 @@
     "viewAllCompanies": "Ver todas las empresas"
   },
   "featuredCars": {
+    "viewAllCount": "Ver los {count} coches",
     "eyebrow": "Coches",
     "title": "Coches disponibles",
     "subtitle": "Todos los coches que han publicado las empresas asociadas, en un mismo lugar. Elige uno y resérvalo en la web de la empresa.",
@@ -176,6 +177,8 @@
     "resultsInCity": "{count, plural, one {# empresa en {city}} other {# empresas en {city}}}"
   },
   "cars": {
+    "showingOf": "Mostrando {shown} de {total} coches",
+    "loadMore": "Ver más coches",
     "title": "Coches disponibles",
     "subtitle": "Todos los coches públicos de las empresas de alquiler asociadas en la provincia de Málaga. Elige tus fechas para ver qué está libre.",
     "searchEmptyTitle": "Ningún coche coincide con esta búsqueda",
@@ -723,8 +726,7 @@
     "linkAction": "Enviar enlace",
     "linkSent": "Si encontramos una reserva coincidente, enviaremos un enlace de confirmación.",
     "accountTitle": "Cuenta",
-    "accountHint": "Desvincula tus reservas de esta empresa o cierra la sesión.",
-    "unlink": "Desvincular reservas",
+    "accountHint": "Cierra la sesión de tu cuenta en este sitio.",
     "signOut": "Salir",
     "erase": "Borrar mis datos aquí",
     "eraseConfirm": "Sí, borrar mis datos de esta empresa",
@@ -755,7 +757,6 @@
     "profileTitle": "Perfil",
     "profileMeta": "Tu cuenta de cliente en esta empresa de alquiler.",
     "linkCancel": "Cancelar",
-    "unlinked": "Tus reservas ya no están vinculadas a esta cuenta.",
     "eraseTitle": "Borrar mis datos",
     "eraseHint": "Borra tus datos de cliente en esta empresa y cierra la sesión. No afecta a otras empresas.",
     "profileDetailsTitle": "Tus datos",

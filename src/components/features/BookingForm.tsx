@@ -11,14 +11,12 @@ import { PhoneInput } from "@/components/ui/PhoneInput";
 import type { BookingFormValues } from "@/lib/bookingSchema";
 
 interface BookingFormProps {
-  carHref: string;
   requireTerms?: boolean;
   /** Rendered after the driver details and before the terms checkbox. */
   beforeTerms?: ReactNode;
 }
 
 export function BookingForm({
-  carHref,
   requireTerms = false,
   beforeTerms,
 }: BookingFormProps) {
@@ -32,12 +30,6 @@ export function BookingForm({
   return (
     <div className="flex flex-col gap-6 rounded-2xl border border-border bg-surface p-5 shadow-sm md:p-6">
       <BookingDateFields />
-      <Link
-        href={carHref}
-        className="w-fit cursor-pointer text-sm font-medium text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-      >
-        {t("changeDates")}
-      </Link>
 
       <div>
         <h2 className="text-xl font-semibold text-foreground">

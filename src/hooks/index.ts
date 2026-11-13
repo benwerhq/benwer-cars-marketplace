@@ -31,5 +31,4 @@ export {
   useGuestAccount,
   useGuestLink,
   useGuestReservations,
-  useUnlinkGuest,
 } from "./useGuestAccount";

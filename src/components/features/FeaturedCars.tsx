@@ -25,6 +25,7 @@ import {
 import type { Company } from "@/types/company";
 import type { Vehicle, VehicleFilters } from "@/types/vehicle";
 
+const FEATURED_LIMIT = 8;
 const FEATURED_GRID_CLASS =
   "gap-5 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2";
 
@@ -93,7 +94,7 @@ function FeaturedCarsContent({ initialCompanies }: FeaturedCarsProps) {
         }
       />
       <CarGridView
-        vehicles={data}
+        vehicles={data?.slice(0, FEATURED_LIMIT)}
         isPending={isPending}
         isError={isError}
         error={error}
@@ -113,6 +114,13 @@ function FeaturedCarsContent({ initialCompanies }: FeaturedCarsProps) {
         skeletonCount={4}
         variant="row"
       />
+      {!isPending && !isError && (data?.length ?? 0) > FEATURED_LIMIT ? (
+        <div className="flex justify-center">
+          <FilteredViewAllLink
+            label={t("viewAllCount", { count: data?.length ?? 0 })}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

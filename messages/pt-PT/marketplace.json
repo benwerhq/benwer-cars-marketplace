@@ -12,6 +12,7 @@
     "viewAllCompanies": "View all companies"
   },
   "featuredCars": {
+    "viewAllCount": "Ver os {count} carros",
     "title": "Popular cars",
     "subtitle": "Live listings from partner fleets — the same cars companies manage in admin.",
     "viewAll": "Search all cars",
@@ -173,6 +174,8 @@
     "resultsInCity": "{count, plural, one {# company in {city}} other {# companies in {city}}}"
   },
   "cars": {
+    "showingOf": "A mostrar {shown} de {total} carros",
+    "loadMore": "Ver mais carros",
     "title": "Available cars",
     "searchEmptyTitle": "No cars match this search",
     "searchEmptyHint": "Try different dates or another location in Málaga province. Every city stays in the list — even if no cars are listed there today.",
@@ -721,8 +724,7 @@
     "linkAction": "Enviar link",
     "linkSent": "Se encontrarmos uma reserva correspondente, enviaremos um link de confirmação.",
     "accountTitle": "Conta",
-    "accountHint": "Desassocie as suas reservas desta empresa ou termine a sessão.",
-    "unlink": "Desligar reservas",
+    "accountHint": "Termine a sessão da sua conta neste site.",
     "signOut": "Sair",
     "erase": "Apagar os meus dados aqui",
     "eraseConfirm": "Sim, apagar os meus dados nesta empresa",
@@ -751,7 +753,6 @@
     "profileTitle": "Perfil",
     "profileMeta": "A sua conta de cliente nesta empresa de aluguer.",
     "linkCancel": "Cancelar",
-    "unlinked": "As suas reservas já não estão associadas a esta conta.",
     "eraseTitle": "Apagar os meus dados",
     "eraseHint": "Apaga os seus dados de cliente nesta empresa e termina a sessão. Outras empresas não são afetadas.",
     "profileDetailsTitle": "Os seus dados",

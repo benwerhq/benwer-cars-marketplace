@@ -186,11 +186,10 @@ export function BookingView({
     : undefined;
   const insuranceTotal = selectedInsurance?.total ?? 0;
 
-  // Extras are sent as addonIds, which the API already accepts. The trip
-  // fields wait for the API change (see guestBookingFieldsEnabled).
+  // The trip fields wait for the API change (see guestBookingFieldsEnabled).
   const tripFieldsOn = guestBookingFieldsEnabled();
   const isClient = useSyncExternalStore(noopSubscribe, () => true, () => false);
-  const extrasQuery = useExtras(channel ? companySlug : "", channel);
+  const extrasQuery = useExtras(companySlug, channel);
   const [addonIds, setAddonIds] = useState<string[]>(
     () => readBookingDraft(draftKey)?.addonIds ?? [],
   );
@@ -566,7 +565,6 @@ export function BookingView({
           <div className="lg:col-span-3">
             {bookingsEnabled ? (
               <BookingForm
-                carHref={carHref}
                 requireTerms={requireTerms}
                 beforeTerms={
                   <>

@@ -13,6 +13,7 @@
     "viewAllCompanies": "View all companies"
   },
   "featuredCars": {
+    "viewAllCount": "View all {count} cars",
     "eyebrow": "Cars",
     "title": "Available cars",
     "subtitle": "Every car partner companies have published, side by side. Pick one to book on the company's own site.",
@@ -176,6 +177,8 @@
     "resultsInCity": "{count, plural, one {# company in {city}} other {# companies in {city}}}"
   },
   "cars": {
+    "showingOf": "Showing {shown} of {total} cars",
+    "loadMore": "Show more cars",
     "title": "Available cars",
     "subtitle": "Every public car from partner rental companies across Málaga province. Pick your dates to see what is free.",
     "searchEmptyTitle": "No cars match this search",
@@ -723,8 +726,7 @@
     "linkAction": "Send link",
     "linkSent": "If we find a matching booking, we will email a confirmation link.",
     "accountTitle": "Account",
-    "accountHint": "Unlink your bookings from this company or sign out.",
-    "unlink": "Unlink bookings",
+    "accountHint": "Sign out of your account on this site.",
     "signOut": "Sign out",
     "erase": "Erase my data here",
     "eraseConfirm": "Yes, erase my data for this company",
@@ -755,7 +757,6 @@
     "profileTitle": "Profile",
     "profileMeta": "Your guest account for this rental company.",
     "linkCancel": "Cancel",
-    "unlinked": "Your bookings are no longer linked to this account.",
     "eraseTitle": "Erase my data",
     "eraseHint": "Deletes your guest data for this company and signs you out. Other companies are not affected.",
     "profileDetailsTitle": "Your details",

@@ -6,6 +6,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { useCompanies } from "@/hooks/useCompanies";
 import { useMarketplaceVehicles } from "@/hooks/useMarketplaceVehicles";
 import { CarGridSkeleton, CarGridView } from "./CarGrid";
+import { LoadMoreCars } from "./LoadMoreCars";
+import { useVisibleCount } from "@/hooks/useVisibleCount";
 import {
   VehicleFilterToolbar,
   VehicleFilterToolbarSkeleton,
@@ -32,6 +34,7 @@ import {
 } from "@/lib/vehicleFilters";
 import type { Vehicle } from "@/types/vehicle";
 
+const PAGE_SIZE = 20;
 const RESULTS_GRID_CLASS = "gap-5 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2";
 
 function MarketplaceCarListContent() {
@@ -67,6 +70,10 @@ function MarketplaceCarListContent() {
   const fromDate = filters.from ? parseIsoDate(filters.from) : null;
   const toDate = filters.to ? parseIsoDate(filters.to) : null;
   const count = data?.length ?? 0;
+  const [visible, showMore] = useVisibleCount(
+    PAGE_SIZE,
+    searchParams.toString(),
+  );
   const branchName = companiesQuery.data
     ?.flatMap((company) => company.branches)
     .find((branch) => branch.id === filters.branchId)?.name;
@@ -152,7 +159,7 @@ function MarketplaceCarListContent() {
         }
       />
       <CarGridView
-        vehicles={data}
+        vehicles={data?.slice(0, visible)}
         isPending={isPending}
         isError={isError}
         error={error}
@@ -172,6 +179,13 @@ function MarketplaceCarListContent() {
             : null
         }
       />
+      {isPending || isError ? null : (
+        <LoadMoreCars
+          shown={Math.min(visible, count)}
+          total={count}
+          onLoadMore={showMore}
+        />
+      )}
     </div>
   );
 }

@@ -154,6 +154,7 @@ async function BookPage({ searchParams }: Props) {
         defaultFrom={from}
         defaultTo={to}
         carHref={carHref}
+        showInsurance
       />
     </BookingChrome>
   );

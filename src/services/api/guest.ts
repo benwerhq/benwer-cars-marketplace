@@ -117,14 +117,6 @@ export const guestApi = {
     return mapGuestAccount(data, companySlug);
   },
 
-  async unlink(companySlug: string): Promise<void> {
-    const headers = await guestAuthHeaders();
-    await publicRequest<unknown>(guestPath(companySlug, "/link"), {
-      method: "DELETE",
-      headers,
-    });
-  },
-
   async erase(companySlug: string): Promise<void> {
     const headers = await guestAuthHeaders();
     await publicRequest<unknown>(guestPath(companySlug), {

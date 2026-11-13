@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { LogOut, Trash2, Unlink } from "lucide-react";
+import { LogOut, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { GuestDisabledState } from "@/components/features/GuestDisabledState";
 import { GuestSignInPanel } from "@/components/features/GuestSignInPanel";
 import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
-import { useEraseGuest, useUnlinkGuest } from "@/hooks/useGuestAccount";
+import { useEraseGuest } from "@/hooks/useGuestAccount";
 import { getErrorKey } from "@/lib/errors";
 import { GuestDetailsSection } from "./GuestDetailsForm";
 import { GuestVerifyEmailNotice } from "./GuestVerifyEmailNotice";
@@ -29,7 +29,6 @@ export function GuestProfileView({
   const tRoot = useTranslations();
   const router = useRouter();
   const { user, ready, configured, emailVerified, signOut } = useGuestAuth();
-  const unlink = useUnlinkGuest(companySlug);
   const erase = useEraseGuest(companySlug);
   const [confirmErase, setConfirmErase] = useState(false);
 
@@ -61,7 +60,7 @@ export function GuestProfileView({
     );
   }
 
-  const error = unlink.error ?? erase.error;
+  const error = erase.error;
 
   return (
     <div className="flex flex-col gap-8">
@@ -83,17 +82,6 @@ export function GuestProfileView({
           <Button
             type="button"
             variant="secondary"
-            isLoading={unlink.isPending}
-            onClick={() => {
-              void unlink.mutateAsync();
-            }}
-          >
-            <Unlink size={16} aria-hidden />
-            {t("unlink")}
-          </Button>
-          <Button
-            type="button"
-            variant="secondary"
             onClick={() => {
               void signOut().then(() => router.push(homeHref));
             }}
@@ -102,11 +90,6 @@ export function GuestProfileView({
             {t("signOut")}
           </Button>
         </div>
-        {unlink.isSuccess ? (
-          <p className="text-sm text-muted-foreground" role="status">
-            {t("unlinked")}
-          </p>
-        ) : null}
       </section>
 
       <section className="flex flex-col gap-3 rounded-2xl border border-danger/30 bg-danger-soft/40 p-5">

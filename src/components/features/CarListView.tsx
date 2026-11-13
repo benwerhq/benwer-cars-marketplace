@@ -6,6 +6,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { useCompany } from "@/hooks/useCompany";
 import { useVehicles } from "@/hooks/useVehicles";
 import { CarGridSkeleton, CarGridView } from "./CarGrid";
+import { LoadMoreCars } from "./LoadMoreCars";
+import { useVisibleCount } from "@/hooks/useVisibleCount";
 import { DateRangePopover } from "./DateRangePopover";
 import {
   VehicleFilterToolbar,
@@ -47,6 +49,7 @@ interface CarListViewProps {
 
 export type CarListLayout = "rail" | "rows";
 
+const PAGE_SIZE = 20;
 const DAY_MS = 24 * 60 * 60 * 1000;
 
 function CarListViewContent({
@@ -116,6 +119,10 @@ function CarListViewContent({
   const fromDate = filters.from ? parseIsoDate(filters.from) : null;
   const toDate = filters.to ? parseIsoDate(filters.to) : null;
   const count = vehicles?.length ?? 0;
+  const [visible, showMore] = useVisibleCount(
+    PAGE_SIZE,
+    searchParams.toString(),
+  );
   const rows = layout === "rows";
   const days =
     fromDate && toDate
@@ -228,7 +235,7 @@ function CarListViewContent({
         }
       />
       <CarGridView
-        vehicles={vehicles}
+        vehicles={vehicles?.slice(0, visible)}
         isPending={isLoading}
         isError={isError}
         error={error}
@@ -263,6 +270,13 @@ function CarListViewContent({
         variant={rows ? "row" : "card"}
         days={days}
       />
+      {isLoading || isError ? null : (
+        <LoadMoreCars
+          shown={Math.min(visible, count)}
+          total={count}
+          onLoadMore={showMore}
+        />
+      )}
     </div>
   );
 }

@@ -106,25 +106,6 @@ export function useUpdateGuestProfile(companySlug: string) {
   });
 }
 
-export function useUnlinkGuest(companySlug: string) {
-  const queryClient = useQueryClient();
-
-  return useMutation({
-    mutationFn: () => guestApi.unlink(companySlug),
-    onSuccess: async () => {
-      await queryClient.invalidateQueries({
-        queryKey: guestAccountQueryKey(companySlug),
-      });
-      await queryClient.invalidateQueries({
-        queryKey: guestReservationsQueryKey(companySlug),
-      });
-    },
-    onError: (error) => {
-      logError(error, { context: "guest_unlink", companySlug });
-    },
-  });
-}
-
 export function useEraseGuest(companySlug: string) {
   const { signOut } = useGuestAuth();
   const queryClient = useQueryClient();
