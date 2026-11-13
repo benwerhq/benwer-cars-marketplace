@@ -84,12 +84,14 @@ export function buildCarsSearchHref(input: {
 
 export function buildCompaniesSearchHref(input: {
   location?: string;
+  branch?: string;
   from?: string;
   to?: string;
   view?: string;
 }): string {
   return appendSearchParams(NavRoutes.COMPANIES, {
-    location: input.location || DEFAULT_CITY_SLUG,
+    location: input.branch ? undefined : input.location || DEFAULT_CITY_SLUG,
+    branch: input.branch,
     from: input.from,
     to: input.to,
     view: input.view,

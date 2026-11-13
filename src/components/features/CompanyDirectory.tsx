@@ -25,6 +25,9 @@ interface CompanyDirectoryProps {
   error?: unknown;
   onRetry: () => void;
   location: string | null;
+  branchName?: string | null;
+  initialSelectedSlug?: string | null;
+  hasFilters?: boolean;
 }
 
 export function CompanyDirectory({
@@ -34,6 +37,9 @@ export function CompanyDirectory({
   error,
   onRetry,
   location,
+  branchName = null,
+  initialSelectedSlug = null,
+  hasFilters = Boolean(location),
 }: CompanyDirectoryProps) {
   const t = useTranslations("map");
   const tCompanies = useTranslations("companies");
@@ -42,7 +48,9 @@ export function CompanyDirectory({
   const router = useRouter();
   const searchParams = useSearchParams();
   const isDesktop = useMediaQuery("(min-width: 1024px)");
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(
+    initialSelectedSlug,
+  );
   const [highlightedSlug, setHighlightedSlug] = useState<string | null>(null);
 
   const showMapPane =
@@ -94,12 +102,14 @@ export function CompanyDirectory({
   }
 
   const count = companies?.length ?? 0;
-  const resultsLabel = cityLabel
-    ? t("resultsInCity", {
-        count,
-        city: cityLabel,
-      })
-    : t("resultsCount", { count });
+  const resultsLabel = branchName
+    ? t("resultsAtBranch", { count, branch: branchName })
+    : cityLabel
+      ? t("resultsInCity", {
+          count,
+          city: cityLabel,
+        })
+      : t("resultsCount", { count });
 
   return (
     <div className="flex flex-col gap-4">
@@ -177,7 +187,9 @@ export function CompanyDirectory({
               }
               viewFleetLabel={tCompanies("viewFleet")}
               onClearFilters={
-                location ? () => router.replace(NavRoutes.COMPANIES) : undefined
+                hasFilters
+                  ? () => router.replace(NavRoutes.COMPANIES)
+                  : undefined
               }
               className="lg:grid-cols-1"
             />

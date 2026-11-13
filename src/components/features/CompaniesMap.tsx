@@ -7,10 +7,22 @@ import { useTranslations } from "next-intl";
 import { CompanyMapSkeleton } from "./CompanyMapSkeleton";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { env } from "@/env";
 import { getErrorKey } from "@/lib/errors";
 import { logError } from "@/lib/logger";
 import type { CompanyMapPin } from "@/lib/companyMap";
 import { cn } from "@/lib/utils";
+
+const CompaniesGoogleMapCanvas = dynamic(
+  () =>
+    import("./CompaniesGoogleMapCanvas").then(
+      (mod) => mod.CompaniesGoogleMapCanvas,
+    ),
+  {
+    ssr: false,
+    loading: () => <CompanyMapSkeleton />,
+  },
+);
 
 const CompaniesMapCanvas = dynamic(
   () => import("./CompaniesMapCanvas").then((mod) => mod.CompaniesMapCanvas),
@@ -81,6 +93,7 @@ export function CompaniesMap({
 }: CompaniesMapProps) {
   const t = useTranslations("map");
   const tRoot = useTranslations();
+  const googleMapsApiKey = env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
   if (isPending) {
     return (
@@ -106,7 +119,7 @@ export function CompaniesMap({
   return (
     <div
       className={cn(
-        "relative h-full min-h-80 overflow-hidden rounded-xl border border-border bg-surface",
+        "relative isolate h-full min-h-80 overflow-hidden rounded-xl border border-border bg-surface",
         className,
       )}
     >
@@ -117,14 +130,26 @@ export function CompaniesMap({
           </div>
         }
       >
-        <CompaniesMapCanvas
-          pins={pins}
-          selectedSlug={selectedSlug}
-          highlightedSlug={highlightedSlug}
-          locationSlug={locationSlug}
-          onSelect={onSelect}
-          onClose={onClose}
-        />
+        {googleMapsApiKey ? (
+          <CompaniesGoogleMapCanvas
+            apiKey={googleMapsApiKey}
+            pins={pins}
+            selectedSlug={selectedSlug}
+            highlightedSlug={highlightedSlug}
+            locationSlug={locationSlug}
+            onSelect={onSelect}
+            onClose={onClose}
+          />
+        ) : (
+          <CompaniesMapCanvas
+            pins={pins}
+            selectedSlug={selectedSlug}
+            highlightedSlug={highlightedSlug}
+            locationSlug={locationSlug}
+            onSelect={onSelect}
+            onClose={onClose}
+          />
+        )}
       </MapErrorBoundary>
       {pins.length === 0 ? (
         <div className="pointer-events-none absolute inset-x-4 bottom-4 z-10">

@@ -165,8 +165,6 @@
     "locationLabel": "Lugar de recogida",
     "locationPlaceholder": "Buscar ubicaciones",
     "locationEmpty": "Ninguna ubicación coincide",
-    "locationTrigger": "Lugar de recogida, {city}",
-    "cityListLabel": "Ubicaciones con coches disponibles",
     "allLocations": "Todas las ubicaciones",
     "allLocationsHint": "Todas las ciudades con coches disponibles",
     "provinceSelected": "Todas las ubicaciones",
@@ -215,7 +213,8 @@
     "emptyTitle": "No hay empresas en el mapa",
     "emptyDescription": "Prueba otra ciudad de la provincia de Málaga.",
     "resultsCount": "{count, plural, one {# empresa en la provincia de Málaga} other {# empresas en la provincia de Málaga}}",
-    "resultsInCity": "{count, plural, one {# empresa en {city}} other {# empresas en {city}}}"
+    "resultsInCity": "{count, plural, one {# empresa en {city}} other {# empresas en {city}}}",
+    "resultsAtBranch": "{count, plural, one {# empresa en {branch}} other {# empresas en {branch}}}"
   },
   "cars": {
     "showingOf": "Mostrando {shown} de {total} coches",

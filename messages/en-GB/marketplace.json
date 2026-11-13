@@ -165,8 +165,6 @@
     "locationLabel": "Pick-up location",
     "locationPlaceholder": "Search locations",
     "locationEmpty": "No matching location",
-    "locationTrigger": "Pick-up location, {city}",
-    "cityListLabel": "Locations with available cars",
     "allLocations": "All locations",
     "allLocationsHint": "Every city with available cars",
     "provinceSelected": "All locations",
@@ -215,7 +213,8 @@
     "emptyTitle": "No companies on the map",
     "emptyDescription": "Try another city in Málaga province.",
     "resultsCount": "{count, plural, one {# company across Málaga province} other {# companies across Málaga province}}",
-    "resultsInCity": "{count, plural, one {# company in {city}} other {# companies in {city}}}"
+    "resultsInCity": "{count, plural, one {# company in {city}} other {# companies in {city}}}",
+    "resultsAtBranch": "{count, plural, one {# company at {branch}} other {# companies at {branch}}}"
   },
   "cars": {
     "showingOf": "Showing {shown} of {total} cars",

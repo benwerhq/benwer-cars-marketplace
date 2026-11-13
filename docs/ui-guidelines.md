@@ -155,22 +155,22 @@ New marketplace sections should compose these rather than add a separate style.
 
 ### Feature components (`src/components/features`)
 
-| Component                | Notes                                                                         |
-| ------------------------ | ----------------------------------------------------------------------------- |
-| **CarCard**              | Car photo, brand/model/year, price/day, specs badges, "View details" CTA.     |
-| **CarGrid**              | Responsive grid of `CarCard`s. Handles loading (skeleton grid), empty, error. |
+| Component                | Notes                                                                                                                                                                  |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CarCard**              | Car photo, brand/model/year, price/day, specs badges, "View details" CTA.                                                                                              |
+| **CarGrid**              | Responsive grid of `CarCard`s. Handles loading (skeleton grid), empty, error.                                                                                          |
 | **VehicleFilterToolbar** | Above every car list, one wrapping row: search, category, fuel, transmission, seats, company (marketplace) — same set as admin `/cars`. Applies instantly, URL-synced. |
-| **VehicleResultsBar** | Below the toolbar: result count on the left, sort on the right. |
-| **CarPhotoGallery**      | Main photo + thumbnail strip. Lightbox on click.                              |
-| **SpecsTable**           | Type, fuel, transmission, seats in a clean grid.                              |
-| **AvailabilityCalendar** | Highlight unavailable dates; user selects a range.                            |
-| **BookingForm**          | react-hook-form + zod; name, email, phone, dates, submit.                     |
-| **BookingSummary**       | Read-only summary card shown beside the form.                                 |
-| **ReservationStatus**    | Token-based status display; shows vehicle, dates, total, status badge.        |
-| **CompanyCard**          | Company name, location, fleet size, "View fleet" CTA.                         |
-| **CompanyGrid**          | Responsive grid of `CompanyCard`s.                                            |
-| **CompaniesMap**         | Leaflet map of company pins for the current location/date filters.            |
-| **CompanyDirectory**     | Companies page map + list (side-by-side on desktop, toggle on mobile).        |
+| **VehicleResultsBar**    | Below the toolbar: result count on the left, sort on the right.                                                                                                        |
+| **CarPhotoGallery**      | Main photo + thumbnail strip. Lightbox on click.                                                                                                                       |
+| **SpecsTable**           | Type, fuel, transmission, seats in a clean grid.                                                                                                                       |
+| **AvailabilityCalendar** | Highlight unavailable dates; user selects a range.                                                                                                                     |
+| **BookingForm**          | react-hook-form + zod; name, email, phone, dates, submit.                                                                                                              |
+| **BookingSummary**       | Read-only summary card shown beside the form.                                                                                                                          |
+| **ReservationStatus**    | Token-based status display; shows vehicle, dates, total, status badge.                                                                                                 |
+| **CompanyCard**          | Company name, location, fleet size, "View fleet" CTA.                                                                                                                  |
+| **CompanyGrid**          | Responsive grid of `CompanyCard`s.                                                                                                                                     |
+| **CompaniesMap**         | Google map (Leaflet fallback) of company pins for the current branch/location filters.                                                                                 |
+| **CompanyDirectory**     | Companies page map + list (side-by-side on desktop, toggle on mobile).                                                                                                 |
 
 ---
 

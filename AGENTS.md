@@ -120,6 +120,8 @@ NEXT_PUBLIC_MARKETING_URL=https://cars.benwer.es
 # NEXT_PUBLIC_GUEST_FIREBASE_APP_ID=
 # NEXT_PUBLIC_GUEST_FIREBASE_TENANT_ID=
 # NEXT_PUBLIC_MEDIA_ORIGIN=https://dxxxx.cloudfront.net
+# NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
+# NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID=
 ```
 
 In local dev, proxy detects `localhost` and defaults to **global marketplace

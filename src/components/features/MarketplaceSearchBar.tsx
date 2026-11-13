@@ -5,7 +5,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2, Search } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BranchCombobox } from "./BranchCombobox";
-import { CityCombobox } from "./CityCombobox";
 import { DateRangePopover } from "./DateRangePopover";
 import { DriverAgeSelect } from "./DriverAgeSelect";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -60,7 +59,7 @@ function MarketplaceSearchForm({
   const t = useTranslations("search");
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [location, setLocation] = useState(initialLocation);
+  const location = initialLocation;
   const [from, setFrom] = useState(initialFrom);
   const [to, setTo] = useState(initialTo);
   const [driverAge, setDriverAge] = useState(initialDriverAge);
@@ -105,7 +104,8 @@ function MarketplaceSearchForm({
       startSearch(() =>
         router.push(
           buildCompaniesSearchHref({
-            location: location || DEFAULT_CITY_SLUG,
+            location: branch ? undefined : location || DEFAULT_CITY_SLUG,
+            branch: branch || undefined,
             from: hasDates ? from : undefined,
             to: hasDates ? to : undefined,
             view,
@@ -176,19 +176,15 @@ function MarketplaceSearchForm({
       ) : null}
       <div className={ROW_CLASS}>
         <div className="min-w-0 md:flex-1">
-          {isCars ? (
-            <BranchCombobox
-              label={t("locationLabel")}
-              value={branch}
-              options={branchOptions}
-              onChange={changeBranch}
-              anyLabel={t("allLocations")}
-              anyHint={t("branchAnyHint")}
-              loading={companiesQuery.isPending}
-            />
-          ) : (
-            <CityCombobox value={location} onChange={setLocation} />
-          )}
+          <BranchCombobox
+            label={t("locationLabel")}
+            value={branch}
+            options={branchOptions}
+            onChange={changeBranch}
+            anyLabel={t("allLocations")}
+            anyHint={t("branchAnyHint")}
+            loading={companiesQuery.isPending}
+          />
         </div>
         {isCars && differentReturn ? (
           <>
