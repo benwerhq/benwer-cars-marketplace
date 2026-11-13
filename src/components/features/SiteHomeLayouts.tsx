@@ -30,6 +30,7 @@ import { SiteIncludedSection } from "./SiteIncludedSection";
 import { SiteIntroBand, SiteIntroFacts } from "./SiteIntroBand";
 import { SiteLocationsSection } from "./SiteLocationsSection";
 import { SiteReviewsSection } from "./SiteReviewsSection";
+import { formatPhoneDisplay, phoneTelHref } from "@/lib/phone";
 
 export interface SiteHomeCopy {
   headline: string;
@@ -250,8 +251,8 @@ function ContactRow({ copy }: { copy: SiteHomeCopy }) {
       {copy.phone ? (
         <li className="inline-flex items-center gap-2">
           <Phone size={16} className="text-primary" aria-hidden />
-          <a href={`tel:${copy.phone}`} className="hover:text-primary">
-            {copy.phone}
+          <a href={phoneTelHref(copy.phone)} className="hover:text-primary">
+            {formatPhoneDisplay(copy.phone)}
           </a>
         </li>
       ) : null}

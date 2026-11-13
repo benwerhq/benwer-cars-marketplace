@@ -1,28 +1,30 @@
 {
   "home": {
-    "title": "Find your perfect car",
-    "subtitle": "Compare cars from partner rental companies, then continue on the company's site.",
-    "searchPlaceholder": "Where are you going?",
+    "title": "Encontre o carro ideal",
+    "subtitle": "Compare carros de empresas de aluguer parceiras e continue no site da empresa.",
+    "searchPlaceholder": "Para onde vai?",
     "eyebrow": "Málaga · Costa del Sol",
-    "companiesHeading": "Featured companies",
-    "companiesSubtitle": "Partner rental companies across Málaga province — fleets we work with, not unverified listings",
-    "trustLocal": "Partner companies",
-    "trustGuest": "Rent on the company site",
-    "trustArea": "Málaga province",
-    "viewAllCompanies": "View all companies"
+    "companiesHeading": "Empresas em destaque",
+    "companiesSubtitle": "Empresas de aluguer parceiras em toda a província de Málaga — frotas com quem trabalhamos, não anúncios por verificar",
+    "trustLocal": "Empresas parceiras",
+    "trustGuest": "Alugue no site da empresa",
+    "trustArea": "Província de Málaga",
+    "viewAllCompanies": "Ver todas as empresas",
+    "companiesEyebrow": "Empresas"
   },
   "featuredCars": {
     "viewAllCount": "Ver os {count} carros",
     "title": "Popular cars",
     "subtitle": "Live listings from partner fleets — the same cars companies manage in admin.",
-    "viewAll": "Search all cars",
-    "emptyTitle": "No cars listed yet",
-    "emptyHint": "Public fleets will appear here when companies publish them."
+    "viewAll": "Pesquisar todos os carros",
+    "emptyTitle": "Ainda não há carros publicados",
+    "emptyHint": "As frotas públicas aparecem aqui quando as empresas as publicarem.",
+    "eyebrow": "Carros"
   },
   "whatYouGet": {
-    "eyebrow": "For rental companies",
-    "title": "What you get",
-    "subtitle": "One stack for the office, the yard, and travellers searching Málaga.",
+    "eyebrow": "Para empresas de aluguer",
+    "title": "O que recebe",
+    "subtitle": "Uma única plataforma para o escritório, o parque e os viajantes que procuram em Málaga.",
     "admin": {
       "title": "Sistema de gestão completo",
       "body": "Gira carros, preços, disponibilidade e reservas num só painel — o mesmo catálogo que o marketplace lê."
@@ -49,16 +51,16 @@
       "navCalendar": "Calendário",
       "navReservations": "Reservas",
       "calendarTitle": "Disponibilidade",
-      "calendarMonth": "Julho",
+      "calendarMonth": "Próximas 2 semanas",
       "viaBenwer": "Via Benwer",
       "direct": "Direta",
       "free": "Livre",
-      "carA": "Fiat 500",
-      "carB": "Seat Ibiza",
-      "carC": "VW T-Roc",
-      "carD": "Peugeot 2008",
+      "carA": "Compacto",
+      "carB": "Citadino",
+      "carC": "SUV",
+      "carD": "Crossover",
       "phoneTitle": "Hoje",
-      "phoneDate": "Seg 14 jul",
+      "phoneDate": "Segunda-feira",
       "pickUp": "Levantamento",
       "return": "Devolução",
       "checkedOut": "Entregue",
@@ -72,36 +74,37 @@
       "storeHeadline": "Alugue um carro em Málaga",
       "storeSearch": "Levantamento e datas",
       "storeSearchCta": "Pesquisar",
-      "storePrice": "desde 29 €/dia",
-      "carE": "Toyota Yaris",
-      "carF": "Renault Clio"
+      "storePrice": "Ver preços",
+      "carE": "Utilitário",
+      "carF": "Carrinha"
     }
   },
   "faq": {
-    "title": "Before you book",
-    "subtitle": "Partner fleets, how booking works, and what Benwer does — and does not — handle.",
+    "title": "Antes de reservar",
+    "subtitle": "Frotas parceiras, como funciona a reserva e o que a Benwer faz — e não faz.",
     "items": {
       "partners": {
-        "question": "Are these cars from real rental companies?",
-        "answer": "Yes. Every listing is a public car from a Benwer partner — a real rental company we work with, not an unverified private advert. If a company or car is not published on the platform, it does not appear here."
+        "question": "Estes carros são de empresas de aluguer reais?",
+        "answer": "Sim. Cada anúncio é um carro público de um parceiro da Benwer — uma empresa de aluguer real com quem trabalhamos, não um anúncio privado por verificar. Se uma empresa ou um carro não estiver publicado na plataforma, não aparece aqui."
       },
       "booking": {
-        "question": "Do I book and pay on Benwer?",
-        "answer": "No. You compare partner fleets here, then continue on the rental company’s site to confirm the hire, deposit, and pick-up. Benwer does not take payment on this marketplace."
+        "question": "Reservo e pago na Benwer?",
+        "answer": "Não. Aqui compara frotas parceiras e depois continua no site da empresa de aluguer para confirmar o aluguer, a caução e a recolha. A Benwer não recebe pagamentos neste marketplace."
       },
       "photos": {
-        "question": "Can I trust the photos and availability?",
-        "answer": "Listings use the public photos and availability the partner company publishes — the same catalogue they manage in admin. If a car has no public photo yet, we show an empty state rather than a stock picture of a different car. Final availability is confirmed on the company site."
+        "question": "Posso confiar nas fotos e na disponibilidade?",
+        "answer": "Os anúncios usam as fotos públicas e a disponibilidade que a empresa parceira publica — o mesmo catálogo que gere no admin. Se um carro ainda não tiver foto pública, mostramos um espaço vazio em vez de uma imagem genérica de outro carro. A disponibilidade final é confirmada no site da empresa."
       },
       "account": {
-        "question": "Do I need an account?",
-        "answer": "No account is required to search. If you send a contact message, we only use those details to reply."
+        "question": "Preciso de uma conta?",
+        "answer": "Não é preciso conta para pesquisar. Se enviar uma mensagem de contacto, só usamos esses dados para responder."
       },
       "safety": {
-        "question": "Who is responsible for the rental?",
-        "answer": "The contract is between you and the partner rental company. Read their terms before you confirm. Benwer helps you find a car from a partner fleet; it does not rent vehicles or take payment here."
+        "question": "Quem é responsável pelo aluguer?",
+        "answer": "O contrato é entre si e a empresa de aluguer parceira. Leia os termos dela antes de confirmar. A Benwer ajuda-o a encontrar um carro de uma frota parceira; não aluga veículos nem recebe pagamentos aqui."
       }
-    }
+    },
+    "eyebrow": "Perguntas frequentes"
   },
   "appBanner": {
     "title": "A app Benwer Cars",
@@ -117,21 +120,22 @@
     "demoAria": "Ver a demonstração (abre num novo separador)"
   },
   "seo": {
-    "companyTitle": "{name} — Car rentals",
-    "companyDescription": "Rent a car from {name} in {location}.",
-    "companyDescriptionPlain": "Rent a car from {name}.",
-    "companyFallback": "Car rentals",
+    "companyTitle": "{name} — Aluguer de carros",
+    "companyDescription": "Alugue um carro da {name} em {location}.",
+    "companyDescriptionPlain": "Alugue um carro da {name}.",
+    "companyFallback": "Aluguer de carros",
     "carTitle": "{brand} {model} — {company}",
     "carTitleTenant": "{brand} {model} ({year})",
-    "carDescription": "Rent a {brand} {model} from {company}.",
-    "carDescriptionSpecs": "Rent a {brand} {model} — {seats, plural, one {# seat} other {# seats}}, {transmission}."
+    "carDescription": "Alugue um {brand} {model} da {company}.",
+    "carDescriptionSpecs": "Alugue um {brand} {model} — {seats, plural, one {# lugar} other {# lugares}}, {transmission}.",
+    "carsTitle": "Carros de aluguer na província de Málaga"
   },
   "tenant": {
-    "notFoundTitle": "Company not found",
-    "notFoundDescription": "This storefront could not be loaded.",
-    "loadErrorTitle": "Company details unavailable",
-    "loadErrorDescription": "We could not load this storefront from the live catalogue. Try again — we do not show placeholder cars when the API fails.",
-    "logoAlt": "{name} logo"
+    "notFoundTitle": "Empresa não encontrada",
+    "notFoundDescription": "Não foi possível carregar este site.",
+    "loadErrorTitle": "Dados da empresa indisponíveis",
+    "loadErrorDescription": "Não foi possível carregar este site a partir do catálogo em direto. Tente novamente — não mostramos carros de exemplo quando a API falha.",
+    "logoAlt": "Logótipo da {name}"
   },
   "howItWorks": {
     "title": "Como funciona",
@@ -146,35 +150,34 @@
     "cta": "Começar a pesquisar",
     "preview": {
       "place": "Aeroporto de Málaga",
-      "dates": "12–19 jul · 7 dias",
-      "carA": "Fiat 500",
+      "dates": "sex → sex · 7 dias",
+      "carA": "Carro compacto",
       "carASpecs": "4 lugares · Manual",
-      "carAPrice": "29 €/dia",
-      "carB": "VW T-Roc",
+      "carB": "SUV familiar",
       "carBSpecs": "5 lugares · Automático",
-      "carBPrice": "48 €/dia",
       "confirmed": "Reserva confirmada",
-      "confirmedDetail": "Levantamento às 10:00"
+      "confirmedDetail": "Levantamento às 10:00",
+      "example": "Exemplo"
     },
     "eyebrow": "Três passos"
   },
   "search": {
-    "locationLabel": "Pick-up location",
-    "locationPlaceholder": "Search locations",
-    "locationEmpty": "No matching location",
-    "allLocations": "All locations",
-    "allLocationsHint": "Every city with available cars",
-    "provinceSelected": "All locations",
-    "provinceHint": "Every city with available cars",
-    "pickupLabel": "Pick-up",
-    "dropoffLabel": "Drop-off",
-    "pickupPlaceholder": "Add date",
-    "dropoffPlaceholder": "Add date",
-    "pickupTrigger": "Pick-up date, {date}",
-    "dropoffTrigger": "Drop-off date, {date}",
-    "calendarLabel": "Select dates",
+    "locationLabel": "Local de recolha",
+    "locationPlaceholder": "Pesquisar locais",
+    "locationEmpty": "Nenhum local corresponde",
+    "allLocations": "Todos os locais",
+    "allLocationsHint": "Todas as cidades com carros disponíveis",
+    "provinceSelected": "Todos os locais",
+    "provinceHint": "Todas as cidades com carros disponíveis",
+    "pickupLabel": "Recolha",
+    "dropoffLabel": "Devolução",
+    "pickupPlaceholder": "Adicionar data",
+    "dropoffPlaceholder": "Adicionar data",
+    "pickupTrigger": "Data de recolha, {date}",
+    "dropoffTrigger": "Data de devolução, {date}",
+    "calendarLabel": "Selecionar datas",
     "datesRequired": "Add pick-up and drop-off dates to search",
-    "submit": "Search",
+    "submit": "Pesquisar",
     "returnLocationLabel": "Local de devolução",
     "differentReturn": "Devolver noutro local",
     "returnSame": "Igual ao levantamento",
@@ -185,72 +188,72 @@
     "branchAnyHint": "Todos os balcões com carros"
   },
   "browseLocation": {
-    "title": "Browse by location",
-    "subtitle": "Popular cities in Málaga province",
-    "emptyTitle": "No locations yet",
-    "emptyDescription": "Featured cities will appear here.",
-    "cityAria": "Browse cars in {city}"
+    "title": "Explorar por local",
+    "subtitle": "Cidades populares na província de Málaga",
+    "emptyTitle": "Ainda não há locais",
+    "emptyDescription": "As cidades em destaque aparecem aqui.",
+    "cityAria": "Ver carros em {city}"
   },
   "map": {
-    "teaserTitle": "See where you can pick up",
-    "teaserSubtitle": "Local fleets across Málaga province — open the map and jump straight to a company.",
-    "teaserCta": "Open the map",
-    "teaserCityAria": "See companies on the map in {city}",
-    "listLabel": "List",
-    "mapLabel": "Map",
-    "viewToggleAria": "Show companies as a list or map",
-    "regionAria": "Map of rental companies in Málaga province",
-    "pinAria": "{name} in {city}",
-    "fleetHint": "{count, plural, one {# car available} other {# cars available}}",
-    "fleetHintUnknown": "View available cars",
-    "viewFleet": "View fleet",
-    "closePin": "Close",
-    "loading": "Loading companies…",
-    "errorDescription": "The map could not be loaded. Browse the list instead.",
-    "emptyTitle": "No companies on the map",
-    "emptyDescription": "Try another city in Málaga province.",
-    "resultsCount": "{count, plural, one {# company across Málaga province} other {# companies across Málaga province}}",
-    "resultsInCity": "{count, plural, one {# company in {city}} other {# companies in {city}}}",
+    "teaserTitle": "Veja onde pode recolher",
+    "teaserSubtitle": "Frotas locais em toda a província de Málaga — abra o mapa e vá diretamente para uma empresa.",
+    "teaserCta": "Abrir o mapa",
+    "teaserCityAria": "Ver empresas no mapa em {city}",
+    "listLabel": "Lista",
+    "mapLabel": "Mapa",
+    "viewToggleAria": "Mostrar empresas em lista ou no mapa",
+    "regionAria": "Mapa de empresas de aluguer na província de Málaga",
+    "pinAria": "{name} em {city}",
+    "fleetHint": "{count, plural, =0 {Ainda sem carros publicados} one {# carro disponível} other {# carros disponíveis}}",
+    "fleetHintUnknown": "Ver carros disponíveis",
+    "viewFleet": "Ver frota",
+    "closePin": "Fechar",
+    "loading": "A carregar empresas…",
+    "errorDescription": "Não foi possível carregar o mapa. Veja a lista.",
+    "emptyTitle": "Nenhuma empresa no mapa",
+    "emptyDescription": "Experimente outra cidade da província de Málaga.",
+    "resultsCount": "{count, plural, one {# empresa na província de Málaga} other {# empresas na província de Málaga}}",
+    "resultsInCity": "{count, plural, one {# empresa em {city}} other {# empresas em {city}}}",
     "resultsAtBranch": "{count, plural, one {# empresa em {branch}} other {# empresas em {branch}}}"
   },
   "cars": {
     "showingOf": "A mostrar {shown} de {total} carros",
     "loadMore": "Ver mais carros",
-    "title": "Available cars",
-    "searchEmptyTitle": "No cars match this search",
-    "searchEmptyHint": "Try different dates or another location in Málaga province. Every city stays in the list — even if no cars are listed there today.",
-    "resultsInProvince": "{count, plural, one {# car across all locations} other {# cars across all locations}}",
-    "resultsInCity": "{count, plural, one {# car in {city}} other {# cars in {city}}}",
-    "allCompanies": "All companies",
-    "companyPlaceholder": "Search companies",
-    "companyTrigger": "Company, {company}",
-    "perDay": "{price} / day",
-    "perDaySuffix": " / day",
-    "viewDetails": "View details",
+    "title": "Carros disponíveis",
+    "searchEmptyTitle": "Nenhum carro corresponde a esta pesquisa",
+    "searchEmptyHint": "Experimente outras datas ou outro local da província de Málaga. Todas as cidades continuam na lista — mesmo que hoje não haja carros publicados.",
+    "resultsInProvince": "{count, plural, one {# carro em todos os locais} other {# carros em todos os locais}}",
+    "resultsInCity": "{count, plural, one {# carro em {city}} other {# carros em {city}}}",
+    "allCompanies": "Todas as empresas",
+    "companyPlaceholder": "Pesquisar empresas",
+    "companyTrigger": "Empresa, {company}",
+    "perDay": "{price} / dia",
+    "perDaySuffix": " / dia",
+    "viewDetails": "Ver detalhes",
     "notAvailableForDates": "Não disponível nestas datas",
-    "bookUnavailable": "Reservar agora",
+    "bookUnavailable": "Ver carro",
     "fleetSummary": "{total, plural, one {# carro} other {# carros}} · {available, plural, one {# disponível} other {# disponíveis}}",
     "fleetSummaryForDates": "{total, plural, one {# carro} other {# carros}} · {available, plural, one {# disponível} other {# disponíveis}} · {from} – {to}",
-    "seats": "{count} seats",
-    "resultsCount": "{count, plural, one {# car available} other {# cars available}}",
-    "resultsForDates": "{count, plural, one {# car} other {# cars}} · {from} – {to}",
-    "emptyTitle": "This fleet is not public yet",
-    "emptyHint": "This company is listed, but its cars are not published on Benwer yet. That is expected until vehicles are marked public — not a broken page.",
-    "noResults": "No cars match this search",
-    "noResultsHint": "Try different dates, another location, or fewer filters.",
+    "seats": "{count} lugares",
+    "resultsCount": "{count, plural, one {# carro disponível} other {# carros disponíveis}}",
+    "resultsForDates": "{count, plural, one {# carro} other {# carros}} · {from} – {to}",
+    "emptyTitle": "Esta frota ainda não é pública",
+    "emptyHint": "Esta empresa está listada, mas os carros ainda não estão publicados na Benwer. É normal até os veículos serem marcados como públicos — a página não está avariada.",
+    "noResults": "Nenhum carro corresponde a esta pesquisa",
+    "noResultsHint": "Experimente outras datas, outro local ou menos filtros.",
     "datesRequiredTitle": "Add your travel dates",
     "datesRequiredHint": "Choose pick-up and drop-off dates to see cars. You can also change location in the search above.",
-    "browseCompanies": "Browse companies",
-    "clearFilters": "Clear filters",
+    "browseCompanies": "Ver empresas",
+    "clearFilters": "Limpar filtros",
     "searchPlaceholder": "Pesquisar por marca ou modelo",
     "filters": {
-      "title": "Filters",
-      "seats": "Seats",
-      "transmission": "Transmission",
-      "company": "Company",
-      "dates": "Dates",
-      "from": "Pick-up date",
-      "to": "Drop-off date",
+      "title": "Filtros",
+      "seats": "Lugares",
+      "transmission": "Caixa de velocidades",
+      "company": "Empresa",
+      "dates": "Datas",
+      "from": "Data de recolha",
+      "to": "Data de devolução",
       "category": "Categoria",
       "fuel": "Combustível",
       "all": "Todos",
@@ -258,21 +261,21 @@
       "selectedCount": "{count} selecionados"
     },
     "types": {
-      "car": "Car",
+      "car": "Carro",
       "suv": "SUV",
-      "van": "Van",
-      "truck": "Truck",
-      "motorcycle": "Motorcycle"
+      "van": "Carrinha",
+      "truck": "Camião",
+      "motorcycle": "Mota"
     },
     "transmission": {
-      "automatic": "Automatic",
+      "automatic": "Automática",
       "manual": "Manual"
     },
     "fuel": {
-      "petrol": "Petrol",
-      "diesel": "Diesel",
-      "electric": "Electric",
-      "hybrid": "Hybrid",
+      "petrol": "Gasolina",
+      "diesel": "Gasóleo",
+      "electric": "Elétrico",
+      "hybrid": "Híbrido",
       "plugin_hybrid": "Híbrido plug-in"
     },
     "rowDeposit": "Caução {amount}",
@@ -294,78 +297,96 @@
       "recommended": "Recomendados",
       "pricePerDay_asc": "Menor preço/dia",
       "pricePerDay_desc": "Maior preço/dia"
-    }
+    },
+    "subtitle": "Todos os carros públicos de empresas de aluguer parceiras na província de Málaga. Escolha as datas para ver o que está livre.",
+    "colors": {
+      "white": "Branco",
+      "black": "Preto",
+      "silver": "Prateado",
+      "grey": "Cinzento",
+      "red": "Vermelho",
+      "blue": "Azul",
+      "green": "Verde",
+      "orange": "Laranja",
+      "yellow": "Amarelo",
+      "brown": "Castanho",
+      "beige": "Bege",
+      "gold": "Dourado",
+      "purple": "Roxo"
+    },
+    "viewCar": "Ver carro",
+    "opensCompanySite": "(abre o site da empresa)"
   },
   "carDetail": {
-    "bookNow": "Book now",
-    "continueOnCompany": "Continue on {company}",
-    "rentOnCompanySite": "Rent on company site",
-    "handoffHint": "You'll complete the rental on the company's own site.",
-    "pricePerDay": "{price} per day",
-    "specs": "Specifications",
-    "year": "Year",
-    "type": "Type",
-    "transmission": "Transmission",
-    "fuel": "Fuel",
-    "seats": "Seats",
-    "availability": "Availability",
-    "availabilityError": "We couldn't load availability. Try again.",
-    "availabilityUnavailable": "Availability unavailable",
-    "checkingAvailability": "Checking availability…",
-    "notAvailable": "This car is not available for the selected dates.",
-    "selectPickup": "Select a pick-up date",
-    "selectDropoff": "Now choose a drop-off date",
+    "bookNow": "Reservar agora",
+    "continueOnCompany": "Continuar na {company}",
+    "rentOnCompanySite": "Alugar no site da empresa",
+    "handoffHint": "Vai concluir o aluguer no site da própria empresa.",
+    "pricePerDay": "{price} por dia",
+    "specs": "Características",
+    "year": "Ano",
+    "type": "Tipo",
+    "transmission": "Caixa de velocidades",
+    "fuel": "Combustível",
+    "seats": "Lugares",
+    "availability": "Disponibilidade",
+    "availabilityError": "Não foi possível carregar a disponibilidade. Tente novamente.",
+    "availabilityUnavailable": "Disponibilidade indisponível",
+    "checkingAvailability": "A verificar a disponibilidade…",
+    "notAvailable": "Este carro não está disponível nas datas selecionadas.",
+    "selectPickup": "Selecione uma data de recolha",
+    "selectDropoff": "Agora escolha uma data de devolução",
     "selectedRange": "{from} – {to}",
-    "clearDates": "Clear dates",
-    "addDate": "Add date",
-    "calendarLabel": "Availability calendar",
-    "legend": "Calendar legend",
-    "available": "Available",
-    "selected": "Selected",
-    "unavailable": "Unavailable",
-    "openDates": "No booked dates in the next {months} months.",
-    "breadcrumbAria": "Breadcrumb",
-    "photoEmpty": "Photos coming soon",
-    "previousPhoto": "Previous photo",
-    "nextPhoto": "Next photo",
-    "viewPhoto": "View photo {index}",
+    "clearDates": "Limpar datas",
+    "addDate": "Adicionar data",
+    "calendarLabel": "Calendário de disponibilidade",
+    "legend": "Legenda do calendário",
+    "available": "Disponível",
+    "selected": "Selecionado",
+    "unavailable": "Indisponível",
+    "openDates": "Sem datas reservadas nos próximos {months} meses.",
+    "breadcrumbAria": "Navegação estrutural",
+    "photoEmpty": "Fotos em breve",
+    "previousPhoto": "Foto anterior",
+    "nextPhoto": "Foto seguinte",
+    "viewPhoto": "Ver foto {index}",
     "photoIndex": "{current} / {total}",
-    "photoAlt": "{name}, photo {index}",
-    "backToFleet": "Back to fleet",
-    "metaTitle": "Car detail",
-    "about": "About this car",
-    "category": "Category",
-    "color": "Colour",
-    "deposit": "Deposit",
-    "mileage": "Mileage",
+    "photoAlt": "{name}, foto {index}",
+    "backToFleet": "Voltar à frota",
+    "metaTitle": "Detalhe do carro",
+    "about": "Sobre este carro",
+    "category": "Categoria",
+    "color": "Cor",
+    "deposit": "Caução",
+    "mileage": "Quilometragem",
     "mileageValue": "{count, number} km"
   },
   "booking": {
-    "title": "Complete your booking",
-    "subtitle": "Confirm your details — no account needed.",
-    "details": "Your details",
-    "detailsHint": "We'll only use these to confirm this booking.",
-    "guestName": "Full name",
-    "guestNamePlaceholder": "Jane Smith",
-    "guestEmail": "Email address",
-    "guestEmailPlaceholder": "jane@example.com",
-    "guestEmailHint": "Your confirmation will be sent here.",
-    "guestPhone": "Phone number",
+    "title": "Conclua a sua reserva",
+    "subtitle": "Confirme os seus dados — não precisa de conta.",
+    "details": "Os seus dados",
+    "detailsHint": "Só os usamos para confirmar esta reserva.",
+    "guestName": "Nome completo",
+    "guestNamePlaceholder": "Joana Silva",
+    "guestEmail": "Endereço de email",
+    "guestEmailPlaceholder": "joana@exemplo.com",
+    "guestEmailHint": "A confirmação será enviada para aqui.",
+    "guestPhone": "Número de telefone",
     "guestPhonePlaceholder": "+34 600 000 000",
-    "guestPhoneHint": "The rental company may contact you about pick-up.",
-    "startDate": "Pick-up date",
-    "endDate": "Drop-off date",
-    "datesHint": "Dates come from the car calendar. You can adjust them here.",
-    "addDate": "Add date",
-    "changeDates": "Change dates on the calendar",
-    "summary": "Booking summary",
-    "vehicle": "Vehicle",
-    "company": "Company",
-    "rate": "Daily rate",
-    "duration": "Duration",
+    "guestPhoneHint": "A empresa de aluguer pode contactá-lo sobre a recolha.",
+    "startDate": "Data de recolha",
+    "endDate": "Data de devolução",
+    "datesHint": "As datas vêm do calendário do carro. Pode ajustá-las aqui.",
+    "addDate": "Adicionar data",
+    "changeDates": "Alterar datas no calendário",
+    "summary": "Resumo da reserva",
+    "vehicle": "Veículo",
+    "company": "Empresa",
+    "rate": "Preço por dia",
+    "duration": "Duração",
     "totalPrice": "Total",
-    "nights": "{count, plural, one {# day} other {# days}}",
-    "stickyMeta": "{name} · {count, plural, one {# day} other {# days}}",
+    "nights": "{count, plural, one {# dia} other {# dias}}",
+    "stickyMeta": "{name} · {count, plural, one {# dia} other {# dias}}",
     "rateTimesDays": "{rate} × {days}",
     "confirm": "Confirmar reserva",
     "confirmRequest": "Enviar pedido",
@@ -376,44 +397,44 @@
     "termsLabel": "Condições de aluguer",
     "termsAccept": "Aceito as",
     "termsLink": "condições de aluguer",
-    "successTitle": "Booking confirmed!",
-    "successMessage": "Your confirmation has been sent to {email}.",
-    "viewBooking": "View my booking",
-    "selectDates": "Select dates to continue",
-    "invalidDates": "Choose a valid date range",
-    "backToCar": "Back to {name}",
-    "trustNoAccount": "No account needed",
-    "trustEmail": "Confirmation by email",
+    "successTitle": "Reserva confirmada!",
+    "successMessage": "A confirmação foi enviada para {email}.",
+    "viewBooking": "Ver a minha reserva",
+    "selectDates": "Selecione as datas para continuar",
+    "invalidDates": "Escolha um intervalo de datas válido",
+    "backToCar": "Voltar a {name}",
+    "trustNoAccount": "Não precisa de conta",
+    "trustEmail": "Confirmação por email",
     "trustNoPayment": "Sem pagamento agora",
     "trustCardPayment": "Pague com cartão depois da reserva",
-    "trustFooter": "By confirming, you request this car for the dates above. The company will honour the reservation.",
-    "missingTitle": "Choose a car to continue",
-    "missingDescription": "Pick a vehicle and dates before completing your booking.",
-    "browseCars": "Browse cars",
-    "vehicleMissingTitle": "This car is no longer available",
-    "vehicleMissingDescription": "It may have been reserved. Choose another from the fleet.",
-    "viewFleet": "View fleet",
-    "datesMissingTitle": "Add your travel dates",
-    "datesMissingDescription": "Go back to the car to pick available dates, or enter them in the form.",
-    "pickDates": "Pick dates on the car",
-    "formAria": "Guest booking details",
+    "trustFooter": "Ao confirmar, pede este carro para as datas acima. A empresa vai honrar a reserva.",
+    "missingTitle": "Escolha um carro para continuar",
+    "missingDescription": "Escolha um veículo e as datas antes de concluir a reserva.",
+    "browseCars": "Ver carros",
+    "vehicleMissingTitle": "Este carro já não está disponível",
+    "vehicleMissingDescription": "Pode ter sido reservado. Escolha outro da frota.",
+    "viewFleet": "Ver frota",
+    "datesMissingTitle": "Adicione as datas da viagem",
+    "datesMissingDescription": "Volte ao carro para escolher datas disponíveis ou introduza-as no formulário.",
+    "pickDates": "Escolher datas no carro",
+    "formAria": "Dados da reserva do cliente",
     "validation": {
-      "nameMin": "Enter your full name (at least 2 characters).",
-      "email": "Enter a valid email address.",
-      "phone": "Enter a valid phone number.",
-      "startDate": "Select a pick-up date.",
-      "endDate": "Select a drop-off date.",
-      "endAfterStart": "Drop-off must be after pick-up.",
+      "nameMin": "Introduza o nome completo (pelo menos 2 caracteres).",
+      "email": "Introduza um endereço de email válido.",
+      "phone": "Introduza um número de telefone válido.",
+      "startDate": "Selecione uma data de recolha.",
+      "endDate": "Selecione uma data de devolução.",
+      "endAfterStart": "A devolução tem de ser depois da recolha.",
       "terms": "Aceite as condições de aluguer para continuar.",
-      "fixErrors": "Please fix the highlighted fields."
+      "fixErrors": "Corrija os campos assinalados."
     },
-    "averageRate": "Average daily rate",
-    "breakdownTitle": "Price breakdown",
-    "standardRate": "Standard rate",
-    "weekendRate": "Weekend",
+    "averageRate": "Preço médio por dia",
+    "breakdownTitle": "Detalhe do preço",
+    "standardRate": "Tarifa normal",
+    "weekendRate": "Fim de semana",
     "segmentDetail": "{range} · {days} × {rate}",
-    "warningMinDays": "Rentals in this season must last at least {limit, plural, one {# day} other {# days}}. Change your dates to book.",
-    "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book.",
+    "warningMinDays": "Nesta época, os alugueres têm de durar pelo menos {limit, plural, one {# dia} other {# dias}}. Altere as datas para reservar.",
+    "warningMaxDays": "Nesta época, os alugueres podem durar no máximo {limit, plural, one {# dia} other {# dias}}. Altere as datas para reservar.",
     "returnLocation": "Local de devolução",
     "oneWayFee": "Taxa de devolução noutro local",
     "signedInAs": "Sessão iniciada como {email}",
@@ -434,40 +455,41 @@
     "notes": "Comentários",
     "notesPlaceholder": "Algo que a empresa deva saber?",
     "dateOfBirth": "Data de nascimento",
-    "optional": "opcional"
+    "optional": "opcional",
+    "extraSoldOut": "Indisponível para estas datas"
   },
   "reservationStatus": {
-    "title": "Your reservation",
-    "successTitle": "You're booked",
-    "successSubtitle": "We've sent a confirmation to {email}.",
+    "title": "A sua reserva",
+    "successTitle": "Está reservado",
+    "successSubtitle": "Enviámos uma confirmação para {email}.",
     "status": {
-      "draft": "Pending",
-      "confirmed": "Confirmed",
-      "active": "Active — enjoy your trip!",
-      "completed": "Completed",
-      "cancelled": "Cancelled"
+      "draft": "Pendente",
+      "confirmed": "Confirmada",
+      "active": "Ativa — boa viagem!",
+      "completed": "Concluída",
+      "cancelled": "Cancelada"
     },
-    "vehicle": "Vehicle",
-    "company": "Company",
-    "dates": "Dates",
-    "pickup": "Pick-up",
-    "dropoff": "Drop-off",
-    "guest": "Guest",
+    "vehicle": "Veículo",
+    "company": "Empresa",
+    "dates": "Datas",
+    "pickup": "Recolha",
+    "dropoff": "Devolução",
+    "guest": "Cliente",
     "email": "Email",
-    "phone": "Phone",
+    "phone": "Telefone",
     "total": "Total",
-    "reference": "Reference",
-    "referenceHint": "Show this at pick-up.",
-    "trustCopy": "Save this page — it is your booking receipt. The rental company will take it from here.",
-    "trustEmail": "Confirmation sent by email",
-    "trustPickup": "Show this page at pick-up",
-    "nextTitle": "What happens next",
-    "nextEmail": "Check {email} for your confirmation.",
-    "nextPickup": "Show your reference at pick-up.",
-    "browseMore": "Browse more cars",
-    "notFoundTitle": "Reservation not found",
-    "notFoundDescription": "Check the link in your confirmation email, or start a new search.",
-    "backHome": "Back to home",
+    "reference": "Referência",
+    "referenceHint": "Mostre-a na recolha.",
+    "trustCopy": "Guarde esta página — é o comprovativo da sua reserva. A empresa de aluguer trata do resto.",
+    "trustEmail": "Confirmação enviada por email",
+    "trustPickup": "Mostre esta página na recolha",
+    "nextTitle": "Próximos passos",
+    "nextEmail": "Consulte {email} para ver a confirmação.",
+    "nextPickup": "Mostre a referência na recolha.",
+    "browseMore": "Ver mais carros",
+    "notFoundTitle": "Reserva não encontrada",
+    "notFoundDescription": "Verifique a ligação no email de confirmação ou comece uma nova pesquisa.",
+    "backHome": "Voltar ao início",
     "requestExpires": "O pedido caduca",
     "cancelReason": "Motivo de cancelamento",
     "withdraw": "Retirar pedido",
@@ -512,41 +534,43 @@
     "cancelled": "A sua reserva foi cancelada."
   },
   "companies": {
-    "title": "Rental companies",
-    "subtitle": "Browse partner rental companies across Málaga — on the map or in the list",
-    "searchPlaceholder": "Search companies…",
-    "noResults": "No companies found",
-    "noResultsHint": "Try another location in Málaga province.",
-    "emptyTitle": "No companies listed yet",
-    "emptyDescription": "No rental companies are listed yet.",
-    "clearFilters": "Clear search",
-    "viewFleet": "View fleet",
-    "visitWebsite": "Visit website",
-    "contact": "Contact",
-    "backToList": "All companies",
-    "notFoundTitle": "Company not found",
-    "notFoundDescription": "This rental company is not listed. Browse others nearby.",
-    "loadErrorTitle": "Company details unavailable",
-    "loadErrorDescription": "We could not load this rental company from the live catalogue. Try again — we do not show placeholder cars when the API fails.",
-    "browseCars": "Browse cars",
-    "featuredEmpty": "No featured companies yet",
-    "featuredEmptyHint": "Check back soon, or browse cars from local fleets."
+    "title": "Empresas de aluguer",
+    "subtitle": "Explore empresas de aluguer parceiras em Málaga — no mapa ou na lista",
+    "searchPlaceholder": "Pesquisar empresas…",
+    "noResults": "Nenhuma empresa encontrada",
+    "noResultsHint": "Experimente outro local da província de Málaga.",
+    "emptyTitle": "Ainda não há empresas listadas",
+    "emptyDescription": "Ainda não há empresas de aluguer listadas.",
+    "clearFilters": "Limpar pesquisa",
+    "viewFleet": "Ver frota",
+    "visitWebsite": "Visitar site",
+    "contact": "Contacto",
+    "backToList": "Todas as empresas",
+    "notFoundTitle": "Empresa não encontrada",
+    "notFoundDescription": "Esta empresa de aluguer não está listada. Veja outras próximas.",
+    "loadErrorTitle": "Dados da empresa indisponíveis",
+    "loadErrorDescription": "Não foi possível carregar esta empresa de aluguer a partir do catálogo em direto. Tente novamente — não mostramos carros de exemplo quando a API falha.",
+    "browseCars": "Ver carros",
+    "featuredEmpty": "Ainda não há empresas em destaque",
+    "featuredEmptyHint": "Volte em breve ou veja carros de frotas locais.",
+    "locationUnknown": "Localização não indicada",
+    "noDescription": "Ainda sem descrição."
   },
   "contact": {
     "title": "Contacte-nos",
     "lede": "Dúvidas sobre o marketplace? Envie uma mensagem e respondemos o mais depressa possível.",
-    "bookingHint": "This form is not for bookings. To rent a car, continue on the rental company’s own site.",
-    "name": "Full name",
-    "email": "Email address",
-    "subject": "Subject",
-    "message": "Message",
-    "submit": "Send message",
-    "privacyNote": "We only use these details to reply.",
+    "bookingHint": "Este formulário não serve para reservas. Para alugar um carro, continue no site da própria empresa de aluguer.",
+    "name": "Nome completo",
+    "email": "Endereço de email",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "submit": "Enviar mensagem",
+    "privacyNote": "Só usamos estes dados para responder.",
     "errors": {
-      "nameMin": "Enter your name (at least 2 characters).",
-      "email": "Enter a valid email address.",
-      "subjectMin": "Enter a subject (at least 3 characters).",
-      "messageMin": "Enter a message (at least 10 characters)."
+      "nameMin": "Introduza o seu nome (pelo menos 2 caracteres).",
+      "email": "Introduza um endereço de email válido.",
+      "subjectMin": "Introduza um assunto (pelo menos 3 caracteres).",
+      "messageMin": "Introduza uma mensagem (pelo menos 10 caracteres)."
     },
     "eyebrow": "Suporte",
     "namePlaceholder": "Ana Silva",
@@ -564,115 +588,115 @@
   },
   "legal": {
     "privacy": {
-      "title": "Privacy policy",
-      "lede": "How we handle personal data when you use the Benwer Cars marketplace.",
-      "updated": "Last updated: 13 September 2026",
+      "title": "Política de privacidade",
+      "lede": "Como tratamos os dados pessoais quando utiliza o marketplace Benwer Cars.",
+      "updated": "Última atualização: 13 de setembro de 2026",
       "sections": [
         {
-          "title": "Who we are",
-          "body": "Benwer Cars (“Benwer”, “we”, “us”) operates a consumer marketplace that helps travellers discover car rental fleets in Málaga province.\n\nThis policy covers the marketplace website only. If you continue to a rental company’s own site to book, that company is responsible for the data you submit there."
+          "title": "Quem somos",
+          "body": "A Benwer Cars (“Benwer”, “nós”) gere um marketplace para consumidores que ajuda os viajantes a descobrir frotas de aluguer de carros na província de Málaga.\n\nEsta política abrange apenas o site do marketplace. Se continuar para o site de uma empresa de aluguer para reservar, essa empresa é responsável pelos dados que lá submeter."
         },
         {
-          "title": "What this marketplace does",
-          "body": "You can search cars and companies, compare public fleet details, and continue to a rental company’s site to complete a booking.\n\nBenwer does not take payment or create a rental contract on the marketplace. The rental agreement is between you and the company."
+          "title": "O que este marketplace faz",
+          "body": "Pode pesquisar carros e empresas, comparar dados públicos das frotas e continuar para o site de uma empresa de aluguer para concluir a reserva.\n\nA Benwer não recebe pagamentos nem cria contratos de aluguer no marketplace. O contrato de aluguer é entre si e a empresa."
         },
         {
-          "title": "Information we collect",
-          "body": "Depending on how you use the marketplace, we may process:\n\n• Search and usage data — location and dates you enter, pages you view, and basic technical data such as IP address, browser, and device information.\n• Language preference — stored as a strictly necessary cookie so we can show English or Spanish.\n• Cookie consent — stored on your device so we remember your choice.\n• Contact messages — name, email, subject, and message if you write to us. We tag these as coming from the marketplace.\n\nWe do not ask you to create an account on the marketplace. Booking and payment details are collected by the rental company on their own site, under their own privacy policy."
+          "title": "Informação que recolhemos",
+          "body": "Consoante a forma como usa o marketplace, podemos tratar:\n\n• Dados de pesquisa e utilização — o local e as datas que introduz, as páginas que vê e dados técnicos básicos como o endereço IP, o navegador e o dispositivo.\n• Preferência de idioma — guardada num cookie estritamente necessário para mostrarmos o site no seu idioma.\n• Consentimento de cookies — guardado no seu dispositivo para memorizarmos a sua escolha.\n• Mensagens de contacto — nome, email, assunto e mensagem, se nos escrever. Marcamo-las como vindas do marketplace.\n\nNão lhe pedimos que crie uma conta no marketplace. Os dados de reserva e pagamento são recolhidos pela empresa de aluguer no próprio site, ao abrigo da política de privacidade dela."
         },
         {
-          "title": "How we use data",
-          "body": "We use personal data to operate and improve the marketplace, remember language and cookie choices, respond to contact messages, keep the service secure, and meet legal obligations.\n\nWe do not sell your personal data."
+          "title": "Como usamos os dados",
+          "body": "Usamos os dados pessoais para gerir e melhorar o marketplace, memorizar as escolhas de idioma e de cookies, responder a mensagens de contacto, manter o serviço seguro e cumprir obrigações legais.\n\nNão vendemos os seus dados pessoais."
         },
         {
-          "title": "Legal bases (EEA / UK)",
-          "body": "Where applicable, we rely on legitimate interests (running a public directory and securing the site), consent (optional cookies, if introduced), legal obligation, and steps needed to reply when you contact us."
+          "title": "Fundamentos jurídicos (EEE / Reino Unido)",
+          "body": "Quando aplicável, baseamo-nos no interesse legítimo (gerir um diretório público e proteger o site), no consentimento (cookies opcionais, se forem introduzidos), em obrigações legais e nas diligências necessárias para responder quando nos contacta."
         },
         {
-          "title": "Sharing",
-          "body": "We may use trusted providers for hosting and email delivery. They process data on our instructions.\n\nIf you continue to a company site, that company becomes the controller of any data you submit there. We do not pass your contact-form message to rental companies unless you ask us to."
+          "title": "Partilha",
+          "body": "Podemos recorrer a fornecedores de confiança para alojamento e envio de emails. Estes tratam os dados segundo as nossas instruções.\n\nSe continuar para o site de uma empresa, essa empresa passa a ser responsável pelo tratamento dos dados que lá submeter. Não enviamos a sua mensagem de contacto às empresas de aluguer, a menos que nos peça."
         },
         {
           "title": "Cookies",
-          "body": "We use a strictly necessary language cookie and store your cookie choice on your device. See the cookie policy for details. Optional cookies stay off unless you accept them."
+          "body": "Usamos um cookie de idioma estritamente necessário e guardamos a sua escolha de cookies no seu dispositivo. Consulte a política de cookies para mais detalhes. Os cookies opcionais ficam desativados, a menos que os aceite."
         },
         {
-          "title": "Retention",
-          "body": "We keep contact messages as long as needed to reply and for a reasonable follow-up period. Technical logs are kept for a short period. Your cookie choice stays until you change it or clear site data."
+          "title": "Conservação",
+          "body": "Conservamos as mensagens de contacto pelo tempo necessário para responder e por um período razoável de seguimento. Os registos técnicos são guardados por pouco tempo. A sua escolha de cookies mantém-se até a alterar ou eliminar os dados do site."
         },
         {
-          "title": "Your rights",
-          "body": "Depending on your location, you may have rights to access, rectify, erase, restrict, or port your data, and to object to certain processing. You may also lodge a complaint with your local supervisory authority.\n\nTo exercise your rights, use the contact page."
+          "title": "Os seus direitos",
+          "body": "Consoante o local onde se encontra, pode ter direito a aceder, retificar, apagar, limitar ou transferir os seus dados, e a opor-se a determinados tratamentos. Pode também apresentar reclamação à autoridade de controlo do seu país.\n\nPara exercer os seus direitos, utilize a página de contacto."
         },
         {
-          "title": "International transfers",
-          "body": "If data is transferred outside your country, we use appropriate safeguards such as standard contractual clauses or equivalent mechanisms where required by law."
+          "title": "Transferências internacionais",
+          "body": "Se os dados forem transferidos para fora do seu país, usamos garantias adequadas, como cláusulas contratuais-tipo ou mecanismos equivalentes, quando a lei o exige."
         },
         {
-          "title": "Changes",
-          "body": "We may update this policy from time to time. We will post the revised version on this page and update the “Last updated” date."
+          "title": "Alterações",
+          "body": "Podemos atualizar esta política periodicamente. Publicaremos a versão revista nesta página e atualizaremos a data da “Última atualização”."
         }
       ]
     },
     "terms": {
-      "title": "Terms of use",
-      "lede": "The rules for using the Benwer Cars marketplace to discover rental fleets.",
-      "updated": "Last updated: 13 September 2026",
+      "title": "Termos de utilização",
+      "lede": "As regras de utilização do marketplace Benwer Cars para descobrir frotas de aluguer.",
+      "updated": "Última atualização: 13 de setembro de 2026",
       "sections": [
         {
-          "title": "The marketplace",
-          "body": "Benwer Cars provides a public directory of car rental companies and their published fleets. You can compare cars and continue to a company’s own website to finish a rental.\n\nThese terms apply to the marketplace website. They do not replace the rental company’s own terms, which apply when you book with them."
+          "title": "O marketplace",
+          "body": "A Benwer Cars disponibiliza um diretório público de empresas de aluguer de carros e das frotas que publicam. Pode comparar carros e continuar para o site da própria empresa para concluir o aluguer.\n\nEstes termos aplicam-se ao site do marketplace. Não substituem os termos da empresa de aluguer, que se aplicam quando reserva com ela."
         },
         {
-          "title": "Bookings are with rental companies",
-          "body": "Benwer does not rent cars, take payment, or enter into a hire contract on the marketplace.\n\nIf you continue to a company site, any booking, deposit, insurance, and pick-up arrangement is between you and that company. Read their terms before you confirm."
+          "title": "As reservas são feitas com as empresas de aluguer",
+          "body": "A Benwer não aluga carros, não recebe pagamentos nem celebra contratos de aluguer no marketplace.\n\nSe continuar para o site de uma empresa, qualquer reserva, caução, seguro e combinação de recolha é entre si e essa empresa. Leia os termos dela antes de confirmar."
         },
         {
-          "title": "Listings and availability",
-          "body": "Fleet details, prices, photos, and availability are published by rental companies and may change. We aim to show public information accurately, but we do not guarantee that a car will still be available or that a listed price will be honoured until the company confirms it.\n\nDates you enter on the marketplace help you search. Final availability is confirmed on the company site."
+          "title": "Anúncios e disponibilidade",
+          "body": "Os dados das frotas, os preços, as fotos e a disponibilidade são publicados pelas empresas de aluguer e podem mudar. Procuramos mostrar a informação pública com rigor, mas não garantimos que um carro continue disponível nem que um preço anunciado seja mantido até a empresa o confirmar.\n\nAs datas que introduz no marketplace ajudam na pesquisa. A disponibilidade final é confirmada no site da empresa."
         },
         {
-          "title": "Acceptable use",
-          "body": "Use the marketplace lawfully. Do not scrape, overload, or interfere with the service, submit false contact details, or use the site to harm other people or businesses."
+          "title": "Utilização aceitável",
+          "body": "Utilize o marketplace de forma lícita. Não extraia dados de forma automatizada, não sobrecarregue nem interfira com o serviço, não submeta dados de contacto falsos e não use o site para prejudicar outras pessoas ou empresas."
         },
         {
-          "title": "Liability",
-          "body": "The marketplace is provided as a discovery service. To the extent permitted by law, Benwer is not liable for rental disputes, vehicle condition, or bookings completed on a company’s site.\n\nNothing in these terms limits rights you have as a consumer that cannot be waived under applicable law."
+          "title": "Responsabilidade",
+          "body": "O marketplace é disponibilizado como serviço de descoberta. Na medida permitida por lei, a Benwer não é responsável por litígios de aluguer, pelo estado dos veículos nem por reservas concluídas no site de uma empresa.\n\nNada nestes termos limita os direitos que tem enquanto consumidor e que não podem ser afastados pela lei aplicável."
         },
         {
-          "title": "Changes",
-          "body": "We may update these terms. The “Last updated” date on this page shows the current version. Continued use after a change means you accept the updated terms."
+          "title": "Alterações",
+          "body": "Podemos atualizar estes termos. A data da “Última atualização” nesta página indica a versão em vigor. Continuar a usar o site após uma alteração significa que aceita os termos atualizados."
         },
         {
-          "title": "Contact",
-          "body": "Questions about these terms or the marketplace can be sent from the contact page. For a booking you already started, contact the rental company directly."
+          "title": "Contacto",
+          "body": "Pode enviar perguntas sobre estes termos ou o marketplace a partir da página de contacto. Para uma reserva que já iniciou, contacte diretamente a empresa de aluguer."
         }
       ]
     },
     "cookies": {
-      "title": "Cookie policy",
-      "lede": "How we use cookies and similar technologies on the marketplace.",
-      "updated": "Last updated: 13 September 2026",
+      "title": "Política de cookies",
+      "lede": "Como usamos cookies e tecnologias semelhantes no marketplace.",
+      "updated": "Última atualização: 13 de setembro de 2026",
       "sections": [
         {
-          "title": "What we use",
-          "body": "Cookies are small text files stored on your device. We also use similar storage, such as local storage, to remember choices.\n\nThis policy covers the Benwer Cars marketplace. When you continue to a rental company’s site, that site may set its own cookies."
+          "title": "O que utilizamos",
+          "body": "Os cookies são pequenos ficheiros de texto guardados no seu dispositivo. Também usamos armazenamento semelhante, como o armazenamento local, para memorizar escolhas.\n\nEsta política abrange o marketplace Benwer Cars. Quando continua para o site de uma empresa de aluguer, esse site pode definir os seus próprios cookies."
         },
         {
-          "title": "Strictly necessary",
-          "body": "We use a language cookie so the site can show English or Spanish. This is required for the marketplace to work as you expect.\n\nYour cookie-banner choice is stored on your device so we do not ask again on every visit. That storage is not used to advertise to you."
+          "title": "Estritamente necessários",
+          "body": "Usamos um cookie de idioma para que o site seja mostrado no seu idioma. É necessário para que o marketplace funcione como espera.\n\nA sua escolha no aviso de cookies é guardada no seu dispositivo para não voltarmos a perguntar em cada visita. Esse armazenamento não é usado para publicidade."
         },
         {
-          "title": "Optional cookies",
-          "body": "Optional cookies (for example analytics) stay off unless you choose Accept all.\n\nToday the marketplace does not set analytics or marketing cookies. If we add them later, we will describe them here and they will still require your acceptance."
+          "title": "Cookies opcionais",
+          "body": "Os cookies opcionais (por exemplo, de análise) ficam desativados, a menos que escolha Aceitar todos.\n\nAtualmente, o marketplace não define cookies de análise nem de marketing. Se os adicionarmos mais tarde, descrevê-los-emos aqui e continuarão a exigir a sua aceitação."
         },
         {
-          "title": "Managing cookies",
-          "body": "Use the banner to accept all cookies or keep only what is necessary. You can also delete cookies and site data in your browser. Blocking the language cookie may reset English or Spanish on your next visit."
+          "title": "Gerir cookies",
+          "body": "Use o aviso para aceitar todos os cookies ou manter apenas os necessários. Também pode eliminar os cookies e os dados do site no seu navegador. Bloquear o cookie de idioma pode repor o idioma predefinido na próxima visita."
         },
         {
-          "title": "More information",
-          "body": "See the privacy policy for how we handle personal data, or send a message from the contact page."
+          "title": "Mais informações",
+          "body": "Consulte a política de privacidade para saber como tratamos os dados pessoais, ou envie uma mensagem a partir da página de contacto."
         }
       ]
     }
@@ -737,7 +761,8 @@
     "signingIn": "A iniciar sessão…",
     "openAdmin": "Abrir o Benwer admin",
     "accountMenu": "Conta de proprietário",
-    "signedInAs": "Sessão de proprietário"
+    "signedInAs": "Sessão de proprietário",
+    "guestSignedOut": "A sua sessão de cliente foi terminada. Neste navegador não é possível ter ao mesmo tempo uma sessão de proprietário e outra de cliente."
   },
   "guest": {
     "googleAction": "Iniciar sessão com Google",
@@ -798,7 +823,9 @@
       "weakPassword": "Use uma palavra-passe mais longa.",
       "tooManyRequests": "Demasiadas tentativas. Tente de novo daqui a uns minutos.",
       "invalidCredentials": "O email ou a palavra-passe não estão correctos.",
-      "unknown": "Não foi possível entrar. Tente novamente."
+      "unknown": "Não foi possível entrar. Tente novamente.",
+      "googleDisabled": "O início de sessão com o Google ainda não está ativo neste site. Utilize o seu email e palavra-passe.",
+      "domainNotAuthorised": "O início de sessão com o Google ainda não está configurado para o endereço deste site. Por agora, utilize o seu email e palavra-passe."
     },
     "accountMenu": "A sua conta",
     "profileNav": "Perfil",
@@ -816,7 +843,20 @@
     "profileSaved": "Dados guardados.",
     "profileNotLinked": "Associe primeiro as suas reservas para guardar aqui os seus dados.",
     "bookingsUpcoming": "Próximas",
-    "bookingsPast": "Anteriores"
+    "bookingsPast": "Anteriores",
+    "verifyTitle": "Verifique o seu email para ver as suas reservas",
+    "verifyHint": "Enviámos uma ligação para {email}. Abra-a e depois volte aqui. Até o email estar verificado, não podemos mostrar as suas reservas nem guardar o seu nome e telefone.",
+    "verifyResend": "Reenviar email",
+    "verifySent": "Email enviado. Consulte a caixa de entrada e a pasta de spam.",
+    "verifyDone": "Já verifiquei o meu email",
+    "verifyStillPending": "O seu email ainda não está verificado. Abra a ligação no email e tente novamente.",
+    "verifyBanner": "A sua conta ainda não está ativa. Verifique {email} para ver as suas reservas e usar os dados guardados.",
+    "verifyBannerAction": "Verificar email",
+    "profileEdit": "Editar dados",
+    "profileCancel": "Cancelar",
+    "profileEmail": "Email",
+    "profileEmpty": "Não adicionado",
+    "ownerSignedOut": "A sua sessão no editor do site foi terminada. Neste navegador não é possível ter ao mesmo tempo uma sessão de proprietário e outra de cliente."
   },
   "siteSections": {
     "banners": {
@@ -970,7 +1010,7 @@
     },
     "tabs": {
       "sections": "Secções",
-      "design": "Design",
+      "design": "Aspeto",
       "settings": "Definições",
       "legal": "Legal"
     },
@@ -1068,7 +1108,7 @@
       "title": "Incluído no preço",
       "description": "Até 6 compromissos que fazem sempre parte do preço.",
       "accuracy": "Inclua apenas o que é verdade em todos os alugueres. O texto padrão é uma sugestão, confirme que corresponde às suas condições.",
-      "item": "Item {position}",
+      "item": "Elemento {position}",
       "icon": "Ícone",
       "itemTitle": "Título",
       "itemText": "Descrição",
@@ -1099,7 +1139,8 @@
       "description": "Os clientes avaliam o aluguer após devolverem o carro. Só são mostradas as que aprovar.",
       "summary": "Média de {average} com {count, plural, one {# avaliação aprovada} other {# avaliações aprovadas}}",
       "none": "Ainda sem avaliações aprovadas. Os clientes veem uma breve nota até aprovar uma.",
-      "manage": "Aprovar ou ocultar avaliações no Benwer admin"
+      "manage": "Aprovar ou ocultar avaliações no Benwer admin",
+      "demo": "São avaliações de demonstração mostradas nesta empresa de teste até aprovar avaliações reais no Benwer admin."
     },
     "app": {
       "storesTitle": "Links das lojas",
@@ -1234,7 +1275,8 @@
       "sectionItem": "Secção {position}",
       "addSection": "Adicionar secção",
       "reset": "Voltar ao texto padrão",
-      "pageTitle": "Título da página"
+      "pageTitle": "Título da página",
+      "privacyLooksLikeTerms": "A sua política de privacidade tem o mesmo texto que os termos. Utilize \"Voltar ao texto padrão\" na Política de privacidade ou escreva o seu próprio texto de privacidade e guarde."
     },
     "preview": "Pré-visualizar",
     "fullscreen": "Editor em ecrã inteiro",
@@ -1260,19 +1302,46 @@
       "script": "uma só pesquisa",
       "highlight": "Compare preços",
       "joiner": "de",
-      "boxed": "Dezenas de empresas",
-      "description": "Veja preços, seguros e cauções reais lado a lado antes de reservar"
+      "boxed": "Empresas parceiras",
+      "description": "Veja preços, seguros e cauções de empresas de aluguer parceiras, lado a lado, antes de reservar"
     },
     "anywhere": {
       "script": "encontre o seu carro",
-      "highlight": "Onde quer que vá",
-      "joiner": "escolha entre",
+      "highlight": "Por toda a Málaga",
+      "joiner": "com",
       "boxed": "Empresas locais",
-      "description": "Empresas de aluguer de confiança em cidades de Espanha e não só, num só lugar"
+      "description": "Empresas de aluguer parceiras em localidades de toda a província de Málaga, num só lugar"
     }
   },
   "siteLegal": {
-    "byCompany": "Publicado por {name}."
+    "byCompany": "Publicado por {name}.",
+    "cookies": {
+      "title": "Política de cookies",
+      "lede": "Como a {name} utiliza cookies e tecnologias semelhantes neste site.",
+      "updated": "Publicado por {name}.",
+      "sections": [
+        {
+          "title": "O que utilizamos",
+          "body": "Os cookies são pequenos ficheiros de texto guardados no seu dispositivo. Este site também utiliza armazenamento semelhante, como o armazenamento local, para memorizar as suas escolhas, o seu carrinho e a sua sessão."
+        },
+        {
+          "title": "Estritamente necessários",
+          "body": "Um cookie de idioma permite mostrar o site no seu idioma, e a sua escolha no aviso de cookies é guardada para não voltarmos a perguntar em cada visita. Se iniciar sessão, o fornecedor de autenticação guarda uma sessão no seu dispositivo para que se mantenha ligado. Os pagamentos com cartão são processados pela Stripe, que pode definir os seus próprios cookies para prevenir fraude."
+        },
+        {
+          "title": "Cookies opcionais",
+          "body": "Os cookies opcionais (por exemplo, de análise) ficam desativados, a menos que escolha Aceitar todos. Atualmente, este site não utiliza cookies de análise nem de marketing."
+        },
+        {
+          "title": "Gerir cookies",
+          "body": "Utilize a ligação de definições de cookies no rodapé para alterar a sua escolha. Também pode eliminar os cookies e os dados do site no seu navegador. Bloquear o armazenamento estritamente necessário pode terminar a sua sessão ou esvaziar o carrinho."
+        },
+        {
+          "title": "Mais informações",
+          "body": "Consulte a política de privacidade para saber como a {name} trata os dados pessoais, ou utilize os contactos indicados no rodapé."
+        }
+      ]
+    }
   },
   "cart": {
     "title": "O seu carrinho",

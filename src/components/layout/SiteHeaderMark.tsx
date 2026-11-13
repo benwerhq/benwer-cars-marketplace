@@ -20,7 +20,7 @@ export function SiteHeaderMark({ companyName, logoUrl, logoDarkUrl }: SiteHeader
         size="sm"
         className="h-9 w-9 rounded-lg"
       />
-      <span className="truncate text-sm font-semibold tracking-tight">
+      <span className="truncate text-sm font-semibold tracking-tight max-sm:hidden">
         {companyName}
       </span>
     </>

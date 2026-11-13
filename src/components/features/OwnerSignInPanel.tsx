@@ -4,10 +4,12 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ExternalLink, Loader2, Shield } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { useStaffAuth } from "@/context/StaffAuthProvider";
 import { env } from "@/env";
+import { guestHasSession } from "@/lib/guestAuth.client";
 import { logError } from "@/lib/logger";
 import { staffFirebaseErrorKey } from "@/lib/staffAuth.client";
 import { isStaffFirebaseConfigured, ownerTokenFromHash } from "@/lib/staffFirebase";
@@ -40,9 +42,18 @@ export function OwnerSignInPanel({ homeHref }: OwnerSignInPanelProps) {
     consumed.current = true;
     const clearToken = () =>
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
-    signInWithToken(token)
-      .then(() => {
+    // Signing in as owner signs any guest out (by design); tell the user when that happened.
+    guestHasSession()
+      .catch(() => false)
+      .then(async (hadGuest) => {
+        await signInWithToken(token);
+        return hadGuest;
+      })
+      .then((hadGuest) => {
         clearToken();
+        if (hadGuest) {
+          toast.info(t("guestSignedOut"));
+        }
         router.replace(homeHref);
       })
       .catch((error: unknown) => {
@@ -50,7 +61,7 @@ export function OwnerSignInPanel({ homeHref }: OwnerSignInPanelProps) {
         logError(error, { context: "owner_token_sign_in" });
         setErrorKey(staffFirebaseErrorKey(error));
       });
-  }, [configured, homeHref, router, signInWithToken, token]);
+  }, [configured, homeHref, router, signInWithToken, t, token]);
 
   if (!configured) {
     return (

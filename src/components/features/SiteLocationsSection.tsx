@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { SiteSectionId } from "@/enums";
 import type { SiteBranch } from "@/types/site";
 import { SiteSectionHeading } from "./SiteSectionHeading";
+import { phoneTelHref } from "@/lib/phone";
 
 function directionsHref(branch: SiteBranch, companyName: string): string {
   const query = [companyName, branch.name, branch.address].filter(Boolean).join(", ");
@@ -67,7 +68,7 @@ export function SiteLocationsSection({
               </a>
               {phone ? (
                 <a
-                  href={`tel:${phone}`}
+                  href={phoneTelHref(phone)}
                   className="inline-flex cursor-pointer items-center gap-1.5 text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   <Phone size={15} aria-hidden />

@@ -135,7 +135,7 @@ export default async function RootLayout({
             />
             {children}
             <CookieBannerHost />
-            <Toaster richColors position="top-right" />
+            <Toaster richColors position="top-right" offset={{ top: 80 }} mobileOffset={{ top: 72 }} />
           </QueryProvider>
         </NextIntlClientProvider>
       </body>

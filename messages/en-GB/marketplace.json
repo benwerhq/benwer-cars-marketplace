@@ -51,16 +51,16 @@
       "navCalendar": "Calendar",
       "navReservations": "Reservations",
       "calendarTitle": "Availability",
-      "calendarMonth": "July",
+      "calendarMonth": "Next 2 weeks",
       "viaBenwer": "Via Benwer",
       "direct": "Direct",
       "free": "Free",
-      "carA": "Fiat 500",
-      "carB": "Seat Ibiza",
-      "carC": "VW T-Roc",
-      "carD": "Peugeot 2008",
+      "carA": "Compact",
+      "carB": "City car",
+      "carC": "SUV",
+      "carD": "Crossover",
       "phoneTitle": "Today",
-      "phoneDate": "Mon 14 Jul",
+      "phoneDate": "Monday",
       "pickUp": "Pick-up",
       "return": "Return",
       "checkedOut": "Checked out",
@@ -74,9 +74,9 @@
       "storeHeadline": "Rent a car in Málaga",
       "storeSearch": "Pick-up and dates",
       "storeSearchCta": "Search",
-      "storePrice": "from €29/day",
-      "carE": "Toyota Yaris",
-      "carF": "Renault Clio"
+      "storePrice": "See prices",
+      "carE": "Hatchback",
+      "carF": "Estate"
     }
   },
   "faq": {
@@ -127,7 +127,8 @@
     "carTitle": "{brand} {model} — {company}",
     "carTitleTenant": "{brand} {model} ({year})",
     "carDescription": "Rent a {brand} {model} from {company}.",
-    "carDescriptionSpecs": "Rent a {brand} {model} — {seats, plural, one {# seat} other {# seats}}, {transmission}."
+    "carDescriptionSpecs": "Rent a {brand} {model} — {seats, plural, one {# seat} other {# seats}}, {transmission}.",
+    "carsTitle": "Rental cars across Málaga province"
   },
   "tenant": {
     "notFoundTitle": "Company not found",
@@ -150,15 +151,14 @@
     "cta": "Start searching",
     "preview": {
       "place": "Málaga Airport",
-      "dates": "12–19 Jul · 7 days",
-      "carA": "Fiat 500",
+      "dates": "Fri → Fri · 7 days",
+      "carA": "Compact car",
       "carASpecs": "4 seats · Manual",
-      "carAPrice": "€29/day",
-      "carB": "VW T-Roc",
+      "carB": "Family SUV",
       "carBSpecs": "5 seats · Automatic",
-      "carBPrice": "€48/day",
       "confirmed": "Booking confirmed",
-      "confirmedDetail": "Pick-up at 10:00"
+      "confirmedDetail": "Pick-up at 10:00",
+      "example": "Example"
     }
   },
   "search": {
@@ -204,7 +204,7 @@
     "viewToggleAria": "Show companies as a list or map",
     "regionAria": "Map of rental companies in Málaga province",
     "pinAria": "{name} in {city}",
-    "fleetHint": "{count, plural, one {# car available} other {# cars available}}",
+    "fleetHint": "{count, plural, =0 {No cars listed yet} one {# car available} other {# cars available}}",
     "fleetHintUnknown": "View available cars",
     "viewFleet": "View fleet",
     "closePin": "Close",
@@ -232,7 +232,7 @@
     "perDaySuffix": " / day",
     "viewDetails": "View details",
     "notAvailableForDates": "Not available for these dates",
-    "bookUnavailable": "Book now",
+    "bookUnavailable": "View car",
     "fleetSummary": "{total, plural, one {# car} other {# cars}} · {available, plural, one {# available} other {# available}}",
     "fleetSummaryForDates": "{total, plural, one {# car} other {# cars}} · {available, plural, one {# available} other {# available}} · {from} – {to}",
     "seats": "{count} seats",
@@ -296,7 +296,24 @@
       "recommended": "Recommended",
       "pricePerDay_asc": "Lowest daily rate",
       "pricePerDay_desc": "Highest daily rate"
-    }
+    },
+    "colors": {
+      "white": "White",
+      "black": "Black",
+      "silver": "Silver",
+      "grey": "Grey",
+      "red": "Red",
+      "blue": "Blue",
+      "green": "Green",
+      "orange": "Orange",
+      "yellow": "Yellow",
+      "brown": "Brown",
+      "beige": "Beige",
+      "gold": "Gold",
+      "purple": "Purple"
+    },
+    "viewCar": "View car",
+    "opensCompanySite": "(opens the company's website)"
   },
   "carDetail": {
     "bookNow": "Book now",
@@ -436,7 +453,8 @@
     "notes": "Comments",
     "notesPlaceholder": "Anything the company should know?",
     "dateOfBirth": "Date of birth",
-    "optional": "optional"
+    "optional": "optional",
+    "extraSoldOut": "Not available for these dates"
   },
   "reservationStatus": {
     "title": "Your reservation",
@@ -532,7 +550,9 @@
     "loadErrorDescription": "We could not load this rental company from the live catalogue. Try again — we do not show placeholder cars when the API fails.",
     "browseCars": "Browse cars",
     "featuredEmpty": "No featured companies yet",
-    "featuredEmptyHint": "Check back soon, or browse cars from local fleets."
+    "featuredEmptyHint": "Check back soon, or browse cars from local fleets.",
+    "locationUnknown": "Location not listed",
+    "noDescription": "No description yet."
   },
   "contact": {
     "title": "Contact us",
@@ -739,7 +759,8 @@
     "signingIn": "Signing you in…",
     "openAdmin": "Open Benwer admin",
     "accountMenu": "Owner account",
-    "signedInAs": "Signed in as owner"
+    "signedInAs": "Signed in as owner",
+    "guestSignedOut": "You were signed out of your guest account. Owner and guest sessions can't be open at the same time in this browser."
   },
   "guest": {
     "googleAction": "Sign in with Google",
@@ -831,7 +852,8 @@
     "profileEmail": "Email",
     "profileEmpty": "Not added",
     "bookingsUpcoming": "Upcoming",
-    "bookingsPast": "Past"
+    "bookingsPast": "Past",
+    "ownerSignedOut": "You were signed out of the website editor. Owner and guest sessions can't be open at the same time in this browser."
   },
   "siteSections": {
     "banners": {
@@ -1114,7 +1136,8 @@
       "description": "Guests review their rental after returning the car. Only reviews you approve are shown.",
       "summary": "{average} average from {count, plural, one {# approved review} other {# approved reviews}}",
       "none": "No approved reviews yet. Guests see a short note until you approve one.",
-      "manage": "Approve or hide reviews in Benwer admin"
+      "manage": "Approve or hide reviews in Benwer admin",
+      "demo": "These are demo reviews shown on this test company until you approve real ones in Benwer admin."
     },
     "app": {
       "storesTitle": "Store links",
@@ -1249,7 +1272,8 @@
       "sectionItem": "Section {position}",
       "addSection": "Add section",
       "reset": "Back to standard text",
-      "pageTitle": "Page title"
+      "pageTitle": "Page title",
+      "privacyLooksLikeTerms": "Your privacy policy has the same text as the terms. Use \"Back to standard text\" under Privacy policy, or write your own privacy text, then save."
     },
     "preview": "Preview",
     "fullscreen": "Full-screen editor",
@@ -1275,19 +1299,46 @@
       "script": "one search",
       "highlight": "Compare prices",
       "joiner": "from",
-      "boxed": "Dozens of companies",
-      "description": "See real prices, insurance and deposits side by side before you book"
+      "boxed": "Partner companies",
+      "description": "See prices, insurance and deposits from partner rental companies side by side before you book"
     },
     "anywhere": {
       "script": "find your ride",
-      "highlight": "Anywhere you go",
-      "joiner": "compare",
+      "highlight": "Across Málaga",
+      "joiner": "with",
       "boxed": "Local rental companies",
-      "description": "Trusted rental companies in cities across Spain and beyond, all in one place"
+      "description": "Partner rental companies in towns across Málaga province, all in one place"
     }
   },
   "siteLegal": {
-    "byCompany": "Published by {name}."
+    "byCompany": "Published by {name}.",
+    "cookies": {
+      "title": "Cookie policy",
+      "lede": "How {name} uses cookies and similar technologies on this website.",
+      "updated": "Published by {name}.",
+      "sections": [
+        {
+          "title": "What we use",
+          "body": "Cookies are small text files stored on your device. This website also uses similar storage, such as local storage, to remember your choices, your cart and your sign-in."
+        },
+        {
+          "title": "Strictly necessary",
+          "body": "A language cookie lets the site show your language, and your cookie-banner choice is stored so we do not ask again on every visit. If you sign in, the sign-in provider stores a session on your device so you stay signed in. Card payments are handled by Stripe, which may set its own cookies to prevent fraud."
+        },
+        {
+          "title": "Optional cookies",
+          "body": "Optional cookies (for example analytics) stay off unless you choose Accept all. This website does not set analytics or marketing cookies today."
+        },
+        {
+          "title": "Managing cookies",
+          "body": "Use the cookie settings link in the footer to change your choice. You can also delete cookies and site data in your browser. Blocking strictly necessary storage may sign you out or empty your cart."
+        },
+        {
+          "title": "More information",
+          "body": "See the privacy policy for how {name} handles personal data, or use the contact details in the footer."
+        }
+      ]
+    }
   },
   "cart": {
     "title": "Your cart",

@@ -1,5 +1,5 @@
 import { NavRoutes, SearchParams } from "@/enums";
-import { DEFAULT_CITY_SLUG } from "@/data/malagaCities";
+import { toApiLocation } from "@/data/malagaCities";
 import { buildCompanySiteHref } from "@/lib/companySite";
 import { serializeCompanySlugs } from "@/lib/vehicleFilters";
 
@@ -74,7 +74,8 @@ export function buildCarsSearchHref(input: {
   companySlugs?: string[];
 }): string {
   return appendSearchParams(NavRoutes.CARS, {
-    location: input.location || DEFAULT_CITY_SLUG,
+    // "All locations" (province-wide) is the default, so it never goes in the URL.
+    location: toApiLocation(input.location),
     from: input.from,
     to: input.to,
     companySlug: input.companySlug,
@@ -90,7 +91,7 @@ export function buildCompaniesSearchHref(input: {
   view?: string;
 }): string {
   return appendSearchParams(NavRoutes.COMPANIES, {
-    location: input.branch ? undefined : input.location || DEFAULT_CITY_SLUG,
+    location: input.branch ? undefined : toApiLocation(input.location),
     branch: input.branch,
     from: input.from,
     to: input.to,

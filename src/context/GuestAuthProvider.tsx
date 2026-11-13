@@ -75,6 +75,31 @@ export function GuestAuthProvider({ children }: { children: ReactNode }) {
   }, [configured]);
 
   useEffect(() => {
+    if (!user || emailVerified) {
+      return;
+    }
+
+    const recheck = () => {
+      if (document.visibilityState !== "visible") {
+        return;
+      }
+      void guestReloadUser()
+        .then((verified) => {
+          if (verified) {
+            setEmailVerified(true);
+          }
+        })
+        .catch(() => undefined);
+    };
+    window.addEventListener("focus", recheck);
+    document.addEventListener("visibilitychange", recheck);
+    return () => {
+      window.removeEventListener("focus", recheck);
+      document.removeEventListener("visibilitychange", recheck);
+    };
+  }, [emailVerified, user]);
+
+  useEffect(() => {
     setGuestAccessTokenProvider(() => guestIdToken(getGuestAuth()?.currentUser ?? null));
     return () => setGuestAccessTokenProvider(null);
   }, []);

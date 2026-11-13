@@ -8,6 +8,7 @@ import { SiteHeaderMark } from "./SiteHeaderMark";
 import { SiteHeaderShell } from "./SiteHeaderShell";
 import { SiteNav } from "./SiteNav";
 import type { SiteSectionId } from "@/enums";
+import { formatPhoneDisplay, phoneTelHref } from "@/lib/phone";
 
 interface SiteHeaderProps {
   companyName: string;
@@ -53,11 +54,11 @@ export async function SiteHeader({
       <SiteNav homeHref={homeHref} fleetHref={fleetHref} sections={sections} />
       {phone ? (
         <a
-          href={`tel:${phone}`}
+          href={phoneTelHref(phone)}
           className="hidden items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring xl:inline-flex"
         >
           <Phone size={15} aria-hidden />
-          {phone}
+          {formatPhoneDisplay(phone)}
         </a>
       ) : null}
       {cartSlug ? <SiteCartLink slug={cartSlug} homeHref={homeHref} /> : null}

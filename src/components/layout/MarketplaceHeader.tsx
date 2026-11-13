@@ -26,9 +26,8 @@ export async function MarketplaceHeader({ className }: MarketplaceHeaderProps) {
             priority
             className="h-9 w-12 shrink-0"
           />
-          <span className="truncate text-sm font-semibold tracking-tight">
-            <span className="sm:hidden">{t("shortName")}</span>
-            <span className="hidden sm:inline">{t("name")}</span>
+          <span className="truncate text-sm font-semibold tracking-tight max-sm:hidden">
+            {t("name")}
           </span>
         </>
       }

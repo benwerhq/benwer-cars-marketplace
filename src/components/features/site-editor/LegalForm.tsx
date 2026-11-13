@@ -221,11 +221,22 @@ function LegalBlocksEditor({
 
 export function LegalForm({ legal, locale, supported, onChange }: LegalFormProps) {
   const t = useTranslations("siteEditor.legal");
+  const tTerms = useTranslations("legal.terms");
+  const privacyBody = (splitLegalCopy(legal.privacy).body[locale] ?? "").trim();
+  const termsBody = (splitLegalCopy(legal.terms).body[locale] ?? "").trim();
+  const privacyLooksLikeTerms =
+    privacyBody.length > 0 &&
+    (privacyBody === termsBody || privacyBody.startsWith(tTerms("lede")));
 
   return (
     <>
       <p className="text-xs text-muted-foreground">{t("hint")}</p>
       {supported ? null : <p className="text-xs text-warning">{t("needsApi")}</p>}
+      {privacyLooksLikeTerms ? (
+        <p role="alert" className="rounded-md border border-warning/40 bg-warning-soft px-3 py-2 text-xs text-foreground">
+          {t("privacyLooksLikeTerms")}
+        </p>
+      ) : null}
       <fieldset disabled={!supported} className="flex flex-col gap-3 disabled:opacity-60">
         {(["privacy", "terms"] as const).map((kind) => (
           <LegalPageFields

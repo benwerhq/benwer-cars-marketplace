@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { NavRoutes, type SitePaymentMethod, type SiteSectionId } from "@/enums";
+import { type SitePaymentMethod, type SiteSectionId } from "@/enums";
 import { siteChildFromHome } from "@/lib/site";
 import { whatsappHref } from "@/lib/siteContent";
 import { CookieSettingsLink } from "./CookieSettingsLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteFooterAccountLink } from "./SiteFooterAccountLink";
+import { formatPhoneDisplay, phoneTelHref } from "@/lib/phone";
 
 interface SiteFooterContact {
   phone: string | null;
@@ -70,8 +71,8 @@ export async function SiteFooter({
             <div className="flex flex-col gap-2">
               <p className={siteFooterHeadingClass}>{tSections("footer.contact")}</p>
               {contact.phone ? (
-                <a href={`tel:${contact.phone}`} className={siteFooterLinkClass}>
-                  {contact.phone}
+                <a href={phoneTelHref(contact.phone)} className={siteFooterLinkClass}>
+                  {formatPhoneDisplay(contact.phone)}
                 </a>
               ) : null}
               {whatsapp ? (
@@ -94,7 +95,7 @@ export async function SiteFooter({
             <Link href={siteChildFromHome(homeHref, "/terms")} className={siteFooterLinkClass}>
               {tNav("terms")}
             </Link>
-            <Link href={NavRoutes.COOKIES} className={siteFooterLinkClass}>
+            <Link href={siteChildFromHome(homeHref, "/cookies")} className={siteFooterLinkClass}>
               {tNav("cookies")}
             </Link>
             <CookieSettingsLink className={`${siteFooterLinkClass} cursor-pointer text-left`} />

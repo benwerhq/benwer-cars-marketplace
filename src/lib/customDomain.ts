@@ -9,7 +9,6 @@ export type CustomDomainRewrite = typeof PASSTHROUGH | typeof UNKNOWN | string;
 
 const ALLOWED_PREFIXES = [
   "/api",
-  "/cookies",
   "/host-unknown",
   "/images",
   "/localstack",
@@ -65,6 +64,7 @@ export function rewriteCustomDomainPath(
     path.startsWith("/guest/") ||
     path === "/privacy" ||
     path === "/terms" ||
+    path === "/cookies" ||
     path === "/cart"
   ) {
     return `${siteRoot}${path}`;

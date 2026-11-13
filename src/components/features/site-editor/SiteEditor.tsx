@@ -36,7 +36,7 @@ import {
   type SiteContentFacts,
 } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
-import type { SiteContent } from "@/types/siteContent";
+import type { SiteContent, SiteReviewsContent } from "@/types/siteContent";
 import type { WebsiteSettings } from "@/types/websiteSettings";
 import { AppForm } from "./AppForm";
 import { BannersForm } from "./BannersForm";
@@ -82,6 +82,8 @@ export const STATUS_BADGE: Record<SiteStatus, "success" | "warning" | "default">
 
 interface SiteEditorProps {
   draft: WebsiteSettings;
+  /** Reviews as guests see them on the live site. */
+  reviews: SiteReviewsContent;
   companyId: string;
   companyName: string;
   companyDescription: string;
@@ -106,6 +108,7 @@ interface SiteEditorProps {
 
 export function SiteEditor({
   draft,
+  reviews,
   companyId,
   companyName,
   companyDescription,
@@ -149,7 +152,7 @@ export function SiteEditor({
       case SiteSectionId.INCLUDED:
         return t("summary.included", { count: content.included.length });
       case SiteSectionId.REVIEWS:
-        return t("summary.reviews", { count: content.reviews.items.length });
+        return t("summary.reviews", { count: reviews.count });
       case SiteSectionId.APP:
         return t("summary.app");
       case SiteSectionId.BRANCHES:
@@ -195,7 +198,7 @@ export function SiteEditor({
           />
         );
       case SiteSectionId.REVIEWS:
-        return <ReviewsForm reviews={content.reviews} />;
+        return <ReviewsForm reviews={reviews} />;
       case SiteSectionId.APP:
         return <AppForm app={content.app} locale={locale} onChange={(app) => setContent({ app })} />;
       case SiteSectionId.FAQ:

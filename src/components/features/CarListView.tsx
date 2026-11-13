@@ -15,7 +15,7 @@ import {
   VehicleResultsBar,
 } from "./VehicleFilterToolbar";
 import { Skeleton } from "@/components/ui/Skeleton";
-import { formatSearchDate, parseIsoDate } from "@/lib/dates";
+import { formatSearchDate, hasCompleteSearchDates, parseIsoDate } from "@/lib/dates";
 import { resolveCardCompany } from "@/lib/companyIdentity";
 import { NavRoutes, SearchParams, type PublicChannel } from "@/enums";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
@@ -72,6 +72,8 @@ function CarListViewContent({
     companySlug: undefined,
   };
   const browse = parseBrowseParams(searchParams);
+  const checkAvailability =
+    filterByAvailability && hasCompleteSearchDates(filters.from, filters.to);
   const { data, allVehicles, isPending, isError, error, refetch } = useVehicles(
     companySlug,
     channel ? { ...filters, channel } : filters,
@@ -85,14 +87,14 @@ function CarListViewContent({
       vehicleIds: allVehicles?.map((vehicle) => vehicle.id) ?? [],
       channel,
     },
-    filterByAvailability && Boolean(allVehicles?.length),
+    checkAvailability && Boolean(allVehicles?.length),
   );
   const isLoading =
     isPending ||
-    (filterByAvailability &&
+    (checkAvailability &&
       Boolean(allVehicles?.length) &&
       availabilityQuery.isPending);
-  const sortedVehicles = filterByAvailability
+  const sortedVehicles = checkAvailability
     ? sortVehiclesByAvailability(
         data,
         availabilityQuery.data,
@@ -100,7 +102,7 @@ function CarListViewContent({
         availabilityRange.to,
       )
     : data;
-  const hideUnavailable = layout === "rows" && filterByAvailability;
+  const hideUnavailable = layout === "rows" && checkAvailability;
   const vehicles =
     hideUnavailable && availabilityQuery.data
       ? sortedVehicles?.filter((vehicle) =>
@@ -131,7 +133,7 @@ function CarListViewContent({
           Math.round((toDate.getTime() - fromDate.getTime()) / DAY_MS),
         )
       : null;
-  const availableCount = filterByAvailability
+  const availableCount = checkAvailability
     ? (vehicles?.filter((vehicle) =>
         isFleetVehicleAvailable(
           vehicle,
@@ -149,7 +151,7 @@ function CarListViewContent({
           to: formatSearchDate(toDate, locale),
         })
       : t("availableCount", { count })
-    : filterByAvailability
+    : checkAvailability
       ? fromDate && toDate
         ? t("fleetSummaryForDates", {
             total: count,
@@ -246,7 +248,7 @@ function CarListViewContent({
           rows ? undefined : (vehicle) => resolveCardCompany(vehicle, directory)
         }
         isAvailable={
-          filterByAvailability
+          checkAvailability
             ? (vehicle) =>
                 isFleetVehicleAvailable(
                   vehicle,

@@ -7,14 +7,16 @@ import {
   Car,
   CarFront,
   ChevronRight,
+  ExternalLink,
   Fuel,
   Truck,
   Users,
   Zap,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { vehicleLabelKey } from "@/lib/vehicleFilters";
 import { vehicleImageUrl } from "@/lib/vehicleImage";
-import { cn } from "@/lib/utils";
+import { cn, isExternalHref } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import { CarPhoto } from "./CarPhoto";
 import { CompanyEyebrow } from "./CompanyEyebrow";
@@ -60,6 +62,8 @@ export function CarCard({
   const locale = useLocale();
   const primaryPhoto = vehicleImageUrl(vehicle);
   const name = `${vehicle.brand} ${vehicle.model}`;
+  const external = isExternalHref(href);
+  const ActionIcon = external ? ExternalLink : ChevronRight;
 
   return (
     <Link
@@ -91,7 +95,7 @@ export function CarCard({
           variant="default"
           className="absolute left-3 top-3 border border-border bg-surface/90 backdrop-blur-sm"
         >
-          {t(`types.${vehicle.type}`)}
+          {t(vehicleLabelKey(vehicle))}
         </Badge>
         {!available ? (
           <Badge
@@ -112,7 +116,7 @@ export function CarCard({
             {name}
           </h3>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            {vehicle.year} &middot; {t(`types.${vehicle.type}`)}
+            {vehicle.year} &middot; {t(vehicleLabelKey(vehicle))}
           </p>
         </div>
 
@@ -143,8 +147,9 @@ export function CarCard({
           {available ? (
             <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
               {t("viewDetails")}
-              <ChevronRight
-                size={16}
+              {external ? <span className="sr-only">{t("opensCompanySite")}</span> : null}
+              <ActionIcon
+                size={external ? 14 : 16}
                 aria-hidden
                 className="transition-transform motion-safe:group-hover:translate-x-0.5"
               />

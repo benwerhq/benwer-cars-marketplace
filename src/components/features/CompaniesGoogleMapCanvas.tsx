@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   APIProvider,
   AdvancedMarker,
@@ -12,6 +12,7 @@ import {
 import { Car } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { CompanyMapPinCard } from "./CompanyMapPinCard";
+import { CompanyMapSkeleton } from "./CompanyMapSkeleton";
 import {
   MALAGA_PROVINCE_BOUNDS,
   MALAGA_PROVINCE_CENTER,
@@ -135,6 +136,7 @@ export function CompaniesGoogleMapCanvas({
   const isDark = useIsDarkMode();
   const isCoarsePointer = useMediaQuery("(pointer: coarse)");
   const selectedPin = pins.find((pin) => pin.slug === selectedSlug) ?? null;
+  const [tilesLoaded, setTilesLoaded] = useState(false);
 
   return (
     <APIProvider apiKey={apiKey} language={locale}>
@@ -157,6 +159,7 @@ export function CompaniesGoogleMapCanvas({
           zoomControl
           clickableIcons={false}
           onClick={onClose}
+          onTilesLoaded={() => setTilesLoaded(true)}
           className="h-full w-full"
         >
           <FitPins pins={pins} locationSlug={locationSlug} />
@@ -179,6 +182,11 @@ export function CompaniesGoogleMapCanvas({
             );
           })}
         </Map>
+        {tilesLoaded ? null : (
+          <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden>
+            <CompanyMapSkeleton />
+          </div>
+        )}
         {selectedPin ? (
           <div className="absolute inset-x-3 bottom-3 z-10 sm:right-auto sm:left-3">
             <div className="rounded-xl border border-border bg-surface shadow-lg">

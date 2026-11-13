@@ -134,6 +134,8 @@ export function ReservationStatus({
   const requestExpires = data.requestExpiresAt
     ? parseIsoDate(data.requestExpiresAt.slice(0, 10))
     : null;
+  const cardAuthorized =
+    data.advanceAuthorized && data.paymentStatus === PaymentStatus.UNPAID;
 
   return (
     <div className="flex flex-col gap-6 md:gap-8">
@@ -153,7 +155,7 @@ export function ReservationStatus({
             <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
               {isSuccess ? t("successTitle") : t("title")}
             </h1>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-1 text-sm [overflow-wrap:anywhere] text-muted-foreground">
               {t("successSubtitle", { email: data.guestEmail })}
             </p>
           </div>
@@ -229,13 +231,13 @@ export function ReservationStatus({
               <h2 className="text-base font-semibold text-foreground">{t("priceTitle")}</h2>
               <Badge
                 variant={
-                  data.paymentStatus === PaymentStatus.PAID || data.advanceAuthorized
+                  data.paymentStatus === PaymentStatus.PAID || cardAuthorized
                     ? "success"
                     : "default"
                 }
                 dot
               >
-                {data.advanceAuthorized && data.paymentStatus !== PaymentStatus.PAID
+                {cardAuthorized
                   ? t("payment.authorized")
                   : t(`payment.${data.paymentStatus}`)}
               </Badge>
@@ -347,7 +349,7 @@ function StatusRow({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <dt className="text-xs text-muted-foreground">{label}</dt>
-      <dd className="mt-0.5 text-sm font-medium text-foreground">{value}</dd>
+      <dd className="mt-0.5 text-sm font-medium [overflow-wrap:anywhere] text-foreground">{value}</dd>
     </div>
   );
 }

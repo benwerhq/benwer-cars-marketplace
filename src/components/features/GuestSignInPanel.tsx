@@ -2,9 +2,11 @@
 
 import { useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { toast } from "sonner";
 import { logError } from "@/lib/logger";
 import { useGuestAuth } from "@/context/GuestAuthProvider";
 import { firebaseErrorMessageKey } from "@/lib/guestAuth.client";
+import { getStaffAuth } from "@/lib/staffAuth.client";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
@@ -26,6 +28,17 @@ export function GuestSignInPanel() {
   const [resetSentTo, setResetSentTo] = useState<string | null>(null);
   const [errorKey, setErrorKey] = useState<string | null>(null);
 
+  /** Guest sign-in signs the owner out (by design); say so when an owner session was open. */
+  function ownerSessionOpen(): boolean {
+    return Boolean(getStaffAuth()?.currentUser);
+  }
+
+  function noticeOwnerSignedOut(hadOwner: boolean) {
+    if (hadOwner) {
+      toast.info(t("ownerSignedOut"));
+    }
+  }
+
   function switchMode(next: PanelMode) {
     setMode(next);
     setErrorKey(null);
@@ -40,10 +53,10 @@ export function GuestSignInPanel() {
       if (mode === "reset") {
         await resetPassword(email.trim(), locale);
         setResetSentTo(email.trim());
-      } else if (mode === "up") {
-        await signUp(email, password);
       } else {
-        await signIn(email, password);
+        const hadOwner = ownerSessionOpen();
+        await (mode === "up" ? signUp(email, password) : signIn(email, password));
+        noticeOwnerSignedOut(hadOwner);
       }
     } catch (error) {
       setErrorKey(firebaseErrorMessageKey(error));
@@ -56,7 +69,9 @@ export function GuestSignInPanel() {
     setGoogleBusy(true);
     setErrorKey(null);
     try {
+      const hadOwner = ownerSessionOpen();
       await signInWithGoogle();
+      noticeOwnerSignedOut(hadOwner);
     } catch (error) {
       logError(error, { context: "guest_google_sign_in" });
       setErrorKey(firebaseErrorMessageKey(error));

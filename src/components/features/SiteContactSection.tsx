@@ -8,6 +8,7 @@ import { localizedText } from "@/lib/localizedCopy";
 import { whatsappHref } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { SiteContactContent } from "@/types/siteContent";
+import { formatPhoneDisplay, phoneTelHref } from "@/lib/phone";
 
 interface SiteContactSectionProps {
   contact: SiteContactContent;
@@ -59,14 +60,14 @@ export function SiteContactSection({
         ) : null}
         {phone ? (
           <a
-            href={`tel:${phone}`}
+            href={phoneTelHref(phone)}
             className={cn(
               buttonVariants({ variant: whatsapp ? "secondary" : "primary", size: "lg" }),
               "rounded-full",
             )}
           >
             <Phone size={18} aria-hidden />
-            {phone}
+            {formatPhoneDisplay(phone)}
           </a>
         ) : null}
         {email ? (

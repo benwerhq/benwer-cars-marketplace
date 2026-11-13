@@ -73,6 +73,12 @@ export function CompanyGrid({
       : tMap("fleetHint", { count: company.vehicleCount });
   }
 
+  // Companies without public cars stay listed, but after the ones you can book from.
+  const ordered = [
+    ...companies.filter((company) => company.vehicleCount !== 0),
+    ...companies.filter((company) => company.vehicleCount === 0),
+  ];
+
   return (
     <div
       className={cn(
@@ -80,7 +86,7 @@ export function CompanyGrid({
         className,
       )}
     >
-      {companies.map((company) => (
+      {ordered.map((company) => (
         <CompanyCard
           key={company.id}
           company={company}
@@ -92,6 +98,9 @@ export function CompanyGrid({
             })
           }
           viewFleetLabel={viewFleetLabel ?? t("viewFleet")}
+          noFleetLabel={t("visitWebsite")}
+          locationFallback={t("locationUnknown")}
+          descriptionFallback={t("noDescription")}
           fleetHint={(fleetHint ?? defaultFleetHint)(company)}
           isHighlighted={selectedSlug === company.slug}
           onHighlight={onHighlight}

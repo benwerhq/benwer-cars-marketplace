@@ -51,16 +51,16 @@
       "navCalendar": "Calendario",
       "navReservations": "Reservas",
       "calendarTitle": "Disponibilidad",
-      "calendarMonth": "Julio",
+      "calendarMonth": "Próximas 2 semanas",
       "viaBenwer": "Vía Benwer",
       "direct": "Directa",
       "free": "Libre",
-      "carA": "Fiat 500",
-      "carB": "Seat Ibiza",
-      "carC": "VW T-Roc",
-      "carD": "Peugeot 2008",
+      "carA": "Compacto",
+      "carB": "Urbano",
+      "carC": "SUV",
+      "carD": "Crossover",
       "phoneTitle": "Hoy",
-      "phoneDate": "Lun 14 jul",
+      "phoneDate": "Lunes",
       "pickUp": "Recogida",
       "return": "Devolución",
       "checkedOut": "Entregado",
@@ -74,9 +74,9 @@
       "storeHeadline": "Alquila un coche en Málaga",
       "storeSearch": "Recogida y fechas",
       "storeSearchCta": "Buscar",
-      "storePrice": "desde 29 €/día",
-      "carE": "Toyota Yaris",
-      "carF": "Renault Clio"
+      "storePrice": "Ver precios",
+      "carE": "Utilitario",
+      "carF": "Familiar"
     }
   },
   "faq": {
@@ -127,7 +127,8 @@
     "carTitle": "{brand} {model} — {company}",
     "carTitleTenant": "{brand} {model} ({year})",
     "carDescription": "Alquila un {brand} {model} con {company}.",
-    "carDescriptionSpecs": "Alquila un {brand} {model} — {seats, plural, one {# plaza} other {# plazas}}, {transmission}."
+    "carDescriptionSpecs": "Alquila un {brand} {model} — {seats, plural, one {# plaza} other {# plazas}}, {transmission}.",
+    "carsTitle": "Coches de alquiler en la provincia de Málaga"
   },
   "tenant": {
     "notFoundTitle": "Empresa no encontrada",
@@ -150,15 +151,14 @@
     "cta": "Empezar a buscar",
     "preview": {
       "place": "Aeropuerto de Málaga",
-      "dates": "12–19 jul · 7 días",
-      "carA": "Fiat 500",
+      "dates": "vie → vie · 7 días",
+      "carA": "Coche compacto",
       "carASpecs": "4 plazas · Manual",
-      "carAPrice": "29 €/día",
-      "carB": "VW T-Roc",
+      "carB": "SUV familiar",
       "carBSpecs": "5 plazas · Automático",
-      "carBPrice": "48 €/día",
       "confirmed": "Reserva confirmada",
-      "confirmedDetail": "Recogida a las 10:00"
+      "confirmedDetail": "Recogida a las 10:00",
+      "example": "Ejemplo"
     }
   },
   "search": {
@@ -204,7 +204,7 @@
     "viewToggleAria": "Mostrar empresas en lista o en el mapa",
     "regionAria": "Mapa de empresas de alquiler en la provincia de Málaga",
     "pinAria": "{name} en {city}",
-    "fleetHint": "{count, plural, one {# coche disponible} other {# coches disponibles}}",
+    "fleetHint": "{count, plural, =0 {Aún sin coches publicados} one {# coche disponible} other {# coches disponibles}}",
     "fleetHintUnknown": "Ver coches disponibles",
     "viewFleet": "Ver flota",
     "closePin": "Cerrar",
@@ -232,7 +232,7 @@
     "perDaySuffix": " / día",
     "viewDetails": "Ver detalles",
     "notAvailableForDates": "No disponible para estas fechas",
-    "bookUnavailable": "Reservar ahora",
+    "bookUnavailable": "Ver coche",
     "fleetSummary": "{total, plural, one {# coche} other {# coches}} · {available, plural, one {# disponible} other {# disponibles}}",
     "fleetSummaryForDates": "{total, plural, one {# coche} other {# coches}} · {available, plural, one {# disponible} other {# disponibles}} · {from} – {to}",
     "seats": "{count} plazas",
@@ -296,7 +296,24 @@
       "recommended": "Recomendados",
       "pricePerDay_asc": "Menor precio/día",
       "pricePerDay_desc": "Mayor precio/día"
-    }
+    },
+    "colors": {
+      "white": "Blanco",
+      "black": "Negro",
+      "silver": "Plata",
+      "grey": "Gris",
+      "red": "Rojo",
+      "blue": "Azul",
+      "green": "Verde",
+      "orange": "Naranja",
+      "yellow": "Amarillo",
+      "brown": "Marrón",
+      "beige": "Beige",
+      "gold": "Dorado",
+      "purple": "Morado"
+    },
+    "viewCar": "Ver coche",
+    "opensCompanySite": "(abre la web de la empresa)"
   },
   "carDetail": {
     "bookNow": "Reservar ahora",
@@ -436,7 +453,8 @@
     "notes": "Comentarios",
     "notesPlaceholder": "¿Algo que la empresa deba saber?",
     "dateOfBirth": "Fecha de nacimiento",
-    "optional": "opcional"
+    "optional": "opcional",
+    "extraSoldOut": "No disponible para estas fechas"
   },
   "reservationStatus": {
     "title": "Tu reserva",
@@ -532,7 +550,9 @@
     "loadErrorDescription": "No hemos podido cargar esta empresa del catálogo en vivo. Inténtalo de nuevo: no mostramos coches de ejemplo cuando falla la API.",
     "browseCars": "Ver coches",
     "featuredEmpty": "Aún no hay empresas destacadas",
-    "featuredEmptyHint": "Vuelve pronto o explora coches de flotas locales."
+    "featuredEmptyHint": "Vuelve pronto o explora coches de flotas locales.",
+    "locationUnknown": "Ubicación no indicada",
+    "noDescription": "Aún no hay descripción."
   },
   "contact": {
     "title": "Contacto",
@@ -739,7 +759,8 @@
     "signingIn": "Iniciando sesión…",
     "openAdmin": "Abrir Benwer admin",
     "accountMenu": "Cuenta de propietario",
-    "signedInAs": "Sesión de propietario"
+    "signedInAs": "Sesión de propietario",
+    "guestSignedOut": "Se ha cerrado tu sesión de cliente. En este navegador no puede haber a la vez una sesión de propietario y otra de cliente."
   },
   "guest": {
     "googleAction": "Iniciar sesión con Google",
@@ -831,7 +852,8 @@
     "profileEmail": "Email",
     "profileEmpty": "Sin añadir",
     "bookingsUpcoming": "Próximas",
-    "bookingsPast": "Anteriores"
+    "bookingsPast": "Anteriores",
+    "ownerSignedOut": "Se ha cerrado tu sesión del editor de la web. En este navegador no puede haber a la vez una sesión de propietario y otra de cliente."
   },
   "siteSections": {
     "banners": {
@@ -1114,7 +1136,8 @@
       "description": "Los clientes valoran el alquiler al devolver el coche. Solo se muestran las que apruebas.",
       "summary": "Media de {average} con {count, plural, one {# opinión aprobada} other {# opiniones aprobadas}}",
       "none": "Aún no hay opiniones aprobadas. Los clientes verán un breve aviso hasta que apruebes una.",
-      "manage": "Aprobar u ocultar opiniones en Benwer admin"
+      "manage": "Aprobar u ocultar opiniones en Benwer admin",
+      "demo": "Son opiniones de demostración que se muestran en esta empresa de prueba hasta que apruebes opiniones reales en Benwer admin."
     },
     "app": {
       "storesTitle": "Enlaces a las tiendas",
@@ -1249,7 +1272,8 @@
       "sectionItem": "Sección {position}",
       "addSection": "Añadir sección",
       "reset": "Volver al texto estándar",
-      "pageTitle": "Título de la página"
+      "pageTitle": "Título de la página",
+      "privacyLooksLikeTerms": "Tu política de privacidad tiene el mismo texto que las condiciones. Usa \"Volver al texto estándar\" en Política de privacidad o escribe tu propio texto de privacidad y guarda."
     },
     "preview": "Vista previa",
     "fullscreen": "Editor a pantalla completa",
@@ -1275,19 +1299,46 @@
       "script": "una sola búsqueda",
       "highlight": "Compara precios",
       "joiner": "de",
-      "boxed": "Decenas de empresas",
-      "description": "Mira precios, seguros y fianzas reales lado a lado antes de reservar"
+      "boxed": "Empresas asociadas",
+      "description": "Consulta precios, seguros y fianzas de empresas de alquiler asociadas, lado a lado, antes de reservar"
     },
     "anywhere": {
       "script": "encuentra tu coche",
-      "highlight": "Vayas donde vayas",
-      "joiner": "elige entre",
+      "highlight": "Por toda Málaga",
+      "joiner": "con",
       "boxed": "Empresas locales",
-      "description": "Empresas de alquiler de confianza en ciudades de toda España y más allá, en un solo lugar"
+      "description": "Empresas de alquiler asociadas en localidades de toda la provincia de Málaga, en un solo lugar"
     }
   },
   "siteLegal": {
-    "byCompany": "Publicado por {name}."
+    "byCompany": "Publicado por {name}.",
+    "cookies": {
+      "title": "Política de cookies",
+      "lede": "Cómo {name} usa cookies y tecnologías similares en este sitio web.",
+      "updated": "Publicado por {name}.",
+      "sections": [
+        {
+          "title": "Qué usamos",
+          "body": "Las cookies son pequeños archivos de texto que se guardan en tu dispositivo. Este sitio también usa almacenamiento similar, como el almacenamiento local, para recordar tus preferencias, tu carrito y tu sesión."
+        },
+        {
+          "title": "Estrictamente necesarias",
+          "body": "Una cookie de idioma permite mostrar el sitio en tu idioma, y tu elección en el aviso de cookies se guarda para no preguntarte en cada visita. Si inicias sesión, el proveedor de acceso guarda una sesión en tu dispositivo para mantenerte conectado. Los pagos con tarjeta los gestiona Stripe, que puede usar sus propias cookies para prevenir el fraude."
+        },
+        {
+          "title": "Cookies opcionales",
+          "body": "Las cookies opcionales (por ejemplo, de analítica) permanecen desactivadas salvo que elijas Aceptar todas. Hoy este sitio no usa cookies de analítica ni de marketing."
+        },
+        {
+          "title": "Gestionar las cookies",
+          "body": "Usa el enlace de configuración de cookies del pie de página para cambiar tu elección. También puedes borrar las cookies y los datos del sitio desde tu navegador. Bloquear el almacenamiento estrictamente necesario puede cerrar tu sesión o vaciar tu carrito."
+        },
+        {
+          "title": "Más información",
+          "body": "Consulta la política de privacidad para saber cómo {name} trata los datos personales, o usa los datos de contacto del pie de página."
+        }
+      ]
+    }
   },
   "cart": {
     "title": "Tu carrito",

@@ -3,6 +3,7 @@
 import { ExternalLink, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { env } from "@/env";
+import { isDemoReviews } from "@/lib/demoReviews";
 import { DEFAULT_ADMIN_ORIGIN } from "@/lib/siteEdit";
 import type { SiteReviewsContent } from "@/types/siteContent";
 import { EditorGroup } from "./EditorPrimitives";
@@ -24,6 +25,9 @@ export function ReviewsForm({ reviews }: { reviews: SiteReviewsContent }) {
             : t("none")}
         </p>
       </div>
+      {isDemoReviews(reviews) ? (
+        <p className="text-xs text-muted-foreground">{t("demo")}</p>
+      ) : null}
       <a
         href={`${origin}/website?tab=reviews`}
         target="_blank"
