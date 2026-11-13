@@ -536,21 +536,33 @@
   },
   "contact": {
     "title": "Contacto",
-    "lede": "¿Tienes preguntas sobre el marketplace? Envíanos un mensaje y te responderemos por correo.",
+    "lede": "¿Dudas sobre el marketplace? Envíanos un mensaje y te responderemos lo antes posible.",
     "bookingHint": "Este formulario no sirve para reservar. Para alquilar un coche, continúa en la web de la empresa.",
     "name": "Nombre completo",
     "email": "Correo electrónico",
     "subject": "Asunto",
     "message": "Mensaje",
     "submit": "Enviar mensaje",
-    "success": "Gracias — te responderemos por correo.",
     "privacyNote": "Solo usamos estos datos para responderte.",
     "errors": {
       "nameMin": "Introduce tu nombre (al menos 2 caracteres).",
       "email": "Introduce un correo electrónico válido.",
       "subjectMin": "Introduce un asunto (al menos 3 caracteres).",
       "messageMin": "Introduce un mensaje (al menos 10 caracteres)."
-    }
+    },
+    "eyebrow": "Soporte",
+    "namePlaceholder": "María García",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "subjectPlaceholder": "¿En qué podemos ayudarte?",
+    "messagePlaceholder": "Cuéntanos qué necesitas…",
+    "supportSubjectDefault": "Solicitud de soporte",
+    "submitting": "Enviando…",
+    "submittedTitle": "Mensaje enviado",
+    "submittedDescription": "Gracias por escribirnos. Responderemos a tu email lo antes posible.",
+    "sendAnother": "Enviar otro mensaje",
+    "backHome": "Volver al inicio",
+    "whatsappTitle": "¿Prefieres WhatsApp?",
+    "whatsappDescription": "Habla directamente con el equipo de Benwer Cars."
   },
   "legal": {
     "privacy": {
@@ -1348,5 +1360,12 @@
       "mint": "Menta",
       "cream": "Crema"
     }
+  },
+  "support": {
+    "fabLabel": "Soporte",
+    "fabCloseLabel": "Cerrar menú de soporte",
+    "messageAction": "Mensaje directo",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Hola, tengo una pregunta sobre Benwer Cars."
   }
 }

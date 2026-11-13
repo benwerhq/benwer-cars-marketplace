@@ -48,6 +48,10 @@
       "min_days": "Estas fechas son demasiado cortas para la temporada. Elige un alquiler más largo.",
       "max_days": "Estas fechas son demasiado largas para la temporada. Elige un alquiler más corto.",
       "rental_too_long": "Este alquiler es demasiado largo para reservarlo online. Contacta con la empresa."
+    },
+    "contact": {
+      "not_configured": "El correo de contacto aún no está configurado. Inténtalo más tarde.",
+      "delivery_failed": "No hemos podido enviar tu mensaje ahora mismo. Inténtalo más tarde."
     }
   },
   "nav": {

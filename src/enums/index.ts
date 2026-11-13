@@ -207,6 +207,7 @@ export enum NavRoutes {
 }
 
 export enum SearchParams {
+  TOPIC = "topic",
   LOCATION = "location",
   FROM = "from",
   TO = "to",
@@ -270,9 +271,15 @@ export enum SiteEditSection {
   DOMAIN = "domain",
 }
 
+export enum ContactTopic {
+  SUPPORT = "support",
+}
+
 export enum ErrorMessages {
   UNKNOWN = "errors.unknown",
   NETWORK = "errors.network",
+  CONTACT_NOT_CONFIGURED = "errors.contact.not_configured",
+  CONTACT_DELIVERY_FAILED = "errors.contact.delivery_failed",
   VEHICLE_NOT_FOUND = "errors.vehicle.not_found",
   COMPANY_NOT_FOUND = "errors.company.not_found",
   RESERVATION_OVERLAP = "errors.reservation.overlap",

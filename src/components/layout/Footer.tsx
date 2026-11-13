@@ -2,7 +2,9 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { getTranslations } from "next-intl/server";
+import { SupportFab } from "@/components/features/SupportFab";
 import { NavRoutes } from "@/enums";
+import { whatsappSupportHref } from "@/lib/whatsappSupport";
 import { BrandLogo } from "./BrandLogo";
 import { CookieSettingsLink } from "./CookieSettingsLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -14,6 +16,10 @@ export async function Footer() {
   const tFooter = await getTranslations("footer");
   const tBrand = await getTranslations("brand");
   const tNav = await getTranslations("nav");
+  const tSupport = await getTranslations("support");
+  const whatsapp = isTenant
+    ? null
+    : whatsappSupportHref(tSupport("whatsappMessage"));
 
   return (
     <footer className="mt-auto w-full border-t border-border bg-background">
@@ -49,6 +55,16 @@ export async function Footer() {
           </FooterGroup>
           <FooterGroup label={tNav("contact")}>
             <FooterLink href={NavRoutes.CONTACT}>{tNav("contact")}</FooterLink>
+            {whatsapp ? (
+              <a
+                href={whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={siteFooterLinkClass}
+              >
+                {tSupport("whatsappAction")}
+              </a>
+            ) : null}
           </FooterGroup>
           <FooterGroup label={tFooter("legal")}>
             <FooterLink href={NavRoutes.PRIVACY}>{tNav("privacy")}</FooterLink>
@@ -66,6 +82,7 @@ export async function Footer() {
           <LocaleSwitcher />
         </div>
       </div>
+      {isTenant ? null : <SupportFab whatsappHref={whatsapp} />}
     </footer>
   );
 }
