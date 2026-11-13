@@ -21,7 +21,7 @@ import { getErrorKey } from "@/lib/errors";
 import { publicHomeFromHome, siteIntroAddress } from "@/lib/site";
 import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { localizedText } from "@/lib/localizedCopy";
-import { siteFontStack, siteHeaderLogo } from "@/lib/siteContent";
+import { siteFontStack, siteHeaderLogos } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import {
   applyWebsiteDraft,
@@ -95,7 +95,7 @@ export function OwnerHomeRoot({
   const draftLogo = useSiteDraftLogo();
   const setHeaderLogo = draftLogo?.setHeaderLogo;
   const headerLogo = canEdit
-    ? siteHeaderLogo(liveSite.content, site.company.branding.logoUrl)
+    ? siteHeaderLogos(liveSite.content, site.company.branding)
     : undefined;
   const copy = {
     headline:

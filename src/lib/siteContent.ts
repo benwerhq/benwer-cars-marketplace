@@ -1,3 +1,4 @@
+import type { LogoPair } from "@/types/company";
 import {
   SiteBannerPreset,
   SiteBannerTarget,
@@ -363,7 +364,15 @@ function parseLogos(value: unknown): SiteLogos {
     headerUrl: readString(logos.headerUrl) || null,
     companyAssetId: readString(logos.companyAssetId) || null,
     companyUrl: readString(logos.companyUrl) || null,
+    headerDarkAssetId: readString(logos.headerDarkAssetId) || null,
+    headerDarkUrl: readString(logos.headerDarkUrl) || null,
+    companyDarkAssetId: readString(logos.companyDarkAssetId) || null,
+    companyDarkUrl: readString(logos.companyDarkUrl) || null,
   };
+}
+
+function hasDarkLogoFields(value: unknown): boolean {
+  return isRecord(value) && ("headerDarkAssetId" in value || "headerDarkUrl" in value);
 }
 
 function parseLegal(value: unknown): SiteLegalContent {
@@ -401,6 +410,7 @@ export function parseSiteContent(appearanceRaw: unknown, reviewsRaw: unknown): S
     pageBackground: readColor(raw.pageBackground, DEFAULT_PAGE_BACKGROUND),
     legal: parseLegal(raw.legal),
     supportsSiteBranding: typeof raw.pageBackground === "string",
+    supportsDarkLogos: hasDarkLogoFields(raw.logos),
     raw,
   };
 }
@@ -482,6 +492,12 @@ export function serializeAppearance(content: SiteContent): Record<string, unknow
           logos: {
             headerAssetId: content.logos.headerAssetId,
             companyAssetId: content.logos.companyAssetId,
+            ...(content.supportsDarkLogos
+              ? {
+                  headerDarkAssetId: content.logos.headerDarkAssetId,
+                  companyDarkAssetId: content.logos.companyDarkAssetId,
+                }
+              : {}),
           },
           pageBackground: isHexColor(content.pageBackground)
             ? content.pageBackground
@@ -492,12 +508,23 @@ export function serializeAppearance(content: SiteContent): Record<string, unknow
   };
 }
 
-export function siteHeaderLogo(content: SiteContent, companyLogo: string | null): string | null {
-  return content.logos.headerUrl || companyLogo;
+function siteLogoPair(
+  light: string | null,
+  dark: string | null,
+  company: LogoPair,
+): Required<LogoPair> {
+  if (light) {
+    return { logoUrl: light, logoDarkUrl: dark };
+  }
+  return { logoUrl: company.logoUrl, logoDarkUrl: dark || company.logoDarkUrl || null };
 }
 
-export function siteCompanyLogo(content: SiteContent, companyLogo: string | null): string | null {
-  return content.logos.companyUrl || companyLogo;
+export function siteHeaderLogos(content: SiteContent, company: LogoPair): Required<LogoPair> {
+  return siteLogoPair(content.logos.headerUrl, content.logos.headerDarkUrl, company);
+}
+
+export function siteCompanyLogos(content: SiteContent, company: LogoPair): Required<LogoPair> {
+  return siteLogoPair(content.logos.companyUrl, content.logos.companyDarkUrl, company);
 }
 
 export interface SiteContentFacts {

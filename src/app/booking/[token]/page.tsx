@@ -46,11 +46,13 @@ async function BookingStatusPage({ params }: Props) {
 
   let companyName = tenantSlug ?? "";
   let logoUrl: string | null = null;
+  let logoDarkUrl: string | null = null;
   if (tenantSlug) {
     try {
       const company = await companiesApi.getBySlug(tenantSlug);
       companyName = company.name;
       logoUrl = company.branding.logoUrl;
+      logoDarkUrl = company.branding.logoDarkUrl ?? null;
     } catch {
       companyName = tenantSlug;
     }
@@ -59,7 +61,11 @@ async function BookingStatusPage({ params }: Props) {
   return (
     <>
       {isTenant ? (
-        <TenantHeader companyName={companyName} logoUrl={logoUrl} />
+        <TenantHeader
+          companyName={companyName}
+          logoUrl={logoUrl}
+          logoDarkUrl={logoDarkUrl}
+        />
       ) : (
         <MarketplaceHeader />
       )}

@@ -118,6 +118,7 @@ async function TenantCarDetailPage({ params, searchParams }: Props) {
       <TenantHeader
         companyName={company?.name ?? companySlug}
         logoUrl={company?.branding.logoUrl}
+        logoDarkUrl={company?.branding.logoDarkUrl}
       />
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 pb-28 md:px-6 lg:px-8 lg:pb-16">
         <HydrationBoundary state={dehydratedState}>

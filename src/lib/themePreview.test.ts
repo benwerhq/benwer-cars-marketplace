@@ -45,13 +45,13 @@ describe("themePreviewVariables", () => {
   it("uses the preset hover colour for a preset", () => {
     const vars = themePreviewVariables({ primary: "#1d4ed8", background: null });
     expect(vars["--primary-hover"]).toBe("#1e40af");
-    expect(vars["--background"]).toBeUndefined();
+    expect(vars["--preview-page-background"]).toBeUndefined();
   });
 
   it("derives hover and ring for a custom colour and sets the background", () => {
     const vars = themePreviewVariables({ primary: "#123456", background: "#fafaf9" });
     expect(vars["--primary-hover"]).toContain("#123456");
     expect(vars["--ring"]).toBe("#123456");
-    expect(vars["--background"]).toBe("#fafaf9");
+    expect(vars["--preview-page-background"]).toBe("#fafaf9");
   });
 });

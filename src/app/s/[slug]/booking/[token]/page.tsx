@@ -1,3 +1,4 @@
+import type { LogoPair } from "@/types/company";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -7,7 +8,7 @@ import { ReservationStatus } from "@/components/features/ReservationStatus";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
 import { isTenantHostRequest, publicSiteHomeHref } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
-import { siteHeaderLogo } from "@/lib/siteContent";
+import { siteHeaderLogos } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string; token: string }>;
@@ -37,11 +38,11 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
   const preview = previewFromQuery(query);
 
   let companyName = slug;
-  let logoUrl: string | null = null;
+  let logos: LogoPair = { logoUrl: null, logoDarkUrl: null };
   try {
     const site = await loadPublicSite(slug, preview);
     companyName = site.company.name;
-    logoUrl = siteHeaderLogo(site.content, site.company.branding.logoUrl);
+    logos = siteHeaderLogos(site.content, site.company.branding);
   } catch {
     companyName = slug;
   }
@@ -56,7 +57,7 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
     <>
       <SiteHeader
         companyName={companyName}
-        logoUrl={logoUrl}
+        {...logos}
         homeHref={homeHref}
         cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}

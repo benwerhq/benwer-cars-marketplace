@@ -146,6 +146,7 @@ async function BookPage({ searchParams }: Props) {
       isTenant={isTenant}
       companyName={company?.name ?? companySlug}
       logoUrl={company?.branding.logoUrl}
+      logoDarkUrl={company?.branding.logoDarkUrl}
     >
       <BookingView
         vehicle={vehicle}
@@ -165,16 +166,22 @@ function BookingChrome({
   isTenant,
   companyName,
   logoUrl,
+  logoDarkUrl,
 }: {
   children: ReactNode;
   isTenant: boolean;
   companyName?: string;
   logoUrl?: string | null;
+  logoDarkUrl?: string | null;
 }) {
   return (
     <>
       {isTenant ? (
-        <TenantHeader companyName={companyName ?? ""} logoUrl={logoUrl} />
+        <TenantHeader
+          companyName={companyName ?? ""}
+          logoUrl={logoUrl}
+          logoDarkUrl={logoDarkUrl}
+        />
       ) : (
         <MarketplaceHeader />
       )}

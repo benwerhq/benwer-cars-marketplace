@@ -1216,7 +1216,14 @@
       "backgroundPresets": "Suggested backgrounds",
       "backgroundCustom": "Custom background",
       "backgroundPicker": "Pick a background colour",
-      "needsApi": "Available once the Benwer API update for websites is live."
+      "needsApi": "Available once the Benwer API update for websites is live.",
+      "headerLogoDark": "Top bar logo — dark mode",
+      "companyLogoDark": "Company section logo — dark mode",
+      "darkLogoHint": "Optional. Shown when visitors use dark mode. Use a light or white version of your logo.",
+      "customDarkLogo": "Custom logo for dark mode",
+      "usingLightOnPlate": "Using your normal logo on a light background",
+      "removeDarkLogo": "Remove dark logo",
+      "darkNeedsApi": "Dark mode logos are available once the Benwer API update for them is live."
     },
     "legal": {
       "hint": "Each page starts with the standard text, so you can change just the parts you need. Add a section for each subtitle. “Back to standard text” undoes your changes.",

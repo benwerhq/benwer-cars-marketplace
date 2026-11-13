@@ -377,6 +377,8 @@ export function mapCompany(raw: unknown): Company {
         readPhotoUrl(row.logoUrl) ??
         readPhotoUrl(row.logo) ??
         null,
+      logoDarkUrl:
+        readPhotoUrl(branding.logoDarkUrl) ?? readPhotoUrl(row.logoDarkUrl) ?? null,
     },
     branches: mapCompanyBranches(row.branches),
     allowDifferentReturn: readBoolean(row.allowDifferentReturn) ?? false,

@@ -81,7 +81,10 @@ centroids when lat/lng are omitted. The live API is the only catalogue source;
 GET  /v1/public/companies/{slug}
 ```
 
-Response: `Company & { branding: { primaryColor, logoUrl } }`
+Response: `Company & { branding: { primaryColor, logoUrl, logoDarkUrl? } }`
+
+`logoDarkUrl` (API change required, optional) is a light/white version of the logo
+shown in dark mode. Without it the marketplace shows `logoUrl` on a light plate.
 
 Returns the company profile + branding for layout injection. Used by both subdomain
 and global marketplace modes. Returns `404` for unknown slug or `isPublic = false`
@@ -283,7 +286,10 @@ localised script/highlight/joiner/boxed/description/CTA text, CTA target),
 `bannerTheme` (nine `#RRGGBB` colours), `included` (≤ 6), `app` (https store links),
 `contact` (WhatsApp, reply hours, payment methods), `logos` (`headerAssetId`,
 `companyAssetId`: optional `website_hero` uploads that replace the company logo on the
-site only; views add `headerUrl`/`companyUrl`), `pageBackground` (`#RRGGBB`, default
+site only; views add `headerUrl`/`companyUrl`; **API change required:** optional
+`headerDarkAssetId`/`companyDarkAssetId` for dark-mode versions, with views adding
+`headerDarkUrl`/`companyDarkUrl` — the editor only offers and sends them once the
+API returns `headerDarkAssetId` in `logos`), `pageBackground` (`#RRGGBB`, default
 white) and `legal` (localised plain-text `privacy` and `terms`). The editor sends
 `logos`, `pageBackground` and `legal` only when the API returned them, so it keeps
 saving against an API without them. Fields the API does not

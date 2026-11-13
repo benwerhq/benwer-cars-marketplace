@@ -179,7 +179,6 @@ export enum StorageKeys {
 export enum ColorScheme {
   LIGHT = "light",
   DARK = "dark",
-  SYSTEM = "system",
 }
 
 export enum NavRoutes {

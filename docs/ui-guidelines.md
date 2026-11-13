@@ -42,13 +42,18 @@ is identical.
 
 Never hardcode a color. Components never branch on theme in JS.
 
-**Colour scheme.** `ColorSchemeSwitcher` (light / dark / system) sits in every
-header — marketplace, tenant subdomain and company site (custom domain). The
-choice lives in the `benwer-color-scheme` cookie; the root layout adds `.dark`
-server-side, and for `system` a tiny pre-paint script checks
-`prefers-color-scheme`. Default is light. Company sites pass their colours as
-`--site-primary` / `--site-page-background` (with `data-brand` / `.site-canvas`)
-so dark mode can replace the page background and lighten the brand colour.
+**Colour scheme.** `ColorSchemeSwitcher` (one sun/moon button) sits in every
+header — marketplace, tenant subdomain and company site (custom domain). Until a
+visitor clicks it the site follows the device (`prefers-color-scheme`, checked by a
+tiny pre-paint script). A click stores `light` or `dark` in the `benwer-color-scheme`
+cookie and the root layout then adds `.dark` server-side. Company sites pass their
+colours as `--site-primary` / `--site-page-background` (with `data-brand` /
+`.site-canvas`), and the preview picker uses `--preview-page-background`, so dark
+mode can replace the page background and lighten the brand colour. Never set
+`--background` inline.
+
+**Logos in dark mode.** `CompanyMark` shows `logoDarkUrl` in dark mode when there is
+one; otherwise it puts the normal logo on a light `bg-logo-plate`.
 
 ---
 

@@ -21,8 +21,8 @@ import {
   parseSiteContent,
   serializeAppearance,
   siteAppLinks,
-  siteCompanyLogo,
-  siteHeaderLogo,
+  siteCompanyLogos,
+  siteHeaderLogos,
   visibleSections,
   whatsappHref,
 } from "./siteContent";
@@ -219,6 +219,7 @@ describe("site logos, background and legal text", () => {
       legal: { privacy: { "en-GB": "We keep your data safe." }, terms: {} },
     });
     expect(serializeAppearance(content).logos).not.toHaveProperty("headerUrl");
+    expect(serializeAppearance(content).logos).not.toHaveProperty("headerDarkAssetId");
   });
 
   it("defaults both logos to the company logo", () => {
@@ -226,8 +227,35 @@ describe("site logos, background and legal text", () => {
       { ...legacyAppearance, pageBackground: "#ffffff", logos: { headerUrl: "/h.png" } },
       undefined,
     );
-    expect(siteHeaderLogo(content, "/company.png")).toBe("/h.png");
-    expect(siteCompanyLogo(content, "/company.png")).toBe("/company.png");
+    const company = { logoUrl: "/company.png", logoDarkUrl: "/company-dark.png" };
+    expect(siteHeaderLogos(content, company)).toEqual({ logoUrl: "/h.png", logoDarkUrl: null });
+    expect(siteCompanyLogos(content, company)).toEqual(company);
+    expect(content.supportsDarkLogos).toBe(false);
+  });
+
+  it("uses and saves dark logos once the API returns them", () => {
+    const content = parseSiteContent(
+      {
+        ...legacyAppearance,
+        pageBackground: "#ffffff",
+        logos: {
+          headerUrl: "/h.png",
+          headerDarkAssetId: "dark-1",
+          headerDarkUrl: "/h-dark.png",
+          companyDarkAssetId: null,
+        },
+      },
+      undefined,
+    );
+    expect(content.supportsDarkLogos).toBe(true);
+    expect(siteHeaderLogos(content, { logoUrl: "/c.png" })).toEqual({
+      logoUrl: "/h.png",
+      logoDarkUrl: "/h-dark.png",
+    });
+    expect(serializeAppearance(content).logos).toMatchObject({
+      headerDarkAssetId: "dark-1",
+      companyDarkAssetId: null,
+    });
   });
 });
 

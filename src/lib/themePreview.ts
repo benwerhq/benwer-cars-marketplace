@@ -21,7 +21,8 @@ export const THEME_PREVIEW_VARIABLES = [
   "--accent-hover",
   "--accent-soft",
   "--surface-hover",
-  "--background",
+  "--primary-foreground",
+  "--preview-page-background",
 ] as const;
 
 const SHORT_HEX = /^#?([0-9a-f])([0-9a-f])([0-9a-f])$/i;
@@ -88,10 +89,11 @@ export function themePreviewVariables(
     variables["--accent"] = ring;
     variables["--accent-hover"] = primary;
     variables["--accent-soft"] = `color-mix(in oklab, ${primary} 10%, transparent)`;
-    variables["--surface-hover"] = `color-mix(in oklab, ${primary} 6%, white)`;
+    variables["--surface-hover"] = `color-mix(in oklab, ${primary} 6%, var(--surface))`;
+    variables["--primary-foreground"] = "#ffffff";
   }
   if (choice.background) {
-    variables["--background"] = choice.background;
+    variables["--preview-page-background"] = choice.background;
   }
   return variables;
 }

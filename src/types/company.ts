@@ -1,7 +1,10 @@
 export interface CompanyBranding {
   primaryColor: string;
   logoUrl: string | null;
+  logoDarkUrl?: string | null;
 }
+
+export type LogoPair = Pick<CompanyBranding, "logoUrl" | "logoDarkUrl">;
 
 export interface CompanyBranch {
   id: string;

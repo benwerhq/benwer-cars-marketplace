@@ -12,6 +12,7 @@ import type { SiteSectionId } from "@/enums";
 interface SiteHeaderProps {
   companyName: string;
   logoUrl?: string | null;
+  logoDarkUrl?: string | null;
   homeHref: string;
   fleetHref: string;
   sections?: SiteSectionId[];
@@ -24,6 +25,7 @@ interface SiteHeaderProps {
 export async function SiteHeader({
   companyName,
   logoUrl,
+  logoDarkUrl,
   homeHref,
   fleetHref,
   sections,
@@ -39,7 +41,11 @@ export async function SiteHeader({
       className={className}
       brand={
         <>
-          <SiteHeaderMark companyName={companyName} logoUrl={logoUrl ?? null} />
+          <SiteHeaderMark
+            companyName={companyName}
+            logoUrl={logoUrl ?? null}
+            logoDarkUrl={logoDarkUrl ?? null}
+          />
           <span className="sr-only">{t("logoAlt", { name: companyName })}</span>
         </>
       }

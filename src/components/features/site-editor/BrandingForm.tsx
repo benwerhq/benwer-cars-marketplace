@@ -15,7 +15,7 @@ import type { SiteContent, SiteLogos } from "@/types/siteContent";
 import { EditorField, EditorGroup } from "./EditorPrimitives";
 
 
-type LogoSlot = "header" | "company";
+type LogoSlot = "header" | "company" | "headerDark" | "companyDark";
 
 interface BrandingFormProps {
   content: SiteContent;
@@ -42,6 +42,9 @@ export function BrandingForm({
     <>
       <EditorGroup title={t("logosTitle")} description={t("logosDescription")}>
         {supported ? null : <p className="text-xs text-warning">{t("needsApi")}</p>}
+        {supported && !content.supportsDarkLogos ? (
+          <p className="text-xs text-warning">{t("darkNeedsApi")}</p>
+        ) : null}
         <LogoPicker
           slot="header"
           label={t("headerLogo")}
@@ -54,6 +57,19 @@ export function BrandingForm({
           onPick={(id, url) => setLogos({ ...content.logos, headerAssetId: id, headerUrl: url })}
         />
         <LogoPicker
+          slot="headerDark"
+          label={t("headerLogoDark")}
+          hint={t("darkLogoHint")}
+          url={content.logos.headerDarkUrl}
+          companyId={companyId}
+          companyName={companyName}
+          companyLogo={content.logos.headerUrl || companyLogo}
+          disabled={!supported || !content.supportsDarkLogos}
+          onPick={(id, url) =>
+            setLogos({ ...content.logos, headerDarkAssetId: id, headerDarkUrl: url })
+          }
+        />
+        <LogoPicker
           slot="company"
           label={t("companyLogo")}
           hint={t("companyLogoHint")}
@@ -63,6 +79,19 @@ export function BrandingForm({
           companyLogo={companyLogo}
           disabled={!supported}
           onPick={(id, url) => setLogos({ ...content.logos, companyAssetId: id, companyUrl: url })}
+        />
+        <LogoPicker
+          slot="companyDark"
+          label={t("companyLogoDark")}
+          hint={t("darkLogoHint")}
+          url={content.logos.companyDarkUrl}
+          companyId={companyId}
+          companyName={companyName}
+          companyLogo={content.logos.companyUrl || companyLogo}
+          disabled={!supported || !content.supportsDarkLogos}
+          onPick={(id, url) =>
+            setLogos({ ...content.logos, companyDarkAssetId: id, companyDarkUrl: url })
+          }
         />
       </EditorGroup>
       <EditorGroup title={t("backgroundTitle")} description={t("backgroundDescription")}>
@@ -142,6 +171,7 @@ function LogoPicker({
   const upload = useUploadWebsiteImage(companyId);
   const [tooLarge, setTooLarge] = useState(false);
   const custom = Boolean(url);
+  const dark = slot === "headerDark" || slot === "companyDark";
   const inputId = `site-logo-${slot}`;
 
   async function onFile(file: File | undefined) {
@@ -164,14 +194,29 @@ function LogoPicker({
         <div className="min-w-0">
           <p className="text-xs font-medium text-foreground">{label}</p>
           <p className="text-xs text-muted-foreground">
-            {custom ? t("customLogo") : t("usingCompanyLogo")}
+            {dark
+              ? custom
+                ? t("customDarkLogo")
+                : t("usingLightOnPlate")
+              : custom
+                ? t("customLogo")
+                : t("usingCompanyLogo")}
           </p>
         </div>
-        <div className="flex h-12 max-w-[11rem] shrink-0 items-center justify-end rounded-md bg-surface-muted px-2">
+        <div
+          className={cn(
+            "flex h-12 max-w-[11rem] shrink-0 items-center justify-end rounded-md bg-surface-muted px-2",
+            dark && "dark",
+          )}
+        >
           <CompanyMark
             company={{
               name: companyName,
-              branding: { primaryColor: "", logoUrl: url || companyLogo },
+              branding: {
+                primaryColor: "",
+                logoUrl: dark ? companyLogo : url || companyLogo,
+                logoDarkUrl: dark ? url : null,
+              },
             }}
             size="sm"
             className="h-8"
@@ -212,7 +257,7 @@ function LogoPicker({
             onClick={() => onPick(null, null)}
           >
             <RotateCcw size={14} aria-hidden />
-            {t("useCompanyLogo")}
+            {dark ? t("removeDarkLogo") : t("useCompanyLogo")}
           </Button>
         ) : null}
       </div>

@@ -27,7 +27,7 @@ import {
   siteBookingBasePath,
 } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
-import { siteHeaderLogo } from "@/lib/siteContent";
+import { siteHeaderLogos } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -105,7 +105,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       <>
         <SiteHeader
           companyName={site.company.name}
-          logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
+          {...siteHeaderLogos(site.content, site.company.branding)}
           homeHref={homeHref}
           cartSlug={slug}
           fleetHref={`${homeHref}#fleet`}
@@ -128,7 +128,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       <>
         <SiteHeader
           companyName={site.company.name}
-          logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
+          {...siteHeaderLogos(site.content, site.company.branding)}
           homeHref={homeHref}
           cartSlug={slug}
           fleetHref={`${homeHref}#fleet`}
@@ -149,7 +149,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       <>
         <SiteHeader
           companyName={site.company.name}
-          logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
+          {...siteHeaderLogos(site.content, site.company.branding)}
           homeHref={homeHref}
           cartSlug={slug}
           fleetHref={`${homeHref}#fleet`}
@@ -189,7 +189,7 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
     <>
       <SiteHeader
         companyName={site.company.name}
-        logoUrl={siteHeaderLogo(site.content, site.company.branding.logoUrl)}
+        {...siteHeaderLogos(site.content, site.company.branding)}
         homeHref={homeHref}
         cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}

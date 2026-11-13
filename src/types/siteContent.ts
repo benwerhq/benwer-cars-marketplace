@@ -89,6 +89,10 @@ export interface SiteLogos {
   headerUrl: string | null;
   companyAssetId: string | null;
   companyUrl: string | null;
+  headerDarkAssetId: string | null;
+  headerDarkUrl: string | null;
+  companyDarkAssetId: string | null;
+  companyDarkUrl: string | null;
 }
 
 export interface SiteLegalContent {
@@ -113,5 +117,6 @@ export interface SiteContent {
   pageBackground: string;
   legal: SiteLegalContent;
   supportsSiteBranding: boolean;
+  supportsDarkLogos: boolean;
   raw: Record<string, unknown>;
 }

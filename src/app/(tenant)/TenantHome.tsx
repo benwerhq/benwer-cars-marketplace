@@ -134,6 +134,7 @@ export async function TenantHome() {
       <TenantHeader
         companyName={company.name}
         logoUrl={company.branding.logoUrl}
+        logoDarkUrl={company.branding.logoDarkUrl}
       />
       <CompanyBanner
         name={company.name}

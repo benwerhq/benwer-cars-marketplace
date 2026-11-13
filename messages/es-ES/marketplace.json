@@ -1216,7 +1216,14 @@
       "backgroundPresets": "Fondos sugeridos",
       "backgroundCustom": "Fondo personalizado",
       "backgroundPicker": "Elige un color de fondo",
-      "needsApi": "Disponible cuando esté activa la actualización de la API de Benwer para webs."
+      "needsApi": "Disponible cuando esté activa la actualización de la API de Benwer para webs.",
+      "headerLogoDark": "Logo de la barra superior — modo oscuro",
+      "companyLogoDark": "Logo de la sección de empresa — modo oscuro",
+      "darkLogoHint": "Opcional. Se muestra cuando los visitantes usan el modo oscuro. Usa una versión clara o blanca de tu logo.",
+      "customDarkLogo": "Logo personalizado para el modo oscuro",
+      "usingLightOnPlate": "Se usa tu logo normal sobre un fondo claro",
+      "removeDarkLogo": "Quitar logo oscuro",
+      "darkNeedsApi": "Los logos para el modo oscuro estarán disponibles cuando la actualización de la API de Benwer esté activa."
     },
     "legal": {
       "hint": "Cada página empieza con el texto estándar, así puedes cambiar solo lo que necesites. Añade una sección por cada subtítulo. «Volver al texto estándar» deshace tus cambios.",

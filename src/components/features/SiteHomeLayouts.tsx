@@ -18,7 +18,7 @@ import {
   hasSiteAppLinks,
   visibleSections,
   whatsappHref,
-  siteCompanyLogo,
+  siteCompanyLogos,
 } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { PublicSite } from "@/types/site";
@@ -215,7 +215,7 @@ function CompanyHeader({ site, copy }: { site: PublicSite; copy: SiteHomeCopy })
     ...site.company,
     branding: {
       ...site.company.branding,
-      logoUrl: siteCompanyLogo(site.content, site.company.branding.logoUrl),
+      ...siteCompanyLogos(site.content, site.company.branding),
     },
   };
   const withLogo = hasCompanyLogo(company);

@@ -6,16 +6,17 @@ import { useSiteDraftLogo } from "@/context/SiteDraftLogoProvider";
 interface SiteHeaderMarkProps {
   companyName: string;
   logoUrl: string | null;
+  logoDarkUrl?: string | null;
 }
 
-export function SiteHeaderMark({ companyName, logoUrl }: SiteHeaderMarkProps) {
+export function SiteHeaderMark({ companyName, logoUrl, logoDarkUrl }: SiteHeaderMarkProps) {
   const draft = useSiteDraftLogo();
-  const src = draft?.headerLogo === undefined ? logoUrl : draft.headerLogo;
+  const logos = draft?.headerLogo ?? { logoUrl, logoDarkUrl };
 
   return (
     <>
       <CompanyMark
-        company={{ name: companyName, branding: { primaryColor: "", logoUrl: src } }}
+        company={{ name: companyName, branding: { primaryColor: "", ...logos } }}
         size="sm"
         className="h-9 w-9 rounded-lg"
       />

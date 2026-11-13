@@ -9,12 +9,14 @@ import { TenantNav } from "./TenantNav";
 interface TenantHeaderProps {
   companyName: string;
   logoUrl?: string | null;
+  logoDarkUrl?: string | null;
   className?: string;
 }
 
 export async function TenantHeader({
   companyName,
   logoUrl,
+  logoDarkUrl,
   className,
 }: TenantHeaderProps) {
   const t = await getTranslations("tenant");
@@ -28,7 +30,11 @@ export async function TenantHeader({
           <CompanyMark
             company={{
               name: companyName,
-              branding: { primaryColor: "", logoUrl: logoUrl ?? null },
+              branding: {
+                primaryColor: "",
+                logoUrl: logoUrl ?? null,
+                logoDarkUrl: logoDarkUrl ?? null,
+              },
             }}
             size="sm"
             className="h-9 w-9 rounded-lg"

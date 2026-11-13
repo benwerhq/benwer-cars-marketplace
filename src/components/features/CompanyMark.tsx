@@ -36,20 +36,44 @@ export function CompanyMark({
   const logoSrc = company.branding.logoUrl
     ? toPublicMediaSrc(company.branding.logoUrl)
     : null;
+  const darkSrc = company.branding.logoDarkUrl
+    ? toPublicMediaSrc(company.branding.logoDarkUrl)
+    : null;
+  const imageClass = cn(
+    "max-w-[11rem] shrink-0 object-contain object-left",
+    LOGO_HEIGHT[size],
+    className,
+    "w-auto rounded-none border-0 bg-transparent p-0",
+  );
 
   if (logoSrc && failedSrc !== logoSrc) {
+    if (darkSrc && failedSrc !== darkSrc) {
+      return (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer */}
+          <img
+            src={logoSrc}
+            alt=""
+            onError={() => setFailedSrc(logoSrc)}
+            className={cn(imageClass, "block dark:hidden")}
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer */}
+          <img
+            src={darkSrc}
+            alt=""
+            onError={() => setFailedSrc(darkSrc)}
+            className={cn(imageClass, "hidden dark:block")}
+          />
+        </>
+      );
+    }
     return (
       // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
       <img
         src={logoSrc}
         alt=""
         onError={() => setFailedSrc(logoSrc)}
-        className={cn(
-          "block max-w-[11rem] shrink-0 object-contain object-left",
-          LOGO_HEIGHT[size],
-          className,
-          "w-auto rounded-none border-0 bg-transparent p-0",
-        )}
+        className={cn(imageClass, "block dark:rounded-md dark:bg-logo-plate dark:px-1.5 dark:py-1")}
       />
     );
   }

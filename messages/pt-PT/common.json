@@ -81,10 +81,8 @@
     "logoAlt": "Benwer Cars"
   },
   "colorScheme": {
-    "label": "Aparência",
-    "light": "Claro",
-    "dark": "Escuro",
-    "system": "Sistema"
+    "toDark": "Mudar para modo escuro",
+    "toLight": "Mudar para modo claro"
   },
   "locale": {
     "label": "Idioma",
