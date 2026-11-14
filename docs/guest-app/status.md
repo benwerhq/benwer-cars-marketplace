@@ -8,7 +8,7 @@ States: `todo` · `running` · `blocked` · `done`.
 | 0 Accounts and repo | — (Rafael) | running | — | Repo `benwerhq/benwer-cars-guest-mobile` exists (empty when phase 2 pushed). Still open: Firebase Android/iOS apps, Sentry project, Play staging app, EAS project, Apple account |
 | 1 API foundations | benwer-cars-api | done | phase 1 agent | [#404](https://github.com/benwerhq/benwer-cars-api/pull/404) guest endpoints + deletion, [#405](https://github.com/benwerhq/benwer-cars-api/pull/405) guest push, [#406](https://github.com/benwerhq/benwer-cars-api/pull/406) app channel + OpenAPI + seed. Contract: `openapi/public-v1.json` in benwer-cars-api (staging). See phase 1 notes |
 | 2 App scaffold and core | benwer-cars-guest-mobile | done | phase 2 agent | Pushed as the first `staging` of [benwer-cars-guest-mobile](https://github.com/benwerhq/benwer-cars-guest-mobile/tree/staging) (`91e46fc`, no PR: the repo was empty). Bundle backup: `/home/user/benwer-cars-guest-mobile.bundle` (session only). See phase 2 notes |
-| 3 Native booking | benwer-cars-guest-mobile | todo | | |
+| 3 Native booking | benwer-cars-guest-mobile | done | phase 3 agent | [#7](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/7) native booking + PaymentSheet + confirmation (merged into `staging`, `d7ef211`). No API changes needed. See phase 3 notes |
 | 4 Company mode and links | guest app, marketplace, admin-web, admin-mobile | todo | | |
 | 5 Website parity sweep | guest app | todo | | |
 | 6 Staging hardening | all | todo | | needs test approval |
@@ -45,6 +45,17 @@ Platforms (Rafael, 2026-11-14): **Android only for now.** No iOS builds, no Appl
 - Tests written, not run: unit tests in `src/**/*.test.ts`, Playwright on Expo web in `e2e/` (`stack.sh` runs `db:seed:guest-app` and seeds the emulator guest). CI (`ubuntu-latest`) runs audit, typecheck, lint and i18n; unit and e2e jobs only run when the repo variable `TESTS_APPROVED=true`.
 - Checked locally: `tsc --noEmit` clean, `expo export` for web and Android bundles, i18n parity and strict scripts pass. First CI run on `staging` (`91e46fc`, ubuntu-latest) passed audit, typecheck, lint and i18n; unit and e2e were skipped by design.
 - Placeholders: icons/splash are the admin assets; `app.json` has no EAS `projectId` yet; Sentry DSN and Mixpanel token are not in `eas.json` (set them as EAS env vars).
+
+## Phase 3 notes (for phase 4 and 5)
+
+- Flow: car detail "Book" → `/explore/book/{slug}/{id}?from&to&channel` (`components/booking/BookingForm.tsx`, rules `lib/booking.ts`, service `services/api/checkout.ts`, hooks `hooks/useBooking.ts`) → `POST /companies/{slug}/reservations` with guest bearer + `client: "app"` → `/explore/booked/{token}` (confirmation header on `TripDetailView`, PaymentSheet opens once with `?pay=1` when payable) → "View in my trips" (`/trips/{id}`), or "save" on the token page when the booking email is not the signed-in verified email.
+- Endpoints used: `availability`, `POST quotes` (car, extras, one-way fee, fees, `grandTotal`, `blocked`), `insurance-packages` (default preselected, added on top of `grandTotal`), `extras`, `companies/{slug}/guest/me` (prefill). The public API already had everything; no API PR.
+- Channel: `marketplace` by default. **Phase 4 company mode** should open the same screen with `bookRoute(slug, id, { channel: "website" })`, which also asks for the rental terms (`acceptTerms`). Dates can be passed as `from`/`to`.
+- Signed-out booking is allowed (like the website); the screen offers sign-in with `returnTo`.
+- Web handoff only as a fallback: unknown/5xx create errors → company car page; PaymentSheet failure → marketplace `/booking/{token}`.
+- Added from admin mobile: `DateField`, `TimeField`, `PhoneInput` (+ `libphonenumber-js`, `countries` i18n namespace), `Checkbox`, `@react-native-community/datetimepicker` plugin. No iOS-only work (Android-only decision).
+- **Phase 5 gap:** the multi-car company cart (`/s/[slug]/cart`) is not in the app; the booking draft is not persisted across app restarts (marketplace keeps it in localStorage).
+- Tests written, not run: `src/lib/booking.test.ts`, `src/services/api/checkout.test.ts`, route tests, copied field tests, `e2e/specs/booking.spec.ts`; Maestro list in `e2e/journeys.md` covers pickers and PaymentSheet (Stripe test card). Checked locally: `tsc`, `expo export` android + web, `check:i18n:strict`. PR CI (audit, lint + typecheck) green.
 
 ## Blocked
 
