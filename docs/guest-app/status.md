@@ -11,7 +11,7 @@ States: `todo` · `running` · `blocked` · `done`.
 | 3 Native booking | benwer-cars-guest-mobile | done | phase 3 agent | [#7](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/7) native booking + PaymentSheet + confirmation (merged into `staging`, `d7ef211`). No API changes needed. See phase 3 notes |
 | 4a Links, site toggle, admin badges | marketplace, api, admin-web, admin-mobile | done | phase 4a agent | marketplace [#67](https://github.com/benwerhq/benwer-cars-marketplace/pull/67) assetlinks/AASA + `/app` + store badges + Smart App Banner + site App toggle + docs; api [#407](https://github.com/benwerhq/benwer-cars-api/pull/407) `appearance.app.benwerApp`; admin-web [#286](https://github.com/benwerhq/benwer-cars-admin-web/pull/286) and admin-mobile [#291](https://github.com/benwerhq/benwer-cars-admin-mobile/pull/291) "Benwer app" channel badge. All merged into `staging`. iOS pieces deferred (Android only). See phase 4a notes |
 | 4b Company mode in app | benwer-cars-guest-mobile | done | phase 4b agent | [#8](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/8): `c/[slug]` company mode, theme from the site, switcher, saved mode, visibility states, company trips, website-channel booking. Merged into `staging` (`e76ff98`) before PR CI finished, on Rafael's instruction: audit passed, lint + typecheck was still running, e2e skipped by design. See phase 4b notes |
-| 5 Website parity sweep | guest app | todo | | |
+| 5 Website parity sweep | guest app | blocked | phase 5 agent | Stopped at step 0: `add_repo` (push) for `benwerhq/benwer-cars-guest-mobile` was refused by the session permission check. No code changes, no PRs. See Blocked |
 | 6 Staging hardening | all | todo | | needs test approval |
 | 7 Production | all | Rafael only | | |
 
@@ -88,7 +88,8 @@ Merged as [#8](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/8) (`e7
 
 ## Blocked
 
-- Nothing blocks phase 5. Phase 6 waits for `TESTS_APPROVED` (Rafael).
+- **Phase 5 (2026-11-14):** the phase 5 session could not attach `benwerhq/benwer-cars-guest-mobile` with push access: `mcp__claude-code-remote__add_repo` was denied by the auto-mode permission check ("Unauthorized Access"). Rafael: allow `mcp__claude-code-remote__add_repo` for this repo (push) in the session permissions, or start the phase 5 session with the guest-mobile repo already attached with push access. Phase 5 will also need `add_repo` (push) for `benwerhq/benwer-cars-api` if a gap needs an API change. Step 0 (CI check of guest `staging` `e76ff98` after #8) has not been done yet.
+- Phase 6 waits for `TESTS_APPROVED` (Rafael).
 - Rafael follow-ups (not blocking):
   - Save the upload-keystore password from `credentials.json` in the password manager.
   - Play's 11 setup tasks (store listing, privacy policy, data safety, content rating) are open; internal testing does not need them, nothing released.
@@ -97,4 +98,4 @@ Merged as [#8](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/8) (`e7
 
 ## Parity table (phase 5)
 
-_Filled in during phase 5._
+_Filled in during phase 5. Not started: phase 5 is blocked on repo access (see Blocked)._
