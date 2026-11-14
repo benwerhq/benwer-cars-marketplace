@@ -11,7 +11,7 @@ States: `todo` · `running` · `blocked` · `done`.
 | 3 Native booking | benwer-cars-guest-mobile | done | phase 3 agent | [#7](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/7) native booking + PaymentSheet + confirmation (merged into `staging`, `d7ef211`). No API changes needed. See phase 3 notes |
 | 4a Links, site toggle, admin badges | marketplace, api, admin-web, admin-mobile | done | phase 4a agent | marketplace [#67](https://github.com/benwerhq/benwer-cars-marketplace/pull/67) assetlinks/AASA + `/app` + store badges + Smart App Banner + site App toggle + docs; api [#407](https://github.com/benwerhq/benwer-cars-api/pull/407) `appearance.app.benwerApp`; admin-web [#286](https://github.com/benwerhq/benwer-cars-admin-web/pull/286) and admin-mobile [#291](https://github.com/benwerhq/benwer-cars-admin-mobile/pull/291) "Benwer app" channel badge. All merged into `staging`. iOS pieces deferred (Android only). See phase 4a notes |
 | 4b Company mode in app | benwer-cars-guest-mobile | done | phase 4b agent | [#8](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/8): `c/[slug]` company mode, theme from the site, switcher, saved mode, visibility states, company trips, website-channel booking. Merged into `staging` (`e76ff98`) before PR CI finished, on Rafael's instruction: audit passed, lint + typecheck was still running, e2e skipped by design. See phase 4b notes |
-| 5 Website parity sweep | guest app | blocked | phase 5 agent | Stopped at step 0: `add_repo` (push) for `benwerhq/benwer-cars-guest-mobile` was refused by the session permission check. No code changes, no PRs. See Blocked |
+| 5 Website parity sweep | benwer-cars-guest-mobile | done | phase 5 agent | Step 0: CI on guest `staging` `e76ff98` (after #8) was green, nothing to fix. Gap rounds, all merged into `staging` with CI green: [#9](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/9) car search + filters, [#10](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/10) car photos / trip price / company location filter, [#11](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/11) company site sections + contact + legal, [#12](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/12) per-company details + erase, [#13](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/13) company cart + car-page dates, [#14](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/14) trip detail (reference, photo, driver, rate segments) + home sections. No API changes. See parity table and phase 5 notes |
 | 6 Staging hardening | all | todo | | needs test approval |
 | 7 Production | all | Rafael only | | |
 
@@ -88,7 +88,7 @@ Merged as [#8](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/8) (`e7
 
 ## Blocked
 
-- **Phase 5 (2026-11-14):** the phase 5 session could not attach `benwerhq/benwer-cars-guest-mobile` with push access: `mcp__claude-code-remote__add_repo` was denied by the auto-mode permission check ("Unauthorized Access"). Rafael: allow `mcp__claude-code-remote__add_repo` for this repo (push) in the session permissions, or start the phase 5 session with the guest-mobile repo already attached with push access. Phase 5 will also need `add_repo` (push) for `benwerhq/benwer-cars-api` if a gap needs an API change. Step 0 (CI check of guest `staging` `e76ff98` after #8) has not been done yet.
+- Phase 5 was blocked at first on `add_repo` (push) for the guest repo; Rafael approved it in the session and phase 5 ran.
 - Phase 6 waits for `TESTS_APPROVED` (Rafael).
 - Rafael follow-ups (not blocking):
   - Save the upload-keystore password from `credentials.json` in the password manager.
@@ -98,4 +98,37 @@ Merged as [#8](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/8) (`e7
 
 ## Parity table (phase 5)
 
-_Filled in during phase 5. Not started: phase 5 is blocked on repo access (see Blocked)._
+Marketplace route → app screen. ✅ = same functionality in the app. "Out of scope" names the reason.
+
+| Website route | App screen | | Note |
+| --- | --- | --- | --- |
+| `(marketplace)` home | `(tabs)/explore/index` | ✅ | Hero search (text, dates, location), companies, cars, how it works, partner invite (marketing site), FAQ worded for the app, legal links (#9, #14). The website "App" section is the app itself |
+| `/cars` (search + filters) | `explore/cars` | ✅ | Dates and location go to the API, then category, group, fuel, gearbox, seats, company, text and price sort; admin-style filter sheet; website param names (#9) |
+| `/companies` | `explore/companies` | ✅ | Search + location chips (#10). The website map view is not in the app (list only); add one later with a maps SDK and key if wanted (Rafael) |
+| `/companies/[slug]` | `explore/company/[slug]` | ✅ | Logo, place, description, booking site, email, call, fleet, "Search and filter this fleet", open company mode (#9, #10). Store badges are not needed inside the app |
+| `/companies/[slug]/cars/[id]`, `/cars/[id]`, `/s/[slug]/cars/[id]` | `explore/car/[slug]/[id]` | ✅ | Photo gallery, specs (colour, category, branch), dates with availability + price for them, Book; Add to cart in company mode (#10, #13). The marketplace website hands off to the company site to book; the app books natively (phase 3) |
+| `/book`, `/s/[slug]/book` | `explore/book/[slug]/[id]` | ✅ | Native booking (phase 3) with dates from search or car page. Difference: the website keeps an unfinished booking form in localStorage; the app does not (the cart covers "save for later") |
+| `/booking/[token]`, `/s/[slug]/booking/[token]` | `explore/booked/[token]`, `trip/token/[token]`, `trips/[id]` | ✅ | Status, reference, car photo, dates, driver, price with rate segments, pay (PaymentSheet), cancel, withdraw, review, what happens next (phases 2–3, #14) |
+| `/s/[slug]` home | `c/[slug]` → Explore `CompanyHome` | ✅ | Hero, search, fleet, cart link, then included / reviews / locations / FAQ / contact in the site editor's order and toggles, company legal links (#11, #13). Banners and layout templates are visual only, not carried over |
+| `/s/[slug]/search` | `explore/cars` in company mode | ✅ | Same search and filters on the company fleet (`channel=website`, dates to the API) (#9) |
+| `/s/[slug]/cart` | `explore/cart` | ✅ | Per-company cart in AsyncStorage (max 10); per line dates, times, return place, cover, availability, quote; one driver form + terms; books each car and lists the results (#13) |
+| `/s/[slug]/guest`, `/guest/bookings` | `(tabs)/trips` | ✅ | All trips across companies; in company mode this company first with "All trips" (phase 2, 4b) |
+| `/s/[slug]/guest/profile` | `account/company/[slug]` (+ `account/profile`) | ✅ | Edit name, phone, date of birth at the company; erase my data there; sign out in Account (#12) |
+| `/s/[slug]/guest/confirm` | — (web) | Out of scope | Rafael decision #7 (company subdomains opening the app comes later). This page lives on the company site, so its confirm link opens in the browser and confirms there; the app shows the linked company after a refresh. The app's own "save to my trips" uses `POST /guest/claim` |
+| `/s/[slug]/owner` | — | Out of scope | Staff page (site editor sign-in). The guest app is guest-only by plan (guest Firebase bearer, staff tokens rejected); staff use admin web / admin mobile |
+| `/contact` | `account/contact` | ✅ | Form to `POST /v1/contact` (subject `[App] …`), WhatsApp support, works signed out (#11) |
+| `/privacy`, `/terms`, `/cookies` | Account → Help and legal, home and company home links | ✅ | In-app browser: marketplace pages on `EXPO_PUBLIC_MARKETPLACE_HOST`, or the company's own pages in company mode (#11, #14) |
+| `/s/[slug]/privacy`, `/terms`, `/cookies` | Company home legal links, Account in company mode, cart "Read the rental terms" | ✅ | In-app browser on `{slug}.{domain}` (#11, #13) |
+| `/app` | — | n/a | Store download page for the app itself |
+| `/tenant/*`, `/host-unknown`, `/.well-known/*`, `/api/*` | — | n/a | Website routing internals |
+
+## Phase 5 notes (for phase 6)
+
+- New screens to cover in e2e/Maestro once tests are approved: car search filter sheet (dates via the native picker, location, category, seats, sort), home hero search, car page dates + price, cart (add from car page, edit a line, checkout with two cars, partial failure), company sections (FAQ expand, directions), contact form (success and validation), per-company details (save, erase), trip detail reference and rate segments.
+- Unit tests written, not run: `src/lib/vehicle-filters.test.ts`, `vehicle-display.test.ts`, `site-sections.test.ts`, `support.test.ts`, `company-profile.test.ts`, `cart.test.ts`, `trip-display.test.ts`, more cases in `routes.test.ts`.
+- `/v1/contact` is not in the public OpenAPI, so `services/api/support.ts` calls it with `fetch` (the same as the website). If the API adds it to `public-v1.json`, switch to the typed client.
+- The app's `openapi/public-v1.json` is still the phase 2–4 copy (no `appearance.app.benwerApp`); nothing in phase 5 needed a refresh.
+- Trips company filter is still client-side (4b note); an API `companySlug` query would help.
+- Store/marketing links used: `MARKETING_URL = https://cars.benwer.es` (constant in `lib/support.ts`).
+- Checks run locally each round: `tsc --noEmit`, `check:i18n:strict`. Round 5 CI first failed on a React Compiler lint rule in `cart.tsx` (fixed in the same PR). After that, eslint was also run on the changed files before pushing, so CI would not go red again. No test suites were run.
+- Branches: each round's branch was auto-deleted after merge; nothing left open in the guest repo from phase 5.
