@@ -5,9 +5,9 @@ States: `todo` · `running` · `blocked` · `done`.
 
 | Phase | Repo(s) | State | Session | PRs / notes |
 | --- | --- | --- | --- | --- |
-| 0 Accounts and repo | — (Rafael) | todo | — | Create `benwerhq/benwer-cars-guest-mobile`, Firebase apps, Sentry, Play staging app |
+| 0 Accounts and repo | — (Rafael) | running | — | Repo `benwerhq/benwer-cars-guest-mobile` exists (empty when phase 2 pushed). Still open: Firebase Android/iOS apps, Sentry project, Play staging app, EAS project, Apple account |
 | 1 API foundations | benwer-cars-api | done | phase 1 agent | [#404](https://github.com/benwerhq/benwer-cars-api/pull/404) guest endpoints + deletion, [#405](https://github.com/benwerhq/benwer-cars-api/pull/405) guest push, [#406](https://github.com/benwerhq/benwer-cars-api/pull/406) app channel + OpenAPI + seed. Contract: `openapi/public-v1.json` in benwer-cars-api (staging). See phase 1 notes |
-| 2 App scaffold and core | benwer-cars-guest-mobile | todo | | needs phase 1 + repo |
+| 2 App scaffold and core | benwer-cars-guest-mobile | done | phase 2 agent | Pushed as the first `staging` of [benwer-cars-guest-mobile](https://github.com/benwerhq/benwer-cars-guest-mobile/tree/staging) (`91e46fc`, no PR: the repo was empty). Bundle backup: `/home/user/benwer-cars-guest-mobile.bundle` (session only). See phase 2 notes |
 | 3 Native booking | benwer-cars-guest-mobile | todo | | |
 | 4 Company mode and links | guest app, marketplace, admin-web, admin-mobile | todo | | |
 | 5 Website parity sweep | guest app | todo | | |
@@ -29,9 +29,24 @@ Tests approved for staging: **no**
 - Tests written in `test/unit`, not run locally (decision 3); repo CI ran them green on each PR.
 - Cleanup left: remote branch `feat/guest-app-account` (merged via #404; agent's git delete got 403). Branches `feat/guest-app-push` / `feat/guest-app-channel` may also remain if not auto-deleted.
 
+## Phase 2 notes (for phase 3)
+
+- Repo: `benwerhq/benwer-cars-guest-mobile`, branch `staging` (no `master` yet). Stack copied from admin mobile `staging` (`b2e04b7`) with the same versions; added `@stripe/stripe-react-native`, `expo-apple-authentication`, `expo-crypto`.
+- Contract: `openapi/public-v1.json` copied from benwer-cars-api `staging` (`8ef84db`); `npm run generate:api`. Generated paths include `/v1/public`, so the client base is the bare API origin.
+- Layers: screen → hook (`src/hooks/useTrips`, `useGuestProfile`, `useMarketplace`) → service (`src/services/api/guest.ts`, `bookings.ts` token endpoints, `marketplace.ts`).
+- Auth: `src/context/GuestAuthContext.tsx` (email/password, sign-up + verify email, reset, Google, Apple behind `APPLE_SIGN_IN_ENABLED`). Bearer = guest Firebase ID token; 401 on `/public/guest/*` → one forced refresh, then sign out.
+- Routes: `(tabs)/explore` (home, cars, companies, `car/[slug]/[id]`), `(tabs)/trips` (`index`, `[id]`), `(tabs)/account` (`index`, `profile`, `companies`, `delete`), `sign-in`, `sign-up`, `forgot-password`, `verify-email`, `trip/token/[token]` (claim), basic `c/[slug]` page. `+native-intent.ts` maps `/booking/{token}`, `/companies/{slug}`, `/companies/{slug}/cars/{id}`.
+- Trip actions follow the marketplace rules (`src/lib/trip-actions.ts`); pay uses PaymentSheet with `stripeAccountId = connectedAccountId` (`src/lib/payment-sheet.ts`), Checkout URL on web.
+- Car detail "Book" is a **web handoff** to `https://{slug}.{EXPO_PUBLIC_MARKETPLACE_DOMAIN}/cars/{id}` (`src/lib/booking-site.ts`). Phase 3 replaces it with native booking (`client: "app"`, guest bearer); reuse `TripDetailView` for the confirmation → trip detail.
+- Push: `src/lib/push.ts` registers after sign-in, removes on sign-out (token kept in AsyncStorage across restarts); tap → `/trips/{reservationId}`.
+- `ThemeContext.setCompanyAccent(brandColor)` is ready for company mode (phase 4); `c/[slug]` is a plain page for now.
+- Tests written, not run: unit tests in `src/**/*.test.ts`, Playwright on Expo web in `e2e/` (`stack.sh` runs `db:seed:guest-app` and seeds the emulator guest). CI (`ubuntu-latest`) runs audit, typecheck, lint and i18n; unit and e2e jobs only run when the repo variable `TESTS_APPROVED=true`.
+- Checked locally: `tsc --noEmit` clean, `expo export` for web and Android bundles, i18n parity and strict scripts pass. Lint was not run locally (CI runs it).
+- Placeholders: icons/splash are the admin assets; `app.json` has no EAS `projectId` yet; Sentry DSN and Mixpanel token are not in `eas.json` (set them as EAS env vars).
+
 ## Blocked
 
-- Phase 0: repo `benwerhq/benwer-cars-guest-mobile` does not exist yet; agents cannot create repos.
+- Phase 0 (Rafael): Firebase Android + iOS apps in `benwer-cars-guest-staging` (`firebase/staging/google-services.json`, plist), Google OAuth Android client for `com.benwer.cars.guest.staging`, Sentry project `benwer-cars-guest-mobile` + `SENTRY_AUTH_TOKEN` on EAS, Mixpanel token, `eas init` (projectId), Play staging app, Apple Developer account (then `APPLE_SIGN_IN_ENABLED=true`). Guest repo needs secret `API_REPO_TOKEN` and variable `TESTS_APPROVED` when tests are approved.
 
 ## Parity table (phase 5)
 
