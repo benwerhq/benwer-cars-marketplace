@@ -66,6 +66,7 @@ export interface SiteReviewsContent {
 }
 
 export interface SiteAppContent {
+  benwerApp: boolean;
   iosUrl: string;
   androidUrl: string;
   title: LocalizedCopy;

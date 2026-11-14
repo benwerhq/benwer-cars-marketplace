@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { GuestAppBadges } from "@/components/features/GuestAppBadges";
 import { ReservationStatus } from "@/components/features/ReservationStatus";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
 import { isTenantHostRequest, publicSiteHomeHref } from "@/lib/site";
@@ -37,11 +38,14 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
   const [{ slug, token }, query] = await Promise.all([params, searchParams]);
   const preview = previewFromQuery(query);
 
+  const tApp = await getTranslations("guestApp");
   let companyName = slug;
+  let showGuestApp = false;
   let logos: LogoPair = { logoUrl: null, logoDarkUrl: null };
   try {
     const site = await loadPublicSite(slug, preview);
     companyName = site.company.name;
+    showGuestApp = site.content.app.benwerApp;
     logos = siteHeaderLogos(site.content, site.company.branding);
   } catch {
     companyName = slug;
@@ -69,6 +73,9 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
           browseHref={homeHref}
           allowWithdraw
         />
+        {showGuestApp ? (
+          <GuestAppBadges className="mt-10" text={tApp("bookingText")} />
+        ) : null}
       </main>
       <SiteFooter companyName={companyName} homeHref={homeHref} />
     </>

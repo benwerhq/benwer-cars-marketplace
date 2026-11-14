@@ -22,6 +22,7 @@ import {
 } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { PublicSite } from "@/types/site";
+import { guestAppCompanyUrl } from "@/lib/guestApp";
 import { SiteAppSection } from "./SiteAppSection";
 import { SiteBannerCarousel } from "./SiteBannerCarousel";
 import { SiteContactSection } from "./SiteContactSection";
@@ -185,7 +186,10 @@ function LowerSection({
     case SiteSectionId.APP:
       // Owners still see the section in the editor preview to fill it in.
       return hasSiteAppLinks(site.content.app) || site.isPreview ? (
-        <SiteAppSection app={site.content.app} />
+        <SiteAppSection
+          app={site.content.app}
+          appLinkUrl={guestAppCompanyUrl(site.slug)}
+        />
       ) : null;
     case SiteSectionId.BRANCHES:
       return (

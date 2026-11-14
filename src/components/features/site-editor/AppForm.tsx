@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import type { SiteAppContent } from "@/types/siteContent";
-import { EditorGroup, LocalizedField, TextField } from "./EditorPrimitives";
+import { EditorGroup, LocalizedField, SwitchRow, TextField } from "./EditorPrimitives";
 
 interface AppFormProps {
   app: SiteAppContent;
@@ -16,7 +16,19 @@ export function AppForm({ app, locale, onChange }: AppFormProps) {
 
   return (
     <>
-      <EditorGroup title={t("storesTitle")} description={t("storesDescription")}>
+      <EditorGroup title={t("benwerAppTitle")}>
+        <SwitchRow
+          id="app-benwer"
+          label={t("benwerApp")}
+          description={t("benwerAppDescription")}
+          checked={app.benwerApp}
+          onCheckedChange={(benwerApp) => onChange({ ...app, benwerApp })}
+        />
+      </EditorGroup>
+      <EditorGroup
+        title={t("storesTitle")}
+        description={app.benwerApp ? t("storesWithBenwerApp") : t("storesDescription")}
+      >
         <TextField
           id="app-ios"
           label={t("ios")}

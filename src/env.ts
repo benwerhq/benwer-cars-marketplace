@@ -7,6 +7,10 @@ const fallbackUrls = defaultPublicUrls();
 export const env = createEnv({
   server: {
     API_ORIGIN: z.string().url().optional(),
+    GUEST_APP_APPLE_TEAM_ID: z.string().optional(),
+    GUEST_APP_ANDROID_SHA256_FINGERPRINTS: z.string().optional(),
+    GUEST_APP_IOS_BUNDLE_ID: z.string().optional(),
+    GUEST_APP_ANDROID_PACKAGE: z.string().optional(),
     NODE_ENV: z
       .enum(["development", "production", "test"])
       .default("development"),
@@ -43,9 +47,16 @@ export const env = createEnv({
     NEXT_PUBLIC_GUEST_FIREBASE_PROJECT_ID: z.string().min(1).optional(),
     NEXT_PUBLIC_GUEST_FIREBASE_APP_ID: z.string().min(1).optional(),
     NEXT_PUBLIC_GUEST_FIREBASE_TENANT_ID: z.string().min(1).optional(),
+    NEXT_PUBLIC_GUEST_APP_IOS_URL: z.string().url().optional(),
+    NEXT_PUBLIC_GUEST_APP_ANDROID_URL: z.string().url().optional(),
   },
   runtimeEnv: {
     API_ORIGIN: process.env.API_ORIGIN,
+    GUEST_APP_APPLE_TEAM_ID: process.env.GUEST_APP_APPLE_TEAM_ID,
+    GUEST_APP_ANDROID_SHA256_FINGERPRINTS:
+      process.env.GUEST_APP_ANDROID_SHA256_FINGERPRINTS,
+    GUEST_APP_IOS_BUNDLE_ID: process.env.GUEST_APP_IOS_BUNDLE_ID,
+    GUEST_APP_ANDROID_PACKAGE: process.env.GUEST_APP_ANDROID_PACKAGE,
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
@@ -81,6 +92,9 @@ export const env = createEnv({
       process.env.NEXT_PUBLIC_GUEST_FIREBASE_APP_ID,
     NEXT_PUBLIC_GUEST_FIREBASE_TENANT_ID:
       process.env.NEXT_PUBLIC_GUEST_FIREBASE_TENANT_ID,
+    NEXT_PUBLIC_GUEST_APP_IOS_URL: process.env.NEXT_PUBLIC_GUEST_APP_IOS_URL,
+    NEXT_PUBLIC_GUEST_APP_ANDROID_URL:
+      process.env.NEXT_PUBLIC_GUEST_APP_ANDROID_URL,
   },
   emptyStringAsUndefined: true,
 });

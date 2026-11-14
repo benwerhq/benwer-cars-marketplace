@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Caveat, Inter, Lora, Poppins } from "next/font/google";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Toaster } from "sonner";
@@ -14,6 +14,7 @@ import {
   serverDarkClass,
   systemColorSchemeScript,
 } from "@/lib/colorScheme";
+import { guestAppSmartBanner } from "@/lib/guestApp";
 import { buildPageMetadata, getSiteUrl, websiteJsonLd } from "@/lib/seo";
 import enCommon from "../../messages/en-GB/common.json";
 import enMarketplace from "../../messages/en-GB/marketplace.json";
@@ -67,8 +68,10 @@ export async function generateMetadata(): Promise<Metadata> {
     siteName: tBrand("name"),
     locale,
   });
+  const itunes = (await headers()).get("x-company-slug") ? null : guestAppSmartBanner();
 
   return {
+    ...(itunes ? { itunes } : {}),
     metadataBase: new URL(getSiteUrl()),
     title: {
       default: `${tBrand("name")} — ${tMeta("siteTitle")}`,

@@ -19,9 +19,10 @@ import {
   SiteIntroFacts,
 } from "@/components/features/SiteIntroBand";
 import { SiteSectionHeading } from "@/components/features/SiteSectionHeading";
-import { AppStoreLinks, NavRoutes } from "@/enums";
+import { NavRoutes } from "@/enums";
 import { prefetchMarketplaceHomeState } from "@/lib/prefetchMarketplaceHome";
-import { buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
+import { hasSiteAppLinks } from "@/lib/siteContent";
 import type {
   LocalizedCopy,
   SiteAppContent,
@@ -56,6 +57,7 @@ export async function MarketplaceHome() {
   const tBrand = await getTranslations("brand");
   const tFaq = await getTranslations("faq");
   const tApp = await getTranslations("appBanner");
+  const tGuestApp = await getTranslations("guestApp");
   const { dehydratedState, companies } = await prefetchMarketplaceHomeState();
   const copy = (text: string): LocalizedCopy => ({ [locale]: text });
 
@@ -66,10 +68,11 @@ export async function MarketplaceHome() {
   }));
 
   const app: SiteAppContent = {
+    benwerApp: true,
     iosUrl: "",
-    androidUrl: AppStoreLinks.ANDROID_TESTING,
+    androidUrl: "",
     title: copy(tApp("title")),
-    text: copy(tApp("description")),
+    text: copy(tGuestApp("description")),
   };
 
   const facts = [
@@ -140,7 +143,9 @@ export async function MarketplaceHome() {
             />
           </section>
           <PartnersInvite />
-          <SiteAppSection app={app} />
+          {hasSiteAppLinks(app) ? (
+            <SiteAppSection app={app} appLinkUrl={absoluteUrl(NavRoutes.APP)} />
+          ) : null}
           <SiteFaqSection
             items={faq}
             heading={{

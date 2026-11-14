@@ -6,6 +6,7 @@ import { MarketplaceHeader } from "@/components/layout/MarketplaceHeader";
 import { CompanyBanner } from "@/components/layout/CompanyBanner";
 import { Footer } from "@/components/layout/Footer";
 import { CarListView } from "@/components/features/CarListView";
+import { GuestAppBadges } from "@/components/features/GuestAppBadges";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { PageLoadError } from "@/components/ui/PageLoadError";
 import { companiesApi } from "@/services/api";
@@ -65,6 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 async function CompanyPage({ params, searchParams }: Props) {
   const [{ slug }, query] = await Promise.all([params, searchParams]);
   const t = await getTranslations("companies");
+  const tApp = await getTranslations("guestApp");
 
   let company = null;
   let companyMissing = false;
@@ -151,6 +153,10 @@ async function CompanyPage({ params, searchParams }: Props) {
             filterByAvailability
           />
         </HydrationBoundary>
+        <GuestAppBadges
+          className="mt-12"
+          text={tApp("companyText", { company: company.name })}
+        />
       </main>
       <Footer />
     </>
