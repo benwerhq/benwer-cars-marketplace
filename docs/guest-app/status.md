@@ -41,7 +41,7 @@ Tests approved for staging: **no**
 - Push: `src/lib/push.ts` registers after sign-in, removes on sign-out (token kept in AsyncStorage across restarts); tap → `/trips/{reservationId}`.
 - `ThemeContext.setCompanyAccent(brandColor)` is ready for company mode (phase 4); `c/[slug]` is a plain page for now.
 - Tests written, not run: unit tests in `src/**/*.test.ts`, Playwright on Expo web in `e2e/` (`stack.sh` runs `db:seed:guest-app` and seeds the emulator guest). CI (`ubuntu-latest`) runs audit, typecheck, lint and i18n; unit and e2e jobs only run when the repo variable `TESTS_APPROVED=true`.
-- Checked locally: `tsc --noEmit` clean, `expo export` for web and Android bundles, i18n parity and strict scripts pass. Lint was not run locally (CI runs it).
+- Checked locally: `tsc --noEmit` clean, `expo export` for web and Android bundles, i18n parity and strict scripts pass. First CI run on `staging` (`91e46fc`, ubuntu-latest) passed audit, typecheck, lint and i18n; unit and e2e were skipped by design.
 - Placeholders: icons/splash are the admin assets; `app.json` has no EAS `projectId` yet; Sentry DSN and Mixpanel token are not in `eas.json` (set them as EAS env vars).
 
 ## Blocked
