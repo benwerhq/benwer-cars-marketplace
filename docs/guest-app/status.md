@@ -86,6 +86,12 @@ Merged as [#8](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/8) (`e7
 - `appearance.app.benwerApp` is not in the app's OpenAPI copy yet; phase 5 can refresh the contract.
 - Tests: `src/lib/company-mode.test.ts`, route and deep-link tests, `e2e/specs/company-mode.spec.ts`, Maestro App Links checks in `e2e/journeys.md`.
 
+## Design rounds (after phase 5)
+
+- Benwer QA design review, round 1: [#15](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/15) teal theme (#0d9488 + #facc15), branded Explore home, compact car cards, sales car page, QA fixes; [#16](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/16) default car picture + remaining QA round 1 findings.
+- Round 2: [#18](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/18) Trips travel wallet (next trip + countdown), 4-step booking (trip, extras, driver, review), cancellation and rental terms link next to Book, branded auth screens, Account header, empty states with a next step, small animations. CI green, merged into `staging` (`deff4e0`).
+- Not checked on a device yet: needs a new staging APK (`npm run build:android:staging` in WSL). Screens were checked on Expo web against the `qa/visual` mock API only.
+
 ## Blocked
 
 - Phase 5 was blocked at first on `add_repo` (push) for the guest repo; Rafael approved it in the session and phase 5 ran.
