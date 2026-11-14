@@ -169,6 +169,18 @@ export enum AppStoreLinks {
   ANDROID_TESTING = "https://play.google.com/apps/testing/com.benwer.cars.admin",
 }
 
+export enum GuestAppIds {
+  PRODUCTION = "com.benwer.cars.guest",
+  STAGING = "com.benwer.cars.guest.staging",
+}
+
+export enum GuestAppLinkPaths {
+  BOOKING = "/booking/*",
+  COMPANIES = "/companies/*",
+  TRIPS = "/trips*",
+  APP = "/app*",
+}
+
 export enum StorageKeys {
   LOCALE = "NEXT_LOCALE",
   COOKIE_CONSENT = "benwer-cookie-consent",
@@ -188,6 +200,7 @@ export enum NavRoutes {
   CAR_DETAIL = "/cars/:id",
   BOOK = "/book",
   BOOKING_STATUS = "/booking/:token",
+  APP = "/app",
   PRIVACY = "/privacy",
   TERMS = "/terms",
   COOKIES = "/cookies",

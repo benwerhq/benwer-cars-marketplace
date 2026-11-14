@@ -83,16 +83,16 @@ export function StoreBadges({
   googlePlay,
   className,
 }: {
-  appStore: StoreBadgeCopy;
-  googlePlay: StoreBadgeCopy;
+  appStore?: StoreBadgeCopy;
+  googlePlay?: StoreBadgeCopy;
   className?: string;
 }) {
   return (
     <div
       className={cn("flex flex-col gap-3 sm:flex-row sm:flex-wrap", className)}
     >
-      <StoreBadge {...appStore} icon={<AppleMark />} />
-      <StoreBadge {...googlePlay} icon={<PlayMark />} />
+      {appStore ? <StoreBadge {...appStore} icon={<AppleMark />} /> : null}
+      {googlePlay ? <StoreBadge {...googlePlay} icon={<PlayMark />} /> : null}
     </div>
   );
 }

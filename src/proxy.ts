@@ -4,6 +4,7 @@ import {
   customDomainPublicPath,
   rewriteCustomDomainPath,
 } from "@/lib/customDomain";
+import { isWellKnownPath } from "@/lib/guestApp";
 import { lookupPublicHost } from "@/lib/hostLookup";
 import {
   companySubdomainOrigin,
@@ -27,6 +28,10 @@ function hostOptions() {
 }
 
 export async function proxy(request: NextRequest) {
+  if (isWellKnownPath(request.nextUrl.pathname)) {
+    return NextResponse.next();
+  }
+
   const hostname = normalizeRequestHost(request.headers.get("host") ?? "");
   const marketplaceDomain =
     process.env.NEXT_PUBLIC_MARKETPLACE_DOMAIN ?? "benwer.es";

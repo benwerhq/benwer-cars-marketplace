@@ -1143,8 +1143,12 @@
       "demo": "São avaliações de demonstração mostradas nesta empresa de teste até aprovar avaliações reais no Benwer admin."
     },
     "app": {
+      "benwerAppTitle": "App Benwer Cars",
+      "benwerApp": "Mostrar a app Benwer Cars",
+      "benwerAppDescription": "Os seus clientes usam a app gratuita Benwer Cars. Os botões levam às lojas oficiais e o código QR abre a sua empresa na app.",
+      "storesWithBenwerApp": "Só se a sua empresa tiver uma app própria. Com a app Benwer Cars ativa, a secção usa os links dela.",
       "storesTitle": "Links das lojas",
-      "storesDescription": "Uma loja sem link aparece a cinzento. Sem links, a secção usa por agora a app de teste da Benwer no Google Play.",
+      "storesDescription": "Links para a sua própria app. Uma loja sem link aparece a cinzento. Sem links e com a app Benwer Cars desativada, a secção fica oculta.",
       "ios": "Link da App Store",
       "android": "Link do Google Play",
       "qrHint": "O código QR abre o link do Google Play, ou o da App Store se não houver do Google Play.",
@@ -1387,5 +1391,21 @@
     "messageAction": "Mensagem direta",
     "whatsappAction": "WhatsApp",
     "whatsappMessage": "Olá, tenho uma pergunta sobre a Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "A app Benwer Cars",
+    "metaDescription": "Reserve carros, guarde todas as suas viagens num só sítio e receba avisos das reservas no telemóvel.",
+    "eyebrow": "App móvel",
+    "title": "O seu aluguer de carros, no bolso",
+    "description": "Reserve carros de empresas locais, guarde todas as viagens num só sítio, pague e receba avisos no telemóvel.",
+    "featureTrips": "Todas as viagens, de todas as empresas",
+    "featureBooking": "Reserve e pague em poucos toques",
+    "featurePush": "Avisos quando a reserva muda",
+    "unavailableTitle": "A app chega em breve",
+    "unavailableDescription": "A app Benwer Cars ainda não está nas lojas. Pode continuar a reservar na web.",
+    "browse": "Ver carros",
+    "badgeTitle": "Descarregue a app Benwer Cars",
+    "companyText": "Reserve com {company} no telemóvel e guarde as viagens num só sítio.",
+    "bookingText": "Veja esta reserva, pague e receba avisos no telemóvel."
   }
 }

@@ -1,3 +1,8 @@
+import {
+  guestAppStoreLinks,
+  hasGuestAppStoreLinks,
+  type GuestAppStoreLinks,
+} from "@/lib/guestApp";
 import type { LogoPair } from "@/types/company";
 import {
   SiteBannerPreset,
@@ -334,6 +339,7 @@ function parseReviews(value: unknown): SiteReviewsContent {
 function parseApp(value: unknown): SiteAppContent {
   const row = isRecord(value) ? value : {};
   return {
+    benwerApp: row.benwerApp === true,
     iosUrl: safeUrl(row.iosUrl),
     androidUrl: safeUrl(row.androidUrl),
     title: readCopy(row.title),
@@ -476,6 +482,7 @@ export function serializeAppearance(content: SiteContent): Record<string, unknow
     bannerTheme: content.bannerTheme,
     included: content.included,
     app: {
+      benwerApp: content.app.benwerApp,
       iosUrl: nullable(content.app.iosUrl),
       androidUrl: nullable(content.app.androidUrl),
       title: content.app.title,
@@ -601,18 +608,33 @@ export function whatsappHref(number: string, message = ""): string | null {
   return `https://wa.me/${digits}${query}`;
 }
 
-export function siteAppLinks(app: SiteAppContent): { iosUrl: string; androidUrl: string } {
+export function siteAppLinks(
+  app: SiteAppContent,
+  shared: GuestAppStoreLinks = guestAppStoreLinks(),
+): GuestAppStoreLinks {
+  if (app.benwerApp) {
+    return shared;
+  }
   return { iosUrl: app.iosUrl || "", androidUrl: app.androidUrl || "" };
 }
 
-/** The get-the-app section only shows when the company set a store link. */
-export function hasSiteAppLinks(app: SiteAppContent): boolean {
-  const links = siteAppLinks(app);
-  return Boolean(links.iosUrl || links.androidUrl);
+/** The get-the-app section only shows when it has a store link to offer. */
+export function hasSiteAppLinks(
+  app: SiteAppContent,
+  shared: GuestAppStoreLinks = guestAppStoreLinks(),
+): boolean {
+  return hasGuestAppStoreLinks(siteAppLinks(app, shared));
 }
 
-export function appQrTarget(app: SiteAppContent): string {
-  const links = siteAppLinks(app);
+export function appQrTarget(
+  app: SiteAppContent,
+  appLinkUrl: string | null,
+  shared: GuestAppStoreLinks = guestAppStoreLinks(),
+): string {
+  const links = siteAppLinks(app, shared);
+  if (app.benwerApp && appLinkUrl && hasGuestAppStoreLinks(links)) {
+    return appLinkUrl;
+  }
   return links.androidUrl || links.iosUrl;
 }
 

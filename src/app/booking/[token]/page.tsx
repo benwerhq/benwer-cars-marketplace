@@ -6,6 +6,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { MarketplaceHeader } from "@/components/layout/MarketplaceHeader";
 import { TenantHeader } from "@/components/layout/TenantHeader";
 import { Footer } from "@/components/layout/Footer";
+import { GuestAppBadges } from "@/components/features/GuestAppBadges";
 import { ReservationStatus } from "@/components/features/ReservationStatus";
 import { companiesApi, reservationsApi } from "@/services/api";
 import { buildCompanySiteHref } from "@/lib/companySite";
@@ -33,6 +34,7 @@ interface Props {
 
 async function BookingStatusPage({ params }: Props) {
   const { token } = await params;
+  const tApp = await getTranslations("guestApp");
   const headersList = await headers();
   const tenantSlug = headersList.get("x-company-slug");
   const isTenant = Boolean(tenantSlug);
@@ -75,6 +77,7 @@ async function BookingStatusPage({ params }: Props) {
           companySlug={tenantSlug ?? undefined}
           browseHref={isTenant ? NavRoutes.HOME : NavRoutes.CARS}
         />
+        <GuestAppBadges className="mt-10" text={tApp("bookingText")} />
       </main>
       <Footer />
     </>

@@ -10,7 +10,13 @@ import { appQrTarget, siteAppLinks } from "@/lib/siteContent";
 import type { SiteAppContent } from "@/types/siteContent";
 import { SiteSectionHeading } from "./SiteSectionHeading";
 
-export function SiteAppSection({ app }: { app: SiteAppContent }) {
+export function SiteAppSection({
+  app,
+  appLinkUrl = null,
+}: {
+  app: SiteAppContent;
+  appLinkUrl?: string | null;
+}) {
   const t = useTranslations("siteSections.app");
   const locale = useLocale();
   const headingId = `${SiteSectionId.APP}-heading`;
@@ -21,7 +27,7 @@ export function SiteAppSection({ app }: { app: SiteAppContent }) {
       : androidUrl
         ? t("platformAndroid")
         : t("platformIos");
-  const qrTarget = appQrTarget(app);
+  const qrTarget = appQrTarget(app, appLinkUrl);
 
   return (
     <section

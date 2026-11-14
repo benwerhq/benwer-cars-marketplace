@@ -328,16 +328,36 @@ describe("helpers", () => {
 });
 
 describe("siteAppLinks", () => {
-  const app = { iosUrl: "", androidUrl: "", title: {}, text: {} };
+  const app = { benwerApp: false, iosUrl: "", androidUrl: "", title: {}, text: {} };
+  const noShared = { iosUrl: "", androidUrl: "" };
+  const shared = {
+    iosUrl: "https://apps.apple.com/app/benwer-cars/id1234567890",
+    androidUrl: "https://play.google.com/store/apps/details?id=com.benwer.cars.guest",
+  };
+  const companyPage = "https://marketplace.example/companies/acme";
 
   it("has no links (and hides the section) when no store link is set", () => {
-    expect(siteAppLinks(app)).toEqual({ iosUrl: "", androidUrl: "" });
-    expect(appQrTarget(app)).toBe("");
-    expect(hasSiteAppLinks(app)).toBe(false);
+    expect(siteAppLinks(app, noShared)).toEqual({ iosUrl: "", androidUrl: "" });
+    expect(appQrTarget(app, companyPage, noShared)).toBe("");
+    expect(hasSiteAppLinks(app, noShared)).toBe(false);
   });
 
   it("keeps the company's own links", () => {
     const own = { ...app, iosUrl: "https://apps.apple.com/app/x" };
-    expect(siteAppLinks(own)).toEqual({ iosUrl: "https://apps.apple.com/app/x", androidUrl: "" });
+    expect(siteAppLinks(own, shared)).toEqual({ iosUrl: "https://apps.apple.com/app/x", androidUrl: "" });
+    expect(appQrTarget(own, companyPage, shared)).toBe("https://apps.apple.com/app/x");
+  });
+
+  it("uses the shared Benwer app and the company page QR when the toggle is on", () => {
+    const benwer = { ...app, benwerApp: true, iosUrl: "https://apps.apple.com/app/own" };
+    expect(siteAppLinks(benwer, shared)).toEqual(shared);
+    expect(hasSiteAppLinks(benwer, shared)).toBe(true);
+    expect(appQrTarget(benwer, companyPage, shared)).toBe(companyPage);
+  });
+
+  it("hides the shared Benwer app until its store links are configured", () => {
+    const benwer = { ...app, benwerApp: true, androidUrl: "https://play.google.com/own" };
+    expect(hasSiteAppLinks(benwer, noShared)).toBe(false);
+    expect(appQrTarget(benwer, companyPage, noShared)).toBe("");
   });
 });

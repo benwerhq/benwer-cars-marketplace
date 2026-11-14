@@ -1140,8 +1140,12 @@
       "demo": "These are demo reviews shown on this test company until you approve real ones in Benwer admin."
     },
     "app": {
+      "benwerAppTitle": "Benwer Cars app",
+      "benwerApp": "Show the Benwer Cars app",
+      "benwerAppDescription": "Guests get the free Benwer Cars app. The badges link to the official stores and the QR code opens your company in the app.",
+      "storesWithBenwerApp": "Only needed if your company has its own app. While the Benwer Cars app is on, the section uses its store links.",
       "storesTitle": "Store links",
-      "storesDescription": "A missing store shows as greyed out. With no links, the section uses the Benwer test app on Google Play for now.",
+      "storesDescription": "Links to your own app. A missing store shows as greyed out. With no links and the Benwer Cars app off, the section stays hidden.",
       "ios": "App Store link",
       "android": "Google Play link",
       "qrHint": "The QR code opens the Google Play link, or the App Store link if there is no Google Play link.",
@@ -1384,5 +1388,21 @@
     "messageAction": "Direct message",
     "whatsappAction": "WhatsApp",
     "whatsappMessage": "Hello, I have a question about Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "The Benwer Cars app",
+    "metaDescription": "Book cars, keep all your trips in one place and get booking updates on your phone.",
+    "eyebrow": "Mobile app",
+    "title": "Your car hire, in your pocket",
+    "description": "Book cars from local companies, keep every trip in one place, pay and get updates on your phone.",
+    "featureTrips": "All your trips, across companies",
+    "featureBooking": "Book and pay in a few taps",
+    "featurePush": "Updates when your booking changes",
+    "unavailableTitle": "The app is coming soon",
+    "unavailableDescription": "The Benwer Cars app is not in the stores yet. You can still book on the web.",
+    "browse": "Browse cars",
+    "badgeTitle": "Get the Benwer Cars app",
+    "companyText": "Book {company} on your phone and keep your trips in one place.",
+    "bookingText": "See this booking, pay and get updates on your phone."
   }
 }

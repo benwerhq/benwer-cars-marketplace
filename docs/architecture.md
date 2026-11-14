@@ -62,6 +62,8 @@ distinguish subdomain requests from the main marketplace host.
 /companies/[slug]/cars/[id]  Car detail (company context from URL)
 /book                     Booking form (query: companySlug, carId, from, to)
 /booking/[token]          Reservation status / confirmation
+/app                      Benwer Cars guest app (store badges)
+/.well-known/*            AASA + assetlinks for the guest app (this host only)
 ```
 
 `/book` and `/booking/[token]` are route-group-free — they work for both modes.
@@ -190,9 +192,45 @@ automatically adopt the company's colour with no component changes needed.
 
 ## Auth
 
-None. The marketplace is fully public. No middleware auth guard, no login page,
-no `AuthContext`. Guest booking collects name/email/phone; the API returns a
-confirmation token.
+Browsing and booking stay public: a guest can book with name, email and phone
+and track the reservation through the confirmation token (`/booking/[token]`).
+There is no middleware auth guard. Two optional Firebase sign-ins exist:
+
+- **Guest accounts** (guest Firebase project, `NEXT_PUBLIC_GUEST_FIREBASE_*`) on
+  company sites: `/s/[slug]/guest` sign-in, `guest/bookings`, `guest/confirm`
+  (email-confirmed link to the company) and `guest/profile`. The guest Firebase
+  ID token is the bearer for `/v1/public/companies/{slug}/guest/*`
+  (`src/lib/guestAuth.client.ts`, `guestAccessToken.ts`). When the guest
+  Firebase env vars are unset, the site shows a disabled state.
+- **Staff owner edit mode** (staff Firebase, `NEXT_PUBLIC_STAFF_FIREBASE_*`) for
+  `/s/[slug]/owner` and the in-site editor. Never mixed with guest Firebase.
+
+The same guest accounts sign in to the **Benwer Cars guest app**
+(`benwerhq/benwer-cars-guest-mobile`, iOS and Android), which uses
+`/v1/public/guest/*`. See `docs/guest-app/plan.md`.
+
+## Guest app links
+
+The marketplace host is the universal link / App Link domain for the guest app.
+
+- `/.well-known/apple-app-site-association` and `/.well-known/assetlinks.json`
+  are Route Handlers (`src/app/.well-known/*`, `src/lib/guestApp.ts`). They
+  answer only on the marketplace front door (`isMarketplaceFrontDoor`) and
+  return 404 on company subdomains, custom domains, or while
+  `GUEST_APP_APPLE_TEAM_ID` / `GUEST_APP_ANDROID_SHA256_FINGERPRINTS` are unset.
+  App ids follow `NEXT_PUBLIC_ENV`: `com.benwer.cars.guest` on production,
+  `com.benwer.cars.guest.staging` otherwise.
+- `src/proxy.ts` passes `/.well-known/*` through untouched (no tenant rewrite,
+  no redirect).
+- Linked paths: `/booking/*`, `/companies/*`, `/trips*`, `/app*`.
+- `/app` describes the app; store badges show on `/companies/[slug]`,
+  `/booking/[token]` (and the company-site booking page when the site's App
+  section uses the Benwer app), and the Smart App Banner (`itunes` metadata) is
+  added on the marketplace host. All of them stay hidden until
+  `NEXT_PUBLIC_GUEST_APP_IOS_URL` / `NEXT_PUBLIC_GUEST_APP_ANDROID_URL` are set.
+- Company site App section: `appearance.app.benwerApp` switches the section to
+  the shared store links, with a QR code to `{marketplace}/companies/{slug}`.
+  Own `iosUrl` / `androidUrl` are still honoured when the toggle is off.
 
 ## Internationalization
 
