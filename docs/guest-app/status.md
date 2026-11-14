@@ -5,7 +5,7 @@ States: `todo` · `running` · `blocked` · `done`.
 
 | Phase | Repo(s) | State | Session | PRs / notes |
 | --- | --- | --- | --- | --- |
-| 0 Accounts and repo | — (Rafael) | running | — | Repo `benwerhq/benwer-cars-guest-mobile` exists (empty when phase 2 pushed). Still open: Firebase Android/iOS apps, Sentry project, Play staging app, EAS project, Apple account |
+| 0 Accounts and repo | — (Rafael) | done (Android) | — | Repo, Firebase Android app + Email/Google sign-in, Google OAuth Android client, Sentry `benwer-cars-guest-mobile`, Mixpanel EU, `eas init`, Play staging app (internal testing), `API_REPO_TOKEN` secret (read-only on benwer-cars-api, expires 2027-11-15). Auto-delete of merged branches on. `TESTS_APPROVED` unset. Apple deferred. Follow-ups in Blocked |
 | 1 API foundations | benwer-cars-api | done | phase 1 agent | [#404](https://github.com/benwerhq/benwer-cars-api/pull/404) guest endpoints + deletion, [#405](https://github.com/benwerhq/benwer-cars-api/pull/405) guest push, [#406](https://github.com/benwerhq/benwer-cars-api/pull/406) app channel + OpenAPI + seed. Contract: `openapi/public-v1.json` in benwer-cars-api (staging). See phase 1 notes |
 | 2 App scaffold and core | benwer-cars-guest-mobile | done | phase 2 agent | Pushed as the first `staging` of [benwer-cars-guest-mobile](https://github.com/benwerhq/benwer-cars-guest-mobile/tree/staging) (`91e46fc`, no PR: the repo was empty). Bundle backup: `/home/user/benwer-cars-guest-mobile.bundle` (session only). See phase 2 notes |
 | 3 Native booking | benwer-cars-guest-mobile | done | phase 3 agent | [#7](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/7) native booking + PaymentSheet + confirmation (merged into `staging`, `d7ef211`). No API changes needed. See phase 3 notes |
@@ -75,7 +75,12 @@ Platforms (Rafael, 2026-11-14): **Android only for now.** No iOS builds, no Appl
 
 ## Blocked
 
-- Phase 0 (Rafael): Firebase Android + iOS apps in `benwer-cars-guest-staging` (`firebase/staging/google-services.json`, plist), Google OAuth Android client for `com.benwer.cars.guest.staging`, Sentry project `benwer-cars-guest-mobile` + `SENTRY_AUTH_TOKEN` on EAS, Mixpanel token, `eas init` (projectId), Play staging app, Apple Developer account (deferred: Android only for now). Phase 4a (Rafael): set `GUEST_APP_ANDROID_SHA256_FINGERPRINTS` and, once the Play listing exists, `NEXT_PUBLIC_GUEST_APP_ANDROID_URL` on the marketplace staging Vercel project; decide open decision #5 (custom store links). Guest repo needs secret `API_REPO_TOKEN` and variable `TESTS_APPROVED` when tests are approved.
+- Nothing blocks phases 4b–5. Phase 6 waits for `TESTS_APPROVED` (Rafael).
+- Rafael follow-ups (not blocking):
+  - Save the upload-keystore password from `credentials.json` in the password manager.
+  - Play's 11 setup tasks (store listing, privacy policy, data safety, content rating) are open; internal testing does not need them, nothing released.
+  - After the first internal upload: add Play's app-signing key SHA-1/SHA-256 to Firebase and create the matching Android OAuth client, or Google sign-in fails on Play-installed builds.
+- Deferred: Apple Developer account, iOS builds, Sign in with Apple, AASA / App Store badge.
 
 ## Parity table (phase 5)
 
