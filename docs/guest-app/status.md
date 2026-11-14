@@ -10,7 +10,7 @@ States: `todo` · `running` · `blocked` · `done`.
 | 2 App scaffold and core | benwer-cars-guest-mobile | done | phase 2 agent | Pushed as the first `staging` of [benwer-cars-guest-mobile](https://github.com/benwerhq/benwer-cars-guest-mobile/tree/staging) (`91e46fc`, no PR: the repo was empty). Bundle backup: `/home/user/benwer-cars-guest-mobile.bundle` (session only). See phase 2 notes |
 | 3 Native booking | benwer-cars-guest-mobile | done | phase 3 agent | [#7](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/7) native booking + PaymentSheet + confirmation (merged into `staging`, `d7ef211`). No API changes needed. See phase 3 notes |
 | 4a Links, site toggle, admin badges | marketplace, api, admin-web, admin-mobile | done | phase 4a agent | marketplace [#67](https://github.com/benwerhq/benwer-cars-marketplace/pull/67) assetlinks/AASA + `/app` + store badges + Smart App Banner + site App toggle + docs; api [#407](https://github.com/benwerhq/benwer-cars-api/pull/407) `appearance.app.benwerApp`; admin-web [#286](https://github.com/benwerhq/benwer-cars-admin-web/pull/286) and admin-mobile [#291](https://github.com/benwerhq/benwer-cars-admin-mobile/pull/291) "Benwer app" channel badge. All merged into `staging`. iOS pieces deferred (Android only). See phase 4a notes |
-| 4b Company mode in app | benwer-cars-guest-mobile | todo | | After phase 3 (done). `c/[slug]` theming, switcher, saved mode, visibility states. See phase 4a notes |
+| 4b Company mode in app | benwer-cars-guest-mobile | done | phase 4b agent | [#8](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/8): `c/[slug]` company mode, theme from the site, switcher, saved mode, visibility states, company trips, website-channel booking. Merged into `staging` (`e76ff98`) before PR CI finished, on Rafael's instruction: audit passed, lint + typecheck was still running, e2e skipped by design. See phase 4b notes |
 | 5 Website parity sweep | guest app | todo | | |
 | 6 Staging hardening | all | todo | | needs test approval |
 | 7 Production | all | Rafael only | | |
@@ -73,9 +73,22 @@ Platforms (Rafael, 2026-11-14): **Android only for now.** No iOS builds, no Appl
 - Tests written, not run locally: marketplace `src/lib/guestApp.test.ts` and `siteContent.test.ts`; API `website-appearance-content.test.ts`; admin-web and admin-mobile `ReservationChannelBadge` and `reservation-channel` tests. PR CI was green on all four PRs. Checked locally: marketplace `tsc` + `next build` + a `next start` curl of both well-known routes (200 JSON on the marketplace host, 404 on a tenant host); API `tsc` + `pnpm openapi`; admin-web `tsc`; admin-mobile `tsc` + `check:i18n:strict`.
 - Branch cleanup: merged branches were auto-deleted. API remotes `feat/guest-app-account`, `feat/guest-app-channel` and `feat/guest-app-push` (phase 1, merged) are still there because remote deletes got 403. `feat/public-vehicle-group` and `feat/transparent-category-images` are not guest-app branches and were left alone.
 
+## Phase 4b notes (for phase 5)
+
+Merged as [#8](https://github.com/benwerhq/benwer-cars-guest-mobile/pull/8) (`e76ff98` on guest `staging`). Checked locally: `tsc` clean, `expo export --platform android` OK, `check:i18n:strict` passes. Tests are written but not run. **Phase 5: first check that the #8 lint + typecheck run on `staging` is green** (the merge did not wait for it).
+
+- `c/[slug]/_layout.tsx` loads `GET /v1/public/sites/{slug}`. Only `status: published` opens company mode. Anything else shows a "not available" state, with a link to the marketplace listing when the API still lists the company. The child routes return to Explore with `router.dismissTo`.
+- `CompanyModeContext` saves the active slug and up to 5 recent companies in AsyncStorage. The accent comes from `appearance.theme.primaryColor` (else `branding.primaryColor`), with a contrast foreground. The dark header logo is used in dark mode. `index.tsx` reopens the saved company through `/c/{slug}`.
+- In company mode, Explore is `CompanyHome`: hero, fleet (`channel=website`), contact and WhatsApp (`wa.me`). The marketplace screens redirect to it. Car detail and booking use `channel=website`, and the company comes from `site.company`.
+- Trips shows this company by default, with an "All trips" chip. The filter is client-side because the API has no company filter, so an API `companySlug` query would help.
+- The switcher (chip in `AppTopBar`) lists the marketplace, linked companies (`GET /guest/me`) and recent companies.
+- New marketplace listing route `explore/company/[slug]`. Deep link `/companies/{slug}/cars/{id}` → `/c/{slug}/cars/{id}`. The Android App Links autoVerify filter (staging host, `com.benwer.cars.guest.staging`) already matches marketplace #67.
+- `appearance.app.benwerApp` is not in the app's OpenAPI copy yet; phase 5 can refresh the contract.
+- Tests: `src/lib/company-mode.test.ts`, route and deep-link tests, `e2e/specs/company-mode.spec.ts`, Maestro App Links checks in `e2e/journeys.md`.
+
 ## Blocked
 
-- Nothing blocks phases 4b–5. Phase 6 waits for `TESTS_APPROVED` (Rafael).
+- Nothing blocks phase 5. Phase 6 waits for `TESTS_APPROVED` (Rafael).
 - Rafael follow-ups (not blocking):
   - Save the upload-keystore password from `credentials.json` in the password manager.
   - Play's 11 setup tasks (store listing, privacy policy, data safety, content rating) are open; internal testing does not need them, nothing released.
