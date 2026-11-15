@@ -163,6 +163,31 @@ export enum QueryKeys {
   CANCELLATION_QUOTE = "cancellation-quote",
   GUEST = "guest",
   GUEST_RESERVATIONS = "guest-reservations",
+  GUEST_NOTIFICATIONS = "guest-notifications",
+  GUEST_NOTIFICATIONS_UNREAD = "guest-notifications-unread",
+}
+
+export enum GuestNotificationType {
+  BOOKING_CONFIRMED = "booking_confirmed",
+  BOOKING_UPDATED = "booking_updated",
+  BOOKING_DECLINED = "booking_declined",
+  BOOKING_EXPIRED = "booking_expired",
+  BOOKING_CANCELLED = "booking_cancelled",
+  PAYMENT_DUE = "payment_due",
+  PAYMENT_RECEIVED = "payment_received",
+  PAYMENT_FAILED = "payment_failed",
+  REFUND_ISSUED = "refund_issued",
+  PICKUP_REMINDER = "pickup_reminder",
+  RETURN_REMINDER = "return_reminder",
+  PRECHECKIN_READY = "precheckin_ready",
+  CONTRACT_SIGN_READY = "contract_sign_ready",
+  TRIP_COMPLETED_REVIEW = "trip_completed_review",
+}
+
+export enum GuestNotificationStatus {
+  UNREAD = "unread",
+  READ = "read",
+  DISMISSED = "dismissed",
 }
 
 export enum AppStoreLinks {

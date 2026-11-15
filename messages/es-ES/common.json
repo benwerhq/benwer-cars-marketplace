@@ -129,5 +129,21 @@
   },
   "datePicker": {
     "clear": "Borrar fecha"
+  },
+  "guestNotifications": {
+    "title": "Notificaciones",
+    "openLabel": "Abrir notificaciones",
+    "unreadCount": "{count} notificaciones sin leer",
+    "emptyTitle": "Sin notificaciones",
+    "emptyBody": "Las actualizaciones de reservas, recordatorios de pago y avisos de recogida aparecerán aquí.",
+    "error": "No se pudieron cargar las notificaciones.",
+    "retry": "Intentar de nuevo",
+    "markAllRead": "Marcar todo como leído",
+    "dismiss": "Descartar",
+    "loadMore": "Cargar más",
+    "enablePush": "Activar avisos del navegador",
+    "pushEnabled": "Avisos del navegador activados",
+    "pushBlocked": "Avisos bloqueados en el navegador",
+    "disablePush": "Desactivar avisos del navegador"
   }
 }

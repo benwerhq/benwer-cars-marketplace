@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
+import { GuestNotificationBell } from "./GuestNotificationBell";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteGuestLink, SiteOwnerMenu } from "./SiteGuestLink";
 import { SiteCartLink } from "./SiteCartLink";
@@ -63,6 +64,7 @@ export async function SiteHeader({
       </SiteNav>
       <ColorSchemeSwitcher />
       <LocaleSwitcher />
+      <GuestNotificationBell siteSlug={cartSlug} />
       <SiteOwnerMenu homeHref={homeHref} />
       {cartSlug ? <SiteCartLink slug={cartSlug} homeHref={homeHref} /> : null}
     </SiteHeaderShell>

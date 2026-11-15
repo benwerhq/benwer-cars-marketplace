@@ -4,6 +4,7 @@ import { cookies, headers } from "next/headers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Toaster } from "sonner";
+import { GuestAuthProvider } from "@/context/GuestAuthProvider";
 import { QueryProvider } from "@/context/QueryProvider";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CookieBannerHost } from "@/components/features/CookieBannerHost";
@@ -130,15 +131,17 @@ export default async function RootLayout({
       <body className="flex min-h-dvh flex-col bg-background text-foreground antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <QueryProvider>
-            <JsonLd
-              data={websiteJsonLd({
-                name: messages.brand.name,
-                description: messages.meta.siteDescription,
-              })}
-            />
-            {children}
-            <CookieBannerHost />
-            <Toaster richColors position="top-right" offset={{ top: 80 }} mobileOffset={{ top: 72 }} />
+            <GuestAuthProvider>
+              <JsonLd
+                data={websiteJsonLd({
+                  name: messages.brand.name,
+                  description: messages.meta.siteDescription,
+                })}
+              />
+              {children}
+              <CookieBannerHost />
+              <Toaster richColors position="top-right" offset={{ top: 80 }} mobileOffset={{ top: 72 }} />
+            </GuestAuthProvider>
           </QueryProvider>
         </NextIntlClientProvider>
       </body>

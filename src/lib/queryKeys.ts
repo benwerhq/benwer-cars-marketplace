@@ -81,6 +81,14 @@ export function guestReservationsQueryKey(companySlug: string) {
   return [QueryKeys.GUEST_RESERVATIONS, companySlug] as const;
 }
 
+export function guestNotificationsQueryKey(uid?: string | null, locale?: string) {
+  return [QueryKeys.GUEST_NOTIFICATIONS, uid ?? null, locale ?? null] as const;
+}
+
+export function guestNotificationsUnreadQueryKey(uid?: string | null) {
+  return [QueryKeys.GUEST_NOTIFICATIONS_UNREAD, uid ?? null] as const;
+}
+
 export function oneWayFeeQueryKey(
   companySlug: string,
   query: PriceQuoteQuery & { returnBranchId: string },

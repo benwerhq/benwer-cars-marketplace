@@ -64,6 +64,7 @@ export const reservationsApi = {
           vehicleId: payload.vehicleId,
           startDate: payload.startDate,
           endDate: payload.endDate,
+          channel: "website",
           ...(payload.insurancePackageId
             ? { insurancePackageId: payload.insurancePackageId }
             : {}),

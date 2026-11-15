@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { NavRoutes } from "@/enums";
 import { BrandLogo } from "./BrandLogo";
 import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
+import { GuestNotificationBell } from "./GuestNotificationBell";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { MarketplaceMobileMenu, MarketplaceNav } from "./MarketplaceNav";
 import { SiteHeaderShell } from "./SiteHeaderShell";
@@ -36,6 +37,7 @@ export async function MarketplaceHeader({ className }: MarketplaceHeaderProps) {
       <MarketplaceNav />
       <ColorSchemeSwitcher />
       <LocaleSwitcher />
+      <GuestNotificationBell />
     </SiteHeaderShell>
   );
 }

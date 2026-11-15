@@ -1,7 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 import { Suspense } from "react";
 import { headers } from "next/headers";
-import { GuestAuthProvider } from "@/context/GuestAuthProvider";
 import { OwnerEditorViewProvider } from "@/context/OwnerEditorViewProvider";
 import { StaffAuthProvider } from "@/context/StaffAuthProvider";
 import { DocumentCorners } from "@/components/layout/DocumentCorners";
@@ -49,9 +48,8 @@ async function SiteLayout({ children, params }: Props) {
   } as CSSProperties;
 
   return (
-    <GuestAuthProvider>
-      <StaffAuthProvider>
-        <OwnerEditorViewProvider>
+    <StaffAuthProvider>
+      <OwnerEditorViewProvider>
           <div
             style={style}
             data-corners={corners}
@@ -70,7 +68,6 @@ async function SiteLayout({ children, params }: Props) {
           </div>
         </OwnerEditorViewProvider>
       </StaffAuthProvider>
-    </GuestAuthProvider>
   );
 }
 

@@ -133,6 +133,22 @@ export function isAllowedPublicApiProxyPath(
     return true;
   }
 
+  if (
+    verb === "POST" &&
+    /^v1\/public\/guest\/notifications\/(?:read-all|[^/]+\/(?:read|dismiss))$/.test(
+      normalized,
+    )
+  ) {
+    return true;
+  }
+
+  if (
+    (verb === "PUT" || verb === "DELETE") &&
+    normalized === "v1/public/guest/devices/web-push"
+  ) {
+    return true;
+  }
+
   return false;
 }
 

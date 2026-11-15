@@ -129,5 +129,21 @@
   },
   "datePicker": {
     "clear": "Clear date"
+  },
+  "guestNotifications": {
+    "title": "Notifications",
+    "openLabel": "Open notifications",
+    "unreadCount": "{count} unread notifications",
+    "emptyTitle": "No notifications yet",
+    "emptyBody": "Booking updates, payment reminders, and pickup alerts will appear here.",
+    "error": "Could not load notifications.",
+    "retry": "Try again",
+    "markAllRead": "Mark all read",
+    "dismiss": "Dismiss",
+    "loadMore": "Load more",
+    "enablePush": "Enable browser alerts",
+    "pushEnabled": "Browser alerts enabled",
+    "pushBlocked": "Browser alerts blocked in settings",
+    "disablePush": "Disable browser alerts"
   }
 }
