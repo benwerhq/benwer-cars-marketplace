@@ -220,6 +220,7 @@
   "cars": {
     "showingOf": "Mostrando {shown} de {total} coches",
     "loadMore": "Ver más coches",
+    "seeAll": "Ver todos",
     "title": "Coches disponibles",
     "subtitle": "Todos los coches públicos de las empresas de alquiler asociadas en la provincia de Málaga. Elige tus fechas para ver qué está libre.",
     "searchEmptyTitle": "Ningún coche coincide con esta búsqueda",

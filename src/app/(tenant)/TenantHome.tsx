@@ -152,6 +152,8 @@ export async function TenantHome() {
             hrefBase="/cars"
             filterByAvailability
             channel={SITE_CHANNEL}
+            limit={6}
+            viewAllHref="/search"
           />
         </HydrationBoundary>
       </main>

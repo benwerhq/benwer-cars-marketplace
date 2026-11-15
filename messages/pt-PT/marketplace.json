@@ -220,6 +220,7 @@
   "cars": {
     "showingOf": "A mostrar {shown} de {total} carros",
     "loadMore": "Ver mais carros",
+    "seeAll": "Ver todos",
     "title": "Carros disponíveis",
     "searchEmptyTitle": "Nenhum carro corresponde a esta pesquisa",
     "searchEmptyHint": "Experimente outras datas ou outro local da província de Málaga. Todas as cidades continuam na lista — mesmo que hoje não haja carros publicados.",
