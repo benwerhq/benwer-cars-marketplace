@@ -18,6 +18,7 @@
     "title": "Coches disponibles",
     "subtitle": "Todos los coches que han publicado las empresas asociadas, en un mismo lugar. Elige uno y resérvalo en la web de la empresa.",
     "viewAll": "Buscar todos los coches",
+    "seeAll": "Ver todos",
     "emptyTitle": "Aún no hay coches",
     "emptyHint": "Las flotas públicas aparecerán aquí cuando las empresas las publiquen."
   },

@@ -136,10 +136,12 @@ export async function MarketplaceHowItWorks() {
         description={t("subtitle")}
         className="items-center text-center md:flex-col md:items-center"
       />
-      <ol className="grid w-full gap-14 md:grid-cols-3 md:gap-10">
+      <ol className="grid w-full gap-14 md:grid-cols-3 md:gap-x-10 md:gap-y-0 md:grid-rows-[auto_auto_auto_1fr]">
         {steps.map(({ key, preview }, index) => (
-          <li key={key} className="relative flex flex-col items-center text-center">
-            {index < steps.length - 1 ? <StepArrow /> : null}
+          <li
+            key={key}
+            className="relative flex flex-col items-center text-center md:grid md:grid-rows-subgrid md:row-span-4 md:justify-items-center"
+          >
             <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-primary-foreground ring-8 ring-primary/10">
               <span className="sr-only">{t("stepLabel", { number: index + 1 })}</span>
               <span aria-hidden>{index + 1}</span>
@@ -147,15 +149,19 @@ export async function MarketplaceHowItWorks() {
             <h3 className="mt-5 text-lg font-semibold text-foreground">
               {t(`${key}Title`)}
             </h3>
-            <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground md:min-h-[4.5rem] md:text-base">
               {t(`${key}Body`)}
             </p>
-            <div aria-hidden className={cn(PREVIEW_CARD, "relative")}>
+            <div
+              aria-hidden
+              className={cn(PREVIEW_CARD, "relative md:self-start")}
+            >
               <span className="absolute -top-2.5 right-3 rounded-full border border-border bg-surface px-2 py-0.5 text-[10px] font-semibold tracking-wide text-muted-foreground uppercase">
                 {t("preview.example")}
               </span>
               {preview}
             </div>
+            {index < steps.length - 1 ? <StepArrow /> : null}
           </li>
         ))}
       </ol>

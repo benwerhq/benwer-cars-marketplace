@@ -14,9 +14,10 @@
   },
   "featuredCars": {
     "viewAllCount": "Ver os {count} carros",
-    "title": "Popular cars",
+    "title": "Carros disponíveis",
     "subtitle": "Live listings from partner fleets — the same cars companies manage in admin.",
     "viewAll": "Pesquisar todos os carros",
+    "seeAll": "Ver todos",
     "emptyTitle": "Ainda não há carros publicados",
     "emptyHint": "As frotas públicas aparecem aqui quando as empresas as publicarem.",
     "eyebrow": "Carros"

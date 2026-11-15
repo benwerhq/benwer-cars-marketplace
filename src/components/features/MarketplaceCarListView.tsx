@@ -146,6 +146,7 @@ function MarketplaceCarListContent() {
   return (
     <div className="flex flex-col gap-5">
       <VehicleFilterToolbar
+        container={false}
         filters={filters}
         onChange={handleChange}
         vehicles={allVehicles}
@@ -201,7 +202,7 @@ function MarketplaceCarListContent() {
 function MarketplaceCarListFallback() {
   return (
     <div className="flex flex-col gap-5">
-      <VehicleFilterToolbarSkeleton />
+      <VehicleFilterToolbarSkeleton container={false} />
       <CarGridSkeleton className={RESULTS_GRID_CLASS} />
     </div>
   );
