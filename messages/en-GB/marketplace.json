@@ -18,6 +18,7 @@
     "title": "Available cars",
     "subtitle": "Every car partner companies have published, side by side. Pick one to book on the company's own site.",
     "viewAll": "Search all cars",
+    "seeAll": "See all",
     "emptyTitle": "No cars listed yet",
     "emptyHint": "Public fleets will appear here when companies publish them."
   },

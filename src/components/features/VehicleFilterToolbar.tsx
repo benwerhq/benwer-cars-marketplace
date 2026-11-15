@@ -36,6 +36,7 @@ interface VehicleFilterToolbarProps {
   footer?: ReactNode;
   groupFilter?: boolean;
   className?: string;
+  container?: boolean;
 }
 
 export function VehicleFilterToolbar({
@@ -46,6 +47,7 @@ export function VehicleFilterToolbar({
   footer,
   groupFilter = false,
   className,
+  container = true,
 }: VehicleFilterToolbarProps) {
   const t = useTranslations("cars");
   const locale = useLocale();
@@ -114,7 +116,8 @@ export function VehicleFilterToolbar({
       role="search"
       aria-label={t("filters.title")}
       className={cn(
-        "flex flex-col gap-3 rounded-2xl border border-border bg-surface p-3 md:p-4",
+        "flex flex-col gap-3",
+        container && "rounded-2xl border border-border bg-surface p-3 md:p-4",
         className,
       )}
     >
@@ -242,7 +245,9 @@ export function VehicleFilterToolbar({
         ) : null}
       </div>
       {footer ? (
-        <div className="border-t border-border pt-3">{footer}</div>
+        <div className={cn(container && "border-t border-border pt-3")}>
+          {footer}
+        </div>
       ) : null}
     </div>
   );
@@ -332,13 +337,16 @@ export function VehicleResultsBarSkeleton({
 
 export function VehicleFilterToolbarSkeleton({
   className,
+  container = true,
 }: {
   className?: string;
+  container?: boolean;
 }) {
   return (
     <div
       className={cn(
-        "flex flex-col gap-3 rounded-2xl border border-border bg-surface p-3 md:p-4",
+        "flex flex-col gap-3",
+        container && "rounded-2xl border border-border bg-surface p-3 md:p-4",
         className,
       )}
     >
@@ -349,7 +357,7 @@ export function VehicleFilterToolbarSkeleton({
         <Skeleton className="h-9 w-36 rounded-full" />
         <Skeleton className="h-9 w-24 rounded-full" />
       </div>
-      <div className="border-t border-border pt-3">
+      <div className={cn(container && "border-t border-border pt-3")}>
         <VehicleResultsBarSkeleton />
       </div>
     </div>
