@@ -154,6 +154,8 @@ export async function TenantHome() {
             channel={SITE_CHANNEL}
             limit={6}
             viewAllHref="/search"
+            showDateSearch={false}
+            showFilters={false}
           />
         </HydrationBoundary>
       </main>

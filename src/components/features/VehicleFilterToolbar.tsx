@@ -47,7 +47,7 @@ export function VehicleFilterToolbar({
   footer,
   groupFilter = false,
   className,
-  container = true,
+  container = false,
 }: VehicleFilterToolbarProps) {
   const t = useTranslations("cars");
   const locale = useLocale();
@@ -337,7 +337,7 @@ export function VehicleResultsBarSkeleton({
 
 export function VehicleFilterToolbarSkeleton({
   className,
-  container = true,
+  container = false,
 }: {
   className?: string;
   container?: boolean;
