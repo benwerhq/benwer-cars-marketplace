@@ -39,6 +39,8 @@ import type { Vehicle, VehicleFilters } from "@/types/vehicle";
 
 const RESULTS_GRID_CLASS = "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
 const ROWS_GRID_CLASS = "sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5";
+const VIEW_ALL_LINK_CLASS =
+  "cursor-pointer text-sm font-semibold text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
 
 interface CarListViewProps {
   companySlug: string;
@@ -50,6 +52,9 @@ interface CarListViewProps {
   layout?: CarListLayout;
   limit?: number;
   viewAllHref?: string;
+  showFilters?: boolean;
+  showHeader?: boolean;
+  container?: boolean;
 }
 
 export type CarListLayout = "rail" | "rows";
@@ -61,12 +66,15 @@ function CarListViewContent({
   companySlug,
   hrefBase,
   showDirectoryEmptyAction = false,
-  showDateSearch = true,
+  showDateSearch,
   filterByAvailability = false,
   channel,
   layout = "rail",
   limit,
   viewAllHref,
+  showFilters,
+  showHeader,
+  container = false,
 }: CarListViewProps) {
   const t = useTranslations("cars");
   const locale = useLocale();
@@ -145,6 +153,10 @@ function CarListViewContent({
         return `${base.pathname}${query ? `?${query}` : ""}${base.hash}`;
       })()
     : undefined;
+  const shouldShowFilters = showFilters ?? !limit;
+  const shouldShowHeader =
+    showHeader ?? (!shouldShowFilters && Boolean(viewAllHref));
+  const shouldShowDateSearch = showDateSearch ?? !limit;
   const days =
     fromDate && toDate
       ? Math.max(
@@ -213,7 +225,7 @@ function CarListViewContent({
 
   return (
     <div className="flex flex-col gap-6">
-      {showDateSearch ? (
+      {shouldShowDateSearch ? (
         <div className="rounded-2xl border border-border bg-surface p-2 shadow-md md:p-2.5">
           <DateRangePopover
             from={filters.from ?? ""}
@@ -228,34 +240,49 @@ function CarListViewContent({
           />
         </div>
       ) : null}
-      <VehicleFilterToolbar
-        filters={filters}
-        onChange={handleChange}
-        vehicles={allVehicles}
-        groupFilter
-        footer={
-          <VehicleResultsBar
-            filters={filters}
-            onChange={handleChange}
-            summary={
-              isLoading ? (
-                <Skeleton className="h-4 w-36" />
-              ) : isError ? null : (
-                <p
-                  className={
-                    rows
-                      ? "text-base text-muted-foreground"
-                      : "text-sm text-muted-foreground"
-                  }
-                  aria-live="polite"
-                >
-                  {resultsLabel}
-                </p>
-              )
-            }
-          />
-        }
-      />
+      {shouldShowHeader ? (
+        <div className="flex items-center justify-between gap-4">
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+            {t("title")}
+          </h2>
+          {resolvedViewAllHref ? (
+            <Link href={resolvedViewAllHref} className={VIEW_ALL_LINK_CLASS}>
+              {t("seeAll")}
+            </Link>
+          ) : null}
+        </div>
+      ) : null}
+      {shouldShowFilters ? (
+        <VehicleFilterToolbar
+          container={container}
+          filters={filters}
+          onChange={handleChange}
+          vehicles={allVehicles}
+          groupFilter
+          footer={
+            <VehicleResultsBar
+              filters={filters}
+              onChange={handleChange}
+              summary={
+                isLoading ? (
+                  <Skeleton className="h-4 w-36" />
+                ) : isError ? null : (
+                  <p
+                    className={
+                      rows
+                        ? "text-base text-muted-foreground"
+                        : "text-sm text-muted-foreground"
+                    }
+                    aria-live="polite"
+                  >
+                    {resultsLabel}
+                  </p>
+                )
+              }
+            />
+          }
+        />
+      ) : null}
       <CarGridView
         vehicles={
           limit ? vehicles?.slice(0, limit) : vehicles?.slice(0, visible)
@@ -319,10 +346,18 @@ function CarListViewContent({
   );
 }
 
-function CarListViewFallback() {
+function CarListViewFallback({
+  showFilters = true,
+  container = false,
+}: {
+  showFilters?: boolean;
+  container?: boolean;
+}) {
   return (
     <div className="flex flex-col gap-6">
-      <VehicleFilterToolbarSkeleton />
+      {showFilters ? (
+        <VehicleFilterToolbarSkeleton container={container} />
+      ) : null}
       <CarGridSkeleton className={RESULTS_GRID_CLASS} />
     </div>
   );
@@ -337,9 +372,21 @@ export function CarListView({
   layout,
   limit,
   viewAllHref,
+  showFilters,
+  showHeader,
+  container = false,
 }: CarListViewProps) {
+  const shouldShowFilters = showFilters ?? !limit;
+
   return (
-    <Suspense fallback={<CarListViewFallback />}>
+    <Suspense
+      fallback={
+        <CarListViewFallback
+          showFilters={shouldShowFilters}
+          container={container}
+        />
+      }
+    >
       <CarListViewContent
         companySlug={companySlug}
         hrefBase={hrefBase}
@@ -350,6 +397,9 @@ export function CarListView({
         layout={layout}
         limit={limit}
         viewAllHref={viewAllHref}
+        showFilters={showFilters}
+        showHeader={showHeader}
+        container={container}
       />
     </Suspense>
   );

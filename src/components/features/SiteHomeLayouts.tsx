@@ -137,6 +137,7 @@ export function SiteHomeLayouts({
                 showDirectoryEmptyAction={false}
                 channel={SITE_CHANNEL}
                 limit={6}
+                showFilters={false}
                 viewAllHref={siteChildFromHome(homeHref, "/search")}
               />
             </HydrationBoundary>
