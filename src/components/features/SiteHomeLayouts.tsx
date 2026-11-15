@@ -12,6 +12,7 @@ import {
   SITE_CHANNEL,
   canAcceptBookings,
   isSitePaused,
+  siteChildFromHome,
   sitePathFromHome,
 } from "@/lib/site";
 import {
@@ -135,6 +136,8 @@ export function SiteHomeLayouts({
                 filterByAvailability
                 showDirectoryEmptyAction={false}
                 channel={SITE_CHANNEL}
+                limit={6}
+                viewAllHref={siteChildFromHome(homeHref, "/search")}
               />
             </HydrationBoundary>
           </main>

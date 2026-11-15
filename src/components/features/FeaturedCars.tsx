@@ -6,10 +6,12 @@ import { useTranslations } from "next-intl";
 import { useMarketplaceVehicles } from "@/hooks/useMarketplaceVehicles";
 import { NavRoutes } from "@/enums";
 import { buildCompanyCarHref } from "@/lib/companySite";
+import { buttonVariants } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 import { CarGridSkeleton, CarGridView } from "./CarGrid";
 import type { Vehicle } from "@/types/vehicle";
 
-const FEATURED_LIMIT = 8;
+const FEATURED_LIMIT = 6;
 const FEATURED_GRID_CLASS =
   "gap-5 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2";
 
@@ -54,13 +56,19 @@ function FeaturedCarsContent() {
         emptyActionLabel={t("seeAll")}
         emptyActionHref={NavRoutes.CARS}
         className={FEATURED_GRID_CLASS}
-        skeletonCount={4}
+        skeletonCount={6}
         variant="row"
       />
-      {!isPending && !isError && (data?.length ?? 0) > FEATURED_LIMIT ? (
-        <div className="flex justify-center">
-          <Link href={NavRoutes.CARS} className={VIEW_ALL_LINK_CLASS}>
-            {t("viewAllCount", { count: data?.length ?? 0 })}
+      {!isPending && !isError && (data?.length ?? 0) > 0 ? (
+        <div className="flex justify-center pt-2">
+          <Link
+            href={NavRoutes.CARS}
+            className={cn(
+              buttonVariants({ variant: "secondary" }),
+              "rounded-full px-8 font-semibold",
+            )}
+          >
+            {t("seeAll")}
           </Link>
         </div>
       ) : null}
@@ -69,7 +77,7 @@ function FeaturedCarsContent() {
 }
 
 function FeaturedCarsFallback() {
-  return <CarGridSkeleton className={FEATURED_GRID_CLASS} count={4} />;
+  return <CarGridSkeleton className={FEATURED_GRID_CLASS} count={6} />;
 }
 
 export function FeaturedCars() {

@@ -1,10 +1,13 @@
 "use client";
 
 import { Suspense } from "react";
+import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useCompany } from "@/hooks/useCompany";
 import { useVehicles } from "@/hooks/useVehicles";
+import { buttonVariants } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 import { CarGridSkeleton, CarGridView } from "./CarGrid";
 import { LoadMoreCars } from "./LoadMoreCars";
 import { useVisibleCount } from "@/hooks/useVisibleCount";
@@ -45,6 +48,8 @@ interface CarListViewProps {
   filterByAvailability?: boolean;
   channel?: PublicChannel;
   layout?: CarListLayout;
+  limit?: number;
+  viewAllHref?: string;
 }
 
 export type CarListLayout = "rail" | "rows";
@@ -60,6 +65,8 @@ function CarListViewContent({
   filterByAvailability = false,
   channel,
   layout = "rail",
+  limit,
+  viewAllHref,
 }: CarListViewProps) {
   const t = useTranslations("cars");
   const locale = useLocale();
@@ -126,6 +133,18 @@ function CarListViewContent({
     searchParams.toString(),
   );
   const rows = layout === "rows";
+  const resolvedViewAllHref = viewAllHref
+    ? (() => {
+        const base = new URL(viewAllHref, "https://benwer.local");
+        searchParams.forEach((value, key) => {
+          if (!base.searchParams.has(key)) {
+            base.searchParams.set(key, value);
+          }
+        });
+        const query = base.searchParams.toString();
+        return `${base.pathname}${query ? `?${query}` : ""}${base.hash}`;
+      })()
+    : undefined;
   const days =
     fromDate && toDate
       ? Math.max(
@@ -238,7 +257,9 @@ function CarListViewContent({
         }
       />
       <CarGridView
-        vehicles={vehicles?.slice(0, visible)}
+        vehicles={
+          limit ? vehicles?.slice(0, limit) : vehicles?.slice(0, visible)
+        }
         isPending={isLoading}
         isError={isError}
         error={error}
@@ -270,16 +291,30 @@ function CarListViewContent({
             : NavRoutes.COMPANIES
         }
         className={rows ? ROWS_GRID_CLASS : RESULTS_GRID_CLASS}
+        skeletonCount={limit ?? (rows ? 4 : 8)}
         variant={rows ? "row" : "card"}
         days={days}
       />
-      {isLoading || isError ? null : (
+      {resolvedViewAllHref && !isLoading && !isError && count > 0 ? (
+        <div className="flex justify-center pt-2">
+          <Link
+            href={resolvedViewAllHref}
+            className={cn(
+              buttonVariants({ variant: "secondary" }),
+              "rounded-full px-8 font-semibold",
+            )}
+          >
+            {t("seeAll")}
+          </Link>
+        </div>
+      ) : null}
+      {!resolvedViewAllHref && !limit && !isLoading && !isError ? (
         <LoadMoreCars
           shown={Math.min(visible, count)}
           total={count}
           onLoadMore={showMore}
         />
-      )}
+      ) : null}
     </div>
   );
 }
@@ -300,6 +335,8 @@ export function CarListView({
   filterByAvailability,
   channel,
   layout,
+  limit,
+  viewAllHref,
 }: CarListViewProps) {
   return (
     <Suspense fallback={<CarListViewFallback />}>
@@ -311,6 +348,8 @@ export function CarListView({
         filterByAvailability={filterByAvailability}
         channel={channel}
         layout={layout}
+        limit={limit}
+        viewAllHref={viewAllHref}
       />
     </Suspense>
   );

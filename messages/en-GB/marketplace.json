@@ -220,6 +220,7 @@
   "cars": {
     "showingOf": "Showing {shown} of {total} cars",
     "loadMore": "Show more cars",
+    "seeAll": "See all",
     "title": "Available cars",
     "subtitle": "Every public car from partner rental companies across Málaga province. Pick your dates to see what is free.",
     "searchEmptyTitle": "No cars match this search",
