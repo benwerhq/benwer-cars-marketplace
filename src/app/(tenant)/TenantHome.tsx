@@ -15,6 +15,7 @@ import { NavRoutes } from "@/enums";
 import { ApiError } from "@/lib/errors";
 import { logError } from "@/lib/logger";
 import { prefetchCompanyFleetState } from "@/lib/prefetchCompanyFleet";
+import { SITE_CHANNEL } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateTenantMetadata(): Promise<Metadata> {
@@ -124,13 +125,16 @@ export async function TenantHome() {
     );
   }
 
-  const dehydratedState = await prefetchCompanyFleetState(company);
+  const dehydratedState = await prefetchCompanyFleetState(company, {
+    channel: SITE_CHANNEL,
+  });
 
   return (
     <>
       <TenantHeader
         companyName={company.name}
         logoUrl={company.branding.logoUrl}
+        logoDarkUrl={company.branding.logoDarkUrl}
       />
       <CompanyBanner
         name={company.name}
@@ -143,7 +147,16 @@ export async function TenantHome() {
         className="mx-auto w-full max-w-7xl scroll-mt-20 px-4 py-8 md:px-6 lg:px-8"
       >
         <HydrationBoundary state={dehydratedState}>
-          <CarListView companySlug={companySlug} hrefBase="/cars" />
+          <CarListView
+            companySlug={companySlug}
+            hrefBase="/cars"
+            filterByAvailability
+            channel={SITE_CHANNEL}
+            limit={6}
+            viewAllHref="/search"
+            showDateSearch={false}
+            showFilters={false}
+          />
         </HydrationBoundary>
       </main>
       <Footer />

@@ -29,6 +29,7 @@ const vehicle = {
   deposit: null,
   category: null,
   mileage: null,
+  branchId: null,
 };
 
 const listed: Company = {
@@ -45,10 +46,13 @@ const listed: Company = {
   websiteUrl: null,
   email: null,
   phone: null,
+  address: null,
   branding: {
     primaryColor: "#7c3aed",
     logoUrl: "/localstack/public-benwer-cars/seed/logos/med-rentacar.svg",
   },
+  branches: [],
+  allowDifferentReturn: false,
 };
 
 describe("resolveCardCompany", () => {

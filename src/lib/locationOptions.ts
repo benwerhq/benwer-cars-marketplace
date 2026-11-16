@@ -67,7 +67,10 @@ export function inventoryLocationsFromCompanies(
   return [...bySlug.entries()]
     .map(([slug, label]) => ({ slug, label }))
     .sort((a, b) =>
-      a.label.localeCompare(b.label, locale === "es-ES" ? "es" : "en"),
+      a.label.localeCompare(
+        b.label,
+        locale === "es-ES" ? "es" : locale === "pt-PT" ? "pt" : "en",
+      ),
     );
 }
 

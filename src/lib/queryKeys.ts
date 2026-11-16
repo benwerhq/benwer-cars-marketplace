@@ -15,6 +15,12 @@ function compactQueryFilters<T extends object>(filters?: T): T | undefined {
   return Object.keys(compact).length > 0 ? compact : undefined;
 }
 
+export function siteQueryKey(slug: string, preview?: string) {
+  return preview
+    ? ([QueryKeys.SITE, slug, preview] as const)
+    : ([QueryKeys.SITE, slug] as const);
+}
+
 export function companyQueryKey(slug: string) {
   return [QueryKeys.COMPANY, slug] as const;
 }
@@ -51,6 +57,53 @@ export function marketplaceVehiclesQueryKey(
   return [QueryKeys.VEHICLES, "marketplace", compact] as const;
 }
 
+export function reservationQueryKey(token: string) {
+  return [QueryKeys.RESERVATION, token] as const;
+}
+
+export function guestPaymentQueryKey(token: string) {
+  return [QueryKeys.PAYMENT, token] as const;
+}
+
+export function cancellationQuoteQueryKey(token: string) {
+  return [QueryKeys.CANCELLATION_QUOTE, token] as const;
+}
+
+export function websiteSettingsQueryKey() {
+  return [QueryKeys.WEBSITE_SETTINGS] as const;
+}
+
+export function guestAccountQueryKey(companySlug: string) {
+  return [QueryKeys.GUEST, companySlug] as const;
+}
+
+export function guestReservationsQueryKey(companySlug: string) {
+  return [QueryKeys.GUEST_RESERVATIONS, companySlug] as const;
+}
+
+export function guestNotificationsQueryKey(uid?: string | null, locale?: string) {
+  return [QueryKeys.GUEST_NOTIFICATIONS, uid ?? null, locale ?? null] as const;
+}
+
+export function guestNotificationsUnreadQueryKey(uid?: string | null) {
+  return [QueryKeys.GUEST_NOTIFICATIONS_UNREAD, uid ?? null] as const;
+}
+
+export function oneWayFeeQueryKey(
+  companySlug: string,
+  query: PriceQuoteQuery & { returnBranchId: string },
+) {
+  return [
+    QueryKeys.ONE_WAY_FEE,
+    companySlug,
+    query.vehicleId,
+    query.startDate,
+    query.endDate,
+    query.returnBranchId,
+    query.channel ?? null,
+  ] as const;
+}
+
 export function priceQuoteQueryKey(
   companySlug: string,
   query: PriceQuoteQuery,
@@ -61,5 +114,6 @@ export function priceQuoteQueryKey(
     query.vehicleId,
     query.startDate,
     query.endDate,
+    query.channel ?? null,
   ] as const;
 }

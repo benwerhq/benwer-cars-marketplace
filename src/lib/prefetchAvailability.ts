@@ -1,5 +1,6 @@
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { availabilityApi } from "@/services/api";
+import type { PublicChannel } from "@/enums";
 import {
   availabilityCalendarWindow,
   availabilityQueryKey,
@@ -8,10 +9,11 @@ import {
 export async function prefetchAvailabilityState(
   companySlug: string,
   vehicleId: string,
+  channel?: PublicChannel,
 ) {
   const queryClient = new QueryClient();
   const window = availabilityCalendarWindow();
-  const params = { ...window, vehicleId };
+  const params = { ...window, vehicleId, channel };
 
   try {
     await queryClient.prefetchQuery({

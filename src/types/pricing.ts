@@ -28,8 +28,11 @@ export interface PriceBreakdown {
   warnings: PriceWarning[];
 }
 
+import type { PublicChannel } from "@/enums";
+
 export interface PriceQuoteQuery {
   vehicleId: string;
   startDate: string;
   endDate: string;
+  channel?: PublicChannel;
 }

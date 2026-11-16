@@ -8,7 +8,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const cookieLocale = cookieStore.get(StorageKeys.LOCALE)?.value;
   let locale = cookieLocale ?? (await requestLocale);
 
-  if (!locale || !routing.locales.includes(locale as "en-GB" | "es-ES")) {
+  if (
+    !locale ||
+    !routing.locales.includes(locale as (typeof routing.locales)[number])
+  ) {
     locale = routing.defaultLocale;
   }
 

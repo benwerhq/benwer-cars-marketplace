@@ -28,7 +28,7 @@ here conflicts with older code, the docs win and the code should be migrated.
 - **Layered data flow:** Component → React Query hook (`src/hooks`) → API service (`src/services/api`) → client.
 - **No hardcoding:** colors from semantic Tailwind tokens; text from i18n; business strings from enums.
 - **Every screen ships four states:** loading, empty, error, success.
-- **No auth.** Fully public. Guest booking via name + email + phone; reservation tracked by confirmation token.
+- **Public by default.** Guest booking via name + email + phone; reservation tracked by confirmation token. Optional guest accounts (guest Firebase) on company sites and in the Benwer Cars guest app; staff Firebase only for owner edit mode.
 - **Git:** never commit to `main`. Pull latest, branch, open a PR.
 
 ## Current setup status (important for agents)

@@ -81,7 +81,10 @@ centroids when lat/lng are omitted. The live API is the only catalogue source;
 GET  /v1/public/companies/{slug}
 ```
 
-Response: `Company & { branding: { primaryColor, logoUrl } }`
+Response: `Company & { branding: { primaryColor, logoUrl, logoDarkUrl? } }`
+
+`logoDarkUrl` (API change required, optional) is a light/white version of the logo
+shown in dark mode. Without it the marketplace shows `logoUrl` on a light plate.
 
 Returns the company profile + branding for layout injection. Used by both subdomain
 and global marketplace modes. Returns `404` for unknown slug or `isPublic = false`
@@ -221,6 +224,7 @@ Allow the marketplace origins: `marketplace.benwer.es`, `*.benwer.es`, and
 - [ ] All `/v1/public/` endpoints implemented, rate-limited, CORS-allowed.
 - [ ] Resend integration for guest reservation confirmation email.
 - [ ] Public endpoints in the OpenAPI spec (for client generation).
+- [ ] Website `content` JSON stored, validated and returned (see §9).
 
 ---
 
@@ -257,3 +261,40 @@ catalogue. If those URLs are unset or the API is unreachable (network / CORS
 `npm run generate:api` uses `openapi/public.json` until production swagger
 includes `/public/` paths. Keep the raw-array unwrap so an older Railway
 deploy does not blank the marketplace.
+
+---
+
+## 9. Website appearance (booking sites)
+
+The storefront and the owner editor use the API's `appearance` object
+(`benwer-cars-api` `src/features/websites`), not a separate content field.
+
+- `GET /v1/settings/website` returns the draft `appearance`, `publishedAppearance`,
+  `revision`, `status` and `canPublish`.
+- `PATCH /v1/settings/website` saves the draft. It needs the current `revision`
+  (stale → `409 website.revision_stale`) and the full `appearance`; the schema is strict.
+- `POST /v1/settings/website/publish` copies the draft to the live site;
+  `POST /v1/settings/website/pause` takes it offline.
+- `GET /v1/public/sites/{slug}` returns the published `appearance` and approved `reviews`
+  (`{ average, count, items[{ rating, text, createdAt }] }`).
+
+`appearance` holds `hero`, `template` (always `classic` for launch), `theme`
+(brand colour, ≥ 4.5:1 contrast with white), `sections` (`hero, search, company,
+fleet, included, reviews, app, branches, extras, faq, contact`; FAQ items live in the
+`faq` section), `banners` (≤ 3; preset collage or uploaded `website_hero` image,
+localised script/highlight/joiner/boxed/description/CTA text, CTA target),
+`bannerTheme` (nine `#RRGGBB` colours), `included` (≤ 6), `app` (https store links),
+`contact` (WhatsApp, reply hours, payment methods), `logos` (`headerAssetId`,
+`companyAssetId`: optional `website_hero` uploads that replace the company logo on the
+site only; views add `headerUrl`/`companyUrl`; **API change required:** optional
+`headerDarkAssetId`/`companyDarkAssetId` for dark-mode versions, with views adding
+`headerDarkUrl`/`companyDarkUrl` — the editor only offers and sends them once the
+API returns `headerDarkAssetId` in `logos`), `pageBackground` (`#RRGGBB`, default
+white) and `legal` (localised plain-text `privacy` and `terms`). The editor sends
+`logos`, `pageBackground` and `legal` only when the API returned them, so it keeps
+saving against an API without them. Fields the API does not
+know are rejected, so the marketplace round-trips the draft it received.
+
+Reviews are written by guests and moderated in Benwer admin; the editor only shows
+the summary. Logo upload uses `POST /v1/uploads?kind=website_hero&entityId={companyId}`; the
+response `id` is the asset id (banner image upload UI is a follow-up).

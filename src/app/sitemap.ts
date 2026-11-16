@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { companiesApi, vehiclesApi } from "@/services/api";
+import { buildCompanySiteHref } from "@/lib/companySite";
 import { absoluteUrl } from "@/lib/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -51,12 +52,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   try {
     const companies = await companiesApi.getAll();
-    const companyRoutes: MetadataRoute.Sitemap = companies.map((company) => ({
-      url: absoluteUrl(`/companies/${company.slug}`),
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.8,
-    }));
+    const companyRoutes: MetadataRoute.Sitemap = companies.flatMap((company) => [
+      {
+        url: absoluteUrl(`/companies/${company.slug}`),
+        lastModified: now,
+        changeFrequency: "daily" as const,
+        priority: 0.8,
+      },
+      {
+        url: buildCompanySiteHref({
+          slug: company.slug,
+          websiteUrl: company.websiteUrl,
+        }),
+        lastModified: now,
+        changeFrequency: "daily" as const,
+        priority: 0.8,
+      },
+    ]);
 
     const vehicleRoutes: MetadataRoute.Sitemap = [];
     for (const company of companies) {
@@ -64,9 +76,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const vehicles = await vehiclesApi.getByCompany(company.slug);
         for (const vehicle of vehicles) {
           vehicleRoutes.push({
-            url: absoluteUrl(
-              `/companies/${encodeURIComponent(company.slug)}/cars/${encodeURIComponent(vehicle.id)}`,
-            ),
+            url: buildCompanySiteHref({
+              slug: company.slug,
+              websiteUrl: company.websiteUrl,
+              path: `/cars/${encodeURIComponent(vehicle.id)}`,
+            }),
             lastModified: now,
             changeFrequency: "weekly",
             priority: 0.7,

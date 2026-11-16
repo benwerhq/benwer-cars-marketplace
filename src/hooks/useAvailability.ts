@@ -16,6 +16,7 @@ export function useAvailability(
     enabled:
       enabled &&
       Boolean(companySlug) &&
+      Boolean(params.vehicleId) &&
       Boolean(params.from) &&
       Boolean(params.to),
   });

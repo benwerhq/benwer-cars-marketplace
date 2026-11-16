@@ -3,6 +3,7 @@
 import { Car } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { CarCard } from "./CarCard";
+import { CarRowCard } from "./CarRowCard";
 import { CarCardSkeleton } from "./CarCardSkeleton";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { ErrorState } from "@/components/ui/ErrorState";
@@ -37,24 +38,32 @@ interface CarGridProps {
   companyFor?: (
     vehicle: Vehicle,
   ) => Pick<Company, "name" | "slug" | "branding"> | null;
+  isAvailable?: (vehicle: Vehicle) => boolean;
   onClearFilters?: () => void;
   emptyTitle?: string;
   emptyHint?: string;
   emptyActionLabel?: string;
   emptyActionHref?: string;
   className?: string;
+  variant?: CarGridVariant;
+  days?: number | null;
 }
+
+export type CarGridVariant = "card" | "row";
 
 export function CarGrid({
   vehicles,
   buildHref,
   companyFor,
+  isAvailable,
   onClearFilters,
   emptyTitle,
   emptyHint,
   emptyActionLabel,
   emptyActionHref,
   className,
+  variant = "card",
+  days = null,
 }: CarGridProps) {
   const t = useTranslations("cars");
 
@@ -84,15 +93,28 @@ export function CarGrid({
         className,
       )}
     >
-      {vehicles.map((vehicle, index) => (
-        <CarCard
-          key={`${vehicle.companySlug}-${vehicle.id}`}
-          vehicle={vehicle}
-          href={buildHref(vehicle)}
-          company={companyFor?.(vehicle)}
-          priority={index === 0}
-        />
-      ))}
+      {vehicles.map((vehicle, index) =>
+        variant === "row" ? (
+          <CarRowCard
+            key={`${vehicle.companySlug}-${vehicle.id}`}
+            vehicle={vehicle}
+            href={buildHref(vehicle)}
+            days={days}
+            priority={index === 0}
+            available={isAvailable?.(vehicle) ?? true}
+            company={companyFor?.(vehicle)}
+          />
+        ) : (
+          <CarCard
+            key={`${vehicle.companySlug}-${vehicle.id}`}
+            vehicle={vehicle}
+            href={buildHref(vehicle)}
+            company={companyFor?.(vehicle)}
+            priority={index === 0}
+            available={isAvailable?.(vehicle) ?? true}
+          />
+        ),
+      )}
     </div>
   );
 }
@@ -107,6 +129,7 @@ interface CarGridViewProps {
   companyFor?: (
     vehicle: Vehicle,
   ) => Pick<Company, "name" | "slug" | "branding"> | null;
+  isAvailable?: (vehicle: Vehicle) => boolean;
   onClearFilters?: () => void;
   emptyTitle?: string;
   emptyHint?: string;
@@ -114,6 +137,8 @@ interface CarGridViewProps {
   emptyActionHref?: string;
   className?: string;
   skeletonCount?: number;
+  variant?: CarGridVariant;
+  days?: number | null;
 }
 
 export function CarGridView({
@@ -124,6 +149,7 @@ export function CarGridView({
   onRetry,
   buildHref,
   companyFor,
+  isAvailable,
   onClearFilters,
   emptyTitle,
   emptyHint,
@@ -131,6 +157,8 @@ export function CarGridView({
   emptyActionHref,
   className,
   skeletonCount,
+  variant,
+  days,
 }: CarGridViewProps) {
   const t = useTranslations();
 
@@ -141,16 +169,21 @@ export function CarGridView({
     return <ErrorState message={t(getErrorKey(error))} onRetry={onRetry} />;
   }
   return (
-    <CarGrid
-      vehicles={vehicles ?? []}
-      buildHref={buildHref}
-      companyFor={companyFor}
-      onClearFilters={onClearFilters}
-      emptyTitle={emptyTitle}
-      emptyHint={emptyHint}
-      emptyActionLabel={emptyActionLabel}
-      emptyActionHref={emptyActionHref}
-      className={className}
-    />
+    <div className="motion-safe:animate-fade-in">
+      <CarGrid
+        vehicles={vehicles ?? []}
+        buildHref={buildHref}
+        companyFor={companyFor}
+        isAvailable={isAvailable}
+        onClearFilters={onClearFilters}
+        emptyTitle={emptyTitle}
+        emptyHint={emptyHint}
+        emptyActionLabel={emptyActionLabel}
+        emptyActionHref={emptyActionHref}
+        className={className}
+        variant={variant}
+        days={days}
+      />
+    </div>
   );
 }

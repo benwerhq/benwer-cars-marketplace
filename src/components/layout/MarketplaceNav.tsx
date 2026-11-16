@@ -5,12 +5,13 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { NavRoutes } from "@/enums";
 import { cn } from "@/lib/utils";
+import { HeaderMobileMenu, type HeaderMenuLink } from "./HeaderMobileMenu";
 
-export function MarketplaceNav() {
+export function useMarketplaceLinks(): HeaderMenuLink[] {
   const t = useTranslations("nav");
   const pathname = usePathname();
 
-  const links = [
+  return [
     {
       href: NavRoutes.HOME,
       label: t("home"),
@@ -32,6 +33,15 @@ export function MarketplaceNav() {
       isActive: pathname === NavRoutes.CONTACT,
     },
   ];
+}
+
+export function MarketplaceMobileMenu() {
+  return <HeaderMobileMenu links={useMarketplaceLinks()} />;
+}
+
+export function MarketplaceNav() {
+  const t = useTranslations("nav");
+  const links = useMarketplaceLinks();
 
   return (
     <nav className="flex items-center gap-1" aria-label={t("mainAria")}>
@@ -43,8 +53,6 @@ export function MarketplaceNav() {
           className={cn(
             "inline-flex cursor-pointer items-center rounded-full px-2.5 py-1.5 text-sm whitespace-nowrap transition-colors",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-            link.href === NavRoutes.HOME && "max-sm:hidden",
-            link.href === NavRoutes.CONTACT && "max-sm:hidden",
             link.isActive
               ? "bg-primary/10 font-medium text-primary"
               : "text-muted-foreground hover:bg-surface-hover hover:text-foreground",

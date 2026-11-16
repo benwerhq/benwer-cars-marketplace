@@ -15,6 +15,11 @@ import {
   sanitizeDateRange,
   unavailableDatesForVehicle,
 } from "@/lib/availability";
+import { vehicleColorLabel } from "@/lib/vehicleColor";
+import { vehicleImageUrls } from "@/lib/vehicleImage";
+import { setHrefParams } from "@/lib/booking";
+import type { CarCartContext } from "./BookingWidget";
+import { SearchParams, type PublicChannel } from "@/enums";
 import type { Vehicle } from "@/types/vehicle";
 
 const AvailabilityCalendar = dynamic(
@@ -39,6 +44,11 @@ interface CarDetailViewProps {
   initialTo?: string;
   backHref?: string;
   backLabel?: string;
+  bookingsEnabled?: boolean;
+  bookHrefOverride?: string | null;
+  requestMode?: boolean;
+  channel?: PublicChannel;
+  cart?: CarCartContext | null;
 }
 
 export function CarDetailView({
@@ -51,8 +61,14 @@ export function CarDetailView({
   initialTo,
   backHref,
   backLabel,
+  bookingsEnabled = true,
+  bookHrefOverride,
+  requestMode = false,
+  channel,
+  cart = null,
 }: CarDetailViewProps) {
   const t = useTranslations("carDetail");
+  const tCars = useTranslations("cars");
   const calendarWindow = availabilityCalendarWindow();
   const { data, isPending, isError, refetch } = useAvailability(
     companySlug,
@@ -60,6 +76,7 @@ export function CarDetailView({
       from: calendarWindow.from,
       to: calendarWindow.to,
       vehicleId: vehicle.id,
+      channel,
     },
     isTenant,
   );
@@ -92,6 +109,28 @@ export function CarDetailView({
       displayRange.to,
       unavailableDates,
     );
+  // The server builds the Book link from the dates in the page URL. The guest
+  // may pick different dates on the calendar, so always carry the picked ones.
+  const bookHref = bookHrefOverride
+    ? setHrefParams(bookHrefOverride, {
+        [SearchParams.FROM]: displayRange.from,
+        [SearchParams.TO]: displayRange.to,
+      })
+    : bookHrefOverride;
+
+  function handleRangeChange(next: { from: string; to: string }) {
+    setRange(next);
+    if (typeof window === "undefined") {
+      return;
+    }
+    // Keep the picked dates in the URL so refresh, back and language switch
+    // do not lose them.
+    const nextUrl = setHrefParams(
+      `${window.location.pathname}${window.location.search}${window.location.hash}`,
+      { [SearchParams.FROM]: next.from, [SearchParams.TO]: next.to },
+    );
+    window.history.replaceState(null, "", nextUrl);
+  }
 
   return (
     <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 lg:grid-cols-3">
@@ -109,13 +148,16 @@ export function CarDetailView({
             {vehicle.brand} {vehicle.model}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            {[vehicle.year > 0 ? String(vehicle.year) : null, vehicle.color]
+            {[
+              vehicle.year > 0 ? String(vehicle.year) : null,
+              vehicleColorLabel(vehicle.color, tCars),
+            ]
               .filter(Boolean)
               .join(" · ")}
           </p>
         </div>
         <CarPhotoGallery
-          photos={vehicle.photos}
+          photos={vehicleImageUrls(vehicle)}
           alt={`${vehicle.brand} ${vehicle.model}`}
         />
         {vehicle.description ? (
@@ -138,7 +180,7 @@ export function CarDetailView({
           <AvailabilityCalendar
             from={displayRange.from}
             to={displayRange.to}
-            onChange={setRange}
+            onChange={handleRangeChange}
             unavailableDates={unavailableDates}
             isPending={isPending}
             isError={isError}
@@ -160,6 +202,10 @@ export function CarDetailView({
           isRangeBlocked={isRangeBlocked}
           isAvailabilityPending={isTenant && isPending}
           isAvailabilityError={isTenant && isError}
+          bookingsEnabled={bookingsEnabled}
+          bookHrefOverride={bookHref}
+          requestMode={requestMode}
+          cart={cart}
         />
       </div>
     </div>

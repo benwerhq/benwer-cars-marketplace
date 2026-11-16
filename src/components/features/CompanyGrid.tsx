@@ -9,7 +9,7 @@ import { ErrorState } from "@/components/ui/ErrorState";
 import { cn } from "@/lib/utils";
 import { getErrorKey } from "@/lib/errors";
 import { NavRoutes } from "@/enums";
-import { buildCompanyHref } from "@/lib/marketplaceSearch";
+import { buildCompanySiteHref } from "@/lib/companySite";
 import type { Company } from "@/types/company";
 
 interface CompanyGridProps {
@@ -73,6 +73,12 @@ export function CompanyGrid({
       : tMap("fleetHint", { count: company.vehicleCount });
   }
 
+  // Companies without public cars stay listed, but after the ones you can book from.
+  const ordered = [
+    ...companies.filter((company) => company.vehicleCount !== 0),
+    ...companies.filter((company) => company.vehicleCount === 0),
+  ];
+
   return (
     <div
       className={cn(
@@ -80,12 +86,21 @@ export function CompanyGrid({
         className,
       )}
     >
-      {companies.map((company) => (
+      {ordered.map((company) => (
         <CompanyCard
           key={company.id}
           company={company}
-          href={buildHref?.(company) ?? buildCompanyHref(company.slug)}
+          href={
+            buildHref?.(company) ??
+            buildCompanySiteHref({
+              slug: company.slug,
+              websiteUrl: company.websiteUrl,
+            })
+          }
           viewFleetLabel={viewFleetLabel ?? t("viewFleet")}
+          noFleetLabel={t("visitWebsite")}
+          locationFallback={t("locationUnknown")}
+          descriptionFallback={t("noDescription")}
           fleetHint={(fleetHint ?? defaultFleetHint)(company)}
           isHighlighted={selectedSlug === company.slug}
           onHighlight={onHighlight}

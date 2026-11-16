@@ -5,6 +5,7 @@ import {
   assertMockCatalogueAllowed,
   collapseDuplicateV1Path,
   isAllowedPublicApiProxyPath,
+  isAllowedStaffWebsiteProxyPath,
   isSameOriginApiBase,
   isUnreachableError,
   joinApiUrl,
@@ -113,6 +114,13 @@ describe("resolveBrowserApiBaseUrl", () => {
         "https://marketplace.benwer.es",
       ),
     ).toBe(SAME_ORIGIN_API_PREFIX);
+    expect(
+      resolveBrowserApiBaseUrl(
+        "https://cars-api.benwer.es/v1",
+        "production",
+        "https://reservas.acme.es",
+      ),
+    ).toBe(SAME_ORIGIN_API_PREFIX);
   });
 
   it("uses the BFF in production even when the public API URL is unset", () => {
@@ -182,7 +190,59 @@ describe("isAllowedPublicApiProxyPath", () => {
         "v1/public/companies/med-rentacar/reservations",
       ),
     ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath("POST", "v1/public/companies/med-rentacar/quotes"),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath("POST", "v1/public/companies/med-rentacar/quotes/x"),
+    ).toBe(false);
     expect(isAllowedPublicApiProxyPath("POST", "v1/contact")).toBe(true);
+    expect(isAllowedPublicApiProxyPath("GET", "v1/public/hosts")).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "POST",
+        "v1/public/reservations/tok/withdraw",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "POST",
+        "v1/public/reservations/tok/payments",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath("POST", "v1/public/reservations/tok/cancel"),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "POST",
+        "v1/public/companies/denver-cars/guest/link",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "POST",
+        "v1/public/companies/denver-cars/guest/link/confirm",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "DELETE",
+        "v1/public/companies/denver-cars/guest/link",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "DELETE",
+        "v1/public/companies/denver-cars/guest",
+      ),
+    ).toBe(true);
+    expect(
+      isAllowedPublicApiProxyPath(
+        "PATCH",
+        "v1/public/companies/denver-cars/guest/me",
+      ),
+    ).toBe(true);
   });
 
   it("rejects authenticated or unknown API paths", () => {
@@ -193,6 +253,36 @@ describe("isAllowedPublicApiProxyPath", () => {
     expect(isAllowedPublicApiProxyPath("POST", "v1/public/companies")).toBe(
       false,
     );
+    expect(
+      isAllowedPublicApiProxyPath(
+        "PATCH",
+        "v1/public/companies/denver-cars/guest",
+      ),
+    ).toBe(false);
+  });
+});
+
+describe("isAllowedStaffWebsiteProxyPath", () => {
+  it("allows staff image uploads for the website editor only with a bearer", () => {
+    expect(isAllowedStaffWebsiteProxyPath("POST", "v1/uploads", true)).toBe(true);
+    expect(isAllowedStaffWebsiteProxyPath("POST", "v1/uploads", false)).toBe(false);
+    expect(isAllowedStaffWebsiteProxyPath("DELETE", "v1/uploads", true)).toBe(false);
+    expect(isAllowedStaffWebsiteProxyPath("GET", "v1/uploads/download", true)).toBe(false);
+  });
+
+  it("allows staff website settings only with a bearer", () => {
+    expect(
+      isAllowedStaffWebsiteProxyPath("GET", "v1/settings/website", true),
+    ).toBe(true);
+    expect(
+      isAllowedStaffWebsiteProxyPath("PATCH", "v1/settings/website", true),
+    ).toBe(true);
+    expect(
+      isAllowedStaffWebsiteProxyPath("GET", "v1/settings/website", false),
+    ).toBe(false);
+    expect(
+      isAllowedStaffWebsiteProxyPath("GET", "v1/settings/billing", true),
+    ).toBe(false);
   });
 });
 

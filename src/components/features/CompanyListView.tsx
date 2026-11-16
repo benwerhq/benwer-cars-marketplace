@@ -11,6 +11,7 @@ import {
   MarketplaceSearchBarFallback,
 } from "./MarketplaceSearchBar";
 import { NavRoutes, SearchParams } from "@/enums";
+import { companyForBranch } from "@/lib/branchOptions";
 import type { Company } from "@/types/company";
 
 interface CompanyListViewProps {
@@ -28,7 +29,10 @@ function FeaturedCompanyResults({
 }) {
   const t = useTranslations("companies");
   const { data, isPending, isError, error, refetch } = useCompanies();
-  const companies = data ?? initialCompanies;
+  // Featured companies are only the ones with public cars to look at.
+  const companies = (data ?? initialCompanies)?.filter(
+    (company) => company.vehicleCount !== 0,
+  );
   const waiting = isPending && !initialCompanies;
 
   return (
@@ -48,21 +52,32 @@ function FeaturedCompanyResults({
 
 function SearchableCompanyResults() {
   const searchParams = useSearchParams();
-  const location = searchParams.get(SearchParams.LOCATION);
+  const branchId = searchParams.get(SearchParams.BRANCH);
+  const location = branchId ? null : searchParams.get(SearchParams.LOCATION);
   const { data, isPending, isError, error, refetch } = useCompanies(
     location ? { location } : undefined,
   );
+  const branchCompany = branchId
+    ? companyForBranch(data ?? [], branchId)
+    : undefined;
+  const branch = branchCompany?.branches.find((item) => item.id === branchId);
+  const companies =
+    branchId && data ? (branchCompany ? [branchCompany] : []) : data;
 
   return (
     <div className="flex flex-col gap-6">
       <MarketplaceSearchBar target="companies" />
       <CompanyDirectory
-        companies={data}
+        key={branchId ?? ""}
+        companies={companies}
         isPending={isPending}
         isError={isError}
         error={error}
         onRetry={refetch}
         location={location}
+        branchName={branch?.name ?? null}
+        initialSelectedSlug={branchCompany?.slug ?? null}
+        hasFilters={Boolean(location || branchId)}
       />
     </div>
   );

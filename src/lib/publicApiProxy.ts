@@ -96,12 +96,80 @@ export function isAllowedPublicApiProxyPath(
 
   if (
     verb === "POST" &&
-    /^v1\/public\/companies\/[^/]+\/reservations$/.test(normalized)
+    /^v1\/public\/companies\/[^/]+\/(reservations|quotes)$/.test(normalized)
+  ) {
+    return true;
+  }
+
+  if (
+    verb === "POST" &&
+    /^v1\/public\/reservations\/[^/]+\/(withdraw|payments|cancel)$/.test(
+      normalized,
+    )
+  ) {
+    return true;
+  }
+
+  if (
+    verb === "POST" &&
+    /^v1\/public\/companies\/[^/]+\/guest\/link(?:\/confirm)?$/.test(
+      normalized,
+    )
+  ) {
+    return true;
+  }
+
+  if (
+    verb === "DELETE" &&
+    /^v1\/public\/companies\/[^/]+\/guest(?:\/link)?$/.test(normalized)
+  ) {
+    return true;
+  }
+
+  if (
+    verb === "PATCH" &&
+    /^v1\/public\/companies\/[^/]+\/guest\/me$/.test(normalized)
+  ) {
+    return true;
+  }
+
+  if (
+    verb === "POST" &&
+    /^v1\/public\/guest\/notifications\/(?:read-all|[^/]+\/(?:read|dismiss))$/.test(
+      normalized,
+    )
+  ) {
+    return true;
+  }
+
+  if (
+    (verb === "PUT" || verb === "DELETE") &&
+    normalized === "v1/public/guest/devices/web-push"
   ) {
     return true;
   }
 
   return false;
+}
+
+export function isAllowedStaffWebsiteProxyPath(
+  method: string,
+  path: string,
+  hasAuthorization: boolean,
+): boolean {
+  if (!hasAuthorization) {
+    return false;
+  }
+
+  const normalized = path.replace(/^\/+/, "");
+  const verb = method.toUpperCase();
+  if (normalized === "v1/uploads") {
+    return verb === "POST";
+  }
+  return (
+    /^v1\/settings\/website(?:\/|$)/.test(normalized) &&
+    (verb === "GET" || verb === "PATCH" || verb === "PUT" || verb === "POST")
+  );
 }
 
 export function isUnreachableError(error: unknown): boolean {

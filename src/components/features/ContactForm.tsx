@@ -1,15 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "sonner";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/Button";
-import { NavRoutes } from "@/enums";
+import { ArrowLeft, Check, Send } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
+import { ContactTopic, NavRoutes } from "@/enums";
 import { useContact } from "@/hooks/useContact";
 import {
   createContactSchema,
@@ -17,16 +18,27 @@ import {
 } from "@/lib/contactSchema";
 import { getErrorKey } from "@/lib/errors";
 
-export function ContactForm() {
+interface ContactFormProps {
+  topic?: ContactTopic;
+}
+
+export function ContactForm({ topic }: ContactFormProps) {
   const t = useTranslations("contact");
   const tNav = useTranslations("nav");
   const tRoot = useTranslations();
+  const [submitted, setSubmitted] = useState(false);
   const schema = createContactSchema({
     nameMin: t("errors.nameMin"),
     email: t("errors.email"),
     subjectMin: t("errors.subjectMin"),
     messageMin: t("errors.messageMin"),
   });
+  const defaultValues: ContactFormValues = {
+    name: "",
+    email: "",
+    subject: topic === ContactTopic.SUPPORT ? t("supportSubjectDefault") : "",
+    message: "",
+  };
   const {
     register,
     handleSubmit,
@@ -34,59 +46,95 @@ export function ContactForm() {
     formState: { errors },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(schema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
+    defaultValues,
   });
-  const contact = useContact(() => {
-    reset();
-    toast.success(t("success"));
-  });
+  const contact = useContact(() => setSubmitted(true));
+
+  if (submitted) {
+    return (
+      <div
+        role="status"
+        className="rounded-2xl border border-border bg-surface px-6 py-12 text-center sm:px-10 sm:py-14"
+      >
+        <div className="mx-auto mb-8 flex size-24 items-center justify-center rounded-full bg-success-soft">
+          <Check
+            size={44}
+            strokeWidth={2.4}
+            className="text-success"
+            aria-hidden
+          />
+        </div>
+        <h2 className="mb-3 text-2xl font-semibold tracking-tight text-foreground">
+          {t("submittedTitle")}
+        </h2>
+        <p className="mb-8 text-sm leading-relaxed text-muted-foreground sm:text-base">
+          {t("submittedDescription")}
+        </p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <Link
+            href={NavRoutes.HOME}
+            className={buttonVariants({ size: "lg" })}
+          >
+            <ArrowLeft size={16} aria-hidden />
+            {t("backHome")}
+          </Link>
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            onClick={() => {
+              reset(defaultValues);
+              contact.reset();
+              setSubmitted(false);
+            }}
+          >
+            {t("sendAnother")}
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <form
-      className="flex flex-col gap-5"
-      onSubmit={handleSubmit((values) => {
-        contact.mutate(values, {
-          onError: (error) => {
-            toast.error(tRoot(getErrorKey(error)));
-          },
-        });
-      })}
+      noValidate
+      className="flex flex-col gap-5 rounded-xl border border-border bg-surface p-6 sm:p-8"
+      onSubmit={handleSubmit((values) => contact.mutate(values))}
     >
-      <Field
-        label={t("name")}
-        htmlFor="name"
-        error={errors.name?.message}
-        required
-      >
-        <Input
-          id="name"
-          type="text"
-          autoComplete="name"
-          className="h-11"
-          {...register("name")}
-        />
-      </Field>
-      <Field
-        label={t("email")}
-        htmlFor="email"
-        error={errors.email?.message}
-        required
-      >
-        <Input
-          id="email"
-          type="email"
-          autoComplete="email"
-          inputMode="email"
-          spellCheck={false}
-          className="h-11"
-          {...register("email")}
-        />
-      </Field>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field
+          label={t("name")}
+          htmlFor="name"
+          error={errors.name?.message}
+          required
+        >
+          <Input
+            id="name"
+            type="text"
+            autoComplete="name"
+            placeholder={t("namePlaceholder")}
+            className="h-11"
+            {...register("name")}
+          />
+        </Field>
+        <Field
+          label={t("email")}
+          htmlFor="email"
+          error={errors.email?.message}
+          required
+        >
+          <Input
+            id="email"
+            type="email"
+            autoComplete="email"
+            inputMode="email"
+            spellCheck={false}
+            placeholder={t("emailPlaceholder")}
+            className="h-11"
+            {...register("email")}
+          />
+        </Field>
+      </div>
       <Field
         label={t("subject")}
         htmlFor="subject"
@@ -96,6 +144,7 @@ export function ContactForm() {
         <Input
           id="subject"
           type="text"
+          placeholder={t("subjectPlaceholder")}
           className="h-11"
           {...register("subject")}
         />
@@ -106,15 +155,30 @@ export function ContactForm() {
         error={errors.message?.message}
         required
       >
-        <Textarea id="message" rows={6} {...register("message")} />
+        <Textarea
+          id="message"
+          rows={6}
+          placeholder={t("messagePlaceholder")}
+          className="resize-none"
+          {...register("message")}
+        />
       </Field>
+      {contact.isError ? (
+        <p
+          role="alert"
+          className="rounded-md bg-danger-soft px-3 py-2 text-sm text-danger"
+        >
+          {tRoot(getErrorKey(contact.error))}
+        </p>
+      ) : null}
       <Button
         type="submit"
         size="lg"
         isLoading={contact.isPending}
-        className="w-full sm:w-auto"
+        className="w-full"
       >
-        {t("submit")}
+        {contact.isPending ? t("submitting") : t("submit")}
+        {contact.isPending ? null : <Send size={16} aria-hidden />}
       </Button>
       <p className="text-sm text-muted-foreground">
         {t("privacyNote")}{" "}

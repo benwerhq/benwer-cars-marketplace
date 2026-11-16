@@ -25,7 +25,9 @@ how the active company context is resolved (from subdomain vs. from the URL path
 ## Who uses it
 
 End customers of rental companies — people who want to rent a car. They are not
-operators and have no account. The experience must be simple, visual, and fast.
+operators. They can book without an account; an optional guest account (company
+sites and the Benwer Cars app) keeps their bookings and linked companies. The
+experience must be simple, visual, and fast.
 
 ## Pages
 
@@ -39,6 +41,8 @@ operators and have no account. The experience must be simple, visual, and fast.
 | **Book**                 | Both        | Guest booking form (name, email, phone, dates)                   |
 | **Booking confirmation** | Both        | Post-booking summary + confirmation token                        |
 | **Booking status**       | Both        | Reservation lookup via token from confirmation email             |
+| **Guest account**        | Tenant      | Optional sign-in, my bookings, link confirm, profile             |
+| **Get the app**          | Marketplace | `/app`: the Benwer Cars guest app and its store badges           |
 
 ## Guest booking flow
 
@@ -48,6 +52,20 @@ No account required. Customer:
 2. Fills in name, email, and phone number.
 3. Confirms. The API creates the reservation and sends a confirmation email.
 4. The email contains a link to `/booking/[token]` where the customer can track status.
+   With the Benwer Cars app installed, the same link opens the trip in the app.
+
+Signing in is optional. A signed-in guest (same guest account on company sites
+and in the app) sees their bookings across the companies they are linked to.
+
+## Benwer Cars guest app
+
+A native iOS and Android app for guests (`benwerhq/benwer-cars-guest-mobile`):
+marketplace search, native booking, trips across companies, push updates, and a
+company mode opened from `{marketplace}/companies/{slug}` links or QR codes.
+Bookings made in the app show as "Benwer app" in admin. The marketplace host
+serves its universal link files and shows store badges once the store listings
+exist. A company site's App section can show the shared app (toggle) or the
+company's own store links. Plan: `docs/guest-app/plan.md`.
 
 ## Branding
 
@@ -58,8 +76,8 @@ In global marketplace mode the Benwer Cars brand is used.
 
 ## Not in scope
 
-Payments, invoices, customer accounts/login, real-time chat, reviews. Build these only
-when explicitly specified.
+Invoices, real-time chat. Build these only when explicitly specified. (Guest
+accounts, payments and reviews now exist; see above and the guest app plan.)
 
 ## Domain status values
 

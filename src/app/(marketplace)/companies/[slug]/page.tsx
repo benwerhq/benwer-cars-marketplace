@@ -6,6 +6,7 @@ import { MarketplaceHeader } from "@/components/layout/MarketplaceHeader";
 import { CompanyBanner } from "@/components/layout/CompanyBanner";
 import { Footer } from "@/components/layout/Footer";
 import { CarListView } from "@/components/features/CarListView";
+import { GuestAppBadges } from "@/components/features/GuestAppBadges";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { PageLoadError } from "@/components/ui/PageLoadError";
 import { companiesApi } from "@/services/api";
@@ -19,7 +20,7 @@ import {
   searchRecordToURLSearchParams,
 } from "@/lib/prefetchCompanyFleet";
 import { buildPageMetadata } from "@/lib/seo";
-import { parseVehicleFilters } from "@/lib/vehicleFilters";
+import { fleetFetchFilters, parseVehicleFilters } from "@/lib/vehicleFilters";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -65,6 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 async function CompanyPage({ params, searchParams }: Props) {
   const [{ slug }, query] = await Promise.all([params, searchParams]);
   const t = await getTranslations("companies");
+  const tApp = await getTranslations("guestApp");
 
   let company = null;
   let companyMissing = false;
@@ -111,7 +113,9 @@ async function CompanyPage({ params, searchParams }: Props) {
     );
   }
 
-  const filters = parseVehicleFilters(searchRecordToURLSearchParams(query));
+  const filters = fleetFetchFilters(
+    parseVehicleFilters(searchRecordToURLSearchParams(query)),
+  );
   const dehydratedState = await prefetchCompanyFleetState(company, filters);
 
   return (
@@ -140,10 +144,19 @@ async function CompanyPage({ params, searchParams }: Props) {
         <HydrationBoundary state={dehydratedState}>
           <CarListView
             companySlug={slug}
-            hrefBase={`/companies/${slug}/cars`}
+            hrefBase={buildCompanySiteHref({
+              slug,
+              websiteUrl: company.websiteUrl,
+              path: "/cars",
+            })}
             showDirectoryEmptyAction
+            filterByAvailability
           />
         </HydrationBoundary>
+        <GuestAppBadges
+          className="mt-12"
+          text={tApp("companyText", { company: company.name })}
+        />
       </main>
       <Footer />
     </>

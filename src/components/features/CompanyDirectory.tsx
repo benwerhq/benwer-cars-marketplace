@@ -8,12 +8,13 @@ import { CompaniesMap } from "./CompaniesMap";
 import { CompanyGrid, CompanyGridSkeleton } from "./CompanyGrid";
 import { Button } from "@/components/ui/Button";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { Skeleton } from "@/components/ui/Skeleton";
 import { isProvinceWideLocation } from "@/data/malagaCities";
 import { NavRoutes, SearchParams } from "@/enums";
 import { toCompanyMapPins } from "@/lib/companyMap";
 import { locationLabelFromSlug } from "@/lib/locationOptions";
 import { getErrorKey } from "@/lib/errors";
-import { buildCompanyHref } from "@/lib/marketplaceSearch";
+import { buildCompanySiteHref } from "@/lib/companySite";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import type { Company } from "@/types/company";
 import { cn } from "@/lib/utils";
@@ -25,6 +26,9 @@ interface CompanyDirectoryProps {
   error?: unknown;
   onRetry: () => void;
   location: string | null;
+  branchName?: string | null;
+  initialSelectedSlug?: string | null;
+  hasFilters?: boolean;
 }
 
 export function CompanyDirectory({
@@ -34,6 +38,9 @@ export function CompanyDirectory({
   error,
   onRetry,
   location,
+  branchName = null,
+  initialSelectedSlug = null,
+  hasFilters = Boolean(location),
 }: CompanyDirectoryProps) {
   const t = useTranslations("map");
   const tCompanies = useTranslations("companies");
@@ -42,24 +49,34 @@ export function CompanyDirectory({
   const router = useRouter();
   const searchParams = useSearchParams();
   const isDesktop = useMediaQuery("(min-width: 1024px)");
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(
+    initialSelectedSlug,
+  );
   const [highlightedSlug, setHighlightedSlug] = useState<string | null>(null);
 
-  const showMapPane =
-    isDesktop || searchParams.get(SearchParams.VIEW) === "map";
+  // Local state answers the tap immediately; the URL is kept in sync without a navigation round trip.
+  const [mobileView, setMobileViewState] = useState<"list" | "map">(
+    searchParams.get(SearchParams.VIEW) === "map" ? "map" : "list",
+  );
+  const showMapPane = isDesktop || mobileView === "map";
   const cityLabel =
     location && !isProvinceWideLocation(location)
       ? locationLabelFromSlug(location, locale)
       : null;
 
+  const searchFrom = searchParams.get(SearchParams.FROM) || undefined;
+  const searchTo = searchParams.get(SearchParams.TO) || undefined;
   const pins = useMemo(
     () =>
       toCompanyMapPins(companies ?? [], (company) =>
-        buildCompanyHref(company.slug, {
-          location: location ?? undefined,
+        buildCompanySiteHref({
+          slug: company.slug,
+          websiteUrl: company.websiteUrl,
+          from: searchFrom,
+          to: searchTo,
         }),
       ),
-    [companies, location],
+    [companies, searchFrom, searchTo],
   );
 
   function setMobileView(view: "list" | "map") {
@@ -70,35 +87,45 @@ export function CompanyDirectory({
       params.delete(SearchParams.VIEW);
     }
 
+    setMobileViewState(view);
     const query = params.toString();
-    router.replace(
+    window.history.replaceState(
+      null,
+      "",
       query ? `${NavRoutes.COMPANIES}?${query}` : NavRoutes.COMPANIES,
-      {
-        scroll: false,
-      },
     );
   }
 
   function companyHref(company: Company): string {
-    return buildCompanyHref(company.slug, {
-      location: location ?? undefined,
+    return buildCompanySiteHref({
+      slug: company.slug,
+      websiteUrl: company.websiteUrl,
+      from: searchFrom,
+      to: searchTo,
     });
   }
 
   const count = companies?.length ?? 0;
-  const resultsLabel = cityLabel
-    ? t("resultsInCity", {
-        count,
-        city: cityLabel,
-      })
-    : t("resultsCount", { count });
+  const resultsLabel = branchName
+    ? t("resultsAtBranch", { count, branch: branchName })
+    : cityLabel
+      ? t("resultsInCity", {
+          count,
+          city: cityLabel,
+        })
+      : t("resultsCount", { count });
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted-foreground">
-          {isPending ? t("loading") : resultsLabel}
-        </p>
+        {isPending ? (
+          <div role="status" className="flex items-center">
+            <span className="sr-only">{t("loading")}</span>
+            <Skeleton className="h-4 w-48" />
+          </div>
+        ) : (
+          <p className="text-sm text-muted-foreground">{resultsLabel}</p>
+        )}
         <div
           className="grid grid-cols-2 rounded-lg border border-border bg-surface p-1 lg:hidden"
           role="group"
@@ -109,7 +136,7 @@ export function CompanyDirectory({
             variant={showMapPane ? "ghost" : "secondary"}
             size="sm"
             aria-pressed={!showMapPane}
-            className="min-h-11"
+            className="min-h-11 touch-manipulation"
             onClick={() => setMobileView("list")}
           >
             <List size={16} aria-hidden />
@@ -120,7 +147,7 @@ export function CompanyDirectory({
             variant={showMapPane ? "secondary" : "ghost"}
             size="sm"
             aria-pressed={showMapPane}
-            className="min-h-11"
+            className="min-h-11 touch-manipulation"
             onClick={() => setMobileView("map")}
           >
             <MapPinned size={16} aria-hidden />
@@ -169,7 +196,9 @@ export function CompanyDirectory({
               }
               viewFleetLabel={tCompanies("viewFleet")}
               onClearFilters={
-                location ? () => router.replace(NavRoutes.COMPANIES) : undefined
+                hasFilters
+                  ? () => router.replace(NavRoutes.COMPANIES)
+                  : undefined
               }
               className="lg:grid-cols-1"
             />

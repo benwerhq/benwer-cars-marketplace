@@ -1,13 +1,19 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ArrowUpRight, Check, ShoppingCart } from "lucide-react";
+import { toast } from "sonner";
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { buildBookHref } from "@/lib/booking";
+import { addToCart, CART_MAX_ITEMS } from "@/lib/cart";
 import { buildCompanySiteHref } from "@/lib/companySite";
 import { countRentalDays, formatLongDate, parseIsoDate } from "@/lib/dates";
 import { formatMoney } from "@/lib/money";
+import { SITE_CHANNEL } from "@/lib/site";
+import { usePriceQuote } from "@/hooks/usePriceQuote";
 import { cn } from "@/lib/utils";
 import type { Vehicle } from "@/types/vehicle";
 
@@ -23,6 +29,19 @@ interface BookingWidgetProps {
   isAvailabilityPending: boolean;
   isAvailabilityError: boolean;
   className?: string;
+  bookingsEnabled?: boolean;
+  bookHrefOverride?: string | null;
+  requestMode?: boolean;
+  cart?: CarCartContext | null;
+}
+
+/** What the car page knows to put a car in the company site's cart. */
+export interface CarCartContext {
+  slug: string;
+  href: string;
+  branch?: string;
+  returnBranch?: string;
+  driverAge?: string;
 }
 
 export function BookingWidget({
@@ -37,8 +56,23 @@ export function BookingWidget({
   isAvailabilityPending,
   isAvailabilityError,
   className,
+  bookingsEnabled = true,
+  bookHrefOverride,
+  requestMode = false,
+  cart = null,
 }: BookingWidgetProps) {
   const t = useTranslations("booking");
+  const tCart = useTranslations("cart");
+  const [justAdded, setJustAdded] = useState(false);
+
+  useEffect(() => {
+    if (!justAdded) {
+      return;
+    }
+    const timer = window.setTimeout(() => setJustAdded(false), 2500);
+    return () => window.clearTimeout(timer);
+  }, [justAdded]);
+  const router = useRouter();
   const tCars = useTranslations("cars");
   const tDetail = useTranslations("carDetail");
   const locale = useLocale();
@@ -49,7 +83,19 @@ export function BookingWidget({
     !isRangeBlocked &&
     !isAvailabilityPending &&
     !isAvailabilityError;
-  const total = canBook ? days * vehicle.pricePerDay : null;
+  // Checkout charges the rate-table quote, so the widget shows the same figures.
+  const quoteQuery = usePriceQuote(companySlug, {
+    vehicleId: vehicle.id,
+    startDate: days > 0 ? from : "",
+    endDate: days > 0 ? to : "",
+    channel: isTenant ? SITE_CHANNEL : undefined,
+  });
+  const quote =
+    days > 0 && !quoteQuery.isPlaceholderData ? quoteQuery.data : undefined;
+  const dailyRate = quote?.averageDailyRate ?? vehicle.pricePerDay;
+  const total = canBook
+    ? (quote?.vehicleSubtotal ?? days * vehicle.pricePerDay)
+    : null;
   const handoffHref = buildCompanySiteHref({
     slug: companySlug,
     websiteUrl: companyWebsiteUrl,
@@ -57,19 +103,46 @@ export function BookingWidget({
     from: from || undefined,
     to: to || undefined,
   });
-  const bookHref = isTenant
-    ? canBook
-      ? buildBookHref({
-          companySlug,
-          carId: vehicle.id,
-          from,
-          to,
-        })
-      : null
-    : handoffHref;
+  const tenantBookHref = canBook
+    ? (bookHrefOverride ??
+      buildBookHref({
+        companySlug,
+        carId: vehicle.id,
+        from,
+        to,
+      }))
+    : null;
+  const bookHref = !bookingsEnabled
+    ? null
+    : isTenant
+      ? tenantBookHref
+      : handoffHref;
+  const canAddToCart = Boolean(cart) && isTenant && bookingsEnabled && canBook;
+
+  function handleAddToCart() {
+    if (!cart || !canAddToCart) {
+      return;
+    }
+    const added = addToCart(cart.slug, {
+      vehicleId: vehicle.id,
+      from,
+      to,
+      branch: cart.branch,
+      returnBranch: cart.returnBranch,
+      driverAge: cart.driverAge,
+    });
+    if (!added) {
+      toast.error(tCart("full", { max: CART_MAX_ITEMS }));
+      return;
+    }
+    setJustAdded(true);
+    toast.success(tCart("added"), {
+      action: { label: tCart("view"), onClick: () => router.push(cart.href) },
+    });
+  }
 
   const priceFormatted = formatMoney(
-    vehicle.pricePerDay,
+    dailyRate,
     vehicle.currency,
     locale,
   );
@@ -87,6 +160,8 @@ export function BookingWidget({
     isRangeBlocked,
     isAvailabilityPending,
     isAvailabilityError,
+    bookingsEnabled,
+    requestMode,
     t,
     tDetail,
   });
@@ -148,6 +223,22 @@ export function BookingWidget({
           external={!isTenant}
           className="hidden lg:inline-flex"
         />
+        {cart && isTenant && bookingsEnabled ? (
+          <Button
+            type="button"
+            variant="secondary"
+            disabled={!canAddToCart}
+            onClick={handleAddToCart}
+            className="hidden h-11 w-full lg:inline-flex"
+          >
+            {justAdded ? (
+              <Check size={16} aria-hidden />
+            ) : (
+              <ShoppingCart size={16} aria-hidden />
+            )}
+            <span aria-live="polite">{justAdded ? tCart("added") : tCart("add")}</span>
+          </Button>
+        ) : null}
       </div>
 
       <div
@@ -167,6 +258,22 @@ export function BookingWidget({
                 : tCars("perDay", { price: priceFormatted })}
             </p>
           </div>
+          {cart && isTenant && bookingsEnabled ? (
+            <Button
+              type="button"
+              variant="secondary"
+              disabled={!canAddToCart}
+              onClick={handleAddToCart}
+              aria-label={justAdded ? tCart("added") : tCart("add")}
+              className="h-11 w-11 shrink-0 px-0"
+            >
+              {justAdded ? (
+                <Check size={18} aria-hidden />
+              ) : (
+                <ShoppingCart size={18} aria-hidden />
+              )}
+            </Button>
+          ) : null}
           <BookingCta
             href={bookHref}
             label={ctaLabel}
@@ -236,8 +343,16 @@ function BookingCta({
     );
   }
 
+  // Disabled state keeps readable contrast (no faded white-on-pink): muted text on a muted surface.
   return (
-    <Button disabled className={cn("h-11 w-full", className)}>
+    <Button
+      disabled
+      variant="secondary"
+      className={cn(
+        "h-11 w-full bg-surface-muted text-muted-foreground disabled:opacity-100",
+        className,
+      )}
+    >
       {label}
     </Button>
   );
@@ -252,6 +367,8 @@ function bookCtaLabel({
   isRangeBlocked,
   isAvailabilityPending,
   isAvailabilityError,
+  bookingsEnabled,
+  requestMode,
   t,
   tDetail,
 }: {
@@ -263,9 +380,15 @@ function bookCtaLabel({
   isRangeBlocked: boolean;
   isAvailabilityPending: boolean;
   isAvailabilityError: boolean;
+  bookingsEnabled: boolean;
+  requestMode: boolean;
   t: ReturnType<typeof useTranslations>;
   tDetail: ReturnType<typeof useTranslations>;
 }): string {
+  if (!bookingsEnabled) {
+    return t("sitePaused");
+  }
+
   if (isTenant) {
     if (isAvailabilityPending) {
       return tDetail("checkingAvailability");
@@ -283,7 +406,7 @@ function bookCtaLabel({
       return t("invalidDates");
     }
 
-    return tDetail("bookNow");
+    return requestMode ? t("confirmRequest") : tDetail("bookNow");
   }
 
   if (companyName) {

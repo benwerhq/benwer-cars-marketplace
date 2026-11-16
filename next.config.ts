@@ -6,12 +6,14 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const LOCALSTACK_ORIGIN =
   process.env.LOCALSTACK_ORIGIN ?? "http://localhost:4566";
 
-function extraMediaRemotePattern(): {
+type RemotePattern = {
   protocol: "http" | "https";
   hostname: string;
-  pathname: string;
-}[] {
-  const raw = process.env.NEXT_PUBLIC_MEDIA_ORIGIN;
+  port?: string;
+  pathname?: string;
+};
+
+function remotePatternFromOrigin(raw: string | undefined): RemotePattern[] {
   if (!raw) {
     return [];
   }
@@ -22,12 +24,24 @@ function extraMediaRemotePattern(): {
       {
         protocol: url.protocol === "http:" ? "http" : "https",
         hostname: url.hostname,
+        ...(url.port ? { port: url.port } : {}),
         pathname: "/**",
       },
     ];
   } catch {
     return [];
   }
+}
+
+function extraMediaRemotePattern(): RemotePattern[] {
+  return remotePatternFromOrigin(process.env.NEXT_PUBLIC_MEDIA_ORIGIN);
+}
+
+function extraApiRemotePatterns(): RemotePattern[] {
+  return [
+    ...remotePatternFromOrigin(process.env.API_ORIGIN),
+    ...remotePatternFromOrigin(process.env.NEXT_PUBLIC_API_URL),
+  ];
 }
 
 const nextConfig: NextConfig = {
@@ -50,6 +64,18 @@ const nextConfig: NextConfig = {
         hostname: "*.benwer.es",
       },
       {
+        protocol: "https",
+        hostname: "**.benwer.es",
+      },
+      {
+        protocol: "https",
+        hostname: "staging.cars-api.benwer.es",
+      },
+      {
+        protocol: "https",
+        hostname: "cars-api.benwer.es",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
         port: "4566",
@@ -62,6 +88,7 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
       ...extraMediaRemotePattern(),
+      ...extraApiRemotePatterns(),
     ],
   },
   async rewrites() {

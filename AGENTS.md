@@ -108,7 +108,27 @@ NEXT_PUBLIC_MARKETPLACE_DOMAIN=benwer.es
 NEXT_PUBLIC_ENV=local
 NEXT_PUBLIC_MARKETING_URL=https://cars.benwer.es
 # NEXT_PUBLIC_ADMIN_DEMO_URL=https://admin.cars.benwer.es
+# NEXT_PUBLIC_ADMIN_URL=https://cars-admin.benwer.es
+# NEXT_PUBLIC_STAFF_FIREBASE_API_KEY=
+# NEXT_PUBLIC_STAFF_FIREBASE_AUTH_DOMAIN=
+# NEXT_PUBLIC_STAFF_FIREBASE_PROJECT_ID=
+# NEXT_PUBLIC_STAFF_FIREBASE_APP_ID=
+# NEXT_PUBLIC_STAFF_FIREBASE_TENANT_ID=
+# NEXT_PUBLIC_GUEST_FIREBASE_API_KEY=
+# NEXT_PUBLIC_GUEST_FIREBASE_AUTH_DOMAIN=
+# NEXT_PUBLIC_GUEST_FIREBASE_PROJECT_ID=
+# NEXT_PUBLIC_GUEST_FIREBASE_APP_ID=
+# NEXT_PUBLIC_GUEST_FIREBASE_TENANT_ID=
 # NEXT_PUBLIC_MEDIA_ORIGIN=https://dxxxx.cloudfront.net
+# NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
+# NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID=
+# NEXT_PUBLIC_WHATSAPP_SUPPORT_NUMBER=34600000000
+# NEXT_PUBLIC_GUEST_APP_IOS_URL=
+# NEXT_PUBLIC_GUEST_APP_ANDROID_URL=
+# GUEST_APP_APPLE_TEAM_ID=
+# GUEST_APP_ANDROID_SHA256_FINGERPRINTS=
+# GUEST_APP_IOS_BUNDLE_ID=
+# GUEST_APP_ANDROID_PACKAGE=
 ```
 
 In local dev, proxy detects `localhost` and defaults to **global marketplace
@@ -135,6 +155,11 @@ mode** (no subdomain). To test tenant mode locally, set a custom `hosts` entry:
 - ❌ **date-fns** — install before adding date formatting or the availability calendar.
 - ❌ **shadcn/ui `cn()` / `cva`** — scaffolded in `src/lib/utils.ts`; install `class-variance-authority` and `clsx` before importing.
 ## Branch hygiene (mandatory)
+
+**Before starting any work**, list local and remote branches (`git fetch --prune`, `git branch -a`). For each branch other than `master`/`main`/`staging`:
+- Already merged (`git log origin/staging..<name>` empty, or its PR is merged) → clean it up (remote and local).
+- In progress (unmerged commits, open PR, or unpushed work) → keep it.
+- Unsure → keep it and highlight it to the user; never delete on a guess.
 
 After every merge, clean up the branches it leaves behind. Only `master`/`main` and `staging` are long-lived.
 

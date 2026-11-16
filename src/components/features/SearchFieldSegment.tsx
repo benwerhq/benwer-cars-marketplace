@@ -34,7 +34,7 @@ export const SearchFieldSegment = forwardRef<
         "flex min-h-11 w-full min-w-0 cursor-pointer items-center gap-2.5 rounded-xl px-3 py-1.5 text-left transition-colors",
         "hover:bg-surface-hover",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-        isActive && "bg-surface-hover ring-2 ring-ring",
+        isActive && "bg-surface-hover ring-2 ring-inset ring-ring",
         tone === "warning" && "bg-warning-soft hover:bg-warning-soft",
         className,
       )}

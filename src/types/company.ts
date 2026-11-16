@@ -1,6 +1,15 @@
 export interface CompanyBranding {
   primaryColor: string;
   logoUrl: string | null;
+  logoDarkUrl?: string | null;
+}
+
+export type LogoPair = Pick<CompanyBranding, "logoUrl" | "logoDarkUrl">;
+
+export interface CompanyBranch {
+  id: string;
+  name: string;
+  address: string;
 }
 
 export interface Company {
@@ -17,7 +26,10 @@ export interface Company {
   websiteUrl: string | null;
   email: string | null;
   phone: string | null;
+  address: string | null;
   branding: CompanyBranding;
+  branches: CompanyBranch[];
+  allowDifferentReturn: boolean;
 }
 
 export interface CompanyListFilters {

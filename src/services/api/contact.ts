@@ -1,6 +1,6 @@
 import { joinApiUrl } from "@/lib/publicApiProxy";
 import { ApiError } from "@/lib/errors";
-import { isLiveApiConfigured, liveApiBaseUrl } from "./client";
+import { isLiveApiConfigured, liveApiBaseUrl, throwApiError } from "./client";
 
 export const MARKETPLACE_CONTACT_SOURCE = "marketplace" as const;
 
@@ -42,7 +42,10 @@ export const contactApi = {
     });
 
     if (!response.ok) {
-      throw new ApiError(response.status, "unknown");
+      throwApiError(
+        response.status,
+        await response.json().catch(() => ({})),
+      );
     }
   },
 };

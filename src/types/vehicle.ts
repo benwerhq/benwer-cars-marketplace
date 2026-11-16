@@ -1,8 +1,11 @@
 import type {
+  FuelType,
+  PublicChannel,
+  TransmissionType,
+  VehicleCategory,
+  VehicleSort,
   VehicleStatus,
   VehicleType,
-  TransmissionType,
-  FuelType,
 } from "@/enums";
 import type { Company } from "./company";
 
@@ -21,25 +24,40 @@ export interface Vehicle {
   status: VehicleStatus;
   isPublic: boolean;
   photos: string[];
+  photoUrl?: string | null;
+  categoryImageUrl?: string | null;
   description: string | null;
   color: string | null;
   deposit: number | null;
   category: string | null;
   mileage: number | null;
+  branchId: string | null;
+  group?: VehicleGroup | null;
+}
+
+export interface VehicleGroup {
+  id: string;
+  name: Record<string, string>;
+  code: string | null;
+  sortOrder: number;
 }
 
 export interface VehicleFilters {
-  type?: VehicleType;
-  seats?: number;
-  transmission?: TransmissionType;
+  categories?: VehicleCategory[];
+  groups?: string[];
+  fuels?: FuelType[];
+  transmissions?: TransmissionType[];
+  seats?: number[];
   from?: string;
   to?: string;
   q?: string;
-  sort?: string;
+  sort?: VehicleSort;
   cursor?: string;
   limit?: number;
   companySlug?: string;
   companySlugs?: string[];
+  branchId?: string;
+  channel?: PublicChannel;
 }
 
 export interface MarketplaceSearchFilters extends VehicleFilters {

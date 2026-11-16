@@ -5,18 +5,18 @@ decisions and differences.
 
 ## Core (in repo)
 
-| Area         | Choice                                         | Version |
-| ------------ | ---------------------------------------------- | ------- |
-| Framework    | Next.js (App Router, non-standard build)       | 16      |
-| UI runtime   | React                                          | 19      |
-| Language     | TypeScript (strict)                            | 5       |
-| Styling      | Tailwind CSS v4 + semantic CSS-variable tokens | 4       |
-| Primitives   | Radix UI + `cva`/`cn`                          | —       |
-| Server state | TanStack React Query                           | 5       |
-| Icons        | lucide-react                                   | current |
-| i18n         | next-intl + ICU messages                       | current |
-| Toasts       | sonner                                         | 2       |
-| Maps         | Leaflet + react-leaflet                        | 1.9 / 5 |
+| Area         | Choice                                                      | Version    |
+| ------------ | ----------------------------------------------------------- | ---------- |
+| Framework    | Next.js (App Router, non-standard build)                    | 16         |
+| UI runtime   | React                                                       | 19         |
+| Language     | TypeScript (strict)                                         | 5          |
+| Styling      | Tailwind CSS v4 + semantic CSS-variable tokens              | 4          |
+| Primitives   | Radix UI + `cva`/`cn`                                       | —          |
+| Server state | TanStack React Query                                        | 5          |
+| Icons        | lucide-react                                                | current    |
+| i18n         | next-intl + ICU messages                                    | current    |
+| Toasts       | sonner                                                      | 2          |
+| Maps         | Google Maps (`@vis.gl/react-google-maps`); Leaflet fallback | 1.10 / 1.9 |
 
 ## Planned additions
 
@@ -75,16 +75,27 @@ infrastructure concern, not a frontend concern.
 
 ### Marketplace availability map
 
-`/companies` uses **Leaflet + react-leaflet** (dynamically imported with `ssr: false`) and
-Esri Canvas Light/Dark Gray raster tiles (no API key). Carto’s public `basemaps.cartocdn.com`
-tiles now watermark “API KEY REQUIRED”, so they were rejected. MapLibre / react-map-gl was
-considered for vector styling, but Next.js 16’s bundler still has worker-loading issues with
-MapLibre; Leaflet is smaller, stable with the App Router, and the premium feel comes from
-custom pins, popovers, and filter sync rather than the engine.
+`/companies` uses **Google Maps** through `@vis.gl/react-google-maps` (dynamically imported
+with `ssr: false`): vector map, Advanced Markers rendered as React (labelled pills styled with
+semantic tokens), light/dark `colorScheme` following the site theme, and the selected company
+card floating over the map instead of an InfoWindow.
 
-Company pins are geocoded from `locationSlug` → `src/data/malagaCityCoordinates.ts`.
-The public API does not yet return `latitude` / `longitude` (or `vehicleCount`).
-When it does, prefer those fields and keep the city table as a fallback.
+- `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` — Maps JavaScript API key, HTTP-referrer restricted.
+- `NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID` — vector Map ID (Advanced Markers need one). When unset the
+  dev-only `DEMO_MAP_ID` is used; always set a real one on staging and production.
+
+When the key is unset (local dev, CI) the map falls back to the previous **Leaflet +
+react-leaflet** canvas with Esri Canvas Light/Dark Gray tiles (no API key). Carto’s public
+tiles watermark “API KEY REQUIRED” and MapLibre has worker-loading issues with Next.js 16, so
+both stay rejected.
+
+Company pins use the company’s `latitude` / `longitude`, falling back to `locationSlug` →
+`src/data/malagaCityCoordinates.ts`. Public branches carry no coordinates yet, so the map shows
+one pin per company; per-branch pins need `latitude` / `longitude` on the public branch DTO.
+
+The location dropdown on `/companies` lists **branches** (same `BranchCombobox` as `/cars`).
+Picking one navigates to `/companies?branch=<id>`, narrowing the list to that branch’s company
+and preselecting its pin. `?location=<city>` links (homepage map teaser) keep working.
 
 ### SEO
 

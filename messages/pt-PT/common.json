@@ -1,0 +1,149 @@
+{
+  "errors": {
+    "unknown": "Algo correu mal. Tente novamente.",
+    "network": "Não foi possível ligar ao servidor. Verifique a ligação.",
+    "vehicle": {
+      "not_found": "Este veículo já não está disponível."
+    },
+    "company": {
+      "not_found": "Não foi possível encontrar esta empresa."
+    },
+    "reservation": {
+      "overlap": "Este veículo já está reservado nestas datas.",
+      "not_found": "Reserva não encontrada. Verifique o link de confirmação.",
+      "invalid_dates": "A devolução tem de ser depois da recolha.",
+      "min_lead": "A recolha é demasiado cedo. Escolha uma data posterior.",
+      "terms_required": "Aceite as condições de aluguer para continuar.",
+      "max_open_requests": "Já tem dois pedidos em aberto. Retire um antes de enviar outro.",
+      "request_expired": "Este pedido expirou. Comece um novo.",
+      "not_cancellable": "Esta reserva já não pode ser cancelada online."
+    },
+    "booking": {
+      "payment_not_required": "Esta reserva não precisa de pagamento online.",
+      "payment_window_elapsed": "Os 15 minutos para pagar terminaram. Comece uma nova reserva se ainda precisar do carro.",
+      "payment_not_open": "O pagamento não está disponível para esta reserva. Tente novamente ou contacte a empresa."
+    },
+    "rental_payments": {
+      "already_paid": "Esta reserva já está paga."
+    },
+    "site": {
+      "not_found": "Não foi possível encontrar este site de aluguer.",
+      "paused": "Esta empresa não está a aceitar reservas de momento.",
+      "not_published": "Este site ainda não está aberto a reservas."
+    },
+    "website_domain": {
+      "not_found": "Este endereço não está ligado a uma empresa de aluguer."
+    },
+    "staff": {
+      "unauthenticated": "Inicie sessão como proprietário para editar este site.",
+      "forbidden": "Não tem permissão para editar este site."
+    },
+    "guest": {
+      "not_configured": "As contas de cliente ainda não estão disponíveis nesta empresa.",
+      "not_linked": "Ainda não há reservas ligadas a esta conta.",
+      "invalid_token": "Este link de confirmação é inválido ou expirou.",
+      "unauthenticated": "Inicie sessão para continuar."
+    },
+    "pricing": {
+      "min_days": "Estas datas são demasiado curtas para a época. Escolha um aluguer mais longo.",
+      "max_days": "Estas datas são demasiado longas para a época. Escolha um aluguer mais curto.",
+      "rental_too_long": "Este aluguer é demasiado longo para reservar online. Contacte a empresa."
+    },
+    "contact": {
+      "not_configured": "O email de contacto ainda não está configurado. Tente mais tarde.",
+      "delivery_failed": "Não foi possível enviar a sua mensagem agora. Tente mais tarde."
+    }
+  },
+  "nav": {
+    "home": "Início",
+    "cars": "Carros",
+    "companies": "Empresas",
+    "contact": "Contacto",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "cookies": "Cookies",
+    "mainAria": "Navegação principal",
+    "footerAria": "Navegação do rodapé",
+    "menu": "Menu"
+  },
+  "meta": {
+    "siteTitle": "Encontre alugueres de carros locais",
+    "siteDescription": "Compare carros de empresas de aluguer parceiras na província de Málaga e continue no site da empresa."
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "Essa página não existe. Volte atrás e procure um carro.",
+    "action": "Voltar ao início"
+  },
+  "hostUnknown": {
+    "title": "Este site não está disponível",
+    "description": "Verifique o endereço. Esta página não pertence a um site de aluguer da Benwer Cars."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, início",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Mudar para modo escuro",
+    "toLight": "Mudar para modo claro"
+  },
+  "locale": {
+    "label": "Idioma",
+    "en": "EN",
+    "es": "ES",
+    "pt": "PT",
+    "enName": "English",
+    "esName": "Español",
+    "ptName": "Português"
+  },
+  "footer": {
+    "tagline": "Compare carros de empresas de aluguer parceiras.",
+    "trust": "Frotas parceiras · Málaga · Alugue no site da empresa",
+    "poweredBy": "Reservado através da Benwer Cars",
+    "explore": "Explorar",
+    "legal": "Legal",
+    "copyright": "© {year} Benwer Cars. Todos os direitos reservados."
+  },
+  "cookieBanner": {
+    "body": "Usamos um cookie de idioma e lembramos esta escolha no seu dispositivo. Os cookies opcionais ficam desligados até os aceitar.",
+    "policy": "Política de cookies",
+    "necessary": "Rejeitar tudo",
+    "accept": "Aceitar todos",
+    "title": "Respeitamos a sua privacidade",
+    "settings": "Definições de cookies"
+  },
+  "actions": {
+    "retry": "Tentar novamente",
+    "back": "Voltar",
+    "viewAll": "Ver tudo"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Indicativo, {country} {dial}",
+    "search": "Pesquisar países",
+    "countries": "Países",
+    "noResults": "Nenhum país corresponde",
+    "invalid": "Introduza um número de telefone válido.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Limpar data"
+  },
+  "guestNotifications": {
+    "title": "Notificações",
+    "openLabel": "Abrir notificações",
+    "unreadCount": "{count} notificações por ler",
+    "emptyTitle": "Ainda sem notificações",
+    "emptyBody": "Atualizações de reservas, lembretes de pagamento e alertas de levantamento aparecerão aqui.",
+    "error": "Não foi possível carregar as notificações.",
+    "retry": "Tentar novamente",
+    "markAllRead": "Marcar tudo como lido",
+    "dismiss": "Dispensar",
+    "loadMore": "Carregar mais",
+    "enablePush": "Ativar alertas do navegador",
+    "pushEnabled": "Alertas do navegador ativados",
+    "pushBlocked": "Alertas bloqueados nas definições",
+    "disablePush": "Desativar alertas do navegador"
+  }
+}

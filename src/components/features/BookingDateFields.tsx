@@ -6,7 +6,7 @@ import { Calendar } from "lucide-react";
 import { useFormContext } from "react-hook-form";
 import { useLocale, useTranslations } from "next-intl";
 import { DayPicker, type DateRange } from "react-day-picker";
-import { enGB, es } from "react-day-picker/locale";
+import { enGB, es, pt } from "react-day-picker/locale";
 import { Field } from "@/components/ui/Field";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import type { BookingFormValues } from "@/lib/bookingSchema";
@@ -65,6 +65,9 @@ export function BookingDateFields() {
     <div className="flex flex-col gap-3">
       <p className="text-sm text-muted-foreground">{t("datesHint")}</p>
       <Popover.Root open={open} onOpenChange={setOpen}>
+        {/* The popover needs an anchor: without one Radix places the
+            calendar at the top-left of the page, off-screen. */}
+        <Popover.Anchor asChild>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Field
             label={t("startDate")}
@@ -101,19 +104,22 @@ export function BookingDateFields() {
             />
           </Field>
         </div>
+        </Popover.Anchor>
         <Popover.Portal>
           <Popover.Content
             align="start"
+            side="bottom"
             sideOffset={8}
             collisionPadding={16}
+            avoidCollisions
             className={cn(
-              "z-50 rounded-xl border border-border bg-surface p-3 shadow-md outline-none",
+              "z-[60] max-h-[var(--radix-popover-content-available-height)] overflow-auto rounded-xl border border-border bg-surface p-3 shadow-md outline-none",
               "w-[min(100vw-1.5rem,20rem)] md:w-[min(100vw-1.5rem,42rem)]",
             )}
           >
             <DayPicker
               mode="range"
-              locale={locale === "es-ES" ? es : enGB}
+              locale={locale === "es-ES" ? es : locale === "pt-PT" ? pt : enGB}
               numberOfMonths={isDesktop ? 2 : 1}
               selected={selected}
               onSelect={handleSelect}

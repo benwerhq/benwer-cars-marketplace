@@ -7,16 +7,19 @@ import {
   Car,
   CarFront,
   ChevronRight,
+  ExternalLink,
   Fuel,
   Truck,
   Users,
   Zap,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { cn } from "@/lib/utils";
+import { vehicleLabelKey } from "@/lib/vehicleFilters";
+import { vehicleImageUrl } from "@/lib/vehicleImage";
+import { cn, isExternalHref } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import { CarPhoto } from "./CarPhoto";
-import { CompanyMark } from "./CompanyMark";
+import { CompanyEyebrow } from "./CompanyEyebrow";
 import type { Company } from "@/types/company";
 import type { Vehicle } from "@/types/vehicle";
 import { FuelType, TransmissionType, VehicleType } from "@/enums";
@@ -27,6 +30,7 @@ interface CarCardProps {
   company?: Pick<Company, "name" | "slug" | "branding"> | null;
   priority?: boolean;
   className?: string;
+  available?: boolean;
 }
 
 const FALLBACK_TONE: Record<VehicleType, string> = {
@@ -51,12 +55,15 @@ export function CarCard({
   company,
   priority = false,
   className,
+  available = true,
 }: CarCardProps) {
   const t = useTranslations("cars");
   const tDetail = useTranslations("carDetail");
   const locale = useLocale();
-  const primaryPhoto = vehicle.photos[0];
+  const primaryPhoto = vehicleImageUrl(vehicle);
   const name = `${vehicle.brand} ${vehicle.model}`;
+  const external = isExternalHref(href);
+  const ActionIcon = external ? ExternalLink : ChevronRight;
 
   return (
     <Link
@@ -66,6 +73,7 @@ export function CarCard({
         "transition-[box-shadow,transform] duration-200",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         "motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md",
+        !available && "opacity-80",
         className,
       )}
     >
@@ -87,28 +95,30 @@ export function CarCard({
           variant="default"
           className="absolute left-3 top-3 border border-border bg-surface/90 backdrop-blur-sm"
         >
-          {t(`types.${vehicle.type}`)}
+          {t(vehicleLabelKey(vehicle))}
         </Badge>
+        {!available ? (
+          <Badge
+            variant="warning"
+            className="absolute right-3 top-3 max-w-[calc(100%-1.5rem)] border border-border bg-surface/90 text-left backdrop-blur-sm"
+          >
+            {t("notAvailableForDates")}
+          </Badge>
+        ) : null}
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-3 p-4">
         <div className="min-w-0">
+          {company ? (
+            <CompanyEyebrow company={company} className="mb-2" />
+          ) : null}
           <h3 className="text-base font-semibold leading-tight text-foreground">
             {name}
           </h3>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            {vehicle.year} &middot; {t(`types.${vehicle.type}`)}
+            {vehicle.year} &middot; {t(vehicleLabelKey(vehicle))}
           </p>
         </div>
-
-        {company ? (
-          <p className="flex min-w-0 items-center gap-2">
-            <CompanyMark company={company} size="sm" />
-            <span className="truncate text-xs text-muted-foreground">
-              {company.name}
-            </span>
-          </p>
-        ) : null}
 
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="default" className="gap-1">
@@ -134,14 +144,21 @@ export function CarCard({
               {t("perDaySuffix")}
             </span>
           </p>
-          <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-            {t("viewDetails")}
-            <ChevronRight
-              size={16}
-              aria-hidden
-              className="transition-transform motion-safe:group-hover:translate-x-0.5"
-            />
-          </span>
+          {available ? (
+            <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+              {t("viewDetails")}
+              {external ? <span className="sr-only">{t("opensCompanySite")}</span> : null}
+              <ActionIcon
+                size={external ? 14 : 16}
+                aria-hidden
+                className="transition-transform motion-safe:group-hover:translate-x-0.5"
+              />
+            </span>
+          ) : (
+            <span className="inline-flex items-center rounded-md bg-surface-muted px-3 py-1.5 text-sm font-medium text-muted-foreground">
+              {t("bookUnavailable")}
+            </span>
+          )}
         </div>
       </div>
     </Link>
@@ -200,7 +217,7 @@ function FuelBadge({ fuel }: { fuel: FuelType }) {
 }
 
 function formatPrice(amount: number, currency: string, locale: string): string {
-  return new Intl.NumberFormat(locale === "es-ES" ? "es-ES" : "en-GB", {
+  return new Intl.NumberFormat(locale, {
     style: "currency",
     currency,
     minimumFractionDigits: 0,

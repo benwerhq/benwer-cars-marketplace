@@ -17,33 +17,64 @@ const SIZE_CLASS = {
   lg: "h-14 w-14 rounded-full text-xl",
 } as const;
 
+const LOGO_HEIGHT = {
+  sm: "h-7",
+  md: "h-12 sm:h-14",
+  lg: "h-14",
+} as const;
+
+export function hasCompanyLogo(company: Pick<Company, "branding">): boolean {
+  return Boolean(company.branding.logoUrl);
+}
+
 export function CompanyMark({
   company,
   size = "md",
   className,
 }: CompanyMarkProps) {
-  const [failed, setFailed] = useState(false);
+  const [failedSrc, setFailedSrc] = useState<string | null>(null);
   const logoSrc = company.branding.logoUrl
     ? toPublicMediaSrc(company.branding.logoUrl)
     : null;
+  const darkSrc = company.branding.logoDarkUrl
+    ? toPublicMediaSrc(company.branding.logoDarkUrl)
+    : null;
+  const imageClass = cn(
+    "max-w-[11rem] shrink-0 object-contain object-left",
+    LOGO_HEIGHT[size],
+    className,
+    "w-auto rounded-none border-0 bg-transparent p-0",
+  );
 
-  if (logoSrc && !failed) {
+  if (logoSrc && failedSrc !== logoSrc) {
+    if (darkSrc && failedSrc !== darkSrc) {
+      return (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer */}
+          <img
+            src={logoSrc}
+            alt=""
+            onError={() => setFailedSrc(logoSrc)}
+            className={cn(imageClass, "block dark:hidden")}
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer */}
+          <img
+            src={darkSrc}
+            alt=""
+            onError={() => setFailedSrc(darkSrc)}
+            className={cn(imageClass, "hidden dark:block")}
+          />
+        </>
+      );
+    }
     return (
-      <span
-        className={cn(
-          "relative flex shrink-0 items-center justify-center overflow-hidden border border-border bg-surface-muted",
-          SIZE_CLASS[size],
-          className,
-        )}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer */}
-        <img
-          src={logoSrc}
-          alt=""
-          className="h-full w-full object-contain p-1.5"
-          onError={() => setFailed(true)}
-        />
-      </span>
+      // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
+      <img
+        src={logoSrc}
+        alt=""
+        onError={() => setFailedSrc(logoSrc)}
+        className={cn(imageClass, "block dark:rounded-md dark:bg-logo-plate dark:px-1.5 dark:py-1")}
+      />
     );
   }
 

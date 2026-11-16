@@ -23,8 +23,12 @@ export default async function TenantLayout({
   }
 
   const style = brandColor
-    ? ({ "--primary": brandColor } as CSSProperties)
+    ? ({ "--site-primary": brandColor } as CSSProperties)
     : undefined;
 
-  return <div style={style}>{children}</div>;
+  return (
+    <div style={style} data-brand={brandColor ? "" : undefined}>
+      {children}
+    </div>
+  );
 }

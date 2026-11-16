@@ -2,13 +2,30 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { ReservationStatus, VehicleType } from "@/enums";
+import {
+  BookingMode,
+  CaptureMethod,
+  FuelType,
+  PaymentChannel,
+  PaymentStatus,
+  ReservationStatus,
+  SiteLayout,
+  SiteStatus,
+  VehicleType,
+} from "@/enums";
 import {
   mapAvailability,
   mapAvailabilityList,
+  mapCancellationQuote,
   mapCompany,
   mapCompanyList,
+  mapGuestAccount,
+  mapGuestPayment,
+  mapGuestReservationList,
+  mapInsurancePackageList,
   mapPriceBreakdown,
+  mapPublicSite,
+  mapWebsiteSettings,
   mapReservation,
   mapVehicle,
   mapVehicleList,
@@ -30,6 +47,20 @@ describe("unwrapList", () => {
 
   it("falls back to a raw array", () => {
     expect(unwrapList([{ id: "1" }])).toEqual([{ id: "1" }]);
+  });
+
+  it("reads response.items from a guest list", () => {
+    expect(unwrapList({ items: [{ id: "1" }] })).toEqual([{ id: "1" }]);
+  });
+});
+
+describe("mapGuestReservationList", () => {
+  it("maps the guest reservations envelope", () => {
+    const list = mapGuestReservationList(
+      { items: [{ id: "r1", token: "t1", status: "pending" }] },
+      "coches",
+    );
+    expect(list.map((reservation) => reservation.id)).toEqual(["r1"]);
   });
 });
 
@@ -158,6 +189,15 @@ describe("mapVehicleList", () => {
     });
     expect(vehicles.find((vehicle) => vehicle.model === "Ateca")?.type).toBe(
       VehicleType.SUV,
+    );
+  });
+
+  it("keeps plug-in hybrids distinct from hybrids", () => {
+    expect(mapVehicle({ id: "p", fuelType: "plugin_hybrid" }).fuel).toBe(
+      FuelType.PLUGIN_HYBRID,
+    );
+    expect(mapVehicle({ id: "h", fuelType: "hybrid" }).fuel).toBe(
+      FuelType.HYBRID,
     );
   });
 
@@ -352,8 +392,20 @@ describe("mapAvailability", () => {
     });
 
     expect(rows).toEqual([
-      { vehicleId: "v1", unavailableDates: ["2026-09-20", "2026-09-21"] },
-      { vehicleId: "v2", unavailableDates: [] },
+      {
+        vehicleId: "v1",
+        unavailableDates: ["2026-09-20", "2026-09-21"],
+        available: false,
+        from: "2026-09-20",
+        to: "2026-09-22",
+      },
+      {
+        vehicleId: "v2",
+        unavailableDates: [],
+        available: true,
+        from: "2026-09-20",
+        to: "2026-09-22",
+      },
     ]);
   });
 });
@@ -459,5 +511,195 @@ describe("mapPriceBreakdown", () => {
       }),
     ).toBeNull();
     expect(mapPriceBreakdown(null)).toBeNull();
+  });
+});
+
+describe("mapPublicSite", () => {
+  it("maps a published site with localized copy and contact toggles", () => {
+    const site = mapPublicSite(
+      {
+        slug: "denver-cars",
+        status: "paused",
+        bookingMode: "request",
+        minLeadHours: 12,
+        requestWindowHours: 36,
+        headline: { "en-GB": "Drive Denver" },
+        intro: { "en-GB": "Cars in town." },
+        showPhone: false,
+        showEmail: true,
+        showAddress: true,
+        preview: true,
+        canonicalUrl: "https://reservas.denver.example",
+        company: {
+          slug: "denver-cars",
+          name: "Denver Cars",
+          phone: "+34 600 000 000",
+          email: "hi@denver.example",
+          address: "Calle 1",
+        },
+        locations: [{ id: "b1", name: "Airport", address: "AGP" }],
+      },
+      "ignored",
+    );
+
+    expect(site.status).toBe(SiteStatus.PAUSED);
+    expect(site.bookingMode).toBe(BookingMode.REQUEST);
+    expect(site.minLeadHours).toBe(12);
+    expect(site.isPreview).toBe(true);
+    expect(site.showPhone).toBe(false);
+    expect(site.showEmail).toBe(true);
+    expect(site.headline["en-GB"]).toBe("Drive Denver");
+    expect(site.branches).toEqual([
+      { id: "b1", name: "Airport", address: "AGP" },
+    ]);
+    expect(site.company.slug).toBe("denver-cars");
+    expect(site.canonicalUrl).toBe("https://reservas.denver.example");
+    expect(site.layout).toBe(SiteLayout.CLASSIC);
+  });
+});
+
+describe("mapWebsiteSettings", () => {
+  it("maps the draft appearance, revision and edit permission", () => {
+    const settings = mapWebsiteSettings({
+      role: "owner",
+      revision: 7,
+      headline: { "en-GB": "Hi" },
+      appearance: { theme: { primaryColor: "#123456" }, banners: [] },
+      publishedAppearance: { theme: { primaryColor: "#0e7490" }, banners: [] },
+    });
+    expect(settings.canEdit).toBe(true);
+    expect(settings.revision).toBe(7);
+    expect(settings.content.brandColor).toBe("#123456");
+    expect(settings.content.banners).toEqual([]);
+    expect(settings.hasUnpublishedChanges).toBe(true);
+  });
+});
+
+describe("mapInsurancePackageList", () => {
+  it("maps quote list envelopes", () => {
+    const packages = mapInsurancePackageList({
+      days: 3,
+      data: [
+        {
+          packageId: "p1",
+          code: "basic",
+          name: { "en-GB": "Basic" },
+          pricePerDay: 8,
+          total: 24,
+          excessAmount: 900,
+          depositAmount: 200,
+          isDefault: true,
+        },
+      ],
+    });
+
+    expect(packages).toEqual([
+      {
+        packageId: "p1",
+        code: "basic",
+        name: { "en-GB": "Basic" },
+        description: null,
+        pricePerDay: 8,
+        total: 24,
+        excessAmount: 900,
+        depositAmount: 200,
+        isDefault: true,
+      },
+    ]);
+  });
+});
+
+describe("mapGuestAccount", () => {
+  it("maps linked guest identity from nested envelopes", () => {
+    const account = mapGuestAccount(
+      {
+        data: {
+          email: "ada@example.com",
+          linkedAt: "2026-11-11T10:00:00Z",
+          companySlug: "denver-cars",
+        },
+      },
+      "fallback",
+    );
+    expect(account.email).toBe("ada@example.com");
+    expect(account.linked).toBe(true);
+    expect(account.companySlug).toBe("denver-cars");
+  });
+});
+
+describe("mapReservation extras", () => {
+  it("maps request expiry and cancel reason", () => {
+    const reservation = mapReservation({
+      token: "abc",
+      status: "draft",
+      requestExpiresAt: "2026-09-21T10:00:00Z",
+      cancelReason: "guest_withdrawn",
+    });
+
+    expect(reservation.requestExpiresAt).toBe("2026-09-21T10:00:00Z");
+    expect(reservation.cancelReason).toBe("guest_withdrawn");
+  });
+
+  it("maps guest payment fields on the reservation", () => {
+    const reservation = mapReservation({
+      token: "pay-1",
+      status: "draft",
+      paymentStatus: "unpaid",
+      paymentChannel: "website",
+      paidAmount: 0,
+      advanceDue: 40,
+      advanceAuthorized: false,
+      paymentExpiresAt: "2026-11-11T16:15:00Z",
+      onlinePaymentRequired: true,
+    });
+
+    expect(reservation.paymentStatus).toBe(PaymentStatus.UNPAID);
+    expect(reservation.paymentChannel).toBe(PaymentChannel.WEBSITE);
+    expect(reservation.advanceDue).toBe(40);
+    expect(reservation.onlinePaymentRequired).toBe(true);
+    expect(reservation.paymentExpiresAt).toBe("2026-11-11T16:15:00Z");
+  });
+});
+
+describe("mapGuestPayment", () => {
+  it("maps a Payment Element session and never requires checkout", () => {
+    const payment = mapGuestPayment({
+      reservationId: "res-1",
+      status: "unpaid",
+      channel: "website",
+      captureMethod: "manual",
+      required: true,
+      authorized: false,
+      amount: 40,
+      paidAmount: 0,
+      currency: "EUR",
+      checkoutUrl: "https://checkout.stripe.com/c/pay/cs_test",
+      clientSecret: "pi_test_secret",
+      publishableKey: "pk_test_123",
+      connectedAccountId: "acct_123",
+      expiresAt: "2026-11-11T16:15:00Z",
+    });
+
+    expect(payment.captureMethod).toBe(CaptureMethod.MANUAL);
+    expect(payment.clientSecret).toBe("pi_test_secret");
+    expect(payment.publishableKey).toBe("pk_test_123");
+    expect(payment.connectedAccountId).toBe("acct_123");
+    expect(payment.checkoutUrl).toContain("checkout.stripe.com");
+  });
+});
+
+describe("mapCancellationQuote", () => {
+  it("maps staff quote fields and forces canOverride false", () => {
+    const quote = mapCancellationQuote({
+      canOverride: true,
+      canCancel: true,
+      cancellationFee: 25,
+      refundAmount: 80,
+      currency: "EUR",
+    });
+
+    expect(quote.canOverride).toBe(false);
+    expect(quote.fee).toBe(25);
+    expect(quote.refund).toBe(80);
   });
 });

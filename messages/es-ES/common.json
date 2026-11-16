@@ -11,12 +11,47 @@
     "reservation": {
       "overlap": "Este vehículo ya está reservado para esas fechas.",
       "not_found": "Reserva no encontrada. Comprueba el enlace de confirmación.",
-      "invalid_dates": "La devolución debe ser posterior a la recogida."
+      "invalid_dates": "La devolución debe ser posterior a la recogida.",
+      "min_lead": "La recogida es demasiado pronto. Elige una fecha posterior.",
+      "terms_required": "Acepta las condiciones de alquiler para continuar.",
+      "max_open_requests": "Ya tienes dos solicitudes abiertas. Retira una antes de enviar otra.",
+      "request_expired": "Esta solicitud ha caducado. Empieza una nueva.",
+      "not_cancellable": "Esta reserva ya no se puede cancelar en línea."
+    },
+    "booking": {
+      "payment_not_required": "Esta reserva no requiere pago en línea.",
+      "payment_window_elapsed": "Han pasado los 15 minutos para pagar. Empieza una reserva nueva si aún necesitas el coche.",
+      "payment_not_open": "El pago no está disponible para esta reserva. Inténtalo de nuevo o contacta con la empresa."
+    },
+    "rental_payments": {
+      "already_paid": "Esta reserva ya está pagada."
+    },
+    "site": {
+      "not_found": "No se encontró esta web de alquiler.",
+      "paused": "Esta empresa no está aceptando reservas ahora.",
+      "not_published": "Esta web aún no está abierta a reservas."
+    },
+    "website_domain": {
+      "not_found": "Esta dirección no está vinculada a una empresa de alquiler."
+    },
+    "staff": {
+      "unauthenticated": "Entra como propietario para editar esta web.",
+      "forbidden": "No tienes permiso para editar esta web."
+    },
+    "guest": {
+      "not_configured": "Las cuentas de cliente aún no están disponibles para esta empresa.",
+      "not_linked": "Aún no hay reservas vinculadas a esta cuenta.",
+      "invalid_token": "Este enlace de confirmación no es válido o ha caducado.",
+      "unauthenticated": "Inicia sesión para continuar."
     },
     "pricing": {
       "min_days": "Estas fechas son demasiado cortas para la temporada. Elige un alquiler más largo.",
       "max_days": "Estas fechas son demasiado largas para la temporada. Elige un alquiler más corto.",
       "rental_too_long": "Este alquiler es demasiado largo para reservarlo online. Contacta con la empresa."
+    },
+    "contact": {
+      "not_configured": "El correo de contacto aún no está configurado. Inténtalo más tarde.",
+      "delivery_failed": "No hemos podido enviar tu mensaje ahora mismo. Inténtalo más tarde."
     }
   },
   "nav": {
@@ -28,11 +63,16 @@
     "terms": "Términos",
     "cookies": "Cookies",
     "mainAria": "Navegación principal",
-    "footerAria": "Navegación del pie de página"
+    "footerAria": "Navegación del pie de página",
+    "menu": "Menú"
   },
   "meta": {
     "siteTitle": "Encuentra coches de alquiler locales",
     "siteDescription": "Compara coches de empresas de alquiler asociadas en la provincia de Málaga y continúa en la web de la empresa."
+  },
+  "hostUnknown": {
+    "title": "Esta web no está disponible",
+    "description": "Comprueba la dirección. Esta página no pertenece a una web de alquiler de Benwer Cars."
   },
   "notFound": {
     "title": "Página no encontrada",
@@ -45,12 +85,18 @@
     "homeAria": "Benwer Cars, inicio",
     "logoAlt": "Benwer Cars"
   },
+  "colorScheme": {
+    "toDark": "Cambiar a modo oscuro",
+    "toLight": "Cambiar a modo claro"
+  },
   "locale": {
     "label": "Idioma",
     "en": "EN",
     "es": "ES",
+    "pt": "PT",
     "enName": "English",
-    "esName": "Español"
+    "esName": "Español",
+    "ptName": "Português"
   },
   "footer": {
     "tagline": "Compara coches de empresas de alquiler asociadas.",
@@ -63,12 +109,41 @@
   "cookieBanner": {
     "body": "Usamos una cookie de idioma y recordamos esta elección en tu dispositivo. Las cookies opcionales permanecen desactivadas salvo que las aceptes.",
     "policy": "Política de cookies",
-    "necessary": "Solo necesarias",
-    "accept": "Aceptar todas"
+    "necessary": "Rechazar todo",
+    "accept": "Aceptar todas",
+    "title": "Respetamos tu privacidad",
+    "settings": "Configurar cookies"
   },
   "actions": {
     "retry": "Intentar de nuevo",
     "back": "Volver",
     "viewAll": "Ver todo"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Prefijo, {country} {dial}",
+    "search": "Buscar países",
+    "countries": "Países",
+    "noResults": "Ningún país coincide",
+    "invalid": "Introduce un número de teléfono válido.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Borrar fecha"
+  },
+  "guestNotifications": {
+    "title": "Notificaciones",
+    "openLabel": "Abrir notificaciones",
+    "unreadCount": "{count} notificaciones sin leer",
+    "emptyTitle": "Sin notificaciones",
+    "emptyBody": "Las actualizaciones de reservas, recordatorios de pago y avisos de recogida aparecerán aquí.",
+    "error": "No se pudieron cargar las notificaciones.",
+    "retry": "Intentar de nuevo",
+    "markAllRead": "Marcar todo como leído",
+    "dismiss": "Descartar",
+    "loadMore": "Cargar más",
+    "enablePush": "Activar avisos del navegador",
+    "pushEnabled": "Avisos del navegador activados",
+    "pushBlocked": "Avisos bloqueados en el navegador",
+    "disablePush": "Desactivar avisos del navegador"
   }
 }

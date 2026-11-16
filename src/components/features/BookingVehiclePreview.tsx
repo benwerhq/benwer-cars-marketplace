@@ -1,5 +1,6 @@
 import { Car } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn } from "@/lib/utils";
 import type { Vehicle } from "@/types/vehicle";
 import { CarPhoto } from "./CarPhoto";
@@ -17,7 +18,7 @@ export function BookingVehiclePreview({
 }: BookingVehiclePreviewProps) {
   const t = useTranslations("carDetail");
   const name = `${vehicle.brand} ${vehicle.model}`;
-  const photo = vehicle.photos[0];
+  const photo = vehicleImageUrl(vehicle);
   const thumbClass = size === "md" ? "h-20 w-28 sm:h-24 sm:w-36" : "h-16 w-24";
 
   return (
@@ -46,7 +47,9 @@ export function BookingVehiclePreview({
       </div>
       <div className="min-w-0">
         <p className="truncate text-sm font-semibold text-foreground">{name}</p>
-        <p className="text-xs text-muted-foreground">{vehicle.year}</p>
+        {vehicle.year > 0 ? (
+          <p className="text-xs text-muted-foreground">{vehicle.year}</p>
+        ) : null}
         {companyName ? (
           <p className="mt-0.5 truncate text-xs text-muted-foreground">
             {companyName}

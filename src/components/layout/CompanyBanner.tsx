@@ -4,6 +4,7 @@ import { CompanyMark } from "@/components/features/CompanyMark";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
+import { phoneTelHref } from "@/lib/phone";
 
 interface CompanyBannerProps {
   name: string;
@@ -38,7 +39,7 @@ export function CompanyBanner({
     name,
     branding: { primaryColor: "", logoUrl: logoUrl ?? null },
   };
-  const contactHref = email ? `mailto:${email}` : phone ? `tel:${phone}` : null;
+  const contactHref = email ? `mailto:${email}` : phone ? phoneTelHref(phone) : null;
 
   return (
     <section

@@ -12,6 +12,7 @@ import { NavRoutes } from "@/enums";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
 import { prefetchAvailabilityState } from "@/lib/prefetchAvailability";
 import { absoluteUrl, buildPageMetadata, carProductJsonLd } from "@/lib/seo";
+import { vehicleImageUrls } from "@/lib/vehicleImage";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -53,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       path,
       siteName: tBrand("name"),
       locale,
-      images: vehicle.photos,
+      images: vehicleImageUrls(vehicle),
     });
   } catch {
     return buildPageMetadata({
@@ -117,6 +118,7 @@ async function TenantCarDetailPage({ params, searchParams }: Props) {
       <TenantHeader
         companyName={company?.name ?? companySlug}
         logoUrl={company?.branding.logoUrl}
+        logoDarkUrl={company?.branding.logoDarkUrl}
       />
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 pb-28 md:px-6 lg:px-8 lg:pb-16">
         <HydrationBoundary state={dehydratedState}>

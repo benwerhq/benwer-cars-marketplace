@@ -21,7 +21,20 @@ describe("buildCompanySiteHref", () => {
     ).toBe("https://med.example/fleet?from=2026-09-20&to=2026-09-24");
   });
 
-  it("falls back to the company subdomain and tenant car path", () => {
+  it("keeps the car path and query on the company website", () => {
+    expect(
+      buildCompanySiteHref({
+        slug: "med-rentacar",
+        websiteUrl: "https://med.example/",
+        path: "/cars/v1",
+        from: "2026-09-20",
+        to: "2026-09-24",
+        params: { age: "18-24" },
+      }),
+    ).toBe("https://med.example/cars/v1?from=2026-09-20&to=2026-09-24&age=18-24");
+  });
+
+  it("falls back to the marketplace /s/{slug} live URL", () => {
     expect(
       buildCompanySiteHref({
         slug: "denver-cars",
@@ -30,7 +43,7 @@ describe("buildCompanySiteHref", () => {
         to: "2026-09-24",
       }),
     ).toBe(
-      "https://denver-cars.benwer.es/cars/v1?from=2026-09-20&to=2026-09-24",
+      "http://localhost:3002/s/denver-cars/cars/v1?from=2026-09-20&to=2026-09-24",
     );
   });
 });

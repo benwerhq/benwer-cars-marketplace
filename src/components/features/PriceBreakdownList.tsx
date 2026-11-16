@@ -1,6 +1,6 @@
 import { AlertTriangle } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { parseIsoDate } from "@/lib/dates";
+import { parseIsoDate, toIsoDate } from "@/lib/dates";
 import { formatMoney } from "@/lib/money";
 import { cn } from "@/lib/utils";
 import type {
@@ -27,6 +27,20 @@ function formatShortDay(value: string, locale: string): string {
     : value;
 }
 
+/**
+ * Segments list the charged days, so a 25-28 Nov rental is 25, 26 and 27.
+ * Show the range up to the next day (the drop-off) to match the dates the
+ * guest picked.
+ */
+export function segmentRangeEnd(endDate: string): string {
+  const date = parseIsoDate(endDate);
+  if (!date) {
+    return endDate;
+  }
+  date.setDate(date.getDate() + 1);
+  return toIsoDate(date);
+}
+
 function SegmentRow({
   segment,
   currency,
@@ -42,7 +56,7 @@ function SegmentRow({
   const range =
     segment.startDate === segment.endDate
       ? formatShortDay(segment.startDate, locale)
-      : `${formatShortDay(segment.startDate, locale)} – ${formatShortDay(segment.endDate, locale)}`;
+      : `${formatShortDay(segment.startDate, locale)} – ${formatShortDay(segmentRangeEnd(segment.endDate), locale)}`;
 
   return (
     <li className="flex items-start justify-between gap-3 py-2">

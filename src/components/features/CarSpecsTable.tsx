@@ -4,7 +4,9 @@ import { useLocale, useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { formatMoney } from "@/lib/money";
 import type { Vehicle } from "@/types/vehicle";
-import { TransmissionType } from "@/enums";
+import { TransmissionType, VehicleCategory } from "@/enums";
+import { vehicleColorLabel } from "@/lib/vehicleColor";
+import { vehicleCategoryOf } from "@/lib/vehicleFilters";
 
 interface CarSpecsTableProps {
   vehicle: Vehicle;
@@ -15,6 +17,7 @@ export function CarSpecsTable({ vehicle, className }: CarSpecsTableProps) {
   const t = useTranslations("carDetail");
   const tCars = useTranslations("cars");
   const locale = useLocale();
+  const colorLabel = vehicleColorLabel(vehicle.color, tCars);
 
   const specs = [
     vehicle.year > 0
@@ -25,8 +28,13 @@ export function CarSpecsTable({ vehicle, className }: CarSpecsTableProps) {
       value: tCars(`types.${vehicle.type}`),
       titleCase: false,
     },
-    vehicle.category && vehicle.category !== vehicle.type
-      ? { label: t("category"), value: vehicle.category, titleCase: true }
+    vehicleCategoryOf(vehicle) !== VehicleCategory.OTHER &&
+    String(vehicleCategoryOf(vehicle)) !== String(vehicle.type)
+      ? {
+          label: t("category"),
+          value: tCars(`categories.${vehicleCategoryOf(vehicle)}`),
+          titleCase: false,
+        }
       : null,
     {
       label: t("transmission"),
@@ -49,8 +57,8 @@ export function CarSpecsTable({ vehicle, className }: CarSpecsTableProps) {
           titleCase: false,
         }
       : null,
-    vehicle.color
-      ? { label: t("color"), value: vehicle.color, titleCase: true }
+    colorLabel
+      ? { label: t("color"), value: colorLabel, titleCase: false }
       : null,
     vehicle.deposit != null
       ? {

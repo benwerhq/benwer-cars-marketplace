@@ -11,16 +11,10 @@ import { Footer } from "@/components/layout/Footer";
 import { BookingView } from "@/components/features/BookingView";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { companiesApi, vehiclesApi } from "@/services/api";
-import { NavRoutes } from "@/enums";
-import {
-  buildBookHref,
-  buildCarDetailHref,
-  buildFleetHref,
-} from "@/lib/booking";
-import {
-  buildCompanySiteHref,
-  buildCompanySiteOrigin,
-} from "@/lib/companySite";
+import { NavRoutes, SearchParams } from "@/enums";
+import { buildCarDetailHref, buildFleetHref } from "@/lib/booking";
+import { buildCompanySiteHref } from "@/lib/companySite";
+import { parseDriverAge, siteBookHref, siteHomePath } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -43,11 +37,14 @@ interface Props {
     companySlug?: string;
     from?: string;
     to?: string;
+    age?: string;
   }>;
 }
 
 async function BookPage({ searchParams }: Props) {
-  const { carId, companySlug: querySlug, from, to } = await searchParams;
+  const { carId, companySlug: querySlug, from, to, age } = await searchParams;
+  const driverAge = parseDriverAge(age);
+  const ageParam = age ? driverAge : undefined;
   const t = await getTranslations("booking");
   const headersList = await headers();
   const tenantSlug = headersList.get("x-company-slug");
@@ -70,25 +67,31 @@ async function BookPage({ searchParams }: Props) {
         buildCompanySiteHref({
           slug: companySlug,
           websiteUrl,
+          path: carId ? "/book" : undefined,
           from,
           to,
+          params: {
+            [SearchParams.CAR_ID]: carId || undefined,
+            [SearchParams.DRIVER_AGE]: ageParam,
+          },
         }),
       );
     }
 
     if (companySlug && carId) {
       redirect(
-        `${buildCompanySiteOrigin(companySlug)}${buildBookHref({
-          companySlug,
+        siteBookHref({
+          slug: companySlug,
           carId,
           from,
           to,
-        })}`,
+          driverAge: ageParam,
+        }),
       );
     }
 
     if (companySlug) {
-      redirect(buildCompanySiteHref({ slug: companySlug }));
+      redirect(siteHomePath(companySlug));
     }
   }
 
@@ -143,6 +146,7 @@ async function BookPage({ searchParams }: Props) {
       isTenant={isTenant}
       companyName={company?.name ?? companySlug}
       logoUrl={company?.branding.logoUrl}
+      logoDarkUrl={company?.branding.logoDarkUrl}
     >
       <BookingView
         vehicle={vehicle}
@@ -151,6 +155,7 @@ async function BookPage({ searchParams }: Props) {
         defaultFrom={from}
         defaultTo={to}
         carHref={carHref}
+        showInsurance
       />
     </BookingChrome>
   );
@@ -161,16 +166,22 @@ function BookingChrome({
   isTenant,
   companyName,
   logoUrl,
+  logoDarkUrl,
 }: {
   children: ReactNode;
   isTenant: boolean;
   companyName?: string;
   logoUrl?: string | null;
+  logoDarkUrl?: string | null;
 }) {
   return (
     <>
       {isTenant ? (
-        <TenantHeader companyName={companyName ?? ""} logoUrl={logoUrl} />
+        <TenantHeader
+          companyName={companyName ?? ""}
+          logoUrl={logoUrl}
+          logoDarkUrl={logoDarkUrl}
+        />
       ) : (
         <MarketplaceHeader />
       )}

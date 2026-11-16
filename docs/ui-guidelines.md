@@ -42,6 +42,19 @@ is identical.
 
 Never hardcode a color. Components never branch on theme in JS.
 
+**Colour scheme.** `ColorSchemeSwitcher` (one sun/moon button) sits in every
+header — marketplace, tenant subdomain and company site (custom domain). Until a
+visitor clicks it the site follows the device (`prefers-color-scheme`, checked by a
+tiny pre-paint script). A click stores `light` or `dark` in the `benwer-color-scheme`
+cookie and the root layout then adds `.dark` server-side. Company sites pass their
+colours as `--site-primary` / `--site-page-background` (with `data-brand` /
+`.site-canvas`), and the preview picker uses `--preview-page-background`, so dark
+mode can replace the page background and lighten the brand colour. Never set
+`--background` inline.
+
+**Logos in dark mode.** `CompanyMark` shows `logoDarkUrl` in dark mode when there is
+one; otherwise it puts the normal logo on a light `bg-logo-plate`.
+
 ---
 
 ## 3. Foundations
@@ -82,6 +95,23 @@ Same approach as admin web: `cva` for variants, `cn` for class merge.
 ---
 
 ## 5. App layout
+
+### Shared look between marketplace and company sites
+
+The marketplace is styled as if Benwer were one more company site. It reuses the
+company-site building blocks with hardcoded Benwer content (no API data):
+`SiteHeaderShell`, `SiteIntroBand`, `SiteSectionHeading`, `SiteIncludedSection`,
+`SiteAppSection`, `SiteFaqSection`, `PageIntro`, and the `SiteFooter` link styles.
+New marketplace sections should compose these rather than add a separate style.
+
+### Header on phones (all headers)
+
+Below `sm`, every header (marketplace, tenant, company site) shows only the logo
+and one hamburger (`HeaderMobileMenu`, passed to `SiteHeaderShell` as the
+required `mobileMenu`). Everything else lives inside it, no exceptions: nav
+links, site sections, phone, cart, sign-in/account and owner actions, the
+colour-scheme toggle and the language choices. Never add a header control that
+stays visible on phones; add it to the mobile menu too.
 
 ### Marketplace layout (`marketplace.benwer.es`)
 
@@ -134,21 +164,22 @@ Same approach as admin web: `cva` for variants, `cn` for class merge.
 
 ### Feature components (`src/components/features`)
 
-| Component                | Notes                                                                         |
-| ------------------------ | ----------------------------------------------------------------------------- |
-| **CarCard**              | Car photo, brand/model/year, price/day, specs badges, "View details" CTA.     |
-| **CarGrid**              | Responsive grid of `CarCard`s. Handles loading (skeleton grid), empty, error. |
-| **FilterBar**            | Date range, vehicle type, seats, transmission. URL-synced via `nuqs`.         |
-| **CarPhotoGallery**      | Main photo + thumbnail strip. Lightbox on click.                              |
-| **SpecsTable**           | Type, fuel, transmission, seats in a clean grid.                              |
-| **AvailabilityCalendar** | Highlight unavailable dates; user selects a range.                            |
-| **BookingForm**          | react-hook-form + zod; name, email, phone, dates, submit.                     |
-| **BookingSummary**       | Read-only summary card shown beside the form.                                 |
-| **ReservationStatus**    | Token-based status display; shows vehicle, dates, total, status badge.        |
-| **CompanyCard**          | Company name, location, fleet size, "View fleet" CTA.                         |
-| **CompanyGrid**          | Responsive grid of `CompanyCard`s.                                            |
-| **CompaniesMap**         | Leaflet map of company pins for the current location/date filters.            |
-| **CompanyDirectory**     | Companies page map + list (side-by-side on desktop, toggle on mobile).        |
+| Component                | Notes                                                                                                                                                                  |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CarCard**              | Car photo, brand/model/year, price/day, specs badges, "View details" CTA.                                                                                              |
+| **CarGrid**              | Responsive grid of `CarCard`s. Handles loading (skeleton grid), empty, error.                                                                                          |
+| **VehicleFilterToolbar** | Above every car list, one wrapping row: search, category, fuel, transmission, seats, company (marketplace) — same set as admin `/cars`. Applies instantly, URL-synced. |
+| **VehicleResultsBar**    | Below the toolbar: result count on the left, sort on the right.                                                                                                        |
+| **CarPhotoGallery**      | Main photo + thumbnail strip. Lightbox on click.                                                                                                                       |
+| **SpecsTable**           | Type, fuel, transmission, seats in a clean grid.                                                                                                                       |
+| **AvailabilityCalendar** | Highlight unavailable dates; user selects a range.                                                                                                                     |
+| **BookingForm**          | react-hook-form + zod; name, email, phone, dates, submit.                                                                                                              |
+| **BookingSummary**       | Read-only summary card shown beside the form.                                                                                                                          |
+| **ReservationStatus**    | Token-based status display; shows vehicle, dates, total, status badge.                                                                                                 |
+| **CompanyCard**          | Company name, location, fleet size, "View fleet" CTA.                                                                                                                  |
+| **CompanyGrid**          | Responsive grid of `CompanyCard`s.                                                                                                                                     |
+| **CompaniesMap**         | Google map (Leaflet fallback) of company pins for the current branch/location filters.                                                                                 |
+| **CompanyDirectory**     | Companies page map + list (side-by-side on desktop, toggle on mobile).                                                                                                 |
 
 ---
 

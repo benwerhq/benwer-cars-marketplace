@@ -1,5 +1,6 @@
 {
   "home": {
+    "companiesEyebrow": "Companies",
     "title": "Find your perfect car",
     "subtitle": "Compare cars from partner rental companies, then continue on the company's site.",
     "searchPlaceholder": "Where are you going?",
@@ -12,9 +13,12 @@
     "viewAllCompanies": "View all companies"
   },
   "featuredCars": {
-    "title": "Popular cars",
-    "subtitle": "Live listings from partner fleets — the same cars companies manage in admin.",
+    "viewAllCount": "View all {count} cars",
+    "eyebrow": "Cars",
+    "title": "Available cars",
+    "subtitle": "Every car partner companies have published, side by side. Pick one to book on the company's own site.",
     "viewAll": "Search all cars",
+    "seeAll": "See all",
     "emptyTitle": "No cars listed yet",
     "emptyHint": "Public fleets will appear here when companies publish them."
   },
@@ -27,15 +31,57 @@
       "body": "Manage cars, prices, availability, and reservations from one operations dashboard — the same catalogue the marketplace reads."
     },
     "mobile": {
-      "title": "Mobile application",
-      "body": "Staff can check cars in and out and stay on top of the day’s bookings from a phone, not only from a desk."
+      "title": "Mobile app for staff",
+      "body": "Check cars in and out and see today’s bookings from the yard."
     },
     "storefront": {
       "title": "Branded storefront",
-      "body": "A marketplace listing plus a company page (and optional subdomain) so travellers reach your fleet, then finish on your site."
+      "body": "A marketplace listing plus your own site and subdomain."
+    },
+    "preview": {
+      "utilisation": "Utilisation",
+      "utilisationValue": "82%",
+      "pickups": "Pick-ups today",
+      "pickupsValue": "14",
+      "revenue": "This month",
+      "revenueValue": "€9.4k",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Dashboard",
+      "navFleet": "Fleet",
+      "navCalendar": "Calendar",
+      "navReservations": "Reservations",
+      "calendarTitle": "Availability",
+      "calendarMonth": "Next 2 weeks",
+      "viaBenwer": "Via Benwer",
+      "direct": "Direct",
+      "free": "Free",
+      "carA": "Compact",
+      "carB": "City car",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Today",
+      "phoneDate": "Monday",
+      "pickUp": "Pick-up",
+      "return": "Return",
+      "checkedOut": "Checked out",
+      "due": "Due",
+      "tabToday": "Today",
+      "tabFleet": "Fleet",
+      "tabScan": "Scan",
+      "storeName": "Your company",
+      "storeNavCars": "Cars",
+      "storeNavContact": "Contact",
+      "storeHeadline": "Rent a car in Málaga",
+      "storeSearch": "Pick-up and dates",
+      "storeSearchCta": "Search",
+      "storePrice": "See prices",
+      "carE": "Hatchback",
+      "carF": "Estate"
     }
   },
   "faq": {
+    "eyebrow": "FAQ",
     "title": "Before you book",
     "subtitle": "Partner fleets, how booking works, and what Benwer does — and does not — handle.",
     "items": {
@@ -62,21 +108,8 @@
     }
   },
   "appBanner": {
-    "eyebrow": "On your phone",
     "title": "The Benwer Cars app",
-    "comingSoon": "Coming soon",
-    "description": "Search partner fleets on the go and keep your trip details handy — so you can pick up where you left off on your phone. Store links will open here when the app is live.",
-    "scanToDownload": "Scan to download",
-    "appStore": {
-      "prefix": "Download on the",
-      "name": "App Store",
-      "aria": "Download on the App Store, coming soon"
-    },
-    "googlePlay": {
-      "prefix": "Get it on",
-      "name": "Google Play",
-      "aria": "Get it on Google Play, coming soon"
-    }
+    "description": "Get Benwer Cars on your phone. The Android app is in early testing on Google Play — join the test and help shape it."
   },
   "partners": {
     "eyebrow": "For car rental companies",
@@ -95,7 +128,8 @@
     "carTitle": "{brand} {model} — {company}",
     "carTitleTenant": "{brand} {model} ({year})",
     "carDescription": "Rent a {brand} {model} from {company}.",
-    "carDescriptionSpecs": "Rent a {brand} {model} — {seats, plural, one {# seat} other {# seats}}, {transmission}."
+    "carDescriptionSpecs": "Rent a {brand} {model} — {seats, plural, one {# seat} other {# seats}}, {transmission}.",
+    "carsTitle": "Rental cars across Málaga province"
   },
   "tenant": {
     "notFoundTitle": "Company not found",
@@ -105,22 +139,33 @@
     "logoAlt": "{name} logo"
   },
   "howItWorks": {
+    "eyebrow": "Three steps",
     "title": "How it works",
-    "subtitle": "Search cars from partner rental companies in Málaga province, compare public fleets side by side, then finish the hire with the company — no Benwer account needed.",
+    "subtitle": "Compare partner fleets across Málaga, then book directly with the company. No Benwer account needed.",
     "stepLabel": "Step {number}",
-    "searchTitle": "Search dates and place",
-    "searchBody": "Choose a city on the Costa del Sol and the days you need the car. Every result comes from a Benwer partner that has published its fleet — not from unverified private listings.",
+    "searchTitle": "Pick dates and place",
+    "searchBody": "Choose a Costa del Sol town and the days you need. Only verified partner fleets show up.",
     "compareTitle": "Compare real cars",
-    "compareBody": "See make, model, seats, transmission, and daily rate. Open a listing for photos, specs, and availability from the same catalogue the partner company manages in admin.",
+    "compareBody": "Seats, gearbox, photos and the daily rate, side by side from every partner.",
     "continueTitle": "Book with the company",
-    "continueBody": "Continue on the rental company’s own site to confirm pick-up, insurance, and payment. Benwer is how you find a car from a partner fleet; the company honours the hire."
+    "continueBody": "Confirm pick-up, insurance and payment with the rental company that owns the car.",
+    "cta": "Start searching",
+    "preview": {
+      "place": "Málaga Airport",
+      "dates": "Fri → Fri · 7 days",
+      "carA": "Compact car",
+      "carASpecs": "4 seats · Manual",
+      "carB": "Family SUV",
+      "carBSpecs": "5 seats · Automatic",
+      "confirmed": "Booking confirmed",
+      "confirmedDetail": "Pick-up at 10:00",
+      "example": "Example"
+    }
   },
   "search": {
     "locationLabel": "Pick-up location",
     "locationPlaceholder": "Search locations",
     "locationEmpty": "No matching location",
-    "locationTrigger": "Pick-up location, {city}",
-    "cityListLabel": "Locations with available cars",
     "allLocations": "All locations",
     "allLocationsHint": "Every city with available cars",
     "provinceSelected": "All locations",
@@ -132,8 +177,16 @@
     "pickupTrigger": "Pick-up date, {date}",
     "dropoffTrigger": "Drop-off date, {date}",
     "calendarLabel": "Select dates",
+    "datesRequired": "Choose your pick-up and drop-off dates to search.",
     "submit": "Search",
-    "datesRequired": "Add pick-up and drop-off dates to search"
+    "returnLocationLabel": "Drop-off location",
+    "differentReturn": "Return to a different location",
+    "returnSame": "Same as pick-up",
+    "returnNotOffered": "{company} doesn't offer returns at another location.",
+    "branchChoose": "Choose a location",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Loading locations…",
+    "branchAnyHint": "Every branch with cars"
   },
   "browseLocation": {
     "title": "Browse by location",
@@ -152,7 +205,7 @@
     "viewToggleAria": "Show companies as a list or map",
     "regionAria": "Map of rental companies in Málaga province",
     "pinAria": "{name} in {city}",
-    "fleetHint": "{count, plural, one {# car available} other {# cars available}}",
+    "fleetHint": "{count, plural, =0 {No cars listed yet} one {# car available} other {# cars available}}",
     "fleetHintUnknown": "View available cars",
     "viewFleet": "View fleet",
     "closePin": "Close",
@@ -161,14 +214,17 @@
     "emptyTitle": "No companies on the map",
     "emptyDescription": "Try another city in Málaga province.",
     "resultsCount": "{count, plural, one {# company across Málaga province} other {# companies across Málaga province}}",
-    "resultsInCity": "{count, plural, one {# company in {city}} other {# companies in {city}}}"
+    "resultsInCity": "{count, plural, one {# company in {city}} other {# companies in {city}}}",
+    "resultsAtBranch": "{count, plural, one {# company at {branch}} other {# companies at {branch}}}"
   },
   "cars": {
+    "showingOf": "Showing {shown} of {total} cars",
+    "loadMore": "Show more cars",
+    "seeAll": "See all",
     "title": "Available cars",
+    "subtitle": "Every public car from partner rental companies across Málaga province. Pick your dates to see what is free.",
     "searchEmptyTitle": "No cars match this search",
     "searchEmptyHint": "Try different dates or another location in Málaga province. Every city stays in the list — even if no cars are listed there today.",
-    "companiesSelected": "{count, plural, one {# company selected} other {# companies selected}}",
-    "clearCompanies": "Clear companies",
     "resultsInProvince": "{count, plural, one {# car across all locations} other {# cars across all locations}}",
     "resultsInCity": "{count, plural, one {# car in {city}} other {# cars in {city}}}",
     "allCompanies": "All companies",
@@ -177,34 +233,33 @@
     "perDay": "{price} / day",
     "perDaySuffix": " / day",
     "viewDetails": "View details",
+    "notAvailableForDates": "Not available for these dates",
+    "bookUnavailable": "View car",
+    "fleetSummary": "{total, plural, one {# car} other {# cars}} · {available, plural, one {# available} other {# available}}",
+    "fleetSummaryForDates": "{total, plural, one {# car} other {# cars}} · {available, plural, one {# available} other {# available}} · {from} – {to}",
     "seats": "{count} seats",
-    "seatsPlus": "{count}+",
     "resultsCount": "{count, plural, one {# car available} other {# cars available}}",
     "resultsForDates": "{count, plural, one {# car} other {# cars}} · {from} – {to}",
     "emptyTitle": "This fleet is not public yet",
     "emptyHint": "This company is listed, but its cars are not published on Benwer yet. That is expected until vehicles are marked public — not a broken page.",
     "noResults": "No cars match this search",
     "noResultsHint": "Try different dates, another location, or fewer filters.",
-    "datesRequiredTitle": "Add your travel dates",
-    "datesRequiredHint": "Choose pick-up and drop-off dates to see cars. You can also change location in the search above.",
     "browseCompanies": "Browse companies",
     "clearFilters": "Clear filters",
-    "searchPlaceholder": "Search cars",
-    "showFilters": "Show filters",
-    "hideFilters": "Hide filters",
+    "searchPlaceholder": "Search by make or model",
     "filters": {
       "title": "Filters",
-      "type": "Vehicle type",
       "seats": "Seats",
       "transmission": "Transmission",
       "company": "Company",
       "dates": "Dates",
       "from": "Pick-up date",
       "to": "Drop-off date",
-      "appliedCount": "{count, plural, one {# applied} other {# applied}}",
-      "openAria": "Filters, {count, plural, one {# applied} other {# applied}}",
-      "close": "Close filters",
-      "done": "Done"
+      "category": "Category",
+      "fuel": "Fuel type",
+      "all": "All",
+      "clear": "Clear",
+      "selectedCount": "{count} selected"
     },
     "types": {
       "car": "Car",
@@ -221,8 +276,46 @@
       "petrol": "Petrol",
       "diesel": "Diesel",
       "electric": "Electric",
-      "hybrid": "Hybrid"
-    }
+      "hybrid": "Hybrid",
+      "plugin_hybrid": "Plug-in hybrid"
+    },
+    "rowDeposit": "Deposit {amount}",
+    "rowAvailable": "Available for your dates",
+    "rowTotal": "{amount} total · {days, plural, one {# day} other {# days}}",
+    "bookNow": "Book now",
+    "availableCount": "{count, plural, =0 {No cars available} one {# car available} other {# cars available}}",
+    "availableForDates": "{count, plural, =0 {No cars available} one {# car available} other {# cars available}} · {from} – {to}",
+    "categories": {
+      "economy": "Economy",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "Minivan",
+      "van": "Van",
+      "other": "Other"
+    },
+    "sort": {
+      "label": "Sort by",
+      "recommended": "Recommended",
+      "pricePerDay_asc": "Lowest daily rate",
+      "pricePerDay_desc": "Highest daily rate"
+    },
+    "colors": {
+      "white": "White",
+      "black": "Black",
+      "silver": "Silver",
+      "grey": "Grey",
+      "red": "Red",
+      "blue": "Blue",
+      "green": "Green",
+      "orange": "Orange",
+      "yellow": "Yellow",
+      "brown": "Brown",
+      "beige": "Beige",
+      "gold": "Gold",
+      "purple": "Purple"
+    },
+    "viewCar": "View car",
+    "opensCompanySite": "(opens the company's website)"
   },
   "carDetail": {
     "bookNow": "Book now",
@@ -296,7 +389,14 @@
     "stickyMeta": "{name} · {count, plural, one {# day} other {# days}}",
     "rateTimesDays": "{rate} × {days}",
     "confirm": "Confirm booking",
+    "confirmRequest": "Send request",
+    "requesting": "Sending request…",
     "confirming": "Confirming…",
+    "sitePaused": "Not taking bookings",
+    "insurance": "Insurance",
+    "termsLabel": "Rental terms",
+    "termsAccept": "I accept the",
+    "termsLink": "rental terms",
     "successTitle": "Booking confirmed!",
     "successMessage": "Your confirmation has been sent to {email}.",
     "viewBooking": "View my booking",
@@ -306,6 +406,7 @@
     "trustNoAccount": "No account needed",
     "trustEmail": "Confirmation by email",
     "trustNoPayment": "No payment now",
+    "trustCardPayment": "Pay by card after booking",
     "trustFooter": "By confirming, you request this car for the dates above. The company will honour the reservation.",
     "missingTitle": "Choose a car to continue",
     "missingDescription": "Pick a vehicle and dates before completing your booking.",
@@ -324,6 +425,7 @@
       "startDate": "Select a pick-up date.",
       "endDate": "Select a drop-off date.",
       "endAfterStart": "Drop-off must be after pick-up.",
+      "terms": "Accept the rental terms to continue.",
       "fixErrors": "Please fix the highlighted fields."
     },
     "averageRate": "Average daily rate",
@@ -332,7 +434,29 @@
     "weekendRate": "Weekend",
     "segmentDetail": "{range} · {days} × {rate}",
     "warningMinDays": "Rentals in this season must last at least {limit, plural, one {# day} other {# days}}. Change your dates to book.",
-    "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book."
+    "warningMaxDays": "Rentals in this season can last at most {limit, plural, one {# day} other {# days}}. Change your dates to book.",
+    "returnLocation": "Return location",
+    "oneWayFee": "Different return location fee",
+    "signedInAs": "Signed in as {email}",
+    "signInPrompt": "Have an account?",
+    "signInLink": "Sign in to fill in your details",
+    "subtitleSignedIn": "Check your details and confirm.",
+    "trustPaymentAfter": "Payment details follow after booking",
+    "extras": "Extras",
+    "extraPerDay": "{price} / day",
+    "extraFixed": "{price} / rental",
+    "tripDetails": "Trip details",
+    "pickupTime": "Pick-up time",
+    "returnTime": "Drop-off time",
+    "timeAny": "Any time",
+    "flightNumber": "Flight number",
+    "flightNumberHint": "Your pick-up is at an airport. Add your flight so the company can follow delays.",
+    "flightNumberOptional": "Add it if you arrive by plane.",
+    "notes": "Comments",
+    "notesPlaceholder": "Anything the company should know?",
+    "dateOfBirth": "Date of birth",
+    "optional": "optional",
+    "extraSoldOut": "Not available for these dates"
   },
   "reservationStatus": {
     "title": "Your reservation",
@@ -365,7 +489,49 @@
     "browseMore": "Browse more cars",
     "notFoundTitle": "Reservation not found",
     "notFoundDescription": "Check the link in your confirmation email, or start a new search.",
-    "backHome": "Back to home"
+    "backHome": "Back to home",
+    "requestExpires": "Request expires",
+    "cancelReason": "Cancellation reason",
+    "withdraw": "Withdraw request",
+    "paymentStatus": "Payment",
+    "paidAmount": "Paid",
+    "payment": {
+      "unpaid": "Unpaid",
+      "partially_paid": "Partially paid",
+      "paid": "Paid",
+      "refund_due": "Refund due",
+      "authorized": "Card authorized"
+    },
+    "reasons": {
+      "unpaid_timeout": "Payment was not completed in time",
+      "request_expired": "The company did not answer in time",
+      "request_declined": "The company declined this request",
+      "customer_request": "You withdrew this request"
+    },
+    "insurance": "Insurance",
+    "extras": "Extras",
+    "fees": "Pickup and return fees",
+    "priceTitle": "Price summary"
+  },
+  "payment": {
+    "title": "Pay the advance",
+    "amountDue": "Amount due: {amount}",
+    "countdown": "Complete payment within {time}",
+    "requestAuthorize": "Your card is authorized now and charged only when the company accepts.",
+    "pay": "Pay now",
+    "paying": "Processing…",
+    "confirming": "Confirming your payment",
+    "confirmingHint": "Please wait — we confirm payment from the company, not from the card form.",
+    "declined": "The card was declined. Try another card.",
+    "secure": "Card details are handled by Stripe in test mode.",
+    "cancelBooking": "Cancel booking",
+    "cancelTitle": "Cancel this booking?",
+    "cancelDescription": "We will apply the company’s cancellation rules. Check the fee and refund before you confirm.",
+    "cancelFee": "Cancellation fee",
+    "cancelRefund": "Refund",
+    "confirmCancel": "Confirm cancellation",
+    "keepBooking": "Keep booking",
+    "cancelled": "Your booking has been cancelled."
   },
   "companies": {
     "title": "Rental companies",
@@ -386,25 +552,39 @@
     "loadErrorDescription": "We could not load this rental company from the live catalogue. Try again — we do not show placeholder cars when the API fails.",
     "browseCars": "Browse cars",
     "featuredEmpty": "No featured companies yet",
-    "featuredEmptyHint": "Check back soon, or browse cars from local fleets."
+    "featuredEmptyHint": "Check back soon, or browse cars from local fleets.",
+    "locationUnknown": "Location not listed",
+    "noDescription": "No description yet."
   },
   "contact": {
     "title": "Contact us",
-    "lede": "Questions about the marketplace? Send a message and we will reply by email.",
+    "lede": "Questions about the marketplace? Send us a message and we'll get back to you as soon as we can.",
     "bookingHint": "This form is not for bookings. To rent a car, continue on the rental company’s own site.",
     "name": "Full name",
     "email": "Email address",
     "subject": "Subject",
     "message": "Message",
     "submit": "Send message",
-    "success": "Thanks — we will get back to you by email.",
     "privacyNote": "We only use these details to reply.",
     "errors": {
       "nameMin": "Enter your name (at least 2 characters).",
       "email": "Enter a valid email address.",
       "subjectMin": "Enter a subject (at least 3 characters).",
       "messageMin": "Enter a message (at least 10 characters)."
-    }
+    },
+    "eyebrow": "Support",
+    "namePlaceholder": "Jane Smith",
+    "emailPlaceholder": "you@example.com",
+    "subjectPlaceholder": "How can we help?",
+    "messagePlaceholder": "Tell us what you need…",
+    "supportSubjectDefault": "Support request",
+    "submitting": "Sending…",
+    "submittedTitle": "Message sent",
+    "submittedDescription": "Thanks for reaching out. We'll reply to your email as soon as we can.",
+    "sendAnother": "Send another message",
+    "backHome": "Back to home",
+    "whatsappTitle": "Prefer WhatsApp?",
+    "whatsappDescription": "Chat with the Benwer Cars team directly."
   },
   "legal": {
     "privacy": {
@@ -520,5 +700,711 @@
         }
       ]
     }
+  },
+  "site": {
+    "logoAlt": "{name} home",
+    "defaultHeadline": "Rent a car with {name}",
+    "footerTagline": "Book directly with this rental company.",
+    "previewBanner": "Preview — this page is not public. Search engines will not index it.",
+    "editLink": "Edit",
+    "editContactEmpty": "Contact details are hidden. Edit them in admin.",
+    "editBranchesEmpty": "No branches yet. Add them in admin.",
+    "editRulesHint": "Booking mode, lead time, and the request window.",
+    "editDomainHint": "Custom domain and live URL.",
+    "editSection": {
+      "hero": "Hero",
+      "search": "Search",
+      "fleet": "Fleet",
+      "branches": "Branches",
+      "contact": "Contact",
+      "rules": "Booking rules",
+      "domain": "Domain"
+    },
+    "pausedTitle": "Not taking bookings",
+    "pausedDescription": "This company has paused online bookings. You can still browse the fleet.",
+    "notFoundTitle": "Website not found",
+    "notFoundDescription": "This rental website is not available.",
+    "loadErrorTitle": "Website unavailable",
+    "loadErrorDescription": "We could not load this rental website. Try again shortly.",
+    "search": "Search cars",
+    "searchAria": "Search by dates and location",
+    "searchTitle": "Search cars",
+    "searchDescription": "Choose dates and a location to see what is available.",
+    "branch": "Pick-up location",
+    "anyBranch": "Any location",
+    "ownerSignIn": "Owner sign-in",
+    "returnBranch": "Drop-off location",
+    "differentReturn": "Return to a different location",
+    "returnSame": "Same as pick-up",
+    "driverAge": "Driver's age",
+    "driverAgeYears": "{band} years",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Edit your website",
+    "signInHint": "Owners open the website editor from Benwer admin. Use the “Edit website” button there and you will be signed in here automatically.",
+    "signedInTitle": "You are signed in",
+    "signedInHint": "If you can manage this website, the editor opens on the home page.",
+    "openEditor": "Open website editor",
+    "disabledTitle": "Owner editing is not available",
+    "disabledDescription": "Staff Firebase is not configured on this marketplace.",
+    "signOut": "Sign out",
+    "auth": {
+      "tooManyRequests": "Too many attempts. Try again later.",
+      "unknown": "Could not sign in. Try again.",
+      "invalidToken": "This sign-in link has expired or was already used. Open the editor again from Benwer admin."
+    },
+    "signingIn": "Signing you in…",
+    "openAdmin": "Open Benwer admin",
+    "accountMenu": "Owner account",
+    "signedInAs": "Signed in as owner",
+    "guestSignedOut": "You were signed out of your guest account. Owner and guest sessions can't be open at the same time in this browser."
+  },
+  "guest": {
+    "googleAction": "Sign in with Google",
+    "googleCreate": "Continue with Google",
+    "or": "or",
+    "forgotPassword": "Forgot password?",
+    "resetTitle": "Reset your password",
+    "resetHint": "Enter your email address and we'll send you a link to choose a new password.",
+    "resetAction": "Send reset link",
+    "resetSentTitle": "Check your email",
+    "resetSentHint": "If an account exists for that address, we've sent password reset instructions. Didn't receive it? Check your spam folder or wait a few minutes before trying again.",
+    "backToSignIn": "Back to sign in",
+    "signInNav": "Sign in",
+    "myBookings": "My bookings",
+    "signInTitle": "Sign in",
+    "signInHint": "Use your guest account for this rental company. This is not a staff login.",
+    "signInAction": "Sign in",
+    "createTitle": "Create a guest account",
+    "createHint": "Save your bookings with this company. Staff use a different sign-in.",
+    "createAction": "Create account",
+    "needAccount": "Need an account? Create one",
+    "haveAccount": "Already have an account? Sign in",
+    "email": "Email",
+    "password": "Password",
+    "bookingsTitle": "My bookings",
+    "bookingsMeta": "Linked bookings for this rental company.",
+    "bookingsHint": "Signed in as {email} at {company}.",
+    "emptyTitle": "No bookings yet",
+    "emptyDescription": "Booked before? Link that booking with the email you used or its confirmation token.",
+    "bookingFallback": "Booking",
+    "loadErrorTitle": "Could not load bookings",
+    "linkTitle": "Link a booking",
+    "linkHint": "Enter the email used to book, or the confirmation token. If we find a match we will email a link — we never say whether an account exists.",
+    "linkEmail": "Booking email",
+    "linkToken": "Booking token",
+    "linkAction": "Send link",
+    "linkSent": "If we find a matching booking, we will email a confirmation link.",
+    "accountTitle": "Account",
+    "accountHint": "Sign out of your account on this site.",
+    "signOut": "Sign out",
+    "erase": "Erase my data here",
+    "eraseConfirm": "Yes, erase my data for this company",
+    "confirmTitle": "Linking your booking",
+    "confirmHint": "Please wait while we attach this booking to your account.",
+    "confirmSignIn": "Sign in with your guest account to finish linking this booking.",
+    "confirmMissing": "Missing confirmation token",
+    "confirmMissingHint": "Open the link from your email again.",
+    "confirmError": "We could not confirm this link",
+    "disabledTitle": "Guest accounts are not available yet",
+    "disabledDescription": "This company has not turned on guest sign-in. You can still book with your name, email and phone.",
+    "auth": {
+      "popupClosed": "Sign-in was cancelled.",
+      "popupBlocked": "Your browser blocked the Google window. Allow pop-ups and try again.",
+      "differentProvider": "This email already signs in another way. Use your password instead.",
+      "providerUnavailable": "Google sign-in isn't available on this site yet. Use your email and password.",
+      "invalidEmail": "Enter a valid email address.",
+      "emailInUse": "That email already has a guest account. Sign in instead.",
+      "weakPassword": "Use a longer password.",
+      "tooManyRequests": "Too many attempts. Try again in a few minutes.",
+      "invalidCredentials": "Email or password is not correct.",
+      "unknown": "Could not sign in. Try again.",
+      "googleDisabled": "Google sign-in isn't turned on for this site yet. Use your email and password.",
+      "domainNotAuthorised": "Google sign-in isn't set up for this site's address yet. Use your email and password for now."
+    },
+    "accountMenu": "Your account",
+    "profileNav": "Profile",
+    "profileTitle": "Profile",
+    "profileMeta": "Your guest account for this rental company.",
+    "linkCancel": "Cancel",
+    "eraseTitle": "Erase my data",
+    "eraseHint": "Deletes your guest data for this company and signs you out. Other companies are not affected.",
+    "profileDetailsTitle": "Your details",
+    "profileDetailsHint": "Used to fill in your bookings with this company.",
+    "profileFullName": "Full name",
+    "profilePhone": "Phone number",
+    "profileDob": "Date of birth",
+    "profileSave": "Save details",
+    "profileNotLinked": "Your name and phone are saved here after your first booking with this email. Already booked with another email? Link that booking from My bookings.",
+    "verifyTitle": "Verify your email to see your bookings",
+    "verifyHint": "We sent a link to {email}. Open it, then come back here. Until your email is verified we can't show your bookings or save your name and phone.",
+    "verifyResend": "Resend email",
+    "verifySent": "Email sent. Check your inbox and spam folder.",
+    "verifyDone": "I've verified my email",
+    "verifyStillPending": "Your email isn't verified yet. Open the link in the email, then try again.",
+    "verifyBanner": "Your account isn't active yet. Verify {email} to see your bookings and use your saved details.",
+    "verifyBannerAction": "Verify email",
+    "profileEdit": "Edit details",
+    "profileCancel": "Cancel",
+    "profileEmail": "Email",
+    "profileEmpty": "Not added",
+    "bookingsUpcoming": "Upcoming",
+    "bookingsPast": "Past",
+    "ownerSignedOut": "You were signed out of the website editor. Owner and guest sessions can't be open at the same time in this browser."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "{name} offers",
+      "slideAlt": "{name} banner {position}",
+      "slideLabel": "{position} of {count}",
+      "previous": "Previous banner",
+      "next": "Next banner",
+      "goTo": "Show banner {position}",
+      "presets": {
+        "airport": {
+          "script": "just landed?",
+          "highlight": "Airport pickup",
+          "joiner": "in",
+          "boxed": "10 minutes",
+          "description": "Skip the queue: sign your contract on your phone and drive off with full insurance"
+        },
+        "weekend": {
+          "script": "book this weekend",
+          "highlight": "Save 20%",
+          "joiner": "on",
+          "boxed": "Weekend rentals",
+          "description": "Pick up Friday, return Monday. Free child seat and an extra driver included"
+        },
+        "roadtrip": {
+          "script": "your next roadtrip",
+          "highlight": "Starts here",
+          "joiner": "we hand you the",
+          "boxed": "Keys",
+          "description": "Free cancellation up to 24h before pickup, unlimited km and no hidden fees"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Included in every price",
+      "title": "The price you see is the price you pay",
+      "description": "No surprises at the desk. These are always part of the price.",
+      "presets": {
+        "insurance": {
+          "title": "Basic insurance",
+          "text": "Collision, theft and third-party cover.",
+          "tag": "Included"
+        },
+        "mileage": {
+          "title": "Unlimited kilometres",
+          "text": "Drive as far as you like, with no per-km charges.",
+          "tag": "No limits"
+        },
+        "fuel": {
+          "title": "Full-to-full fuel",
+          "text": "Pick the car up full and bring it back full.",
+          "tag": "No pre-paid tank"
+        },
+        "cancellation": {
+          "title": "Free cancellation",
+          "text": "Plans changed? Cancel for free.",
+          "tag": "Flexible"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Reviews",
+      "title": "What drivers say about us",
+      "seeAll": "See all {count, plural, one {# review} other {# reviews}}",
+      "seeAllOn": "See all {count, plural, one {# review} other {# reviews}} on {source}",
+      "basedOn": "Based on {count, plural, one {# review} other {# reviews}}",
+      "basedOnSource": "Based on {count, plural, one {# review} other {# reviews}} on {source}",
+      "ratingAria": "Rated {rating} out of 5",
+      "rented": "Rented: {vehicle}",
+      "verified": "Verified rental",
+      "distributionAria": "Rating breakdown",
+      "emptyTitle": "No reviews yet",
+      "emptyText": "Guests can review their rental once they return the car. Approved reviews appear here."
+    },
+    "app": {
+      "eyebrow": "Mobile app",
+      "title": "Your booking, on the go",
+      "text": "Check in online, see your pick-up details and message us, all from your phone.",
+      "platformBoth": "iOS & Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Scan to download",
+      "qrAlt": "QR code to download the app",
+      "appStore": {
+        "prefix": "Download on the",
+        "name": "App Store",
+        "aria": "Download on the App Store",
+        "unavailable": "Not available on the App Store yet"
+      },
+      "googlePlay": {
+        "prefix": "Get it on",
+        "name": "Google Play",
+        "aria": "Get it on Google Play",
+        "unavailable": "Not available on Google Play yet"
+      },
+      "comingSoon": "Coming soon"
+    },
+    "locations": {
+      "eyebrow": "Locations",
+      "title": "{count, plural, one {Our office} other {Our offices}}",
+      "description": "{count, plural, one {Pick up and return your car here.} other {Pick up and return your car at any of our offices.}}",
+      "directions": "Directions",
+      "directionsTo": "Directions to {name}",
+      "call": "Call"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Questions before booking",
+      "description": "Can't find your answer? Get in touch, we're happy to help."
+    },
+    "contact": {
+      "title": "Questions? Talk to a person.",
+      "description": "Send us a message or give us a call and we'll help you find the right car.",
+      "whatsapp": "WhatsApp",
+      "email": "Email us",
+      "whatsappMessage": "Hello {name}, I have a question about renting a car."
+    },
+    "nav": {
+      "reviews": "Reviews",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "app": "App",
+      "branches": "Locations"
+    },
+    "footer": {
+      "contact": "Contact",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "We accept",
+      "rating": "{score} · {count, plural, one {# review} other {# reviews}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Cash"
+    }
+  },
+  "siteEditor": {
+    "aria": "Website editor",
+    "title": "Website editor",
+    "signOut": "Sign out",
+    "tabsAria": "Editor sections",
+    "status": {
+      "draft": "Draft",
+      "published": "Live",
+      "paused": "Paused"
+    },
+    "tabs": {
+      "sections": "Sections",
+      "design": "Design",
+      "settings": "Settings",
+      "legal": "Legal"
+    },
+    "contentLanguage": "Editing language",
+    "locales": {
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "pt-PT": "PT"
+    },
+    "backToSections": "All sections",
+    "sections": {
+      "company": "Company",
+      "fleet": "Cars",
+      "included": "Included in every price",
+      "reviews": "Reviews",
+      "app": "Mobile app",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "hero": "Banners & search",
+      "branches": "Locations"
+    },
+    "sectionsHint": "Switch sections on or off and change their order. Open a section to edit its content.",
+    "orderHint": "Cars always show. Offices come from your branches in Benwer admin.",
+    "hiddenUntilContent": "Hidden until you add content",
+    "summary": {
+      "banners": "{count, plural, one {# banner} other {# banners}}",
+      "bannersEmpty": "No banners yet, brand colour shown",
+      "company": "Headline, intro and contact details",
+      "fleet": "From your Benwer fleet",
+      "included": "{count, plural, one {# item} other {# items}}",
+      "reviews": "{count, plural, one {# review} other {# reviews}}",
+      "app": "Store links and QR code",
+      "locations": "{count, plural, one {# office} other {# offices}} from Benwer",
+      "faq": "{count, plural, one {# question} other {# questions}}",
+      "contactWhatsapp": "WhatsApp, phone and opening hours",
+      "contact": "Phone and email"
+    },
+    "unsaved": "Unsaved changes",
+    "saved": "All changes saved",
+    "discard": "Discard",
+    "save": "Save changes",
+    "common": {
+      "moveUp": "Move {item} up",
+      "moveDown": "Move {item} down",
+      "remove": "Remove {item}",
+      "show": "Show {item}"
+    },
+    "banners": {
+      "title": "Banners",
+      "description": "Up to {max} slides. Empty fields use the default text shown in grey.",
+      "empty": "No banners. The banner area shows your background colour.",
+      "item": "Banner {position}",
+      "image": "Image",
+      "imageHint": "Upload a wide image, about 1600 × 560 px. JPG, PNG or WebP up to 25 MB. A transparent PNG sits on your banner colour.",
+      "add": "Add banner",
+      "fields": {
+        "script": "Handwritten line",
+        "highlight": "Highlighted title",
+        "joiner": "Small connector",
+        "boxed": "Boxed title",
+        "description": "Description"
+      },
+      "colorsTitle": "Banner colours",
+      "colorsDescription": "Used by every banner. Any colour works for the background.",
+      "resetColors": "Reset to default colours",
+      "colors": {
+        "background": "Background",
+        "text": "Text",
+        "highlight": "Highlight box",
+        "highlightText": "Highlight text",
+        "box": "White box",
+        "boxText": "White box text",
+        "script": "Connector text"
+      },
+      "noImage": "No image yet",
+      "uploadImage": "Upload image",
+      "replaceImage": "Replace image",
+      "tooLarge": "That file is over 25 MB. Choose a smaller image.",
+      "uploadFailed": "Upload failed. Try again."
+    },
+    "company": {
+      "title": "Company header",
+      "description": "Your name, a headline and a short introduction.",
+      "headline": "Headline",
+      "headlinePlaceholder": "Rent a car with {name}",
+      "intro": "Introduction",
+      "introHint": "One or two sentences about your company.",
+      "contactTitle": "Contact details",
+      "contactDescription": "Shown in the header, locations and contact sections.",
+      "showPhone": "Show phone number",
+      "showEmail": "Show email",
+      "showAddress": "Show address"
+    },
+    "included": {
+      "title": "Included in every price",
+      "description": "Up to 6 promises that are always part of your price.",
+      "accuracy": "Only list what is true for every rental. The default text is a suggestion, check it matches your rental conditions.",
+      "item": "Item {position}",
+      "icon": "Icon",
+      "itemTitle": "Title",
+      "itemText": "Description",
+      "itemTag": "Highlight",
+      "tagHint": "Short label shown in green, such as “Excess €1,000”.",
+      "presets": {
+        "insurance": "Basic insurance",
+        "mileage": "Unlimited km",
+        "fuel": "Full-to-full fuel",
+        "cancellation": "Free cancellation"
+      },
+      "addCustom": "Custom item"
+    },
+    "icons": {
+      "shield": "Shield",
+      "gauge": "Speedometer",
+      "fuel": "Fuel pump",
+      "calendar_check": "Calendar",
+      "check": "Tick",
+      "car": "Car",
+      "users": "People",
+      "baby": "Child seat",
+      "plane": "Plane",
+      "key": "Key"
+    },
+    "reviews": {
+      "title": "Guest reviews",
+      "description": "Guests review their rental after returning the car. Only reviews you approve are shown.",
+      "summary": "{average} average from {count, plural, one {# approved review} other {# approved reviews}}",
+      "none": "No approved reviews yet. Guests see a short note until you approve one.",
+      "manage": "Approve or hide reviews in Benwer admin",
+      "demo": "These are demo reviews shown on this test company until you approve real ones in Benwer admin."
+    },
+    "app": {
+      "benwerAppTitle": "Benwer Cars app",
+      "benwerApp": "Show the Benwer Cars app",
+      "benwerAppDescription": "Guests get the free Benwer Cars app. The badges link to the official stores and the QR code opens your company in the app.",
+      "storesWithBenwerApp": "Only needed if your company has its own app. While the Benwer Cars app is on, the section uses its store links.",
+      "storesTitle": "Store links",
+      "storesDescription": "Links to your own app. A missing store shows as greyed out. With no links and the Benwer Cars app off, the section stays hidden.",
+      "ios": "App Store link",
+      "android": "Google Play link",
+      "qrHint": "The QR code opens the Google Play link, or the App Store link if there is no Google Play link.",
+      "copyTitle": "Text",
+      "title": "Title",
+      "text": "Description"
+    },
+    "faq": {
+      "title": "Questions",
+      "description": "Up to {max} questions with short answers.",
+      "empty": "No questions yet. The section stays hidden until you add one.",
+      "item": "Question {position}",
+      "question": "Question",
+      "answer": "Answer",
+      "incompleteHint": "Questions without an answer are not shown on the site.",
+      "add": "Add question"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "How customers reach you. Phone and email come from the company section.",
+      "whatsapp": "WhatsApp number",
+      "whatsappHint": "Include the country code. Leave empty to hide the WhatsApp button.",
+      "hours": "When you answer",
+      "hoursPlaceholder": "We answer every day from 08:00 to 22:00.",
+      "payments": "Payment methods",
+      "paymentsHint": "Shown in your footer."
+    },
+    "design": {
+      "colorTitle": "Brand colour",
+      "colorDescription": "Used for buttons, links and highlights across your site. The banner background follows this colour; you can still fine-tune it under Banners.",
+      "presets": "Suggested colours",
+      "custom": "Custom colour",
+      "customHint": "Use a hex code, such as #4f46e5.",
+      "picker": "Pick a colour",
+      "lowContrast": "This colour is too light for white text on buttons. Pick a darker one, or saving will fail.",
+      "fontTitle": "Font",
+      "fontDescription": "Used for all text on your website.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Clean and modern"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Classic and elegant"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Bold and friendly"
+        }
+      },
+      "cornersTitle": "Corners",
+      "cornersDescription": "Rounded or square corners on buttons, cards and fields across your website.",
+      "corners": {
+        "round": {
+          "name": "Round",
+          "hint": "Soft and friendly"
+        },
+        "square": {
+          "name": "Square",
+          "hint": "Sharp and minimal"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Website",
+      "websiteEnabled": "Booking website on",
+      "websiteEnabledHint": "When this is on, guests can see and book on your published site. Turning it on also publishes your saved changes. This is the same switch as in Benwer admin.",
+      "bookingTitle": "Bookings",
+      "bookingDescription": "How customers book from your site.",
+      "bookingMode": "Booking mode",
+      "mode": {
+        "instant": "Instant",
+        "request": "On request"
+      },
+      "modeHint": {
+        "instant": "Bookings are confirmed straight away.",
+        "request": "You accept or decline each booking within the request window."
+      },
+      "minLead": "Minimum notice",
+      "requestWindow": "Time to reply",
+      "hoursUnit": "In hours",
+      "differentReturnTitle": "Return at another location",
+      "differentReturnLabel": "Let guests return at a different location",
+      "differentReturnHint": "Guests choose a return location when they search. The one-way fee from Benwer admin is added to the price.",
+      "differentReturnOff": "Turn on one-way rentals in Benwer admin to offer this."
+    },
+    "savedNotPublished": "Saved, not published yet",
+    "publish": "Publish",
+    "branding": {
+      "logosTitle": "Logos",
+      "logosDescription": "Your company logo is used by default. Replacing a logo here changes this website only, not your company logo in Benwer admin.",
+      "headerLogo": "Top bar logo",
+      "headerLogoHint": "Shown in the bar at the top of every page. A wide logo works best.",
+      "companyLogo": "Company section logo",
+      "companyLogoHint": "Shown above your headline, before the company section.",
+      "usingCompanyLogo": "Using your company logo",
+      "customLogo": "Custom logo for this website",
+      "upload": "Upload logo",
+      "replace": "Replace",
+      "useCompanyLogo": "Use company logo",
+      "uploadFailed": "The logo could not be uploaded. Use a PNG, JPG or WebP image and try again.",
+      "tooLarge": "This image is larger than 25 MB.",
+      "backgroundTitle": "Page background",
+      "backgroundDescription": "The colour behind your website content.",
+      "backgroundPresets": "Suggested backgrounds",
+      "backgroundCustom": "Custom background",
+      "backgroundPicker": "Pick a background colour",
+      "needsApi": "Available once the Benwer API update for websites is live.",
+      "headerLogoDark": "Top bar logo — dark mode",
+      "companyLogoDark": "Company section logo — dark mode",
+      "darkLogoHint": "Optional. Shown when visitors use dark mode. Use a light or white version of your logo.",
+      "customDarkLogo": "Custom logo for dark mode",
+      "usingLightOnPlate": "Using your normal logo on a light background",
+      "removeDarkLogo": "Remove dark logo",
+      "darkNeedsApi": "Dark mode logos are available once the Benwer API update for them is live."
+    },
+    "legal": {
+      "hint": "Each page starts with the standard text, so you can change just the parts you need. Add a section for each subtitle. “Back to standard text” undoes your changes.",
+      "needsApi": "Available once the Benwer API update for websites is live.",
+      "privacyTitle": "Privacy policy",
+      "privacyDescription": "Shown at Privacy in your website footer.",
+      "termsTitle": "Terms and conditions",
+      "termsDescription": "Shown at Terms in your website footer.",
+      "text": "Text",
+      "intro": "Introduction",
+      "subtitle": "Subtitle",
+      "sectionItem": "Section {position}",
+      "addSection": "Add section",
+      "reset": "Back to standard text",
+      "pageTitle": "Page title",
+      "privacyLooksLikeTerms": "Your privacy policy has the same text as the terms. Use \"Back to standard text\" under Privacy policy, or write your own privacy text, then save."
+    },
+    "preview": "Preview",
+    "fullscreen": "Full-screen editor",
+    "exitFullscreen": "Show preview beside the editor",
+    "previewBarAria": "Preview controls",
+    "previewing": "You are previewing your website",
+    "backToEdit": "Edit"
+  },
+  "marketplaceBanners": {
+    "aria": "Benwer highlights",
+    "slideLabel": "{position} of {count}",
+    "goTo": "Show banner {position}",
+    "previous": "Previous banner",
+    "next": "Next banner",
+    "trust": {
+      "script": "book with confidence",
+      "highlight": "Verified companies",
+      "joiner": "and",
+      "boxed": "Secure booking",
+      "description": "Real reviews, clear terms and digital contracts you sign from your phone"
+    },
+    "prices": {
+      "script": "one search",
+      "highlight": "Compare prices",
+      "joiner": "from",
+      "boxed": "Partner companies",
+      "description": "See prices, insurance and deposits from partner rental companies side by side before you book"
+    },
+    "anywhere": {
+      "script": "find your ride",
+      "highlight": "Across Málaga",
+      "joiner": "with",
+      "boxed": "Local rental companies",
+      "description": "Partner rental companies in towns across Málaga province, all in one place"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Published by {name}.",
+    "cookies": {
+      "title": "Cookie policy",
+      "lede": "How {name} uses cookies and similar technologies on this website.",
+      "updated": "Published by {name}.",
+      "sections": [
+        {
+          "title": "What we use",
+          "body": "Cookies are small text files stored on your device. This website also uses similar storage, such as local storage, to remember your choices, your cart and your sign-in."
+        },
+        {
+          "title": "Strictly necessary",
+          "body": "A language cookie lets the site show your language, and your cookie-banner choice is stored so we do not ask again on every visit. If you sign in, the sign-in provider stores a session on your device so you stay signed in. Card payments are handled by Stripe, which may set its own cookies to prevent fraud."
+        },
+        {
+          "title": "Optional cookies",
+          "body": "Optional cookies (for example analytics) stay off unless you choose Accept all. This website does not set analytics or marketing cookies today."
+        },
+        {
+          "title": "Managing cookies",
+          "body": "Use the cookie settings link in the footer to change your choice. You can also delete cookies and site data in your browser. Blocking strictly necessary storage may sign you out or empty your cart."
+        },
+        {
+          "title": "More information",
+          "body": "See the privacy policy for how {name} handles personal data, or use the contact details in the footer."
+        }
+      ]
+    }
+  },
+  "cart": {
+    "title": "Your cart",
+    "subtitle": "Book several cars in one go. Your driver details are asked once.",
+    "notHeld": "Cars in your cart are not held until you book. Availability and prices are checked again at checkout.",
+    "empty": "Your cart is empty",
+    "emptyHint": "Add cars from the fleet to book them together.",
+    "browse": "Browse the fleet",
+    "add": "Add to cart",
+    "added": "Added to your cart",
+    "view": "View cart",
+    "open": "Cart, {count, plural, one {# car} other {# cars}}",
+    "full": "Your cart is full (max {max} cars).",
+    "remove": "Remove",
+    "edit": "Edit",
+    "done": "Done",
+    "bookOnly": "Book just this car",
+    "from": "Pick-up",
+    "to": "Drop-off",
+    "insurance": "Insurance",
+    "noInsurance": "No extra insurance",
+    "oneWayFee": "One-way fee",
+    "checking": "Checking availability...",
+    "unavailable": "Not available for these dates. Change the dates or remove it.",
+    "invalidDates": "Choose valid dates for this car.",
+    "vehicleMissing": "This car is no longer offered.",
+    "total": "Total for {count, plural, one {# car} other {# cars}}",
+    "checkoutTitle": "Driver details",
+    "checkoutHint": "Used for every booking in your cart.",
+    "bookAll": "Book {count, plural, one {# car} other {# cars}}",
+    "booking": "Booking...",
+    "fixItems": "Fix or remove the cars that can't be booked first.",
+    "resultsTitle": "Your bookings",
+    "resultBooked": "booked",
+    "resultFailed": "not booked",
+    "viewBooking": "View booking",
+    "partial": "Some cars could not be booked. They stay in your cart.",
+    "allBooked": "All set. Confirmations are on their way to your email."
+  },
+  "support": {
+    "fabLabel": "Support",
+    "fabCloseLabel": "Close support menu",
+    "messageAction": "Direct message",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Hello, I have a question about Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "The Benwer Cars app",
+    "metaDescription": "Book cars, keep all your trips in one place and get booking updates on your phone.",
+    "eyebrow": "Mobile app",
+    "title": "Your car hire, in your pocket",
+    "description": "Book cars from local companies, keep every trip in one place, pay and get updates on your phone.",
+    "featureTrips": "All your trips, across companies",
+    "featureBooking": "Book and pay in a few taps",
+    "featurePush": "Updates when your booking changes",
+    "unavailableTitle": "The app is coming soon",
+    "unavailableDescription": "The Benwer Cars app is not in the stores yet. You can still book on the web.",
+    "browse": "Browse cars",
+    "badgeTitle": "Get the Benwer Cars app",
+    "companyText": "Book {company} on your phone and keep your trips in one place.",
+    "bookingText": "See this booking, pay and get updates on your phone."
   }
 }
