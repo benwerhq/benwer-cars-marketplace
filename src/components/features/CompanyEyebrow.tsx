@@ -12,9 +12,8 @@ interface CompanyEyebrowProps {
 
 export function CompanyEyebrow({ company, className }: CompanyEyebrowProps) {
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
-  const logoSrc = company.branding.logoUrl
-    ? toPublicMediaSrc(company.branding.logoUrl)
-    : null;
+  const rawLogo = company.branding.wideLightLogoUrl ?? company.branding.logoUrl;
+  const logoSrc = rawLogo ? toPublicMediaSrc(rawLogo) : null;
   const showLogo = Boolean(logoSrc) && failedSrc !== logoSrc;
   const brandColor = company.branding.primaryColor || undefined;
   const initial = company.name.trim().charAt(0).toUpperCase() || "?";
@@ -27,7 +26,7 @@ export function CompanyEyebrow({ company, className }: CompanyEyebrowProps) {
           src={logoSrc}
           alt=""
           onError={() => setFailedSrc(logoSrc)}
-          className="block h-6 w-auto max-w-full shrink-0 rounded-sm object-contain"
+          className="block h-5 w-10 shrink-0 object-contain object-left"
         />
       ) : (
         <span

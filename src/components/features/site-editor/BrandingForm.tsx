@@ -13,9 +13,10 @@ import { DEFAULT_PAGE_BACKGROUND, isHexColor } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { SiteContent, SiteLogos } from "@/types/siteContent";
 import { EditorField, EditorGroup } from "./EditorPrimitives";
+import { LogoCropDialog } from "./LogoCropDialog";
 
 
-type LogoSlot = "header" | "company" | "headerDark" | "companyDark";
+type LogoSlot = "wideLight" | "wideDark";
 
 interface BrandingFormProps {
   content: SiteContent;
@@ -42,55 +43,30 @@ export function BrandingForm({
     <>
       <EditorGroup title={t("logosTitle")} description={t("logosDescription")}>
         {supported ? null : <p className="text-xs text-warning">{t("needsApi")}</p>}
-        {supported && !content.supportsDarkLogos ? (
-          <p className="text-xs text-warning">{t("darkNeedsApi")}</p>
-        ) : null}
         <LogoPicker
-          slot="header"
-          label={t("headerLogo")}
-          hint={t("headerLogoHint")}
-          url={content.logos.headerUrl}
+          slot="wideLight"
+          label={t("wideLightLogo")}
+          hint={t("wideLightLogoHint")}
+          url={content.logos.wideLightUrl}
           companyId={companyId}
           companyName={companyName}
           companyLogo={companyLogo}
           disabled={!supported}
-          onPick={(id, url) => setLogos({ ...content.logos, headerAssetId: id, headerUrl: url })}
-        />
-        <LogoPicker
-          slot="headerDark"
-          label={t("headerLogoDark")}
-          hint={t("darkLogoHint")}
-          url={content.logos.headerDarkUrl}
-          companyId={companyId}
-          companyName={companyName}
-          companyLogo={content.logos.headerUrl || companyLogo}
-          disabled={!supported || !content.supportsDarkLogos}
           onPick={(id, url) =>
-            setLogos({ ...content.logos, headerDarkAssetId: id, headerDarkUrl: url })
+            setLogos({ ...content.logos, wideLightAssetId: id, wideLightUrl: url })
           }
         />
         <LogoPicker
-          slot="company"
-          label={t("companyLogo")}
-          hint={t("companyLogoHint")}
-          url={content.logos.companyUrl}
+          slot="wideDark"
+          label={t("wideDarkLogo")}
+          hint={t("wideDarkLogoHint")}
+          url={content.logos.wideDarkUrl}
           companyId={companyId}
           companyName={companyName}
-          companyLogo={companyLogo}
+          companyLogo={content.logos.wideLightUrl || companyLogo}
           disabled={!supported}
-          onPick={(id, url) => setLogos({ ...content.logos, companyAssetId: id, companyUrl: url })}
-        />
-        <LogoPicker
-          slot="companyDark"
-          label={t("companyLogoDark")}
-          hint={t("darkLogoHint")}
-          url={content.logos.companyDarkUrl}
-          companyId={companyId}
-          companyName={companyName}
-          companyLogo={content.logos.companyUrl || companyLogo}
-          disabled={!supported || !content.supportsDarkLogos}
           onPick={(id, url) =>
-            setLogos({ ...content.logos, companyDarkAssetId: id, companyDarkUrl: url })
+            setLogos({ ...content.logos, wideDarkAssetId: id, wideDarkUrl: url })
           }
         />
       </EditorGroup>
@@ -170,11 +146,12 @@ function LogoPicker({
   const input = useRef<HTMLInputElement>(null);
   const upload = useUploadWebsiteImage(companyId);
   const [tooLarge, setTooLarge] = useState(false);
+  const [cropFile, setCropFile] = useState<File | null>(null);
   const custom = Boolean(url);
-  const dark = slot === "headerDark" || slot === "companyDark";
+  const dark = slot === "wideDark";
   const inputId = `site-logo-${slot}`;
 
-  async function onFile(file: File | undefined) {
+  function onFile(file: File | undefined) {
     if (!file) {
       return;
     }
@@ -182,7 +159,12 @@ function LogoPicker({
     if (file.size > MAX_UPLOAD_BYTES) {
       return;
     }
-    const result = await upload.mutateAsync(file).catch(() => null);
+    setCropFile(file);
+  }
+
+  async function uploadCropped(cropped: File) {
+    setCropFile(null);
+    const result = await upload.mutateAsync(cropped).catch(() => null);
     if (result) {
       onPick(result.id, result.url);
     }
@@ -216,10 +198,12 @@ function LogoPicker({
                 primaryColor: "",
                 logoUrl: dark ? companyLogo : url || companyLogo,
                 logoDarkUrl: dark ? url : null,
+                wideLightLogoUrl: slot === "wideLight" ? url : null,
+                wideDarkLogoUrl: slot === "wideDark" ? url : null,
               },
             }}
             size="sm"
-            className="h-8"
+            className="h-8 w-16"
           />
         </div>
       </div>
@@ -270,6 +254,12 @@ function LogoPicker({
           {t("uploadFailed")}
         </p>
       ) : null}
+      <LogoCropDialog
+        file={cropFile}
+        dark={dark}
+        onCancel={() => setCropFile(null)}
+        onConfirm={(cropped) => void uploadCropped(cropped)}
+      />
     </div>
   );
 }

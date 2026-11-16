@@ -2,6 +2,8 @@ export interface CompanyBranding {
   primaryColor: string;
   logoUrl: string | null;
   logoDarkUrl?: string | null;
+  wideLightLogoUrl?: string | null;
+  wideDarkLogoUrl?: string | null;
 }
 
 export type LogoPair = Pick<CompanyBranding, "logoUrl" | "logoDarkUrl">;

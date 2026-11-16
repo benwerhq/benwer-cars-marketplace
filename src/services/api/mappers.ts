@@ -371,6 +371,7 @@ export function mapCompany(raw: unknown): Company {
     branding: {
       primaryColor: readString(branding.primaryColor) ?? "",
       logoUrl:
+        readPhotoUrl(branding.wideLightLogoUrl) ??
         readPhotoUrl(branding.logoUrl) ??
         readPhotoUrl(branding.logoURL) ??
         readPhotoUrl(branding.logo) ??
@@ -378,7 +379,12 @@ export function mapCompany(raw: unknown): Company {
         readPhotoUrl(row.logo) ??
         null,
       logoDarkUrl:
-        readPhotoUrl(branding.logoDarkUrl) ?? readPhotoUrl(row.logoDarkUrl) ?? null,
+        readPhotoUrl(branding.wideDarkLogoUrl) ??
+        readPhotoUrl(branding.logoDarkUrl) ??
+        readPhotoUrl(row.logoDarkUrl) ??
+        null,
+      wideLightLogoUrl: readPhotoUrl(branding.wideLightLogoUrl) ?? null,
+      wideDarkLogoUrl: readPhotoUrl(branding.wideDarkLogoUrl) ?? null,
     },
     branches: mapCompanyBranches(row.branches),
     allowDifferentReturn: readBoolean(row.allowDifferentReturn) ?? false,

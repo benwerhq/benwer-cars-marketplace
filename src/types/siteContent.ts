@@ -86,14 +86,10 @@ export interface SiteContactContent {
 }
 
 export interface SiteLogos {
-  headerAssetId: string | null;
-  headerUrl: string | null;
-  companyAssetId: string | null;
-  companyUrl: string | null;
-  headerDarkAssetId: string | null;
-  headerDarkUrl: string | null;
-  companyDarkAssetId: string | null;
-  companyDarkUrl: string | null;
+  wideLightAssetId: string | null;
+  wideLightUrl: string | null;
+  wideDarkAssetId: string | null;
+  wideDarkUrl: string | null;
 }
 
 export interface SiteLegalContent {
