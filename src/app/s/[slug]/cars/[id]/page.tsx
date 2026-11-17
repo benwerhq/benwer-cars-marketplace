@@ -166,6 +166,13 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
             vehicle={vehicle}
             companySlug={companySlug}
             companyName={site.company.name}
+            company={{
+              name: site.company.name,
+              branding: {
+                ...site.company.branding,
+                ...siteHeaderLogos(site.content, site.company.branding),
+              },
+            }}
             isTenant
             initialFrom={from}
             initialTo={to}
@@ -197,7 +204,11 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
           })}
         />
       </main>
-      <SiteFooter companyName={site.company.name} homeHref={homeHref} />
+      <SiteFooter
+        companyName={site.company.name}
+        homeHref={homeHref}
+        {...siteHeaderLogos(site.content, site.company.branding)}
+      />
     </>
   );
 }

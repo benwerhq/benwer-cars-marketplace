@@ -36,7 +36,12 @@ export function useMarketplaceLinks(): HeaderMenuLink[] {
 }
 
 export function MarketplaceMobileMenu() {
-  return <HeaderMobileMenu links={useMarketplaceLinks()} />;
+  return (
+    <HeaderMobileMenu
+      links={useMarketplaceLinks()}
+      triggerClassName="h-10 w-10"
+    />
+  );
 }
 
 export function MarketplaceNav() {

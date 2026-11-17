@@ -4,7 +4,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 import * as Popover from "@radix-ui/react-popover";
 import { Building2, Check } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { CompanyMark } from "./CompanyMark";
+import { CompanyLogo } from "./CompanyLogo";
 import { SearchFieldSegment } from "./SearchFieldSegment";
 import { Input } from "@/components/ui/Input";
 import type { Company } from "@/types/company";
@@ -184,7 +184,7 @@ export function CompanyCombobox({
                   onClick={() => selectCompany(company.slug)}
                 >
                   <span className="flex min-w-0 items-center gap-2">
-                    <CompanyMark company={company} size="sm" />
+                    <CompanyLogo company={company} size="sm" className="max-w-[6rem]" />
                     <span className="truncate">{company.name}</span>
                   </span>
                   {isSelected ? (

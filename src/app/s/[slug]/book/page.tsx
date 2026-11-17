@@ -118,7 +118,11 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
             actionHref={homeHref}
           />
         </main>
-        <SiteFooter companyName={site.company.name} homeHref={homeHref} />
+        <SiteFooter
+          companyName={site.company.name}
+          homeHref={homeHref}
+          {...siteHeaderLogos(site.content, site.company.branding)}
+        />
       </>
     );
   }
@@ -136,7 +140,11 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
           <SitePausedNotice />
         </main>
-        <SiteFooter companyName={site.company.name} homeHref={homeHref} />
+        <SiteFooter
+          companyName={site.company.name}
+          homeHref={homeHref}
+          {...siteHeaderLogos(site.content, site.company.branding)}
+        />
       </>
     );
   }
@@ -163,7 +171,11 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
             actionHref={homeHref}
           />
         </main>
-        <SiteFooter companyName={site.company.name} homeHref={homeHref} />
+        <SiteFooter
+          companyName={site.company.name}
+          homeHref={homeHref}
+          {...siteHeaderLogos(site.content, site.company.branding)}
+        />
       </>
     );
   }
@@ -233,7 +245,11 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
           )}
         />
       </main>
-      <SiteFooter companyName={site.company.name} homeHref={homeHref} />
+      <SiteFooter
+        companyName={site.company.name}
+        homeHref={homeHref}
+        {...siteHeaderLogos(site.content, site.company.branding)}
+      />
     </>
   );
 }

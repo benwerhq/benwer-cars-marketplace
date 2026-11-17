@@ -9,6 +9,7 @@ interface SiteHeaderShellProps {
   mobileMenu: ReactNode;
   homeAriaLabel?: string;
   className?: string;
+  barClassName?: string;
 }
 
 export function SiteHeaderShell({
@@ -18,6 +19,7 @@ export function SiteHeaderShell({
   mobileMenu,
   homeAriaLabel,
   className,
+  barClassName,
 }: SiteHeaderShellProps) {
   return (
     <header
@@ -26,7 +28,12 @@ export function SiteHeaderShell({
         className,
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 md:px-6 lg:px-8">
+      <div
+        className={cn(
+          "mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 md:px-6 lg:px-8",
+          barClassName,
+        )}
+      >
         <Link
           href={homeHref}
           aria-label={homeAriaLabel}

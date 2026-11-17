@@ -1,6 +1,6 @@
 "use client";
 
-import { CompanyMark } from "@/components/features/CompanyMark";
+import { CompanyLogo } from "@/components/features/CompanyLogo";
 import { useSiteDraftLogo } from "@/context/SiteDraftLogoProvider";
 
 interface SiteHeaderMarkProps {
@@ -14,15 +14,10 @@ export function SiteHeaderMark({ companyName, logoUrl, logoDarkUrl }: SiteHeader
   const logos = draft?.headerLogo ?? { logoUrl, logoDarkUrl };
 
   return (
-    <>
-      <CompanyMark
-        company={{ name: companyName, branding: { primaryColor: "", ...logos } }}
-        size="sm"
-        className="h-8 w-24 max-w-[46vw] sm:h-9 sm:w-28"
-      />
-      <span className="truncate text-sm font-semibold tracking-tight max-sm:hidden">
-        {companyName}
-      </span>
-    </>
+    <CompanyLogo
+      company={{ name: companyName, branding: { primaryColor: "", ...logos } }}
+      size="md"
+      className="max-w-[46vw]"
+    />
   );
 }

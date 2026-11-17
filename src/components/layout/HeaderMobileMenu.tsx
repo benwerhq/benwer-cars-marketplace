@@ -39,9 +39,14 @@ export const MENU_LABEL = "truncate px-2.5 pt-2 pb-1 text-xs font-medium text-mu
 interface HeaderMobileMenuProps {
   links: HeaderMenuLink[];
   children?: ReactNode;
+  triggerClassName?: string;
 }
 
-export function HeaderMobileMenu({ links, children }: HeaderMobileMenuProps) {
+export function HeaderMobileMenu({
+  links,
+  children,
+  triggerClassName,
+}: HeaderMobileMenuProps) {
   const t = useTranslations("nav");
   const tLocale = useTranslations("locale");
   const { locale, select, isPending } = useLocaleSelect();
@@ -54,7 +59,7 @@ export function HeaderMobileMenu({ links, children }: HeaderMobileMenuProps) {
           type="button"
           aria-label={t("menu")}
           data-testid="header-mobile-menu"
-          className={HEADER_ICON_BUTTON}
+          className={cn(HEADER_ICON_BUTTON, triggerClassName)}
         >
           <Menu size={16} aria-hidden />
         </button>

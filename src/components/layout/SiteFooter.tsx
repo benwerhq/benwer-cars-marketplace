@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { type SitePaymentMethod, type SiteSectionId } from "@/enums";
 import { siteChildFromHome } from "@/lib/site";
 import { whatsappHref } from "@/lib/siteContent";
+import { CompanyLogo } from "@/components/features/CompanyLogo";
 import { CookieSettingsLink } from "./CookieSettingsLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteFooterAccountLink } from "./SiteFooterAccountLink";
@@ -21,6 +22,8 @@ interface SiteFooterProps {
   sections?: SiteSectionId[];
   contact?: SiteFooterContact;
   payments?: SitePaymentMethod[];
+  logoUrl?: string | null;
+  logoDarkUrl?: string | null;
 }
 
 export const siteFooterLinkClass =
@@ -35,6 +38,8 @@ export async function SiteFooter({
   sections = [],
   contact,
   payments = [],
+  logoUrl,
+  logoDarkUrl,
 }: SiteFooterProps) {
   const year = new Date().getFullYear();
   const tFooter = await getTranslations("footer");
@@ -50,7 +55,18 @@ export async function SiteFooter({
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))]">
           <div className="flex max-w-sm flex-col gap-2">
-            <p className="text-sm font-semibold text-foreground">{companyName}</p>
+            <CompanyLogo
+              company={{
+                name: companyName,
+                branding: {
+                  primaryColor: "",
+                  logoUrl: logoUrl ?? null,
+                  logoDarkUrl: logoDarkUrl ?? null,
+                },
+              }}
+              size="lg"
+              className="max-w-[14rem]"
+            />
             <p className="text-sm text-muted-foreground">
               {description || tSite("footerTagline")}
             </p>

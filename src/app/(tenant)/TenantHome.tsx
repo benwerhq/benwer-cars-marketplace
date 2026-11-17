@@ -139,6 +139,7 @@ export async function TenantHome() {
       <CompanyBanner
         name={company.name}
         logoUrl={company.branding.logoUrl}
+        logoDarkUrl={company.branding.logoDarkUrl}
         description={company.description}
         location={company.location}
       />

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
-import { CompanyMark } from "@/components/features/CompanyMark";
+import { CompanyLogo } from "@/components/features/CompanyLogo";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
@@ -9,6 +9,7 @@ import { phoneTelHref } from "@/lib/phone";
 interface CompanyBannerProps {
   name: string;
   logoUrl?: string | null;
+  logoDarkUrl?: string | null;
   description?: string | null;
   location?: string | null;
   websiteHref?: string | null;
@@ -24,6 +25,7 @@ interface CompanyBannerProps {
 export function CompanyBanner({
   name,
   logoUrl,
+  logoDarkUrl,
   description,
   location,
   websiteHref,
@@ -37,7 +39,11 @@ export function CompanyBanner({
 }: CompanyBannerProps) {
   const company: Pick<Company, "name" | "branding"> = {
     name,
-    branding: { primaryColor: "", logoUrl: logoUrl ?? null },
+    branding: {
+      primaryColor: "",
+      logoUrl: logoUrl ?? null,
+      logoDarkUrl: logoDarkUrl ?? null,
+    },
   };
   const contactHref = email ? `mailto:${email}` : phone ? phoneTelHref(phone) : null;
 
@@ -64,7 +70,7 @@ export function CompanyBanner({
         ) : null}
         <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex items-start gap-4">
-            <CompanyMark company={company} size="lg" />
+            <CompanyLogo company={company} size="lg" className="max-w-[12rem]" />
             <div className="min-w-0">
               <h1 className="text-3xl font-semibold tracking-tight text-foreground">
                 {name}
