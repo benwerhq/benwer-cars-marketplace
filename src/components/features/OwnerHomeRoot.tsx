@@ -213,7 +213,7 @@ export function OwnerHomeRoot({
           companyId={site.company.id}
           companyName={liveSite.company.name}
           companyDescription={liveSite.company.description ?? ""}
-          companyLogo={site.company.branding.logoUrl}
+          companyBranding={site.company.branding}
           facts={{
             branchCount: liveSite.branches.length,
             hasPhone: Boolean(copy.phone),

@@ -3,6 +3,7 @@ import {
   hasGuestAppStoreLinks,
   type GuestAppStoreLinks,
 } from "@/lib/guestApp";
+import { companyLogoPair } from "@/lib/companyLogos";
 import type { LogoPair } from "@/types/company";
 import {
   SiteBannerPreset,
@@ -517,18 +518,27 @@ function siteLogoPair(
   light: string | null,
   dark: string | null,
   company: LogoPair,
-): Required<LogoPair> {
-  if (light) {
-    return { logoUrl: light, logoDarkUrl: dark };
-  }
-  return { logoUrl: company.logoUrl, logoDarkUrl: dark || company.logoDarkUrl || null };
+): Required<Pick<LogoPair, "logoUrl" | "logoDarkUrl">> {
+  return companyLogoPair({
+    logoUrl: company.logoUrl,
+    logoLightUrl: company.logoLightUrl,
+    logoDarkUrl: company.logoDarkUrl,
+    wideLightLogoUrl: light ?? company.wideLightLogoUrl,
+    wideDarkLogoUrl: dark ?? company.wideDarkLogoUrl,
+  });
 }
 
-export function siteHeaderLogos(content: SiteContent, company: LogoPair): Required<LogoPair> {
+export function siteHeaderLogos(
+  content: SiteContent,
+  company: LogoPair,
+): Required<Pick<LogoPair, "logoUrl" | "logoDarkUrl">> {
   return siteLogoPair(content.logos.wideLightUrl, content.logos.wideDarkUrl, company);
 }
 
-export function siteCompanyLogos(content: SiteContent, company: LogoPair): Required<LogoPair> {
+export function siteCompanyLogos(
+  content: SiteContent,
+  company: LogoPair,
+): Required<Pick<LogoPair, "logoUrl" | "logoDarkUrl">> {
   return siteLogoPair(content.logos.wideLightUrl, content.logos.wideDarkUrl, company);
 }
 

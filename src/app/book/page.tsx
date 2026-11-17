@@ -15,6 +15,7 @@ import { NavRoutes, SearchParams } from "@/enums";
 import { buildCarDetailHref, buildFleetHref } from "@/lib/booking";
 import { buildCompanySiteHref } from "@/lib/companySite";
 import { parseDriverAge, siteBookHref, siteHomePath } from "@/lib/site";
+import type { CompanyBranding } from "@/types/company";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -145,8 +146,7 @@ async function BookPage({ searchParams }: Props) {
     <BookingChrome
       isTenant={isTenant}
       companyName={company?.name ?? companySlug}
-      logoUrl={company?.branding.logoUrl}
-      logoDarkUrl={company?.branding.logoDarkUrl}
+      branding={company?.branding}
     >
       <BookingView
         vehicle={vehicle}
@@ -165,22 +165,19 @@ function BookingChrome({
   children,
   isTenant,
   companyName,
-  logoUrl,
-  logoDarkUrl,
+  branding,
 }: {
   children: ReactNode;
   isTenant: boolean;
   companyName?: string;
-  logoUrl?: string | null;
-  logoDarkUrl?: string | null;
+  branding?: CompanyBranding | null;
 }) {
   return (
     <>
       {isTenant ? (
         <TenantHeader
           companyName={companyName ?? ""}
-          logoUrl={logoUrl}
-          logoDarkUrl={logoDarkUrl}
+          branding={branding}
         />
       ) : (
         <MarketplaceHeader />

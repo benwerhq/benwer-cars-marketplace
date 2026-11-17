@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { Check, ImageUp, RotateCcw } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { CompanyLogo } from "@/components/features/CompanyLogo";
+import type { CompanyBranding } from "@/types/company";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { BACKGROUND_PRESETS } from "@/data/themePresets";
@@ -22,7 +23,7 @@ interface BrandingFormProps {
   content: SiteContent;
   companyId: string;
   companyName: string;
-  companyLogo: string | null;
+  companyBranding: CompanyBranding;
   onChange: (patch: Partial<SiteContent>) => void;
 }
 
@@ -30,7 +31,7 @@ export function BrandingForm({
   content,
   companyId,
   companyName,
-  companyLogo,
+  companyBranding,
   onChange,
 }: BrandingFormProps) {
   const t = useTranslations("siteEditor.branding");
@@ -50,7 +51,7 @@ export function BrandingForm({
           url={content.logos.wideLightUrl}
           companyId={companyId}
           companyName={companyName}
-          companyLogo={companyLogo}
+          companyBranding={companyBranding}
           disabled={!supported}
           onPick={(id, url) =>
             setLogos({ ...content.logos, wideLightAssetId: id, wideLightUrl: url })
@@ -63,7 +64,12 @@ export function BrandingForm({
           url={content.logos.wideDarkUrl}
           companyId={companyId}
           companyName={companyName}
-          companyLogo={content.logos.wideLightUrl || companyLogo}
+          companyBranding={{
+            ...companyBranding,
+            logoUrl: content.logos.wideLightUrl || companyBranding.logoUrl,
+            wideLightLogoUrl:
+              content.logos.wideLightUrl || companyBranding.wideLightLogoUrl,
+          }}
           disabled={!supported}
           onPick={(id, url) =>
             setLogos({ ...content.logos, wideDarkAssetId: id, wideDarkUrl: url })
@@ -126,7 +132,7 @@ interface LogoPickerProps {
   url: string | null;
   companyId: string;
   companyName: string;
-  companyLogo: string | null;
+  companyBranding: CompanyBranding;
   disabled: boolean;
   onPick: (id: string | null, url: string | null) => void;
 }
@@ -138,7 +144,7 @@ function LogoPicker({
   url,
   companyId,
   companyName,
-  companyLogo,
+  companyBranding,
   disabled,
   onPick,
 }: LogoPickerProps) {
@@ -187,21 +193,23 @@ function LogoPicker({
         </div>
         <div
           className={cn(
-            "flex h-12 max-w-[11rem] shrink-0 items-center justify-end rounded-md bg-surface-muted px-2",
-            dark && "dark",
+            "flex h-12 max-w-[11rem] shrink-0 items-center justify-end rounded-md px-2",
+            dark ? "dark bg-surface-muted" : "bg-surface-muted",
           )}
         >
           <CompanyLogo
             company={{
               name: companyName,
               branding: {
-                primaryColor: "",
-                logoUrl: dark ? companyLogo : url || companyLogo,
-                logoDarkUrl: dark ? url : null,
-                wideLightLogoUrl: slot === "wideLight" ? url : null,
-                wideDarkLogoUrl: slot === "wideDark" ? url : null,
+                ...companyBranding,
+                wideLightLogoUrl: dark ? companyBranding.wideLightLogoUrl : url,
+                wideDarkLogoUrl: dark ? url : null,
+                logoUrl: dark
+                  ? companyBranding.logoUrl
+                  : url || companyBranding.logoUrl,
               },
             }}
+            scheme={dark ? "dark" : "light"}
             size="sm"
             className="max-w-[7rem]"
           />

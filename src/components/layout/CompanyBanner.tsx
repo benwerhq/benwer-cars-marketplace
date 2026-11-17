@@ -1,15 +1,18 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { CompanyLogo } from "@/components/features/CompanyLogo";
+import { logoPairBranding } from "@/lib/companyLogos";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import type { Company } from "@/types/company";
+import type { Company, LogoPair } from "@/types/company";
 import { phoneTelHref } from "@/lib/phone";
 
 interface CompanyBannerProps {
   name: string;
+  branding?: LogoPair | null;
   logoUrl?: string | null;
   logoDarkUrl?: string | null;
+  logoLightUrl?: string | null;
   description?: string | null;
   location?: string | null;
   websiteHref?: string | null;
@@ -24,8 +27,10 @@ interface CompanyBannerProps {
 
 export function CompanyBanner({
   name,
+  branding,
   logoUrl,
   logoDarkUrl,
+  logoLightUrl,
   description,
   location,
   websiteHref,
@@ -39,11 +44,9 @@ export function CompanyBanner({
 }: CompanyBannerProps) {
   const company: Pick<Company, "name" | "branding"> = {
     name,
-    branding: {
-      primaryColor: "",
-      logoUrl: logoUrl ?? null,
-      logoDarkUrl: logoDarkUrl ?? null,
-    },
+    branding: logoPairBranding(
+      branding ?? { logoUrl, logoDarkUrl, logoLightUrl },
+    ),
   };
   const contactHref = email ? `mailto:${email}` : phone ? phoneTelHref(phone) : null;
 
