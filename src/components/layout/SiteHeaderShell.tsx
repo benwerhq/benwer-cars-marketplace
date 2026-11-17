@@ -10,6 +10,7 @@ interface SiteHeaderShellProps {
   homeAriaLabel?: string;
   className?: string;
   barClassName?: string;
+  brandLinkClassName?: string;
 }
 
 export function SiteHeaderShell({
@@ -20,6 +21,7 @@ export function SiteHeaderShell({
   homeAriaLabel,
   className,
   barClassName,
+  brandLinkClassName,
 }: SiteHeaderShellProps) {
   return (
     <header
@@ -37,7 +39,10 @@ export function SiteHeaderShell({
         <Link
           href={homeHref}
           aria-label={homeAriaLabel}
-          className="flex min-w-0 items-center gap-3 text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className={cn(
+            "flex min-w-0 items-center gap-3 text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            brandLinkClassName,
+          )}
         >
           {brand}
         </Link>
