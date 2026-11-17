@@ -366,19 +366,23 @@ function parseFaq(sections: unknown): SiteFaqItem[] {
 function parseLogos(value: unknown): SiteLogos {
   const logos = isRecord(value) ? value : {};
   return {
-    headerAssetId: readString(logos.headerAssetId) || null,
-    headerUrl: readString(logos.headerUrl) || null,
-    companyAssetId: readString(logos.companyAssetId) || null,
-    companyUrl: readString(logos.companyUrl) || null,
-    headerDarkAssetId: readString(logos.headerDarkAssetId) || null,
-    headerDarkUrl: readString(logos.headerDarkUrl) || null,
-    companyDarkAssetId: readString(logos.companyDarkAssetId) || null,
-    companyDarkUrl: readString(logos.companyDarkUrl) || null,
+    wideLightAssetId:
+      readString(logos.wideLightAssetId) || readString(logos.headerAssetId) || null,
+    wideLightUrl: readString(logos.wideLightUrl) || readString(logos.headerUrl) || null,
+    wideDarkAssetId:
+      readString(logos.wideDarkAssetId) || readString(logos.headerDarkAssetId) || null,
+    wideDarkUrl: readString(logos.wideDarkUrl) || readString(logos.headerDarkUrl) || null,
   };
 }
 
 function hasDarkLogoFields(value: unknown): boolean {
-  return isRecord(value) && ("headerDarkAssetId" in value || "headerDarkUrl" in value);
+  return (
+    isRecord(value) &&
+    ("wideDarkAssetId" in value ||
+      "wideDarkUrl" in value ||
+      "headerDarkAssetId" in value ||
+      "headerDarkUrl" in value)
+  );
 }
 
 function parseLegal(value: unknown): SiteLegalContent {
@@ -497,14 +501,8 @@ export function serializeAppearance(content: SiteContent): Record<string, unknow
     ...(content.supportsSiteBranding
       ? {
           logos: {
-            headerAssetId: content.logos.headerAssetId,
-            companyAssetId: content.logos.companyAssetId,
-            ...(content.supportsDarkLogos
-              ? {
-                  headerDarkAssetId: content.logos.headerDarkAssetId,
-                  companyDarkAssetId: content.logos.companyDarkAssetId,
-                }
-              : {}),
+            wideLightAssetId: content.logos.wideLightAssetId,
+            wideDarkAssetId: content.logos.wideDarkAssetId,
           },
           pageBackground: isHexColor(content.pageBackground)
             ? content.pageBackground
@@ -527,11 +525,11 @@ function siteLogoPair(
 }
 
 export function siteHeaderLogos(content: SiteContent, company: LogoPair): Required<LogoPair> {
-  return siteLogoPair(content.logos.headerUrl, content.logos.headerDarkUrl, company);
+  return siteLogoPair(content.logos.wideLightUrl, content.logos.wideDarkUrl, company);
 }
 
 export function siteCompanyLogos(content: SiteContent, company: LogoPair): Required<LogoPair> {
-  return siteLogoPair(content.logos.companyUrl, content.logos.companyDarkUrl, company);
+  return siteLogoPair(content.logos.wideLightUrl, content.logos.wideDarkUrl, company);
 }
 
 export interface SiteContentFacts {

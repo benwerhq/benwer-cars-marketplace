@@ -18,13 +18,13 @@ const SIZE_CLASS = {
 } as const;
 
 const LOGO_HEIGHT = {
-  sm: "h-7",
-  md: "h-12 sm:h-14",
-  lg: "h-14",
+  sm: "h-7 w-14",
+  md: "h-12 w-24 sm:h-14 sm:w-28",
+  lg: "h-14 w-28",
 } as const;
 
 export function hasCompanyLogo(company: Pick<Company, "branding">): boolean {
-  return Boolean(company.branding.logoUrl);
+  return Boolean(company.branding.wideLightLogoUrl || company.branding.logoUrl);
 }
 
 export function CompanyMark({
@@ -33,17 +33,14 @@ export function CompanyMark({
   className,
 }: CompanyMarkProps) {
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
-  const logoSrc = company.branding.logoUrl
-    ? toPublicMediaSrc(company.branding.logoUrl)
-    : null;
-  const darkSrc = company.branding.logoDarkUrl
-    ? toPublicMediaSrc(company.branding.logoDarkUrl)
-    : null;
+  const rawLight = company.branding.wideLightLogoUrl ?? company.branding.logoUrl;
+  const rawDark = company.branding.wideDarkLogoUrl ?? company.branding.logoDarkUrl ?? null;
+  const logoSrc = rawLight ? toPublicMediaSrc(rawLight) : null;
+  const darkSrc = rawDark ? toPublicMediaSrc(rawDark) : null;
   const imageClass = cn(
-    "max-w-[11rem] shrink-0 object-contain object-left",
+    "shrink-0 object-contain object-left rounded-none border-0 bg-transparent p-0",
     LOGO_HEIGHT[size],
     className,
-    "w-auto rounded-none border-0 bg-transparent p-0",
   );
 
   if (logoSrc && failedSrc !== logoSrc) {
