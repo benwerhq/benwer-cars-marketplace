@@ -115,14 +115,14 @@ export function CompanyLogo({
           src={blackSrc}
           alt=""
           onError={() => markFailed(blackSrc)}
-          className={cn(imageClass, "dark:hidden")}
+          className={cn(imageClass, "block dark:hidden")}
         />
         {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer */}
         <img
           src={whiteSrc}
           alt=""
           onError={() => markFailed(whiteSrc)}
-          className={cn(imageClass, "hidden dark:block")}
+          className={cn(imageClass, "hidden dark:!block")}
         />
       </>
     );

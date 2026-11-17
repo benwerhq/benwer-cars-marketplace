@@ -1,15 +1,20 @@
 import type { Company, CompanyBranding, LogoPair } from "@/types/company";
 
+function logoSrc(value: string | null | undefined): string | null {
+  const trimmed = value?.trim();
+  return trimmed ? trimmed : null;
+}
+
 export function companyLogoPair(
   branding: LogoPair,
 ): Required<Pick<LogoPair, "logoUrl" | "logoDarkUrl">> {
   return {
-    logoUrl: branding.wideLightLogoUrl ?? branding.logoUrl ?? null,
+    logoUrl:
+      logoSrc(branding.wideLightLogoUrl) ?? logoSrc(branding.logoUrl),
     logoDarkUrl:
-      branding.wideDarkLogoUrl ??
-      branding.logoDarkUrl ??
-      branding.logoLightUrl ??
-      null,
+      logoSrc(branding.wideDarkLogoUrl) ??
+      logoSrc(branding.logoDarkUrl) ??
+      logoSrc(branding.logoLightUrl),
   };
 }
 
@@ -28,11 +33,11 @@ export function logoPairBranding(
 ): CompanyBranding {
   return {
     primaryColor: "",
-    logoUrl: logos?.logoUrl ?? null,
-    logoLightUrl: logos?.logoLightUrl ?? null,
-    logoDarkUrl: logos?.logoDarkUrl ?? null,
-    wideLightLogoUrl: logos?.wideLightLogoUrl ?? null,
-    wideDarkLogoUrl: logos?.wideDarkLogoUrl ?? null,
+    logoUrl: logoSrc(logos?.logoUrl),
+    logoLightUrl: logoSrc(logos?.logoLightUrl),
+    logoDarkUrl: logoSrc(logos?.logoDarkUrl),
+    wideLightLogoUrl: logoSrc(logos?.wideLightLogoUrl),
+    wideDarkLogoUrl: logoSrc(logos?.wideDarkLogoUrl),
   };
 }
 

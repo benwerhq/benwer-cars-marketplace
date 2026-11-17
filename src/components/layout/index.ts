@@ -1,4 +1,4 @@
-export { BrandLogo } from "./BrandLogo";
+export { BenwerLockup } from "./BenwerLockup";
 export { MarketplaceHeader } from "./MarketplaceHeader";
 export { MarketplaceNav } from "./MarketplaceNav";
 export { LegalLayout } from "./LegalLayout";
