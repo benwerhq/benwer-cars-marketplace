@@ -29,7 +29,7 @@ export async function Footer() {
             <BrandLogo
               alt={tBrand("logoAlt")}
               variant="full"
-              className="h-12 w-24"
+              className="h-12 w-[12.75rem]"
             />
             <p className="text-sm text-muted-foreground">
               {tFooter("tagline")}

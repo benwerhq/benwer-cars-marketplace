@@ -26,11 +26,14 @@ export async function MarketplaceHeader({ className }: MarketplaceHeaderProps) {
             alt={t("logoAlt")}
             variant="mark"
             priority
-            className="h-9 w-12 shrink-0"
+            className="h-8 w-[3.55rem] sm:hidden"
           />
-          <span className="truncate text-sm font-semibold tracking-tight max-sm:hidden">
-            {t("name")}
-          </span>
+          <BrandLogo
+            alt=""
+            variant="full"
+            priority
+            className="hidden h-9 w-[9.55rem] sm:block"
+          />
         </>
       }
     >
