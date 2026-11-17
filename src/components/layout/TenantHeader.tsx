@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { CompanyMark } from "@/components/features/CompanyMark";
+import { CompanyLogo } from "@/components/features/CompanyLogo";
 import { NavRoutes } from "@/enums";
 import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -28,7 +28,7 @@ export async function TenantHeader({
       mobileMenu={<TenantMobileMenu />}
       brand={
         <>
-          <CompanyMark
+          <CompanyLogo
             company={{
               name: companyName,
               branding: {
@@ -37,12 +37,9 @@ export async function TenantHeader({
                 logoDarkUrl: logoDarkUrl ?? null,
               },
             }}
-            size="sm"
-            className="h-8 w-24 max-w-[46vw] sm:h-9 sm:w-28"
+            size="md"
+            className="max-w-[46vw]"
           />
-          <span className="truncate text-sm font-semibold tracking-tight">
-            {companyName}
-          </span>
           <span className="sr-only">{t("logoAlt", { name: companyName })}</span>
         </>
       }

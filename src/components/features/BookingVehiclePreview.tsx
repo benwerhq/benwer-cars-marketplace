@@ -2,17 +2,21 @@ import { Car } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn } from "@/lib/utils";
+import type { Company } from "@/types/company";
 import type { Vehicle } from "@/types/vehicle";
 import { CarPhoto } from "./CarPhoto";
+import { CompanyLogo } from "./CompanyLogo";
 
 interface BookingVehiclePreviewProps {
   vehicle: Vehicle;
+  company?: Pick<Company, "name" | "branding"> | null;
   companyName?: string | null;
   size?: "sm" | "md";
 }
 
 export function BookingVehiclePreview({
   vehicle,
+  company,
   companyName,
   size = "sm",
 }: BookingVehiclePreviewProps) {
@@ -50,7 +54,11 @@ export function BookingVehiclePreview({
         {vehicle.year > 0 ? (
           <p className="text-xs text-muted-foreground">{vehicle.year}</p>
         ) : null}
-        {companyName ? (
+        {company ? (
+          <div className="mt-1">
+            <CompanyLogo company={company} size="sm" className="max-w-[8rem]" />
+          </div>
+        ) : companyName ? (
           <p className="mt-0.5 truncate text-xs text-muted-foreground">
             {companyName}
           </p>

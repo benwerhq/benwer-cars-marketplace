@@ -126,6 +126,7 @@ async function TenantCarDetailPage({ params, searchParams }: Props) {
             vehicle={vehicle}
             companySlug={companySlug}
             companyName={company?.name}
+            company={company}
             companyWebsiteUrl={company?.websiteUrl}
             isTenant
             initialFrom={query.from}

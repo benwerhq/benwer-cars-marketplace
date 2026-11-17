@@ -8,6 +8,7 @@ import { AvailabilityCalendarSkeleton } from "./AvailabilityCalendarSkeleton";
 import { BookingWidget } from "./BookingWidget";
 import { CarPhotoGallery } from "./CarPhotoGallery";
 import { CarSpecsTable } from "./CarSpecsTable";
+import { CompanyEyebrow } from "./CompanyEyebrow";
 import { useAvailability } from "@/hooks/useAvailability";
 import {
   availabilityCalendarWindow,
@@ -20,6 +21,7 @@ import { vehicleImageUrls } from "@/lib/vehicleImage";
 import { setHrefParams } from "@/lib/booking";
 import type { CarCartContext } from "./BookingWidget";
 import { SearchParams, type PublicChannel } from "@/enums";
+import type { Company } from "@/types/company";
 import type { Vehicle } from "@/types/vehicle";
 
 const AvailabilityCalendar = dynamic(
@@ -38,6 +40,7 @@ interface CarDetailViewProps {
   vehicle: Vehicle;
   companySlug: string;
   companyName?: string;
+  company?: Pick<Company, "name" | "branding"> | null;
   companyWebsiteUrl?: string | null;
   isTenant?: boolean;
   initialFrom?: string;
@@ -55,6 +58,7 @@ export function CarDetailView({
   vehicle,
   companySlug,
   companyName,
+  company,
   companyWebsiteUrl,
   isTenant = false,
   initialFrom,
@@ -144,6 +148,9 @@ export function CarDetailView({
           </Link>
         ) : null}
         <div>
+          {company ? (
+            <CompanyEyebrow company={company} className="mb-2" />
+          ) : null}
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">
             {vehicle.brand} {vehicle.model}
           </h1>

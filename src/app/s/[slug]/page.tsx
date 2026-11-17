@@ -176,6 +176,7 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
       <SiteFooter
         companyName={site.company.name}
         homeHref={homeHref}
+        {...siteHeaderLogos(site.content, site.company.branding)}
         description={site.company.description}
         sections={footerSections}
         contact={{ phone, email, whatsapp: site.content.contact.whatsapp }}

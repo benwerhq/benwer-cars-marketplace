@@ -51,6 +51,9 @@ export async function LegalLayout({
           companyName={companyName}
           homeHref={homeHref}
           description={site?.company.description}
+          {...(site
+            ? siteHeaderLogos(site.content, site.company.branding)
+            : { logoUrl: null, logoDarkUrl: null })}
         />
       ) : (
         <Footer />

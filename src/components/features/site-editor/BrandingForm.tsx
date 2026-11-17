@@ -4,7 +4,7 @@ import { ACCEPTED_IMAGES, MAX_UPLOAD_BYTES } from "./uploadLimits";
 import { useRef, useState } from "react";
 import { Check, ImageUp, RotateCcw } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { CompanyMark } from "@/components/features/CompanyMark";
+import { CompanyLogo } from "@/components/features/CompanyLogo";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { BACKGROUND_PRESETS } from "@/data/themePresets";
@@ -191,7 +191,7 @@ function LogoPicker({
             dark && "dark",
           )}
         >
-          <CompanyMark
+          <CompanyLogo
             company={{
               name: companyName,
               branding: {
@@ -203,7 +203,7 @@ function LogoPicker({
               },
             }}
             size="sm"
-            className="h-8 w-16"
+            className="max-w-[7rem]"
           />
         </div>
       </div>

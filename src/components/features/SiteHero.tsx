@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
-import { CompanyMark } from "./CompanyMark";
+import { CompanyLogo } from "./CompanyLogo";
 import { SiteEditSection } from "@/components/layout/SiteEditSection";
 import { SiteEditSection as SiteEditSectionId } from "@/enums";
 import { localizedText } from "@/lib/localizedCopy";
@@ -31,10 +31,10 @@ export async function SiteHero({ site, editMode = false }: SiteHeroProps) {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-10 md:px-6 md:py-14 lg:px-8">
         <SiteEditSection section={SiteEditSectionId.HERO} enabled={editMode}>
           <div className="flex items-start gap-4 p-1">
-            <CompanyMark
+            <CompanyLogo
               company={site.company}
               size="lg"
-              className="h-16 w-16 rounded-2xl"
+              className="max-w-[16rem]"
             />
             <div className="min-w-0">
               <p className="text-sm font-medium text-primary">
