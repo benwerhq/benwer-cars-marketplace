@@ -1,15 +1,18 @@
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import {
+  BENWER_LOCKUP_ACCENT_PATHS,
+  BENWER_LOCKUP_PATHS,
+  BENWER_MARK_PATHS,
+} from "./brandLogoPaths";
 
-const ASSETS = {
-  full: {
-    light: "/images/logo-black.webp",
-    dark: "/images/logo-white.webp",
-  },
-  mark: {
-    light: "/images/logo-sm-black.webp",
-    dark: "/images/logo-sm-white.webp",
-  },
+const VIEWBOX = {
+  mark: "0 0 63.63 36",
+  full: "0 0 152.84 36",
+} as const;
+
+const DEFAULT_CLASS = {
+  mark: "h-9 w-16",
+  full: "h-9 w-[9.55rem]",
 } as const;
 
 interface BrandLogoProps {
@@ -22,31 +25,34 @@ interface BrandLogoProps {
 export function BrandLogo({
   alt,
   variant = "full",
-  priority = false,
   className,
 }: BrandLogoProps) {
-  const sources = ASSETS[variant];
-  const sizes = variant === "mark" ? "48px" : "160px";
+  const paths = variant === "mark" ? BENWER_MARK_PATHS : BENWER_LOCKUP_PATHS;
+  const accent = variant === "full" ? BENWER_LOCKUP_ACCENT_PATHS : [];
+  const labelled = Boolean(alt);
 
   return (
-    <span className={cn("relative inline-block", className)}>
-      <Image
-        src={sources.light}
-        alt={alt}
-        fill
-        priority={priority}
-        className="object-contain object-left dark:hidden"
-        sizes={sizes}
-      />
-      <Image
-        src={sources.dark}
-        alt=""
-        fill
-        priority={priority}
-        aria-hidden
-        className="hidden object-contain object-left dark:block"
-        sizes={sizes}
-      />
-    </span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={VIEWBOX[variant]}
+      role={labelled ? "img" : undefined}
+      aria-hidden={labelled ? undefined : true}
+      aria-label={labelled ? alt : undefined}
+      fill="currentColor"
+      fillRule="evenodd"
+      className={cn(
+        "shrink-0 text-foreground",
+        DEFAULT_CLASS[variant],
+        className,
+      )}
+    >
+      {labelled ? <title>{alt}</title> : null}
+      {paths.map((d, index) => (
+        <path key={index} d={d} />
+      ))}
+      {accent.map((d, index) => (
+        <path key={`accent-${index}`} d={d} className="fill-primary" />
+      ))}
+    </svg>
   );
 }

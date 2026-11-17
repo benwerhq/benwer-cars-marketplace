@@ -18,7 +18,7 @@ export function SiteHeaderMark({ companyName, logoUrl, logoDarkUrl }: SiteHeader
       <CompanyMark
         company={{ name: companyName, branding: { primaryColor: "", ...logos } }}
         size="sm"
-        className="h-9 w-9 rounded-lg"
+        className="h-8 w-24 max-w-[46vw] sm:h-9 sm:w-28"
       />
       <span className="truncate text-sm font-semibold tracking-tight max-sm:hidden">
         {companyName}

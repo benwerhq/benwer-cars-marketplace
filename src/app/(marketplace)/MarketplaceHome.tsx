@@ -94,7 +94,7 @@ export async function MarketplaceHome() {
               <BrandLogo
                 alt={tBrand("logoAlt")}
                 variant="full"
-                className="h-16 w-32"
+                className="h-14 w-[14.85rem]"
               />
             }
             title={t("title")}
