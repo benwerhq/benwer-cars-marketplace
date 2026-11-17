@@ -4,6 +4,7 @@ import { type SitePaymentMethod, type SiteSectionId } from "@/enums";
 import { siteChildFromHome } from "@/lib/site";
 import { whatsappHref } from "@/lib/siteContent";
 import { CompanyLogo } from "@/components/features/CompanyLogo";
+import { logoPairBranding } from "@/lib/companyLogos";
 import { CookieSettingsLink } from "./CookieSettingsLink";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteFooterAccountLink } from "./SiteFooterAccountLink";
@@ -24,6 +25,7 @@ interface SiteFooterProps {
   payments?: SitePaymentMethod[];
   logoUrl?: string | null;
   logoDarkUrl?: string | null;
+  logoLightUrl?: string | null;
 }
 
 export const siteFooterLinkClass =
@@ -40,6 +42,7 @@ export async function SiteFooter({
   payments = [],
   logoUrl,
   logoDarkUrl,
+  logoLightUrl,
 }: SiteFooterProps) {
   const year = new Date().getFullYear();
   const tFooter = await getTranslations("footer");
@@ -58,11 +61,7 @@ export async function SiteFooter({
             <CompanyLogo
               company={{
                 name: companyName,
-                branding: {
-                  primaryColor: "",
-                  logoUrl: logoUrl ?? null,
-                  logoDarkUrl: logoDarkUrl ?? null,
-                },
+                branding: logoPairBranding({ logoUrl, logoDarkUrl, logoLightUrl }),
               }}
               size="lg"
               className="max-w-[14rem]"

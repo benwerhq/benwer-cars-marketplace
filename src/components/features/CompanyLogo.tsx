@@ -1,14 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { companyLogoPair } from "@/lib/companyLogos";
 import { toPublicMediaSrc } from "@/lib/media";
 import { cn } from "@/lib/utils";
-import type { Company, CompanyBranding, LogoPair } from "@/types/company";
+import type { Company } from "@/types/company";
+
+export type CompanyLogoScheme = "auto" | "light" | "dark";
 
 interface CompanyLogoProps {
   company: Pick<Company, "name" | "branding">;
   size?: "sm" | "md" | "lg";
   className?: string;
+  scheme?: CompanyLogoScheme;
 }
 
 const HEIGHT_CLASS = {
@@ -23,34 +27,25 @@ const NAME_CLASS = {
   lg: "text-lg font-semibold tracking-tight",
 } as const;
 
-export function companyLogoPair(
-  branding: Pick<
-    CompanyBranding,
-    "logoUrl" | "logoDarkUrl" | "wideLightLogoUrl" | "wideDarkLogoUrl"
-  >,
-): Required<LogoPair> {
-  return {
-    logoUrl: branding.wideLightLogoUrl ?? branding.logoUrl,
-    logoDarkUrl: branding.wideDarkLogoUrl ?? branding.logoDarkUrl ?? null,
-  };
-}
-
-export function hasCompanyLogo(company: Pick<Company, "branding">): boolean {
-  const { logoUrl, logoDarkUrl } = companyLogoPair(company.branding);
-  return Boolean(logoUrl || logoDarkUrl);
-}
+export {
+  companyLogoPair,
+  hasCompanyLogo,
+  logoPairBranding,
+} from "@/lib/companyLogos";
 
 export function CompanyLogo({
   company,
   size = "md",
   className,
+  scheme = "auto",
 }: CompanyLogoProps) {
   const [failed, setFailed] = useState<Record<string, true>>({});
   const pair = companyLogoPair(company.branding);
-  const lightSrc = pair.logoUrl ? toPublicMediaSrc(pair.logoUrl) : null;
-  const darkSrc = pair.logoDarkUrl ? toPublicMediaSrc(pair.logoDarkUrl) : null;
-  const lightOk = lightSrc != null && !failed[lightSrc];
-  const darkOk = darkSrc != null && !failed[darkSrc];
+  const blackSrc = pair.logoUrl ? toPublicMediaSrc(pair.logoUrl) : null;
+  const whiteSrc = pair.logoDarkUrl ? toPublicMediaSrc(pair.logoDarkUrl) : null;
+  const same = Boolean(blackSrc && whiteSrc && blackSrc === whiteSrc);
+  const blackOk = blackSrc != null && !failed[blackSrc];
+  const whiteOk = whiteSrc != null && !failed[whiteSrc] && !same;
   const imageClass = cn(
     "shrink-0 bg-transparent object-contain object-left",
     HEIGHT_CLASS[size],
@@ -58,7 +53,7 @@ export function CompanyLogo({
     className,
   );
 
-  if (!lightOk && !darkOk) {
+  if (!blackOk && !whiteOk) {
     return (
       <span
         className={cn(
@@ -72,26 +67,86 @@ export function CompanyLogo({
     );
   }
 
-  return (
-    <>
-      {lightSrc && lightOk ? (
+  function markFailed(src: string) {
+    setFailed((current) => ({ ...current, [src]: true }));
+  }
+
+  if (scheme === "light") {
+    if (blackOk && blackSrc) {
+      return (
         // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
-        <img
-          src={lightSrc}
-          alt=""
-          onError={() => setFailed((current) => ({ ...current, [lightSrc]: true }))}
-          className={cn(imageClass, "dark:hidden", !darkOk && "dark:block")}
-        />
-      ) : null}
-      {darkSrc && darkOk ? (
+        <img src={blackSrc} alt="" onError={() => markFailed(blackSrc)} className={imageClass} />
+      );
+    }
+    return whiteSrc ? (
+      // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
+      <img
+        src={whiteSrc}
+        alt=""
+        onError={() => markFailed(whiteSrc)}
+        className={cn(imageClass, "invert")}
+      />
+    ) : null;
+  }
+
+  if (scheme === "dark") {
+    if (whiteOk && whiteSrc) {
+      return (
         // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
+        <img src={whiteSrc} alt="" onError={() => markFailed(whiteSrc)} className={imageClass} />
+      );
+    }
+    return blackSrc ? (
+      // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
+      <img
+        src={blackSrc}
+        alt=""
+        onError={() => markFailed(blackSrc)}
+        className={cn(imageClass, "invert")}
+      />
+    ) : null;
+  }
+
+  if (blackOk && whiteOk && blackSrc && whiteSrc) {
+    return (
+      <>
+        {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer */}
         <img
-          src={darkSrc}
+          src={blackSrc}
           alt=""
-          onError={() => setFailed((current) => ({ ...current, [darkSrc]: true }))}
-          className={cn(imageClass, "hidden dark:block", !lightOk && "block")}
+          onError={() => markFailed(blackSrc)}
+          className={cn(imageClass, "dark:hidden")}
         />
-      ) : null}
-    </>
-  );
+        {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer */}
+        <img
+          src={whiteSrc}
+          alt=""
+          onError={() => markFailed(whiteSrc)}
+          className={cn(imageClass, "hidden dark:block")}
+        />
+      </>
+    );
+  }
+
+  if (blackOk && blackSrc) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
+      <img
+        src={blackSrc}
+        alt=""
+        onError={() => markFailed(blackSrc)}
+        className={cn(imageClass, "dark:invert")}
+      />
+    );
+  }
+
+  return whiteSrc ? (
+    // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
+    <img
+      src={whiteSrc}
+      alt=""
+      onError={() => markFailed(whiteSrc)}
+      className={cn(imageClass, "invert dark:invert-0")}
+    />
+  ) : null;
 }

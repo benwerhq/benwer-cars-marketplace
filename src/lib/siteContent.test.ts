@@ -229,7 +229,7 @@ describe("site logos, background and legal text", () => {
       undefined,
     );
     const company = { logoUrl: "/company.png", logoDarkUrl: "/company-dark.png" };
-    const wide = { logoUrl: "/h.png", logoDarkUrl: null };
+    const wide = { logoUrl: "/h.png", logoDarkUrl: "/company-dark.png" };
     expect(siteHeaderLogos(content, company)).toEqual(wide);
     expect(siteCompanyLogos(content, company)).toEqual(wide);
     expect(content.supportsDarkLogos).toBe(false);

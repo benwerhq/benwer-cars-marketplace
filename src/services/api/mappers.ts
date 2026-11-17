@@ -371,17 +371,21 @@ export function mapCompany(raw: unknown): Company {
     branding: {
       primaryColor: readString(branding.primaryColor) ?? "",
       logoUrl:
-        readPhotoUrl(branding.wideLightLogoUrl) ??
         readPhotoUrl(branding.logoUrl) ??
         readPhotoUrl(branding.logoURL) ??
         readPhotoUrl(branding.logo) ??
         readPhotoUrl(row.logoUrl) ??
         readPhotoUrl(row.logo) ??
         null,
+      logoLightUrl:
+        readPhotoUrl(branding.logoLightUrl) ??
+        readPhotoUrl(row.logoLightUrl) ??
+        null,
       logoDarkUrl:
-        readPhotoUrl(branding.wideDarkLogoUrl) ??
         readPhotoUrl(branding.logoDarkUrl) ??
         readPhotoUrl(row.logoDarkUrl) ??
+        readPhotoUrl(branding.logoLightUrl) ??
+        readPhotoUrl(row.logoLightUrl) ??
         null,
       wideLightLogoUrl: readPhotoUrl(branding.wideLightLogoUrl) ?? null,
       wideDarkLogoUrl: readPhotoUrl(branding.wideDarkLogoUrl) ?? null,

@@ -3,4 +3,5 @@ export {
   CompanyLogo,
   companyLogoPair,
   hasCompanyLogo,
+  logoPairBranding,
 } from "./CompanyLogo";
