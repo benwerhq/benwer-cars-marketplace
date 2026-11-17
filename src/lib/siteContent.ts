@@ -364,15 +364,42 @@ function parseFaq(sections: unknown): SiteFaqItem[] {
     .slice(0, MAX_SITE_FAQ);
 }
 
+function readLogoUrl(...values: unknown[]): string | null {
+  for (const value of values) {
+    const direct = readString(value);
+    if (direct) {
+      return direct;
+    }
+    if (isRecord(value)) {
+      const nested =
+        readString(value.url) || readString(value.src) || readString(value.href);
+      if (nested) {
+        return nested;
+      }
+    }
+  }
+  return null;
+}
+
 function parseLogos(value: unknown): SiteLogos {
   const logos = isRecord(value) ? value : {};
   return {
     wideLightAssetId:
       readString(logos.wideLightAssetId) || readString(logos.headerAssetId) || null,
-    wideLightUrl: readString(logos.wideLightUrl) || readString(logos.headerUrl) || null,
+    wideLightUrl: readLogoUrl(
+      logos.wideLightUrl,
+      logos.headerUrl,
+      logos.header,
+      logos.company,
+    ),
     wideDarkAssetId:
       readString(logos.wideDarkAssetId) || readString(logos.headerDarkAssetId) || null,
-    wideDarkUrl: readString(logos.wideDarkUrl) || readString(logos.headerDarkUrl) || null,
+    wideDarkUrl: readLogoUrl(
+      logos.wideDarkUrl,
+      logos.headerDarkUrl,
+      logos.headerDark,
+      logos.companyDark,
+    ),
   };
 }
 
@@ -382,7 +409,9 @@ function hasDarkLogoFields(value: unknown): boolean {
     ("wideDarkAssetId" in value ||
       "wideDarkUrl" in value ||
       "headerDarkAssetId" in value ||
-      "headerDarkUrl" in value)
+      "headerDarkUrl" in value ||
+      "headerDark" in value ||
+      "companyDark" in value)
   );
 }
 
@@ -523,8 +552,8 @@ function siteLogoPair(
     logoUrl: company.logoUrl,
     logoLightUrl: company.logoLightUrl,
     logoDarkUrl: company.logoDarkUrl,
-    wideLightLogoUrl: light ?? company.wideLightLogoUrl,
-    wideDarkLogoUrl: dark ?? company.wideDarkLogoUrl,
+    wideLightLogoUrl: light || company.wideLightLogoUrl,
+    wideDarkLogoUrl: dark || company.wideDarkLogoUrl,
   });
 }
 
