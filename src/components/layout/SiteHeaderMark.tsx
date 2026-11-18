@@ -23,7 +23,7 @@ export function SiteHeaderMark({
   return (
     <CompanyLogo
       company={{ name: companyName, branding: logoPairBranding(logos) }}
-      size="md"
+      size="header"
       className="max-w-[46vw]"
     />
   );

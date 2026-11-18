@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const LOCKUP_WIDTH = 1584.571;
-const LOCKUP_HEIGHT = 420;
+const LOGO_WIDTH = 1024;
+const LOGO_HEIGHT = 512;
 
 interface BenwerLockupProps {
   alt: string;
@@ -9,27 +10,14 @@ interface BenwerLockupProps {
 }
 
 export function BenwerLockup({ alt, className }: BenwerLockupProps) {
-  const imageClass =
-    "h-full w-auto max-w-none shrink-0 object-contain object-left";
-
   return (
-    <span className={cn("inline-flex shrink-0 items-center", className)}>
-      {/* eslint-disable-next-line @next/next/no-img-element -- official SVG lockup skips the next/image optimizer */}
-      <img
-        src="/images/logo-benwer-cars-dark.svg"
-        alt={alt}
-        width={LOCKUP_WIDTH}
-        height={LOCKUP_HEIGHT}
-        className={cn(imageClass, "block dark:hidden")}
-      />
-      {/* eslint-disable-next-line @next/next/no-img-element -- official SVG lockup skips the next/image optimizer */}
-      <img
-        src="/images/logo-benwer-cars-white.svg"
-        alt=""
-        width={LOCKUP_WIDTH}
-        height={LOCKUP_HEIGHT}
-        className={cn(imageClass, "hidden dark:!block")}
-      />
-    </span>
+    <Image
+      src="/images/logo-benwer-cars.webp"
+      alt={alt}
+      width={LOGO_WIDTH}
+      height={LOGO_HEIGHT}
+      priority
+      className={cn("w-auto max-w-none shrink-0 rounded-lg object-contain", className)}
+    />
   );
 }

@@ -40,7 +40,7 @@ export async function TenantHeader({
               name: companyName,
               branding: logoPairBranding(logos),
             }}
-            size="md"
+            size="header"
             className="max-w-[46vw]"
           />
           <span className="sr-only">{t("logoAlt", { name: companyName })}</span>

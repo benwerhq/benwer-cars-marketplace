@@ -8,19 +8,21 @@ import type { Company } from "@/types/company";
 
 interface CompanyLogoProps {
   company: Pick<Company, "name" | "branding">;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "header" | "lg";
   className?: string;
 }
 
 const HEIGHT_CLASS = {
   sm: "h-6 rounded-md",
   md: "h-8 rounded-lg sm:h-9",
+  header: "h-10 rounded-lg sm:h-12",
   lg: "h-12 rounded-xl",
 } as const;
 
 const NAME_CLASS = {
   sm: "text-sm font-medium",
   md: "text-sm font-semibold tracking-tight",
+  header: "text-base font-semibold tracking-tight",
   lg: "text-lg font-semibold tracking-tight",
 } as const;
 
