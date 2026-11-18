@@ -11,11 +11,11 @@ export function CompanyEyebrow({ company, className }: CompanyEyebrowProps) {
   const withLogo = hasCompanyLogo(company);
 
   return (
-    <p className={cn("flex min-w-0 items-center gap-2", className)}>
-      {withLogo ? <CompanyLogo company={company} size="sm" /> : null}
-      <span className="truncate text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+    <div className={cn("flex min-w-0 flex-col items-start gap-2", className)}>
+      {withLogo ? <CompanyLogo company={company} className="max-w-full" /> : null}
+      <p className="truncate text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
         {company.name}
-      </span>
-    </p>
+      </p>
+    </div>
   );
 }

@@ -24,7 +24,7 @@ import { localizedText } from "@/lib/localizedCopy";
 import { isSiteEditMode, parseEditFlag } from "@/lib/siteEdit";
 import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata } from "@/lib/seo";
-import { hasSiteAppLinks, visibleSections, siteHeaderLogos } from "@/lib/siteContent";
+import { hasSiteAppLinks, visibleSections, siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -146,8 +146,7 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
   return (
     <SiteDraftLogoProvider>
       <SiteHeader
-        companyName={site.company.name}
-        {...siteHeaderLogos(site.content, site.company.branding)}
+        {...siteHeaderProps(site.content, site.company)}
         homeHref={homeHref}
         cartSlug={slug}
         fleetHref={fleetHref}

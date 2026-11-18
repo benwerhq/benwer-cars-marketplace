@@ -142,6 +142,40 @@
   --primary-foreground: #ffffff;
 }
 
+[data-brand-header="dark"] {
+  --header-ink: #ffffff;
+  --header-ink-muted: color-mix(in oklab, #ffffff 78%, transparent);
+  --header-chip: color-mix(in oklab, #ffffff 16%, transparent);
+}
+
+[data-brand-header="light"] {
+  --header-ink: #0f172a;
+  --header-ink-muted: color-mix(in oklab, #0f172a 72%, transparent);
+  --header-chip: color-mix(in oklab, #0f172a 8%, transparent);
+}
+
+[data-brand-header] .header-brand {
+  color: var(--header-ink);
+}
+
+[data-brand-header] .header-brand:hover {
+  color: var(--header-ink);
+}
+
+[data-brand-header] .header-nav-link {
+  color: var(--header-ink-muted);
+}
+
+[data-brand-header] .header-nav-link:hover {
+  background-color: var(--header-chip);
+  color: var(--header-ink);
+}
+
+[data-brand-header] .header-nav-link[aria-current="page"] {
+  background-color: var(--header-chip);
+  color: var(--header-ink);
+}
+
 html,
 body {
   background-color: var(--background);

@@ -64,7 +64,7 @@ export async function SiteFooter({
                 branding: logoPairBranding({ logoUrl, logoDarkUrl, logoLightUrl }),
               }}
               size="lg"
-              className="max-w-[14rem]"
+              className="max-w-full"
             />
             <p className="text-sm text-muted-foreground">
               {description || tSite("footerTagline")}

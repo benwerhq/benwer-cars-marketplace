@@ -21,7 +21,7 @@ import {
   siteBookingBasePath,
 } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
-import { siteHeaderLogos } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -80,8 +80,7 @@ async function CompanySiteCartPage({ params, searchParams }: Props) {
   return (
     <>
       <SiteHeader
-        companyName={site.company.name}
-        {...siteHeaderLogos(site.content, site.company.branding)}
+        {...siteHeaderProps(site.content, site.company)}
         homeHref={homeHref}
         cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}

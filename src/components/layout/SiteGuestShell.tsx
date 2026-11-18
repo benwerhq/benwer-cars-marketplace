@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { isTenantHostRequest, publicSiteHomeHref } from "@/lib/site";
 import type { PublicSite } from "@/types/site";
-import { siteHeaderLogos } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
 
 interface SiteGuestShellProps {
   site: PublicSite;
@@ -23,8 +23,7 @@ export async function SiteGuestShell({
   return (
     <>
       <SiteHeader
-        companyName={site.company.name}
-        {...siteHeaderLogos(site.content, site.company.branding)}
+        {...siteHeaderProps(site.content, site.company)}
         homeHref={homeHref}
         cartSlug={site.slug}
         fleetHref={`${homeHref}#fleet`}

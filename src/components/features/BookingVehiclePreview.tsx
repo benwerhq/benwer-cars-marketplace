@@ -26,7 +26,7 @@ export function BookingVehiclePreview({
   const thumbClass = size === "md" ? "h-20 w-28 sm:h-24 sm:w-36" : "h-16 w-24";
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-start">
       <div
         className={cn(
           "relative shrink-0 overflow-hidden rounded-lg bg-surface-muted",
@@ -55,8 +55,8 @@ export function BookingVehiclePreview({
           <p className="text-xs text-muted-foreground">{vehicle.year}</p>
         ) : null}
         {company ? (
-          <div className="mt-1">
-            <CompanyLogo company={company} size="sm" className="max-w-[8rem]" />
+          <div className="mt-2">
+            <CompanyLogo company={company} className="max-w-full" />
           </div>
         ) : companyName ? (
           <p className="mt-0.5 truncate text-xs text-muted-foreground">

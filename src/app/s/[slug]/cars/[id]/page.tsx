@@ -31,7 +31,7 @@ import {
 import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata, carProductJsonLd } from "@/lib/seo";
 import { vehicleImageUrls } from "@/lib/vehicleImage";
-import { siteHeaderLogos } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string; id: string }>;
@@ -149,8 +149,7 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
   return (
     <>
       <SiteHeader
-        companyName={site.company.name}
-        {...siteHeaderLogos(site.content, site.company.branding)}
+        {...siteHeaderProps(site.content, site.company)}
         homeHref={homeHref}
         cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}

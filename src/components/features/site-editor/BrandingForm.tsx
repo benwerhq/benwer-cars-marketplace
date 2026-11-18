@@ -163,14 +163,14 @@ function LogoPicker({
 
   return (
     <div className="flex flex-col gap-2 rounded-lg border border-border bg-surface p-3">
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-col items-start gap-3">
         <div className="min-w-0">
           <p className="text-xs font-medium text-foreground">{label}</p>
           <p className="text-xs text-muted-foreground">
             {t("usingCompanyLogo")}
           </p>
         </div>
-        <div className="flex h-12 max-w-[11rem] shrink-0 items-center justify-end rounded-md bg-surface-muted px-2">
+        <div className="flex max-w-full items-center">
           <CompanyLogo
             company={{
               name: companyName,
@@ -181,8 +181,7 @@ function LogoPicker({
                 logoUrl: url || companyBranding.logoUrl,
               },
             }}
-            size="sm"
-            className="max-w-[7rem]"
+            className="max-w-full"
           />
         </div>
       </div>

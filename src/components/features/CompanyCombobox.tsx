@@ -174,7 +174,7 @@ export function CompanyCombobox({
                   role="option"
                   aria-selected={isSelected}
                   className={cn(
-                    "flex cursor-pointer items-center justify-between gap-2 rounded-lg px-2.5 py-2 text-sm",
+                    "flex cursor-pointer items-start justify-between gap-2 rounded-lg px-2.5 py-2 text-sm",
                     isHighlighted && "bg-surface-hover",
                     isSelected && "font-medium text-foreground",
                     !isSelected && "text-foreground",
@@ -183,8 +183,8 @@ export function CompanyCombobox({
                   onMouseDown={(event) => event.preventDefault()}
                   onClick={() => selectCompany(company.slug)}
                 >
-                  <span className="flex min-w-0 items-center gap-2">
-                    <CompanyLogo company={company} size="sm" className="max-w-[6rem]" />
+                  <span className="flex min-w-0 flex-col items-start gap-2">
+                    <CompanyLogo company={company} className="max-w-full" />
                     <span className="truncate">{company.name}</span>
                   </span>
                   {isSelected ? (

@@ -23,6 +23,7 @@ import {
   siteAppLinks,
   siteCompanyLogos,
   siteHeaderLogos,
+  siteHeaderProps,
   visibleSections,
   whatsappHref,
 } from "./siteContent";
@@ -232,6 +233,16 @@ describe("site logos, background and legal text", () => {
     const wide = { logoUrl: "/h.png", logoDarkUrl: "/company-dark.png" };
     expect(siteHeaderLogos(content, company)).toEqual(wide);
     expect(siteCompanyLogos(content, company)).toEqual(wide);
+    expect(
+      siteHeaderProps(content, {
+        name: "Acme",
+        branding: { primaryColor: "#1d4ed8", ...company },
+      }),
+    ).toEqual({
+      companyName: "Acme",
+      brandColor: "#1d4ed8",
+      ...wide,
+    });
     expect(content.supportsDarkLogos).toBe(false);
   });
 

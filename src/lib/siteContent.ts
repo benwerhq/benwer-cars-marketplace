@@ -4,7 +4,8 @@ import {
   type GuestAppStoreLinks,
 } from "@/lib/guestApp";
 import { companyLogoPair } from "@/lib/companyLogos";
-import type { LogoPair } from "@/types/company";
+import { isHexColor } from "@/lib/hexColor";
+import type { Company, LogoPair } from "@/types/company";
 import {
   SiteBannerPreset,
   SiteBannerTarget,
@@ -100,7 +101,7 @@ const INCLUDED_ICON_BY_PRESET: Record<SiteIncludedPreset, SiteIncludedIcon> = {
   [SiteIncludedPreset.CANCELLATION]: SiteIncludedIcon.CALENDAR_CHECK,
 };
 
-const HEX = /^#[0-9a-f]{6}$/i;
+export { contrastWithWhite, isHexColor } from "@/lib/hexColor";
 
 export function presetIncludedItem(preset: SiteIncludedPreset): SiteIncludedItem {
   return {
@@ -179,10 +180,6 @@ function readList(value: unknown): Record<string, unknown>[] {
 
 function enumValue<T extends string>(values: readonly T[], value: unknown): T | null {
   return typeof value === "string" && values.includes(value as T) ? (value as T) : null;
-}
-
-export function isHexColor(value: string): boolean {
-  return HEX.test(value);
 }
 
 function readColor(value: unknown, fallback: string): string {
@@ -564,6 +561,17 @@ export function siteHeaderLogos(
   return siteLogoPair(content.logos.wideLightUrl, content.logos.wideDarkUrl, company);
 }
 
+export function siteHeaderProps(
+  content: SiteContent,
+  company: Pick<Company, "name" | "branding">,
+) {
+  return {
+    companyName: company.name,
+    brandColor: content.brandColor || company.branding.primaryColor,
+    ...siteHeaderLogos(content, company.branding),
+  };
+}
+
 export function siteCompanyLogos(
   content: SiteContent,
   company: LogoPair,
@@ -684,22 +692,6 @@ export function bannerImages(banner: SiteBanner): BannerImages | null {
   }
   const mobile = BANNER_PRESET_IMAGES[banner.preset];
   return { mobile, desktop: BANNER_PRESET_DESKTOP_IMAGES[banner.preset] };
-}
-
-function relativeLuminance(hex: string): number {
-  const value = hex.replace("#", "");
-  const channel = (start: number) => {
-    const scaled = Number.parseInt(value.slice(start, start + 2), 16) / 255;
-    return scaled <= 0.03928 ? scaled / 12.92 : ((scaled + 0.055) / 1.055) ** 2.4;
-  };
-  return 0.2126 * channel(0) + 0.7152 * channel(2) + 0.0722 * channel(4);
-}
-
-export function contrastWithWhite(hex: string): number {
-  if (!isHexColor(hex)) {
-    return 0;
-  }
-  return 1.05 / (relativeLuminance(hex) + 0.05);
 }
 
 export function newContentId(prefix: string): string {

@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 import type { SiteSectionId } from "@/enums";
 import { formatPhoneDisplay, phoneTelHref } from "@/lib/phone";
 import { cn } from "@/lib/utils";
-import { HeaderMobileMenu, type HeaderMenuLink } from "./HeaderMobileMenu";
+import { HeaderMobileMenu, headerNavLinkClass, type HeaderMenuLink } from "./HeaderMobileMenu";
 import { SiteCartMenuItem } from "./SiteCartLink";
 import { SiteAccountMenuItems } from "./SiteGuestLink";
 import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
@@ -111,12 +111,8 @@ export function SiteNav({
           href={link.href}
           aria-current={link.isActive ? "page" : undefined}
           className={cn(
-            "inline-flex cursor-pointer items-center rounded-full px-2.5 py-1.5 text-sm whitespace-nowrap transition-colors",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            headerNavLinkClass(link.isActive),
             "hideBelowLarge" in link && link.hideBelowLarge && "max-lg:hidden",
-            link.isActive
-              ? "bg-primary/10 font-medium text-primary"
-              : "text-muted-foreground hover:bg-surface-hover hover:text-foreground",
           )}
         >
           {link.label}

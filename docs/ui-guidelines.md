@@ -52,8 +52,14 @@ colours as `--site-primary` / `--site-page-background` (with `data-brand` /
 mode can replace the page background and lighten the brand colour. Never set
 `--background` inline.
 
-**Logos in dark mode.** `CompanyMark` shows `logoDarkUrl` in dark mode when there is
-one; otherwise it puts the normal logo on a light `bg-logo-plate`.
+**Company logos.** Use `CompanyLogo` everywhere a company mark appears. Height is
+`COMPANY_LOGO_HEIGHT_CLASS` (`h-14 sm:h-16`, 56px / 64px) — the header logo size
+and the minimum on car cards, lists, booking, footer, and the rest. `object-contain`
+with no crop, no border radius, and no plate behind the artwork. In light/dark
+theme, `CompanyLogo` shows the black-text pair (`logoUrl` / `wideLightLogoUrl`)
+or the white-text pair (`logoLightUrl` / `wideDark` / `logoDark`) via `dark:`
+classes, falling back to the other. Company-site headers instead pick that pair
+from the brand colour’s luminance.
 
 ---
 
@@ -122,7 +128,8 @@ stays visible on phones; add it to the mobile menu too.
 ### Tenant subdomain layout (`*.benwer.es`)
 
 - **Sticky top header**: Company logo/name + nav (Home, Cars) + locale switcher.
-  Header uses `bg-primary/5` tint to hint at the company brand.
+  The bar uses the company’s brand colour; the full logo is fitted to the header
+  height (`object-contain`). Icon buttons stay on `bg-surface` chips.
 - **CompanyBanner** (optional): full-width hero with company name and tagline.
 - No global marketplace nav — this is the company's own storefront.
 
