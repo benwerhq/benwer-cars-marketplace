@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
 import type { Vehicle } from "@/types/vehicle";
 import { CarPhoto } from "./CarPhoto";
-import { CompanyLogo } from "./CompanyLogo";
+import { CompanyLogo, hasCompanyLogo } from "./CompanyLogo";
 
 interface BookingVehiclePreviewProps {
   vehicle: Vehicle;
@@ -55,8 +55,11 @@ export function BookingVehiclePreview({
           <p className="text-xs text-muted-foreground">{vehicle.year}</p>
         ) : null}
         {company ? (
-          <div className="mt-2">
-            <CompanyLogo company={company} className="max-w-full" />
+          <div className="mt-2 flex min-w-0 items-center gap-2">
+            {hasCompanyLogo(company) ? (
+              <CompanyLogo company={company} size="inline" className="max-w-24" />
+            ) : null}
+            <p className="truncate text-xs text-muted-foreground">{company.name}</p>
           </div>
         ) : companyName ? (
           <p className="mt-0.5 truncate text-xs text-muted-foreground">

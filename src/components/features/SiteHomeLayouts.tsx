@@ -3,7 +3,6 @@
 import { HydrationBoundary, type DehydratedState } from "@tanstack/react-query";
 import { Mail, MapPin, MessageCircle, Phone, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { CompanyLogo, hasCompanyLogo } from "@/components/features/CompanyLogo";
 import { SitePausedNotice } from "@/components/features/SitePausedNotice";
 import { SiteSearchForm } from "@/components/features/SiteSearchForm";
 import { CarListView } from "@/components/features/CarListView";
@@ -19,7 +18,6 @@ import {
   hasSiteAppLinks,
   visibleSections,
   whatsappHref,
-  siteCompanyLogos,
 } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { PublicSite } from "@/types/site";
@@ -220,25 +218,9 @@ function LowerSection({
 }
 
 function CompanyHeader({ site, copy }: { site: PublicSite; copy: SiteHomeCopy }) {
-  const company = {
-    ...site.company,
-    branding: {
-      ...site.company.branding,
-      ...siteCompanyLogos(site.content, site.company.branding),
-    },
-  };
-  const withLogo = hasCompanyLogo(company);
-
   return (
     <SiteIntroBand
-      mark={
-        <CompanyLogo
-          company={company}
-          size="lg"
-          className="max-w-full sm:max-w-[22rem]"
-        />
-      }
-      eyebrow={withLogo ? null : site.company.name}
+      eyebrow={site.company.name}
       title={copy.headline}
       intro={copy.intro}
     >

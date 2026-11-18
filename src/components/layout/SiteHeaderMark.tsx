@@ -43,7 +43,7 @@ export function SiteHeaderMark({
 
   if (onBackground === "theme") {
     return (
-      <CompanyLogo company={company} size="header" onBackground="theme" className="max-w-full" />
+      <CompanyLogo company={company} size="header" onBackground="theme" />
     );
   }
 
@@ -56,11 +56,10 @@ export function SiteHeaderMark({
           company={company}
           size="header"
           onBackground={onBackground}
-          className="max-w-full"
         />
       </span>
       <span className="flex h-full max-w-full items-center max-sm:hidden">
-        <CompanyLogo company={company} size="header" onBackground="theme" className="max-w-full" />
+        <CompanyLogo company={company} size="header" onBackground="theme" />
       </span>
     </>
   );

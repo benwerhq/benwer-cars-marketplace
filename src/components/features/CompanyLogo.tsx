@@ -14,24 +14,26 @@ import type { Company } from "@/types/company";
 
 interface CompanyLogoProps {
   company: Pick<Company, "name" | "branding">;
-  size?: "sm" | "md" | "header" | "lg";
+  size?: CompanyLogoSize;
   className?: string;
   onBackground?: LogoBackground;
 }
 
 const HEIGHT_CLASS = {
-  sm: COMPANY_LOGO_HEIGHT_CLASS,
-  md: COMPANY_LOGO_HEIGHT_CLASS,
+  ...COMPANY_LOGO_HEIGHT_CLASS,
   header: COMPANY_HEADER_LOGO_CLASS,
-  lg: COMPANY_LOGO_HEIGHT_CLASS,
 } as const;
 
-const NAME_CLASS = {
-  sm: "text-sm font-medium",
-  md: "text-sm font-semibold tracking-tight",
+export type CompanyLogoSize = keyof typeof HEIGHT_CLASS;
+
+const NAME_CLASS: Record<CompanyLogoSize, string> = {
+  inline: "text-sm font-medium",
+  car: "text-sm font-semibold tracking-tight",
+  card: "text-base font-semibold tracking-tight",
+  banner: "text-lg font-semibold tracking-tight",
+  footer: "text-lg font-semibold tracking-tight",
   header: "text-base font-semibold tracking-tight",
-  lg: "text-lg font-semibold tracking-tight",
-} as const;
+};
 
 export {
   COMPANY_HEADER_BAR_CLASS,
@@ -45,7 +47,7 @@ export {
 
 export function CompanyLogo({
   company,
-  size = "md",
+  size = "card",
   className,
   onBackground = "theme",
 }: CompanyLogoProps) {
@@ -115,7 +117,7 @@ function LogoImage({
 }: {
   src: string;
   className?: string;
-  size: keyof typeof HEIGHT_CLASS;
+  size: CompanyLogoSize;
   onError: () => void;
 }) {
   return (
@@ -125,7 +127,7 @@ function LogoImage({
       alt=""
       onError={onError}
       className={cn(
-        "w-auto max-w-full shrink-0 rounded-none object-contain object-left",
+        "w-auto max-w-full min-w-0 shrink rounded-none object-contain object-left",
         HEIGHT_CLASS[size],
         className,
       )}

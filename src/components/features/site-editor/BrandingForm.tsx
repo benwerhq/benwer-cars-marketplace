@@ -181,7 +181,6 @@ function LogoPicker({
                 logoUrl: url || companyBranding.logoUrl,
               },
             }}
-            className="max-w-full"
           />
         </div>
       </div>

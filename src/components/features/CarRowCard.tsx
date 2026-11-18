@@ -105,7 +105,7 @@ export function CarRowCard({
         <div aria-hidden className="flex-1" />
         <div className="mt-4 flex min-w-0 flex-wrap items-center gap-3 border-t border-dashed border-border pt-4">
           {company && hasCompanyLogo(company) ? (
-            <CompanyLogo company={company} className="min-w-0 max-w-[min(100%,16rem)]" />
+            <CompanyLogo company={company} size="car" className="max-w-[min(100%,16rem)]" />
           ) : null}
           <div className="ml-auto flex min-w-0 flex-wrap items-center justify-end gap-3">
           <div>

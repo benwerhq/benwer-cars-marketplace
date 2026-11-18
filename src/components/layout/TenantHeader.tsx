@@ -44,7 +44,6 @@ export async function TenantHeader({
               company={company}
               size="header"
               onBackground="theme"
-              className="max-w-full"
             />
           ) : (
             <>
@@ -53,7 +52,6 @@ export async function TenantHeader({
                   company={company}
                   size="header"
                   onBackground={onBackground}
-                  className="max-w-full"
                 />
               </span>
               <span className="flex h-full max-w-full items-center max-sm:hidden">
@@ -61,7 +59,6 @@ export async function TenantHeader({
                   company={company}
                   size="header"
                   onBackground="theme"
-                  className="max-w-full"
                 />
               </span>
             </>

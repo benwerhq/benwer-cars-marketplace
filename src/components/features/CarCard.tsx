@@ -134,7 +134,7 @@ export function CarCard({
 
         <div className="mt-auto flex min-w-0 items-center gap-3 border-t border-border pt-3">
           {company && hasCompanyLogo(company) ? (
-            <CompanyLogo company={company} className="min-w-0 max-w-[min(100%,12rem)]" />
+            <CompanyLogo company={company} size="car" className="max-w-[min(100%,12rem)]" />
           ) : null}
           <div className="ml-auto flex min-w-0 shrink-0 items-center gap-3">
             <p className="leading-none">
