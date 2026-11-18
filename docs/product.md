@@ -14,7 +14,7 @@ A rental company activates their branded storefront. Customers see only that com
 available cars, styled with the company's brand colours. The URL is their company slug
 as a subdomain.
 
-### 2. Global marketplace (`marketplace.benwer.es`)
+### 2. Global marketplace (`cars.benwer.es`)
 
 A single marketplace listing cars from all participating companies. Customers can
 search by company, location, or car type, then book from any company.
