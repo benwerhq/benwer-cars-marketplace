@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   companySubdomainOrigin,
+  isMarketplaceFrontDoor,
   isPlatformHost,
+  isReservedPlatformSlug,
   normalizeRequestHost,
   parseSiteFallbackPath,
   resolvePlatformTenantSlug,
@@ -11,6 +13,7 @@ import {
 describe("isPlatformHost", () => {
   it("treats marketplace, vercel, localhost and benwer subdomains as platform", () => {
     expect(isPlatformHost("marketplace.benwer.es", "benwer.es")).toBe(true);
+    expect(isPlatformHost("cars.benwer.es", "benwer.es")).toBe(true);
     expect(isPlatformHost("www.benwer.es", "benwer.es")).toBe(true);
     expect(isPlatformHost("benwer.es", "benwer.es")).toBe(true);
     expect(isPlatformHost("denver-cars.benwer.es", "benwer.es")).toBe(true);
@@ -33,6 +36,11 @@ describe("resolvePlatformTenantSlug", () => {
     expect(resolvePlatformTenantSlug("marketplace.benwer.es", "benwer.es")).toBe(
       null,
     );
+    expect(resolvePlatformTenantSlug("cars.benwer.es", "benwer.es")).toBe(null);
+    expect(resolvePlatformTenantSlug("www.benwer.es", "benwer.es")).toBe(null);
+    expect(resolvePlatformTenantSlug("staging.benwer.es", "benwer.es")).toBe(
+      null,
+    );
     expect(resolvePlatformTenantSlug("reservas.acme.es", "benwer.es")).toBe(
       null,
     );
@@ -40,29 +48,44 @@ describe("resolvePlatformTenantSlug", () => {
 
   it("keeps the APP_URL marketplace host when the tenant base is a parent domain", () => {
     const extra = {
-      extraHosts: ["staging.cars-marketplace.benwer.es"],
+      extraHosts: ["staging.cars.benwer.es"],
     };
     expect(
-      isPlatformHost(
-        "staging.cars-marketplace.benwer.es",
-        "staging.benwer.es",
-        extra,
-      ),
+      isPlatformHost("staging.cars.benwer.es", "staging.benwer.es", extra),
     ).toBe(true);
     expect(
       resolvePlatformTenantSlug(
-        "staging.cars-marketplace.benwer.es",
+        "staging.cars.benwer.es",
         "staging.benwer.es",
         extra,
       ),
     ).toBe(null);
     expect(
       resolvePlatformTenantSlug(
-        "benwer-hq-cars-test.staging.benwer.es",
+        "benwerhq.staging.benwer.es",
         "staging.benwer.es",
         extra,
       ),
-    ).toBe("benwer-hq-cars-test");
+    ).toBe("benwerhq");
+  });
+
+  it("treats cars.benwer.es as the marketplace front door", () => {
+    expect(isMarketplaceFrontDoor("cars.benwer.es", "benwer.es")).toBe(true);
+    expect(isMarketplaceFrontDoor("benwerhq.benwer.es", "benwer.es")).toBe(
+      false,
+    );
+    expect(isMarketplaceFrontDoor("coches.benwer.es", "benwer.es")).toBe(false);
+  });
+});
+
+describe("reserved platform slugs", () => {
+  it("reserves cars, www, staging and marketplace", () => {
+    expect(isReservedPlatformSlug("cars")).toBe(true);
+    expect(isReservedPlatformSlug("www")).toBe(true);
+    expect(isReservedPlatformSlug("staging")).toBe(true);
+    expect(isReservedPlatformSlug("marketplace")).toBe(true);
+    expect(isReservedPlatformSlug("benwerhq")).toBe(false);
+    expect(isReservedPlatformSlug("coches")).toBe(false);
   });
 });
 
@@ -89,7 +112,7 @@ describe("usesCompanySubdomains", () => {
     expect(usesCompanySubdomains("localhost", "localhost")).toBe(true);
     expect(
       usesCompanySubdomains(
-        "staging.cars-marketplace.benwer.es",
+        "staging.cars.benwer.es",
         "staging.benwer.es",
       ),
     ).toBe(true);
@@ -102,7 +125,7 @@ describe("companySubdomainOrigin", () => {
       companySubdomainOrigin(
         "acme",
         "staging.benwer.es",
-        "https://staging.cars-marketplace.benwer.es",
+        "https://staging.cars.benwer.es",
       ),
     ).toBe("https://acme.staging.benwer.es");
   });

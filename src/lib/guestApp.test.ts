@@ -112,8 +112,8 @@ describe("hosts and paths", () => {
 
   it("serves association files on the marketplace host only", () => {
     vi.stubEnv("NEXT_PUBLIC_MARKETPLACE_DOMAIN", "staging.benwer.es");
-    vi.stubEnv("NEXT_PUBLIC_APP_URL", "https://staging.cars-marketplace.benwer.es");
-    expect(servesGuestAppLinks("staging.cars-marketplace.benwer.es")).toBe(true);
+    vi.stubEnv("NEXT_PUBLIC_APP_URL", "https://staging.cars.benwer.es");
+    expect(servesGuestAppLinks("staging.cars.benwer.es")).toBe(true);
     expect(servesGuestAppLinks("acme.staging.benwer.es")).toBe(false);
     expect(servesGuestAppLinks("www.acme-cars.example")).toBe(false);
   });

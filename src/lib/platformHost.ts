@@ -1,5 +1,18 @@
+export const RESERVED_PLATFORM_SLUGS = [
+  "cars",
+  "www",
+  "staging",
+  "marketplace",
+] as const;
+
 export interface PlatformHostOptions {
   extraHosts?: readonly string[];
+}
+
+export function isReservedPlatformSlug(slug: string): boolean {
+  return (RESERVED_PLATFORM_SLUGS as readonly string[]).includes(
+    slug.trim().toLowerCase(),
+  );
 }
 
 export function normalizeRequestHost(hostHeader: string): string {
@@ -80,9 +93,22 @@ export function isMarketplaceFrontDoor(
 
   return (
     hostname === domain ||
+    hostname === `cars.${domain}` ||
     hostname === `marketplace.${domain}` ||
-    hostname === `www.${domain}`
+    hostname === `www.${domain}` ||
+    isReservedSubdomain(hostname, domain)
   );
+}
+
+function platformLabel(hostname: string, domain: string): string | null {
+  const escaped = domain.replace(/\./g, "\\.");
+  const subdomainMatch = hostname.match(new RegExp(`^([^.]+)\\.${escaped}$`));
+  return subdomainMatch?.[1] ?? null;
+}
+
+function isReservedSubdomain(hostname: string, domain: string): boolean {
+  const label = platformLabel(hostname, domain);
+  return label !== null && isReservedPlatformSlug(label);
 }
 
 export function isPlatformHost(
@@ -120,9 +146,11 @@ export function resolvePlatformTenantSlug(
   }
 
   const domain = marketplaceDomain.trim().toLowerCase();
-  const escaped = domain.replace(/\./g, "\\.");
-  const subdomainMatch = hostname.match(new RegExp(`^([^.]+)\\.${escaped}$`));
-  return subdomainMatch?.[1] ?? null;
+  const label = platformLabel(hostname, domain);
+  if (!label || isReservedPlatformSlug(label)) {
+    return null;
+  }
+  return label;
 }
 
 export function parseSiteFallbackPath(
