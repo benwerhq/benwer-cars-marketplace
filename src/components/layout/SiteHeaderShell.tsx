@@ -3,7 +3,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import Link from "next/link";
 import { useSiteDraftLogo } from "@/context/SiteDraftLogoProvider";
-import { brandHeaderTone } from "@/lib/companyLogos";
+import { brandHeaderTone, COMPANY_HEADER_BAR_CLASS } from "@/lib/companyLogos";
 import { cssVarColor, isHexColor } from "@/lib/hexColor";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +19,7 @@ interface SiteHeaderShellProps {
   brandColor?: string | null;
 }
 
-export const COMPANY_HEADER_BAR_CLASS = "h-16 sm:h-20";
+export { COMPANY_HEADER_BAR_CLASS };
 
 function liveBrandColor(
   brandColor: string | null | undefined,

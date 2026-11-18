@@ -17,7 +17,7 @@ export function BenwerLockup({ alt, className }: BenwerLockupProps) {
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
       priority
-      className={cn("w-auto max-w-none shrink-0 rounded-lg object-contain", className)}
+      className={cn("w-auto max-w-none shrink-0 rounded-none object-contain", className)}
     />
   );
 }
