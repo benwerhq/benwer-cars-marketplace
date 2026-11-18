@@ -50,11 +50,16 @@ export function SiteHeaderShell({
     <header
       className={cn(
         "site-header sticky top-0 z-40 w-full border-b shadow-sm",
-        tone ? "border-transparent" : "border-border bg-surface",
+        "border-border bg-surface",
+        tone && "max-sm:border-transparent",
         className,
       )}
       data-brand-header={tone ?? undefined}
-      style={color ? { backgroundColor: color } : undefined}
+      style={
+        color
+          ? ({ "--brand-header-bg": color } as CSSProperties)
+          : undefined
+      }
     >
       <div
         className={cn(
