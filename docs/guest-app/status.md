@@ -28,7 +28,7 @@ Platforms (Rafael, 2026-11-14): **Android only for now.** No iOS builds, no Appl
 - `DELETE /v1/public/guest/me` → 204, or 409 `guest.erasure_blocked` with `companies[{ slug, name, reason: open_reservations }]`, or 503 `guest.delete_failed` (data erased, Firebase user not; retry is safe). Sign the user out locally after 204.
 - Push: `PUT /v1/public/guest/devices/push-token { token, platform: ios|android, locale }`, `DELETE` with `{ token }` on sign-out. Data payload `{ type, reservationId, companySlug }`; types `booking_confirmed`, `booking_declined`, `booking_cancelled`, `payment_due`, `payment_failed`, `pickup_reminder`, `precheckin_ready`. Tap → trip detail by `reservationId`.
 - Native booking: send `client: "app"` on `POST /v1/public/companies/{slug}/reservations` (with guest bearer) → source `app` ("Benwer app"; admin badges come in phase 4). PaymentSheet: `POST /v1/public/reservations/{token}/payments` gives `clientSecret`, `publishableKey`, `connectedAccountId`.
-- e2e: `pnpm db:seed:guest-app` (after `pnpm db:seed`) → guest `e2e-guest-uid` / `guest@e2e.test` linked at `benwer-hq-cars-test` and `benwer-guest-test-b`, upcoming + past bookings; `e2e/emulator/seed-guest-user.mjs` creates the emulator user (`GUEST_FIREBASE_PROJECT_ID`, default `demo-benwer-guest`). Written, not run.
+- e2e: `pnpm db:seed:guest-app` (after `pnpm db:seed`) → guest `e2e-guest-uid` / `guest@e2e.test` linked at `benwerhq` and `benwer-guest-test-b`, upcoming + past bookings; `e2e/emulator/seed-guest-user.mjs` creates the emulator user (`GUEST_FIREBASE_PROJECT_ID`, default `demo-benwer-guest`). Written, not run.
 - Tests written in `test/unit`, not run locally (decision 3); repo CI ran them green on each PR.
 - Cleanup left: remote branch `feat/guest-app-account` (merged via #404; agent's git delete got 403). Branches `feat/guest-app-push` / `feat/guest-app-channel` may also remain if not auto-deleted.
 
@@ -135,6 +135,6 @@ Marketplace route → app screen. ✅ = same functionality in the app. "Out of s
 - `/v1/contact` is not in the public OpenAPI, so `services/api/support.ts` calls it with `fetch` (the same as the website). If the API adds it to `public-v1.json`, switch to the typed client.
 - The app's `openapi/public-v1.json` is still the phase 2–4 copy (no `appearance.app.benwerApp`); nothing in phase 5 needed a refresh.
 - Trips company filter is still client-side (4b note); an API `companySlug` query would help.
-- Store/marketing links used: `MARKETING_URL = https://cars.benwer.es` (constant in `lib/support.ts`).
+- Store/marketing links used: `MARKETING_URL = https://benwer.es` (constant in `lib/support.ts`).
 - Checks run locally each round: `tsc --noEmit`, `check:i18n:strict`. Round 5 CI first failed on a React Compiler lint rule in `cart.tsx` (fixed in the same PR). After that, eslint was also run on the changed files before pushing, so CI would not go red again. No test suites were run.
 - Branches: each round's branch was auto-deleted after merge; nothing left open in the guest repo from phase 5.

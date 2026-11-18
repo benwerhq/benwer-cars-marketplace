@@ -273,7 +273,7 @@ Both keep the existing safety rules: verified email only, oldest matching custom
 
 ```text
 # Served by benwer-cars-marketplace on the marketplace host only
-# (staging.cars-marketplace.benwer.es and the production marketplace host)
+# (staging.cars.benwer.es and the production marketplace host)
 
 /.well-known/apple-app-site-association   (Next.js route, application/json, no redirect)
   applinks: appIDs ["<TEAMID>.com.benwer.cars.guest"]  (staging host: .guest.staging)
@@ -301,7 +301,7 @@ Both keep the existing safety rules: verified email only, oldest matching custom
 | Firebase apps | Add Android + iOS apps; Android SHA-1/SHA-256 for upload and Play signing keys | Same |
 | Sign-in providers | Email/password, Google (exists on web), add Apple | Same |
 | API base | `https://staging.cars-api.benwer.es` | Production API |
-| Link host | `staging.cars-marketplace.benwer.es` | Production marketplace host |
+| Link host | `staging.cars.benwer.es` | Production marketplace host (`cars.benwer.es`) |
 | Play Console | New app "Benwer Cars (Staging)", Internal testing | New app "Benwer Cars", Closed testing first |
 | App Store | TestFlight on the staging bundle | TestFlight, then review |
 

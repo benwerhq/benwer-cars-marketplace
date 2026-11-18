@@ -15,7 +15,7 @@ One deployment, two entry-point experiences, determined by the request host:
 
 ```
 host = "denver-cars.benwer.es"    →  tenant mode   →  slug = "denver-cars"
-host = "marketplace.benwer.es"    →  global mode   →  slug = null
+host = "cars.benwer.es"           →  global mode   →  slug = null
 host = "localhost:3002"            →  global mode   →  slug = null (dev default)
 ```
 
@@ -40,6 +40,11 @@ middleware would rewrite `/` to `/en-GB`, which 404s.
 `*.benwer.es` must point to the marketplace deployment (wildcard `A`/`CNAME`).
 `NEXT_PUBLIC_MARKETPLACE_DOMAIN=benwer.es` is the env var used by proxy to
 distinguish subdomain requests from the main marketplace host.
+`NEXT_PUBLIC_APP_URL` (production `https://cars.benwer.es`, staging
+`https://staging.cars.benwer.es`) is always a marketplace front door.
+Reserved labels `cars`, `www`, `staging`, and `marketplace` never resolve as
+company slugs. Tenant sites stay on `<slug>.benwer.es` /
+`<slug>.staging.benwer.es`. Legacy marketplace hosts 308 at Vercel.
 
 ## Route map
 
@@ -52,7 +57,7 @@ distinguish subdomain requests from the main marketplace host.
 /booking/[token]          Reservation status / confirmation
 ```
 
-### Global marketplace (`marketplace.benwer.es`)
+### Global marketplace (`cars.benwer.es`)
 
 ```
 /                         Company search + featured listings

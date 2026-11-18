@@ -3,20 +3,28 @@ export type PublicEnvironment = "local" | "staging" | "production";
 export interface PublicDefaultUrls {
   admin: string;
   marketing: string;
+  app: string;
+  marketplaceDomain: string;
 }
 
 const DEFAULT_URLS: Record<PublicEnvironment, PublicDefaultUrls> = {
   production: {
     admin: "https://cars-admin.benwer.es",
-    marketing: "https://cars.benwer.es",
+    marketing: "https://benwer.es",
+    app: "https://cars.benwer.es",
+    marketplaceDomain: "benwer.es",
   },
   staging: {
     admin: "https://staging.cars-admin.benwer.es",
-    marketing: "https://staging.cars.benwer.es",
+    marketing: "https://staging.benwer.es",
+    app: "https://staging.cars.benwer.es",
+    marketplaceDomain: "staging.benwer.es",
   },
   local: {
     admin: "http://localhost:3001",
     marketing: "http://localhost:3000",
+    app: "http://localhost:3002",
+    marketplaceDomain: "benwer.es",
   },
 };
 

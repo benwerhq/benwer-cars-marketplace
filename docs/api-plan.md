@@ -212,7 +212,7 @@ Public endpoints are rate-limited per IP:
 
 ### CORS
 
-Allow the marketplace origins: `marketplace.benwer.es`, `*.benwer.es`, and
+Allow the marketplace origins: `cars.benwer.es`, `*.benwer.es`, and
 `localhost:3002` (dev). Credentials not required (no cookies).
 
 ---
@@ -234,7 +234,7 @@ Allow the marketplace origins: `marketplace.benwer.es`, `*.benwer.es`, and
 (open — do not assume merged). That PR fills public `photos[]` / `photoUrl` from
 the same attachments (`kind=vehicle_photo`) + stock_photo fallback admin uses,
 maps invalid `type=car` to economy/sedan/other, and fixes CORS 403 on
-`/v1/public/*` for `marketplace.benwer.es`. Until it ships, public vehicles may
+`/v1/public/*` for `cars.benwer.es`. Until it ships, public vehicles may
 **Never run `db/seed/seed.sql` on production** (it truncates). Image upload
 only: `./db/seed/upload-seed-images-to-s3.sh` per the API `db/seed/README.md`.
 Local seed on API `main` (`dda5afd+`) already has 6 public companies and 37
@@ -256,7 +256,7 @@ catalogue. If those URLs are unset or the API is unreachable (network / CORS
 | Empty public fleets (`is_public=false` on vehicles) are expected. Admin still cannot set that flag on create/update.                                                                                                                                                                                | Company page is not an error: empty state explains the fleet is not public yet.                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Availability: required `from`/`to`; optional `vehicleId`; shape `[{ vehicleId, unavailableDates, available }]`.                                                                                                                                                                                     | One GET; `mapAvailabilityList` accepts a raw array, `{ data }`, or a single legacy `{ available, vehicleId, conflicts }` object.                                                                                                                                                                                                                                                                                                                                                 |
 | Guest POST reservations + GET by token with nested `vehicle` + `company`. `409 reservation.overlap`. RFC 9457 validation.                                                                                                                                                                           | `mapReservation` reads nested resources, `grandTotal`/`totalAmount`, and `customer`. Field aliases (`vehicleID`, `after_start`). Empty 409 → `reservation.overlap`.                                                                                                                                                                                                                                                                                                              |
-| CORS allows `localhost:3002` and, after API #20, `marketplace.benwer.es`. Production previously got CORS 403 on `/v1/public/*` and the client fell back to mock jpgs.                                                                                                                               | Set `API_ORIGIN` to the API **origin** (`https://cars-api.benwer.es`), never `…/v1`. The client strips `/v1` and collapses `/v1/v1`. In production the browser prefers the same-origin `/api` BFF when `NEXT_PUBLIC_API_URL` is cross-origin. CORS or API failure surfaces as an error — it must not revive mock photos.                                                                                                                                                         |
+| CORS allows `localhost:3002` and, after API #20, `cars.benwer.es`. Production previously got CORS 403 on `/v1/public/*` and the client fell back to mock jpgs.                                                                                                                                      | Set `API_ORIGIN` to the API **origin** (`https://cars-api.benwer.es`), never `…/v1`. The client strips `/v1` and collapses `/v1/v1`. In production the browser prefers the same-origin `/api` BFF when `NEXT_PUBLIC_API_URL` is cross-origin. CORS or API failure surfaces as an error — it must not revive mock photos.                                                                                                                                                         |
 
 `npm run generate:api` uses `openapi/public.json` until production swagger
 includes `/public/` paths. Keep the raw-array unwrap so an older Railway
