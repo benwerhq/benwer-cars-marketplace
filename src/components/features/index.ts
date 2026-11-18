@@ -4,7 +4,7 @@ export { CarGrid, CarGridSkeleton, CarGridView } from "./CarGrid";
 export { CarListView } from "./CarListView";
 export { MarketplaceCarListView } from "./MarketplaceCarListView";
 export { CompanyEyebrow } from "./CompanyEyebrow";
-export { CompanyMark } from "./CompanyMark";
+export { CompanyLogo, CompanyMark, hasCompanyLogo } from "./CompanyMark";
 export { CompanyCombobox } from "./CompanyCombobox";
 export { CarPhotoGallery } from "./CarPhotoGallery";
 export { CarSpecsTable } from "./CarSpecsTable";

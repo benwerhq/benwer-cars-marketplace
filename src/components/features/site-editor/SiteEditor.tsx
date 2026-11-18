@@ -36,6 +36,7 @@ import {
   type SiteContentFacts,
 } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
+import type { CompanyBranding } from "@/types/company";
 import type { SiteContent, SiteReviewsContent } from "@/types/siteContent";
 import type { WebsiteSettings } from "@/types/websiteSettings";
 import { AppForm } from "./AppForm";
@@ -87,7 +88,7 @@ interface SiteEditorProps {
   companyId: string;
   companyName: string;
   companyDescription: string;
-  companyLogo: string | null;
+  companyBranding: CompanyBranding;
   facts: SiteContentFacts;
   dirty: boolean;
   saving: boolean;
@@ -112,7 +113,7 @@ export function SiteEditor({
   companyId,
   companyName,
   companyDescription,
-  companyLogo,
+  companyBranding,
   facts,
   dirty,
   saving,
@@ -419,7 +420,7 @@ export function SiteEditor({
               content={content}
               companyId={companyId}
               companyName={companyName}
-              companyLogo={companyLogo}
+              companyBranding={companyBranding}
               onChange={setContent}
             />
           </Tabs.Content>

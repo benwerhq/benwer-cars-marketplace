@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { ZoomIn, ZoomOut } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
-import { cn } from "@/lib/utils";
 
 const OUT_WIDTH = 1024;
 const OUT_HEIGHT = 512;
@@ -13,12 +12,11 @@ const VIEW_HEIGHT = 220;
 
 interface LogoCropDialogProps {
   file: File | null;
-  dark: boolean;
   onCancel: () => void;
   onConfirm: (cropped: File) => void;
 }
 
-export function LogoCropDialog({ file, dark, onCancel, onConfirm }: LogoCropDialogProps) {
+export function LogoCropDialog({ file, onCancel, onConfirm }: LogoCropDialogProps) {
   const t = useTranslations("siteEditor.branding");
   const [loaded, setLoaded] = useState<{ file: File; element: HTMLImageElement } | null>(null);
   const image = loaded?.file === file ? loaded.element : null;
@@ -93,10 +91,7 @@ export function LogoCropDialog({ file, dark, onCancel, onConfirm }: LogoCropDial
         <p className="mt-1 text-xs text-muted-foreground">{t("cropHint")}</p>
 
         <div
-          className={cn(
-            "relative mx-auto mt-4 flex items-center justify-center overflow-hidden rounded-xl border border-border select-none",
-            dark ? "bg-neutral-900" : "bg-neutral-100",
-          )}
+          className="relative mx-auto mt-4 flex items-center justify-center overflow-hidden rounded-xl border border-border bg-surface-muted select-none"
           style={{ width: VIEW_WIDTH, height: VIEW_HEIGHT, maxWidth: "100%", touchAction: "none" }}
           onPointerDown={(e) => {
             e.currentTarget.setPointerCapture(e.pointerId);

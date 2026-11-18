@@ -77,7 +77,11 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
           <GuestAppBadges className="mt-10" text={tApp("bookingText")} />
         ) : null}
       </main>
-      <SiteFooter companyName={companyName} homeHref={homeHref} />
+      <SiteFooter
+        companyName={companyName}
+        homeHref={homeHref}
+        {...logos}
+      />
     </>
   );
 }

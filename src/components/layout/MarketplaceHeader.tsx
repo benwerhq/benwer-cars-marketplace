@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { NavRoutes } from "@/enums";
-import { BrandLogo } from "./BrandLogo";
+import { BenwerLockup } from "./BenwerLockup";
 import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
 import { GuestNotificationBell } from "./GuestNotificationBell";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -19,20 +19,10 @@ export async function MarketplaceHeader({ className }: MarketplaceHeaderProps) {
       homeHref={NavRoutes.HOME}
       homeAriaLabel={t("homeAria")}
       className={className}
+      barClassName="h-14 px-4 sm:h-[4.5rem] sm:px-8 md:px-8 lg:px-8"
+      brandLinkClassName="shrink-0"
       mobileMenu={<MarketplaceMobileMenu />}
-      brand={
-        <>
-          <BrandLogo
-            alt={t("logoAlt")}
-            variant="mark"
-            priority
-            className="h-9 w-12 shrink-0"
-          />
-          <span className="truncate text-sm font-semibold tracking-tight max-sm:hidden">
-            {t("name")}
-          </span>
-        </>
-      }
+      brand={<BenwerLockup alt={t("logoAlt")} className="h-6 w-auto sm:h-9" />}
     >
       <MarketplaceNav />
       <ColorSchemeSwitcher />

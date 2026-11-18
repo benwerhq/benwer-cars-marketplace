@@ -3,6 +3,7 @@ import {
   hasGuestAppStoreLinks,
   type GuestAppStoreLinks,
 } from "@/lib/guestApp";
+import { companyLogoPair } from "@/lib/companyLogos";
 import type { LogoPair } from "@/types/company";
 import {
   SiteBannerPreset,
@@ -363,15 +364,42 @@ function parseFaq(sections: unknown): SiteFaqItem[] {
     .slice(0, MAX_SITE_FAQ);
 }
 
+function readLogoUrl(...values: unknown[]): string | null {
+  for (const value of values) {
+    const direct = readString(value);
+    if (direct) {
+      return direct;
+    }
+    if (isRecord(value)) {
+      const nested =
+        readString(value.url) || readString(value.src) || readString(value.href);
+      if (nested) {
+        return nested;
+      }
+    }
+  }
+  return null;
+}
+
 function parseLogos(value: unknown): SiteLogos {
   const logos = isRecord(value) ? value : {};
   return {
     wideLightAssetId:
       readString(logos.wideLightAssetId) || readString(logos.headerAssetId) || null,
-    wideLightUrl: readString(logos.wideLightUrl) || readString(logos.headerUrl) || null,
+    wideLightUrl: readLogoUrl(
+      logos.wideLightUrl,
+      logos.headerUrl,
+      logos.header,
+      logos.company,
+    ),
     wideDarkAssetId:
       readString(logos.wideDarkAssetId) || readString(logos.headerDarkAssetId) || null,
-    wideDarkUrl: readString(logos.wideDarkUrl) || readString(logos.headerDarkUrl) || null,
+    wideDarkUrl: readLogoUrl(
+      logos.wideDarkUrl,
+      logos.headerDarkUrl,
+      logos.headerDark,
+      logos.companyDark,
+    ),
   };
 }
 
@@ -381,7 +409,9 @@ function hasDarkLogoFields(value: unknown): boolean {
     ("wideDarkAssetId" in value ||
       "wideDarkUrl" in value ||
       "headerDarkAssetId" in value ||
-      "headerDarkUrl" in value)
+      "headerDarkUrl" in value ||
+      "headerDark" in value ||
+      "companyDark" in value)
   );
 }
 
@@ -517,18 +547,27 @@ function siteLogoPair(
   light: string | null,
   dark: string | null,
   company: LogoPair,
-): Required<LogoPair> {
-  if (light) {
-    return { logoUrl: light, logoDarkUrl: dark };
-  }
-  return { logoUrl: company.logoUrl, logoDarkUrl: dark || company.logoDarkUrl || null };
+): Required<Pick<LogoPair, "logoUrl" | "logoDarkUrl">> {
+  return companyLogoPair({
+    logoUrl: company.logoUrl,
+    logoLightUrl: company.logoLightUrl,
+    logoDarkUrl: company.logoDarkUrl,
+    wideLightLogoUrl: light || company.wideLightLogoUrl,
+    wideDarkLogoUrl: dark || company.wideDarkLogoUrl,
+  });
 }
 
-export function siteHeaderLogos(content: SiteContent, company: LogoPair): Required<LogoPair> {
+export function siteHeaderLogos(
+  content: SiteContent,
+  company: LogoPair,
+): Required<Pick<LogoPair, "logoUrl" | "logoDarkUrl">> {
   return siteLogoPair(content.logos.wideLightUrl, content.logos.wideDarkUrl, company);
 }
 
-export function siteCompanyLogos(content: SiteContent, company: LogoPair): Required<LogoPair> {
+export function siteCompanyLogos(
+  content: SiteContent,
+  company: LogoPair,
+): Required<Pick<LogoPair, "logoUrl" | "logoDarkUrl">> {
   return siteLogoPair(content.logos.wideLightUrl, content.logos.wideDarkUrl, company);
 }
 

@@ -64,7 +64,11 @@ async function CompanySiteOwnerPage({ params, searchParams }: Props) {
       <main className="mx-auto w-full max-w-md flex-1 px-4 py-12 md:px-6">
         <OwnerSignInPanel homeHref={homeHref} />
       </main>
-      <SiteFooter companyName={site.company.name} homeHref={homeHref} />
+      <SiteFooter
+        companyName={site.company.name}
+        homeHref={homeHref}
+        {...siteHeaderLogos(site.content, site.company.branding)}
+      />
     </>
   );
 }

@@ -4,7 +4,8 @@ import { ACCEPTED_IMAGES, MAX_UPLOAD_BYTES } from "./uploadLimits";
 import { useRef, useState } from "react";
 import { Check, ImageUp, RotateCcw } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { CompanyMark } from "@/components/features/CompanyMark";
+import { CompanyLogo } from "@/components/features/CompanyLogo";
+import type { CompanyBranding } from "@/types/company";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { BACKGROUND_PRESETS } from "@/data/themePresets";
@@ -15,14 +16,11 @@ import type { SiteContent, SiteLogos } from "@/types/siteContent";
 import { EditorField, EditorGroup } from "./EditorPrimitives";
 import { LogoCropDialog } from "./LogoCropDialog";
 
-
-type LogoSlot = "wideLight" | "wideDark";
-
 interface BrandingFormProps {
   content: SiteContent;
   companyId: string;
   companyName: string;
-  companyLogo: string | null;
+  companyBranding: CompanyBranding;
   onChange: (patch: Partial<SiteContent>) => void;
 }
 
@@ -30,7 +28,7 @@ export function BrandingForm({
   content,
   companyId,
   companyName,
-  companyLogo,
+  companyBranding,
   onChange,
 }: BrandingFormProps) {
   const t = useTranslations("siteEditor.branding");
@@ -44,29 +42,21 @@ export function BrandingForm({
       <EditorGroup title={t("logosTitle")} description={t("logosDescription")}>
         {supported ? null : <p className="text-xs text-warning">{t("needsApi")}</p>}
         <LogoPicker
-          slot="wideLight"
-          label={t("wideLightLogo")}
-          hint={t("wideLightLogoHint")}
+          label={t("logo")}
+          hint={t("logoHint")}
           url={content.logos.wideLightUrl}
           companyId={companyId}
           companyName={companyName}
-          companyLogo={companyLogo}
+          companyBranding={companyBranding}
           disabled={!supported}
           onPick={(id, url) =>
-            setLogos({ ...content.logos, wideLightAssetId: id, wideLightUrl: url })
-          }
-        />
-        <LogoPicker
-          slot="wideDark"
-          label={t("wideDarkLogo")}
-          hint={t("wideDarkLogoHint")}
-          url={content.logos.wideDarkUrl}
-          companyId={companyId}
-          companyName={companyName}
-          companyLogo={content.logos.wideLightUrl || companyLogo}
-          disabled={!supported}
-          onPick={(id, url) =>
-            setLogos({ ...content.logos, wideDarkAssetId: id, wideDarkUrl: url })
+            setLogos({
+              ...content.logos,
+              wideLightAssetId: id,
+              wideLightUrl: url,
+              wideDarkAssetId: id,
+              wideDarkUrl: url,
+            })
           }
         />
       </EditorGroup>
@@ -120,25 +110,23 @@ export function BrandingForm({
 }
 
 interface LogoPickerProps {
-  slot: LogoSlot;
   label: string;
   hint: string;
   url: string | null;
   companyId: string;
   companyName: string;
-  companyLogo: string | null;
+  companyBranding: CompanyBranding;
   disabled: boolean;
   onPick: (id: string | null, url: string | null) => void;
 }
 
 function LogoPicker({
-  slot,
   label,
   hint,
   url,
   companyId,
   companyName,
-  companyLogo,
+  companyBranding,
   disabled,
   onPick,
 }: LogoPickerProps) {
@@ -148,8 +136,7 @@ function LogoPicker({
   const [tooLarge, setTooLarge] = useState(false);
   const [cropFile, setCropFile] = useState<File | null>(null);
   const custom = Boolean(url);
-  const dark = slot === "wideDark";
-  const inputId = `site-logo-${slot}`;
+  const inputId = "site-logo";
 
   function onFile(file: File | undefined) {
     if (!file) {
@@ -176,34 +163,22 @@ function LogoPicker({
         <div className="min-w-0">
           <p className="text-xs font-medium text-foreground">{label}</p>
           <p className="text-xs text-muted-foreground">
-            {dark
-              ? custom
-                ? t("customDarkLogo")
-                : t("usingLightOnPlate")
-              : custom
-                ? t("customLogo")
-                : t("usingCompanyLogo")}
+            {custom ? t("customLogo") : t("usingCompanyLogo")}
           </p>
         </div>
-        <div
-          className={cn(
-            "flex h-12 max-w-[11rem] shrink-0 items-center justify-end rounded-md bg-surface-muted px-2",
-            dark && "dark",
-          )}
-        >
-          <CompanyMark
+        <div className="flex h-12 max-w-[11rem] shrink-0 items-center justify-end rounded-md bg-surface-muted px-2">
+          <CompanyLogo
             company={{
               name: companyName,
               branding: {
-                primaryColor: "",
-                logoUrl: dark ? companyLogo : url || companyLogo,
-                logoDarkUrl: dark ? url : null,
-                wideLightLogoUrl: slot === "wideLight" ? url : null,
-                wideDarkLogoUrl: slot === "wideDark" ? url : null,
+                ...companyBranding,
+                wideLightLogoUrl: url,
+                wideDarkLogoUrl: null,
+                logoUrl: url || companyBranding.logoUrl,
               },
             }}
             size="sm"
-            className="h-8 w-16"
+            className="max-w-[7rem]"
           />
         </div>
       </div>
@@ -241,7 +216,7 @@ function LogoPicker({
             onClick={() => onPick(null, null)}
           >
             <RotateCcw size={14} aria-hidden />
-            {dark ? t("removeDarkLogo") : t("useCompanyLogo")}
+            {t("useCompanyLogo")}
           </Button>
         ) : null}
       </div>
@@ -256,7 +231,6 @@ function LogoPicker({
       ) : null}
       <LogoCropDialog
         file={cropFile}
-        dark={dark}
         onCancel={() => setCropFile(null)}
         onConfirm={(cropped) => void uploadCropped(cropped)}
       />

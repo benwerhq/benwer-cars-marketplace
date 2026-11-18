@@ -72,7 +72,11 @@ export function BookingSummary({
         {t("summary")}
       </h2>
 
-      <BookingVehiclePreview vehicle={vehicle} companyName={company?.name} />
+      <BookingVehiclePreview
+        vehicle={vehicle}
+        company={company}
+        companyName={company?.name}
+      />
 
       {!hasDates ? (
         <div className="flex flex-col gap-3 rounded-xl border border-dashed border-border bg-surface-muted/60 px-4 py-5">

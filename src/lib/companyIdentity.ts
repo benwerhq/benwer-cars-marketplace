@@ -21,6 +21,18 @@ export function resolveCardCompany(
       primaryColor:
         nested?.branding.primaryColor || listed?.branding.primaryColor || "",
       logoUrl: nested?.branding.logoUrl ?? listed?.branding.logoUrl ?? null,
+      logoLightUrl:
+        nested?.branding.logoLightUrl ?? listed?.branding.logoLightUrl ?? null,
+      logoDarkUrl:
+        nested?.branding.logoDarkUrl ?? listed?.branding.logoDarkUrl ?? null,
+      wideLightLogoUrl:
+        nested?.branding.wideLightLogoUrl ??
+        listed?.branding.wideLightLogoUrl ??
+        null,
+      wideDarkLogoUrl:
+        nested?.branding.wideDarkLogoUrl ??
+        listed?.branding.wideDarkLogoUrl ??
+        null,
     },
   };
 }

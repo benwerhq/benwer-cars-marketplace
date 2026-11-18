@@ -5,7 +5,7 @@ import { BadgeCheck, MapPin, UserRound } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { MarketplaceHeader } from "@/components/layout/MarketplaceHeader";
 import { Footer } from "@/components/layout/Footer";
-import { BrandLogo } from "@/components/layout/BrandLogo";
+import { BenwerLockup } from "@/components/layout/BenwerLockup";
 import { CompanyListView } from "@/components/features/CompanyListView";
 import { FeaturedCars } from "@/components/features/FeaturedCars";
 import { MarketplaceBannerCarousel } from "@/components/features/MarketplaceBannerCarousel";
@@ -91,11 +91,7 @@ export async function MarketplaceHome() {
         <div className="mt-10">
           <SiteIntroBand
             mark={
-              <BrandLogo
-                alt={tBrand("logoAlt")}
-                variant="full"
-                className="h-16 w-32"
-              />
+              <BenwerLockup alt={tBrand("logoAlt")} className="h-14" />
             }
             title={t("title")}
             intro={t("subtitle")}

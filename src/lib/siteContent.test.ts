@@ -214,10 +214,11 @@ describe("site logos, background and legal text", () => {
     );
     expect(content.supportsSiteBranding).toBe(true);
     expect(serializeAppearance(content)).toMatchObject({
-      logos: { headerAssetId: "asset-1", companyAssetId: null },
+      logos: { wideLightAssetId: "asset-1", wideDarkAssetId: null },
       pageBackground: "#f8fafc",
       legal: { privacy: { "en-GB": "We keep your data safe." }, terms: {} },
     });
+    expect(serializeAppearance(content).logos).not.toHaveProperty("wideLightUrl");
     expect(serializeAppearance(content).logos).not.toHaveProperty("headerUrl");
     expect(serializeAppearance(content).logos).not.toHaveProperty("headerDarkAssetId");
   });
@@ -228,8 +229,9 @@ describe("site logos, background and legal text", () => {
       undefined,
     );
     const company = { logoUrl: "/company.png", logoDarkUrl: "/company-dark.png" };
-    expect(siteHeaderLogos(content, company)).toEqual({ logoUrl: "/h.png", logoDarkUrl: null });
-    expect(siteCompanyLogos(content, company)).toEqual(company);
+    const wide = { logoUrl: "/h.png", logoDarkUrl: "/company-dark.png" };
+    expect(siteHeaderLogos(content, company)).toEqual(wide);
+    expect(siteCompanyLogos(content, company)).toEqual(wide);
     expect(content.supportsDarkLogos).toBe(false);
   });
 
@@ -253,8 +255,8 @@ describe("site logos, background and legal text", () => {
       logoDarkUrl: "/h-dark.png",
     });
     expect(serializeAppearance(content).logos).toMatchObject({
-      headerDarkAssetId: "dark-1",
-      companyDarkAssetId: null,
+      wideLightAssetId: null,
+      wideDarkAssetId: "dark-1",
     });
   });
 });

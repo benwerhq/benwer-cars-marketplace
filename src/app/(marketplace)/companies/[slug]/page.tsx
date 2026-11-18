@@ -123,7 +123,7 @@ async function CompanyPage({ params, searchParams }: Props) {
       <MarketplaceHeader />
       <CompanyBanner
         name={company.name}
-        logoUrl={company.branding.logoUrl}
+        branding={company.branding}
         description={company.description}
         location={company.location}
         websiteHref={buildCompanySiteHref({

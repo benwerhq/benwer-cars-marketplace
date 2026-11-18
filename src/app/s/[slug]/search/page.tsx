@@ -180,7 +180,11 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
           </HydrationBoundary>
         </SiteEditSection>
       </main>
-      <SiteFooter companyName={site.company.name} homeHref={homeHref} />
+      <SiteFooter
+        companyName={site.company.name}
+        homeHref={homeHref}
+        {...siteHeaderLogos(site.content, site.company.branding)}
+      />
     </>
   );
 }

@@ -12,6 +12,7 @@ import { companiesApi, reservationsApi } from "@/services/api";
 import { buildCompanySiteHref } from "@/lib/companySite";
 import { logError } from "@/lib/logger";
 import { NavRoutes } from "@/enums";
+import type { CompanyBranding } from "@/types/company";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -47,14 +48,12 @@ async function BookingStatusPage({ params }: Props) {
   }
 
   let companyName = tenantSlug ?? "";
-  let logoUrl: string | null = null;
-  let logoDarkUrl: string | null = null;
+  let branding: CompanyBranding | undefined;
   if (tenantSlug) {
     try {
       const company = await companiesApi.getBySlug(tenantSlug);
       companyName = company.name;
-      logoUrl = company.branding.logoUrl;
-      logoDarkUrl = company.branding.logoDarkUrl ?? null;
+      branding = company.branding;
     } catch {
       companyName = tenantSlug;
     }
@@ -65,8 +64,7 @@ async function BookingStatusPage({ params }: Props) {
       {isTenant ? (
         <TenantHeader
           companyName={companyName}
-          logoUrl={logoUrl}
-          logoDarkUrl={logoDarkUrl}
+          branding={branding}
         />
       ) : (
         <MarketplaceHeader />

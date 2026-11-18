@@ -1,3 +1,4 @@
+import { hasCompanyLogo } from "@/lib/companyLogos";
 import type { Company, CompanyListFilters } from "@/types/company";
 import { getOpenApiClient } from "./client";
 import { applyCompanyListFilters } from "./filters";
@@ -28,7 +29,7 @@ async function fetchLiveCompanies(
 async function enrichMissingLogos(companies: Company[]): Promise<Company[]> {
   return Promise.all(
     companies.map(async (company) => {
-      if (company.branding.logoUrl || !company.slug) {
+      if (hasCompanyLogo(company) || !company.slug) {
         return company;
       }
 
@@ -40,7 +41,7 @@ async function enrichMissingLogos(companies: Company[]): Promise<Company[]> {
           },
         );
         const detail = mapCompany(data);
-        return detail.branding.logoUrl ? detail : company;
+        return hasCompanyLogo(detail) ? detail : company;
       } catch {
         return company;
       }

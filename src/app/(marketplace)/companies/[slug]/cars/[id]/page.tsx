@@ -142,6 +142,7 @@ async function CompanyCarDetailPage({ params, searchParams }: Props) {
           vehicle={vehicle}
           companySlug={slug}
           companyName={company?.name}
+          company={company}
           companyWebsiteUrl={company?.websiteUrl}
           initialFrom={query.from}
           initialTo={query.to}

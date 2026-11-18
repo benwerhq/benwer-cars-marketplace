@@ -13,6 +13,7 @@ interface SiteHeaderProps {
   companyName: string;
   logoUrl?: string | null;
   logoDarkUrl?: string | null;
+  logoLightUrl?: string | null;
   homeHref: string;
   fleetHref: string;
   sections?: SiteSectionId[];
@@ -26,6 +27,7 @@ export async function SiteHeader({
   companyName,
   logoUrl,
   logoDarkUrl,
+  logoLightUrl,
   homeHref,
   fleetHref,
   sections,
@@ -54,6 +56,7 @@ export async function SiteHeader({
             companyName={companyName}
             logoUrl={logoUrl ?? null}
             logoDarkUrl={logoDarkUrl ?? null}
+            logoLightUrl={logoLightUrl ?? null}
           />
           <span className="sr-only">{t("logoAlt", { name: companyName })}</span>
         </>

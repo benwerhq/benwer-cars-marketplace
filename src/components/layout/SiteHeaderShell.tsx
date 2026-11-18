@@ -9,6 +9,8 @@ interface SiteHeaderShellProps {
   mobileMenu: ReactNode;
   homeAriaLabel?: string;
   className?: string;
+  barClassName?: string;
+  brandLinkClassName?: string;
 }
 
 export function SiteHeaderShell({
@@ -18,6 +20,8 @@ export function SiteHeaderShell({
   mobileMenu,
   homeAriaLabel,
   className,
+  barClassName,
+  brandLinkClassName,
 }: SiteHeaderShellProps) {
   return (
     <header
@@ -26,18 +30,26 @@ export function SiteHeaderShell({
         className,
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:gap-3 md:px-6 lg:px-8">
+      <div
+        className={cn(
+          "mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 md:px-6 lg:px-8",
+          barClassName,
+        )}
+      >
         <Link
           href={homeHref}
           aria-label={homeAriaLabel}
-          className="flex min-w-0 items-center gap-2.5 text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className={cn(
+            "flex min-w-0 items-center gap-3 text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            brandLinkClassName,
+          )}
         >
           {brand}
         </Link>
-        <div className="flex shrink-0 items-center gap-4 max-sm:hidden">
+        <div className="flex shrink-0 items-center gap-3 max-sm:hidden sm:gap-4">
           {children}
         </div>
-        <div className="flex shrink-0 items-center sm:hidden">{mobileMenu}</div>
+        <div className="flex shrink-0 items-center gap-2 sm:hidden">{mobileMenu}</div>
       </div>
     </header>
   );

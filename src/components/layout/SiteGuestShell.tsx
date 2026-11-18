@@ -32,7 +32,11 @@ export async function SiteGuestShell({
       <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-12 md:px-6">
         {children}
       </main>
-      <SiteFooter companyName={site.company.name} homeHref={homeHref} />
+      <SiteFooter
+        companyName={site.company.name}
+        homeHref={homeHref}
+        {...siteHeaderLogos(site.content, site.company.branding)}
+      />
     </>
   );
 }

@@ -1,28 +1,30 @@
 "use client";
 
-import { CompanyMark } from "@/components/features/CompanyMark";
+import { CompanyLogo } from "@/components/features/CompanyLogo";
+import { logoPairBranding } from "@/lib/companyLogos";
 import { useSiteDraftLogo } from "@/context/SiteDraftLogoProvider";
 
 interface SiteHeaderMarkProps {
   companyName: string;
   logoUrl: string | null;
   logoDarkUrl?: string | null;
+  logoLightUrl?: string | null;
 }
 
-export function SiteHeaderMark({ companyName, logoUrl, logoDarkUrl }: SiteHeaderMarkProps) {
+export function SiteHeaderMark({
+  companyName,
+  logoUrl,
+  logoDarkUrl,
+  logoLightUrl,
+}: SiteHeaderMarkProps) {
   const draft = useSiteDraftLogo();
-  const logos = draft?.headerLogo ?? { logoUrl, logoDarkUrl };
+  const logos = draft?.headerLogo ?? { logoUrl, logoDarkUrl, logoLightUrl };
 
   return (
-    <>
-      <CompanyMark
-        company={{ name: companyName, branding: { primaryColor: "", ...logos } }}
-        size="sm"
-        className="h-9 w-9 rounded-lg"
-      />
-      <span className="truncate text-sm font-semibold tracking-tight max-sm:hidden">
-        {companyName}
-      </span>
-    </>
+    <CompanyLogo
+      company={{ name: companyName, branding: logoPairBranding(logos) }}
+      size="md"
+      className="max-w-[46vw]"
+    />
   );
 }

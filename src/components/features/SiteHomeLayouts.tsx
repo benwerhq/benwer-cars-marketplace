@@ -3,7 +3,7 @@
 import { HydrationBoundary, type DehydratedState } from "@tanstack/react-query";
 import { Mail, MapPin, MessageCircle, Phone, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { CompanyMark, hasCompanyLogo } from "@/components/features/CompanyMark";
+import { CompanyLogo, hasCompanyLogo } from "@/components/features/CompanyLogo";
 import { SitePausedNotice } from "@/components/features/SitePausedNotice";
 import { SiteSearchForm } from "@/components/features/SiteSearchForm";
 import { CarListView } from "@/components/features/CarListView";
@@ -232,10 +232,10 @@ function CompanyHeader({ site, copy }: { site: PublicSite; copy: SiteHomeCopy })
   return (
     <SiteIntroBand
       mark={
-        <CompanyMark
+        <CompanyLogo
           company={company}
           size="lg"
-          className={withLogo ? "h-16 max-w-[16rem]" : "h-16 w-16 rounded-2xl text-xl"}
+          className="max-w-[16rem]"
         />
       }
       eyebrow={withLogo ? null : site.company.name}
