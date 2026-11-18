@@ -159,7 +159,7 @@ export function CompanyDirectory({
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:items-start">
         <div
           className={cn(
-            "h-[min(26rem,58dvh)] lg:sticky lg:top-20 lg:h-[calc(100dvh-8rem)]",
+            "h-[min(26rem,58dvh)] lg:sticky lg:top-24 lg:h-[calc(100dvh-8rem)]",
             !isDesktop && !showMapPane && "hidden",
           )}
         >

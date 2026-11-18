@@ -235,7 +235,7 @@ function CompanyHeader({ site, copy }: { site: PublicSite; copy: SiteHomeCopy })
         <CompanyLogo
           company={company}
           size="lg"
-          className="max-w-[16rem]"
+          className="max-w-full sm:max-w-[22rem]"
         />
       }
       eyebrow={withLogo ? null : site.company.name}

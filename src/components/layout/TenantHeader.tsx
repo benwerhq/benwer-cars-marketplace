@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { CompanyLogo } from "@/components/features/CompanyLogo";
-import { logoPairBranding } from "@/lib/companyLogos";
+import { brandColorFromLogos, brandHeaderTone, logoPairBranding } from "@/lib/companyLogos";
 import { NavRoutes } from "@/enums";
 import type { LogoPair } from "@/types/company";
 import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
@@ -10,7 +10,7 @@ import { TenantMobileMenu, TenantNav } from "./TenantNav";
 
 interface TenantHeaderProps {
   companyName: string;
-  branding?: LogoPair | null;
+  branding?: (LogoPair & { primaryColor?: string | null }) | null;
   logoUrl?: string | null;
   logoDarkUrl?: string | null;
   logoLightUrl?: string | null;
@@ -27,11 +27,14 @@ export async function TenantHeader({
 }: TenantHeaderProps) {
   const t = await getTranslations("tenant");
   const logos = branding ?? { logoUrl, logoDarkUrl, logoLightUrl };
+  const brandColor = brandColorFromLogos(branding);
+  const onBackground = brandHeaderTone(brandColor) ?? "theme";
 
   return (
     <SiteHeaderShell
       homeHref={NavRoutes.HOME}
       className={className}
+      brandColor={brandColor}
       mobileMenu={<TenantMobileMenu />}
       brand={
         <>
@@ -41,7 +44,8 @@ export async function TenantHeader({
               branding: logoPairBranding(logos),
             }}
             size="header"
-            className="max-w-[46vw]"
+            onBackground={onBackground}
+            className="max-w-[min(70vw,22rem)]"
           />
           <span className="sr-only">{t("logoAlt", { name: companyName })}</span>
         </>

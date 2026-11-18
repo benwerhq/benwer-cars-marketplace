@@ -130,8 +130,8 @@ export function CompanyGridSkeleton({
           className="rounded-2xl border border-border bg-surface p-4 sm:p-6"
         >
           <div className="flex flex-col gap-5">
-            <div className="flex items-start gap-4">
-              <Skeleton className="h-12 w-12 rounded-full sm:h-14 sm:w-14" />
+            <div className="flex flex-col gap-3">
+              <Skeleton className="h-14 w-40 rounded-none sm:h-16 sm:w-52" />
               <div className="flex flex-1 flex-col gap-2">
                 <Skeleton className="h-5 w-3/4" />
                 <Skeleton className="h-3 w-1/2" />

@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { companyLogoPair } from "@/lib/companyLogos";
+import {
+  COMPANY_LOGO_HEIGHT_CLASS,
+  companyLogoPair,
+  logoSrcForBackground,
+  type LogoBackground,
+} from "@/lib/companyLogos";
 import { toPublicMediaSrc } from "@/lib/media";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
@@ -10,14 +15,8 @@ interface CompanyLogoProps {
   company: Pick<Company, "name" | "branding">;
   size?: "sm" | "md" | "header" | "lg";
   className?: string;
+  onBackground?: LogoBackground;
 }
-
-const HEIGHT_CLASS = {
-  sm: "h-6 rounded-md",
-  md: "h-8 rounded-lg sm:h-9",
-  header: "h-10 rounded-lg sm:h-12",
-  lg: "h-12 rounded-xl",
-} as const;
 
 const NAME_CLASS = {
   sm: "text-sm font-medium",
@@ -27,39 +26,92 @@ const NAME_CLASS = {
 } as const;
 
 export {
+  COMPANY_LOGO_HEIGHT_CLASS,
+  COMPANY_LOGO_MIN_HEIGHT_PX,
   companyLogoPair,
   hasCompanyLogo,
   logoPairBranding,
 } from "@/lib/companyLogos";
 
-/**
- * One logo per company. Logos carry their own brand background, so the same
- * artwork is shown untouched in light and dark mode (never inverted).
- */
-export function CompanyLogo({ company, size = "md", className }: CompanyLogoProps) {
+export function CompanyLogo({
+  company,
+  size = "md",
+  className,
+  onBackground = "theme",
+}: CompanyLogoProps) {
   const [failed, setFailed] = useState<Record<string, true>>({});
   const pair = companyLogoPair(company.branding);
-  const src = [pair.logoUrl, pair.logoDarkUrl]
-    .map((url) => (url ? toPublicMediaSrc(url) : null))
-    .find((url): url is string => url != null && !failed[url]);
+  const light = pair.logoUrl ?? pair.logoDarkUrl;
+  const dark = pair.logoDarkUrl ?? pair.logoUrl;
+  const forced =
+    onBackground === "theme" ? null : logoSrcForBackground(company.branding, onBackground);
 
-  if (!src) {
+  const showLight = publicLogoSrc(forced ?? light);
+  const showDark = forced ? null : publicLogoSrc(dark);
+  const lightSrc = showLight && !failed[showLight] ? showLight : null;
+  const darkSrc = showDark && !failed[showDark] ? showDark : null;
+  const fallbackSrc = lightSrc ?? darkSrc;
+
+  if (!fallbackSrc) {
     return (
-      <span className={cn("min-w-0 truncate text-foreground", NAME_CLASS[size], className)}>
+      <span className={cn("min-w-0 truncate text-current", NAME_CLASS[size], className)}>
         {company.name}
       </span>
     );
   }
 
+  function markFailed(src: string) {
+    setFailed((current) => ({ ...current, [src]: true }));
+  }
+
+  if (lightSrc && darkSrc && lightSrc !== darkSrc) {
+    return (
+      <>
+        <LogoImage
+          src={lightSrc}
+          className={cn("dark:hidden", className)}
+          onError={() => markFailed(lightSrc)}
+        />
+        <LogoImage
+          src={darkSrc}
+          className={cn("hidden dark:block", className)}
+          onError={() => markFailed(darkSrc)}
+        />
+      </>
+    );
+  }
+
+  return (
+    <LogoImage
+      src={fallbackSrc}
+      className={className}
+      onError={() => markFailed(fallbackSrc)}
+    />
+  );
+}
+
+function publicLogoSrc(value: string | null | undefined): string | null {
+  return value ? toPublicMediaSrc(value) ?? null : null;
+}
+
+function LogoImage({
+  src,
+  className,
+  onError,
+}: {
+  src: string;
+  className?: string;
+  onError: () => void;
+}) {
   return (
     // eslint-disable-next-line @next/next/no-img-element -- SVG logos skip the next/image optimizer
     <img
       src={src}
       alt=""
-      onError={() => setFailed((current) => ({ ...current, [src]: true }))}
+      onError={onError}
       className={cn(
-        "w-auto max-w-full shrink-0 object-contain object-left",
-        HEIGHT_CLASS[size],
+        "w-auto max-w-full shrink-0 rounded-none object-contain object-left",
+        COMPANY_LOGO_HEIGHT_CLASS,
         className,
       )}
     />

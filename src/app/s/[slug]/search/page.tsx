@@ -30,7 +30,7 @@ import {
 import { isSiteEditMode, parseEditFlag } from "@/lib/siteEdit";
 import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata } from "@/lib/seo";
-import { siteHeaderLogos } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -139,8 +139,7 @@ async function CompanySiteSearchPage({ params, searchParams }: Props) {
   return (
     <>
       <SiteHeader
-        companyName={site.company.name}
-        {...siteHeaderLogos(site.content, site.company.branding)}
+        {...siteHeaderProps(site.content, site.company)}
         homeHref={homeHref}
         cartSlug={slug}
         fleetHref={`${homeHref}#fleet`}

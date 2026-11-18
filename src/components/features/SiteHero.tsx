@@ -30,11 +30,11 @@ export async function SiteHero({ site, editMode = false }: SiteHeroProps) {
     <section className="relative w-full overflow-hidden border-b border-border bg-gradient-to-br from-primary/10 via-background to-accent-soft">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-10 md:px-6 md:py-14 lg:px-8">
         <SiteEditSection section={SiteEditSectionId.HERO} enabled={editMode}>
-          <div className="flex items-start gap-4 p-1">
+          <div className="flex flex-col items-start gap-4 p-1">
             <CompanyLogo
               company={site.company}
               size="lg"
-              className="max-w-[16rem]"
+              className="max-w-full sm:max-w-[22rem]"
             />
             <div className="min-w-0">
               <p className="text-sm font-medium text-primary">

@@ -1,5 +1,10 @@
-import type { ReactNode } from "react";
+"use client";
+
+import type { CSSProperties, ReactNode } from "react";
 import Link from "next/link";
+import { useSiteDraftLogo } from "@/context/SiteDraftLogoProvider";
+import { brandHeaderTone } from "@/lib/companyLogos";
+import { cssVarColor, isHexColor } from "@/lib/hexColor";
 import { cn } from "@/lib/utils";
 
 interface SiteHeaderShellProps {
@@ -11,6 +16,19 @@ interface SiteHeaderShellProps {
   className?: string;
   barClassName?: string;
   brandLinkClassName?: string;
+  brandColor?: string | null;
+}
+
+export const COMPANY_HEADER_BAR_CLASS = "h-[4.5rem] sm:h-20";
+
+function liveBrandColor(
+  brandColor: string | null | undefined,
+  themeStyle: CSSProperties | undefined,
+): string | null {
+  return (
+    cssVarColor(themeStyle, "--site-primary") ??
+    (brandColor && isHexColor(brandColor) ? brandColor : null)
+  );
 }
 
 export function SiteHeaderShell({
@@ -22,17 +40,26 @@ export function SiteHeaderShell({
   className,
   barClassName,
   brandLinkClassName,
+  brandColor,
 }: SiteHeaderShellProps) {
+  const draft = useSiteDraftLogo();
+  const color = liveBrandColor(brandColor, draft?.themeStyle);
+  const tone = brandHeaderTone(color);
+
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full overflow-x-clip border-b border-border bg-surface shadow-sm",
+        "sticky top-0 z-40 w-full overflow-x-clip border-b shadow-sm",
+        tone ? "border-transparent" : "border-border bg-surface",
         className,
       )}
+      data-brand-header={tone ?? undefined}
+      style={color ? { backgroundColor: color } : undefined}
     >
       <div
         className={cn(
-          "mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 md:px-6 lg:px-8",
+          "mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 md:px-6 lg:px-8",
+          COMPANY_HEADER_BAR_CLASS,
           barClassName,
         )}
       >
@@ -40,7 +67,7 @@ export function SiteHeaderShell({
           href={homeHref}
           aria-label={homeAriaLabel}
           className={cn(
-            "flex min-w-0 items-center gap-3 text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            "header-brand flex min-w-0 items-center gap-3 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
             brandLinkClassName,
           )}
         >
