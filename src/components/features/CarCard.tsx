@@ -19,7 +19,7 @@ import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn, isExternalHref } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
 import { CarPhoto } from "./CarPhoto";
-import { CompanyEyebrow } from "./CompanyEyebrow";
+import { CompanyLogo, hasCompanyLogo } from "./CompanyLogo";
 import type { Company } from "@/types/company";
 import type { Vehicle } from "@/types/vehicle";
 import { FuelType, TransmissionType, VehicleType } from "@/enums";
@@ -109,9 +109,6 @@ export function CarCard({
 
       <div className="flex min-w-0 flex-1 flex-col gap-3 p-4">
         <div className="min-w-0">
-          {company ? (
-            <CompanyEyebrow company={company} className="mb-2" />
-          ) : null}
           <h3 className="text-base font-semibold leading-tight text-foreground">
             {name}
           </h3>
@@ -135,30 +132,35 @@ export function CarCard({
           <FuelBadge fuel={vehicle.fuel} />
         </div>
 
-        <div className="mt-auto flex items-end justify-between gap-3 border-t border-border pt-3">
-          <p className="leading-none">
-            <span className="text-lg font-semibold tabular-nums text-foreground">
-              {formatPrice(vehicle.pricePerDay, vehicle.currency, locale)}
-            </span>
-            <span className="text-sm text-muted-foreground">
-              {t("perDaySuffix")}
-            </span>
-          </p>
-          {available ? (
-            <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-              {t("viewDetails")}
-              {external ? <span className="sr-only">{t("opensCompanySite")}</span> : null}
-              <ActionIcon
-                size={external ? 14 : 16}
-                aria-hidden
-                className="transition-transform motion-safe:group-hover:translate-x-0.5"
-              />
-            </span>
-          ) : (
-            <span className="inline-flex items-center rounded-md bg-surface-muted px-3 py-1.5 text-sm font-medium text-muted-foreground">
-              {t("bookUnavailable")}
-            </span>
-          )}
+        <div className="mt-auto flex min-w-0 items-center gap-3 border-t border-border pt-3">
+          {company && hasCompanyLogo(company) ? (
+            <CompanyLogo company={company} className="min-w-0 max-w-[min(100%,12rem)]" />
+          ) : null}
+          <div className="ml-auto flex min-w-0 shrink-0 items-center gap-3">
+            <p className="leading-none">
+              <span className="text-lg font-semibold tabular-nums text-foreground">
+                {formatPrice(vehicle.pricePerDay, vehicle.currency, locale)}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {t("perDaySuffix")}
+              </span>
+            </p>
+            {available ? (
+              <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+                {t("viewDetails")}
+                {external ? <span className="sr-only">{t("opensCompanySite")}</span> : null}
+                <ActionIcon
+                  size={external ? 14 : 16}
+                  aria-hidden
+                  className="transition-transform motion-safe:group-hover:translate-x-0.5"
+                />
+              </span>
+            ) : (
+              <span className="inline-flex items-center rounded-md bg-surface-muted px-3 py-1.5 text-sm font-medium text-muted-foreground">
+                {t("bookUnavailable")}
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </Link>

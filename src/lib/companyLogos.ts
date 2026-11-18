@@ -1,8 +1,8 @@
 import { isHexColor, isLightHex } from "@/lib/hexColor";
 import type { Company, CompanyBranding, LogoPair } from "@/types/company";
 
-export const COMPANY_LOGO_MIN_HEIGHT_PX = 56;
-export const COMPANY_LOGO_HEIGHT_CLASS = "h-14 sm:h-16";
+export const COMPANY_LOGO_MIN_HEIGHT_PX = 64;
+export const COMPANY_LOGO_HEIGHT_CLASS = "h-16 sm:h-20";
 
 function logoSrc(value: string | null | undefined): string | null {
   const trimmed = value?.trim();
