@@ -29,6 +29,7 @@ export async function TenantHeader({
   const logos = branding ?? { logoUrl, logoDarkUrl, logoLightUrl };
   const brandColor = brandColorFromLogos(branding);
   const onBackground = brandHeaderTone(brandColor) ?? "theme";
+  const company = { name: companyName, branding: logoPairBranding(logos) };
 
   return (
     <SiteHeaderShell
@@ -38,15 +39,33 @@ export async function TenantHeader({
       mobileMenu={<TenantMobileMenu />}
       brand={
         <>
-          <CompanyLogo
-            company={{
-              name: companyName,
-              branding: logoPairBranding(logos),
-            }}
-            size="header"
-            onBackground={onBackground}
-            className="max-w-full"
-          />
+          {onBackground === "theme" ? (
+            <CompanyLogo
+              company={company}
+              size="header"
+              onBackground="theme"
+              className="max-w-full"
+            />
+          ) : (
+            <>
+              <span className="flex h-full max-w-full items-center sm:hidden">
+                <CompanyLogo
+                  company={company}
+                  size="header"
+                  onBackground={onBackground}
+                  className="max-w-full"
+                />
+              </span>
+              <span className="flex h-full max-w-full items-center max-sm:hidden">
+                <CompanyLogo
+                  company={company}
+                  size="header"
+                  onBackground="theme"
+                  className="max-w-full"
+                />
+              </span>
+            </>
+          )}
           <span className="sr-only">{t("logoAlt", { name: companyName })}</span>
         </>
       }

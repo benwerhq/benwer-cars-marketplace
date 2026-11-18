@@ -39,12 +39,29 @@ export function SiteHeaderMark({
     cssVarColor(draft?.themeStyle, "--site-primary"),
   );
 
+  const company = { name: companyName, branding: logoPairBranding(logos) };
+
+  if (onBackground === "theme") {
+    return (
+      <CompanyLogo company={company} size="header" onBackground="theme" className="max-w-full" />
+    );
+  }
+
+  // Brand-coloured header only on small screens; larger screens keep the
+  // normal surface header, so the logo follows the site theme there.
   return (
-    <CompanyLogo
-      company={{ name: companyName, branding: logoPairBranding(logos) }}
-      size="header"
-      onBackground={onBackground}
-      className="max-w-full"
-    />
+    <>
+      <span className="flex h-full max-w-full items-center sm:hidden">
+        <CompanyLogo
+          company={company}
+          size="header"
+          onBackground={onBackground}
+          className="max-w-full"
+        />
+      </span>
+      <span className="flex h-full max-w-full items-center max-sm:hidden">
+        <CompanyLogo company={company} size="header" onBackground="theme" className="max-w-full" />
+      </span>
+    </>
   );
 }
