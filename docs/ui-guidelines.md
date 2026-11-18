@@ -52,15 +52,30 @@ colours as `--site-primary` / `--site-page-background` (with `data-brand` /
 mode can replace the page background and lighten the brand colour. Never set
 `--background` inline.
 
-**Company logos.** Use `CompanyLogo` everywhere a company mark appears. On company
-sites the header bar is the brand colour and the logo fills that bar’s height
-(`h-16 sm:h-20`, 64px / 80px) with `object-contain`, no crop, radius, or padding
-tile. That height is the minimum on car cards, lists, booking, footer, and the rest
-(`COMPANY_LOGO_HEIGHT_CLASS`). In light/dark
-theme, `CompanyLogo` shows the black-text pair (`logoUrl` / `wideLightLogoUrl`)
-or the white-text pair (`logoLightUrl` / `wideDark` / `logoDark`) via `dark:`
-classes, falling back to the other. Company-site headers instead pick that pair
-from the brand colour’s luminance.
+**Company logos.** Use `CompanyLogo` everywhere a company mark appears. Logos
+are square-cornered (`rounded-none`), shown with `object-contain`, and never
+cropped or placed on a padded tile.
+
+Below `sm`, a company-site header uses the brand colour and the logo fills that
+bar’s height (`COMPANY_HEADER_BAR_CLASS` / `COMPANY_HEADER_LOGO_CLASS`: `h-16`,
+64px). That 64px height is the minimum on car cards, lists, booking, footer,
+company cards, and the rest (`COMPANY_LOGO_HEIGHT_CLASS`,
+`COMPANY_LOGO_MIN_HEIGHT_PX`).
+
+From `sm` up, the company header bar matches the marketplace header
+(`sm:h-[4.5rem]`, 72px) and every company logo matches the marketplace header
+lockup (`sm:h-12`, 48px). The logo no longer fills the desktop bar.
+
+On a company site (`/s/[slug]`, tenant host), do not repeat the company logo on
+car cards or above the car on the details page — the header already shows it.
+The mixed marketplace (home and `/cars`) still shows the logo so guests can
+tell companies apart.
+
+In light/dark theme, `CompanyLogo` shows the black-text pair (`logoUrl` /
+`wideLightLogoUrl`) or the white-text pair (`logoLightUrl` / `wideDark` /
+`logoDark`) via `dark:` classes, falling back to the other. Company-site
+headers on small screens instead pick that pair from the brand colour’s
+luminance; from `sm` up they follow the theme.
 
 ---
 
@@ -129,8 +144,10 @@ stays visible on phones; add it to the mobile menu too.
 ### Tenant subdomain layout (`*.benwer.es`)
 
 - **Sticky top header**: Company logo/name + nav (Home, Cars) + locale switcher.
-  The bar uses the company’s brand colour; the full logo is fitted to the header
-  height (`object-contain`). Icon buttons stay on `bg-surface` chips.
+  Below `sm` the bar uses the company’s brand colour and the full logo fills
+  the 64px header (`object-contain`). From `sm` up the bar matches the
+  marketplace header (72px) and the logo is 48px, with no brand-colour
+  background. Icon buttons stay on `bg-surface` chips.
 - **CompanyBanner** (optional): full-width hero with company name and tagline.
 - No global marketplace nav — this is the company's own storefront.
 

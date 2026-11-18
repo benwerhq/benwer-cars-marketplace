@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import {
+  COMPANY_HEADER_LOGO_CLASS,
   COMPANY_LOGO_HEIGHT_CLASS,
   companyLogoPair,
   logoSrcForBackground,
@@ -21,7 +22,7 @@ interface CompanyLogoProps {
 const HEIGHT_CLASS = {
   sm: COMPANY_LOGO_HEIGHT_CLASS,
   md: COMPANY_LOGO_HEIGHT_CLASS,
-  header: "h-full max-h-full",
+  header: COMPANY_HEADER_LOGO_CLASS,
   lg: COMPANY_LOGO_HEIGHT_CLASS,
 } as const;
 
@@ -33,6 +34,8 @@ const NAME_CLASS = {
 } as const;
 
 export {
+  COMPANY_HEADER_BAR_CLASS,
+  COMPANY_HEADER_LOGO_CLASS,
   COMPANY_LOGO_HEIGHT_CLASS,
   COMPANY_LOGO_MIN_HEIGHT_PX,
   companyLogoPair,
