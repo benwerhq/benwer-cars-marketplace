@@ -75,18 +75,18 @@ export async function generateMetadata(): Promise<Metadata> {
     ...(itunes ? { itunes } : {}),
     metadataBase: new URL(getSiteUrl()),
     title: {
-      default: `${tBrand("name")} — ${tMeta("siteTitle")}`,
-      template: `%s — ${tBrand("name")}`,
+      default: tMeta("siteTitle"),
+      template: `%s | ${tBrand("name")}`,
     },
     description: tMeta("siteDescription"),
     alternates: page.alternates,
     openGraph: {
       ...page.openGraph,
-      title: `${tBrand("name")} — ${tMeta("siteTitle")}`,
+      title: `${tMeta("siteTitle")} | ${tBrand("name")}`,
     },
     twitter: {
       ...page.twitter,
-      title: `${tBrand("name")} — ${tMeta("siteTitle")}`,
+      title: `${tMeta("siteTitle")} | ${tBrand("name")}`,
     },
   };
 }

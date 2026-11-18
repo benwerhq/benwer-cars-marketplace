@@ -46,7 +46,7 @@ export async function generateMetadata({
     const headline =
       localizedText(site.headline, locale) ||
       t("defaultHeadline", { name: site.company.name });
-    return buildPageMetadata({
+    const metadata = buildPageMetadata({
       title: site.company.name,
       description: localizedText(site.intro, locale) || headline,
       path,
@@ -58,6 +58,7 @@ export async function generateMetadata({
         parseEditFlag(query.edit) ||
         site.status !== "published",
     });
+    return { ...metadata, title: { absolute: site.company.name } };
   } catch {
     return buildPageMetadata({
       title: t("notFoundTitle"),

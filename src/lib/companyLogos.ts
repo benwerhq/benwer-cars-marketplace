@@ -56,6 +56,15 @@ export function hasCompanyLogo(company: Pick<Company, "branding">): boolean {
   return Boolean(logoUrl || logoDarkUrl);
 }
 
+/** Compact/square mark for favicons. Wide header lockups are a poor tab icon. */
+export function companyFaviconUrl(branding: LogoPair): string | null {
+  return (
+    logoSrc(branding.logoUrl) ??
+    logoSrc(branding.logoLightUrl) ??
+    logoSrc(branding.logoDarkUrl)
+  );
+}
+
 export type LogoBackground = "theme" | "light" | "dark";
 
 export function logoSrcForBackground(

@@ -137,5 +137,5 @@ function unknownHostResponse(request: NextRequest, pathname: string) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.svg$).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|icon.png|icon.svg|apple-icon.png|apple-touch-icon.png|.*\\.(?:svg|ico|webmanifest)$).*)"],
 };
