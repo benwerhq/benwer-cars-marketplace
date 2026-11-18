@@ -26,7 +26,7 @@ export async function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))]">
           <div className="flex max-w-sm flex-col gap-2">
-            <BenwerLockup alt={tBrand("logoAlt")} className="h-14 rounded-xl" />
+            <BenwerLockup alt={tBrand("logoAlt")} className="h-14" />
             <p className="text-sm text-muted-foreground">
               {tFooter("tagline")}
             </p>

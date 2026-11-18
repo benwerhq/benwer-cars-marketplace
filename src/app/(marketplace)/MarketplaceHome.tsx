@@ -91,7 +91,7 @@ export async function MarketplaceHome() {
         <div className="mt-10">
           <SiteIntroBand
             mark={
-              <BenwerLockup alt={tBrand("logoAlt")} className="h-16 rounded-xl" />
+              <BenwerLockup alt={tBrand("logoAlt")} className="h-16" />
             }
             title={t("title")}
             intro={t("subtitle")}
