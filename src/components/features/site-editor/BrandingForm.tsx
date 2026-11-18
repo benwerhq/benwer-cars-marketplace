@@ -2,14 +2,14 @@
 
 import { ACCEPTED_IMAGES, MAX_UPLOAD_BYTES } from "./uploadLimits";
 import { useRef, useState } from "react";
-import { Check, ImageUp, RotateCcw } from "lucide-react";
+import { Check, ImageUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { CompanyLogo } from "@/components/features/CompanyLogo";
 import type { CompanyBranding } from "@/types/company";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { BACKGROUND_PRESETS } from "@/data/themePresets";
-import { useUploadWebsiteImage } from "@/hooks/useWebsiteSettings";
+import { useUploadCompanyLogo } from "@/hooks/useWebsiteSettings";
 import { DEFAULT_PAGE_BACKGROUND, isHexColor } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { SiteContent, SiteLogos } from "@/types/siteContent";
@@ -44,17 +44,17 @@ export function BrandingForm({
         <LogoPicker
           label={t("logo")}
           hint={t("logoHint")}
-          url={content.logos.wideLightUrl}
+          url={content.logos.wideLightUrl ?? companyLogoUrl(companyBranding)}
           companyId={companyId}
           companyName={companyName}
           companyBranding={companyBranding}
           disabled={!supported}
-          onPick={(id, url) =>
+          onUploaded={(url) =>
             setLogos({
               ...content.logos,
-              wideLightAssetId: id,
+              wideLightAssetId: null,
               wideLightUrl: url,
-              wideDarkAssetId: id,
+              wideDarkAssetId: null,
               wideDarkUrl: url,
             })
           }
@@ -109,6 +109,10 @@ export function BrandingForm({
   );
 }
 
+function companyLogoUrl(branding: CompanyBranding): string | null {
+  return branding.logoUrl || branding.wideLightLogoUrl || null;
+}
+
 interface LogoPickerProps {
   label: string;
   hint: string;
@@ -117,7 +121,7 @@ interface LogoPickerProps {
   companyName: string;
   companyBranding: CompanyBranding;
   disabled: boolean;
-  onPick: (id: string | null, url: string | null) => void;
+  onUploaded: (url: string) => void;
 }
 
 function LogoPicker({
@@ -128,11 +132,11 @@ function LogoPicker({
   companyName,
   companyBranding,
   disabled,
-  onPick,
+  onUploaded,
 }: LogoPickerProps) {
   const t = useTranslations("siteEditor.branding");
   const input = useRef<HTMLInputElement>(null);
-  const upload = useUploadWebsiteImage(companyId);
+  const upload = useUploadCompanyLogo(companyId);
   const [tooLarge, setTooLarge] = useState(false);
   const [cropFile, setCropFile] = useState<File | null>(null);
   const custom = Boolean(url);
@@ -153,7 +157,7 @@ function LogoPicker({
     setCropFile(null);
     const result = await upload.mutateAsync(cropped).catch(() => null);
     if (result) {
-      onPick(result.id, result.url);
+      onUploaded(result);
     }
   }
 
@@ -163,7 +167,7 @@ function LogoPicker({
         <div className="min-w-0">
           <p className="text-xs font-medium text-foreground">{label}</p>
           <p className="text-xs text-muted-foreground">
-            {custom ? t("customLogo") : t("usingCompanyLogo")}
+            {t("usingCompanyLogo")}
           </p>
         </div>
         <div className="flex h-12 max-w-[11rem] shrink-0 items-center justify-end rounded-md bg-surface-muted px-2">
@@ -207,18 +211,6 @@ function LogoPicker({
           <ImageUp size={14} aria-hidden />
           {custom ? t("replace") : t("upload")}
         </Button>
-        {custom ? (
-          <Button
-            type="button"
-            variant="ghost"
-            size="sm"
-            disabled={disabled}
-            onClick={() => onPick(null, null)}
-          >
-            <RotateCcw size={14} aria-hidden />
-            {t("useCompanyLogo")}
-          </Button>
-        ) : null}
       </div>
       {tooLarge ? (
         <p className="text-xs text-danger" role="alert">

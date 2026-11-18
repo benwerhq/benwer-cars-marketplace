@@ -50,6 +50,15 @@ export function usePauseWebsite() {
   return useSettingsMutation(() => websiteSettingsApi.pause(), "website_pause");
 }
 
+export function useUploadCompanyLogo(companyId: string) {
+  return useMutation({
+    mutationFn: (file: File) => websiteSettingsApi.uploadCompanyLogo(companyId, file),
+    onError: (error) => {
+      logError(error, { context: "company_logo_upload" });
+    },
+  });
+}
+
 export function useUploadWebsiteImage(companyId: string) {
   return useMutation({
     mutationFn: (file: File) => websiteSettingsApi.uploadImage(companyId, file),
