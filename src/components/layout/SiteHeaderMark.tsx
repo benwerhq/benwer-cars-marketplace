@@ -44,7 +44,7 @@ export function SiteHeaderMark({
       company={{ name: companyName, branding: logoPairBranding(logos) }}
       size="header"
       onBackground={onBackground}
-      className="max-w-[min(70vw,22rem)]"
+      className="max-w-full"
     />
   );
 }

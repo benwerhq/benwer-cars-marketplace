@@ -8,7 +8,7 @@ import { vehicleLabelKey } from "@/lib/vehicleFilters";
 import { vehicleImageUrl } from "@/lib/vehicleImage";
 import { cn, isExternalHref } from "@/lib/utils";
 import type { Company } from "@/types/company";
-import { CompanyEyebrow } from "./CompanyEyebrow";
+import { CompanyLogo, hasCompanyLogo } from "./CompanyLogo";
 import type { Vehicle } from "@/types/vehicle";
 import { CarPhoto } from "./CarPhoto";
 
@@ -80,7 +80,6 @@ export function CarRowCard({
         ) : null}
       </div>
       <div className="flex min-w-0 flex-col p-5">
-        {company ? <CompanyEyebrow company={company} className="mb-2" /> : null}
         <h3 className="text-lg font-semibold tracking-tight text-foreground">{name}</h3>
         <p className="mt-0.5 text-sm text-muted-foreground">
           {vehicle.year} · {t(vehicleLabelKey(vehicle))}
@@ -104,7 +103,11 @@ export function CarRowCard({
           </li>
         </ul>
         <div aria-hidden className="flex-1" />
-        <div className="mt-4 flex flex-wrap items-end justify-between gap-3 border-t border-dashed border-border pt-4">
+        <div className="mt-4 flex min-w-0 flex-wrap items-center gap-3 border-t border-dashed border-border pt-4">
+          {company && hasCompanyLogo(company) ? (
+            <CompanyLogo company={company} className="min-w-0 max-w-[min(100%,16rem)]" />
+          ) : null}
+          <div className="ml-auto flex min-w-0 flex-wrap items-center justify-end gap-3">
           <div>
             <p className="leading-none whitespace-nowrap">
               <span className="text-2xl font-semibold tracking-tight text-foreground tabular-nums">
@@ -140,6 +143,7 @@ export function CarRowCard({
               {t("bookUnavailable")}
             </span>
           )}
+          </div>
         </div>
       </div>
     </Link>

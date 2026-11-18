@@ -137,6 +137,10 @@
   --primary: var(--site-primary);
 }
 
+[data-brand] .site-header {
+  background-color: var(--site-primary);
+}
+
 .dark [data-brand] {
   --primary: color-mix(in oklab, var(--site-primary) 75%, white);
   --primary-foreground: #ffffff;

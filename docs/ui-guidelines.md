@@ -52,10 +52,11 @@ colours as `--site-primary` / `--site-page-background` (with `data-brand` /
 mode can replace the page background and lighten the brand colour. Never set
 `--background` inline.
 
-**Company logos.** Use `CompanyLogo` everywhere a company mark appears. Height is
-`COMPANY_LOGO_HEIGHT_CLASS` (`h-14 sm:h-16`, 56px / 64px) — the header logo size
-and the minimum on car cards, lists, booking, footer, and the rest. `object-contain`
-with no crop, no border radius, and no plate behind the artwork. In light/dark
+**Company logos.** Use `CompanyLogo` everywhere a company mark appears. On company
+sites the header bar is the brand colour and the logo fills that bar’s height
+(`h-16 sm:h-20`, 64px / 80px) with `object-contain`, no crop, radius, or padding
+tile. That height is the minimum on car cards, lists, booking, footer, and the rest
+(`COMPANY_LOGO_HEIGHT_CLASS`). In light/dark
 theme, `CompanyLogo` shows the black-text pair (`logoUrl` / `wideLightLogoUrl`)
 or the white-text pair (`logoLightUrl` / `wideDark` / `logoDark`) via `dark:`
 classes, falling back to the other. Company-site headers instead pick that pair

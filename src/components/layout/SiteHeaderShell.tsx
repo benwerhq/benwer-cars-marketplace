@@ -19,7 +19,7 @@ interface SiteHeaderShellProps {
   brandColor?: string | null;
 }
 
-export const COMPANY_HEADER_BAR_CLASS = "h-[4.5rem] sm:h-20";
+export const COMPANY_HEADER_BAR_CLASS = "h-16 sm:h-20";
 
 function liveBrandColor(
   brandColor: string | null | undefined,
@@ -49,7 +49,7 @@ export function SiteHeaderShell({
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full overflow-x-clip border-b shadow-sm",
+        "site-header sticky top-0 z-40 w-full border-b shadow-sm",
         tone ? "border-transparent" : "border-border bg-surface",
         className,
       )}
@@ -58,7 +58,7 @@ export function SiteHeaderShell({
     >
       <div
         className={cn(
-          "mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 md:px-6 lg:px-8",
+          "mx-auto flex max-w-7xl items-stretch justify-between gap-3 px-3 sm:px-6 lg:px-8",
           COMPANY_HEADER_BAR_CLASS,
           barClassName,
         )}
@@ -67,7 +67,7 @@ export function SiteHeaderShell({
           href={homeHref}
           aria-label={homeAriaLabel}
           className={cn(
-            "header-brand flex min-w-0 items-center gap-3 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            "header-brand flex h-full min-w-0 flex-1 items-center text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
             brandLinkClassName,
           )}
         >
@@ -76,7 +76,7 @@ export function SiteHeaderShell({
         <div className="flex shrink-0 items-center gap-3 max-sm:hidden sm:gap-4">
           {children}
         </div>
-        <div className="flex shrink-0 items-center gap-2 sm:hidden">{mobileMenu}</div>
+        <div className="flex shrink-0 items-center sm:hidden">{mobileMenu}</div>
       </div>
     </header>
   );

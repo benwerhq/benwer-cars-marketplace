@@ -18,6 +18,13 @@ interface CompanyLogoProps {
   onBackground?: LogoBackground;
 }
 
+const HEIGHT_CLASS = {
+  sm: COMPANY_LOGO_HEIGHT_CLASS,
+  md: COMPANY_LOGO_HEIGHT_CLASS,
+  header: "h-full max-h-full",
+  lg: COMPANY_LOGO_HEIGHT_CLASS,
+} as const;
+
 const NAME_CLASS = {
   sm: "text-sm font-medium",
   md: "text-sm font-semibold tracking-tight",
@@ -69,11 +76,13 @@ export function CompanyLogo({
       <>
         <LogoImage
           src={lightSrc}
+          size={size}
           className={cn("dark:hidden", className)}
           onError={() => markFailed(lightSrc)}
         />
         <LogoImage
           src={darkSrc}
+          size={size}
           className={cn("hidden dark:block", className)}
           onError={() => markFailed(darkSrc)}
         />
@@ -84,6 +93,7 @@ export function CompanyLogo({
   return (
     <LogoImage
       src={fallbackSrc}
+      size={size}
       className={className}
       onError={() => markFailed(fallbackSrc)}
     />
@@ -97,10 +107,12 @@ function publicLogoSrc(value: string | null | undefined): string | null {
 function LogoImage({
   src,
   className,
+  size,
   onError,
 }: {
   src: string;
   className?: string;
+  size: keyof typeof HEIGHT_CLASS;
   onError: () => void;
 }) {
   return (
@@ -111,7 +123,7 @@ function LogoImage({
       onError={onError}
       className={cn(
         "w-auto max-w-full shrink-0 rounded-none object-contain object-left",
-        COMPANY_LOGO_HEIGHT_CLASS,
+        HEIGHT_CLASS[size],
         className,
       )}
     />

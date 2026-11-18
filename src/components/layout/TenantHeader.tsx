@@ -45,7 +45,7 @@ export async function TenantHeader({
             }}
             size="header"
             onBackground={onBackground}
-            className="max-w-[min(70vw,22rem)]"
+            className="max-w-full"
           />
           <span className="sr-only">{t("logoAlt", { name: companyName })}</span>
         </>
