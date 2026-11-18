@@ -54,9 +54,9 @@ export function CompanyCard({
         style={brandColor ? { backgroundColor: brandColor } : undefined}
       />
       <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-start gap-4">
-          <CompanyLogo company={company} size="lg" className="mt-0.5 max-w-[9rem]" />
-          <div className="min-w-0 flex-1">
+        <div className="flex flex-col gap-3">
+          <CompanyLogo company={company} size="lg" className="max-w-full" />
+          <div className="min-w-0">
             <h3 className="line-clamp-2 text-lg font-semibold tracking-tight break-words text-foreground">
               {company.name}
             </h3>

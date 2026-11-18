@@ -20,9 +20,9 @@ export async function MarketplaceHeader({ className }: MarketplaceHeaderProps) {
       homeAriaLabel={t("homeAria")}
       className={className}
       barClassName="h-14 px-4 sm:h-[4.5rem] sm:px-8 md:px-8 lg:px-8"
-      brandLinkClassName="shrink-0"
+      brandLinkClassName="flex-none shrink-0"
       mobileMenu={<MarketplaceMobileMenu />}
-      brand={<BenwerLockup alt={t("logoAlt")} className="h-6 w-auto sm:h-9" />}
+      brand={<BenwerLockup alt={t("logoAlt")} className="h-10 sm:h-12" />}
     >
       <MarketplaceNav />
       <ColorSchemeSwitcher />

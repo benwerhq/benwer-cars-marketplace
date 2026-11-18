@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { useCompany } from "@/hooks/useCompany";
 import { useVehicles } from "@/hooks/useVehicles";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -19,7 +18,6 @@ import {
 } from "./VehicleFilterToolbar";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { formatSearchDate, hasCompleteSearchDates, parseIsoDate } from "@/lib/dates";
-import { resolveCardCompany } from "@/lib/companyIdentity";
 import { NavRoutes, SearchParams, type PublicChannel } from "@/enums";
 import { appendSearchParams } from "@/lib/marketplaceSearch";
 import {
@@ -129,9 +127,6 @@ function CarListViewContent({
           ),
         )
       : sortedVehicles;
-  const companyQuery = useCompany(companySlug);
-  const directory = companyQuery.data ? [companyQuery.data] : [];
-
   const hasFilters = hasActiveAdvancedFilters(filters);
   const fromDate = filters.from ? parseIsoDate(filters.from) : null;
   const toDate = filters.to ? parseIsoDate(filters.to) : null;
@@ -283,6 +278,8 @@ function CarListViewContent({
           }
         />
       ) : null}
+      {/* Single-company lists already show the mark in the site or banner
+          header, so car cards do not repeat the logo. */}
       <CarGridView
         vehicles={
           limit ? vehicles?.slice(0, limit) : vehicles?.slice(0, visible)
@@ -292,9 +289,6 @@ function CarListViewContent({
         error={error}
         onRetry={refetch}
         buildHref={buildHref}
-        companyFor={
-          rows ? undefined : (vehicle) => resolveCardCompany(vehicle, directory)
-        }
         isAvailable={
           checkAvailability
             ? (vehicle) =>

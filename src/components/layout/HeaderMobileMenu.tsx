@@ -24,7 +24,7 @@ export interface HeaderMenuLink {
 
 export function headerNavLinkClass(isActive: boolean): string {
   return cn(
-    "inline-flex cursor-pointer items-center rounded-full px-2.5 py-1.5 text-sm whitespace-nowrap transition-colors",
+    "header-nav-link inline-flex cursor-pointer items-center rounded-full px-2.5 py-1.5 text-sm whitespace-nowrap transition-colors",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
     isActive
       ? "bg-primary/10 font-medium text-primary"

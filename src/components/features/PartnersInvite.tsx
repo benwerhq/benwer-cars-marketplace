@@ -10,7 +10,7 @@ import {
 } from "./PartnerPreviews";
 import { SiteSectionHeading } from "./SiteSectionHeading";
 
-const DEFAULT_PLANS_URL = "https://cars.benwer.es";
+const DEFAULT_PLANS_URL = "https://benwer.es";
 
 const TILE = "relative overflow-hidden rounded-3xl border border-border p-6 md:p-7";
 

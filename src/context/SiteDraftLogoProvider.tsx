@@ -7,6 +7,7 @@ import { createContext, useContext, useState, type CSSProperties, type ReactNode
 
 interface SiteDraftLogo {
   headerLogo: LogoPair | undefined;
+  themeStyle: CSSProperties | undefined;
   setHeaderLogo: (logo: LogoPair | undefined) => void;
   setThemeStyle: (style: CSSProperties | undefined) => void;
   setCornerStyle: (style: SiteCornerStyle | undefined) => void;
@@ -20,7 +21,9 @@ export function SiteDraftLogoProvider({ children }: { children: ReactNode }) {
   const [cornerStyle, setCornerStyle] = useState<SiteCornerStyle | undefined>(undefined);
   useDocumentCorners(cornerStyle);
   return (
-    <SiteDraftLogoContext.Provider value={{ headerLogo, setHeaderLogo, setThemeStyle, setCornerStyle }}>
+    <SiteDraftLogoContext.Provider
+      value={{ headerLogo, themeStyle, setHeaderLogo, setThemeStyle, setCornerStyle }}
+    >
       <div
         style={themeStyle}
         data-corners={cornerStyle}

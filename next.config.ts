@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import {
+  legacyLandingRedirects,
+  legacyLandingRewrites,
+} from "./src/lib/legacyLandingRoutes";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
@@ -91,13 +95,19 @@ const nextConfig: NextConfig = {
       ...extraApiRemotePatterns(),
     ],
   },
+  async redirects() {
+    return legacyLandingRedirects();
+  },
   async rewrites() {
-    return [
-      {
-        source: "/localstack/:path*",
-        destination: `${LOCALSTACK_ORIGIN}/:path*`,
-      },
-    ];
+    return {
+      beforeFiles: legacyLandingRewrites(),
+      afterFiles: [
+        {
+          source: "/localstack/:path*",
+          destination: `${LOCALSTACK_ORIGIN}/:path*`,
+        },
+      ],
+    };
   },
 };
 

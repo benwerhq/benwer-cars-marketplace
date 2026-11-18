@@ -17,8 +17,11 @@ export const env = createEnv({
   },
   client: {
     NEXT_PUBLIC_API_URL: z.string().url().optional(),
-    NEXT_PUBLIC_APP_URL: z.string().url().default("http://localhost:3002"),
-    NEXT_PUBLIC_MARKETPLACE_DOMAIN: z.string().min(1).default("benwer.es"),
+    NEXT_PUBLIC_APP_URL: z.string().url().default(fallbackUrls.app),
+    NEXT_PUBLIC_MARKETPLACE_DOMAIN: z
+      .string()
+      .min(1)
+      .default(fallbackUrls.marketplaceDomain),
     NEXT_PUBLIC_PLATFORM_HOSTS: z.string().optional(),
     NEXT_PUBLIC_ENV: z
       .enum(["local", "staging", "production"])

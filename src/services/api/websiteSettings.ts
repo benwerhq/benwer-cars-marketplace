@@ -23,6 +23,26 @@ async function staffHeaders(
   };
 }
 
+async function uploadCompanyLogoKind(
+  companyId: string,
+  file: File,
+  kind: "company_logo" | "company_logo_light",
+): Promise<string> {
+  const headers = await staffHeaders();
+  const body = new FormData();
+  body.append("file", file);
+  const data = await publicRequest<{ url?: unknown }>("/v1/uploads", {
+    method: "POST",
+    headers,
+    body,
+    query: { kind, entityId: companyId },
+  });
+  if (typeof data.url !== "string" || !data.url) {
+    throw new ApiError(502, "uploads.missing_url");
+  }
+  return data.url;
+}
+
 export const websiteSettingsApi = {
   async get(): Promise<WebsiteSettings> {
     const headers = await staffHeaders();
@@ -48,6 +68,12 @@ export const websiteSettingsApi = {
       headers,
     });
     return mapWebsiteSettings(data);
+  },
+
+  async uploadCompanyLogo(companyId: string, file: File): Promise<string> {
+    const url = await uploadCompanyLogoKind(companyId, file, "company_logo");
+    await uploadCompanyLogoKind(companyId, file, "company_logo_light");
+    return url;
   },
 
   async uploadImage(companyId: string, file: File): Promise<WebsiteImageUpload> {

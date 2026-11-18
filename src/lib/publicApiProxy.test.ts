@@ -94,10 +94,10 @@ describe("resolveBrowserApiBaseUrl", () => {
   it("keeps a same-origin marketplace /api URL", () => {
     expect(
       resolveBrowserApiBaseUrl(
-        "https://marketplace.benwer.es/api",
+        "https://cars.benwer.es/api",
         "production",
       ),
-    ).toBe("https://marketplace.benwer.es/api");
+    ).toBe("https://cars.benwer.es/api");
   });
 
   it("strips /v1 when no page origin is available", () => {
@@ -111,7 +111,7 @@ describe("resolveBrowserApiBaseUrl", () => {
       resolveBrowserApiBaseUrl(
         "https://cars-api.benwer.es/v1",
         "production",
-        "https://marketplace.benwer.es",
+        "https://cars.benwer.es",
       ),
     ).toBe(SAME_ORIGIN_API_PREFIX);
     expect(
@@ -134,7 +134,7 @@ describe("resolveBrowserApiBaseUrl", () => {
   });
 
   it("treats a relative /api base as same-origin", () => {
-    expect(isSameOriginApiBase("/api", "https://marketplace.benwer.es")).toBe(
+    expect(isSameOriginApiBase("/api", "https://cars.benwer.es")).toBe(
       true,
     );
   });

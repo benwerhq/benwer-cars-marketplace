@@ -11,6 +11,7 @@ import type { SiteSectionId } from "@/enums";
 
 interface SiteHeaderProps {
   companyName: string;
+  brandColor?: string | null;
   logoUrl?: string | null;
   logoDarkUrl?: string | null;
   logoLightUrl?: string | null;
@@ -18,13 +19,13 @@ interface SiteHeaderProps {
   fleetHref: string;
   sections?: SiteSectionId[];
   phone?: string | null;
-  /** Company site slug; shows the cart icon when set. */
   cartSlug?: string;
   className?: string;
 }
 
 export async function SiteHeader({
   companyName,
+  brandColor,
   logoUrl,
   logoDarkUrl,
   logoLightUrl,
@@ -41,6 +42,7 @@ export async function SiteHeader({
     <SiteHeaderShell
       homeHref={homeHref}
       className={className}
+      brandColor={brandColor}
       mobileMenu={
         <SiteMobileMenu
           homeHref={homeHref}
@@ -54,6 +56,7 @@ export async function SiteHeader({
         <>
           <SiteHeaderMark
             companyName={companyName}
+            brandColor={brandColor}
             logoUrl={logoUrl ?? null}
             logoDarkUrl={logoDarkUrl ?? null}
             logoLightUrl={logoLightUrl ?? null}

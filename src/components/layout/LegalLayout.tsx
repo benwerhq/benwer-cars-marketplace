@@ -6,7 +6,7 @@ import { SiteHeader } from "./SiteHeader";
 import { Footer } from "./Footer";
 import { loadPublicSite } from "@/lib/loadPublicSite";
 import { publicSiteHomeHref } from "@/lib/site";
-import { siteHeaderLogos } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
 import { cn } from "@/lib/utils";
 import type { PublicSite } from "@/types/site";
 
@@ -28,10 +28,9 @@ export async function LegalLayout({
     <>
       {homeHref ? (
         <SiteHeader
-          companyName={companyName}
           {...(site
-            ? siteHeaderLogos(site.content, site.company.branding)
-            : { logoUrl: null, logoDarkUrl: null })}
+            ? siteHeaderProps(site.content, site.company)
+            : { companyName, logoUrl: null, logoDarkUrl: null })}
           homeHref={homeHref}
           fleetHref={`${homeHref}#fleet`}
         />
