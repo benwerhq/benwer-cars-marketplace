@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { CSSProperties, ReactNode } from "react";
 import { Suspense } from "react";
 import { headers } from "next/headers";
@@ -14,11 +15,40 @@ import {
 import { DEFAULT_PAGE_BACKGROUND, siteFontStack } from "@/lib/siteContent";
 import { siteBrandColor } from "@/lib/websiteDraft";
 import { SiteCornerStyle, SiteFontFamily } from "@/enums";
+import { companyFaviconUrl } from "@/lib/companyLogos";
 import { sitesApi } from "@/services/api";
 
 interface Props {
   children: ReactNode;
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  try {
+    const site = await sitesApi.getBySlug(slug);
+    const name = site.company.name;
+    const favicon = companyFaviconUrl(site.company.branding);
+    return {
+      title: {
+        default: name,
+        template: `%s | ${name}`,
+      },
+      ...(favicon
+        ? {
+            icons: {
+              icon: [
+                { url: favicon },
+                { url: "/icon.png", type: "image/png", sizes: "512x512" },
+              ],
+              apple: favicon,
+            },
+          }
+        : {}),
+    };
+  } catch {
+    return {};
+  }
 }
 
 async function SiteLayout({ children, params }: Props) {

@@ -56,20 +56,20 @@ export async function SiteFooter({
   return (
     <footer className="mt-auto w-full border-t border-border bg-background">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 md:px-6 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))]">
-          <div className="flex max-w-sm flex-col gap-2">
-            <CompanyLogo
-              company={{
-                name: companyName,
-                branding: logoPairBranding({ logoUrl, logoDarkUrl, logoLightUrl }),
-              }}
-              size="lg"
-              className="max-w-full"
-            />
-            <p className="text-sm text-muted-foreground">
-              {description || tSite("footerTagline")}
-            </p>
-          </div>
+        <div className="flex flex-col items-center gap-3 text-center">
+          <CompanyLogo
+            company={{
+              name: companyName,
+              branding: logoPairBranding({ logoUrl, logoDarkUrl, logoLightUrl }),
+            }}
+            size="footer"
+            className="object-center"
+          />
+          <p className="max-w-md text-sm text-muted-foreground">
+            {description || tSite("footerTagline")}
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
           <nav aria-label={tFooter("explore")} className="flex flex-col gap-2">
             <p className={siteFooterHeadingClass}>{tFooter("explore")}</p>
             <Link href={`${home}#fleet`} className={siteFooterLinkClass}>

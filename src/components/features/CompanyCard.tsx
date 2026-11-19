@@ -55,9 +55,9 @@ export function CompanyCard({
       />
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-col gap-3">
-          <CompanyLogo company={company} size="lg" className="max-w-full" />
+          <CompanyLogo company={company} size="card" />
           <div className="min-w-0">
-            <h3 className="line-clamp-2 text-lg font-semibold tracking-tight break-words text-foreground">
+            <h3 className="line-clamp-2 text-sm font-medium break-words text-foreground">
               {company.name}
             </h3>
             {company.location || locationFallback ? (

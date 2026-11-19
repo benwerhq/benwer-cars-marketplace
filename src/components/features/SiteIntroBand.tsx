@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 interface SiteIntroBandProps {
-  mark: ReactNode;
+  mark?: ReactNode;
   title: string;
   eyebrow?: string | null;
   intro?: string | null;
@@ -22,7 +22,7 @@ export function SiteIntroBand({
           {mark}
           <div className="min-w-0">
             {eyebrow ? (
-              <p className="text-sm font-medium text-primary">{eyebrow}</p>
+              <p className="mb-1 text-xs font-semibold tracking-wider text-primary uppercase">{eyebrow}</p>
             ) : null}
             <h1 className="text-3xl font-semibold tracking-tight text-foreground">
               {title}

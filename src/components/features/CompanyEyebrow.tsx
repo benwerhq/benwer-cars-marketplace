@@ -17,7 +17,7 @@ export function CompanyEyebrow({
 
   return (
     <div className={cn("flex min-w-0 flex-col items-start gap-2", className)}>
-      {withLogo ? <CompanyLogo company={company} className="max-w-full" /> : null}
+      {withLogo ? <CompanyLogo company={company} size="car" /> : null}
       {showName || !withLogo ? (
         <p className="truncate text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
           {company.name}

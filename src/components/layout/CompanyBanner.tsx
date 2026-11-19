@@ -73,7 +73,7 @@ export function CompanyBanner({
         ) : null}
         <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex min-w-0 flex-col items-start gap-4">
-            <CompanyLogo company={company} size="lg" className="max-w-full sm:max-w-[22rem]" />
+            <CompanyLogo company={company} size="banner" className="sm:max-w-[22rem]" />
             <div className="min-w-0">
               <h1 className="text-3xl font-semibold tracking-tight text-foreground">
                 {name}

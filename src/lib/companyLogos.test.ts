@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   brandHeaderTone,
+  companyFaviconUrl,
   companyLogoPair,
   logoSrcForBackground,
 } from "./companyLogos";
@@ -66,5 +67,37 @@ describe("brandHeaderTone", () => {
   it("treats light brand colours as light headers", () => {
     expect(brandHeaderTone("#e8a52c")).toBe("light");
     expect(brandHeaderTone("#f8fafc")).toBe("light");
+  });
+});
+
+describe("companyFaviconUrl", () => {
+  it("uses the compact mark and ignores wide lockups", () => {
+    expect(
+      companyFaviconUrl({
+        logoUrl: "/logo.png",
+        logoLightUrl: "/logo-white.png",
+        logoDarkUrl: "/logo-dark.png",
+        wideLightLogoUrl: "/wide-light.png",
+        wideDarkLogoUrl: "/wide-dark.png",
+      }),
+    ).toBe("/logo.png");
+  });
+
+  it("falls back through light and dark compact marks", () => {
+    expect(
+      companyFaviconUrl({
+        logoUrl: "  ",
+        logoLightUrl: "/logo-white.png",
+        logoDarkUrl: "/logo-dark.png",
+      }),
+    ).toBe("/logo-white.png");
+    expect(
+      companyFaviconUrl({
+        logoUrl: null,
+        logoLightUrl: null,
+        logoDarkUrl: "/logo-dark.png",
+      }),
+    ).toBe("/logo-dark.png");
+    expect(companyFaviconUrl({ logoUrl: null })).toBeNull();
   });
 });
