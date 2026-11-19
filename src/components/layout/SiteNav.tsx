@@ -16,7 +16,6 @@ import {
   headerNavLinkClass,
   type HeaderMenuLink,
 } from "./HeaderMobileMenu";
-import { SiteCartMenuItem } from "./SiteCartLink";
 import { SiteAccountMenuItems } from "./SiteGuestLink";
 import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
 
@@ -51,10 +50,9 @@ function useSiteLinks({ homeHref, fleetHref, sections = [] }: SiteNavProps): Hea
 
 interface SiteMobileMenuProps extends SiteNavProps {
   phone?: string | null;
-  cartSlug?: string;
 }
 
-export function SiteMobileMenu({ phone, cartSlug, ...nav }: SiteMobileMenuProps) {
+export function SiteMobileMenu({ phone, ...nav }: SiteMobileMenuProps) {
   return (
     <HeaderMobileMenu links={useSiteLinks(nav)}>
       {phone ? (
@@ -65,7 +63,6 @@ export function SiteMobileMenu({ phone, cartSlug, ...nav }: SiteMobileMenuProps)
           </a>
         </Dialog.Close>
       ) : null}
-      {cartSlug ? <SiteCartMenuItem slug={cartSlug} homeHref={nav.homeHref} /> : null}
       <SiteAccountMenuItems homeHref={nav.homeHref} />
     </HeaderMobileMenu>
   );

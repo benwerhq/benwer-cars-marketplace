@@ -44,6 +44,7 @@ export const GUEST_INVALIDATION_DEBOUNCE_MS = 250;
 export const HIDDEN_TAB_DISCONNECT_MS = 30_000;
 
 const MIN_BACKOFF_MS = 1_000;
+const MAX_STREAM_FAILURES = 5;
 const MAX_BACKOFF_MS = 30_000;
 const BLOCK_END = /\r?\n\r?\n/;
 const BLOCK_END_PREFIX = /^\r?\n\r?\n/;
@@ -303,6 +304,18 @@ function connectEventSource<T>(
     return { close: () => undefined };
   }
   const source = new EventSource(url);
+  // EventSource retries forever; give up on a stream that keeps failing before it opens
+  // (unknown company or booking), so it does not spam 404s on later pages.
+  let failures = 0;
+  source.onopen = () => {
+    failures = 0;
+  };
+  source.onerror = () => {
+    failures += 1;
+    if (failures >= MAX_STREAM_FAILURES) {
+      source.close();
+    }
+  };
   source.onmessage = (message) => {
     try {
       const parsed = parse(JSON.parse(message.data) as unknown);

@@ -23,10 +23,34 @@ export function useReservation(
   options?: { poll?: boolean },
 ) {
   const queryClient = useQueryClient();
+  const query = useQuery({
+    queryKey: reservationQueryKey(token),
+    queryFn: () => reservationsApi.getByToken(token),
+    enabled: Boolean(token),
+    refetchInterval: (current) => {
+      if (!options?.poll) {
+        return false;
+      }
+
+      const reservation = current.state.data;
+      if (
+        !reservation ||
+        isReservationTerminal(reservation) ||
+        isPaymentSettled(null, reservation) ||
+        !needsOnlinePayment(reservation)
+      ) {
+        return false;
+      }
+
+      return POLL_MS;
+    },
+  });
+  // Open the live stream only for a booking that exists: a bad link must not keep retrying.
+  const found = Boolean(query.data);
 
   useEffect(() => {
     const normalized = token.trim();
-    if (!normalized) {
+    if (!normalized || !found) {
       return;
     }
     const debouncer = createInvalidationDebouncer(queryClient, {
@@ -46,28 +70,7 @@ export function useReservation(
       connection.close();
       debouncer.clear();
     };
-  }, [token, queryClient]);
+  }, [token, found, queryClient]);
 
-  return useQuery({
-    queryKey: reservationQueryKey(token),
-    queryFn: () => reservationsApi.getByToken(token),
-    enabled: Boolean(token),
-    refetchInterval: (query) => {
-      if (!options?.poll) {
-        return false;
-      }
-
-      const reservation = query.state.data;
-      if (
-        !reservation ||
-        isReservationTerminal(reservation) ||
-        isPaymentSettled(null, reservation) ||
-        !needsOnlinePayment(reservation)
-      ) {
-        return false;
-      }
-
-      return POLL_MS;
-    },
-  });
+  return query;
 }

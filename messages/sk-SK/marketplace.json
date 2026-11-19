@@ -472,7 +472,8 @@
       "confirmed": "Potvrdená",
       "active": "Aktívna — užite si cestu!",
       "completed": "Dokončená",
-      "cancelled": "Zrušená"
+      "cancelled": "Zrušená",
+      "awaitingPayment": "Čaká na platbu"
     },
     "vehicle": "Vozidlo",
     "company": "Spoločnosť",
@@ -505,18 +506,27 @@
       "partially_paid": "Čiastočne zaplatené",
       "paid": "Zaplatené",
       "refund_due": "Na vrátenie",
-      "authorized": "Karta autorizovaná"
+      "authorized": "Karta autorizovaná",
+      "nothingDue": "Nič na úhradu"
     },
     "reasons": {
       "unpaid_timeout": "Platba nebola dokončená včas",
       "request_expired": "Spoločnosť neodpovedala včas",
       "request_declined": "Spoločnosť túto žiadosť zamietla",
-      "customer_request": "Túto žiadosť ste stiahli"
+      "customer_request": "Túto žiadosť ste stiahli",
+      "customer_cancelled": "Túto rezerváciu ste zrušili"
     },
     "insurance": "Poistenie",
     "extras": "Doplnky",
     "fees": "Poplatky za vyzdvihnutie a vrátenie",
-    "priceTitle": "Súhrn ceny"
+    "priceTitle": "Súhrn ceny",
+    "pendingPaymentSubtitle": "Zaplaťte zálohu a potvrďte rezerváciu. Keď bude potvrdená, napíšeme vám na {email}.",
+    "requestSubtitle": "Žiadosť odoslaná. Podrobnosti sme poslali na {email} a dáme vám vedieť, keď firma odpovie.",
+    "cancelledSubtitle": "Táto rezervácia je zrušená.",
+    "cancelBooking": "Zrušiť rezerváciu",
+    "withdrawConfirmTitle": "Stiahnuť túto žiadosť?",
+    "cancelConfirmTitle": "Zrušiť túto rezerváciu?",
+    "withdrawConfirmBody": "Auto sa uvoľní pre ďalších zákazníkov. Túto akciu nie je možné vrátiť."
   },
   "payment": {
     "title": "Zaplatiť zálohu",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Čo používame",
-          "body": "Súbory cookie sú malé textové súbory uložené vo vašom zariadení. Táto webová stránka používa aj podobné úložiská, napríklad lokálne úložisko, na zapamätanie vašich volieb, košíka a prihlásenia."
+          "body": "Súbory cookie sú malé textové súbory uložené vo vašom zariadení. Tento web používa aj podobné úložisko, napríklad lokálne úložisko, aby si zapamätal vaše voľby a prihlásenie."
         },
         {
           "title": "Nevyhnutné súbory cookie",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Správa súborov cookie",
-          "body": "Na zmenu svojej voľby použite odkaz Nastavenia súborov cookie v pätičke. Súbory cookie a údaje stránok môžete tiež vymazať vo svojom prehliadači. Zablokovanie nevyhnutného úložiska vás môže odhlásiť alebo vyprázdniť váš košík."
+          "body": "Na zmenu svojej voľby použite odkaz Nastavenia súborov cookie v pätičke. Súbory cookie a údaje webu môžete vymazať aj v prehliadači. Zablokovanie nevyhnutného úložiska vás môže odhlásiť."
         },
         {
           "title": "Ďalšie informácie",
           "body": "Informácie o tom, ako {name} spracúva osobné údaje, nájdete v zásadách ochrany osobných údajov alebo použite kontaktné údaje v pätičke."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} zatiaľ na tomto webe nezverejnila zásady ochrany osobných údajov.",
+      "terms": "{name} zatiaľ na tomto webe nezverejnila podmienky prenájmu.",
+      "contactTitle": "Kontaktujte firmu",
+      "contactBody": "Ak chcete vedieť, ako {name} spracúva vaše osobné údaje alebo aké sú podmienky prenájmu, kontaktujte {name} prostredníctvom údajov na tomto webe. Záväzné podmienky určuje nájomná zmluva, ktorú podpíšete pri prevzatí auta."
     }
   },
   "support": {

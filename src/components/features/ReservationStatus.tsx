@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import * as Dialog from "@radix-ui/react-dialog";
 import { CalendarDays, CheckCircle2, Mail } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/Button";
@@ -29,6 +31,7 @@ import {
   canWithdrawReservation,
   needsOnlinePayment,
 } from "@/lib/guestPayment";
+import { bookingReference } from "@/lib/bookingReference";
 import { formatMoney } from "@/lib/money";
 import { localizedText } from "@/lib/localizedCopy";
 import { cn } from "@/lib/utils";
@@ -78,8 +81,10 @@ export function ReservationStatus({
   allowWithdraw = true,
 }: ReservationStatusProps) {
   const t = useTranslations("reservationStatus");
+  const tPayment = useTranslations("payment");
   const tRoot = useTranslations();
   const locale = useLocale();
+  const [confirmWithdraw, setConfirmWithdraw] = useState(false);
   const { data, isPending, isError, error, refetch } = useReservation(token, {
     poll: true,
   });
@@ -88,7 +93,11 @@ export function ReservationStatus({
   if (isPending) return <ReservationStatusSkeleton />;
 
   if (isError) {
-    if (error instanceof ApiError && error.code === "reservation.not_found") {
+    // A malformed link (400) is as unknown as a missing booking (404).
+    if (
+      error instanceof ApiError &&
+      (error.code === "reservation.not_found" || error.status === 400 || error.status === 404)
+    ) {
       return (
         <EmptyState
           icon={<CalendarDays size={40} />}
@@ -105,6 +114,12 @@ export function ReservationStatus({
 
   const total = formatMoney(data.totalPrice, data.currency, locale);
   const statusKey = STATUS_KEYS[data.status] ?? "confirmed";
+  // Request bookings wait for the company; instant bookings only wait for the advance.
+  const isRequest = Boolean(data.requestExpiresAt);
+  const isDraft = data.status === ReservationStatusEnum.DRAFT;
+  const isCancelled = data.status === ReservationStatusEnum.CANCELLED;
+  const statusLabel =
+    isDraft && !isRequest ? t("status.awaitingPayment") : t(`status.${statusKey}`);
   const companyName = data.company?.name ?? null;
   const fleetHref =
     browseHref ??
@@ -125,7 +140,9 @@ export function ReservationStatus({
     .filter(Boolean)
     .join(" · ");
   const cancelReason = data.cancelReason
-    ? KNOWN_CANCEL_REASONS.includes(
+    ? data.cancelReason === "customer_request" && !isRequest
+      ? t("reasons.customer_cancelled")
+      : KNOWN_CANCEL_REASONS.includes(
         data.cancelReason as (typeof KNOWN_CANCEL_REASONS)[number],
       )
       ? t(`reasons.${data.cancelReason}`)
@@ -136,6 +153,20 @@ export function ReservationStatus({
     : null;
   const cardAuthorized =
     data.advanceAuthorized && data.paymentStatus === PaymentStatus.UNPAID;
+  // A cancelled booking with nothing collected has nothing left to pay.
+  const nothingDue = isCancelled && data.paidAmount <= 0;
+  const subtitle = isSuccess
+    ? t("successSubtitle", { email: data.guestEmail })
+    : isCancelled
+      ? t("cancelledSubtitle")
+      : isDraft && isRequest
+        ? t("requestSubtitle", { email: data.guestEmail })
+        : isDraft
+          ? t("pendingPaymentSubtitle", { email: data.guestEmail })
+          : t("successSubtitle", { email: data.guestEmail });
+  // Only promise an email that was actually sent: confirmations and request receipts.
+  const emailSent = isSuccess || (isDraft && isRequest);
+  const withdrawLabel = isRequest ? t("withdraw") : t("cancelBooking");
 
   return (
     <div className="flex flex-col gap-6 md:gap-8">
@@ -156,14 +187,14 @@ export function ReservationStatus({
               {isSuccess ? t("successTitle") : t("title")}
             </h1>
             <p className="mt-1 text-sm [overflow-wrap:anywhere] text-muted-foreground">
-              {t("successSubtitle", { email: data.guestEmail })}
+              {subtitle}
             </p>
           </div>
         </div>
         <div className="flex flex-col rounded-xl border border-dashed border-border-strong bg-surface px-4 py-2.5 sm:items-end sm:text-right">
           <span className="text-xs text-muted-foreground">{t("reference")}</span>
           <span className="font-mono text-lg font-semibold tracking-widest text-foreground">
-            {data.token.slice(0, 8).toUpperCase()}
+            {bookingReference(data.id, data.token)}
           </span>
           <span className="text-xs text-subtle-foreground">{t("referenceHint")}</span>
         </div>
@@ -183,7 +214,7 @@ export function ReservationStatus({
               />
               <StatusBadge
                 status={data.status}
-                label={t(`status.${statusKey}`)}
+                label={statusLabel}
                 className="absolute top-4 left-4 shadow-sm"
               />
             </div>
@@ -237,9 +268,11 @@ export function ReservationStatus({
                 }
                 dot
               >
-                {cardAuthorized
-                  ? t("payment.authorized")
-                  : t(`payment.${data.paymentStatus}`)}
+                {nothingDue
+                  ? t("payment.nothingDue")
+                  : cardAuthorized
+                    ? t("payment.authorized")
+                    : t(`payment.${data.paymentStatus}`)}
               </Badge>
             </div>
             {data.priceBreakdown && data.priceBreakdown.segments.length > 0 ? (
@@ -298,13 +331,9 @@ export function ReservationStatus({
               <Button
                 variant="danger"
                 isLoading={withdraw.isPending}
-                onClick={() => {
-                  void withdraw.mutateAsync().catch((withdrawError) => {
-                    toast.error(tRoot(getErrorKey(withdrawError)));
-                  });
-                }}
+                onClick={() => setConfirmWithdraw(true)}
               >
-                {t("withdraw")}
+                {withdrawLabel}
               </Button>
             ) : null}
             {canSelfServeCancel(data) ? <GuestCancellationPanel token={token} /> : null}
@@ -320,10 +349,12 @@ export function ReservationStatus({
         <section className="flex flex-col gap-4 rounded-2xl border border-border bg-surface-muted/60 p-5 lg:col-start-1">
           <h2 className="text-sm font-semibold text-foreground">{t("nextTitle")}</h2>
           <ol className="flex flex-col gap-3">
-            <li className="flex items-start gap-3 text-sm text-muted-foreground">
-              <Mail size={16} className="mt-0.5 shrink-0 text-primary" aria-hidden />
-              <span>{t("nextEmail", { email: data.guestEmail })}</span>
-            </li>
+            {emailSent ? (
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <Mail size={16} className="mt-0.5 shrink-0 text-primary" aria-hidden />
+                <span>{t("nextEmail", { email: data.guestEmail })}</span>
+              </li>
+            ) : null}
             <li className="flex items-start gap-3 text-sm text-muted-foreground">
               <CalendarDays size={16} className="mt-0.5 shrink-0 text-primary" aria-hidden />
               <span>{t("nextPickup")}</span>
@@ -332,6 +363,50 @@ export function ReservationStatus({
           <p className="text-xs text-subtle-foreground">{t("trustCopy")}</p>
         </section>
       </div>
+      <Dialog.Root open={confirmWithdraw} onOpenChange={setConfirmWithdraw}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 z-[70] bg-foreground/40" />
+          <Dialog.Content
+            className={cn(
+              "fixed top-1/2 left-1/2 z-[70] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2",
+              "rounded-2xl border border-border bg-surface p-5 shadow-md outline-none sm:p-6",
+            )}
+          >
+            <Dialog.Title className="text-base font-semibold text-foreground sm:text-lg">
+              {isRequest ? t("withdrawConfirmTitle") : t("cancelConfirmTitle")}
+            </Dialog.Title>
+            <Dialog.Description className="mt-2 text-sm text-muted-foreground">
+              {t("withdrawConfirmBody")}
+            </Dialog.Description>
+            <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+              <Button
+                type="button"
+                variant="secondary"
+                className="h-11 w-full sm:w-auto"
+                onClick={() => setConfirmWithdraw(false)}
+              >
+                {tPayment("keepBooking")}
+              </Button>
+              <Button
+                type="button"
+                variant="danger"
+                className="h-11 w-full sm:w-auto"
+                isLoading={withdraw.isPending}
+                onClick={() => {
+                  void withdraw
+                    .mutateAsync()
+                    .then(() => setConfirmWithdraw(false))
+                    .catch((withdrawError) => {
+                      toast.error(tRoot(getErrorKey(withdrawError)));
+                    });
+                }}
+              >
+                {isRequest ? t("withdraw") : tPayment("confirmCancel")}
+              </Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </div>
   );
 }

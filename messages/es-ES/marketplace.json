@@ -472,7 +472,8 @@
       "confirmed": "Confirmada",
       "active": "Activa — ¡disfruta del viaje!",
       "completed": "Completada",
-      "cancelled": "Cancelada"
+      "cancelled": "Cancelada",
+      "awaitingPayment": "Pendiente de pago"
     },
     "vehicle": "Vehículo",
     "company": "Empresa",
@@ -505,18 +506,27 @@
       "partially_paid": "Pago parcial",
       "paid": "Pagado",
       "refund_due": "Reembolso pendiente",
-      "authorized": "Tarjeta autorizada"
+      "authorized": "Tarjeta autorizada",
+      "nothingDue": "Nada que pagar"
     },
     "reasons": {
       "unpaid_timeout": "El pago no se completó a tiempo",
       "request_expired": "La empresa no respondió a tiempo",
       "request_declined": "La empresa rechazó esta solicitud",
-      "customer_request": "Has retirado esta solicitud"
+      "customer_request": "Has retirado esta solicitud",
+      "customer_cancelled": "Cancelaste esta reserva"
     },
     "insurance": "Seguro",
     "extras": "Extras",
     "fees": "Cargos de recogida y devolución",
-    "priceTitle": "Resumen del precio"
+    "priceTitle": "Resumen del precio",
+    "pendingPaymentSubtitle": "Paga el anticipo para confirmar tu reserva. Te escribiremos a {email} cuando esté confirmada.",
+    "requestSubtitle": "Solicitud enviada. Te hemos enviado los detalles a {email} y te avisaremos cuando la empresa responda.",
+    "cancelledSubtitle": "Esta reserva está cancelada.",
+    "cancelBooking": "Cancelar reserva",
+    "withdrawConfirmTitle": "¿Retirar esta solicitud?",
+    "cancelConfirmTitle": "¿Cancelar esta reserva?",
+    "withdrawConfirmBody": "El coche quedará libre para otros clientes. No se puede deshacer."
   },
   "payment": {
     "title": "Paga el anticipo",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Qué usamos",
-          "body": "Las cookies son pequeños archivos de texto que se guardan en tu dispositivo. Este sitio también usa almacenamiento similar, como el almacenamiento local, para recordar tus preferencias, tu carrito y tu sesión."
+          "body": "Las cookies son pequeños archivos de texto que se guardan en tu dispositivo. Este sitio también usa almacenamiento similar, como el almacenamiento local, para recordar tus preferencias y tu sesión."
         },
         {
           "title": "Estrictamente necesarias",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Gestionar las cookies",
-          "body": "Usa el enlace de configuración de cookies del pie de página para cambiar tu elección. También puedes borrar las cookies y los datos del sitio desde tu navegador. Bloquear el almacenamiento estrictamente necesario puede cerrar tu sesión o vaciar tu carrito."
+          "body": "Usa el enlace de configuración de cookies del pie de página para cambiar tu elección. También puedes borrar las cookies y los datos del sitio desde tu navegador. Bloquear el almacenamiento estrictamente necesario puede cerrar tu sesión."
         },
         {
           "title": "Más información",
           "body": "Consulta la política de privacidad para saber cómo {name} trata los datos personales, o usa los datos de contacto del pie de página."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} todavía no ha publicado su política de privacidad en esta web.",
+      "terms": "{name} todavía no ha publicado sus condiciones de alquiler en esta web.",
+      "contactTitle": "Contacta con la empresa",
+      "contactBody": "Para saber cómo trata {name} tus datos personales o cuáles son las condiciones del alquiler, contacta con {name} con los datos de esta web. El contrato de alquiler que firmas en la recogida fija las condiciones vinculantes."
     }
   },
   "support": {

@@ -472,7 +472,8 @@
       "confirmed": "Vahvistettu",
       "active": "Käynnissä — hyvää matkaa!",
       "completed": "Valmis",
-      "cancelled": "Peruutettu"
+      "cancelled": "Peruutettu",
+      "awaitingPayment": "Odottaa maksua"
     },
     "vehicle": "Ajoneuvo",
     "company": "Yritys",
@@ -505,18 +506,27 @@
       "partially_paid": "Osittain maksettu",
       "paid": "Maksettu",
       "refund_due": "Hyvitys tulossa",
-      "authorized": "Kortti varmennettu"
+      "authorized": "Kortti varmennettu",
+      "nothingDue": "Ei maksettavaa"
     },
     "reasons": {
       "unpaid_timeout": "Maksua ei suoritettu ajoissa",
       "request_expired": "Yritys ei vastannut ajoissa",
       "request_declined": "Yritys hylkäsi tämän pyynnön",
-      "customer_request": "Peruutit tämän pyynnön"
+      "customer_request": "Peruutit tämän pyynnön",
+      "customer_cancelled": "Peruit tämän varauksen"
     },
     "insurance": "Vakuutus",
     "extras": "Lisäpalvelut",
     "fees": "Nouto- ja palautusmaksut",
-    "priceTitle": "Hintayhteenveto"
+    "priceTitle": "Hintayhteenveto",
+    "pendingPaymentSubtitle": "Maksa ennakkomaksu vahvistaaksesi varauksen. Lähetämme viestin osoitteeseen {email}, kun varaus on vahvistettu.",
+    "requestSubtitle": "Pyyntö lähetetty. Lähetimme tiedot osoitteeseen {email} ja kerromme, kun yritys vastaa.",
+    "cancelledSubtitle": "Tämä varaus on peruttu.",
+    "cancelBooking": "Peru varaus",
+    "withdrawConfirmTitle": "Peruutetaanko tämä pyyntö?",
+    "cancelConfirmTitle": "Perutaanko tämä varaus?",
+    "withdrawConfirmBody": "Auto vapautuu muille asiakkaille. Tätä ei voi perua."
   },
   "payment": {
     "title": "Maksa ennakkomaksu",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Mitä käytämme",
-          "body": "Evästeet ovat pieniä tekstitiedostoja, jotka tallennetaan laitteellesi. Tämä sivusto käyttää myös vastaavaa tallennustilaa, kuten paikallista tallennustilaa (local storage), muistaakseen valintasi, ostoskorisi ja kirjautumisesi."
+          "body": "Evästeet ovat pieniä tekstitiedostoja, jotka tallennetaan laitteellesi. Sivusto käyttää myös vastaavaa tallennustilaa, kuten paikallista tallennustilaa, muistaakseen valintasi ja kirjautumisesi."
         },
         {
           "title": "Välttämättömät evästeet",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Evästeiden hallinta",
-          "body": "Voit muuttaa valintaasi alatunnisteen evästeasetuslinkistä. Voit myös poistaa evästeet ja sivustotiedot selaimestasi. Välttämättömän tallennustilan estäminen voi kirjata sinut ulos tai tyhjentää ostoskorisi."
+          "body": "Voit muuttaa valintaasi alatunnisteen evästeasetuslinkistä. Voit myös poistaa evästeet ja sivuston tiedot selaimessasi. Välttämättömän tallennuksen estäminen voi kirjata sinut ulos."
         },
         {
           "title": "Lisätietoja",
           "body": "Katso tietosuojaselosteesta, miten {name} käsittelee henkilötietoja, tai käytä alatunnisteen yhteystietoja."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} ei ole vielä julkaissut tietosuojakäytäntöään tällä sivustolla.",
+      "terms": "{name} ei ole vielä julkaissut vuokraehtojaan tällä sivustolla.",
+      "contactTitle": "Ota yhteyttä yritykseen",
+      "contactBody": "Jos haluat tietää, miten {name} käsittelee henkilötietojasi tai mitkä vuokraehdot ovat voimassa, ota yhteyttä yritykseen {name} tämän sivuston yhteystiedoilla. Noudon yhteydessä allekirjoitettava vuokrasopimus määrää sitovat ehdot."
     }
   },
   "support": {

@@ -472,7 +472,8 @@
       "confirmed": "Potvrzeno",
       "active": "Aktivní — šťastnou cestu!",
       "completed": "Dokončeno",
-      "cancelled": "Zrušeno"
+      "cancelled": "Zrušeno",
+      "awaitingPayment": "Čeká na platbu"
     },
     "vehicle": "Vozidlo",
     "company": "Společnost",
@@ -505,18 +506,27 @@
       "partially_paid": "Částečně zaplaceno",
       "paid": "Zaplaceno",
       "refund_due": "K vrácení peněz",
-      "authorized": "Karta autorizována"
+      "authorized": "Karta autorizována",
+      "nothingDue": "Nic k úhradě"
     },
     "reasons": {
       "unpaid_timeout": "Platba nebyla dokončena včas",
       "request_expired": "Společnost neodpověděla včas",
       "request_declined": "Společnost tuto žádost odmítla",
-      "customer_request": "Tuto žádost jste zrušili"
+      "customer_request": "Tuto žádost jste zrušili",
+      "customer_cancelled": "Tuto rezervaci jste zrušili"
     },
     "insurance": "Pojištění",
     "extras": "Doplňky",
     "fees": "Poplatky za vyzvednutí a vrácení",
-    "priceTitle": "Přehled ceny"
+    "priceTitle": "Přehled ceny",
+    "pendingPaymentSubtitle": "Zaplaťte zálohu a potvrďte rezervaci. Jakmile bude potvrzena, napíšeme vám na {email}.",
+    "requestSubtitle": "Žádost odeslána. Podrobnosti jsme poslali na {email} a dáme vám vědět, až firma odpoví.",
+    "cancelledSubtitle": "Tato rezervace je zrušena.",
+    "cancelBooking": "Zrušit rezervaci",
+    "withdrawConfirmTitle": "Stáhnout tuto žádost?",
+    "cancelConfirmTitle": "Zrušit tuto rezervaci?",
+    "withdrawConfirmBody": "Vůz se uvolní pro další zákazníky. Tuto akci nelze vrátit."
   },
   "payment": {
     "title": "Zaplaťte zálohu",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Co používáme",
-          "body": "Cookies jsou malé textové soubory ukládané ve vašem zařízení. Tento web používá také obdobná úložiště, například místní úložiště (local storage), aby si pamatoval vaše volby, košík a přihlášení."
+          "body": "Cookies jsou malé textové soubory ukládané do vašeho zařízení. Tento web také používá podobné úložiště, například místní úložiště, aby si pamatoval vaše volby a přihlášení."
         },
         {
           "title": "Nezbytně nutné",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Správa cookies",
-          "body": "Svou volbu můžete změnit pomocí odkazu Nastavení cookies v patičce. Cookies a data webu můžete také smazat ve svém prohlížeči. Zablokování nezbytně nutného úložiště vás může odhlásit nebo vyprázdnit váš košík."
+          "body": "Svou volbu můžete změnit pomocí odkazu Nastavení cookies v patičce. Cookies a data webu můžete také smazat v prohlížeči. Zablokování nezbytného úložiště vás může odhlásit."
         },
         {
           "title": "Další informace",
           "body": "Podívejte se na zásady ochrany osobních údajů, kde najdete podrobnosti o tom, jak {name} nakládá s osobními údaji, nebo využijte kontaktní údaje v patičce."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} zatím na tomto webu nezveřejnila zásady ochrany osobních údajů.",
+      "terms": "{name} zatím na tomto webu nezveřejnila podmínky pronájmu.",
+      "contactTitle": "Kontaktujte firmu",
+      "contactBody": "Chcete-li vědět, jak {name} zpracovává vaše osobní údaje nebo jaké jsou podmínky pronájmu, kontaktujte {name} pomocí údajů na tomto webu. Závazné podmínky stanoví nájemní smlouva, kterou podepíšete při převzetí vozu."
     }
   },
   "support": {

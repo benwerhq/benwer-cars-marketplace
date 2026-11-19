@@ -6,6 +6,7 @@ import {
 import { companyLogoPair } from "@/lib/companyLogos";
 import { isHexColor } from "@/lib/hexColor";
 import type { Company, LogoPair } from "@/types/company";
+import type { PublicSite } from "@/types/site";
 import {
   SiteBannerPreset,
   SiteBannerTarget,
@@ -570,6 +571,28 @@ export function siteHeaderProps(
     brandColor: content.brandColor || company.branding.primaryColor,
     ...siteHeaderLogos(content, company.branding),
   };
+}
+
+/** Section links shown in the company-site header. */
+export const SITE_HEADER_NAV_SECTIONS: readonly SiteSectionId[] = [
+  SiteSectionId.REVIEWS,
+  SiteSectionId.BRANCHES,
+  SiteSectionId.FAQ,
+  SiteSectionId.CONTACT,
+];
+
+/** Header links and phone, identical on every company-site page (home, search, car, booking, legal). */
+export function siteHeaderNav(
+  site: Pick<PublicSite, "content" | "branches" | "showPhone" | "showEmail" | "company">,
+): { sections: SiteSectionId[]; phone: string | null } {
+  const phone = site.showPhone ? site.company.phone : null;
+  const email = site.showEmail ? site.company.email : null;
+  const sections = visibleSections(site.content, {
+    branchCount: site.branches.length,
+    hasPhone: Boolean(phone),
+    hasEmail: Boolean(email),
+  }).filter((id) => SITE_HEADER_NAV_SECTIONS.includes(id));
+  return { sections, phone };
 }
 
 export function siteCompanyLogos(

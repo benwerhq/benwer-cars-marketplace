@@ -3,7 +3,6 @@ import { ColorSchemeSwitcher } from "./ColorSchemeSwitcher";
 import { GuestNotificationBell } from "./GuestNotificationBell";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { SiteGuestLink, SiteOwnerMenu } from "./SiteGuestLink";
-import { SiteCartLink } from "./SiteCartLink";
 import { SiteHeaderMark } from "./SiteHeaderMark";
 import { SiteHeaderShell } from "./SiteHeaderShell";
 import { SiteMobileMenu, SiteNav } from "./SiteNav";
@@ -19,7 +18,8 @@ interface SiteHeaderProps {
   fleetHref: string;
   sections?: SiteSectionId[];
   phone?: string | null;
-  cartSlug?: string;
+  /** Company site slug; scopes guest notification links to this site. */
+  siteSlug?: string;
   className?: string;
 }
 
@@ -33,7 +33,7 @@ export async function SiteHeader({
   fleetHref,
   sections,
   phone,
-  cartSlug,
+  siteSlug,
   className,
 }: SiteHeaderProps) {
   const t = await getTranslations("site");
@@ -49,7 +49,6 @@ export async function SiteHeader({
           fleetHref={fleetHref}
           sections={sections}
           phone={phone}
-          cartSlug={cartSlug}
         />
       }
       brand={
@@ -70,9 +69,8 @@ export async function SiteHeader({
       </SiteNav>
       <ColorSchemeSwitcher />
       <LocaleSwitcher />
-      <GuestNotificationBell siteSlug={cartSlug} />
+      <GuestNotificationBell siteSlug={siteSlug} />
       <SiteOwnerMenu homeHref={homeHref} />
-      {cartSlug ? <SiteCartLink slug={cartSlug} homeHref={homeHref} /> : null}
     </SiteHeaderShell>
   );
 }

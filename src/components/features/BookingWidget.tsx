@@ -1,15 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { ArrowUpRight, Check, ShoppingCart } from "lucide-react";
-import { toast } from "sonner";
+import { ArrowUpRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { CompanyHandoffDialog } from "@/components/features/CompanyHandoffDialog";
 import { Button } from "@/components/ui/Button";
 import { buildBookHref } from "@/lib/booking";
-import { addToCart, CART_MAX_ITEMS } from "@/lib/cart";
 import { buildCompanySiteHref } from "@/lib/companySite";
 import { countRentalDays, formatLongDate, parseIsoDate } from "@/lib/dates";
 import { formatMoney } from "@/lib/money";
@@ -33,16 +30,6 @@ interface BookingWidgetProps {
   bookingsEnabled?: boolean;
   bookHrefOverride?: string | null;
   requestMode?: boolean;
-  cart?: CarCartContext | null;
-}
-
-/** What the car page knows to put a car in the company site's cart. */
-export interface CarCartContext {
-  slug: string;
-  href: string;
-  branch?: string;
-  returnBranch?: string;
-  driverAge?: string;
 }
 
 export function BookingWidget({
@@ -60,21 +47,9 @@ export function BookingWidget({
   bookingsEnabled = true,
   bookHrefOverride,
   requestMode = false,
-  cart = null,
 }: BookingWidgetProps) {
   const t = useTranslations("booking");
-  const tCart = useTranslations("cart");
-  const [justAdded, setJustAdded] = useState(false);
   const [handoffOpen, setHandoffOpen] = useState(false);
-
-  useEffect(() => {
-    if (!justAdded) {
-      return;
-    }
-    const timer = window.setTimeout(() => setJustAdded(false), 2500);
-    return () => window.clearTimeout(timer);
-  }, [justAdded]);
-  const router = useRouter();
   const tCars = useTranslations("cars");
   const tDetail = useTranslations("carDetail");
   const locale = useLocale();
@@ -119,30 +94,6 @@ export function BookingWidget({
     : isTenant
       ? tenantBookHref
       : handoffHref;
-  const canAddToCart = Boolean(cart) && isTenant && bookingsEnabled && canBook;
-
-  function handleAddToCart() {
-    if (!cart || !canAddToCart) {
-      return;
-    }
-    const added = addToCart(cart.slug, {
-      vehicleId: vehicle.id,
-      from,
-      to,
-      branch: cart.branch,
-      returnBranch: cart.returnBranch,
-      driverAge: cart.driverAge,
-    });
-    if (!added) {
-      toast.error(tCart("full", { max: CART_MAX_ITEMS }));
-      return;
-    }
-    setJustAdded(true);
-    toast.success(tCart("added"), {
-      action: { label: tCart("view"), onClick: () => router.push(cart.href) },
-    });
-  }
-
   const priceFormatted = formatMoney(
     dailyRate,
     vehicle.currency,
@@ -226,22 +177,6 @@ export function BookingWidget({
           onConfirm={!isTenant && bookHref ? () => setHandoffOpen(true) : undefined}
           className="hidden lg:inline-flex"
         />
-        {cart && isTenant && bookingsEnabled ? (
-          <Button
-            type="button"
-            variant="secondary"
-            disabled={!canAddToCart}
-            onClick={handleAddToCart}
-            className="hidden h-11 w-full lg:inline-flex"
-          >
-            {justAdded ? (
-              <Check size={16} aria-hidden />
-            ) : (
-              <ShoppingCart size={16} aria-hidden />
-            )}
-            <span aria-live="polite">{justAdded ? tCart("added") : tCart("add")}</span>
-          </Button>
-        ) : null}
       </div>
 
       <div
@@ -261,22 +196,6 @@ export function BookingWidget({
                 : tCars("perDay", { price: priceFormatted })}
             </p>
           </div>
-          {cart && isTenant && bookingsEnabled ? (
-            <Button
-              type="button"
-              variant="secondary"
-              disabled={!canAddToCart}
-              onClick={handleAddToCart}
-              aria-label={justAdded ? tCart("added") : tCart("add")}
-              className="h-11 w-11 shrink-0 px-0"
-            >
-              {justAdded ? (
-                <Check size={18} aria-hidden />
-              ) : (
-                <ShoppingCart size={18} aria-hidden />
-              )}
-            </Button>
-          ) : null}
           <BookingCta
             href={bookHref}
             label={ctaLabel}

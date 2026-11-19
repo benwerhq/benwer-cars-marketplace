@@ -472,7 +472,8 @@
       "confirmed": "Confirmed",
       "active": "Active — enjoy your trip!",
       "completed": "Completed",
-      "cancelled": "Cancelled"
+      "cancelled": "Cancelled",
+      "awaitingPayment": "Awaiting payment"
     },
     "vehicle": "Vehicle",
     "company": "Company",
@@ -505,18 +506,27 @@
       "partially_paid": "Partially paid",
       "paid": "Paid",
       "refund_due": "Refund due",
-      "authorized": "Card authorized"
+      "authorized": "Card authorized",
+      "nothingDue": "Nothing to pay"
     },
     "reasons": {
       "unpaid_timeout": "Payment was not completed in time",
       "request_expired": "The company did not answer in time",
       "request_declined": "The company declined this request",
-      "customer_request": "You withdrew this request"
+      "customer_request": "You withdrew this request",
+      "customer_cancelled": "You cancelled this booking"
     },
     "insurance": "Insurance",
     "extras": "Extras",
     "fees": "Pickup and return fees",
-    "priceTitle": "Price summary"
+    "priceTitle": "Price summary",
+    "pendingPaymentSubtitle": "Pay the advance to confirm your booking. We'll email {email} once it's confirmed.",
+    "requestSubtitle": "Request sent. We've emailed the details to {email} and will let you know when the company replies.",
+    "cancelledSubtitle": "This booking is cancelled.",
+    "cancelBooking": "Cancel booking",
+    "withdrawConfirmTitle": "Withdraw this request?",
+    "cancelConfirmTitle": "Cancel this booking?",
+    "withdrawConfirmBody": "The car will be released for other guests. This can't be undone."
   },
   "payment": {
     "title": "Pay the advance",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "What we use",
-          "body": "Cookies are small text files stored on your device. This website also uses similar storage, such as local storage, to remember your choices, your cart and your sign-in."
+          "body": "Cookies are small text files stored on your device. This website also uses similar storage, such as local storage, to remember your choices and your sign-in."
         },
         {
           "title": "Strictly necessary",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Managing cookies",
-          "body": "Use the cookie settings link in the footer to change your choice. You can also delete cookies and site data in your browser. Blocking strictly necessary storage may sign you out or empty your cart."
+          "body": "Use the cookie settings link in the footer to change your choice. You can also delete cookies and site data in your browser. Blocking strictly necessary storage may sign you out."
         },
         {
           "title": "More information",
           "body": "See the privacy policy for how {name} handles personal data, or use the contact details in the footer."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} hasn't published its privacy policy on this website yet.",
+      "terms": "{name} hasn't published its rental terms on this website yet.",
+      "contactTitle": "Contact the company",
+      "contactBody": "For how {name} handles your personal data or for the conditions of your rental, contact {name} using the details on this website. The rental agreement you sign at pick-up sets the binding terms."
     }
   },
   "support": {

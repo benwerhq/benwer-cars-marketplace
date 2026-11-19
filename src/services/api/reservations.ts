@@ -28,6 +28,10 @@ function reservationBody(payload: CreateGuestReservationPayload) {
     ...(payload.acceptTerms !== undefined
       ? { acceptTerms: payload.acceptTerms }
       : {}),
+    // The page language, so the company emails the guest in the language they booked in.
+    ...(typeof document !== "undefined" && document.documentElement.lang
+      ? { locale: document.documentElement.lang }
+      : {}),
   };
 }
 

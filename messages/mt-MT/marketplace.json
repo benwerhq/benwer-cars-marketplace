@@ -472,7 +472,8 @@
       "confirmed": "Ikkonfermata",
       "active": "Attiva — igawdi l-vjaġġ tiegħek!",
       "completed": "Mitmuma",
-      "cancelled": "Ikkanċellata"
+      "cancelled": "Ikkanċellata",
+      "awaitingPayment": "Qed jistenna l-ħlas"
     },
     "vehicle": "Vettura",
     "company": "Kumpanija",
@@ -505,18 +506,27 @@
       "partially_paid": "Imħallas parzjalment",
       "paid": "Imħallas",
       "refund_due": "Rifużjoni dovuta",
-      "authorized": "Kard awtorizzata"
+      "authorized": "Kard awtorizzata",
+      "nothingDue": "Xejn x’tħallas"
     },
     "reasons": {
       "unpaid_timeout": "Il-ħlas ma tlestiex fil-ħin",
       "request_expired": "Il-kumpanija ma wiġbitx fil-ħin",
       "request_declined": "Il-kumpanija rrifjutat din it-talba",
-      "customer_request": "Int irtirajt din it-talba"
+      "customer_request": "Int irtirajt din it-talba",
+      "customer_cancelled": "Ikkanċellajt dan il-booking"
     },
     "insurance": "Assigurazzjoni",
     "extras": "Extras",
     "fees": "Tariffi tal-ġbir u r-ritorn",
-    "priceTitle": "Sommarju tal-prezz"
+    "priceTitle": "Sommarju tal-prezz",
+    "pendingPaymentSubtitle": "Ħallas id-depożitu biex tikkonferma l-booking. Niktbulek fuq {email} ladarba jiġi kkonfermat.",
+    "requestSubtitle": "It-talba ntbagħtet. Bgħatna d-dettalji lil {email} u ngħarrfuk meta l-kumpanija twieġeb.",
+    "cancelledSubtitle": "Dan il-booking ġie kkanċellat.",
+    "cancelBooking": "Ikkanċella l-booking",
+    "withdrawConfirmTitle": "Tirtira din it-talba?",
+    "cancelConfirmTitle": "Tikkanċella dan il-booking?",
+    "withdrawConfirmBody": "Il-karozza tinħeles għal klijenti oħra. Dan ma jistax jitreġġa’ lura."
   },
   "payment": {
     "title": "Ħallas il-ħlas bil-quddiem",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "X'nużaw",
-          "body": "Il-cookies huma fajls żgħar ta' test maħżuna fuq it-tagħmir tiegħek. Dan is-sit web juża wkoll ħażna simili, bħal ħażna lokali, biex jiftakar l-għażliet tiegħek, il-karrettun tiegħek u d-dħul tiegħek."
+          "body": "Il-cookies huma fajls żgħar tat-test maħżuna fuq l-apparat tiegħek. Dan is-sit juża wkoll ħżin simili, bħall-ħżin lokali, biex jiftakar l-għażliet tiegħek u l-login tiegħek."
         },
         {
           "title": "Strettament meħtieġa",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Ġestjoni tal-cookies",
-          "body": "Uża l-link tas-settings tal-cookies fil-qiegħ tas-sit biex tibdel l-għażla tiegħek. Tista' wkoll tħassar il-cookies u d-data tas-sit fil-browser tiegħek. L-imblukkar tal-ħażna strettament meħtieġa jista' joħorġok mill-kont jew ibattal il-karrettun tiegħek."
+          "body": "Uża l-link tas-settings tal-cookies fil-qiegħ tas-sit biex tibdel l-għażla tiegħek. Tista’ wkoll tħassar il-cookies u d-dejta tas-sit mill-browser tiegħek. Jekk timblokka l-ħżin strettament meħtieġ, tista’ tiġi lloggjat ’il barra."
         },
         {
           "title": "Aktar informazzjoni",
           "body": "Ara l-politika tal-privatezza għal kif {name} tittratta d-data personali, jew uża d-dettalji ta' kuntatt fil-qiegħ tas-sit."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} għadha ma ppubblikatx il-politika tal-privatezza tagħha fuq dan is-sit.",
+      "terms": "{name} għadha ma ppubblikatx it-termini tal-kiri tagħha fuq dan is-sit.",
+      "contactTitle": "Ikkuntattja lill-kumpanija",
+      "contactBody": "Biex tkun taf kif {name} tittratta d-dejta personali tiegħek jew x’inhuma l-kundizzjonijiet tal-kiri, ikkuntattja lil {name} permezz tad-dettalji fuq dan is-sit. It-termini vinkolanti huma stabbiliti mill-ftehim tal-kiri li tiffirma meta tiġbor il-karozza."
     }
   },
   "support": {

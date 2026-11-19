@@ -472,7 +472,8 @@
       "confirmed": "Bevestigd",
       "active": "Actief — fijne reis!",
       "completed": "Afgerond",
-      "cancelled": "Geannuleerd"
+      "cancelled": "Geannuleerd",
+      "awaitingPayment": "Wacht op betaling"
     },
     "vehicle": "Voertuig",
     "company": "Bedrijf",
@@ -505,18 +506,27 @@
       "partially_paid": "Deels betaald",
       "paid": "Betaald",
       "refund_due": "Terugbetaling verschuldigd",
-      "authorized": "Kaart geautoriseerd"
+      "authorized": "Kaart geautoriseerd",
+      "nothingDue": "Niets te betalen"
     },
     "reasons": {
       "unpaid_timeout": "De betaling is niet op tijd afgerond",
       "request_expired": "Het bedrijf heeft niet op tijd gereageerd",
       "request_declined": "Het bedrijf heeft deze aanvraag afgewezen",
-      "customer_request": "Je hebt deze aanvraag ingetrokken"
+      "customer_request": "Je hebt deze aanvraag ingetrokken",
+      "customer_cancelled": "Je hebt deze boeking geannuleerd"
     },
     "insurance": "Verzekering",
     "extras": "Extra's",
     "fees": "Ophaal- en inlevertoeslagen",
-    "priceTitle": "Prijsoverzicht"
+    "priceTitle": "Prijsoverzicht",
+    "pendingPaymentSubtitle": "Betaal de aanbetaling om je boeking te bevestigen. We mailen je op {email} zodra die bevestigd is.",
+    "requestSubtitle": "Aanvraag verstuurd. We hebben de details naar {email} gestuurd en laten je weten wanneer het bedrijf reageert.",
+    "cancelledSubtitle": "Deze boeking is geannuleerd.",
+    "cancelBooking": "Boeking annuleren",
+    "withdrawConfirmTitle": "Deze aanvraag intrekken?",
+    "cancelConfirmTitle": "Deze boeking annuleren?",
+    "withdrawConfirmBody": "De auto komt weer vrij voor andere gasten. Dit kan niet ongedaan worden gemaakt."
   },
   "payment": {
     "title": "Betaal het voorschot",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Wat wij gebruiken",
-          "body": "Cookies zijn kleine tekstbestanden die op je apparaat worden opgeslagen. Deze website gebruikt ook vergelijkbare opslag, zoals local storage, om je keuzes, winkelwagen en inlogsessie te onthouden."
+          "body": "Cookies zijn kleine tekstbestanden die op je apparaat worden opgeslagen. Deze website gebruikt ook vergelijkbare opslag, zoals lokale opslag, om je keuzes en je aanmelding te onthouden."
         },
         {
           "title": "Strikt noodzakelijk",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Cookies beheren",
-          "body": "Gebruik de link voor cookie-instellingen in de voettekst om je keuze te wijzigen. Je kunt cookies en sitegegevens ook verwijderen in je browser. Het blokkeren van strikt noodzakelijke opslag kan je uitloggen of je winkelwagen leegmaken."
+          "body": "Gebruik de link voor cookie-instellingen in de voettekst om je keuze te wijzigen. Je kunt cookies en sitegegevens ook in je browser verwijderen. Als je strikt noodzakelijke opslag blokkeert, word je mogelijk afgemeld."
         },
         {
           "title": "Meer informatie",
           "body": "Bekijk het privacybeleid voor hoe {name} met persoonsgegevens omgaat, of gebruik de contactgegevens in de voettekst."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} heeft nog geen privacybeleid op deze website gepubliceerd.",
+      "terms": "{name} heeft nog geen huurvoorwaarden op deze website gepubliceerd.",
+      "contactTitle": "Neem contact op met het bedrijf",
+      "contactBody": "Wil je weten hoe {name} met je persoonsgegevens omgaat of welke huurvoorwaarden gelden? Neem contact op met {name} via de gegevens op deze website. De huurovereenkomst die je bij het ophalen tekent, bepaalt de bindende voorwaarden."
     }
   },
   "support": {

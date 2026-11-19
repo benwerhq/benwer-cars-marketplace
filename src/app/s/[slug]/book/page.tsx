@@ -27,7 +27,7 @@ import {
   siteBookingBasePath,
 } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
-import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderNav, siteHeaderProps } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -105,8 +105,9 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       <>
         <SiteHeader
           {...siteHeaderProps(site.content, site.company)}
+          {...siteHeaderNav(site)}
           homeHref={homeHref}
-          cartSlug={slug}
+          siteSlug={slug}
           fleetHref={`${homeHref}#fleet`}
         />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
@@ -131,8 +132,9 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       <>
         <SiteHeader
           {...siteHeaderProps(site.content, site.company)}
+          {...siteHeaderNav(site)}
           homeHref={homeHref}
-          cartSlug={slug}
+          siteSlug={slug}
           fleetHref={`${homeHref}#fleet`}
         />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
@@ -155,8 +157,9 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
       <>
         <SiteHeader
           {...siteHeaderProps(site.content, site.company)}
+          {...siteHeaderNav(site)}
           homeHref={homeHref}
-          cartSlug={slug}
+          siteSlug={slug}
           fleetHref={`${homeHref}#fleet`}
         />
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
@@ -198,8 +201,9 @@ async function CompanySiteBookPage({ params, searchParams }: Props) {
     <>
       <SiteHeader
         {...siteHeaderProps(site.content, site.company)}
+        {...siteHeaderNav(site)}
         homeHref={homeHref}
-        cartSlug={slug}
+        siteSlug={slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 pb-28 md:px-6 lg:px-8 lg:pb-16">

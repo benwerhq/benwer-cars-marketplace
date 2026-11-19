@@ -472,7 +472,8 @@
       "confirmed": "Confirmée",
       "active": "En cours — bon voyage !",
       "completed": "Terminée",
-      "cancelled": "Annulée"
+      "cancelled": "Annulée",
+      "awaitingPayment": "En attente de paiement"
     },
     "vehicle": "Véhicule",
     "company": "Entreprise",
@@ -505,18 +506,27 @@
       "partially_paid": "Partiellement payé",
       "paid": "Payé",
       "refund_due": "Remboursement dû",
-      "authorized": "Carte autorisée"
+      "authorized": "Carte autorisée",
+      "nothingDue": "Rien à payer"
     },
     "reasons": {
       "unpaid_timeout": "Le paiement n'a pas été effectué à temps",
       "request_expired": "L'entreprise n'a pas répondu à temps",
       "request_declined": "L'entreprise a refusé cette demande",
-      "customer_request": "Vous avez retiré cette demande"
+      "customer_request": "Vous avez retiré cette demande",
+      "customer_cancelled": "Vous avez annulé cette réservation"
     },
     "insurance": "Assurance",
     "extras": "Options",
     "fees": "Frais de prise en charge et de restitution",
-    "priceTitle": "Récapitulatif du prix"
+    "priceTitle": "Récapitulatif du prix",
+    "pendingPaymentSubtitle": "Payez l’acompte pour confirmer votre réservation. Nous vous écrirons à {email} dès qu’elle sera confirmée.",
+    "requestSubtitle": "Demande envoyée. Nous avons envoyé les détails à {email} et vous préviendrons dès que l’entreprise répondra.",
+    "cancelledSubtitle": "Cette réservation est annulée.",
+    "cancelBooking": "Annuler la réservation",
+    "withdrawConfirmTitle": "Retirer cette demande ?",
+    "cancelConfirmTitle": "Annuler cette réservation ?",
+    "withdrawConfirmBody": "La voiture sera libérée pour d’autres clients. Cette action est irréversible."
   },
   "payment": {
     "title": "Payer l'acompte",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Ce que nous utilisons",
-          "body": "Les cookies sont de petits fichiers texte enregistrés sur votre appareil. Ce site web utilise également des mécanismes de stockage similaires, tels que le stockage local, pour mémoriser vos choix, votre panier et votre connexion."
+          "body": "Les cookies sont de petits fichiers texte enregistrés sur votre appareil. Ce site utilise aussi des stockages similaires, comme le stockage local, pour mémoriser vos choix et votre connexion."
         },
         {
           "title": "Strictement nécessaires",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Gestion des cookies",
-          "body": "Utilisez le lien Paramètres des cookies dans le pied de page pour modifier votre choix. Vous pouvez également supprimer les cookies et les données de site dans votre navigateur. Bloquer le stockage strictement nécessaire peut vous déconnecter ou vider votre panier."
+          "body": "Utilisez le lien Paramètres des cookies dans le pied de page pour modifier votre choix. Vous pouvez aussi supprimer les cookies et les données du site dans votre navigateur. Bloquer le stockage strictement nécessaire peut vous déconnecter."
         },
         {
           "title": "Plus d'informations",
           "body": "Consultez la politique de confidentialité pour savoir comment {name} traite les données personnelles, ou utilisez les coordonnées dans le pied de page."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} n’a pas encore publié sa politique de confidentialité sur ce site.",
+      "terms": "{name} n’a pas encore publié ses conditions de location sur ce site.",
+      "contactTitle": "Contacter l’entreprise",
+      "contactBody": "Pour savoir comment {name} traite vos données personnelles ou connaître les conditions de location, contactez {name} via les coordonnées de ce site. Le contrat de location signé lors de la prise en charge fixe les conditions applicables."
     }
   },
   "support": {

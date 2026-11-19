@@ -472,7 +472,8 @@
       "confirmed": "Visszaigazolva",
       "active": "Aktív — jó utat!",
       "completed": "Befejezve",
-      "cancelled": "Lemondva"
+      "cancelled": "Lemondva",
+      "awaitingPayment": "Fizetésre vár"
     },
     "vehicle": "Jármű",
     "company": "Cég",
@@ -505,18 +506,27 @@
       "partially_paid": "Részben fizetve",
       "paid": "Kifizetve",
       "refund_due": "Visszatérítés esedékes",
-      "authorized": "Kártya zárolva"
+      "authorized": "Kártya zárolva",
+      "nothingDue": "Nincs fizetendő"
     },
     "reasons": {
       "unpaid_timeout": "A fizetés nem fejeződött be időben",
       "request_expired": "A cég nem válaszolt időben",
       "request_declined": "A cég elutasította ezt a kérelmet",
-      "customer_request": "Ön visszavonta ezt a kérelmet"
+      "customer_request": "Ön visszavonta ezt a kérelmet",
+      "customer_cancelled": "Ön lemondta ezt a foglalást"
     },
     "insurance": "Biztosítás",
     "extras": "Extrák",
     "fees": "Átvételi és leadási díjak",
-    "priceTitle": "Ár összegzése"
+    "priceTitle": "Ár összegzése",
+    "pendingPaymentSubtitle": "Fizesse ki az előleget a foglalás megerősítéséhez. A megerősítés után írunk a(z) {email} címre.",
+    "requestSubtitle": "Kérés elküldve. A részleteket elküldtük a(z) {email} címre, és jelezzük, ha a cég válaszol.",
+    "cancelledSubtitle": "Ez a foglalás le van mondva.",
+    "cancelBooking": "Foglalás lemondása",
+    "withdrawConfirmTitle": "Visszavonja ezt a kérést?",
+    "cancelConfirmTitle": "Lemondja ezt a foglalást?",
+    "withdrawConfirmBody": "Az autó felszabadul más vendégek számára. Ez nem vonható vissza."
   },
   "payment": {
     "title": "Előleg befizetése",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Mit használunk",
-          "body": "A sütik az eszközén tárolt kis szöveges fájlok. Ez a weboldal hasonló tárolási módokat is használ, például helyi tárolót, a választásai, a kosara és a bejelentkezése megjegyzéséhez."
+          "body": "A sütik kis szöveges fájlok, amelyeket az eszköze tárol. Ez a weboldal hasonló tárolást is használ, például helyi tárolót, hogy megjegyezze a választásait és a bejelentkezését."
         },
         {
           "title": "Feltétlenül szükséges sütik",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Sütik kezelése",
-          "body": "A választása módosításához használja a láblécben található sütibeállítások linket. A böngészőjében is törölheti a sütiket és a webhelyadatokat. A feltétlenül szükséges tárhely letiltása kijelentkeztetheti Önt vagy kiürítheti a kosarát."
+          "body": "A választása módosításához használja a láblécben található sütibeállítások linket. A sütiket és a webhelyadatokat a böngészőben is törölheti. A feltétlenül szükséges tárolás letiltása kijelentkeztetheti."
         },
         {
           "title": "További információ",
           "body": "Tekintse meg az adatvédelmi szabályzatot arról, hogyan kezeli a(z) {name} a személyes adatokat, vagy használja a láblécben lévő elérhetőségeket."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} még nem tette közzé adatvédelmi tájékoztatóját ezen a weboldalon.",
+      "terms": "{name} még nem tette közzé bérleti feltételeit ezen a weboldalon.",
+      "contactTitle": "Lépjen kapcsolatba a céggel",
+      "contactBody": "Ha tudni szeretné, hogyan kezeli {name} a személyes adatait, vagy melyek a bérleti feltételek, vegye fel a kapcsolatot vele ({name}) a weboldalon található elérhetőségeken. A kötelező feltételeket az átvételkor aláírt bérleti szerződés rögzíti."
     }
   },
   "support": {

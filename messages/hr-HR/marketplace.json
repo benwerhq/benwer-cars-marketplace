@@ -472,7 +472,8 @@
       "confirmed": "Potvrđeno",
       "active": "Aktivno — ugodan put!",
       "completed": "Dovršeno",
-      "cancelled": "Otkazano"
+      "cancelled": "Otkazano",
+      "awaitingPayment": "Čeka se plaćanje"
     },
     "vehicle": "Vozilo",
     "company": "Tvrtka",
@@ -505,18 +506,27 @@
       "partially_paid": "Djelomično plaćeno",
       "paid": "Plaćeno",
       "refund_due": "Povrat novca u tijeku",
-      "authorized": "Kartica autorizirana"
+      "authorized": "Kartica autorizirana",
+      "nothingDue": "Ništa za platiti"
     },
     "reasons": {
       "unpaid_timeout": "Plaćanje nije dovršeno na vrijeme",
       "request_expired": "Tvrtka nije odgovorila na vrijeme",
       "request_declined": "Tvrtka je odbila ovaj zahtjev",
-      "customer_request": "Povukli ste ovaj zahtjev"
+      "customer_request": "Povukli ste ovaj zahtjev",
+      "customer_cancelled": "Otkazali ste ovu rezervaciju"
     },
     "insurance": "Osiguranje",
     "extras": "Dodaci",
     "fees": "Naknade za preuzimanje i povrat",
-    "priceTitle": "Sažetak cijene"
+    "priceTitle": "Sažetak cijene",
+    "pendingPaymentSubtitle": "Platite predujam kako biste potvrdili rezervaciju. Pisat ćemo vam na {email} kada bude potvrđena.",
+    "requestSubtitle": "Zahtjev poslan. Poslali smo pojedinosti na {email} i javit ćemo vam kada tvrtka odgovori.",
+    "cancelledSubtitle": "Ova rezervacija je otkazana.",
+    "cancelBooking": "Otkaži rezervaciju",
+    "withdrawConfirmTitle": "Povući ovaj zahtjev?",
+    "cancelConfirmTitle": "Otkazati ovu rezervaciju?",
+    "withdrawConfirmBody": "Automobil će biti oslobođen za druge goste. Ovo se ne može poništiti."
   },
   "payment": {
     "title": "Platite predujam",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Što koristimo",
-          "body": "Kolačići su male tekstualne datoteke pohranjene na vašem uređaju. Ova web-stranica koristi i sličnu pohranu, poput lokalne pohrane, za pamćenje vaših odabira, košarice i prijave."
+          "body": "Kolačići su male tekstualne datoteke koje se spremaju na vaš uređaj. Ova web-stranica koristi i slične oblike pohrane, poput lokalne pohrane, kako bi zapamtila vaše odabire i prijavu."
         },
         {
           "title": "Nužni kolačići",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Upravljanje kolačićima",
-          "body": "Koristite poveznicu za postavke kolačića u podnožju kako biste promijenili svoj odabir. Kolačiće i podatke stranice možete obrisati i u svom pregledniku. Blokiranje nužne pohrane može vas odjaviti ili isprazniti vašu košaricu."
+          "body": "Koristite poveznicu za postavke kolačića u podnožju kako biste promijenili svoj odabir. Kolačiće i podatke stranice možete izbrisati i u pregledniku. Blokiranje nužne pohrane može vas odjaviti."
         },
         {
           "title": "Više informacija",
           "body": "Pogledajte pravila privatnosti za informacije o tome kako {name} postupa s osobnim podacima ili koristite podatke za kontakt u podnožju."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} još nije objavio pravila privatnosti na ovoj web-stranici.",
+      "terms": "{name} još nije objavio uvjete najma na ovoj web-stranici.",
+      "contactTitle": "Obratite se tvrtki",
+      "contactBody": "Kako biste saznali kako {name} obrađuje vaše osobne podatke ili koji su uvjeti najma, obratite se tvrtki {name} putem podataka na ovoj web-stranici. Obvezujuće uvjete određuje ugovor o najmu koji potpisujete pri preuzimanju."
     }
   },
   "support": {

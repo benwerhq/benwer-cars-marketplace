@@ -472,7 +472,8 @@
       "confirmed": "Apstiprināta",
       "active": "Aktīva — patīkamu ceļojumu!",
       "completed": "Pabeigta",
-      "cancelled": "Atcelta"
+      "cancelled": "Atcelta",
+      "awaitingPayment": "Gaida maksājumu"
     },
     "vehicle": "Transportlīdzeklis",
     "company": "Uzņēmums",
@@ -505,18 +506,27 @@
       "partially_paid": "Daļēji apmaksāts",
       "paid": "Apmaksāts",
       "refund_due": "Jāatmaksā",
-      "authorized": "Karte autorizēta"
+      "authorized": "Karte autorizēta",
+      "nothingDue": "Nav jāmaksā"
     },
     "reasons": {
       "unpaid_timeout": "Maksājums netika veikts laikā",
       "request_expired": "Uzņēmums neatbildēja laikā",
       "request_declined": "Uzņēmums noraidīja šo pieprasījumu",
-      "customer_request": "Jūs atsaucāt šo pieprasījumu"
+      "customer_request": "Jūs atsaucāt šo pieprasījumu",
+      "customer_cancelled": "Jūs atcēlāt šo rezervāciju"
     },
     "insurance": "Apdrošināšana",
     "extras": "Papildpakalpojumi",
     "fees": "Saņemšanas un atdošanas maksas",
-    "priceTitle": "Cenas kopsavilkums"
+    "priceTitle": "Cenas kopsavilkums",
+    "pendingPaymentSubtitle": "Samaksājiet avansu, lai apstiprinātu rezervāciju. Kad tā būs apstiprināta, rakstīsim uz {email}.",
+    "requestSubtitle": "Pieprasījums nosūtīts. Mēs nosūtījām informāciju uz {email} un paziņosim, kad uzņēmums atbildēs.",
+    "cancelledSubtitle": "Šī rezervācija ir atcelta.",
+    "cancelBooking": "Atcelt rezervāciju",
+    "withdrawConfirmTitle": "Atsaukt šo pieprasījumu?",
+    "cancelConfirmTitle": "Atcelt šo rezervāciju?",
+    "withdrawConfirmBody": "Automašīna tiks atbrīvota citiem klientiem. To nevar atsaukt."
   },
   "payment": {
     "title": "Samaksāt avansu",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Ko mēs izmantojam",
-          "body": "Sīkdatnes ir nelieli teksta faili, kas tiek saglabāti jūsu ierīcē. Šī vietne izmanto arī līdzīgu krātuvi, piemēram, vietējo krātuvi, lai atcerētos jūsu izvēles, grozu un pierakstīšanos."
+          "body": "Sīkdatnes ir nelieli teksta faili, kas tiek saglabāti jūsu ierīcē. Šī vietne izmanto arī līdzīgu krātuvi, piemēram, lokālo krātuvi, lai atcerētos jūsu izvēles un pieteikšanos."
         },
         {
           "title": "Obligātās sīkdatnes",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Sīkdatņu pārvaldība",
-          "body": "Izmantojiet sīkdatņu iestatījumu saiti kājenē, lai mainītu savu izvēli. Sīkdatnes un vietnes datus varat izdzēst arī pārlūkprogrammā. Obligātās krātuves bloķēšana var jūs izrakstīt vai iztukšot grozu."
+          "body": "Izmantojiet sīkdatņu iestatījumu saiti kājenē, lai mainītu savu izvēli. Sīkdatnes un vietnes datus varat dzēst arī pārlūkprogrammā. Bloķējot noteikti nepieciešamo krātuvi, jūs varat tikt izrakstīts."
         },
         {
           "title": "Plašāka informācija",
           "body": "Skatiet privātuma politiku, lai uzzinātu, kā {name} apstrādā personas datus, vai izmantojiet kājenē norādīto kontaktinformāciju."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} šajā vietnē vēl nav publicējis savu privātuma politiku.",
+      "terms": "{name} šajā vietnē vēl nav publicējis savus nomas noteikumus.",
+      "contactTitle": "Sazinieties ar uzņēmumu",
+      "contactBody": "Lai uzzinātu, kā {name} apstrādā jūsu personas datus vai kādi ir nomas noteikumi, sazinieties ar {name}, izmantojot šīs vietnes kontaktinformāciju. Saistošos noteikumus nosaka nomas līgums, ko parakstāt, saņemot automašīnu."
     }
   },
   "support": {

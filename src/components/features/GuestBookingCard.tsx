@@ -8,6 +8,7 @@ import { formatMoney } from "@/lib/money";
 import type { GuestReservation } from "@/types/reservation";
 import { ReservationCarImage } from "./ReservationCarImage";
 import { ReservationTrip } from "./ReservationTrip";
+import { bookingReference } from "@/lib/bookingReference";
 
 interface GuestBookingCardProps {
   reservation: GuestReservation;
@@ -27,7 +28,7 @@ export function GuestBookingCard({
   const name = vehicle
     ? `${vehicle.brand} ${vehicle.model}`.trim()
     : t("bookingFallback");
-  const reference = (reservation.token || reservation.id).slice(0, 8).toUpperCase();
+  const reference = bookingReference(reservation.id, reservation.token);
 
   return (
     <Link

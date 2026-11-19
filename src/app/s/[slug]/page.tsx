@@ -149,7 +149,7 @@ async function CompanySiteHomePage({ params, searchParams }: Props) {
       <SiteHeader
         {...siteHeaderProps(site.content, site.company)}
         homeHref={homeHref}
-        cartSlug={slug}
+        siteSlug={slug}
         fleetHref={fleetHref}
         sections={headerSections}
         phone={phone}

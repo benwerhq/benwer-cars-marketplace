@@ -14,11 +14,9 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           "/book",
           "/booking/",
-          "/cart",
           "/api/",
           "/s/*/book",
           "/s/*/booking/",
-          "/s/*/cart",
         ],
       },
     ],

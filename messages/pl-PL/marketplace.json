@@ -472,7 +472,8 @@
       "confirmed": "Potwierdzona",
       "active": "Aktywna — udanej podróży!",
       "completed": "Zakończona",
-      "cancelled": "Anulowana"
+      "cancelled": "Anulowana",
+      "awaitingPayment": "Oczekuje na płatność"
     },
     "vehicle": "Pojazd",
     "company": "Firma",
@@ -505,18 +506,27 @@
       "partially_paid": "Częściowo opłacona",
       "paid": "Opłacona",
       "refund_due": "Należny zwrot",
-      "authorized": "Karta autoryzowana"
+      "authorized": "Karta autoryzowana",
+      "nothingDue": "Nic do zapłaty"
     },
     "reasons": {
       "unpaid_timeout": "Płatność nie została ukończona na czas",
       "request_expired": "Firma nie odpowiedziała na czas",
       "request_declined": "Firma odrzuciła to zapytanie",
-      "customer_request": "Wycofałeś(-aś) to zapytanie"
+      "customer_request": "Wycofałeś(-aś) to zapytanie",
+      "customer_cancelled": "Anulowałeś tę rezerwację"
     },
     "insurance": "Ubezpieczenie",
     "extras": "Dodatki",
     "fees": "Opłaty za odbiór i zwrot",
-    "priceTitle": "Podsumowanie ceny"
+    "priceTitle": "Podsumowanie ceny",
+    "pendingPaymentSubtitle": "Wpłać zaliczkę, aby potwierdzić rezerwację. Napiszemy na {email}, gdy zostanie potwierdzona.",
+    "requestSubtitle": "Zapytanie wysłane. Wysłaliśmy szczegóły na {email} i damy znać, gdy firma odpowie.",
+    "cancelledSubtitle": "Ta rezerwacja została anulowana.",
+    "cancelBooking": "Anuluj rezerwację",
+    "withdrawConfirmTitle": "Wycofać to zapytanie?",
+    "cancelConfirmTitle": "Anulować tę rezerwację?",
+    "withdrawConfirmBody": "Samochód zostanie zwolniony dla innych klientów. Tej operacji nie można cofnąć."
   },
   "payment": {
     "title": "Opłać zaliczkę",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Czego używamy",
-          "body": "Pliki cookie to małe pliki tekstowe zapisywane na Twoim urządzeniu. Ta strona używa również podobnej pamięci, np. local storage, aby zapamiętywać Twoje wybory, koszyk i sesję logowania."
+          "body": "Pliki cookie to małe pliki tekstowe zapisywane na Twoim urządzeniu. Ta strona korzysta też z podobnej pamięci, np. pamięci lokalnej, aby zapamiętać Twoje wybory i logowanie."
         },
         {
           "title": "Ściśle niezbędne",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Zarządzanie plikami cookie",
-          "body": "Użyj linku ustawień plików cookie w stopce, aby zmienić swój wybór. Możesz też usunąć pliki cookie i dane witryny w przeglądarce. Zablokowanie ściśle niezbędnej pamięci może Cię wylogować lub opróżnić koszyk."
+          "body": "Użyj linku ustawień plików cookie w stopce, aby zmienić swój wybór. Możesz też usunąć pliki cookie i dane strony w przeglądarce. Zablokowanie niezbędnej pamięci może Cię wylogować."
         },
         {
           "title": "Więcej informacji",
           "body": "Zobacz politykę prywatności, aby dowiedzieć się, jak {name} przetwarza dane osobowe, lub skorzystaj z danych kontaktowych w stopce."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} nie opublikowała jeszcze polityki prywatności na tej stronie.",
+      "terms": "{name} nie opublikowała jeszcze warunków wynajmu na tej stronie.",
+      "contactTitle": "Skontaktuj się z firmą",
+      "contactBody": "Aby dowiedzieć się, jak {name} przetwarza Twoje dane osobowe lub jakie są warunki wynajmu, skontaktuj się z {name}, korzystając z danych na tej stronie. Wiążące warunki określa umowa najmu podpisywana przy odbiorze."
     }
   },
   "support": {

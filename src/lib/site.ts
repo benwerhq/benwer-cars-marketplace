@@ -113,13 +113,6 @@ export function guestLinksFromHomeHref(homeHref: string): {
   };
 }
 
-/** The cart page next to the site's home, keeping preview query params. */
-export function cartHrefFromHome(homeHref: string): string {
-  const url = new URL(homeHref, "https://benwer.local");
-  const base = url.pathname.replace(/\/$/, "");
-  return `${base}/cart${url.search}`;
-}
-
 export interface SiteLinkQuery {
   from?: string;
   to?: string;
@@ -179,10 +172,6 @@ export function siteBookHref(input: {
     preview: input.preview,
     edit: input.edit,
   });
-}
-
-export function siteCartPath(slug: string): string {
-  return `${siteHomePath(slug)}/cart`;
 }
 
 export function queryString(

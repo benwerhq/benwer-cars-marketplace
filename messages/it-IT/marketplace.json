@@ -472,7 +472,8 @@
       "confirmed": "Confermata",
       "active": "Attiva — buon viaggio!",
       "completed": "Completata",
-      "cancelled": "Annullata"
+      "cancelled": "Annullata",
+      "awaitingPayment": "In attesa di pagamento"
     },
     "vehicle": "Veicolo",
     "company": "Azienda",
@@ -505,18 +506,27 @@
       "partially_paid": "Parzialmente pagato",
       "paid": "Pagato",
       "refund_due": "Rimborso dovuto",
-      "authorized": "Carta autorizzata"
+      "authorized": "Carta autorizzata",
+      "nothingDue": "Niente da pagare"
     },
     "reasons": {
       "unpaid_timeout": "Il pagamento non è stato completato in tempo",
       "request_expired": "L'azienda non ha risposto in tempo",
       "request_declined": "L'azienda ha rifiutato questa richiesta",
-      "customer_request": "Hai ritirato questa richiesta"
+      "customer_request": "Hai ritirato questa richiesta",
+      "customer_cancelled": "Hai annullato questa prenotazione"
     },
     "insurance": "Assicurazione",
     "extras": "Extra",
     "fees": "Costi di ritiro e riconsegna",
-    "priceTitle": "Riepilogo prezzo"
+    "priceTitle": "Riepilogo prezzo",
+    "pendingPaymentSubtitle": "Paga l’acconto per confermare la prenotazione. Ti scriveremo a {email} appena sarà confermata.",
+    "requestSubtitle": "Richiesta inviata. Ti abbiamo inviato i dettagli a {email} e ti avviseremo quando l’azienda risponderà.",
+    "cancelledSubtitle": "Questa prenotazione è annullata.",
+    "cancelBooking": "Annulla prenotazione",
+    "withdrawConfirmTitle": "Ritirare questa richiesta?",
+    "cancelConfirmTitle": "Annullare questa prenotazione?",
+    "withdrawConfirmBody": "L’auto tornerà disponibile per altri clienti. L’operazione non si può annullare."
   },
   "payment": {
     "title": "Paga l'anticipo",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Cosa utilizziamo",
-          "body": "I cookie sono piccoli file di testo salvati sul tuo dispositivo. Questo sito web utilizza anche archiviazione simile, come il local storage, per ricordare le tue scelte, il carrello e l'accesso."
+          "body": "I cookie sono piccoli file di testo salvati sul tuo dispositivo. Questo sito usa anche archiviazioni simili, come il local storage, per ricordare le tue scelte e il tuo accesso."
         },
         {
           "title": "Strettamente necessari",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Gestione dei cookie",
-          "body": "Usa il link Impostazioni cookie nel piè di pagina per cambiare scelta. Puoi anche eliminare i cookie e i dati del sito nel tuo browser. Bloccare l'archiviazione strettamente necessaria potrebbe disconnetterti o svuotare il carrello."
+          "body": "Usa il link Impostazioni cookie nel piè di pagina per cambiare scelta. Puoi anche eliminare cookie e dati del sito dal browser. Bloccare l’archiviazione strettamente necessaria può disconnetterti."
         },
         {
           "title": "Ulteriori informazioni",
           "body": "Consulta l'informativa sulla privacy per sapere come {name} tratta i dati personali, oppure usa i recapiti nel piè di pagina."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} non ha ancora pubblicato la sua informativa sulla privacy su questo sito.",
+      "terms": "{name} non ha ancora pubblicato le sue condizioni di noleggio su questo sito.",
+      "contactTitle": "Contatta l’azienda",
+      "contactBody": "Per sapere come {name} tratta i tuoi dati personali o quali sono le condizioni di noleggio, contatta {name} con i recapiti di questo sito. Il contratto di noleggio che firmi al ritiro stabilisce le condizioni vincolanti."
     }
   },
   "support": {

@@ -472,7 +472,8 @@
       "confirmed": "Kinnitatud",
       "active": "Aktiivne — head reisi!",
       "completed": "Lõpetatud",
-      "cancelled": "Tühistatud"
+      "cancelled": "Tühistatud",
+      "awaitingPayment": "Ootab makset"
     },
     "vehicle": "Sõiduk",
     "company": "Ettevõte",
@@ -505,18 +506,27 @@
       "partially_paid": "Osaliselt tasutud",
       "paid": "Tasutud",
       "refund_due": "Tagasimakse ootel",
-      "authorized": "Kaart broneeritud"
+      "authorized": "Kaart broneeritud",
+      "nothingDue": "Midagi pole tasuda"
     },
     "reasons": {
       "unpaid_timeout": "Makset ei viidud õigeaegselt lõpule",
       "request_expired": "Ettevõte ei vastanud õigeaegselt",
       "request_declined": "Ettevõte lükkas selle päringu tagasi",
-      "customer_request": "Tühistasid selle päringu"
+      "customer_request": "Tühistasid selle päringu",
+      "customer_cancelled": "Sa tühistasid selle broneeringu"
     },
     "insurance": "Kindlustus",
     "extras": "Lisavarustus",
     "fees": "Pealevõtmise ja tagastamise tasud",
-    "priceTitle": "Hinna kokkuvõte"
+    "priceTitle": "Hinna kokkuvõte",
+    "pendingPaymentSubtitle": "Broneeringu kinnitamiseks tasu ettemaks. Saadame kinnituse aadressile {email}, kui broneering on kinnitatud.",
+    "requestSubtitle": "Päring saadetud. Saatsime üksikasjad aadressile {email} ja anname teada, kui ettevõte vastab.",
+    "cancelledSubtitle": "See broneering on tühistatud.",
+    "cancelBooking": "Tühista broneering",
+    "withdrawConfirmTitle": "Kas võtta see päring tagasi?",
+    "cancelConfirmTitle": "Kas tühistada see broneering?",
+    "withdrawConfirmBody": "Auto vabastatakse teistele klientidele. Seda ei saa tagasi võtta."
   },
   "payment": {
     "title": "Tasuda ettemaks",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Mida me kasutame",
-          "body": "Küpsised on väikesed tekstifailid, mis salvestatakse sinu seadmesse. See veebileht kasutab ka sarnast salvestusruumi, näiteks kohalikku salvestust (local storage), et meeles pidada sinu valikuid, ostukorvi ja sisselogimist."
+          "body": "Küpsised on väikesed tekstifailid, mis salvestatakse sinu seadmesse. See veebisait kasutab ka sarnast salvestusruumi, näiteks kohalikku salvestusruumi, et meeles pidada sinu valikuid ja sisselogimist."
         },
         {
           "title": "Hädavajalikud",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Küpsiste haldamine",
-          "body": "Kasuta jaluses olevat küpsiste seadete linki, et oma valikut muuta. Saad küpsised ja saidiandmed kustutada ka oma brauseris. Hädavajaliku salvestuse blokeerimine võib sind välja logida või sinu ostukorvi tühjendada."
+          "body": "Kasuta jaluses olevat küpsiste seadete linki, et oma valikut muuta. Saad küpsised ja saidi andmed ka brauseris kustutada. Hädavajaliku salvestuse blokeerimine võib sind välja logida."
         },
         {
           "title": "Lisateave",
           "body": "Vaata privaatsuspoliitikast, kuidas {name} isikuandmeid töötleb, või kasuta jaluses olevaid kontaktandmeid."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} ei ole sellel veebisaidil veel oma privaatsuspoliitikat avaldanud.",
+      "terms": "{name} ei ole sellel veebisaidil veel oma renditingimusi avaldanud.",
+      "contactTitle": "Võta ettevõttega ühendust",
+      "contactBody": "Kui soovid teada, kuidas {name} sinu isikuandmeid töötleb või millised on renditingimused, võta ettevõttega {name} ühendust selle veebisaidi kontaktandmete kaudu. Siduvad tingimused määrab rendileping, mille allkirjastad auto kättesaamisel."
     }
   },
   "support": {

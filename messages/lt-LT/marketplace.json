@@ -472,7 +472,8 @@
       "confirmed": "Patvirtinta",
       "active": "Aktyvus — geros kelionės!",
       "completed": "Užbaigtas",
-      "cancelled": "Atšauktas"
+      "cancelled": "Atšauktas",
+      "awaitingPayment": "Laukiama mokėjimo"
     },
     "vehicle": "Automobilis",
     "company": "Įmonė",
@@ -505,18 +506,27 @@
       "partially_paid": "Dalinai apmokėta",
       "paid": "Apmokėta",
       "refund_due": "Laukia grąžinimo",
-      "authorized": "Kortelė autorizuota"
+      "authorized": "Kortelė autorizuota",
+      "nothingDue": "Nieko mokėti nereikia"
     },
     "reasons": {
       "unpaid_timeout": "Mokėjimas nebuvo atliktas laiku",
       "request_expired": "Įmonė neatsakė laiku",
       "request_declined": "Įmonė atmetė šią užklausą",
-      "customer_request": "Jūs atšaukėte šią užklausą"
+      "customer_request": "Jūs atšaukėte šią užklausą",
+      "customer_cancelled": "Atšaukėte šį užsakymą"
     },
     "insurance": "Draudimas",
     "extras": "Papildomos paslaugos",
     "fees": "Paėmimo ir grąžinimo mokesčiai",
-    "priceTitle": "Kainos suvestinė"
+    "priceTitle": "Kainos suvestinė",
+    "pendingPaymentSubtitle": "Sumokėkite avansą, kad patvirtintumėte užsakymą. Kai jis bus patvirtintas, parašysime adresu {email}.",
+    "requestSubtitle": "Užklausa išsiųsta. Išsiuntėme informaciją adresu {email} ir pranešime, kai įmonė atsakys.",
+    "cancelledSubtitle": "Šis užsakymas atšauktas.",
+    "cancelBooking": "Atšaukti užsakymą",
+    "withdrawConfirmTitle": "Atsiimti šią užklausą?",
+    "cancelConfirmTitle": "Atšaukti šį užsakymą?",
+    "withdrawConfirmBody": "Automobilis bus atlaisvintas kitiems klientams. To atšaukti negalima."
   },
   "payment": {
     "title": "Sumokėti avansą",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Ką naudojame",
-          "body": "Slapukai yra nedideli tekstiniai failai, saugomi jūsų įrenginyje. Ši svetainė taip pat naudoja panašią saugyklą, pvz., vietinę saugyklą, jūsų pasirinkimams, krepšeliui ir prisijungimui prisiminti."
+          "body": "Slapukai yra nedideli tekstiniai failai, saugomi jūsų įrenginyje. Ši svetainė taip pat naudoja panašią saugyklą, pavyzdžiui, vietinę saugyklą, kad įsimintų jūsų pasirinkimus ir prisijungimą."
         },
         {
           "title": "Būtini slapukai",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Slapukų valdymas",
-          "body": "Norėdami pakeisti pasirinkimą, naudokite poraštėje esančią slapukų nustatymų nuorodą. Slapukus ir svetainės duomenis taip pat galite ištrinti naršyklėje. Užblokavus būtiną saugyklą, galite būti atjungti arba gali ištuštėti krepšelis."
+          "body": "Norėdami pakeisti pasirinkimą, naudokite poraštėje esančią slapukų nustatymų nuorodą. Slapukus ir svetainės duomenis taip pat galite ištrinti naršyklėje. Užblokavus būtinąją saugyklą, galite būti atjungti."
         },
         {
           "title": "Daugiau informacijos",
           "body": "Apie tai, kaip {name} tvarko asmens duomenis, skaitykite privatumo politikoje arba naudokite poraštėje nurodytus kontaktinius duomenis."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} šioje svetainėje dar nepaskelbė savo privatumo politikos.",
+      "terms": "{name} šioje svetainėje dar nepaskelbė savo nuomos sąlygų.",
+      "contactTitle": "Susisiekite su įmone",
+      "contactBody": "Norėdami sužinoti, kaip {name} tvarko jūsų asmens duomenis ar kokios yra nuomos sąlygos, susisiekite su {name} naudodami šioje svetainėje pateiktus kontaktus. Privalomas sąlygas nustato nuomos sutartis, kurią pasirašote atsiimdami automobilį."
     }
   },
   "support": {

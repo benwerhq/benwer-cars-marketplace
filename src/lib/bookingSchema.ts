@@ -57,7 +57,7 @@ export function createBookingSchema(
 
 export type BookingFormValues = z.infer<ReturnType<typeof createBookingSchema>>;
 
-/** Driver details asked once at cart checkout (website channel rules). */
+/** Driver details for a website booking (website channel rules). */
 export function createGuestDetailsSchema(
   messages: Pick<BookingSchemaMessages, "nameMin" | "nameMax" | "email" | "phone" | "terms">,
 ) {

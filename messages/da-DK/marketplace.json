@@ -472,7 +472,8 @@
       "confirmed": "Bekræftet",
       "active": "Aktiv — god tur!",
       "completed": "Afsluttet",
-      "cancelled": "Annulleret"
+      "cancelled": "Annulleret",
+      "awaitingPayment": "Afventer betaling"
     },
     "vehicle": "Køretøj",
     "company": "Virksomhed",
@@ -505,18 +506,27 @@
       "partially_paid": "Delvist betalt",
       "paid": "Betalt",
       "refund_due": "Refusion afventer",
-      "authorized": "Kort autoriseret"
+      "authorized": "Kort autoriseret",
+      "nothingDue": "Intet at betale"
     },
     "reasons": {
       "unpaid_timeout": "Betalingen blev ikke gennemført i tide",
       "request_expired": "Virksomheden svarede ikke i tide",
       "request_declined": "Virksomheden afviste denne forespørgsel",
-      "customer_request": "Du trak denne forespørgsel tilbage"
+      "customer_request": "Du trak denne forespørgsel tilbage",
+      "customer_cancelled": "Du annullerede denne booking"
     },
     "insurance": "Forsikring",
     "extras": "Ekstraudstyr",
     "fees": "Gebyrer for afhentning og aflevering",
-    "priceTitle": "Prisoversigt"
+    "priceTitle": "Prisoversigt",
+    "pendingPaymentSubtitle": "Betal forudbetalingen for at bekræfte din booking. Vi skriver til dig på {email}, når den er bekræftet.",
+    "requestSubtitle": "Forespørgsel sendt. Vi har sendt detaljerne til {email} og giver besked, når firmaet svarer.",
+    "cancelledSubtitle": "Denne booking er annulleret.",
+    "cancelBooking": "Annuller booking",
+    "withdrawConfirmTitle": "Træk denne forespørgsel tilbage?",
+    "cancelConfirmTitle": "Annuller denne booking?",
+    "withdrawConfirmBody": "Bilen bliver frigivet til andre gæster. Det kan ikke fortrydes."
   },
   "payment": {
     "title": "Betal forudbetalingen",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Hvad vi bruger",
-          "body": "Cookies er små tekstfiler, der gemmes på din enhed. Denne hjemmeside bruger også lignende lagring, såsom local storage, til at huske dine valg, din kurv og dit login."
+          "body": "Cookies er små tekstfiler, der gemmes på din enhed. Hjemmesiden bruger også lignende lagring, f.eks. lokal lagring, til at huske dine valg og dit login."
         },
         {
           "title": "Strengt nødvendige",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Administration af cookies",
-          "body": "Brug linket til cookieindstillinger i sidefoden for at ændre dit valg. Du kan også slette cookies og sidedata i din browser. Blokering af strengt nødvendig lagring kan logge dig ud eller tømme din kurv."
+          "body": "Brug linket til cookieindstillinger i sidefoden for at ændre dit valg. Du kan også slette cookies og webstedsdata i din browser. Hvis du blokerer strengt nødvendig lagring, kan du blive logget ud."
         },
         {
           "title": "Mere information",
           "body": "Se privatlivspolitikken for, hvordan {name} håndterer personoplysninger, eller brug kontaktoplysningerne i sidefoden."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} har endnu ikke offentliggjort en privatlivspolitik på denne hjemmeside.",
+      "terms": "{name} har endnu ikke offentliggjort lejebetingelser på denne hjemmeside.",
+      "contactTitle": "Kontakt firmaet",
+      "contactBody": "Kontakt {name} via oplysningerne på denne hjemmeside for at høre, hvordan {name} behandler dine personoplysninger, eller hvilke lejebetingelser der gælder. Lejeaftalen, du underskriver ved afhentning, fastsætter de bindende vilkår."
     }
   },
   "support": {

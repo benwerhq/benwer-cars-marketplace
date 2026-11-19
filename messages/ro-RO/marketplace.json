@@ -472,7 +472,8 @@
       "confirmed": "Confirmată",
       "active": "Activă — călătorie plăcută!",
       "completed": "Finalizată",
-      "cancelled": "Anulată"
+      "cancelled": "Anulată",
+      "awaitingPayment": "În așteptarea plății"
     },
     "vehicle": "Vehicul",
     "company": "Companie",
@@ -505,18 +506,27 @@
       "partially_paid": "Plătită parțial",
       "paid": "Plătită",
       "refund_due": "Rambursare datorată",
-      "authorized": "Card autorizat"
+      "authorized": "Card autorizat",
+      "nothingDue": "Nimic de plată"
     },
     "reasons": {
       "unpaid_timeout": "Plata nu a fost finalizată la timp",
       "request_expired": "Compania nu a răspuns la timp",
       "request_declined": "Compania a refuzat această cerere",
-      "customer_request": "Ai retras această cerere"
+      "customer_request": "Ai retras această cerere",
+      "customer_cancelled": "Ai anulat această rezervare"
     },
     "insurance": "Asigurare",
     "extras": "Extraopțiuni",
     "fees": "Taxe de preluare și returnare",
-    "priceTitle": "Rezumatul prețului"
+    "priceTitle": "Rezumatul prețului",
+    "pendingPaymentSubtitle": "Plătește avansul pentru a confirma rezervarea. Îți vom scrie la {email} după ce este confirmată.",
+    "requestSubtitle": "Cerere trimisă. Ți-am trimis detaliile la {email} și te anunțăm când răspunde compania.",
+    "cancelledSubtitle": "Această rezervare este anulată.",
+    "cancelBooking": "Anulează rezervarea",
+    "withdrawConfirmTitle": "Retragi această cerere?",
+    "cancelConfirmTitle": "Anulezi această rezervare?",
+    "withdrawConfirmBody": "Mașina va fi eliberată pentru alți clienți. Acțiunea nu poate fi anulată."
   },
   "payment": {
     "title": "Plătește avansul",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Ce folosim",
-          "body": "Cookie-urile sunt fișiere text mici stocate pe dispozitivul tău. Acest site folosește și stocare similară, precum local storage, pentru a reține alegerile tale, coșul și conectarea."
+          "body": "Cookie-urile sunt fișiere text mici salvate pe dispozitivul tău. Acest site folosește și stocare similară, precum stocarea locală, pentru a reține alegerile tale și autentificarea."
         },
         {
           "title": "Strict necesare",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Gestionarea cookie-urilor",
-          "body": "Folosește linkul de setări cookie-uri din subsol pentru a-ți schimba alegerea. Poți de asemenea să ștergi cookie-urile și datele site-ului din browser. Blocarea stocării strict necesare te poate deconecta sau poate goli coșul."
+          "body": "Folosește linkul de setări cookie-uri din subsol pentru a-ți schimba alegerea. Poți de asemenea șterge cookie-urile și datele site-ului din browser. Blocarea stocării strict necesare te poate deconecta."
         },
         {
           "title": "Mai multe informații",
           "body": "Consultă politica de confidențialitate pentru modul în care {name} gestionează datele personale sau folosește detaliile de contact din subsol."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} nu și-a publicat încă politica de confidențialitate pe acest site.",
+      "terms": "{name} nu și-a publicat încă condițiile de închiriere pe acest site.",
+      "contactTitle": "Contactează compania",
+      "contactBody": "Pentru a afla cum prelucrează {name} datele tale personale sau care sunt condițiile de închiriere, contactează {name} folosind datele de pe acest site. Condițiile obligatorii sunt stabilite de contractul de închiriere pe care îl semnezi la preluare."
     }
   },
   "support": {

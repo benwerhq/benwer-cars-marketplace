@@ -9,7 +9,7 @@ import { ReservationStatus } from "@/components/features/ReservationStatus";
 import { loadPublicSite, previewFromQuery } from "@/lib/loadPublicSite";
 import { isTenantHostRequest, publicSiteHomeHref } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
-import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderNav, siteHeaderProps } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string; token: string }>;
@@ -47,7 +47,7 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
     const site = await loadPublicSite(slug, preview);
     companyName = site.company.name;
     showGuestApp = site.content.app.benwerApp;
-    const header = siteHeaderProps(site.content, site.company);
+    const header = { ...siteHeaderProps(site.content, site.company), ...siteHeaderNav(site) };
     logos = siteHeaderLogos(site.content, site.company.branding);
     brandColor = header.brandColor;
   } catch {
@@ -67,7 +67,7 @@ async function CompanySiteBookingStatusPage({ params, searchParams }: Props) {
         brandColor={brandColor}
         {...logos}
         homeHref={homeHref}
-        cartSlug={slug}
+        siteSlug={slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10 md:px-6 md:py-12">

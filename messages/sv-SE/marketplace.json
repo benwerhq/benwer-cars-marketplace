@@ -472,7 +472,8 @@
       "confirmed": "Bekräftad",
       "active": "Aktiv — trevlig resa!",
       "completed": "Avslutad",
-      "cancelled": "Avbokad"
+      "cancelled": "Avbokad",
+      "awaitingPayment": "Väntar på betalning"
     },
     "vehicle": "Fordon",
     "company": "Företag",
@@ -505,18 +506,27 @@
       "partially_paid": "Delvis betald",
       "paid": "Betald",
       "refund_due": "Återbetalning väntar",
-      "authorized": "Kort reserverat"
+      "authorized": "Kort reserverat",
+      "nothingDue": "Inget att betala"
     },
     "reasons": {
       "unpaid_timeout": "Betalningen slutfördes inte i tid",
       "request_expired": "Företaget svarade inte i tid",
       "request_declined": "Företaget nekade den här förfrågan",
-      "customer_request": "Du drog tillbaka den här förfrågan"
+      "customer_request": "Du drog tillbaka den här förfrågan",
+      "customer_cancelled": "Du avbokade den här bokningen"
     },
     "insurance": "Försäkring",
     "extras": "Tillval",
     "fees": "Avgifter för upphämtning och återlämning",
-    "priceTitle": "Prisöversikt"
+    "priceTitle": "Prisöversikt",
+    "pendingPaymentSubtitle": "Betala förskottet för att bekräfta bokningen. Vi mejlar dig på {email} när den är bekräftad.",
+    "requestSubtitle": "Förfrågan skickad. Vi har mejlat detaljerna till {email} och hör av oss när företaget svarar.",
+    "cancelledSubtitle": "Den här bokningen är avbokad.",
+    "cancelBooking": "Avboka",
+    "withdrawConfirmTitle": "Dra tillbaka förfrågan?",
+    "cancelConfirmTitle": "Avboka den här bokningen?",
+    "withdrawConfirmBody": "Bilen blir ledig för andra gäster. Det går inte att ångra."
   },
   "payment": {
     "title": "Betala förskottet",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Vad vi använder",
-          "body": "Kakor är små textfiler som lagras på din enhet. Den här webbplatsen använder även liknande lagring, såsom lokal lagring, för att komma ihåg dina val, din varukorg och din inloggning."
+          "body": "Kakor är små textfiler som sparas på din enhet. Webbplatsen använder också liknande lagring, till exempel lokal lagring, för att komma ihåg dina val och din inloggning."
         },
         {
           "title": "Strikt nödvändiga",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Hantera kakor",
-          "body": "Använd länken för kakinställningar i sidfoten för att ändra ditt val. Du kan också radera kakor och webbplatsdata i din webbläsare. Om du blockerar strikt nödvändig lagring kan du bli utloggad eller få din varukorg tömd."
+          "body": "Använd länken för kakinställningar i sidfoten för att ändra ditt val. Du kan också radera kakor och webbplatsdata i webbläsaren. Om du blockerar strikt nödvändig lagring kan du bli utloggad."
         },
         {
           "title": "Mer information",
           "body": "Se integritetspolicyn för hur {name} hanterar personuppgifter, eller använd kontaktuppgifterna i sidfoten."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} har ännu inte publicerat någon integritetspolicy på den här webbplatsen.",
+      "terms": "{name} har ännu inte publicerat några hyresvillkor på den här webbplatsen.",
+      "contactTitle": "Kontakta företaget",
+      "contactBody": "Kontakta {name} via uppgifterna på den här webbplatsen om du vill veta hur {name} hanterar dina personuppgifter eller vilka hyresvillkor som gäller. Hyresavtalet du skriver under vid upphämtningen anger de bindande villkoren."
     }
   },
   "support": {

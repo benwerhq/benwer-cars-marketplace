@@ -472,7 +472,8 @@
       "confirmed": "Potrjena",
       "active": "Aktivna — prijetno potovanje!",
       "completed": "Zaključena",
-      "cancelled": "Preklicana"
+      "cancelled": "Preklicana",
+      "awaitingPayment": "Čaka na plačilo"
     },
     "vehicle": "Vozilo",
     "company": "Podjetje",
@@ -505,18 +506,27 @@
       "partially_paid": "Delno plačano",
       "paid": "Plačano",
       "refund_due": "Za vračilo",
-      "authorized": "Kartica avtorizirana"
+      "authorized": "Kartica avtorizirana",
+      "nothingDue": "Ni za plačilo"
     },
     "reasons": {
       "unpaid_timeout": "Plačilo ni bilo opravljeno pravočasno",
       "request_expired": "Podjetje ni odgovorilo pravočasno",
       "request_declined": "Podjetje je to zahtevo zavrnilo",
-      "customer_request": "To zahtevo ste umaknili"
+      "customer_request": "To zahtevo ste umaknili",
+      "customer_cancelled": "To rezervacijo ste preklicali"
     },
     "insurance": "Zavarovanje",
     "extras": "Dodatki",
     "fees": "Stroški prevzema in vračila",
-    "priceTitle": "Povzetek cene"
+    "priceTitle": "Povzetek cene",
+    "pendingPaymentSubtitle": "Plačajte predplačilo, da potrdite rezervacijo. Ko bo potrjena, vam bomo pisali na {email}.",
+    "requestSubtitle": "Zahteva poslana. Podrobnosti smo poslali na {email} in vam sporočili, ko bo podjetje odgovorilo.",
+    "cancelledSubtitle": "Ta rezervacija je preklicana.",
+    "cancelBooking": "Prekliči rezervacijo",
+    "withdrawConfirmTitle": "Umaknem to zahtevo?",
+    "cancelConfirmTitle": "Prekličem to rezervacijo?",
+    "withdrawConfirmBody": "Avto bo sproščen za druge stranke. Tega ni mogoče razveljaviti."
   },
   "payment": {
     "title": "Plačilo predujma",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Kaj uporabljamo",
-          "body": "Piškotki so majhne besedilne datoteke, shranjene v vaši napravi. Ta spletna stran uporablja tudi podobno shrambo, kot je lokalna shramba, za pomnjenje vaših izbir, košarice in prijave."
+          "body": "Piškotki so majhne besedilne datoteke, shranjene v vaši napravi. Ta spletna stran uporablja tudi podobno shrambo, na primer lokalno shrambo, da si zapomni vaše izbire in prijavo."
         },
         {
           "title": "Nujno potrebni piškotki",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Upravljanje piškotkov",
-          "body": "Za spremembo svoje izbire uporabite povezavo Nastavitve piškotkov v nogi. Piškotke in podatke spletnih mest lahko izbrišete tudi v svojem brskalniku. Blokiranje nujno potrebne shrambe vas lahko odjavi ali izprazni vašo košarico."
+          "body": "Za spremembo svoje izbire uporabite povezavo Nastavitve piškotkov v nogi. Piškotke in podatke strani lahko izbrišete tudi v brskalniku. Blokiranje nujno potrebne shrambe vas lahko odjavi."
         },
         {
           "title": "Več informacij",
           "body": "Oglejte si politiko zasebnosti za informacije o tem, kako {name} ravna z osebnimi podatki, ali uporabite kontaktne podatke v nogi."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} na tej spletni strani še ni objavil pravilnika o zasebnosti.",
+      "terms": "{name} na tej spletni strani še ni objavil pogojev najema.",
+      "contactTitle": "Obrnite se na podjetje",
+      "contactBody": "Če želite izvedeti, kako {name} obdeluje vaše osebne podatke ali kateri so pogoji najema, se obrnite na {name} prek podatkov na tej spletni strani. Zavezujoče pogoje določa najemna pogodba, ki jo podpišete ob prevzemu."
     }
   },
   "support": {

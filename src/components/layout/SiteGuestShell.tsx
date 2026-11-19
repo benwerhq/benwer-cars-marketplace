@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { isTenantHostRequest, publicSiteHomeHref } from "@/lib/site";
 import type { PublicSite } from "@/types/site";
-import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderNav, siteHeaderProps } from "@/lib/siteContent";
 
 interface SiteGuestShellProps {
   site: PublicSite;
@@ -24,8 +24,9 @@ export async function SiteGuestShell({
     <>
       <SiteHeader
         {...siteHeaderProps(site.content, site.company)}
+        {...siteHeaderNav(site)}
         homeHref={homeHref}
-        cartSlug={site.slug}
+        siteSlug={site.slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-12 md:px-6">

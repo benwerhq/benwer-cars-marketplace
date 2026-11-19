@@ -12,7 +12,7 @@ import {
   siteOwnerPath,
 } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
-import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderNav, siteHeaderProps } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -56,8 +56,9 @@ async function CompanySiteOwnerPage({ params, searchParams }: Props) {
     <>
       <SiteHeader
         {...siteHeaderProps(site.content, site.company)}
+        {...siteHeaderNav(site)}
         homeHref={homeHref}
-        cartSlug={slug}
+        siteSlug={slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-md flex-1 px-4 py-12 md:px-6">

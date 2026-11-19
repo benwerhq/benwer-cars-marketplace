@@ -16,7 +16,6 @@ import { prefetchAvailabilityState } from "@/lib/prefetchAvailability";
 import {
   SITE_CHANNEL,
   canAcceptBookings,
-  cartHrefFromHome,
   companySlugFromSite,
   isRequestBooking,
   isSitePaused,
@@ -31,7 +30,7 @@ import {
 import { siteCanonicalPageUrl } from "@/lib/canonicalUrl";
 import { buildPageMetadata, carProductJsonLd } from "@/lib/seo";
 import { vehicleImageUrls } from "@/lib/vehicleImage";
-import { siteHeaderLogos, siteHeaderProps } from "@/lib/siteContent";
+import { siteHeaderLogos, siteHeaderNav, siteHeaderProps } from "@/lib/siteContent";
 
 interface Props {
   params: Promise<{ slug: string; id: string }>;
@@ -150,8 +149,9 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
     <>
       <SiteHeader
         {...siteHeaderProps(site.content, site.company)}
+        {...siteHeaderNav(site)}
         homeHref={homeHref}
-        cartSlug={slug}
+        siteSlug={slug}
         fleetHref={`${homeHref}#fleet`}
       />
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 md:px-6 lg:px-8">
@@ -174,13 +174,6 @@ async function CompanySiteCarPage({ params, searchParams }: Props) {
             bookHrefOverride={bookHref}
             requestMode={isRequestBooking(site)}
             channel={SITE_CHANNEL}
-            cart={{
-              slug,
-              href: cartHrefFromHome(homeHref),
-              branch,
-              returnBranch: site.allowDifferentReturn ? returnBranch : undefined,
-              driverAge,
-            }}
           />
         </HydrationBoundary>
         <JsonLd

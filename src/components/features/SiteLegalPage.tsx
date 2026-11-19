@@ -18,19 +18,25 @@ export async function siteLegalMetadata(
 ): Promise<Metadata> {
   const locale = await getLocale();
   const t = await getTranslations(`legal.${kind}`);
+  const tSite = await getTranslations("siteLegal");
   let siteName = slug;
   let title = t("title");
+  let description = tSite(`missing.${kind}`, { name: slug });
   try {
     const site = await loadPublicSite(slug, preview);
     siteName = site.company.name;
-    title = splitLegalText(localizedText(site.content.legal[kind], locale)).title || title;
+    const own = splitLegalText(localizedText(site.content.legal[kind], locale));
+    title = own.title || title;
+    description = own.body
+      ? parseLegalBlocks(own.body).intro || title
+      : tSite(`missing.${kind}`, { name: siteName });
   } catch {
     siteName = slug;
   }
 
   return buildPageMetadata({
     title,
-    description: t("lede"),
+    description,
     path: `${siteHomePath(slug)}/${kind}`,
     siteName,
     locale,
@@ -70,11 +76,17 @@ export async function SiteLegalPage({
           sections={parseLegalBlocks(own.body).sections}
         />
       ) : (
+        // The company has not published its own text: never show the marketplace's policy here.
         <LegalArticle
           title={title}
-          lede={t("lede")}
-          updated={t("updated")}
-          sections={readLegalSections(t.raw("sections"))}
+          lede={tSite(`missing.${kind}`, { name: site.company.name })}
+          updated={tSite("byCompany", { name: site.company.name })}
+          sections={[
+            {
+              title: tSite("missing.contactTitle"),
+              body: tSite("missing.contactBody", { name: site.company.name }),
+            },
+          ]}
         />
       )}
     </SiteGuestShell>

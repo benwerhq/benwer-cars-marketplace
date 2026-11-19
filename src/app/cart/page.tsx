@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { NavRoutes } from "@/enums";
 
-/** The main marketplace has no cart. Company sites keep /cart on their own host. */
+/** There is no cart on the marketplace or company sites; old /cart links go home. */
 export default function MarketplaceCartRedirectPage() {
   redirect(NavRoutes.HOME);
 }

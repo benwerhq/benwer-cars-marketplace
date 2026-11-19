@@ -472,7 +472,8 @@
       "confirmed": "Deimhnithe",
       "active": "Gníomhach — bain taitneamh as do thuras!",
       "completed": "Críochnaithe",
-      "cancelled": "Cealaithe"
+      "cancelled": "Cealaithe",
+      "awaitingPayment": "Ag fanacht ar íocaíocht"
     },
     "vehicle": "Feithicil",
     "company": "Comhlacht",
@@ -505,18 +506,27 @@
       "partially_paid": "Íoctha go páirteach",
       "paid": "Íoctha",
       "refund_due": "Aisíocaíocht dlite",
-      "authorized": "Cárta údaraithe"
+      "authorized": "Cárta údaraithe",
+      "nothingDue": "Níl aon rud le híoc"
     },
     "reasons": {
       "unpaid_timeout": "Níor críochnaíodh an íocaíocht in am",
       "request_expired": "Níor fhreagair an comhlacht in am",
       "request_declined": "Dhiúltaigh an comhlacht don iarratas seo",
-      "customer_request": "Tharraing tú siar an t-iarratas seo"
+      "customer_request": "Tharraing tú siar an t-iarratas seo",
+      "customer_cancelled": "Chuir tú an áirithint seo ar ceal"
     },
     "insurance": "Árachas",
     "extras": "Breiseanna",
     "fees": "Táillí bailithe agus fillte",
-    "priceTitle": "Achoimre praghais"
+    "priceTitle": "Achoimre praghais",
+    "pendingPaymentSubtitle": "Íoc an réamhíocaíocht chun d’áirithint a dheimhniú. Scríobhfaimid chuig {email} nuair a bheidh sí deimhnithe.",
+    "requestSubtitle": "Iarratas seolta. Sheolamar na sonraí chuig {email} agus cuirfimid in iúl duit nuair a fhreagróidh an comhlacht.",
+    "cancelledSubtitle": "Tá an áirithint seo curtha ar ceal.",
+    "cancelBooking": "Cuir an áirithint ar ceal",
+    "withdrawConfirmTitle": "An iarratas seo a tharraingt siar?",
+    "cancelConfirmTitle": "An áirithint seo a chur ar ceal?",
+    "withdrawConfirmBody": "Scaoilfear an carr do chustaiméirí eile. Ní féidir é seo a chealú."
   },
   "payment": {
     "title": "Íoc an réamhíocaíocht",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Cad a úsáidimid",
-          "body": "Is comhaid bheaga téacs iad fianáin a stóráiltear ar do ghléas. Úsáideann an suíomh gréasáin seo stóráil chomhchosúil freisin, amhail stóráil áitiúil, chun cuimhneamh ar do roghanna, do thralaí agus do shíniú isteach."
+          "body": "Is comhaid bheaga téacs iad fianáin a stóráiltear ar do ghléas. Úsáideann an suíomh seo stóráil chosúil freisin, mar stóráil áitiúil, chun do roghanna agus do shíniú isteach a mheabhrú."
         },
         {
           "title": "Fíor-riachtanach",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Fianáin a bhainistiú",
-          "body": "Úsáid an nasc socruithe fianán sa bhuntásc chun do rogha a athrú. Is féidir leat fianáin agus sonraí suímh a scriosadh i do bhrabhsálaí freisin. D'fhéadfadh bac a chur ar stóráil fhíor-riachtanach tú a shíniú amach nó do thralaí a fholmhú."
+          "body": "Úsáid an nasc socruithe fianán sa bhuntásc chun do rogha a athrú. Is féidir leat fianáin agus sonraí an tsuímh a scriosadh i do bhrabhsálaí freisin. D’fhéadfadh blocáil na stórála atá fíor-riachtanach tú a shíniú amach."
         },
         {
           "title": "Tuilleadh eolais",
           "body": "Féach ar an bpolasaí príobháideachais chun a fháil amach conas a láimhseálann {name} sonraí pearsanta, nó úsáid na sonraí teagmhála sa bhuntásc."
         }
       ]
+    },
+    "missing": {
+      "privacy": "Níor fhoilsigh {name} a beartas príobháideachais ar an suíomh seo fós.",
+      "terms": "Níor fhoilsigh {name} a téarmaí cíosa ar an suíomh seo fós.",
+      "contactTitle": "Déan teagmháil leis an gcomhlacht",
+      "contactBody": "Chun fáil amach conas a láimhseálann {name} do shonraí pearsanta nó cad iad na coinníollacha cíosa, déan teagmháil le {name} trí na sonraí ar an suíomh seo. Is é an comhaontú cíosa a shíníonn tú ag an mbailiú a leagann síos na téarmaí ceangailteacha."
     }
   },
   "support": {

@@ -472,7 +472,8 @@
       "confirmed": "Bestätigt",
       "active": "Aktiv — gute Fahrt!",
       "completed": "Abgeschlossen",
-      "cancelled": "Storniert"
+      "cancelled": "Storniert",
+      "awaitingPayment": "Zahlung ausstehend"
     },
     "vehicle": "Fahrzeug",
     "company": "Unternehmen",
@@ -505,18 +506,27 @@
       "partially_paid": "Teilweise bezahlt",
       "paid": "Bezahlt",
       "refund_due": "Erstattung fällig",
-      "authorized": "Karte autorisiert"
+      "authorized": "Karte autorisiert",
+      "nothingDue": "Nichts zu zahlen"
     },
     "reasons": {
       "unpaid_timeout": "Die Zahlung wurde nicht rechtzeitig abgeschlossen",
       "request_expired": "Das Unternehmen hat nicht rechtzeitig geantwortet",
       "request_declined": "Das Unternehmen hat diese Anfrage abgelehnt",
-      "customer_request": "Du hast diese Anfrage zurückgezogen"
+      "customer_request": "Du hast diese Anfrage zurückgezogen",
+      "customer_cancelled": "Du hast diese Buchung storniert"
     },
     "insurance": "Versicherung",
     "extras": "Extras",
     "fees": "Abhol- und Rückgabegebühren",
-    "priceTitle": "Preisübersicht"
+    "priceTitle": "Preisübersicht",
+    "pendingPaymentSubtitle": "Zahle die Anzahlung, um deine Buchung zu bestätigen. Wir schreiben dir an {email}, sobald sie bestätigt ist.",
+    "requestSubtitle": "Anfrage gesendet. Wir haben dir die Details an {email} geschickt und melden uns, sobald das Unternehmen antwortet.",
+    "cancelledSubtitle": "Diese Buchung ist storniert.",
+    "cancelBooking": "Buchung stornieren",
+    "withdrawConfirmTitle": "Diese Anfrage zurückziehen?",
+    "cancelConfirmTitle": "Diese Buchung stornieren?",
+    "withdrawConfirmBody": "Das Auto wird für andere Gäste freigegeben. Das kann nicht rückgängig gemacht werden."
   },
   "payment": {
     "title": "Anzahlung bezahlen",
@@ -1355,7 +1365,7 @@
       "sections": [
         {
           "title": "Was wir verwenden",
-          "body": "Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden. Diese Website nutzt auch ähnliche Speichermechanismen wie Local Storage, um deine Auswahl, deinen Warenkorb und deine Anmeldung zu speichern."
+          "body": "Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden. Diese Website nutzt auch ähnliche Speicher wie den lokalen Speicher, um sich deine Auswahl und deine Anmeldung zu merken."
         },
         {
           "title": "Technisch notwendig",
@@ -1367,13 +1377,19 @@
         },
         {
           "title": "Cookies verwalten",
-          "body": "Nutze den Link „Cookie-Einstellungen“ in der Fußzeile, um deine Auswahl zu ändern. Du kannst Cookies und Website-Daten auch in deinem Browser löschen. Das Blockieren technisch notwendiger Speicher kann dich abmelden oder deinen Warenkorb leeren."
+          "body": "Nutze den Link „Cookie-Einstellungen“ in der Fußzeile, um deine Auswahl zu ändern. Du kannst Cookies und Websitedaten auch in deinem Browser löschen. Wenn du unbedingt erforderlichen Speicher blockierst, wirst du möglicherweise abgemeldet."
         },
         {
           "title": "Weitere Informationen",
           "body": "Informationen zum Umgang von {name} mit personenbezogenen Daten findest du in der Datenschutzerklärung, oder nutze die Kontaktdaten in der Fußzeile."
         }
       ]
+    },
+    "missing": {
+      "privacy": "{name} hat auf dieser Website noch keine Datenschutzerklärung veröffentlicht.",
+      "terms": "{name} hat auf dieser Website noch keine Mietbedingungen veröffentlicht.",
+      "contactTitle": "Unternehmen kontaktieren",
+      "contactBody": "Wie {name} deine personenbezogenen Daten verarbeitet und welche Mietbedingungen gelten, erfährst du direkt bei {name} über die Kontaktdaten auf dieser Website. Verbindlich ist der Mietvertrag, den du bei der Abholung unterschreibst."
     }
   },
   "support": {

@@ -474,7 +474,8 @@
       "confirmed": "Confirmada",
       "active": "Ativa — boa viagem!",
       "completed": "Concluída",
-      "cancelled": "Cancelada"
+      "cancelled": "Cancelada",
+      "awaitingPayment": "A aguardar pagamento"
     },
     "vehicle": "Veículo",
     "company": "Empresa",
@@ -507,18 +508,27 @@
       "partially_paid": "Parcialmente pago",
       "paid": "Pago",
       "refund_due": "Reembolso pendente",
-      "authorized": "Cartão autorizado"
+      "authorized": "Cartão autorizado",
+      "nothingDue": "Nada a pagar"
     },
     "reasons": {
       "unpaid_timeout": "O pagamento não foi concluído a tempo",
       "request_expired": "A empresa não respondeu a tempo",
       "request_declined": "A empresa recusou este pedido",
-      "customer_request": "Retirou este pedido"
+      "customer_request": "Retirou este pedido",
+      "customer_cancelled": "Cancelou esta reserva"
     },
     "insurance": "Seguro",
     "extras": "Extras",
     "fees": "Taxas de levantamento e devolução",
-    "priceTitle": "Resumo do preço"
+    "priceTitle": "Resumo do preço",
+    "pendingPaymentSubtitle": "Pague o sinal para confirmar a sua reserva. Enviaremos um email para {email} quando estiver confirmada.",
+    "requestSubtitle": "Pedido enviado. Enviámos os detalhes para {email} e avisamos quando a empresa responder.",
+    "cancelledSubtitle": "Esta reserva está cancelada.",
+    "cancelBooking": "Cancelar reserva",
+    "withdrawConfirmTitle": "Retirar este pedido?",
+    "cancelConfirmTitle": "Cancelar esta reserva?",
+    "withdrawConfirmBody": "O carro fica disponível para outros clientes. Não é possível anular."
   },
   "payment": {
     "title": "Pague o sinal",
@@ -1358,7 +1368,7 @@
       "sections": [
         {
           "title": "O que utilizamos",
-          "body": "Os cookies são pequenos ficheiros de texto guardados no seu dispositivo. Este site também utiliza armazenamento semelhante, como o armazenamento local, para memorizar as suas escolhas, o seu carrinho e a sua sessão."
+          "body": "Os cookies são pequenos ficheiros de texto guardados no seu dispositivo. Este site também utiliza armazenamento semelhante, como o armazenamento local, para memorizar as suas escolhas e a sua sessão."
         },
         {
           "title": "Estritamente necessários",
@@ -1370,13 +1380,19 @@
         },
         {
           "title": "Gerir cookies",
-          "body": "Utilize a ligação de definições de cookies no rodapé para alterar a sua escolha. Também pode eliminar os cookies e os dados do site no seu navegador. Bloquear o armazenamento estritamente necessário pode terminar a sua sessão ou esvaziar o carrinho."
+          "body": "Utilize a ligação de definições de cookies no rodapé para alterar a sua escolha. Também pode eliminar os cookies e os dados do site no seu navegador. Bloquear o armazenamento estritamente necessário pode terminar a sua sessão."
         },
         {
           "title": "Mais informações",
           "body": "Consulte a política de privacidade para saber como a {name} trata os dados pessoais, ou utilize os contactos indicados no rodapé."
         }
       ]
+    },
+    "missing": {
+      "privacy": "A {name} ainda não publicou a sua política de privacidade neste site.",
+      "terms": "A {name} ainda não publicou as suas condições de aluguer neste site.",
+      "contactTitle": "Contacte a empresa",
+      "contactBody": "Para saber como a {name} trata os seus dados pessoais ou quais são as condições do aluguer, contacte a {name} através dos dados deste site. O contrato de aluguer que assina no levantamento define as condições vinculativas."
     }
   },
   "support": {
