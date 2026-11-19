@@ -35,6 +35,11 @@ const APP_ID = /^[a-zA-Z][\w-]*(\.[a-zA-Z][\w-]*)+$/;
 const SHA256_FINGERPRINT = /^([0-9A-F]{2}:){31}[0-9A-F]{2}$/;
 const APP_STORE_ID = /\/id(\d{6,})(?:[/?#]|$)/;
 
+/** Play app-signing certificate for com.benwer.cars.guest (public, not a secret). */
+export const PRODUCTION_GUEST_ANDROID_SHA256_FINGERPRINTS = [
+  "38:95:0F:C1:94:9C:3E:4E:A6:A9:9C:D8:9E:25:9D:99:44:32:BB:A8:7E:94:03:8A:A7:BB:0E:52:F4:98:2D:0C",
+] as const;
+
 function httpsUrl(value: string | undefined): string {
   const trimmed = value?.trim() ?? "";
   if (!trimmed) {
@@ -111,23 +116,36 @@ export function buildAppleAppSiteAssociation(input: {
   };
 }
 
+export function buildAssetLinkStatements(
+  entries: { appId: string | null; fingerprints: string[] }[],
+): AssetLinkStatement[] | null {
+  const packages = new Map<string, string[]>();
+  for (const entry of entries) {
+    if (!entry.appId || entry.fingerprints.length === 0) {
+      continue;
+    }
+    packages.set(entry.appId, [
+      ...new Set([...(packages.get(entry.appId) ?? []), ...entry.fingerprints]),
+    ]);
+  }
+  if (packages.size === 0) {
+    return null;
+  }
+  return [...packages.entries()].map(([package_name, sha256_cert_fingerprints]) => ({
+    relation: ["delegate_permission/common.handle_all_urls"],
+    target: {
+      namespace: "android_app",
+      package_name,
+      sha256_cert_fingerprints,
+    },
+  }));
+}
+
 export function buildAssetLinks(input: {
   appId: string | null;
   fingerprints: string[];
 }): AssetLinkStatement[] | null {
-  if (!input.appId || input.fingerprints.length === 0) {
-    return null;
-  }
-  return [
-    {
-      relation: ["delegate_permission/common.handle_all_urls"],
-      target: {
-        namespace: "android_app",
-        package_name: input.appId,
-        sha256_cert_fingerprints: input.fingerprints,
-      },
-    },
-  ];
+  return buildAssetLinkStatements([input]);
 }
 
 function currentEnvironment(): PublicEnvironment {
@@ -142,10 +160,16 @@ export function appleAppSiteAssociationFromEnv(): AppleAppSiteAssociation | null
 }
 
 export function assetLinksFromEnv(): AssetLinkStatement[] | null {
-  return buildAssetLinks({
-    appId: guestAppId(currentEnvironment(), process.env.GUEST_APP_ANDROID_PACKAGE),
-    fingerprints: parseFingerprints(process.env.GUEST_APP_ANDROID_SHA256_FINGERPRINTS),
-  });
+  return buildAssetLinkStatements([
+    {
+      appId: GuestAppIds.PRODUCTION,
+      fingerprints: [...PRODUCTION_GUEST_ANDROID_SHA256_FINGERPRINTS],
+    },
+    {
+      appId: guestAppId(currentEnvironment(), process.env.GUEST_APP_ANDROID_PACKAGE),
+      fingerprints: parseFingerprints(process.env.GUEST_APP_ANDROID_SHA256_FINGERPRINTS),
+    },
+  ]);
 }
 
 export function servesGuestAppLinks(hostHeader: string | null): boolean {

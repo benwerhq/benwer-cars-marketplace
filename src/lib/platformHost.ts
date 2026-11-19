@@ -100,8 +100,12 @@ export function isMarketplaceFrontDoor(
   );
 }
 
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function platformLabel(hostname: string, domain: string): string | null {
-  const escaped = domain.replace(/\./g, "\\.");
+  const escaped = escapeRegExp(domain);
   const subdomainMatch = hostname.match(new RegExp(`^([^.]+)\\.${escaped}$`));
   return subdomainMatch?.[1] ?? null;
 }
