@@ -108,13 +108,22 @@ export function CarCard({
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-3 p-4">
-        <div className="min-w-0">
-          <h3 className="text-base font-semibold leading-tight text-foreground">
-            {name}
-          </h3>
-          <p className="mt-0.5 text-xs text-muted-foreground">
-            {vehicle.year} &middot; {t(vehicleLabelKey(vehicle))}
-          </p>
+        <div className="flex min-w-0 items-center gap-3">
+          {company && hasCompanyLogo(company) ? (
+            <CompanyLogo
+              company={company}
+              size="card"
+              className="max-w-[40%] shrink-0"
+            />
+          ) : null}
+          <div className="min-w-0 flex-1">
+            <h3 className="text-base font-semibold leading-tight break-words text-foreground">
+              {name}
+            </h3>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              {vehicle.year} &middot; {t(vehicleLabelKey(vehicle))}
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
@@ -132,35 +141,32 @@ export function CarCard({
           <FuelBadge fuel={vehicle.fuel} />
         </div>
 
-        <div className="mt-auto flex min-w-0 items-center gap-3 border-t border-border pt-3">
-          {company && hasCompanyLogo(company) ? (
-            <CompanyLogo company={company} size="car" className="max-w-[min(100%,12rem)]" />
-          ) : null}
-          <div className="ml-auto flex min-w-0 shrink-0 items-center gap-3">
-            <p className="leading-none">
-              <span className="text-lg font-semibold tabular-nums text-foreground">
-                {formatPrice(vehicle.pricePerDay, vehicle.currency, locale)}
-              </span>
-              <span className="text-sm text-muted-foreground">
-                {t("perDaySuffix")}
-              </span>
-            </p>
-            {available ? (
-              <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                {t("viewDetails")}
-                {external ? <span className="sr-only">{t("opensCompanySite")}</span> : null}
-                <ActionIcon
-                  size={external ? 14 : 16}
-                  aria-hidden
-                  className="transition-transform motion-safe:group-hover:translate-x-0.5"
-                />
-              </span>
-            ) : (
-              <span className="inline-flex items-center rounded-md bg-surface-muted px-3 py-1.5 text-sm font-medium text-muted-foreground">
-                {t("bookUnavailable")}
-              </span>
-            )}
-          </div>
+        <div className="mt-auto flex min-w-0 flex-wrap items-center justify-between gap-3 border-t border-border pt-3">
+          <p className="leading-none">
+            <span className="text-lg font-semibold tabular-nums text-foreground">
+              {formatPrice(vehicle.pricePerDay, vehicle.currency, locale)}
+            </span>
+            <span className="text-sm text-muted-foreground">
+              {t("perDaySuffix")}
+            </span>
+          </p>
+          {available ? (
+            <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+              {t("viewDetails")}
+              {external ? (
+                <span className="sr-only">{t("opensCompanySite")}</span>
+              ) : null}
+              <ActionIcon
+                size={external ? 14 : 16}
+                aria-hidden
+                className="transition-transform motion-safe:group-hover:translate-x-0.5"
+              />
+            </span>
+          ) : (
+            <span className="inline-flex items-center rounded-md bg-surface-muted px-3 py-1.5 text-sm font-medium text-muted-foreground">
+              {t("bookUnavailable")}
+            </span>
+          )}
         </div>
       </div>
     </Link>
