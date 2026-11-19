@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { ArrowUpRight, Check, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
 import { useLocale, useTranslations } from "next-intl";
+import { CompanyHandoffDialog } from "@/components/features/CompanyHandoffDialog";
 import { Button } from "@/components/ui/Button";
 import { buildBookHref } from "@/lib/booking";
 import { addToCart, CART_MAX_ITEMS } from "@/lib/cart";
@@ -64,6 +65,7 @@ export function BookingWidget({
   const t = useTranslations("booking");
   const tCart = useTranslations("cart");
   const [justAdded, setJustAdded] = useState(false);
+  const [handoffOpen, setHandoffOpen] = useState(false);
 
   useEffect(() => {
     if (!justAdded) {
@@ -221,6 +223,7 @@ export function BookingWidget({
           href={bookHref}
           label={ctaLabel}
           external={!isTenant}
+          onConfirm={!isTenant && bookHref ? () => setHandoffOpen(true) : undefined}
           className="hidden lg:inline-flex"
         />
         {cart && isTenant && bookingsEnabled ? (
@@ -278,10 +281,19 @@ export function BookingWidget({
             href={bookHref}
             label={ctaLabel}
             external={!isTenant}
+            onConfirm={!isTenant && bookHref ? () => setHandoffOpen(true) : undefined}
             className="w-auto min-w-36"
           />
         </div>
       </div>
+      {!isTenant && bookHref ? (
+        <CompanyHandoffDialog
+          open={handoffOpen}
+          onOpenChange={setHandoffOpen}
+          companyName={companyName}
+          continueHref={bookHref}
+        />
+      ) : null}
     </>
   );
 }
@@ -314,11 +326,13 @@ function BookingCta({
   href,
   label,
   external,
+  onConfirm,
   className,
 }: {
   href: string | null;
   label: string;
   external?: boolean;
+  onConfirm?: () => void;
   className?: string;
 }) {
   if (href) {
@@ -326,6 +340,14 @@ function BookingCta({
       "inline-flex h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
       className,
     );
+
+    if (onConfirm) {
+      return (
+        <button type="button" className={classes} onClick={onConfirm}>
+          {label}
+        </button>
+      );
+    }
 
     if (external) {
       return (

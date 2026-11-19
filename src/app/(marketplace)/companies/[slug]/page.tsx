@@ -144,10 +144,11 @@ async function CompanyPage({ params, searchParams }: Props) {
         <HydrationBoundary state={dehydratedState}>
           <CarListView
             companySlug={slug}
-            hrefBase={buildCompanySiteHref({
-              slug,
-              websiteUrl: company.websiteUrl,
-              path: "/cars",
+            hrefBase={appendSearchParams(`/companies/${encodeURIComponent(slug)}/cars`, {
+              location:
+                typeof query.location === "string" ? query.location : undefined,
+              from: typeof query.from === "string" ? query.from : undefined,
+              to: typeof query.to === "string" ? query.to : undefined,
             })}
             showDirectoryEmptyAction
             filterByAvailability
