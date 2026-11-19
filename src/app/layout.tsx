@@ -6,6 +6,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Toaster } from "sonner";
 import { GuestAuthProvider } from "@/context/GuestAuthProvider";
 import { QueryProvider } from "@/context/QueryProvider";
+import { RealtimeProvider } from "@/context/RealtimeProvider";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CookieBannerHost } from "@/components/features/CookieBannerHost";
 import { StorageKeys } from "@/enums";
@@ -92,6 +93,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const cookieStore = await cookies();
+  const hostCompanySlug = (await headers()).get("x-company-slug");
   const locale = resolveLocale(cookieStore.get(StorageKeys.LOCALE)?.value);
   const colorScheme = parseColorScheme(cookieStore.get(StorageKeys.COLOR_SCHEME)?.value);
   const colorSchemeScript = systemColorSchemeScript(colorScheme);
@@ -112,15 +114,17 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <QueryProvider>
             <GuestAuthProvider>
-              <JsonLd
-                data={websiteJsonLd({
-                  name: messages.brand.name,
-                  description: messages.meta.siteDescription,
-                })}
-              />
-              {children}
-              <CookieBannerHost />
-              <Toaster richColors position="top-right" offset={{ top: 80 }} mobileOffset={{ top: 72 }} />
+              <RealtimeProvider hostCompanySlug={hostCompanySlug}>
+                <JsonLd
+                  data={websiteJsonLd({
+                    name: messages.brand.name,
+                    description: messages.meta.siteDescription,
+                  })}
+                />
+                {children}
+                <CookieBannerHost />
+                <Toaster richColors position="top-right" offset={{ top: 80 }} mobileOffset={{ top: 72 }} />
+              </RealtimeProvider>
             </GuestAuthProvider>
           </QueryProvider>
         </NextIntlClientProvider>
