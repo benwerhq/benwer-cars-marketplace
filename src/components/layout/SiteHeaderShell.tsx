@@ -17,6 +17,7 @@ interface SiteHeaderShellProps {
   barClassName?: string;
   brandLinkClassName?: string;
   brandColor?: string | null;
+  brandBackground?: { color: string; tone: "light" | "dark" };
 }
 
 export { COMPANY_HEADER_BAR_CLASS };
@@ -41,10 +42,11 @@ export function SiteHeaderShell({
   barClassName,
   brandLinkClassName,
   brandColor,
+  brandBackground,
 }: SiteHeaderShellProps) {
   const draft = useSiteDraftLogo();
-  const color = liveBrandColor(brandColor, draft?.themeStyle);
-  const tone = brandHeaderTone(color);
+  const color = brandBackground?.color ?? liveBrandColor(brandColor, draft?.themeStyle);
+  const tone = brandBackground?.tone ?? brandHeaderTone(color);
 
   return (
     <header

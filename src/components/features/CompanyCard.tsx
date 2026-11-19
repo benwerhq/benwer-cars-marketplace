@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Car, MapPin } from "lucide-react";
-import { CompanyLogo } from "./CompanyLogo";
+import { CompanyLogo, hasCompanyLogo } from "./CompanyLogo";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
 
@@ -54,9 +54,11 @@ export function CompanyCard({
         style={brandColor ? { backgroundColor: brandColor } : undefined}
       />
       <div className="flex flex-1 flex-col p-5">
-        <div className="flex flex-col gap-3">
-          <CompanyLogo company={company} size="card" />
-          <div className="min-w-0">
+        <div className="flex min-w-0 items-center gap-3">
+          {hasCompanyLogo(company) ? (
+            <CompanyLogo company={company} size="card" className="max-w-[45%]" />
+          ) : null}
+          <div className="min-w-0 flex-1">
             <h3 className="line-clamp-2 text-sm font-medium break-words text-foreground">
               {company.name}
             </h3>
