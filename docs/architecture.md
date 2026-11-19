@@ -221,9 +221,12 @@ The marketplace host is the universal link / App Link domain for the guest app.
 - `/.well-known/apple-app-site-association` and `/.well-known/assetlinks.json`
   are Route Handlers (`src/app/.well-known/*`, `src/lib/guestApp.ts`). They
   answer only on the marketplace front door (`isMarketplaceFrontDoor`) and
-  return 404 on company subdomains, custom domains, or while
-  `GUEST_APP_APPLE_TEAM_ID` / `GUEST_APP_ANDROID_SHA256_FINGERPRINTS` are unset.
-  App ids follow `NEXT_PUBLIC_ENV`: `com.benwer.cars.guest` on production,
+  return 404 on company subdomains or custom domains. `assetlinks.json`
+  always includes `com.benwer.cars.guest` with the Play app-signing SHA-256;
+  `GUEST_APP_ANDROID_SHA256_FINGERPRINTS` adds more fingerprints (and a
+  staging / override package when `NEXT_PUBLIC_ENV` is not production).
+  AASA still returns 404 while `GUEST_APP_APPLE_TEAM_ID` is unset. App ids
+  follow `NEXT_PUBLIC_ENV`: `com.benwer.cars.guest` on production,
   `com.benwer.cars.guest.staging` otherwise.
 - `src/proxy.ts` passes `/.well-known/*` through untouched (no tenant rewrite,
   no redirect).
