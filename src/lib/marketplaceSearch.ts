@@ -1,6 +1,5 @@
 import { NavRoutes, SearchParams } from "@/enums";
 import { toApiLocation } from "@/data/malagaCities";
-import { buildCompanySiteHref } from "@/lib/companySite";
 import { serializeCompanySlugs } from "@/lib/vehicleFilters";
 
 export function appendSearchParams(
@@ -110,6 +109,7 @@ export function buildCompaniesMapHref(input?: {
   });
 }
 
+/** Company page on the main marketplace (cars.benwer.es), not the company site. */
 export function buildCompanyHref(
   slug: string,
   input?: {
@@ -118,9 +118,27 @@ export function buildCompanyHref(
     to?: string;
   },
 ): string {
-  return buildCompanySiteHref({
-    slug,
+  return appendSearchParams(`/companies/${encodeURIComponent(slug)}`, {
+    location: input?.location,
     from: input?.from,
     to: input?.to,
   });
+}
+
+/** Car details on the main marketplace. Dates are kept on the query string. */
+export function buildMarketplaceCarHref(input: {
+  slug: string;
+  vehicleId: string;
+  location?: string;
+  from?: string;
+  to?: string;
+}): string {
+  return appendSearchParams(
+    `/companies/${encodeURIComponent(input.slug)}/cars/${encodeURIComponent(input.vehicleId)}`,
+    {
+      location: input.location,
+      from: input.from,
+      to: input.to,
+    },
+  );
 }

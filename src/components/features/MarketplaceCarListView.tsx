@@ -28,7 +28,7 @@ import {
 } from "@/lib/dates";
 import { resolveCardCompany } from "@/lib/companyIdentity";
 import { locationLabelFromSlug } from "@/lib/locationOptions";
-import { buildCompanyCarHref } from "@/lib/companySite";
+import { buildMarketplaceCarHref } from "@/lib/marketplaceSearch";
 import {
   applyVehicleFilters,
   clearAdvancedFilters,
@@ -57,7 +57,6 @@ function MarketplaceCarListContent() {
   };
   const { data, allVehicles, isPending, isError, error, refetch } =
     useMarketplaceVehicles(marketplaceFilters);
-  const driverAge = searchParams.get(SearchParams.DRIVER_AGE) ?? undefined;
   const companiesQuery = useCompanies(
     hasDates
       ? {
@@ -117,21 +116,12 @@ function MarketplaceCarListContent() {
   }
 
   function buildHref(vehicle: Vehicle): string {
-    const listed = companiesQuery.data?.find(
-      (company) => company.slug === vehicle.companySlug,
-    );
-    return buildCompanyCarHref({
+    return buildMarketplaceCarHref({
       slug: vehicle.companySlug,
       vehicleId: vehicle.id,
-      websiteUrl: listed?.websiteUrl,
+      location: browse.location,
       from: browse.from,
       to: browse.to,
-      params: {
-        [SearchParams.DRIVER_AGE]: driverAge,
-        [SearchParams.BRANCH]: filters.branchId,
-        [SearchParams.RETURN_BRANCH]:
-          searchParams.get(SearchParams.RETURN_BRANCH) ?? undefined,
-      },
     });
   }
 

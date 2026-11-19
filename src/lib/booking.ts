@@ -1,6 +1,5 @@
 import { NavRoutes, SearchParams } from "@/enums";
-import { buildCompanyCarHref, buildCompanySiteHref } from "@/lib/companySite";
-import { appendSearchParams } from "@/lib/marketplaceSearch";
+import { appendSearchParams, buildCompanyHref, buildMarketplaceCarHref } from "@/lib/marketplaceSearch";
 
 /**
  * Sets (or removes, when empty) query params on a relative or absolute href
@@ -54,7 +53,7 @@ export function buildCarDetailHref(input: {
     });
   }
 
-  return buildCompanyCarHref({
+  return buildMarketplaceCarHref({
     slug: input.companySlug,
     vehicleId: input.carId,
     from: input.from,
@@ -75,8 +74,7 @@ export function buildFleetHref(input: {
     });
   }
 
-  return buildCompanySiteHref({
-    slug: input.companySlug,
+  return buildCompanyHref(input.companySlug, {
     from: input.from,
     to: input.to,
   });

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useMarketplaceVehicles } from "@/hooks/useMarketplaceVehicles";
 import { NavRoutes } from "@/enums";
-import { buildCompanyCarHref } from "@/lib/companySite";
+import { buildMarketplaceCarHref } from "@/lib/marketplaceSearch";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { CarGridSkeleton, CarGridView } from "./CarGrid";
@@ -24,11 +24,9 @@ function FeaturedCarsContent() {
     useMarketplaceVehicles(undefined);
 
   function buildHref(vehicle: Vehicle): string {
-    const company = companyFor(vehicle);
-    return buildCompanyCarHref({
+    return buildMarketplaceCarHref({
       slug: vehicle.companySlug,
       vehicleId: vehicle.id,
-      websiteUrl: company?.websiteUrl,
     });
   }
 
