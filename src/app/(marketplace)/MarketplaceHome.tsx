@@ -5,7 +5,6 @@ import { BadgeCheck, MapPin, UserRound } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { MarketplaceHeader } from "@/components/layout/MarketplaceHeader";
 import { Footer } from "@/components/layout/Footer";
-import { BenwerLockup } from "@/components/layout/BenwerLockup";
 import { CompanyListView } from "@/components/features/CompanyListView";
 import { FeaturedCars } from "@/components/features/FeaturedCars";
 import { MarketplaceBannerCarousel } from "@/components/features/MarketplaceBannerCarousel";
@@ -90,9 +89,7 @@ export async function MarketplaceHome() {
       <HydrationBoundary state={dehydratedState}>
         <div className="mt-10">
           <SiteIntroBand
-            mark={
-              <BenwerLockup alt={tBrand("logoAlt")} className="h-16" />
-            }
+            eyebrow={tBrand("name")}
             title={t("title")}
             intro={t("subtitle")}
           >
