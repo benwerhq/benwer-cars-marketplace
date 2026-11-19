@@ -130,3 +130,10 @@ describe("companySubdomainOrigin", () => {
     ).toBe("https://acme.staging.benwer.es");
   });
 });
+
+describe("platformLabel escaping", () => {
+  it("treats regex metacharacters in the marketplace domain as literal", () => {
+    expect(resolvePlatformTenantSlug("acme.benwer+es", "benwer+es")).toBe("acme");
+    expect(resolvePlatformTenantSlug("acme.benweres", "benwer+es")).toBe(null);
+  });
+});

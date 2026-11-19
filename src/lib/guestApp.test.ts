@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   appStoreIdFromUrl,
+  assetLinksFromEnv,
   buildAppleAppSiteAssociation,
   buildAssetLinks,
   guestAppCompanyUrl,
@@ -9,6 +10,7 @@ import {
   isWellKnownPath,
   parseFingerprints,
   parseGuestAppStoreLinks,
+  PRODUCTION_GUEST_ANDROID_SHA256_FINGERPRINTS,
   servesGuestAppLinks,
 } from "./guestApp";
 
@@ -67,6 +69,62 @@ describe("buildAssetLinks", () => {
           namespace: "android_app",
           package_name: "com.x.y",
           sha256_cert_fingerprints: [FINGERPRINT],
+        },
+      },
+    ]);
+  });
+});
+
+describe("assetLinksFromEnv", () => {
+  it("always includes the production Play app-signing fingerprint", () => {
+    expect(assetLinksFromEnv()).toEqual([
+      {
+        relation: ["delegate_permission/common.handle_all_urls"],
+        target: {
+          namespace: "android_app",
+          package_name: "com.benwer.cars.guest",
+          sha256_cert_fingerprints: [...PRODUCTION_GUEST_ANDROID_SHA256_FINGERPRINTS],
+        },
+      },
+    ]);
+  });
+
+  it("keeps the production statement and adds env fingerprints for the staging package", () => {
+    vi.stubEnv("NEXT_PUBLIC_ENV", "staging");
+    vi.stubEnv("GUEST_APP_ANDROID_SHA256_FINGERPRINTS", FINGERPRINT);
+    expect(assetLinksFromEnv()).toEqual([
+      {
+        relation: ["delegate_permission/common.handle_all_urls"],
+        target: {
+          namespace: "android_app",
+          package_name: "com.benwer.cars.guest",
+          sha256_cert_fingerprints: [...PRODUCTION_GUEST_ANDROID_SHA256_FINGERPRINTS],
+        },
+      },
+      {
+        relation: ["delegate_permission/common.handle_all_urls"],
+        target: {
+          namespace: "android_app",
+          package_name: "com.benwer.cars.guest.staging",
+          sha256_cert_fingerprints: [FINGERPRINT],
+        },
+      },
+    ]);
+  });
+
+  it("merges extra production fingerprints from env into the same statement", () => {
+    vi.stubEnv("NEXT_PUBLIC_ENV", "production");
+    vi.stubEnv("GUEST_APP_ANDROID_SHA256_FINGERPRINTS", FINGERPRINT);
+    expect(assetLinksFromEnv()).toEqual([
+      {
+        relation: ["delegate_permission/common.handle_all_urls"],
+        target: {
+          namespace: "android_app",
+          package_name: "com.benwer.cars.guest",
+          sha256_cert_fingerprints: [
+            ...PRODUCTION_GUEST_ANDROID_SHA256_FINGERPRINTS,
+            FINGERPRINT,
+          ],
         },
       },
     ]);
