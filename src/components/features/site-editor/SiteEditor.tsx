@@ -25,7 +25,16 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/Select";
 import { Switch } from "@/components/ui/Switch";
+import { LocaleFlag } from "@/components/layout/LocaleFlag";
+import { LOCALE_NAME_KEYS } from "@/components/layout/LocaleSwitcher";
 import { SiteCornerStyle, SiteSectionId, SiteStatus } from "@/enums";
 import { routing } from "@/i18n/routing";
 import {
@@ -132,6 +141,7 @@ export function SiteEditor({
   onPreview,
 }: SiteEditorProps) {
   const t = useTranslations("siteEditor");
+  const tLocale = useTranslations("locale");
   const uiLocale = useLocale();
   const [tab, setTab] = useState("sections");
   const [openSection, setOpenSection] = useState<SiteSectionId | null>(null);
@@ -297,25 +307,26 @@ export function SiteEditor({
         {showLocale ? (
           <div className="flex items-center justify-between gap-3 border-b border-border bg-surface px-4 py-2">
             <span className="text-xs text-muted-foreground">{t("contentLanguage")}</span>
-            <div className="flex gap-1 rounded-md bg-surface-muted p-0.5" role="radiogroup" aria-label={t("contentLanguage")}>
-              {routing.locales.map((code) => (
-                <button
-                  key={code}
-                  type="button"
-                  role="radio"
-                  aria-checked={locale === code}
-                  onClick={() => setLocale(code)}
-                  className={cn(
-                    "cursor-pointer rounded px-2 py-0.5 text-xs font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                    locale === code
-                      ? "bg-surface text-foreground shadow-sm"
-                      : "text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  {t(`locales.${code}`)}
-                </button>
-              ))}
-            </div>
+            <Select value={locale} onValueChange={setLocale}>
+              <SelectTrigger
+                aria-label={t("contentLanguage")}
+                className="h-8 w-44 text-xs"
+              >
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {routing.locales.map((code) => (
+                  <SelectItem key={code} value={code}>
+                    <span className="inline-flex items-center gap-2">
+                      <LocaleFlag locale={code} />
+                      <span>
+                        {tLocale(LOCALE_NAME_KEYS[code])} ({t(`locales.${code}`)})
+                      </span>
+                    </span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         ) : null}
 

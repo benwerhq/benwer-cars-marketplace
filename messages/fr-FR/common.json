@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Une erreur est survenue. Veuillez réessayer.",
+    "network": "Impossible de joindre le serveur. Vérifiez votre connexion.",
+    "vehicle": {
+      "not_found": "Ce véhicule n'est plus disponible."
+    },
+    "company": {
+      "not_found": "Cette entreprise est introuvable."
+    },
+    "reservation": {
+      "overlap": "Ce véhicule est déjà réservé pour ces dates.",
+      "not_found": "Réservation introuvable. Vérifiez votre lien de confirmation.",
+      "invalid_dates": "La date de restitution doit être postérieure à la date de prise en charge.",
+      "min_lead": "La prise en charge est trop proche. Choisissez une date ultérieure.",
+      "terms_required": "Veuillez accepter les conditions de location pour continuer.",
+      "max_open_requests": "Vous avez déjà deux demandes en cours. Retirez-en une avant d'en envoyer une autre.",
+      "request_expired": "Cette demande a expiré. Commencez-en une nouvelle.",
+      "not_cancellable": "Cette réservation ne peut plus être annulée en ligne."
+    },
+    "booking": {
+      "payment_not_required": "Aucun paiement en ligne n'est dû pour cette réservation.",
+      "payment_window_elapsed": "Le délai de paiement de 15 minutes est écoulé. Commencez une nouvelle réservation si vous avez toujours besoin de la voiture.",
+      "payment_not_open": "Le paiement n'est pas disponible pour cette réservation. Réessayez ou contactez l'entreprise."
+    },
+    "rental_payments": {
+      "already_paid": "Cette réservation est déjà payée."
+    },
+    "site": {
+      "not_found": "Ce site de location est introuvable.",
+      "paused": "Cette entreprise n'accepte pas de réservations pour le moment.",
+      "not_published": "Ce site n'est pas encore ouvert aux réservations."
+    },
+    "website_domain": {
+      "not_found": "Cette adresse web n'est associée à aucune entreprise de location."
+    },
+    "staff": {
+      "unauthenticated": "Connectez-vous en tant que propriétaire de l'entreprise pour modifier ce site.",
+      "forbidden": "Vous n'avez pas l'autorisation de modifier ce site."
+    },
+    "guest": {
+      "not_configured": "Les comptes clients ne sont pas encore disponibles pour cette entreprise.",
+      "not_linked": "Aucune réservation n'est encore liée à ce compte.",
+      "invalid_token": "Ce lien de confirmation est invalide ou a expiré.",
+      "unauthenticated": "Connectez-vous pour continuer."
+    },
+    "pricing": {
+      "min_days": "Ces dates sont trop courtes pour la saison. Choisissez une location plus longue.",
+      "max_days": "Ces dates sont trop longues pour la saison. Choisissez une location plus courte.",
+      "rental_too_long": "Cette location est trop longue pour être réservée en ligne. Contactez l'entreprise."
+    },
+    "contact": {
+      "not_configured": "L'adresse e-mail de contact n'est pas encore configurée. Veuillez réessayer plus tard.",
+      "delivery_failed": "Impossible d'envoyer votre message pour le moment. Veuillez réessayer plus tard."
+    }
+  },
+  "nav": {
+    "home": "Accueil",
+    "cars": "Voitures",
+    "companies": "Entreprises",
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "cookies": "Cookies",
+    "mainAria": "Navigation principale",
+    "footerAria": "Navigation de pied de page",
+    "menu": "Menu"
+  },
+  "meta": {
+    "siteTitle": "Trouvez des locations de voitures locales",
+    "siteDescription": "Comparez les voitures des agences de location partenaires dans la province de Málaga, puis poursuivez sur le site de l'entreprise."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "Cette page n'existe pas. Revenez en arrière pour rechercher une voiture.",
+    "action": "Retour à l'accueil"
+  },
+  "hostUnknown": {
+    "title": "Ce site n'est pas disponible",
+    "description": "Vérifiez l'adresse saisie. Cette page n'appartient pas à un site de location Benwer Cars."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, accueil",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Passer en mode sombre",
+    "toLight": "Passer en mode clair"
+  },
+  "locale": {
+    "label": "Langue",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Rechercher une langue",
+    "noResults": "Aucune langue correspondante"
+  },
+  "footer": {
+    "tagline": "Comparez les voitures des agences de location partenaires.",
+    "trust": "Flottes partenaires · Málaga · Louez sur le site de l'entreprise",
+    "poweredBy": "Réservé via Benwer Cars",
+    "explore": "Explorer",
+    "legal": "Mentions légales",
+    "copyright": "© {year} Benwer Cars. Tous droits réservés."
+  },
+  "cookieBanner": {
+    "body": "Nous utilisons un cookie de langue et enregistrons ce choix sur votre appareil. Les cookies facultatifs restent désactivés sauf si vous les acceptez.",
+    "policy": "Politique de cookies",
+    "necessary": "Tout refuser",
+    "accept": "Tout accepter",
+    "title": "Nous respectons votre vie privée",
+    "settings": "Paramètres des cookies"
+  },
+  "actions": {
+    "retry": "Réessayer",
+    "back": "Retour",
+    "viewAll": "Tout voir",
+    "close": "Fermer"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Indicatif pays, {country} {dial}",
+    "search": "Rechercher un pays",
+    "countries": "Pays",
+    "noResults": "Aucun pays correspondant",
+    "invalid": "Saisissez un numéro de téléphone valide.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Effacer la date"
+  },
+  "guestNotifications": {
+    "title": "Notifications",
+    "openLabel": "Ouvrir les notifications",
+    "unreadCount": "{count} notifications non lues",
+    "emptyTitle": "Aucune notification pour le moment",
+    "emptyBody": "Les mises à jour de réservation, rappels de paiement et alertes de prise en charge apparaîtront ici.",
+    "error": "Impossible de charger les notifications.",
+    "retry": "Réessayer",
+    "markAllRead": "Tout marquer comme lu",
+    "dismiss": "Ignorer",
+    "loadMore": "Charger plus",
+    "enablePush": "Activer les alertes du navigateur",
+    "pushEnabled": "Alertes du navigateur activées",
+    "pushBlocked": "Alertes du navigateur bloquées dans les paramètres",
+    "disablePush": "Désactiver les alertes du navigateur"
+  }
+}

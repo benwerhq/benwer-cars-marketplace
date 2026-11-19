@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Cégek",
+    "title": "Találja meg a tökéletes autót",
+    "subtitle": "Hasonlítsa össze a partner autókölcsönző cégek autóit, majd folytassa a cég oldalán.",
+    "searchPlaceholder": "Hová utazik?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Kiemelt cégek",
+    "companiesSubtitle": "Partner autókölcsönző cégek Málaga tartományban — flották, amelyekkel együtt dolgozunk, nem ellenőrizetlen hirdetések",
+    "trustLocal": "Partnercégek",
+    "trustGuest": "Bérlés a cég oldalán",
+    "trustArea": "Málaga tartomány",
+    "viewAllCompanies": "Összes cég megtekintése"
+  },
+  "featuredCars": {
+    "viewAllCount": "Összes ({count}) autó megtekintése",
+    "eyebrow": "Autók",
+    "title": "Elérhető autók",
+    "subtitle": "Minden autó, amelyet a partnercégek közzétettek, egymás mellett. Válasszon egyet, és foglalja le a cég saját oldalán.",
+    "viewAll": "Összes autó keresése",
+    "seeAll": "Összes megtekintése",
+    "emptyTitle": "Még nincsenek listázott autók",
+    "emptyHint": "A nyilvános flották itt jelennek meg, amint a cégek közzéteszik őket."
+  },
+  "whatYouGet": {
+    "eyebrow": "Autókölcsönző cégeknek",
+    "title": "Amit kap",
+    "subtitle": "Egyetlen rendszer az irodának, a telephelynek és a Málagában kereső utazóknak.",
+    "admin": {
+      "title": "Teljes adminisztrációs rendszer",
+      "body": "Kezelje az autókat, az árakat, az elérhetőséget és a foglalásokat egyetlen operatív felületről — ugyanabból a katalógusból, amelyet a piactér is olvas."
+    },
+    "mobile": {
+      "title": "Mobilalkalmazás a személyzetnek",
+      "body": "Adja ki és vegye vissza az autókat, és nézze meg a mai foglalásokat közvetlenül a telephelyről."
+    },
+    "storefront": {
+      "title": "Márkázott webáruház",
+      "body": "Piactéri megjelenés, valamint saját weboldal és aldomain."
+    },
+    "preview": {
+      "utilisation": "Kihasználtság",
+      "utilisationValue": "82%",
+      "pickups": "Mai átvételek",
+      "pickupsValue": "14",
+      "revenue": "Ebben a hónapban",
+      "revenueValue": "9,4 ezer €",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Irányítópult",
+      "navFleet": "Flotta",
+      "navCalendar": "Naptár",
+      "navReservations": "Foglalások",
+      "calendarTitle": "Elérhetőség",
+      "calendarMonth": "Következő 2 hét",
+      "viaBenwer": "Benweren keresztül",
+      "direct": "Közvetlen",
+      "free": "Szabad",
+      "carA": "Kompakt",
+      "carB": "Városi autó",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Ma",
+      "phoneDate": "Hétfő",
+      "pickUp": "Átvétel",
+      "return": "Leadás",
+      "checkedOut": "Kiadva",
+      "due": "Esedékes",
+      "tabToday": "Ma",
+      "tabFleet": "Flotta",
+      "tabScan": "Beolvasás",
+      "storeName": "Az Ön cége",
+      "storeNavCars": "Autók",
+      "storeNavContact": "Kapcsolat",
+      "storeHeadline": "Béreljen autót Málagában",
+      "storeSearch": "Átvétel és dátumok",
+      "storeSearchCta": "Keresés",
+      "storePrice": "Árak megtekintése",
+      "carE": "Ferdehátú",
+      "carF": "Kombi"
+    }
+  },
+  "faq": {
+    "eyebrow": "GYIK",
+    "title": "Foglalás előtt",
+    "subtitle": "Partnerflották, a foglalás menete, és az, hogy mit intéz a Benwer — és mit nem.",
+    "items": {
+      "partners": {
+        "question": "Ezek az autók valódi autókölcsönző cégektől származnak?",
+        "answer": "Igen. Minden hirdetés egy Benwer partner nyilvános autója — valódi autókölcsönző cég, amellyel együtt dolgozunk, nem pedig ellenőrizetlen magánhirdetés. Ha egy cég vagy autó nincs közzétéve a platformon, itt nem jelenik meg."
+      },
+      "booking": {
+        "question": "A Benweren foglalok és fizetek?",
+        "answer": "Nem. Itt összehasonlíthatja a partnerflottákat, majd az autókölcsönző cég weboldalán folytathatja a bérlés, a kaució és az átvétel véglegesítését. A Benwer ezen a piactéren nem fogad el fizetést."
+      },
+      "photos": {
+        "question": "Megbízhatok a fotókban és az elérhetőségben?",
+        "answer": "A hirdetések a partnercég által közzétett nyilvános fotókat és elérhetőséget használják — ugyanazt a katalógust, amelyet az admin felületen kezelnek. Ha egy autónak még nincs nyilvános fotója, üres állapotot jelenítünk meg egy másik autó stock képe helyett. A végleges elérhetőséget a cég weboldalán erősítik meg."
+      },
+      "account": {
+        "question": "Szükségem van fiókra?",
+        "answer": "A kereséshez nincs szükség fiókra. Ha üzenetet küld a kapcsolatfelvételi űrlapon, ezeket az adatokat csak a válaszadáshoz használjuk."
+      },
+      "safety": {
+        "question": "Ki felel a bérlésért?",
+        "answer": "A szerződés Ön és a partner autókölcsönző cég között jön létre. Megerősítés előtt olvassa el a feltételeiket. A Benwer segít autót találni egy partnerflottából; itt nem ad bérbe járműveket és nem fogad el fizetést."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "A Benwer Cars alkalmazás",
+    "description": "Szerezze be a Benwer Cars alkalmazást a telefonjára. Az Android-alkalmazás korai tesztelés alatt áll a Google Playen — csatlakozzon a teszthez, és segítsen formálni."
+  },
+  "partners": {
+    "eyebrow": "Autókölcsönző cégeknek",
+    "title": "Alakítsa az üres napokat foglalásokká",
+    "description": "Az utazók már most is a Benweren keresnek autókat Málagában. Tegye közzé egyszer a flottáját, és töltse fel azokat a napokat, amelyek különben üresen maradnának.",
+    "cta": "További információ",
+    "ctaAria": "További információ a Benwer marketingoldalán (új lapon nyílik meg)",
+    "demo": "Élő demó megtekintése",
+    "demoAria": "Élő demó megtekintése (új lapon nyílik meg)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Autóbérlés",
+    "companyDescription": "Béreljen autót a(z) {name} cégtől itt: {location}.",
+    "companyDescriptionPlain": "Béreljen autót a(z) {name} cégtől.",
+    "companyFallback": "Autóbérlés",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Béreljen {brand} {model} autót a(z) {company} cégtől.",
+    "carDescriptionSpecs": "Béreljen {brand} {model} autót — {seats, plural, one {# ülés} other {# ülés}}, {transmission}.",
+    "carsTitle": "Bérelhető autók Málaga tartományban"
+  },
+  "tenant": {
+    "notFoundTitle": "A cég nem található",
+    "notFoundDescription": "Ez a webáruház nem tölthető be.",
+    "loadErrorTitle": "A cég adatai nem érhetők el",
+    "loadErrorDescription": "Nem sikerült betölteni ezt a webáruházat az élő katalógusból. Próbálja újra — nem jelenítünk meg helyőrző autókat, ha az API hibát ad.",
+    "logoAlt": "{name} logó"
+  },
+  "howItWorks": {
+    "eyebrow": "Három lépés",
+    "title": "Hogyan működik",
+    "subtitle": "Hasonlítsa össze a partnerflottákat Málagában, majd foglaljon közvetlenül a cégnél. Benwer-fiók nem szükséges.",
+    "stepLabel": "{number}. lépés",
+    "searchTitle": "Válasszon dátumot és helyszínt",
+    "searchBody": "Válasszon egy várost a Costa del Solon és a szükséges napokat. Csak ellenőrzött partnerflották jelennek meg.",
+    "compareTitle": "Hasonlítson össze valódi autókat",
+    "compareBody": "Ülések, sebességváltó, fotók és napi díj egymás mellett minden partnertől.",
+    "continueTitle": "Foglaljon a cégnél",
+    "continueBody": "Erősítse meg az átvételt, a biztosítást és a fizetést az autó tulajdonosával, az autókölcsönző céggel.",
+    "cta": "Keresés indítása",
+    "preview": {
+      "place": "Málagai repülőtér",
+      "dates": "P → P · 7 nap",
+      "carA": "Kompakt autó",
+      "carASpecs": "4 ülés · Manuális",
+      "carB": "Családi SUV",
+      "carBSpecs": "5 ülés · Automata",
+      "confirmed": "Foglalás visszaigazolva",
+      "confirmedDetail": "Átvétel 10:00-kor",
+      "example": "Példa"
+    }
+  },
+  "search": {
+    "locationLabel": "Átvételi helyszín",
+    "locationPlaceholder": "Helyszínek keresése",
+    "locationEmpty": "Nincs megfelelő helyszín",
+    "allLocations": "Összes helyszín",
+    "allLocationsHint": "Minden város elérhető autókkal",
+    "provinceSelected": "Összes helyszín",
+    "provinceHint": "Minden város elérhető autókkal",
+    "pickupLabel": "Átvétel",
+    "dropoffLabel": "Leadás",
+    "pickupPlaceholder": "Dátum hozzáadása",
+    "dropoffPlaceholder": "Dátum hozzáadása",
+    "pickupTrigger": "Átvétel dátuma, {date}",
+    "dropoffTrigger": "Leadás dátuma, {date}",
+    "calendarLabel": "Dátumok kiválasztása",
+    "datesRequired": "A kereséshez válassza ki az átvétel és a leadás dátumát.",
+    "submit": "Keresés",
+    "returnLocationLabel": "Leadási helyszín",
+    "differentReturn": "Leadás másik helyszínen",
+    "returnSame": "Megegyezik az átvétellel",
+    "returnNotOffered": "A(z) {company} nem kínál leadást másik helyszínen.",
+    "branchChoose": "Válasszon helyszínt",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Helyszínek betöltése…",
+    "branchAnyHint": "Minden telephely autókkal"
+  },
+  "browseLocation": {
+    "title": "Böngészés helyszín szerint",
+    "subtitle": "Népszerű városok Málaga tartományban",
+    "emptyTitle": "Még nincsenek helyszínek",
+    "emptyDescription": "A kiemelt városok itt jelennek meg.",
+    "cityAria": "Autók böngészése itt: {city}"
+  },
+  "map": {
+    "teaserTitle": "Nézze meg, hol veheti át az autót",
+    "teaserSubtitle": "Helyi flották Málaga tartományban — nyissa meg a térképet, és ugorjon közvetlenül egy céghez.",
+    "teaserCta": "Térkép megnyitása",
+    "teaserCityAria": "Cégek megtekintése a térképen itt: {city}",
+    "listLabel": "Lista",
+    "mapLabel": "Térkép",
+    "viewToggleAria": "Cégek megjelenítése listaként vagy térképen",
+    "regionAria": "Autókölcsönző cégek térképe Málaga tartományban",
+    "pinAria": "{name} ({city})",
+    "fleetHint": "{count, plural, =0 {Még nincsenek listázott autók} one {# elérhető autó} other {# elérhető autó}}",
+    "fleetHintUnknown": "Elérhető autók megtekintése",
+    "viewFleet": "Flotta megtekintése",
+    "closePin": "Bezárás",
+    "loading": "Cégek betöltése…",
+    "errorDescription": "A térképet nem sikerült betölteni. Böngéssze helyette a listát.",
+    "emptyTitle": "Nincsenek cégek a térképen",
+    "emptyDescription": "Próbáljon ki egy másik várost Málaga tartományban.",
+    "resultsCount": "{count, plural, one {# cég Málaga tartományban} other {# cég Málaga tartományban}}",
+    "resultsInCity": "{count, plural, one {# cég itt: {city}} other {# cég itt: {city}}}",
+    "resultsAtBranch": "{count, plural, one {# cég ezen a telephelyen: {branch}} other {# cég ezen a telephelyen: {branch}}}"
+  },
+  "cars": {
+    "showingOf": "{shown} / {total} autó megjelenítve",
+    "loadMore": "További autók megjelenítése",
+    "seeAll": "Összes megtekintése",
+    "title": "Elérhető autók",
+    "subtitle": "A partner autókölcsönző cégek minden nyilvános autója Málaga tartományban. Válassza ki a dátumokat, hogy lássa, mi szabad.",
+    "searchEmptyTitle": "Nincs a keresésnek megfelelő autó",
+    "searchEmptyHint": "Próbáljon meg más dátumokat vagy másik helyszínt Málaga tartományban. Minden város a listán marad — akkor is, ha ma nincs ott listázott autó.",
+    "resultsInProvince": "{count, plural, one {# autó az összes helyszínen} other {# autó az összes helyszínen}}",
+    "resultsInCity": "{count, plural, one {# autó itt: {city}} other {# autó itt: {city}}}",
+    "allCompanies": "Összes cég",
+    "companyPlaceholder": "Cégek keresése",
+    "companyTrigger": "Cég, {company}",
+    "perDay": "{price} / nap",
+    "perDaySuffix": " / nap",
+    "viewDetails": "Részletek megtekintése",
+    "notAvailableForDates": "Ezekre a dátumokra nem elérhető",
+    "bookUnavailable": "Autó megtekintése",
+    "fleetSummary": "{total, plural, one {# autó} other {# autó}} · {available, plural, one {# elérhető} other {# elérhető}}",
+    "fleetSummaryForDates": "{total, plural, one {# autó} other {# autó}} · {available, plural, one {# elérhető} other {# elérhető}} · {from} – {to}",
+    "seats": "{count} ülés",
+    "resultsCount": "{count, plural, one {# elérhető autó} other {# elérhető autó}}",
+    "resultsForDates": "{count, plural, one {# autó} other {# autó}} · {from} – {to}",
+    "emptyTitle": "Ez a flotta még nem nyilvános",
+    "emptyHint": "Ez a cég szerepel a listán, de az autói még nincsenek közzétéve a Benweren. Ez normális, amíg a járműveket nyilvánossá nem teszik — az oldal nem hibás.",
+    "noResults": "Nincs a keresésnek megfelelő autó",
+    "noResultsHint": "Próbáljon meg más dátumokat, másik helyszínt vagy kevesebb szűrőt.",
+    "browseCompanies": "Cégek böngészése",
+    "clearFilters": "Szűrők törlése",
+    "searchPlaceholder": "Keresés márka vagy modell szerint",
+    "filters": {
+      "title": "Szűrők",
+      "seats": "Ülések",
+      "transmission": "Sebességváltó",
+      "company": "Cég",
+      "dates": "Dátumok",
+      "from": "Átvétel dátuma",
+      "to": "Leadás dátuma",
+      "category": "Kategória",
+      "fuel": "Üzemanyag típusa",
+      "all": "Összes",
+      "clear": "Törlés",
+      "selectedCount": "{count} kiválasztva"
+    },
+    "types": {
+      "car": "Személyautó",
+      "suv": "SUV",
+      "van": "Kisbusz",
+      "truck": "Teherautó",
+      "motorcycle": "Motorkerékpár"
+    },
+    "transmission": {
+      "automatic": "Automata",
+      "manual": "Manuális"
+    },
+    "fuel": {
+      "petrol": "Benzin",
+      "diesel": "Dízel",
+      "electric": "Elektromos",
+      "hybrid": "Hibrid",
+      "plugin_hybrid": "Plug-in hibrid"
+    },
+    "rowDeposit": "Kaució: {amount}",
+    "rowAvailable": "Elérhető az Ön dátumaira",
+    "rowTotal": "Összesen {amount} · {days, plural, one {# nap} other {# nap}}",
+    "bookNow": "Foglalás most",
+    "availableCount": "{count, plural, =0 {Nincs elérhető autó} one {# elérhető autó} other {# elérhető autó}}",
+    "availableForDates": "{count, plural, =0 {Nincs elérhető autó} one {# elérhető autó} other {# elérhető autó}} · {from} – {to}",
+    "categories": {
+      "economy": "Gazdaságos",
+      "sedan": "Szedán",
+      "suv": "SUV",
+      "minivan": "Egyterű",
+      "van": "Furgon",
+      "other": "Egyéb"
+    },
+    "sort": {
+      "label": "Rendezés",
+      "recommended": "Ajánlott",
+      "pricePerDay_asc": "Legalacsonyabb napi díj",
+      "pricePerDay_desc": "Legmagasabb napi díj"
+    },
+    "colors": {
+      "white": "Fehér",
+      "black": "Fekete",
+      "silver": "Ezüst",
+      "grey": "Szürke",
+      "red": "Piros",
+      "blue": "Kék",
+      "green": "Zöld",
+      "orange": "Narancssárga",
+      "yellow": "Sárga",
+      "brown": "Barna",
+      "beige": "Bézs",
+      "gold": "Arany",
+      "purple": "Lila"
+    },
+    "viewCar": "Autó megtekintése",
+    "opensCompanySite": "(megnyitja a cég weboldalát)"
+  },
+  "carDetail": {
+    "bookNow": "Foglalás most",
+    "continueOnCompany": "Folytatás itt: {company}",
+    "rentOnCompanySite": "Bérlés a cég oldalán",
+    "handoffHint": "Megerősítést kérünk, mielőtt átirányítanánk a cég oldalára a foglalás befejezéséhez.",
+    "pricePerDay": "{price} naponta",
+    "specs": "Specifikációk",
+    "year": "Évjárat",
+    "type": "Típus",
+    "transmission": "Sebességváltó",
+    "fuel": "Üzemanyag",
+    "seats": "Ülések",
+    "availability": "Elérhetőség",
+    "availabilityError": "Nem sikerült betölteni az elérhetőséget. Próbálja újra.",
+    "availabilityUnavailable": "Az elérhetőség nem tölthető be",
+    "checkingAvailability": "Elérhetőség ellenőrzése…",
+    "notAvailable": "Ez az autó nem érhető el a kiválasztott dátumokra.",
+    "selectPickup": "Válasszon átvételi dátumot",
+    "selectDropoff": "Most válasszon leadási dátumot",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Dátumok törlése",
+    "addDate": "Dátum hozzáadása",
+    "calendarLabel": "Elérhetőségi naptár",
+    "legend": "Naptár jelmagyarázat",
+    "available": "Elérhető",
+    "selected": "Kiválasztva",
+    "unavailable": "Nem elérhető",
+    "openDates": "Nincsenek foglalt dátumok a következő {months} hónapban.",
+    "breadcrumbAria": "Morzsamenu",
+    "photoEmpty": "Fotók hamarosan",
+    "previousPhoto": "Előző fotó",
+    "nextPhoto": "Következő fotó",
+    "viewPhoto": "{index}. fotó megtekintése",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, {index}. fotó",
+    "backToFleet": "Vissza a flottához",
+    "metaTitle": "Autó részletei",
+    "about": "Erről az autóról",
+    "category": "Kategória",
+    "color": "Szín",
+    "deposit": "Kaució",
+    "mileage": "Futásteljesítmény",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Átirányítjuk a(z) {company} foglalási oldalára a foglalás befejezéséhez.",
+    "handoffTrust": "A(z) {company} a Benwer megbízható partnere.",
+    "handoffContinue": "Tovább",
+    "handoffCancel": "Mégse",
+    "handoffCompanyFallback": "cég"
+  },
+  "booking": {
+    "title": "Foglalás befejezése",
+    "subtitle": "Erősítse meg adatait — fiók nem szükséges.",
+    "details": "Az Ön adatai",
+    "detailsHint": "Ezeket kizárólag a foglalás visszaigazolásához használjuk.",
+    "guestName": "Teljes név",
+    "guestNamePlaceholder": "Nagy Anna",
+    "guestEmail": "E-mail-cím",
+    "guestEmailPlaceholder": "anna@pelda.hu",
+    "guestEmailHint": "A visszaigazolást ide küldjük.",
+    "guestPhone": "Telefonszám",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Az autókölcsönző cég felveheti Önnel a kapcsolatot az átvétel miatt.",
+    "startDate": "Átvétel dátuma",
+    "endDate": "Leadás dátuma",
+    "datesHint": "A dátumok az autó naptárából származnak. Itt módosíthatja őket.",
+    "addDate": "Dátum hozzáadása",
+    "changeDates": "Dátumok módosítása a naptárban",
+    "summary": "Foglalás összegzése",
+    "vehicle": "Jármű",
+    "company": "Cég",
+    "rate": "Napi díj",
+    "duration": "Időtartam",
+    "totalPrice": "Összesen",
+    "nights": "{count, plural, one {# nap} other {# nap}}",
+    "stickyMeta": "{name} · {count, plural, one {# nap} other {# nap}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Foglalás megerősítése",
+    "confirmRequest": "Kérelem küldése",
+    "requesting": "Kérelem küldése…",
+    "confirming": "Megerősítés…",
+    "sitePaused": "Nem fogad foglalásokat",
+    "insurance": "Biztosítás",
+    "termsLabel": "Bérleti feltételek",
+    "termsAccept": "Elfogadom a",
+    "termsLink": "bérleti feltételeket",
+    "successTitle": "Foglalás visszaigazolva!",
+    "successMessage": "A visszaigazolást elküldtük a(z) {email} címre.",
+    "viewBooking": "Foglalásom megtekintése",
+    "selectDates": "A folytatáshoz válasszon dátumokat",
+    "invalidDates": "Válasszon érvényes dátumtartományt",
+    "backToCar": "Vissza ide: {name}",
+    "trustNoAccount": "Fiók nem szükséges",
+    "trustEmail": "Visszaigazolás e-mailben",
+    "trustNoPayment": "Most nem kell fizetni",
+    "trustCardPayment": "Bankkártyás fizetés a foglalás után",
+    "trustFooter": "A megerősítéssel ezt az autót igényli a fenti dátumokra. A cég teljesíti a foglalást.",
+    "missingTitle": "A folytatáshoz válasszon autót",
+    "missingDescription": "A foglalás befejezése előtt válasszon járművet és dátumokat.",
+    "browseCars": "Autók böngészése",
+    "vehicleMissingTitle": "Ez az autó már nem elérhető",
+    "vehicleMissingDescription": "Lehet, hogy már lefoglalták. Válasszon egy másikat a flottából.",
+    "viewFleet": "Flotta megtekintése",
+    "datesMissingTitle": "Adja meg az utazás dátumait",
+    "datesMissingDescription": "Menjen vissza az autóhoz az elérhető dátumok kiválasztásához, vagy adja meg őket az űrlapon.",
+    "pickDates": "Dátumok kiválasztása az autónál",
+    "formAria": "Vendég foglalási adatai",
+    "validation": {
+      "nameMin": "Adja meg a teljes nevét (legalább 2 karakter).",
+      "email": "Adjon meg egy érvényes e-mail-címet.",
+      "phone": "Adjon meg egy érvényes telefonszámot.",
+      "startDate": "Válasszon átvételi dátumot.",
+      "endDate": "Válasszon leadási dátumot.",
+      "endAfterStart": "A leadás dátumának az átvétel után kell lennie.",
+      "terms": "A folytatáshoz fogadja el a bérleti feltételeket.",
+      "fixErrors": "Kérjük, javítsa a kiemelt mezőket."
+    },
+    "averageRate": "Átlagos napi díj",
+    "breakdownTitle": "Ár részletezése",
+    "standardRate": "Normál díj",
+    "weekendRate": "Hétvége",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Ebben a szezonban a bérlésnek legalább {limit, plural, one {# naposnak} other {# naposnak}} kell lennie. A foglaláshoz módosítsa a dátumokat.",
+    "warningMaxDays": "Ebben a szezonban a bérlés legfeljebb {limit, plural, one {# napos} other {# napos}} lehet. A foglaláshoz módosítsa a dátumokat.",
+    "returnLocation": "Leadási helyszín",
+    "oneWayFee": "Másik helyszínen történő leadás díja",
+    "signedInAs": "Bejelentkezve: {email}",
+    "signInPrompt": "Már van fiókja?",
+    "signInLink": "Jelentkezzen be az adatai automatikus kitöltéséhez",
+    "subtitleSignedIn": "Ellenőrizze az adatait, majd erősítse meg.",
+    "trustPaymentAfter": "A fizetési adatok a foglalás után következnek",
+    "extras": "Extrák",
+    "extraPerDay": "{price} / nap",
+    "extraFixed": "{price} / bérlés",
+    "tripDetails": "Utazás részletei",
+    "pickupTime": "Átvétel ideje",
+    "returnTime": "Leadás ideje",
+    "timeAny": "Bármikor",
+    "flightNumber": "Járatszám",
+    "flightNumberHint": "Az átvétel repülőtéren történik. Adja meg a járatszámát, hogy a cég nyomon követhesse a késéseket.",
+    "flightNumberOptional": "Adja meg, ha repülővel érkezik.",
+    "notes": "Megjegyzések",
+    "notesPlaceholder": "Van valami, amit a cégnek tudnia kell?",
+    "dateOfBirth": "Születési dátum",
+    "optional": "opcionális",
+    "extraSoldOut": "Ezekre a dátumokra nem elérhető"
+  },
+  "reservationStatus": {
+    "title": "Az Ön foglalása",
+    "successTitle": "A foglalása kész",
+    "successSubtitle": "Visszaigazolást küldtünk a(z) {email} címre.",
+    "status": {
+      "draft": "Függőben",
+      "confirmed": "Visszaigazolva",
+      "active": "Aktív — jó utat!",
+      "completed": "Befejezve",
+      "cancelled": "Lemondva"
+    },
+    "vehicle": "Jármű",
+    "company": "Cég",
+    "dates": "Dátumok",
+    "pickup": "Átvétel",
+    "dropoff": "Leadás",
+    "guest": "Vendég",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "total": "Összesen",
+    "reference": "Hivatkozási szám",
+    "referenceHint": "Mutassa be ezt az átvételkor.",
+    "trustCopy": "Mentse el ezt az oldalt — ez a foglalási bizonylata. Innentől az autókölcsönző cég intézi a továbbiakat.",
+    "trustEmail": "Visszaigazolás elküldve e-mailben",
+    "trustPickup": "Mutassa be ezt az oldalt az átvételkor",
+    "nextTitle": "Mi történik ezután",
+    "nextEmail": "Ellenőrizze a(z) {email} fiókot a visszaigazolásért.",
+    "nextPickup": "Mutassa be a hivatkozási számát az átvételkor.",
+    "browseMore": "További autók böngészése",
+    "notFoundTitle": "A foglalás nem található",
+    "notFoundDescription": "Ellenőrizze a visszaigazoló e-mailben található linket, vagy indítson új keresést.",
+    "backHome": "Vissza a kezdőlapra",
+    "requestExpires": "A kérelem lejár",
+    "cancelReason": "Lemondás oka",
+    "withdraw": "Kérelem visszavonása",
+    "paymentStatus": "Fizetés",
+    "paidAmount": "Fizetve",
+    "payment": {
+      "unpaid": "Kifizetetlen",
+      "partially_paid": "Részben fizetve",
+      "paid": "Kifizetve",
+      "refund_due": "Visszatérítés esedékes",
+      "authorized": "Kártya zárolva"
+    },
+    "reasons": {
+      "unpaid_timeout": "A fizetés nem fejeződött be időben",
+      "request_expired": "A cég nem válaszolt időben",
+      "request_declined": "A cég elutasította ezt a kérelmet",
+      "customer_request": "Ön visszavonta ezt a kérelmet"
+    },
+    "insurance": "Biztosítás",
+    "extras": "Extrák",
+    "fees": "Átvételi és leadási díjak",
+    "priceTitle": "Ár összegzése"
+  },
+  "payment": {
+    "title": "Előleg befizetése",
+    "amountDue": "Fizetendő összeg: {amount}",
+    "countdown": "Fejezze be a fizetést ennyi időn belül: {time}",
+    "requestAuthorize": "A kártyáját most zároljuk, és csak akkor terheljük meg, amikor a cég elfogadja a kérelmet.",
+    "pay": "Fizetés most",
+    "paying": "Feldolgozás…",
+    "confirming": "Fizetés megerősítése",
+    "confirmingHint": "Kérjük, várjon — a fizetést a cég oldaláról erősítjük meg, nem a kártyaűrlapról.",
+    "declined": "A kártyát elutasították. Próbáljon meg másik kártyát.",
+    "secure": "A kártyaadatokat a Stripe kezeli tesztmódban.",
+    "cancelBooking": "Foglalás lemondása",
+    "cancelTitle": "Lemondja ezt a foglalást?",
+    "cancelDescription": "A cég lemondási szabályzatát alkalmazzuk. Megerősítés előtt ellenőrizze a díjat és a visszatérítést.",
+    "cancelFee": "Lemondási díj",
+    "cancelRefund": "Visszatérítés",
+    "confirmCancel": "Lemondás megerősítése",
+    "keepBooking": "Foglalás megtartása",
+    "cancelled": "A foglalását lemondtuk."
+  },
+  "companies": {
+    "title": "Autókölcsönző cégek",
+    "subtitle": "Böngésszen a partner autókölcsönző cégek között Málagában — a térképen vagy a listában",
+    "searchPlaceholder": "Cégek keresése…",
+    "noResults": "Nem található cég",
+    "noResultsHint": "Próbáljon ki egy másik helyszínt Málaga tartományban.",
+    "emptyTitle": "Még nincsenek listázott cégek",
+    "emptyDescription": "Még egyetlen autókölcsönző cég sincs listázva.",
+    "clearFilters": "Keresés törlése",
+    "viewFleet": "Flotta megtekintése",
+    "visitWebsite": "Weboldal megnyitása",
+    "contact": "Kapcsolat",
+    "backToList": "Összes cég",
+    "notFoundTitle": "A cég nem található",
+    "notFoundDescription": "Ez az autókölcsönző cég nem szerepel a listán. Böngésszen a közelben lévő többi között.",
+    "loadErrorTitle": "A cég adatai nem érhetők el",
+    "loadErrorDescription": "Nem sikerült betölteni ezt az autókölcsönző céget az élő katalógusból. Próbálja újra — nem jelenítünk meg helyőrző autókat, ha az API hibát ad.",
+    "browseCars": "Autók böngészése",
+    "featuredEmpty": "Még nincsenek kiemelt cégek",
+    "featuredEmptyHint": "Nézzen vissza hamarosan, vagy böngésszen a helyi flották autói között.",
+    "locationUnknown": "Helyszín nincs megadva",
+    "noDescription": "Még nincs leírás."
+  },
+  "contact": {
+    "title": "Kapcsolat",
+    "lede": "Kérdése van a piactérrel kapcsolatban? Küldjön nekünk üzenetet, és a lehető leghamarabb válaszolunk.",
+    "bookingHint": "Ez az űrlap nem foglalásra szolgál. Autóbérléshez folytassa az autókölcsönző cég saját weboldalán.",
+    "name": "Teljes név",
+    "email": "E-mail-cím",
+    "subject": "Tárgy",
+    "message": "Üzenet",
+    "submit": "Üzenet küldése",
+    "privacyNote": "Ezeket az adatokat csak a válaszadáshoz használjuk.",
+    "errors": {
+      "nameMin": "Adja meg a nevét (legalább 2 karakter).",
+      "email": "Adjon meg egy érvényes e-mail-címet.",
+      "subjectMin": "Adjon meg egy tárgyat (legalább 3 karakter).",
+      "messageMin": "Írjon üzenetet (legalább 10 karakter)."
+    },
+    "eyebrow": "Ügyfélszolgálat",
+    "namePlaceholder": "Nagy Anna",
+    "emailPlaceholder": "on@pelda.hu",
+    "subjectPlaceholder": "Miben segíthetünk?",
+    "messagePlaceholder": "Írja le, mire van szüksége…",
+    "supportSubjectDefault": "Ügyfélszolgálati megkeresés",
+    "submitting": "Küldés…",
+    "submittedTitle": "Üzenet elküldve",
+    "submittedDescription": "Köszönjük, hogy megkeresett minket. A lehető leghamarabb válaszolunk az e-mail-címére.",
+    "sendAnother": "Újabb üzenet küldése",
+    "backHome": "Vissza a kezdőlapra",
+    "whatsappTitle": "Inkább a WhatsAppot részesíti előnyben?",
+    "whatsappDescription": "Csevegjen közvetlenül a Benwer Cars csapatával."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Adatvédelmi szabályzat",
+      "lede": "Hogyan kezeljük a személyes adatokat, amikor a Benwer Cars piacteret használja.",
+      "updated": "Utoljára frissítve: 2026. szeptember 13.",
+      "sections": [
+        {
+          "title": "Kik vagyunk",
+          "body": "A Benwer Cars („Benwer”, „mi”, „minket”) egy fogyasztói piacteret üzemeltet, amely segít az utazóknak felfedezni az autókölcsönző flottákat Málaga tartományban.\n\nEz a szabályzat kizárólag a piactér weboldalára vonatkozik. Ha a foglaláshoz továbblép egy autókölcsönző cég saját weboldalára, az ott megadott adatokért az adott cég felel."
+        },
+        {
+          "title": "Mit csinál ez a piactér",
+          "body": "Autókat és cégeket kereshet, összehasonlíthatja a nyilvános flottaadatokat, és továbbléphet egy autókölcsönző cég oldalára a foglalás befejezéséhez.\n\nA Benwer nem fogad el fizetést és nem köt bérleti szerződést a piactéren. A bérleti szerződés Ön és a cég között jön létre."
+        },
+        {
+          "title": "Az általunk gyűjtött adatok",
+          "body": "Attól függően, hogyan használja a piacteret, az alábbiakat kezelhetjük:\n\n• Keresési és használati adatok — a megadott helyszín és dátumok, a megtekintett oldalak, valamint alapvető technikai adatok, például IP-cím, böngésző és eszközadatok.\n• Nyelvi beállítás — feltétlenül szükséges sütiként tárolva, hogy a kiválasztott nyelvet jeleníthessük meg.\n• Sütikhez való hozzájárulás — az eszközén tárolva, hogy megjegyezzük a választását.\n• Kapcsolatfelvételi üzenetek — név, e-mail, tárgy és üzenet, ha ír nekünk. Ezeket a piactérről érkezőként jelöljük meg.\n\nNem kérjük, hogy fiókot hozzon létre a piactéren. A foglalási és fizetési adatokat az autókölcsönző cég gyűjti a saját oldalán, a saját adatvédelmi szabályzata szerint."
+        },
+        {
+          "title": "Hogyan használjuk fel az adatokat",
+          "body": "A személyes adatokat a piactér működtetésére és fejlesztésére, a nyelvi és sütibeállítások megjegyzésére, a kapcsolatfelvételi üzenetek megválaszolására, a szolgáltatás biztonságának megőrzésére és jogi kötelezettségek teljesítésére használjuk.\n\nNem értékesítjük a személyes adatait."
+        },
+        {
+          "title": "Jogalapok (EGT / Egyesült Királyság)",
+          "body": "Adott esetben jogos érdekre (nyilvános katalógus üzemeltetése és az oldal védelme), hozzájárulásra (opcionális sütik, ha bevezetésre kerülnek), jogi kötelezettségre, valamint a megkeresésére történő válaszadáshoz szükséges lépésekre támaszkodunk."
+        },
+        {
+          "title": "Adatmegosztás",
+          "body": "Megbízható szolgáltatókat vehetünk igénybe tárhelyszolgáltatáshoz és e-mail-kézbesítéshez. Ők az utasításaink szerint kezelik az adatokat.\n\nHa továbblép egy cég weboldalára, az ott megadott adatok adatkezelőjévé az adott cég válik. A kapcsolatfelvételi űrlapon küldött üzenetét nem továbbítjuk autókölcsönző cégeknek, kivéve, ha ezt kéri tőlünk."
+        },
+        {
+          "title": "Sütik",
+          "body": "Feltétlenül szükséges nyelvi sütit használunk, és az eszközén tároljuk a sütiválasztását. A részletekért tekintse meg a sütiszabályzatot. Az opcionális sütik kikapcsolva maradnak, hacsak el nem fogadja őket."
+        },
+        {
+          "title": "Adatmegőrzés",
+          "body": "A kapcsolatfelvételi üzeneteket a válaszadáshoz szükséges ideig és észszerű utánkövetési időszakig őrizzük meg. A technikai naplókat rövid ideig tároljuk. A sütiválasztása mindaddig megmarad, amíg meg nem változtatja vagy nem törli a webhely adatait."
+        },
+        {
+          "title": "Az Ön jogai",
+          "body": "Tartózkodási helyétől függően joga lehet adataihoz hozzáférni, azokat helyesbíteni, töröltetni, korlátozni vagy hordozni, illetve tiltakozni bizonyos adatkezelések ellen. Panaszt is nyújthat be a helyi felügyeleti hatóságnál.\n\nJogai gyakorlásához használja a kapcsolatfelvételi oldalt."
+        },
+        {
+          "title": "Nemzetközi adattovábbítás",
+          "body": "Ha az adatokat az Ön országán kívülre továbbítják, megfelelő garanciákat alkalmazunk, például általános szerződési feltételeket vagy jogszabály által előírt egyenértékű mechanizmusokat."
+        },
+        {
+          "title": "Módosítások",
+          "body": "Időről időre frissíthetjük ezt a szabályzatot. A módosított változatot ezen az oldalon tesszük közzé, és frissítjük az „Utoljára frissítve” dátumot."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Felhasználási feltételek",
+      "lede": "A Benwer Cars piactér használatának szabályai a bérelhető flották felfedezéséhez.",
+      "updated": "Utoljára frissítve: 2026. szeptember 13.",
+      "sections": [
+        {
+          "title": "A piactér",
+          "body": "A Benwer Cars nyilvános katalógust biztosít az autókölcsönző cégekről és közzétett flottáikról. Összehasonlíthatja az autókat, és továbbléphet a cég saját weboldalára a bérlés befejezéséhez.\n\nEzek a feltételek a piactér weboldalára vonatkoznak. Nem helyettesítik az autókölcsönző cég saját feltételeit, amelyek a náluk történő foglaláskor érvényesek."
+        },
+        {
+          "title": "A foglalások az autókölcsönző cégeknél történnek",
+          "body": "A Benwer nem ad bérbe autókat, nem fogad el fizetést és nem köt bérleti szerződést a piactéren.\n\nHa továbblép egy cég oldalára, minden foglalás, kaució, biztosítás és átvételi megállapodás Ön és az adott cég között jön létre. Megerősítés előtt olvassa el a feltételeiket."
+        },
+        {
+          "title": "Hirdetések és elérhetőség",
+          "body": "A flottaadatokat, árakat, fotókat és az elérhetőséget az autókölcsönző cégek teszik közzé, és ezek változhatnak. Törekszünk a nyilvános információk pontos megjelenítésére, de nem garantáljuk, hogy egy autó továbbra is elérhető marad, vagy hogy a feltüntetett ár érvényes lesz, amíg a cég meg nem erősíti.\n\nA piactéren megadott dátumok a keresést segítik. A végleges elérhetőséget a cég oldalán erősítik meg."
+        },
+        {
+          "title": "Elfogadható használat",
+          "body": "Használja a piacteret jogszerűen. Ne gyűjtsön adatokat automatizáltan, ne terhelje túl és ne zavarja a szolgáltatást, ne adjon meg valótlan elérhetőségeket, és ne használja az oldalt más személyek vagy vállalkozások megkárosítására."
+        },
+        {
+          "title": "Felelősség",
+          "body": "A piactér felfedező szolgáltatásként működik. A jogszabályok által megengedett mértékig a Benwer nem vállal felelősséget a bérlési vitákért, a jármű állapotáért vagy a cég oldalán befejezett foglalásokért.\n\nE feltételek egyetlen pontja sem korlátozza az Ön olyan fogyasztói jogait, amelyekről az alkalmazandó jog szerint nem lehet lemondani."
+        },
+        {
+          "title": "Módosítások",
+          "body": "Frissíthetjük ezeket a feltételeket. Az ezen az oldalon látható „Utoljára frissítve” dátum mutatja az aktuális verziót. A módosítás utáni további használat azt jelenti, hogy elfogadja a frissített feltételeket."
+        },
+        {
+          "title": "Kapcsolat",
+          "body": "Ezekkel a feltételekkel vagy a piactérrel kapcsolatos kérdéseit a kapcsolatfelvételi oldalon küldheti el. Már megkezdett foglalással kapcsolatban forduljon közvetlenül az autókölcsönző céghez."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Sütiszabályzat",
+      "lede": "Hogyan használunk sütiket és hasonló technológiákat a piactéren.",
+      "updated": "Utoljára frissítve: 2026. szeptember 13.",
+      "sections": [
+        {
+          "title": "Mit használunk",
+          "body": "A sütik az eszközén tárolt kis szöveges fájlok. Hasonló tárolási módokat is használunk, például helyi tárolót, a választások megjegyzéséhez.\n\nEz a szabályzat a Benwer Cars piactérre vonatkozik. Amikor továbblép egy autókölcsönző cég oldalára, az az oldal saját sütiket helyezhet el."
+        },
+        {
+          "title": "Feltétlenül szükséges sütik",
+          "body": "Nyelvi sütit használunk, hogy az oldal a kiválasztott nyelvet jeleníthesse meg. Ez elengedhetetlen ahhoz, hogy a piactér az elvárásainak megfelelően működjön.\n\nA sütisávban tett választását az eszközén tároljuk, hogy ne kérdezzük meg újra minden látogatáskor. Ezt a tárolást nem használjuk hirdetésre."
+        },
+        {
+          "title": "Opcionális sütik",
+          "body": "Az opcionális sütik (például elemzési sütik) kikapcsolva maradnak, kivéve, ha az Összes elfogadása lehetőséget választja.\n\nA piactér jelenleg nem helyez el elemzési vagy marketing sütiket. Ha később hozzáadunk ilyeneket, itt ismertetjük őket, és továbbra is az Ön elfogadásához lesznek kötve."
+        },
+        {
+          "title": "Sütik kezelése",
+          "body": "A sáv segítségével elfogadhatja az összes sütit, vagy megtarthatja csak a szükségeseket. A böngészőjében is törölheti a sütiket és a webhelyadatokat. A nyelvi süti letiltása visszaállíthatja a nyelvi beállítást a következő látogatáskor."
+        },
+        {
+          "title": "További információ",
+          "body": "Tekintse meg az adatvédelmi szabályzatot arról, hogyan kezeljük a személyes adatokat, vagy küldjön üzenetet a kapcsolatfelvételi oldalról."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} kezdőlap",
+    "defaultHeadline": "Béreljen autót a(z) {name} céggel",
+    "footerTagline": "Foglaljon közvetlenül ennél az autókölcsönző cégnél.",
+    "previewBanner": "Előnézet — ez az oldal nem nyilvános. A keresőmotorok nem indexelik.",
+    "editLink": "Szerkesztés",
+    "editContactEmpty": "A kapcsolattartási adatok rejtve vannak. Szerkessze őket az admin felületen.",
+    "editBranchesEmpty": "Még nincsenek telephelyek. Adja hozzá őket az admin felületen.",
+    "editRulesHint": "Foglalási mód, minimális előzetes értesítés és a kérelem időablaka.",
+    "editDomainHint": "Egyéni domain és élő URL.",
+    "editSection": {
+      "hero": "Kiemelt rész",
+      "search": "Keresés",
+      "fleet": "Flotta",
+      "branches": "Telephelyek",
+      "contact": "Kapcsolat",
+      "rules": "Foglalási szabályok",
+      "domain": "Domain"
+    },
+    "pausedTitle": "Nem fogad foglalásokat",
+    "pausedDescription": "Ez a cég szünetelteti az online foglalásokat. A flottát továbbra is böngészheti.",
+    "notFoundTitle": "A weboldal nem található",
+    "notFoundDescription": "Ez az autókölcsönző weboldal nem érhető el.",
+    "loadErrorTitle": "A weboldal nem érhető el",
+    "loadErrorDescription": "Nem sikerült betölteni ezt az autókölcsönző weboldalt. Próbálja meg hamarosan újra.",
+    "search": "Autók keresése",
+    "searchAria": "Keresés dátumok és helyszín szerint",
+    "searchTitle": "Autók keresése",
+    "searchDescription": "Válasszon dátumokat és helyszínt, hogy lássa, mi érhető el.",
+    "branch": "Átvételi helyszín",
+    "anyBranch": "Bármely helyszín",
+    "ownerSignIn": "Tulajdonosi bejelentkezés",
+    "returnBranch": "Leadási helyszín",
+    "differentReturn": "Leadás másik helyszínen",
+    "returnSame": "Megegyezik az átvétellel",
+    "driverAge": "Sofőr életkora",
+    "driverAgeYears": "{band} év",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Szerkessze weboldalát",
+    "signInHint": "A tulajdonosok a Benwer admin felületéről nyitják meg a weboldalszerkesztőt. Használja ott a „Weboldal szerkesztése” gombot, és itt automatikusan be lesz jelentkezve.",
+    "signedInTitle": "Be van jelentkezve",
+    "signedInHint": "Ha kezelheti ezt a weboldalt, a szerkesztő a kezdőlapon nyílik meg.",
+    "openEditor": "Weboldalszerkesztő megnyitása",
+    "disabledTitle": "A tulajdonosi szerkesztés nem érhető el",
+    "disabledDescription": "A személyzeti Firebase nincs konfigurálva ezen a piactéren.",
+    "signOut": "Kijelentkezés",
+    "auth": {
+      "tooManyRequests": "Túl sok próbálkozás. Próbálja meg később.",
+      "unknown": "Nem sikerült bejelentkezni. Próbálja újra.",
+      "invalidToken": "Ez a bejelentkezési link lejárt vagy már felhasználták. Nyissa meg újra a szerkesztőt a Benwer admin felületéről."
+    },
+    "signingIn": "Bejelentkezés…",
+    "openAdmin": "Benwer admin megnyitása",
+    "accountMenu": "Tulajdonosi fiók",
+    "signedInAs": "Bejelentkezve tulajdonosként",
+    "guestSignedOut": "Kijelentkeztettük a vendégfiókjából. Tulajdonosi és vendég munkamenet nem lehet egyszerre nyitva ebben a böngészőben."
+  },
+  "guest": {
+    "googleAction": "Bejelentkezés Google-fiókkal",
+    "googleCreate": "Folytatás Google-fiókkal",
+    "or": "vagy",
+    "forgotPassword": "Elfelejtette a jelszavát?",
+    "resetTitle": "Jelszó visszaállítása",
+    "resetHint": "Adja meg az e-mail-címét, és küldünk egy linket új jelszó beállításához.",
+    "resetAction": "Visszaállító link küldése",
+    "resetSentTitle": "Ellenőrizze az e-mailjeit",
+    "resetSentHint": "Ha létezik fiók ehhez a címhez, elküldtük a jelszó-visszaállítási utasításokat. Nem kapta meg? Ellenőrizze a spam mappát, vagy várjon néhány percet, mielőtt újra próbálná.",
+    "backToSignIn": "Vissza a bejelentkezéshez",
+    "signInNav": "Bejelentkezés",
+    "myBookings": "Foglalásaim",
+    "signInTitle": "Bejelentkezés",
+    "signInHint": "Használja a vendégfiókját ehhez az autókölcsönző céghez. Ez nem személyzeti bejelentkezés.",
+    "signInAction": "Bejelentkezés",
+    "createTitle": "Vendégfiók létrehozása",
+    "createHint": "Mentse el foglalásait ennél a cégnél. A személyzet másik bejelentkezést használ.",
+    "createAction": "Fiók létrehozása",
+    "needAccount": "Nincs még fiókja? Hozzon létre egyet",
+    "haveAccount": "Már van fiókja? Jelentkezzen be",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "bookingsTitle": "Foglalásaim",
+    "bookingsMeta": "Összekapcsolt foglalások ennél az autókölcsönző cégnél.",
+    "bookingsHint": "Bejelentkezve mint {email} a(z) {company} cégnél.",
+    "emptyTitle": "Még nincsenek foglalások",
+    "emptyDescription": "Foglalt már korábban? Kapcsolja össze azt a foglalást a használt e-mail-címmel vagy a visszaigazoló tokennel.",
+    "bookingFallback": "Foglalás",
+    "loadErrorTitle": "Nem sikerült betölteni a foglalásokat",
+    "linkTitle": "Foglalás összekapcsolása",
+    "linkHint": "Adja meg a foglaláshoz használt e-mail-címet vagy a visszaigazoló tokent. Ha találunk egyezést, e-mailben linket küldünk — soha nem áruljuk el, hogy létezik-e fiók.",
+    "linkEmail": "Foglalási e-mail",
+    "linkToken": "Foglalási token",
+    "linkAction": "Link küldése",
+    "linkSent": "Ha találunk megfelelő foglalást, e-mailben visszaigazoló linket küldünk.",
+    "accountTitle": "Fiók",
+    "accountHint": "Jelentkezzen ki a fiókjából ezen az oldalon.",
+    "signOut": "Kijelentkezés",
+    "erase": "Adataim törlése itt",
+    "eraseConfirm": "Igen, törölje az adataimat ennél a cégnél",
+    "confirmTitle": "Foglalás összekapcsolása",
+    "confirmHint": "Kérjük, várjon, amíg ezt a foglalást a fiókjához csatoljuk.",
+    "confirmSignIn": "Jelentkezzen be a vendégfiókjával a foglalás összekapcsolásának befejezéséhez.",
+    "confirmMissing": "Hiányzó visszaigazoló token",
+    "confirmMissingHint": "Nyissa meg újra a linket az e-mailjéből.",
+    "confirmError": "Nem sikerült megerősíteni ezt a linket",
+    "disabledTitle": "A vendégfiókok még nem érhetők el",
+    "disabledDescription": "Ez a cég nem kapcsolta be a vendég bejelentkezést. A nevével, e-mail-címével és telefonszámával továbbra is foglalhat.",
+    "auth": {
+      "popupClosed": "A bejelentkezést megszakították.",
+      "popupBlocked": "A böngészője blokkolta a Google ablakot. Engedélyezze az előugró ablakokat, és próbálja újra.",
+      "differentProvider": "Ez az e-mail-cím már más módon jelentkezik be. Használja helyette a jelszavát.",
+      "providerUnavailable": "A Google-bejelentkezés még nem érhető el ezen az oldalon. Használja az e-mail-címét és jelszavát.",
+      "invalidEmail": "Adjon meg egy érvényes e-mail-címet.",
+      "emailInUse": "Ehhez az e-mail-címhez már tartozik vendégfiók. Jelentkezzen be helyette.",
+      "weakPassword": "Használjon hosszabb jelszót.",
+      "tooManyRequests": "Túl sok próbálkozás. Próbálja újra néhány perc múlva.",
+      "invalidCredentials": "Az e-mail-cím vagy a jelszó hibás.",
+      "unknown": "Nem sikerült bejelentkezni. Próbálja újra.",
+      "googleDisabled": "A Google-bejelentkezés még nincs bekapcsolva ezen az oldalon. Használja az e-mail-címét és jelszavát.",
+      "domainNotAuthorised": "A Google-bejelentkezés még nincs beállítva ennek az oldalnak a címéhez. Egyelőre használja az e-mail-címét és jelszavát."
+    },
+    "accountMenu": "Az Ön fiókja",
+    "profileNav": "Profil",
+    "profileTitle": "Profil",
+    "profileMeta": "Az Ön vendégfiókja ennél az autókölcsönző cégnél.",
+    "linkCancel": "Mégse",
+    "eraseTitle": "Adataim törlése",
+    "eraseHint": "Törli az Ön vendégadatait ennél a cégnél, és kijelentkezteti Önt. Más cégeket ez nem érint.",
+    "profileDetailsTitle": "Az Ön adatai",
+    "profileDetailsHint": "Az ennél a cégnél leadott foglalásai kitöltéséhez használjuk.",
+    "profileFullName": "Teljes név",
+    "profilePhone": "Telefonszám",
+    "profileDob": "Születési dátum",
+    "profileSave": "Adatok mentése",
+    "profileNotLinked": "A neve és telefonszáma az első, ezzel az e-mail-címmel leadott foglalása után kerül ide mentésre. Másik e-mail-címmel már foglalt? Kapcsolja össze azt a foglalást a Foglalásaim menüpontban.",
+    "verifyTitle": "Erősítse meg e-mail-címét a foglalásai megtekintéséhez",
+    "verifyHint": "Linket küldtünk a(z) {email} címre. Nyissa meg, majd térjen vissza ide. Amíg az e-mail-címe nincs megerősítve, nem tudjuk megjeleníteni a foglalásait, és nem tudjuk elmenteni a nevét és telefonszámát.",
+    "verifyResend": "E-mail újraküldése",
+    "verifySent": "E-mail elküldve. Ellenőrizze a beérkező leveleket és a spam mappát.",
+    "verifyDone": "Megerősítettem az e-mail-címemet",
+    "verifyStillPending": "Az e-mail-címe még nincs megerősítve. Nyissa meg a linket az e-mailben, majd próbálja újra.",
+    "verifyBanner": "A fiókja még nem aktív. Erősítse meg a(z) {email} címet a foglalásai megtekintéséhez és a mentett adatai használatához.",
+    "verifyBannerAction": "E-mail megerősítése",
+    "profileEdit": "Adatok szerkesztése",
+    "profileCancel": "Mégse",
+    "profileEmail": "E-mail",
+    "profileEmpty": "Nincs megadva",
+    "bookingsUpcoming": "Közelgő",
+    "bookingsPast": "Korábbi",
+    "ownerSignedOut": "Kijelentkeztettük a weboldalszerkesztőből. Tulajdonosi és vendég munkamenet nem lehet egyszerre nyitva ebben a böngészőben."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "{name} ajánlatok",
+      "slideAlt": "{name} {position}. banner",
+      "slideLabel": "{position} / {count}",
+      "previous": "Előző banner",
+      "next": "Következő banner",
+      "goTo": "{position}. banner megjelenítése",
+      "presets": {
+        "airport": {
+          "script": "most szállt le?",
+          "highlight": "Repülőtéri átvétel",
+          "joiner": "mindössze",
+          "boxed": "10 perc alatt",
+          "description": "Kerülje el a sort: írja alá a szerződést a telefonján, és induljon útnak teljes körű biztosítással"
+        },
+        "weekend": {
+          "script": "foglaljon ezen a hétvégén",
+          "highlight": "20% kedvezmény",
+          "joiner": "minden",
+          "boxed": "Hétvégi bérlésre",
+          "description": "Átvétel pénteken, leadás hétfőn. Ingyenes gyerekülés és extra sofőr az árban"
+        },
+        "roadtrip": {
+          "script": "következő autós útja",
+          "highlight": "Itt kezdődik",
+          "joiner": "átadjuk Önnek a",
+          "boxed": "Kulcsokat",
+          "description": "Ingyenes lemondás az átvétel előtt 24 óráig, korlátlan km és rejtett díjak nélkül"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Minden ár tartalmazza",
+      "title": "A látott ár a fizetendő ár",
+      "description": "Semmi meglepetés a pultnál. Ezek mindig részét képezik az árnak.",
+      "presets": {
+        "insurance": {
+          "title": "Alapbiztosítás",
+          "text": "Ütközés-, lopás- és felelősségbiztosítás.",
+          "tag": "Tartalmazza"
+        },
+        "mileage": {
+          "title": "Korlátlan kilométer",
+          "text": "Vezessen annyit, amennyit szeretne, kilométerenkénti díj nélkül.",
+          "tag": "Korlátlan"
+        },
+        "fuel": {
+          "title": "Tele-tele üzemanyag",
+          "text": "Vegye át teli tankkal az autót, és hozza vissza telivel.",
+          "tag": "Nincs előre fizetett tank"
+        },
+        "cancellation": {
+          "title": "Ingyenes lemondás",
+          "text": "Változtak a tervei? Mondja le ingyenesen.",
+          "tag": "Rugalmas"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Értékelések",
+      "title": "Mit mondanak rólunk a sofőrök",
+      "seeAll": "Összes ({count, plural, one {# értékelés} other {# értékelés}}) megtekintése",
+      "seeAllOn": "Összes ({count, plural, one {# értékelés} other {# értékelés}}) megtekintése itt: {source}",
+      "basedOn": "{count, plural, one {# értékelés} other {# értékelés}} alapján",
+      "basedOnSource": "{count, plural, one {# értékelés} other {# értékelés}} alapján itt: {source}",
+      "ratingAria": "{rating} / 5 értékelés",
+      "rented": "Bérelt autó: {vehicle}",
+      "verified": "Ellenőrzött bérlés",
+      "distributionAria": "Értékelések megoszlása",
+      "emptyTitle": "Még nincsenek értékelések",
+      "emptyText": "A vendégek az autó visszaadása után értékelhetik bérlésüket. A jóváhagyott értékelések itt jelennek meg."
+    },
+    "app": {
+      "eyebrow": "Mobilalkalmazás",
+      "title": "Foglalása útközben is",
+      "text": "Jelentkezzen be online, nézze meg az átvételi adatokat, és írjon nekünk üzenetet — mindezt a telefonjáról.",
+      "platformBoth": "iOS és Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Olvassa be a letöltéshez",
+      "qrAlt": "QR-kód az alkalmazás letöltéséhez",
+      "appStore": {
+        "prefix": "Letöltés innen:",
+        "name": "App Store",
+        "aria": "Letöltés az App Store-ból",
+        "unavailable": "Még nem érhető el az App Store-ban"
+      },
+      "googlePlay": {
+        "prefix": "Szerezze be itt:",
+        "name": "Google Play",
+        "aria": "Szerezze be a Google Play áruházban",
+        "unavailable": "Még nem érhető el a Google Play áruházban"
+      },
+      "comingSoon": "Hamarosan"
+    },
+    "locations": {
+      "eyebrow": "Helyszínek",
+      "title": "{count, plural, one {Irodánk} other {Irodáink}}",
+      "description": "{count, plural, one {Itt veheti át és adhatja le az autót.} other {Bármelyik irodánkban átveheti és leadhatja az autót.}}",
+      "directions": "Útvonalterv",
+      "directionsTo": "Útvonalterv ide: {name}",
+      "call": "Hívás"
+    },
+    "faq": {
+      "eyebrow": "GYIK",
+      "title": "Kérdések foglalás előtt",
+      "description": "Nem találja a választ? Vegye fel velünk a kapcsolatot, szívesen segítünk."
+    },
+    "contact": {
+      "title": "Kérdése van? Beszéljen egy munkatársunkkal.",
+      "description": "Küldjön nekünk üzenetet vagy hívjon fel minket, és segítünk megtalálni a megfelelő autót.",
+      "whatsapp": "WhatsApp",
+      "email": "Írjon e-mailt",
+      "whatsappMessage": "Üdvözlöm {name}, kérdésem van autóbérléssel kapcsolatban."
+    },
+    "nav": {
+      "reviews": "Értékelések",
+      "faq": "GYIK",
+      "contact": "Kapcsolat",
+      "app": "Alkalmazás",
+      "branches": "Helyszínek"
+    },
+    "footer": {
+      "contact": "Kapcsolat",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Elfogadott fizetési módok",
+      "rating": "{score} · {count, plural, one {# értékelés} other {# értékelés}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Készpénz"
+    }
+  },
+  "siteEditor": {
+    "aria": "Weboldalszerkesztő",
+    "title": "Weboldalszerkesztő",
+    "signOut": "Kijelentkezés",
+    "tabsAria": "Szerkesztő szakaszok",
+    "status": {
+      "draft": "Piszkozat",
+      "published": "Élő",
+      "paused": "Szüneteltetve"
+    },
+    "tabs": {
+      "sections": "Szakaszok",
+      "design": "Megjelenés",
+      "settings": "Beállítások",
+      "legal": "Jogi"
+    },
+    "contentLanguage": "Szerkesztés nyelve",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Összes szakasz",
+    "sections": {
+      "company": "Cég",
+      "fleet": "Autók",
+      "included": "Minden ár tartalmazza",
+      "reviews": "Értékelések",
+      "app": "Mobilalkalmazás",
+      "faq": "GYIK",
+      "contact": "Kapcsolat",
+      "hero": "Bannerek és keresés",
+      "branches": "Helyszínek"
+    },
+    "sectionsHint": "Kapcsolja be vagy ki a szakaszokat, és módosítsa a sorrendjüket. Nyisson meg egy szakaszt a tartalmának szerkesztéséhez.",
+    "orderHint": "Az autók mindig megjelennek. Az irodák a Benwer admin felületén lévő telephelyeiből származnak.",
+    "hiddenUntilContent": "Rejtve marad, amíg nem ad hozzá tartalmat",
+    "summary": {
+      "banners": "{count, plural, one {# banner} other {# banner}}",
+      "bannersEmpty": "Még nincs banner, a márkaszín látható",
+      "company": "Főcím, bemutatkozás és elérhetőségek",
+      "fleet": "A Benwer flottájából",
+      "included": "{count, plural, one {# elem} other {# elem}}",
+      "reviews": "{count, plural, one {# értékelés} other {# értékelés}}",
+      "app": "Áruházlinkek és QR-kód",
+      "locations": "{count, plural, one {# iroda} other {# iroda}} a Benwerből",
+      "faq": "{count, plural, one {# kérdés} other {# kérdés}}",
+      "contactWhatsapp": "WhatsApp, telefon és nyitvatartás",
+      "contact": "Telefon és e-mail"
+    },
+    "unsaved": "Nem mentett módosítások",
+    "saved": "Minden módosítás mentve",
+    "discard": "Elvetés",
+    "save": "Módosítások mentése",
+    "common": {
+      "moveUp": "{item} mozgatása felfelé",
+      "moveDown": "{item} mozgatása lefelé",
+      "remove": "{item} eltávolítása",
+      "show": "{item} megjelenítése"
+    },
+    "banners": {
+      "title": "Bannerek",
+      "description": "Legfeljebb {max} dia. Az üres mezők a szürkével jelzett alapértelmezett szöveget használják.",
+      "empty": "Nincsenek bannerek. A banner területe a háttérszínét mutatja.",
+      "item": "{position}. banner",
+      "image": "Kép",
+      "imageHint": "Töltsön fel egy széles képet, kb. 1600 × 560 px méretben. JPG, PNG vagy WebP, legfeljebb 25 MB. Az átlátszó PNG a banner színére kerül.",
+      "add": "Banner hozzáadása",
+      "fields": {
+        "script": "Kézírásos sor",
+        "highlight": "Kiemelt cím",
+        "joiner": "Kis kötőszó",
+        "boxed": "Keretezett cím",
+        "description": "Leírás"
+      },
+      "colorsTitle": "Banner színei",
+      "colorsDescription": "Minden banner ezt használja. Bármilyen szín megfelelő a háttérhez.",
+      "resetColors": "Alapértelmezett színek visszaállítása",
+      "colors": {
+        "background": "Háttér",
+        "text": "Szöveg",
+        "highlight": "Kiemelő doboz",
+        "highlightText": "Kiemelés szövege",
+        "box": "Fehér doboz",
+        "boxText": "Fehér doboz szövege",
+        "script": "Kötőszó szövege"
+      },
+      "noImage": "Még nincs kép",
+      "uploadImage": "Kép feltöltése",
+      "replaceImage": "Kép cseréje",
+      "tooLarge": "Ez a fájl nagyobb, mint 25 MB. Válasszon kisebb képet.",
+      "uploadFailed": "A feltöltés nem sikerült. Próbálja újra."
+    },
+    "company": {
+      "title": "Céges fejléc",
+      "description": "A cég neve, főcím és rövid bemutatkozás.",
+      "headline": "Főcím",
+      "headlinePlaceholder": "Béreljen autót a(z) {name} céggel",
+      "intro": "Bemutatkozás",
+      "introHint": "Egy-két mondat a cégéről.",
+      "contactTitle": "Kapcsolattartási adatok",
+      "contactDescription": "A fejlécben, a helyszínek és a kapcsolat szakaszban jelennek meg.",
+      "showPhone": "Telefonszám megjelenítése",
+      "showEmail": "E-mail megjelenítése",
+      "showAddress": "Cím megjelenítése"
+    },
+    "included": {
+      "title": "Minden ár tartalmazza",
+      "description": "Legfeljebb 6 ígéret, amely mindig része az árnak.",
+      "accuracy": "Csak olyat soroljon fel, ami minden bérlésre igaz. Az alapértelmezett szöveg javaslat, ellenőrizze, hogy megfelel-e a bérleti feltételeinek.",
+      "item": "{position}. elem",
+      "icon": "Ikon",
+      "itemTitle": "Cím",
+      "itemText": "Leírás",
+      "itemTag": "Kiemelés",
+      "tagHint": "Rövid, zölddel megjelenített címke, például „Önrész 1000 €”.",
+      "presets": {
+        "insurance": "Alapbiztosítás",
+        "mileage": "Korlátlan km",
+        "fuel": "Tele-tele üzemanyag",
+        "cancellation": "Ingyenes lemondás"
+      },
+      "addCustom": "Egyéni elem"
+    },
+    "icons": {
+      "shield": "Pajzs",
+      "gauge": "Sebességmérő",
+      "fuel": "Üzemanyagkút",
+      "calendar_check": "Naptár",
+      "check": "Pipa",
+      "car": "Autó",
+      "users": "Emberek",
+      "baby": "Gyerekülés",
+      "plane": "Repülőgép",
+      "key": "Kulcs"
+    },
+    "reviews": {
+      "title": "Vendégértékelések",
+      "description": "A vendégek az autó visszaadása után értékelik a bérlést. Csak az Ön által jóváhagyott értékelések jelennek meg.",
+      "summary": "{average} átlag {count, plural, one {# jóváhagyott értékelés} other {# jóváhagyott értékelés}} alapján",
+      "none": "Még nincsenek jóváhagyott értékelések. A vendégek egy rövid megjegyzést látnak, amíg jóvá nem hagy egyet.",
+      "manage": "Értékelések jóváhagyása vagy elrejtése a Benwer adminban",
+      "demo": "Ezek demó értékelések ezen a tesztcégen, amíg valódiakat nem hagy jóvá a Benwer adminban."
+    },
+    "app": {
+      "benwerAppTitle": "Benwer Cars alkalmazás",
+      "benwerApp": "A Benwer Cars alkalmazás megjelenítése",
+      "benwerAppDescription": "A vendégek megkapják az ingyenes Benwer Cars alkalmazást. A jelvények a hivatalos áruházakra mutatnak, a QR-kód pedig megnyitja a cégét az alkalmazásban.",
+      "storesWithBenwerApp": "Csak akkor szükséges, ha a cégének saját alkalmazása van. Amíg a Benwer Cars alkalmazás be van kapcsolva, a szakasz annak áruházlinkjeit használja.",
+      "storesTitle": "Áruházlinkek",
+      "storesDescription": "Linkek a saját alkalmazásához. A hiányzó áruház szürkítve jelenik meg. Linkek nélkül és kikapcsolt Benwer Cars alkalmazással a szakasz rejtve marad.",
+      "ios": "App Store link",
+      "android": "Google Play link",
+      "qrHint": "A QR-kód a Google Play linket nyitja meg, vagy az App Store linket, ha nincs Google Play link.",
+      "copyTitle": "Szöveg",
+      "title": "Cím",
+      "text": "Leírás"
+    },
+    "faq": {
+      "title": "Kérdések",
+      "description": "Legfeljebb {max} kérdés rövid válaszokkal.",
+      "empty": "Még nincsenek kérdések. A szakasz rejtve marad, amíg nem ad hozzá egyet.",
+      "item": "{position}. kérdés",
+      "question": "Kérdés",
+      "answer": "Válasz",
+      "incompleteHint": "A válasz nélküli kérdések nem jelennek meg az oldalon.",
+      "add": "Kérdés hozzáadása"
+    },
+    "contact": {
+      "title": "Kapcsolat",
+      "description": "Hogyan érhetik el Önt az ügyfelek. A telefon és az e-mail a cég szakaszból érkezik.",
+      "whatsapp": "WhatsApp szám",
+      "whatsappHint": "Adja meg az országkódot is. Hagyja üresen a WhatsApp gomb elrejtéséhez.",
+      "hours": "Mikor válaszol",
+      "hoursPlaceholder": "Minden nap 08:00 és 22:00 között válaszolunk.",
+      "payments": "Fizetési módok",
+      "paymentsHint": "A láblécben jelennek meg."
+    },
+    "design": {
+      "colorTitle": "Márkaszín",
+      "colorDescription": "A gombokhoz, linkekhez és kiemelésekhez használjuk az egész oldalon. A banner háttere ezt a színt követi; a Bannerek alatt továbbra is finomhangolhatja.",
+      "presets": "Javasolt színek",
+      "custom": "Egyéni szín",
+      "customHint": "Használjon hexadecimális kódot, például #4f46e5.",
+      "picker": "Válasszon színt",
+      "lowContrast": "Ez a szín túl világos a gombok fehér szövegéhez. Válasszon sötétebbet, különben a mentés sikertelen lesz.",
+      "fontTitle": "Betűtípus",
+      "fontDescription": "A weboldal összes szövegéhez használva.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Letisztult és modern"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klasszikus és elegáns"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Karakteres és barátságos"
+        }
+      },
+      "cornersTitle": "Sarkok",
+      "cornersDescription": "Lekerekített vagy szögletes sarkok a weboldal gombjain, kártyáin és mezőin.",
+      "corners": {
+        "round": {
+          "name": "Lekerekített",
+          "hint": "Lágy és barátságos"
+        },
+        "square": {
+          "name": "Szögletes",
+          "hint": "Éles és minimalista"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Weboldal",
+      "websiteEnabled": "Foglalási weboldal bekapcsolva",
+      "websiteEnabledHint": "Amikor ez be van kapcsolva, a vendégek láthatják a közzétett oldalát és foglalhatnak rajta. A bekapcsolás a mentett módosításait is közzéteszi. Ez ugyanaz a kapcsoló, mint a Benwer adminban.",
+      "bookingTitle": "Foglalások",
+      "bookingDescription": "Hogyan foglalnak az ügyfelek az oldaláról.",
+      "bookingMode": "Foglalási mód",
+      "mode": {
+        "instant": "Azonnali",
+        "request": "Kérelemre"
+      },
+      "modeHint": {
+        "instant": "A foglalások azonnal visszaigazolásra kerülnek.",
+        "request": "A kérelem időablakán belül elfogadhatja vagy elutasíthatja az egyes foglalásokat."
+      },
+      "minLead": "Minimális előzetes értesítés",
+      "requestWindow": "Válaszadási idő",
+      "hoursUnit": "Órában",
+      "differentReturnTitle": "Leadás másik helyszínen",
+      "differentReturnLabel": "Engedélyezze a vendégeknek a másik helyszínen történő leadást",
+      "differentReturnHint": "A vendégek kereséskor választják ki a leadási helyszínt. A Benwer adminban beállított egyirányú díj hozzáadódik az árhoz.",
+      "differentReturnOff": "Kapcsolja be az egyirányú bérlést a Benwer adminban, hogy ezt kínálhassa."
+    },
+    "savedNotPublished": "Mentve, még nincs közzétéve",
+    "publish": "Közzététel",
+    "branding": {
+      "logosTitle": "Logók",
+      "logosDescription": "Ez a cége logója. Ha itt megváltoztatja, a Benwer admin felületen és a Benwer Cars alkalmazásban is frissül.",
+      "headerLogo": "Felső sáv logója",
+      "headerLogoHint": "Minden oldal tetején a sávban jelenik meg. A széles logó működik a legjobban.",
+      "companyLogo": "Cég szakasz logója",
+      "companyLogoHint": "A főcíme felett, a cég szakasza előtt jelenik meg.",
+      "usingCompanyLogo": "A céges logóját használja",
+      "upload": "Logó feltöltése",
+      "replace": "Csere",
+      "uploadFailed": "A logót nem sikerült feltölteni. Használjon PNG, JPG vagy WebP képet, és próbálja újra.",
+      "tooLarge": "Ez a kép nagyobb, mint 25 MB.",
+      "backgroundTitle": "Oldal háttere",
+      "backgroundDescription": "A weboldal tartalma mögötti szín.",
+      "backgroundPresets": "Javasolt hátterek",
+      "backgroundCustom": "Egyéni háttér",
+      "backgroundPicker": "Válasszon háttérszínt",
+      "needsApi": "Elérhető lesz, amint a weboldalakhoz készült Benwer API-frissítés élesbe kerül.",
+      "headerLogoDark": "Felső sáv logója — sötét mód",
+      "companyLogoDark": "Cég szakasz logója — sötét mód",
+      "squareLogo": "Négyzetes logó (1:1)",
+      "squareLogoHint": "A közzétételhez kötelező. A cége neve mellett jelenik meg kártyákon, keresési találatokban és mobil listákban.",
+      "cropTitle": "Logó körbevágása 2:1 arányra",
+      "cropHint": "Húzza és nagyítsa, hogy a logója szépen illeszkedjen a 2:1 keretbe.",
+      "cropZoom": "Nagyítás",
+      "cropCancel": "Mégse",
+      "cropSave": "Körbevágás és feltöltés",
+      "darkLogoHint": "Opcionális. Akkor jelenik meg, amikor a látogatók sötét módot használnak. Használja logója világos vagy fehér változatát.",
+      "darkNeedsApi": "A sötét módú logók elérhetők lesznek, amint a hozzájuk tartozó Benwer API-frissítés élesbe kerül.",
+      "logo": "Logó (2:1)",
+      "logoHint": "A közzétételhez kötelező. Egy logó világos és sötét módhoz: a márkaszíne háttérként, fehér névvel, 2:1 arányra vágva."
+    },
+    "legal": {
+      "hint": "Minden oldal a szabványos szöveggel indul, így csak a szükséges részeket kell módosítania. Minden alcímhez adjon hozzá egy szakaszt. A „Vissza a szabványos szöveghez” visszavonja a módosításait.",
+      "needsApi": "Elérhető lesz, amint a weboldalakhoz készült Benwer API-frissítés élesbe kerül.",
+      "privacyTitle": "Adatvédelmi szabályzat",
+      "privacyDescription": "A weboldala láblécében az Adatvédelem alatt jelenik meg.",
+      "termsTitle": "Általános szerződési feltételek",
+      "termsDescription": "A weboldala láblécében a Feltételek alatt jelenik meg.",
+      "text": "Szöveg",
+      "intro": "Bevezetés",
+      "subtitle": "Alcím",
+      "sectionItem": "{position}. szakasz",
+      "addSection": "Szakasz hozzáadása",
+      "reset": "Vissza a szabványos szöveghez",
+      "pageTitle": "Oldal címe",
+      "privacyLooksLikeTerms": "Az adatvédelmi szabályzata megegyezik a feltételek szövegével. Használja a \"Vissza a szabványos szöveghez\" gombot az Adatvédelmi szabályzat alatt, vagy írja meg saját adatvédelmi szövegét, majd mentse."
+    },
+    "preview": "Előnézet",
+    "fullscreen": "Teljes képernyős szerkesztő",
+    "exitFullscreen": "Előnézet megjelenítése a szerkesztő mellett",
+    "previewBarAria": "Előnézet vezérlői",
+    "previewing": "A weboldala előnézetét tekinti meg",
+    "backToEdit": "Szerkesztés"
+  },
+  "marketplaceBanners": {
+    "aria": "Benwer kiemelések",
+    "slideLabel": "{position} / {count}",
+    "goTo": "{position}. banner megjelenítése",
+    "previous": "Előző banner",
+    "next": "Következő banner",
+    "trust": {
+      "script": "foglaljon bizalommal",
+      "highlight": "Ellenőrzött cégek",
+      "joiner": "és",
+      "boxed": "Biztonságos foglalás",
+      "description": "Valódi értékelések, átlátható feltételek és digitális szerződések, amelyeket a telefonjáról írhat alá"
+    },
+    "prices": {
+      "script": "egyetlen keresés",
+      "highlight": "Hasonlítsa össze az árakat",
+      "joiner": "a",
+      "boxed": "Partnercégektől",
+      "description": "Tekintse meg egymás mellett a partner autókölcsönző cégek árait, biztosításait és kaucióit foglalás előtt"
+    },
+    "anywhere": {
+      "script": "találja meg az autóját",
+      "highlight": "Málaga szerte",
+      "joiner": "a",
+      "boxed": "Helyi autókölcsönzőkkel",
+      "description": "Partner autókölcsönző cégek Málaga tartomány városaiban, egyetlen helyen"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Közzétette: {name}.",
+    "cookies": {
+      "title": "Sütiszabályzat",
+      "lede": "Hogyan használ a(z) {name} sütiket és hasonló technológiákat ezen a weboldalon.",
+      "updated": "Közzétette: {name}.",
+      "sections": [
+        {
+          "title": "Mit használunk",
+          "body": "A sütik az eszközén tárolt kis szöveges fájlok. Ez a weboldal hasonló tárolási módokat is használ, például helyi tárolót, a választásai, a kosara és a bejelentkezése megjegyzéséhez."
+        },
+        {
+          "title": "Feltétlenül szükséges sütik",
+          "body": "Egy nyelvi süti teszi lehetővé, hogy az oldal az Ön nyelvén jelenjen meg, a sütisávban tett választását pedig tároljuk, hogy ne kérdezzük meg újra minden látogatáskor. Ha bejelentkezik, a bejelentkezési szolgáltató egy munkamenetet tárol az eszközén, hogy bejelentkezve maradjon. A bankkártyás fizetéseket a Stripe kezeli, amely saját sütiket helyezhet el a csalások megelőzése érdekében."
+        },
+        {
+          "title": "Opcionális sütik",
+          "body": "Az opcionális sütik (például elemzési sütik) kikapcsolva maradnak, kivéve, ha az Összes elfogadása lehetőséget választja. Ez a weboldal jelenleg nem helyez el elemzési vagy marketing sütiket."
+        },
+        {
+          "title": "Sütik kezelése",
+          "body": "A választása módosításához használja a láblécben található sütibeállítások linket. A böngészőjében is törölheti a sütiket és a webhelyadatokat. A feltétlenül szükséges tárhely letiltása kijelentkeztetheti Önt vagy kiürítheti a kosarát."
+        },
+        {
+          "title": "További információ",
+          "body": "Tekintse meg az adatvédelmi szabályzatot arról, hogyan kezeli a(z) {name} a személyes adatokat, vagy használja a láblécben lévő elérhetőségeket."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Ügyfélszolgálat",
+    "fabCloseLabel": "Ügyfélszolgálati menü bezárása",
+    "messageAction": "Közvetlen üzenet",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Üdvözlöm, kérdésem van a Benwer Cars szolgáltatással kapcsolatban."
+  },
+  "guestApp": {
+    "metaTitle": "A Benwer Cars alkalmazás",
+    "metaDescription": "Foglaljon autókat, tartsa egy helyen minden utazását, és kapjon foglalási értesítéseket a telefonjára.",
+    "eyebrow": "Mobilalkalmazás",
+    "title": "Az autóbérlés a zsebében",
+    "description": "Foglaljon autókat helyi cégektől, tartsa egy helyen minden utazását, fizessen és kapjon frissítéseket a telefonjára.",
+    "featureTrips": "Minden utazása, minden cégnél",
+    "featureBooking": "Foglaljon és fizessen néhány érintéssel",
+    "featurePush": "Értesítések, ha a foglalása változik",
+    "unavailableTitle": "Az alkalmazás hamarosan érkezik",
+    "unavailableDescription": "A Benwer Cars alkalmazás még nincs az áruházakban. A weben továbbra is foglalhat.",
+    "browse": "Autók böngészése",
+    "badgeTitle": "Szerezze be a Benwer Cars alkalmazást",
+    "companyText": "Foglaljon a(z) {company} cégnél a telefonján, és tartsa egy helyen az utazásait.",
+    "bookingText": "Tekintse meg ezt a foglalást, fizessen és kapjon értesítéseket a telefonjára."
+  }
+}

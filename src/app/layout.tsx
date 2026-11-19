@@ -9,7 +9,8 @@ import { QueryProvider } from "@/context/QueryProvider";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CookieBannerHost } from "@/components/features/CookieBannerHost";
 import { StorageKeys } from "@/enums";
-import { routing } from "@/i18n/routing";
+import { loadLocaleMessages } from "@/i18n/messages";
+import { resolveLocale } from "@/i18n/routing";
 import {
   parseColorScheme,
   serverDarkClass,
@@ -17,16 +18,10 @@ import {
 } from "@/lib/colorScheme";
 import { guestAppSmartBanner } from "@/lib/guestApp";
 import { buildPageMetadata, getSiteUrl, websiteJsonLd } from "@/lib/seo";
-import enCommon from "../../messages/en-GB/common.json";
-import enMarketplace from "../../messages/en-GB/marketplace.json";
-import esCommon from "../../messages/es-ES/common.json";
-import esMarketplace from "../../messages/es-ES/marketplace.json";
-import ptCommon from "../../messages/pt-PT/common.json";
-import ptMarketplace from "../../messages/pt-PT/marketplace.json";
 import "./globals.css";
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "cyrillic", "greek"],
   display: "swap",
   variable: "--font-inter",
 });
@@ -91,16 +86,6 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-function resolveLocale(
-  value: string | undefined,
-): (typeof routing.locales)[number] {
-  if (value && routing.locales.includes(value as (typeof routing.locales)[number])) {
-    return value as (typeof routing.locales)[number];
-  }
-
-  return routing.defaultLocale;
-}
-
 export default async function RootLayout({
   children,
 }: {
@@ -110,12 +95,7 @@ export default async function RootLayout({
   const locale = resolveLocale(cookieStore.get(StorageKeys.LOCALE)?.value);
   const colorScheme = parseColorScheme(cookieStore.get(StorageKeys.COLOR_SCHEME)?.value);
   const colorSchemeScript = systemColorSchemeScript(colorScheme);
-  const messages =
-    locale === "es-ES"
-      ? { ...esCommon, ...esMarketplace }
-      : locale === "pt-PT"
-        ? { ...ptCommon, ...ptMarketplace }
-        : { ...enCommon, ...enMarketplace };
+  const messages = await loadLocaleMessages(locale);
 
   return (
     <html

@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Valami hiba történt. Kérjük, próbálja újra.",
+    "network": "Nem sikerült elérni a szervert. Ellenőrizze az internetkapcsolatot.",
+    "vehicle": {
+      "not_found": "Ez a jármű már nem elérhető."
+    },
+    "company": {
+      "not_found": "Ez a cég nem található."
+    },
+    "reservation": {
+      "overlap": "Ez a jármű már foglalt ezekre a dátumokra.",
+      "not_found": "A foglalás nem található. Ellenőrizze a visszaigazoló linket.",
+      "invalid_dates": "A leadás dátumának az átvétel után kell lennie.",
+      "min_lead": "Az átvétel túl korai. Válasszon későbbi dátumot.",
+      "terms_required": "A folytatáshoz fogadja el a bérleti feltételeket.",
+      "max_open_requests": "Már két nyitott kérelme van. Új küldése előtt vonja vissza az egyiket.",
+      "request_expired": "Ez a kérelem lejárt. Indítson egy újat.",
+      "not_cancellable": "Ez a foglalás már nem mondható le online."
+    },
+    "booking": {
+      "payment_not_required": "Ehhez a foglaláshoz nincs online fizetési kötelezettség.",
+      "payment_window_elapsed": "A 15 perces fizetési időablak lejárt. Indítson új foglalást, ha továbbra is szüksége van az autóra.",
+      "payment_not_open": "A fizetés nem érhető el ehhez a foglaláshoz. Próbálja újra, vagy lépjen kapcsolatba a céggel."
+    },
+    "rental_payments": {
+      "already_paid": "Ez a foglalás már ki van fizetve."
+    },
+    "site": {
+      "not_found": "Ez az autókölcsönző weboldal nem található.",
+      "paused": "Ez a cég jelenleg nem fogad foglalásokat.",
+      "not_published": "Ez a weboldal még nincs megnyitva a foglalások előtt."
+    },
+    "website_domain": {
+      "not_found": "Ez a webcím nem tartozik egyetlen autókölcsönző céghez sem."
+    },
+    "staff": {
+      "unauthenticated": "Jelentkezzen be a cég tulajdonosaként a weboldal szerkesztéséhez.",
+      "forbidden": "Nincs jogosultsága ennek a weboldalnak a szerkesztéséhez."
+    },
+    "guest": {
+      "not_configured": "A vendégfiókok még nem érhetők el ennél a cégnél.",
+      "not_linked": "Még egyetlen foglalás sincs összekapcsolva ezzel a fiókkal.",
+      "invalid_token": "Ez a visszaigazoló link érvénytelen vagy lejárt.",
+      "unauthenticated": "A folytatáshoz jelentkezzen be."
+    },
+    "pricing": {
+      "min_days": "Ezek a dátumok túl rövidek ebben a szezonban. Válasszon hosszabb bérlést.",
+      "max_days": "Ezek a dátumok túl hosszúak ebben a szezonban. Válasszon rövidebb bérlést.",
+      "rental_too_long": "Ez a bérlés túl hosszú az online foglaláshoz. Lépjen kapcsolatba a céggel."
+    },
+    "contact": {
+      "not_configured": "A kapcsolattartási e-mail-cím még nincs beállítva. Kérjük, próbálja meg később.",
+      "delivery_failed": "Jelenleg nem tudtuk elküldeni az üzenetét. Kérjük, próbálja meg később."
+    }
+  },
+  "nav": {
+    "home": "Kezdőlap",
+    "cars": "Autók",
+    "companies": "Cégek",
+    "contact": "Kapcsolat",
+    "privacy": "Adatvédelem",
+    "terms": "Feltételek",
+    "cookies": "Sütik",
+    "mainAria": "Fő navigáció",
+    "footerAria": "Lábléc navigáció",
+    "menu": "Menü"
+  },
+  "meta": {
+    "siteTitle": "Találjon helyi autóbérlést",
+    "siteDescription": "Hasonlítsa össze a partner autókölcsönző cégek autóit Málaga tartományban, majd folytassa a cég oldalán."
+  },
+  "notFound": {
+    "title": "Az oldal nem található",
+    "description": "Ez az oldal nem létezik. Menjen vissza, és keressen autót.",
+    "action": "Vissza a kezdőlapra"
+  },
+  "hostUnknown": {
+    "title": "Ez a weboldal nem érhető el",
+    "description": "Ellenőrizze a beírt címet. Ez az oldal nem tartozik a Benwer Cars egyik autókölcsönző weboldalához sem."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, kezdőlap",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Váltás sötét módra",
+    "toLight": "Váltás világos módra"
+  },
+  "locale": {
+    "label": "Nyelv",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Nyelvek keresése",
+    "noResults": "Nincs megfelelő nyelv"
+  },
+  "footer": {
+    "tagline": "Hasonlítsa össze a partner autókölcsönző cégek autóit.",
+    "trust": "Partnerflották · Málaga · Bérlés a cég oldalán",
+    "poweredBy": "Foglalva a Benwer Cars rendszerén keresztül",
+    "explore": "Felfedezés",
+    "legal": "Jogi tudnivalók",
+    "copyright": "© {year} Benwer Cars. Minden jog fenntartva."
+  },
+  "cookieBanner": {
+    "body": "Nyelvi sütit használunk, és megjegyezzük ezt a választást az eszközén. A választható sütik kikapcsolva maradnak, hacsak el nem fogadja őket.",
+    "policy": "Sütiszabályzat",
+    "necessary": "Összes elutasítása",
+    "accept": "Összes elfogadása",
+    "title": "Fontos számunkra az adatvédelme",
+    "settings": "Sütibeállítások"
+  },
+  "actions": {
+    "retry": "Újra",
+    "back": "Vissza",
+    "viewAll": "Összes megtekintése",
+    "close": "Bezárás"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Országkód, {country} {dial}",
+    "search": "Országok keresése",
+    "countries": "Országok",
+    "noResults": "Nincs megfelelő ország",
+    "invalid": "Adjon meg egy érvényes telefonszámot.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Dátum törlése"
+  },
+  "guestNotifications": {
+    "title": "Értesítések",
+    "openLabel": "Értesítések megnyitása",
+    "unreadCount": "{count} olvasatlan értesítés",
+    "emptyTitle": "Még nincsenek értesítések",
+    "emptyBody": "A foglalási frissítések, fizetési emlékeztetők és átvételi értesítések itt jelennek meg.",
+    "error": "Nem sikerült betölteni az értesítéseket.",
+    "retry": "Újra",
+    "markAllRead": "Összes megjelölése olvasottként",
+    "dismiss": "Elvetés",
+    "loadMore": "Továbbiak betöltése",
+    "enablePush": "Böngészőértesítések engedélyezése",
+    "pushEnabled": "Böngészőértesítések engedélyezve",
+    "pushBlocked": "A böngészőértesítések le vannak tiltva a beállításokban",
+    "disablePush": "Böngészőértesítések kikapcsolása"
+  }
+}

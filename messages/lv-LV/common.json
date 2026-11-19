@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Kaut kas nogāja greizi. Lūdzu, mēģiniet vēlreiz.",
+    "network": "Nevar izveidot savienojumu ar serveri. Pārbaudiet interneta savienojumu.",
+    "vehicle": {
+      "not_found": "Šī automašīna vairs nav pieejama."
+    },
+    "company": {
+      "not_found": "Šo uzņēmumu neizdevās atrast."
+    },
+    "reservation": {
+      "overlap": "Šī automašīna izvēlētajos datumos jau ir rezervēta.",
+      "not_found": "Rezervācija nav atrasta. Pārbaudiet apstiprinājuma saiti.",
+      "invalid_dates": "Atdošanas datumam jābūt pēc saņemšanas datuma.",
+      "min_lead": "Saņemšana ir pārāk drīz. Izvēlieties vēlāku datumu.",
+      "terms_required": "Lai turpinātu, lūdzu, piekrītiet nomas noteikumiem.",
+      "max_open_requests": "Jums jau ir divi aktīvi pieprasījumi. Pirms jauna nosūtīšanas vienu atsauciet.",
+      "request_expired": "Šī pieprasījuma termiņš ir beidzies. Sāciet jaunu.",
+      "not_cancellable": "Šo rezervāciju vairs nevar atcelt tiešsaistē."
+    },
+    "booking": {
+      "payment_not_required": "Šai rezervācijai tiešsaistes maksājums nav nepieciešams.",
+      "payment_window_elapsed": "15 minūšu maksājuma laiks ir beidzies. Ja automašīna joprojām ir nepieciešama, sāciet jaunu rezervāciju.",
+      "payment_not_open": "Šai rezervācijai maksājums nav pieejams. Mēģiniet vēlreiz vai sazinieties ar uzņēmumu."
+    },
+    "rental_payments": {
+      "already_paid": "Šī rezervācija jau ir apmaksāta."
+    },
+    "site": {
+      "not_found": "Šo nomas vietni neizdevās atrast.",
+      "paused": "Šis uzņēmums pašlaik nepieņem rezervācijas.",
+      "not_published": "Šī vietne vēl nav atvērta rezervācijām."
+    },
+    "website_domain": {
+      "not_found": "Šī tīmekļa adrese nav piesaistīta nomas uzņēmumam."
+    },
+    "staff": {
+      "unauthenticated": "Pierakstieties kā uzņēmuma īpašnieks, lai rediģētu šo vietni.",
+      "forbidden": "Jums nav atļaujas rediģēt šo vietni."
+    },
+    "guest": {
+      "not_configured": "Viesu konti šim uzņēmumam vēl nav pieejami.",
+      "not_linked": "Šim kontam vēl nav piesaistīta neviena rezervācija.",
+      "invalid_token": "Šī apstiprinājuma saite ir nederīga vai tās termiņš ir beidzies.",
+      "unauthenticated": "Lai turpinātu, pierakstieties."
+    },
+    "pricing": {
+      "min_days": "Šie datumi ir pārāk īsi šai sezonai. Izvēlieties garāku nomu.",
+      "max_days": "Šie datumi ir pārāk gari šai sezonai. Izvēlieties īsāku nomu.",
+      "rental_too_long": "Šī noma ir pārāk gara, lai rezervētu tiešsaistē. Sazinieties ar uzņēmumu."
+    },
+    "contact": {
+      "not_configured": "Kontakta e-pasts vēl nav iestatīts. Lūdzu, mēģiniet vēlāk.",
+      "delivery_failed": "Pašlaik neizdevās nosūtīt jūsu ziņojumu. Lūdzu, mēģiniet vēlāk."
+    }
+  },
+  "nav": {
+    "home": "Sākums",
+    "cars": "Automašīnas",
+    "companies": "Uzņēmumi",
+    "contact": "Kontakti",
+    "privacy": "Privātums",
+    "terms": "Noteikumi",
+    "cookies": "Sīkdatnes",
+    "mainAria": "Galvenā navigācija",
+    "footerAria": "Kājenes navigācija",
+    "menu": "Izvēlne"
+  },
+  "meta": {
+    "siteTitle": "Atrodiet vietējo auto nomu",
+    "siteDescription": "Salīdziniet partneru nomas uzņēmumu automašīnas Malagas provincē un turpiniet uzņēmuma vietnē."
+  },
+  "notFound": {
+    "title": "Lapa nav atrasta",
+    "description": "Šāda lapa neeksistē. Dodieties atpakaļ un meklējiet automašīnu.",
+    "action": "Atpakaļ uz sākumu"
+  },
+  "hostUnknown": {
+    "title": "Šī vietne nav pieejama",
+    "description": "Pārbaudiet ievadīto adresi. Šī lapa nepieder Benwer Cars nomas vietnei."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, sākums",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Pārslēgt uz tumšo režīmu",
+    "toLight": "Pārslēgt uz gaišo režīmu"
+  },
+  "locale": {
+    "label": "Valoda",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Meklēt valodas",
+    "noResults": "Nav atbilstošu valodu"
+  },
+  "footer": {
+    "tagline": "Salīdziniet partneru nomas uzņēmumu automašīnas.",
+    "trust": "Partneru autoparki · Malaga · Noma uzņēmuma vietnē",
+    "poweredBy": "Rezervēts caur Benwer Cars",
+    "explore": "Izpētīt",
+    "legal": "Juridiskā informācija",
+    "copyright": "© {year} Benwer Cars. Visas tiesības aizsargātas."
+  },
+  "cookieBanner": {
+    "body": "Mēs izmantojam valodas sīkdatni un saglabājam šo izvēli jūsu ierīcē. Neobligātās sīkdatnes paliek izslēgtas, kamēr tās nepieņemat.",
+    "policy": "Sīkdatņu politika",
+    "necessary": "Noraidīt visas",
+    "accept": "Pieņemt visas",
+    "title": "Mēs cienām jūsu privātumu",
+    "settings": "Sīkdatņu iestatījumi"
+  },
+  "actions": {
+    "retry": "Mēģināt vēlreiz",
+    "back": "Doties atpakaļ",
+    "viewAll": "Skatīt visu",
+    "close": "Aizvērt"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Valsts kods, {country} {dial}",
+    "search": "Meklēt valstis",
+    "countries": "Valstis",
+    "noResults": "Neviena valsts neatbilst",
+    "invalid": "Ievadiet derīgu tālruņa numuru.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Notīrīt datumu"
+  },
+  "guestNotifications": {
+    "title": "Paziņojumi",
+    "openLabel": "Atvērt paziņojumus",
+    "unreadCount": "{count} nelasīti paziņojumi",
+    "emptyTitle": "Vēl nav paziņojumu",
+    "emptyBody": "Šeit parādīsies rezervācijas atjauninājumi, maksājumu atgādinājumi un saņemšanas brīdinājumi.",
+    "error": "Neizdevās ielādēt paziņojumus.",
+    "retry": "Mēģināt vēlreiz",
+    "markAllRead": "Atzīmēt visus kā lasītus",
+    "dismiss": "Aizvērt",
+    "loadMore": "Ielādēt vairāk",
+    "enablePush": "Iespējot pārlūka paziņojumus",
+    "pushEnabled": "Pārlūka paziņojumi iespējoti",
+    "pushBlocked": "Pārlūka paziņojumi bloķēti iestatījumos",
+    "disablePush": "Atspējot pārlūka paziņojumus"
+  }
+}

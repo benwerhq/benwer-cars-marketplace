@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { CalendarCheck, LogIn, LogOut, PencilRuler, UserRound } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -12,7 +13,7 @@ import { guestLinksFromHomeHref, publicHomeFromHome } from "@/lib/site";
 import { currentReturnTo, withReturnTo } from "@/lib/returnTo";
 import { OPEN_OWNER_EDITOR_EVENT, OWNER_EDITOR_HASH } from "@/lib/siteEdit";
 import { cn } from "@/lib/utils";
-import { MENU_LABEL, MENU_SEPARATOR, headerNavLinkClass } from "./HeaderMobileMenu";
+import { MENU_LABEL, MENU_SEPARATOR, MOBILE_MENU_ITEM, headerNavLinkClass } from "./HeaderMobileMenu";
 import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
 
 function pathOnly(href: string): string {
@@ -189,23 +190,32 @@ export function SiteAccountMenuItems({ homeHref }: { homeHref: string }) {
   if (staff.ready && staff.user) {
     return (
       <>
-        <DropdownMenu.Separator className={MENU_SEPARATOR} />
-        <DropdownMenu.Label className={MENU_LABEL}>
-          {staff.user.email ?? tOwner("signedInAs")}
-        </DropdownMenu.Label>
-        <DropdownMenu.Item className={MENU_ITEM} onSelect={() => openEditor(router, homeHref)}>
-          <PencilRuler size={15} aria-hidden />
-          {tOwner("openEditor")}
-        </DropdownMenu.Item>
-        <DropdownMenu.Item
-          className={MENU_ITEM}
-          onSelect={() => {
-            void staff.signOut().then(() => router.replace(publicHomeFromHome(homeHref)));
-          }}
-        >
-          <LogOut size={15} aria-hidden />
-          {tOwner("signOut")}
-        </DropdownMenu.Item>
+        <div className={MENU_SEPARATOR} role="separator" />
+        <p className={MENU_LABEL}>{staff.user.email ?? tOwner("signedInAs")}</p>
+        <div className="flex flex-col gap-1">
+          <Dialog.Close asChild>
+            <button
+              type="button"
+              className={MOBILE_MENU_ITEM}
+              onClick={() => openEditor(router, homeHref)}
+            >
+              <PencilRuler size={16} className="shrink-0 text-muted-foreground" aria-hidden />
+              {tOwner("openEditor")}
+            </button>
+          </Dialog.Close>
+          <Dialog.Close asChild>
+            <button
+              type="button"
+              className={MOBILE_MENU_ITEM}
+              onClick={() => {
+                void staff.signOut().then(() => router.replace(publicHomeFromHome(homeHref)));
+              }}
+            >
+              <LogOut size={16} className="shrink-0 text-muted-foreground" aria-hidden />
+              {tOwner("signOut")}
+            </button>
+          </Dialog.Close>
+        </div>
       </>
     );
   }
@@ -213,45 +223,51 @@ export function SiteAccountMenuItems({ homeHref }: { homeHref: string }) {
   if (!guest.ready || !guest.user) {
     return (
       <>
-        <DropdownMenu.Separator className={MENU_SEPARATOR} />
-        <DropdownMenu.Item
-          className={MENU_ITEM}
-          onSelect={() => router.push(withReturnTo(links.signIn, currentReturnTo()))}
-        >
-          <LogIn size={15} aria-hidden />
-          {tGuest("signInNav")}
-        </DropdownMenu.Item>
+        <div className={MENU_SEPARATOR} role="separator" />
+        <Dialog.Close asChild>
+          <button
+            type="button"
+            className={MOBILE_MENU_ITEM}
+            onClick={() => router.push(withReturnTo(links.signIn, currentReturnTo()))}
+          >
+            <LogIn size={16} className="shrink-0 text-muted-foreground" aria-hidden />
+            {tGuest("signInNav")}
+          </button>
+        </Dialog.Close>
       </>
     );
   }
 
   return (
     <>
-      <DropdownMenu.Separator className={MENU_SEPARATOR} />
-      {guest.user.email ? (
-        <DropdownMenu.Label className={MENU_LABEL}>{guest.user.email}</DropdownMenu.Label>
-      ) : null}
-      <DropdownMenu.Item asChild className={MENU_ITEM}>
-        <Link href={links.bookings}>
-          <CalendarCheck size={15} aria-hidden />
-          {tGuest("myBookings")}
-        </Link>
-      </DropdownMenu.Item>
-      <DropdownMenu.Item asChild className={MENU_ITEM}>
-        <Link href={links.profile}>
-          <UserRound size={15} aria-hidden />
-          {tGuest("profileNav")}
-        </Link>
-      </DropdownMenu.Item>
-      <DropdownMenu.Item
-        className={MENU_ITEM}
-        onSelect={() => {
-          void guest.signOut().then(() => router.push(homeHref));
-        }}
-      >
-        <LogOut size={15} aria-hidden />
-        {tGuest("signOut")}
-      </DropdownMenu.Item>
+      <div className={MENU_SEPARATOR} role="separator" />
+      {guest.user.email ? <p className={MENU_LABEL}>{guest.user.email}</p> : null}
+      <div className="flex flex-col gap-1">
+        <Dialog.Close asChild>
+          <Link href={links.bookings} className={MOBILE_MENU_ITEM}>
+            <CalendarCheck size={16} className="shrink-0 text-muted-foreground" aria-hidden />
+            {tGuest("myBookings")}
+          </Link>
+        </Dialog.Close>
+        <Dialog.Close asChild>
+          <Link href={links.profile} className={MOBILE_MENU_ITEM}>
+            <UserRound size={16} className="shrink-0 text-muted-foreground" aria-hidden />
+            {tGuest("profileNav")}
+          </Link>
+        </Dialog.Close>
+        <Dialog.Close asChild>
+          <button
+            type="button"
+            className={MOBILE_MENU_ITEM}
+            onClick={() => {
+              void guest.signOut().then(() => router.push(homeHref));
+            }}
+          >
+            <LogOut size={16} className="shrink-0 text-muted-foreground" aria-hidden />
+            {tGuest("signOut")}
+          </button>
+        </Dialog.Close>
+      </div>
     </>
   );
 }

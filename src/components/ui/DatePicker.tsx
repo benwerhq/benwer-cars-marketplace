@@ -2,7 +2,6 @@
 
 import * as Popover from "@radix-ui/react-popover";
 import { format, isValid, parseISO, startOfMonth } from "date-fns";
-import { enGB, es, pt } from "date-fns/locale";
 import {
   Calendar as CalendarIcon,
   ChevronLeft,
@@ -24,15 +23,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/Select";
+import { getDateFnsLocale } from "@/lib/dates";
 import { cn } from "@/lib/utils";
 import "react-day-picker/style.css";
 
 export const DATE_WIRE_FORMAT = "yyyy-MM-dd";
-
-const LOCALES = { "en-GB": enGB, "es-ES": es, "pt-PT": pt } as const;
-const WEEK_STARTS_ON = { "en-GB": 1, "es-ES": 1, "pt-PT": 1 } as const;
-
-type LocaleKey = keyof typeof LOCALES;
 
 interface DatePickerProps {
   id?: string;
@@ -154,9 +149,7 @@ export function DatePicker({
 }: DatePickerProps) {
   const t = useTranslations("datePicker");
   const [open, setOpen] = useState(false);
-  const localeKey: LocaleKey =
-    locale in LOCALES ? (locale as LocaleKey) : "en-GB";
-  const dfLocale = LOCALES[localeKey];
+  const dfLocale = getDateFnsLocale(locale);
   const selected = parseDateValue(value);
   const [month, setMonth] = useState<Date>(() => selected ?? new Date());
   const [syncedValue, setSyncedValue] = useState(value);
@@ -238,7 +231,7 @@ export function DatePicker({
               ...(toDate ? [{ after: toDate }] : []),
             ]}
             locale={dfLocale}
-            weekStartsOn={WEEK_STARTS_ON[localeKey]}
+            weekStartsOn={1}
             onSelect={(nextDate, triggerDate) => {
               onChange(format(nextDate ?? triggerDate, DATE_WIRE_FORMAT));
               setOpen(false);

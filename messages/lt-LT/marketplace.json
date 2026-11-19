@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Įmonės",
+    "title": "Raskite tobulą automobilį",
+    "subtitle": "Palyginkite partnerių nuomos įmonių automobilius ir tęskite įmonės svetainėje.",
+    "searchPlaceholder": "Kur keliaujate?",
+    "eyebrow": "Malaga · Kosta del Solis",
+    "companiesHeading": "Rekomenduojamos įmonės",
+    "companiesSubtitle": "Partnerių nuomos įmonės Malagos provincijoje — autoparkai, su kuriais dirbame, o ne nepatikrinti skelbimai",
+    "trustLocal": "Partnerių įmonės",
+    "trustGuest": "Nuoma įmonės svetainėje",
+    "trustArea": "Malagos provincija",
+    "viewAllCompanies": "Žiūrėti visas įmones"
+  },
+  "featuredCars": {
+    "viewAllCount": "Žiūrėti visus {count} automobilius",
+    "eyebrow": "Automobiliai",
+    "title": "Laisvi automobiliai",
+    "subtitle": "Visi partnerių įmonių paskelbti automobiliai vienoje vietoje. Pasirinkite vieną ir užsisakykite pačios įmonės svetainėje.",
+    "viewAll": "Ieškoti visų automobilių",
+    "seeAll": "Žiūrėti visus",
+    "emptyTitle": "Automobilių dar nėra",
+    "emptyHint": "Vieši autoparkai čia pasirodys, kai įmonės juos paskelbs."
+  },
+  "whatYouGet": {
+    "eyebrow": "Nuomos įmonėms",
+    "title": "Ką gaunate",
+    "subtitle": "Viena sistema biurui, aikštelei ir keliautojams, ieškantiems automobilių Malagoje.",
+    "admin": {
+      "title": "Pilna administravimo sistema",
+      "body": "Valdykite automobilius, kainas, užimtumą ir užsakymus viename valdymo skydelyje — tame pačiame kataloge, kurį rodo prekyvietė."
+    },
+    "mobile": {
+      "title": "Mobilioji programėlė darbuotojams",
+      "body": "Išduokite ir priimkite automobilius bei matykite šios dienos užsakymus tiesiai aikštelėje."
+    },
+    "storefront": {
+      "title": "Firminė svetainė",
+      "body": "Skelbimas prekyvietėje bei jūsų pačių svetainė ir subdomenas."
+    },
+    "preview": {
+      "utilisation": "Užimtumas",
+      "utilisationValue": "82%",
+      "pickups": "Paėmimai šiandien",
+      "pickupsValue": "14",
+      "revenue": "Šį mėnesį",
+      "revenueValue": "9,4 tūkst. €",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Suvestinė",
+      "navFleet": "Autoparkas",
+      "navCalendar": "Kalendorius",
+      "navReservations": "Užsakymai",
+      "calendarTitle": "Užimtumas",
+      "calendarMonth": "Kitos 2 savaitės",
+      "viaBenwer": "Per Benwer",
+      "direct": "Tiesioginis",
+      "free": "Laisvas",
+      "carA": "Kompaktiškas",
+      "carB": "Miesto automobilis",
+      "carC": "Visureigis",
+      "carD": "Krosoveris",
+      "phoneTitle": "Šiandien",
+      "phoneDate": "Pirmadienis",
+      "pickUp": "Paėmimas",
+      "return": "Grąžinimas",
+      "checkedOut": "Išduotas",
+      "due": "Laukiama",
+      "tabToday": "Šiandien",
+      "tabFleet": "Autoparkas",
+      "tabScan": "Skenuoti",
+      "storeName": "Jūsų įmonė",
+      "storeNavCars": "Automobiliai",
+      "storeNavContact": "Kontaktai",
+      "storeHeadline": "Išsinuomokite automobilį Malagoje",
+      "storeSearch": "Paėmimas ir datos",
+      "storeSearchCta": "Ieškoti",
+      "storePrice": "Žiūrėti kainas",
+      "carE": "Hečbekas",
+      "carF": "Universalas"
+    }
+  },
+  "faq": {
+    "eyebrow": "DUK",
+    "title": "Prieš užsakant",
+    "subtitle": "Partnerių autoparkai, kaip veikia užsakymas ir ką „Benwer“ daro — o ko ne.",
+    "items": {
+      "partners": {
+        "question": "Ar šie automobiliai priklauso tikroms nuomos įmonėms?",
+        "answer": "Taip. Kiekvienas skelbimas yra viešas „Benwer“ partnerio automobilis — tikros nuomos įmonės, su kuria bendradarbiaujame, o ne nepatikrintas privatus skelbimas. Jei įmonė ar automobilis nėra paskelbti platformoje, čia jų nematysite."
+      },
+      "booking": {
+        "question": "Ar užsakau ir moku „Benwer“ svetainėje?",
+        "answer": "Ne. Čia palyginate partnerių autoparkus, o tada tęsiate nuomos įmonės svetainėje, kad patvirtintumėte nuomą, užstatą ir paėmimą. „Benwer“ šioje prekyvietėje mokėjimų nepriima."
+      },
+      "photos": {
+        "question": "Ar galiu pasitikėti nuotraukomis ir užimtumu?",
+        "answer": "Skelbimuose naudojamos viešos nuotraukos ir užimtumas, kuriuos paskelbia partnerio įmonė — iš to paties katalogo, kurį ji tvarko administravimo sistemoje. Jei automobilis dar neturi viešos nuotraukos, rodome tuščią vietą, o ne kito automobilio iliustraciją. Galutinis užimtumas patvirtinamas įmonės svetainėje."
+      },
+      "account": {
+        "question": "Ar man reikia paskyros?",
+        "answer": "Paieškai paskyra nereikalinga. Jei siunčiate žinutę per kontaktų formą, jūsų duomenis naudojame tik atsakymui."
+      },
+      "safety": {
+        "question": "Kas atsakingas už nuomą?",
+        "answer": "Sutartis sudaroma tarp jūsų ir partnerio nuomos įmonės. Prieš patvirtindami perskaitykite jų sąlygas. „Benwer“ padeda rasti automobilį iš partnerių autoparko, bet pats automobilių nenuomoja ir mokėjimų čia nepriima."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "„Benwer Cars“ programėlė",
+    "description": "Įsidiekite „Benwer Cars“ savo telefone. „Android“ programėlė šiuo metu ankstyvajame testavime „Google Play“ — prisijunkite ir padėkite ją tobulinti."
+  },
+  "partners": {
+    "eyebrow": "Automobilių nuomos įmonėms",
+    "title": "Paverskite laisvas dienas užsakymais",
+    "description": "Keliautojai jau ieško automobilių Malagoje per „Benwer“. Paskelbkite savo autoparką vieną kartą ir užpildykite dienas, kurios kitaip liktų tuščios.",
+    "cta": "Sužinoti daugiau",
+    "ctaAria": "Sužinoti daugiau „Benwer“ rinkodaros svetainėje (atidaroma naujame skirtuke)",
+    "demo": "Peržiūrėti veikiančią demonstraciją",
+    "demoAria": "Peržiūrėti veikiančią demonstraciją (atidaroma naujame skirtuke)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Automobilių nuoma",
+    "companyDescription": "Išsinuomokite automobilį iš {name} vietovėje {location}.",
+    "companyDescriptionPlain": "Išsinuomokite automobilį iš {name}.",
+    "companyFallback": "Automobilių nuoma",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Išsinuomokite {brand} {model} iš {company}.",
+    "carDescriptionSpecs": "Išsinuomokite {brand} {model} — {seats, plural, one {# vieta} few {# vietos} other {# vietų}}, {transmission}.",
+    "carsTitle": "Nuomojami automobiliai Malagos provincijoje"
+  },
+  "tenant": {
+    "notFoundTitle": "Įmonė nerasta",
+    "notFoundDescription": "Nepavyko įkelti šios svetainės.",
+    "loadErrorTitle": "Įmonės informacija nepasiekiama",
+    "loadErrorDescription": "Nepavyko įkelti šios svetainės iš tiesioginio katalogo. Bandykite dar kartą — kai API neveikia, netikrų automobilių nerodome.",
+    "logoAlt": "{name} logotipas"
+  },
+  "howItWorks": {
+    "eyebrow": "Trys žingsniai",
+    "title": "Kaip tai veikia",
+    "subtitle": "Palyginkite partnerių autoparkus Malagoje ir užsisakykite tiesiogiai iš įmonės. „Benwer“ paskyros nereikia.",
+    "stepLabel": "{number} žingsnis",
+    "searchTitle": "Pasirinkite datas ir vietą",
+    "searchBody": "Pasirinkite Kosta del Solio miestą ir reikiamas dienas. Rodomi tik patikrinti partnerių autoparkai.",
+    "compareTitle": "Palyginkite tikrus automobilius",
+    "compareBody": "Vietų skaičius, pavarų dėžė, nuotraukos ir paros kaina — greta iš kiekvieno partnerio.",
+    "continueTitle": "Užsisakykite įmonėje",
+    "continueBody": "Patvirtinkite paėmimą, draudimą ir mokėjimą su nuomos įmone, kuriai priklauso automobilis.",
+    "cta": "Pradėti paiešką",
+    "preview": {
+      "place": "Malagos oro uostas",
+      "dates": "Pn → Pn · 7 dienos",
+      "carA": "Kompaktiškas automobilis",
+      "carASpecs": "4 vietos · Mechaninė",
+      "carB": "Šeimos visureigis",
+      "carBSpecs": "5 vietos · Automatinė",
+      "confirmed": "Užsakymas patvirtintas",
+      "confirmedDetail": "Paėmimas 10:00",
+      "example": "Pavyzdys"
+    }
+  },
+  "search": {
+    "locationLabel": "Paėmimo vieta",
+    "locationPlaceholder": "Ieškoti vietovių",
+    "locationEmpty": "Atitinkančios vietovės nerasta",
+    "allLocations": "Visos vietovės",
+    "allLocationsHint": "Visi miestai, kuriuose yra laisvų automobilių",
+    "provinceSelected": "Visos vietovės",
+    "provinceHint": "Visi miestai, kuriuose yra laisvų automobilių",
+    "pickupLabel": "Paėmimas",
+    "dropoffLabel": "Grąžinimas",
+    "pickupPlaceholder": "Pridėti datą",
+    "dropoffPlaceholder": "Pridėti datą",
+    "pickupTrigger": "Paėmimo data, {date}",
+    "dropoffTrigger": "Grąžinimo data, {date}",
+    "calendarLabel": "Pasirinkite datas",
+    "datesRequired": "Norėdami ieškoti, pasirinkite paėmimo ir grąžinimo datas.",
+    "submit": "Ieškoti",
+    "returnLocationLabel": "Grąžinimo vieta",
+    "differentReturn": "Grąžinti kitoje vietoje",
+    "returnSame": "Ta pati kaip paėmimo",
+    "returnNotOffered": "{company} nesiūlo grąžinimo kitoje vietoje.",
+    "branchChoose": "Pasirinkite vietą",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Įkeliamos vietovės…",
+    "branchAnyHint": "Visi padaliniai su automobiliais"
+  },
+  "browseLocation": {
+    "title": "Naršyti pagal vietovę",
+    "subtitle": "Populiarūs miestai Malagos provincijoje",
+    "emptyTitle": "Vietovių dar nėra",
+    "emptyDescription": "Čia pasirodys populiariausi miestai.",
+    "cityAria": "Naršyti automobilius mieste {city}"
+  },
+  "map": {
+    "teaserTitle": "Pažiūrėkite, kur galite pasiimti",
+    "teaserSubtitle": "Vietiniai autoparkai Malagos provincijoje — atidarykite žemėlapį ir iškart pereikite prie įmonės.",
+    "teaserCta": "Atidaryti žemėlapį",
+    "teaserCityAria": "Žiūrėti įmones žemėlapyje mieste {city}",
+    "listLabel": "Sąrašas",
+    "mapLabel": "Žemėlapis",
+    "viewToggleAria": "Rodyti įmones sąraše arba žemėlapyje",
+    "regionAria": "Nuomos įmonių žemėlapis Malagos provincijoje",
+    "pinAria": "{name} mieste {city}",
+    "fleetHint": "{count, plural, =0 {Automobilių dar nėra} one {# laisvas automobilis} few {# laisvi automobiliai} other {# laisvų automobilių}}",
+    "fleetHintUnknown": "Žiūrėti laisvus automobilius",
+    "viewFleet": "Žiūrėti autoparką",
+    "closePin": "Uždaryti",
+    "loading": "Įkeliamos įmonės…",
+    "errorDescription": "Nepavyko įkelti žemėlapio. Naršykite sąraše.",
+    "emptyTitle": "Žemėlapyje įmonių nėra",
+    "emptyDescription": "Išbandykite kitą Malagos provincijos miestą.",
+    "resultsCount": "{count, plural, one {# įmonė Malagos provincijoje} few {# įmonės Malagos provincijoje} other {# įmonių Malagos provincijoje}}",
+    "resultsInCity": "{count, plural, one {# įmonė mieste {city}} few {# įmonės mieste {city}} other {# įmonių mieste {city}}}",
+    "resultsAtBranch": "{count, plural, one {# įmonė padalinyje {branch}} few {# įmonės padalinyje {branch}} other {# įmonių padalinyje {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Rodoma {shown} iš {total} automobilių",
+    "loadMore": "Rodyti daugiau automobilių",
+    "seeAll": "Žiūrėti visus",
+    "title": "Laisvi automobiliai",
+    "subtitle": "Visi vieši partnerių nuomos įmonių automobiliai Malagos provincijoje. Pasirinkite datas ir pamatykite, kas laisva.",
+    "searchEmptyTitle": "Pagal šią paiešką automobilių nerasta",
+    "searchEmptyHint": "Išbandykite kitas datas arba kitą vietovę Malagos provincijoje. Visi miestai lieka sąraše — net jei šiandien ten automobilių nėra.",
+    "resultsInProvince": "{count, plural, one {# automobilis visose vietovėse} few {# automobiliai visose vietovėse} other {# automobilių visose vietovėse}}",
+    "resultsInCity": "{count, plural, one {# automobilis mieste {city}} few {# automobiliai mieste {city}} other {# automobilių mieste {city}}}",
+    "allCompanies": "Visos įmonės",
+    "companyPlaceholder": "Ieškoti įmonių",
+    "companyTrigger": "Įmonė, {company}",
+    "perDay": "{price} / d.",
+    "perDaySuffix": " / d.",
+    "viewDetails": "Žiūrėti išsamiau",
+    "notAvailableForDates": "Nepasiekiamas šiomis datomis",
+    "bookUnavailable": "Žiūrėti automobilį",
+    "fleetSummary": "{total, plural, one {# automobilis} few {# automobiliai} other {# automobilių}} · {available, plural, one {# laisvas} few {# laisvi} other {# laisvų}}",
+    "fleetSummaryForDates": "{total, plural, one {# automobilis} few {# automobiliai} other {# automobilių}} · {available, plural, one {# laisvas} few {# laisvi} other {# laisvų}} · {from} – {to}",
+    "seats": "{count} viet.",
+    "resultsCount": "{count, plural, one {# laisvas automobilis} few {# laisvi automobiliai} other {# laisvų automobilių}}",
+    "resultsForDates": "{count, plural, one {# automobilis} few {# automobiliai} other {# automobilių}} · {from} – {to}",
+    "emptyTitle": "Šis autoparkas dar nėra viešas",
+    "emptyHint": "Ši įmonė įtraukta į sąrašą, tačiau jos automobiliai „Benwer“ platformoje dar nepaskelbti. Tai įprasta, kol transporto priemonės nepažymėtos kaip viešos — puslapis veikia tvarkingai.",
+    "noResults": "Pagal šią paiešką automobilių nerasta",
+    "noResultsHint": "Išbandykite kitas datas, kitą vietovę arba mažiau filtrų.",
+    "browseCompanies": "Naršyti įmones",
+    "clearFilters": "Išvalyti filtrus",
+    "searchPlaceholder": "Ieškoti pagal markę arba modelį",
+    "filters": {
+      "title": "Filtrai",
+      "seats": "Vietos",
+      "transmission": "Pavarų dėžė",
+      "company": "Įmonė",
+      "dates": "Datos",
+      "from": "Paėmimo data",
+      "to": "Grąžinimo data",
+      "category": "Kategorija",
+      "fuel": "Kuro tipas",
+      "all": "Visi",
+      "clear": "Išvalyti",
+      "selectedCount": "Pasirinkta: {count}"
+    },
+    "types": {
+      "car": "Automobilis",
+      "suv": "Visureigis",
+      "van": "Mikroautobusas",
+      "truck": "Sunkvežimis",
+      "motorcycle": "Motociklas"
+    },
+    "transmission": {
+      "automatic": "Automatinė",
+      "manual": "Mechaninė"
+    },
+    "fuel": {
+      "petrol": "Benzinas",
+      "diesel": "Dyzelinas",
+      "electric": "Elektra",
+      "hybrid": "Hibridas",
+      "plugin_hybrid": "Įkraunamas hibridas"
+    },
+    "rowDeposit": "Užstatas {amount}",
+    "rowAvailable": "Laisvas jūsų datomis",
+    "rowTotal": "Iš viso {amount} · {days, plural, one {# diena} few {# dienos} other {# dienų}}",
+    "bookNow": "Užsakyti dabar",
+    "availableCount": "{count, plural, =0 {Laisvų automobilių nėra} one {# laisvas automobilis} few {# laisvi automobiliai} other {# laisvų automobilių}}",
+    "availableForDates": "{count, plural, =0 {Laisvų automobilių nėra} one {# laisvas automobilis} few {# laisvi automobiliai} other {# laisvų automobilių}} · {from} – {to}",
+    "categories": {
+      "economy": "Ekonominis",
+      "sedan": "Sedanas",
+      "suv": "Visureigis",
+      "minivan": "Vienatūris",
+      "van": "Mikroautobusas",
+      "other": "Kita"
+    },
+    "sort": {
+      "label": "Rūšiuoti pagal",
+      "recommended": "Rekomenduojamus",
+      "pricePerDay_asc": "Mažiausią paros kainą",
+      "pricePerDay_desc": "Didžiausią paros kainą"
+    },
+    "colors": {
+      "white": "Balta",
+      "black": "Juoda",
+      "silver": "Sidabrinė",
+      "grey": "Pilka",
+      "red": "Raudona",
+      "blue": "Mėlyna",
+      "green": "Žalia",
+      "orange": "Oranžinė",
+      "yellow": "Geltona",
+      "brown": "Ruda",
+      "beige": "Smėlio",
+      "gold": "Auksinė",
+      "purple": "Violetinė"
+    },
+    "viewCar": "Žiūrėti automobilį",
+    "opensCompanySite": "(atidaro įmonės svetainę)"
+  },
+  "carDetail": {
+    "bookNow": "Užsakyti dabar",
+    "continueOnCompany": "Tęsti svetainėje {company}",
+    "rentOnCompanySite": "Nuomotis įmonės svetainėje",
+    "handoffHint": "Prieš nukreipdami jus į įmonės svetainę užbaigti rezervacijos, paprašysime jūsų patvirtinimo.",
+    "pricePerDay": "{price} per dieną",
+    "specs": "Specifikacijos",
+    "year": "Metai",
+    "type": "Tipas",
+    "transmission": "Pavarų dėžė",
+    "fuel": "Kuras",
+    "seats": "Vietos",
+    "availability": "Užimtumas",
+    "availabilityError": "Nepavyko įkelti užimtumo. Bandykite dar kartą.",
+    "availabilityUnavailable": "Užimtumas nepasiekiamas",
+    "checkingAvailability": "Tikrinamas užimtumas…",
+    "notAvailable": "Šis automobilis pasirinktomis datomis nepasiekiamas.",
+    "selectPickup": "Pasirinkite paėmimo datą",
+    "selectDropoff": "Dabar pasirinkite grąžinimo datą",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Išvalyti datas",
+    "addDate": "Pridėti datą",
+    "calendarLabel": "Užimtumo kalendorius",
+    "legend": "Kalendoriaus paaiškinimas",
+    "available": "Laisva",
+    "selected": "Pasirinkta",
+    "unavailable": "Užimta",
+    "openDates": "Per artimiausius {months} mėn. užsakytų datų nėra.",
+    "breadcrumbAria": "Navigacijos kelias",
+    "photoEmpty": "Nuotraukos netrukus pasirodys",
+    "previousPhoto": "Ankstesnė nuotrauka",
+    "nextPhoto": "Kita nuotrauka",
+    "viewPhoto": "Žiūrėti {index} nuotrauką",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, nuotrauka {index}",
+    "backToFleet": "Grįžti į autoparką",
+    "metaTitle": "Automobilio informacija",
+    "about": "Apie šį automobilį",
+    "category": "Kategorija",
+    "color": "Spalva",
+    "deposit": "Užstatas",
+    "mileage": "Rida",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Nukreipiame jus į „{company}“ rezervacijų svetainę, kad užbaigtumėte savo rezervaciją.",
+    "handoffTrust": "„{company}“ yra patikimas „Benwer“ partneris.",
+    "handoffContinue": "Tęsti",
+    "handoffCancel": "Atšaukti",
+    "handoffCompanyFallback": "įmonės"
+  },
+  "booking": {
+    "title": "Užbaikite užsakymą",
+    "subtitle": "Patvirtinkite savo duomenis — paskyros nereikia.",
+    "details": "Jūsų duomenys",
+    "detailsHint": "Juos naudosime tik šiam užsakymui patvirtinti.",
+    "guestName": "Vardas ir pavardė",
+    "guestNamePlaceholder": "Vardenis Pavardenis",
+    "guestEmail": "El. pašto adresas",
+    "guestEmailPlaceholder": "vardas@pavyzdys.lt",
+    "guestEmailHint": "Čia išsiųsime jūsų patvirtinimą.",
+    "guestPhone": "Telefono numeris",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Nuomos įmonė gali su jumis susisiekti dėl paėmimo.",
+    "startDate": "Paėmimo data",
+    "endDate": "Grąžinimo data",
+    "datesHint": "Datos perkeltos iš automobilio kalendoriaus. Čia galite jas pakeisti.",
+    "addDate": "Pridėti datą",
+    "changeDates": "Keisti datas kalendoriuje",
+    "summary": "Užsakymo suvestinė",
+    "vehicle": "Automobilis",
+    "company": "Įmonė",
+    "rate": "Paros kaina",
+    "duration": "Trukmė",
+    "totalPrice": "Iš viso",
+    "nights": "{count, plural, one {# diena} few {# dienos} other {# dienų}}",
+    "stickyMeta": "{name} · {count, plural, one {# diena} few {# dienos} other {# dienų}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Patvirtinti užsakymą",
+    "confirmRequest": "Siųsti užklausą",
+    "requesting": "Siunčiama užklausa…",
+    "confirming": "Tvirtinama…",
+    "sitePaused": "Užsakymai nepriimami",
+    "insurance": "Draudimas",
+    "termsLabel": "Nuomos sąlygos",
+    "termsAccept": "Sutinku su",
+    "termsLink": "nuomos sąlygomis",
+    "successTitle": "Užsakymas patvirtintas!",
+    "successMessage": "Patvirtinimas išsiųstas adresu {email}.",
+    "viewBooking": "Peržiūrėti mano užsakymą",
+    "selectDates": "Norėdami tęsti, pasirinkite datas",
+    "invalidDates": "Pasirinkite teisingą datų laikotarpį",
+    "backToCar": "Grįžti prie {name}",
+    "trustNoAccount": "Paskyros nereikia",
+    "trustEmail": "Patvirtinimas el. paštu",
+    "trustNoPayment": "Mokėti dabar nereikia",
+    "trustCardPayment": "Mokėkite kortele po užsakymo",
+    "trustFooter": "Patvirtindami pateikiate šio automobilio užklausą nurodytomis datomis. Įmonė vykdys rezervaciją.",
+    "missingTitle": "Pasirinkite automobilį, kad galėtumėte tęsti",
+    "missingDescription": "Prieš užbaigdami užsakymą, pasirinkite automobilį ir datas.",
+    "browseCars": "Naršyti automobilius",
+    "vehicleMissingTitle": "Šis automobilis nebėra pasiekiamas",
+    "vehicleMissingDescription": "Jis galėjo būti rezervuotas. Pasirinkite kitą iš autoparko.",
+    "viewFleet": "Žiūrėti autoparką",
+    "datesMissingTitle": "Pridėkite kelionės datas",
+    "datesMissingDescription": "Grįžkite prie automobilio pasirinkti laisvų datų arba įveskite jas formoje.",
+    "pickDates": "Pasirinkti datas prie automobilio",
+    "formAria": "Svečio užsakymo duomenys",
+    "validation": {
+      "nameMin": "Įveskite vardą ir pavardę (bent 2 simbolius).",
+      "email": "Įveskite teisingą el. pašto adresą.",
+      "phone": "Įveskite teisingą telefono numerį.",
+      "startDate": "Pasirinkite paėmimo datą.",
+      "endDate": "Pasirinkite grąžinimo datą.",
+      "endAfterStart": "Grąžinimo data turi būti vėlesnė nei paėmimo.",
+      "terms": "Norėdami tęsti, sutikite su nuomos sąlygomis.",
+      "fixErrors": "Pataisykite pažymėtus laukus."
+    },
+    "averageRate": "Vidutinė paros kaina",
+    "breakdownTitle": "Kainos detalizacija",
+    "standardRate": "Standartinis tarifas",
+    "weekendRate": "Savaitgalis",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Nuoma šį sezoną turi trukti bent {limit, plural, one {# dieną} few {# dienas} other {# dienų}}. Pakeiskite datas, kad galėtumėte užsakyti.",
+    "warningMaxDays": "Nuoma šį sezoną gali trukti daugiausia {limit, plural, one {# dieną} few {# dienas} other {# dienų}}. Pakeiskite datas, kad galėtumėte užsakyti.",
+    "returnLocation": "Grąžinimo vieta",
+    "oneWayFee": "Mokestis už grąžinimą kitoje vietoje",
+    "signedInAs": "Prisijungta kaip {email}",
+    "signInPrompt": "Turite paskyrą?",
+    "signInLink": "Prisijunkite, kad užpildytumėte savo duomenis",
+    "subtitleSignedIn": "Patikrinkite savo duomenis ir patvirtinkite.",
+    "trustPaymentAfter": "Mokėjimo informacija bus pateikta po užsakymo",
+    "extras": "Papildomos paslaugos",
+    "extraPerDay": "{price} / d.",
+    "extraFixed": "{price} / nuomai",
+    "tripDetails": "Kelionės informacija",
+    "pickupTime": "Paėmimo laikas",
+    "returnTime": "Grąžinimo laikas",
+    "timeAny": "Bet kuriuo metu",
+    "flightNumber": "Skrydžio numeris",
+    "flightNumberHint": "Paėmimas vyksta oro uoste. Pridėkite skrydžio numerį, kad įmonė galėtų sekti vėlavimus.",
+    "flightNumberOptional": "Pridėkite, jei atvykstate lėktuvu.",
+    "notes": "Komentarai",
+    "notesPlaceholder": "Ar įmonei reikėtų ką nors žinoti?",
+    "dateOfBirth": "Gimimo data",
+    "optional": "nebūtina",
+    "extraSoldOut": "Nepasiekiama šiomis datomis"
+  },
+  "reservationStatus": {
+    "title": "Jūsų užsakymas",
+    "successTitle": "Užsakyta",
+    "successSubtitle": "Išsiuntėme patvirtinimą adresu {email}.",
+    "status": {
+      "draft": "Laukiama",
+      "confirmed": "Patvirtinta",
+      "active": "Aktyvus — geros kelionės!",
+      "completed": "Užbaigtas",
+      "cancelled": "Atšauktas"
+    },
+    "vehicle": "Automobilis",
+    "company": "Įmonė",
+    "dates": "Datos",
+    "pickup": "Paėmimas",
+    "dropoff": "Grąžinimas",
+    "guest": "Klientas",
+    "email": "El. paštas",
+    "phone": "Telefonas",
+    "total": "Iš viso",
+    "reference": "Užsakymo numeris",
+    "referenceHint": "Parodykite tai pasiimdami automobilį.",
+    "trustCopy": "Išsisaugokite šį puslapį — tai jūsų užsakymo kvitas. Toliau viskuo pasirūpins nuomos įmonė.",
+    "trustEmail": "Patvirtinimas išsiųstas el. paštu",
+    "trustPickup": "Parodykite šį puslapį paėmimo metu",
+    "nextTitle": "Kas vyks toliau",
+    "nextEmail": "Patikrinkite patvirtinimą el. pašte {email}.",
+    "nextPickup": "Parodykite užsakymo numerį pasiimdami automobilį.",
+    "browseMore": "Naršyti daugiau automobilių",
+    "notFoundTitle": "Užsakymas nerastas",
+    "notFoundDescription": "Patikrinkite nuorodą patvirtinimo laiške arba pradėkite naują paiešką.",
+    "backHome": "Grįžti į pradžią",
+    "requestExpires": "Užklausos galiojimas baigiasi",
+    "cancelReason": "Atšaukimo priežastis",
+    "withdraw": "Atšaukti užklausą",
+    "paymentStatus": "Mokėjimas",
+    "paidAmount": "Sumokėta",
+    "payment": {
+      "unpaid": "Neapmokėta",
+      "partially_paid": "Dalinai apmokėta",
+      "paid": "Apmokėta",
+      "refund_due": "Laukia grąžinimo",
+      "authorized": "Kortelė autorizuota"
+    },
+    "reasons": {
+      "unpaid_timeout": "Mokėjimas nebuvo atliktas laiku",
+      "request_expired": "Įmonė neatsakė laiku",
+      "request_declined": "Įmonė atmetė šią užklausą",
+      "customer_request": "Jūs atšaukėte šią užklausą"
+    },
+    "insurance": "Draudimas",
+    "extras": "Papildomos paslaugos",
+    "fees": "Paėmimo ir grąžinimo mokesčiai",
+    "priceTitle": "Kainos suvestinė"
+  },
+  "payment": {
+    "title": "Sumokėti avansą",
+    "amountDue": "Mokėtina suma: {amount}",
+    "countdown": "Atlikite mokėjimą per {time}",
+    "requestAuthorize": "Jūsų kortelė autorizuojama dabar, o lėšos nurašomos tik įmonei patvirtinus.",
+    "pay": "Mokėti dabar",
+    "paying": "Apdorojama…",
+    "confirming": "Tvirtinamas jūsų mokėjimas",
+    "confirmingHint": "Palaukite — mokėjimą patvirtiname iš įmonės, o ne iš kortelės formos.",
+    "declined": "Kortelė buvo atmesta. Bandykite kitą kortelę.",
+    "secure": "Kortelės duomenis testiniu režimu apdoroja „Stripe“.",
+    "cancelBooking": "Atšaukti užsakymą",
+    "cancelTitle": "Atšaukti šį užsakymą?",
+    "cancelDescription": "Taikysime įmonės atšaukimo taisykles. Prieš patvirtindami patikrinkite mokestį ir grąžinamą sumą.",
+    "cancelFee": "Atšaukimo mokestis",
+    "cancelRefund": "Grąžinama suma",
+    "confirmCancel": "Patvirtinti atšaukimą",
+    "keepBooking": "Palikti užsakymą",
+    "cancelled": "Jūsų užsakymas atšauktas."
+  },
+  "companies": {
+    "title": "Nuomos įmonės",
+    "subtitle": "Naršykite partnerių nuomos įmones Malagoje — žemėlapyje arba sąraše",
+    "searchPlaceholder": "Ieškoti įmonių…",
+    "noResults": "Įmonių nerasta",
+    "noResultsHint": "Išbandykite kitą Malagos provincijos vietovę.",
+    "emptyTitle": "Įmonių dar nėra",
+    "emptyDescription": "Nuomos įmonių sąraše dar nėra.",
+    "clearFilters": "Išvalyti paiešką",
+    "viewFleet": "Žiūrėti autoparką",
+    "visitWebsite": "Aplankyti svetainę",
+    "contact": "Kontaktai",
+    "backToList": "Visos įmonės",
+    "notFoundTitle": "Įmonė nerasta",
+    "notFoundDescription": "Šios nuomos įmonės sąraše nėra. Naršykite kitas netoliese.",
+    "loadErrorTitle": "Įmonės informacija nepasiekiama",
+    "loadErrorDescription": "Nepavyko įkelti šios nuomos įmonės iš tiesioginio katalogo. Bandykite dar kartą — kai API neveikia, netikrų automobilių nerodome.",
+    "browseCars": "Naršyti automobilius",
+    "featuredEmpty": "Rekomenduojamų įmonių dar nėra",
+    "featuredEmptyHint": "Užsukite vėliau arba naršykite vietinių autoparkų automobilius.",
+    "locationUnknown": "Vietovė nenurodyta",
+    "noDescription": "Aprašymo dar nėra."
+  },
+  "contact": {
+    "title": "Susisiekite su mumis",
+    "lede": "Turite klausimų apie prekyvietę? Parašykite mums ir atsakysime kuo greičiau.",
+    "bookingHint": "Ši forma nėra skirta užsakymams. Norėdami išsinuomoti automobilį, tęskite pačios nuomos įmonės svetainėje.",
+    "name": "Vardas ir pavardė",
+    "email": "El. pašto adresas",
+    "subject": "Tema",
+    "message": "Žinutė",
+    "submit": "Siųsti žinutę",
+    "privacyNote": "Šiuos duomenis naudojame tik atsakymui.",
+    "errors": {
+      "nameMin": "Įveskite savo vardą (bent 2 simbolius).",
+      "email": "Įveskite teisingą el. pašto adresą.",
+      "subjectMin": "Įveskite temą (bent 3 simbolius).",
+      "messageMin": "Įveskite žinutę (bent 10 simbolių)."
+    },
+    "eyebrow": "Pagalba",
+    "namePlaceholder": "Vardenis Pavardenis",
+    "emailPlaceholder": "jus@pavyzdys.lt",
+    "subjectPlaceholder": "Kuo galime padėti?",
+    "messagePlaceholder": "Papasakokite, ko jums reikia…",
+    "supportSubjectDefault": "Pagalbos užklausa",
+    "submitting": "Siunčiama…",
+    "submittedTitle": "Žinutė išsiųsta",
+    "submittedDescription": "Dėkojame, kad susisiekėte. Atsakysime į jūsų el. paštą kuo greičiau.",
+    "sendAnother": "Siųsti kitą žinutę",
+    "backHome": "Grįžti į pradžią",
+    "whatsappTitle": "Labiau mėgstate „WhatsApp“?",
+    "whatsappDescription": "Bendraukite tiesiogiai su „Benwer Cars“ komanda."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privatumo politika",
+      "lede": "Kaip tvarkome asmens duomenis, kai naudojatės „Benwer Cars“ prekyviete.",
+      "updated": "Paskutinį kartą atnaujinta: 2026 m. rugsėjo 13 d.",
+      "sections": [
+        {
+          "title": "Kas mes esame",
+          "body": "„Benwer Cars“ („Benwer“, „mes“, „mūsų“) valdo vartotojų prekyvietę, padedančią keliautojams atrasti automobilių nuomos autoparkus Malagos provincijoje.\n\nŠi politika taikoma tik prekyvietės svetainei. Jei pereinate į pačios nuomos įmonės svetainę užsakymui, už ten pateiktus duomenis atsakinga ta įmonė."
+        },
+        {
+          "title": "Ką daro ši prekyvietė",
+          "body": "Galite ieškoti automobilių ir įmonių, palyginti viešą autoparko informaciją ir pereiti į nuomos įmonės svetainę užsakymui užbaigti.\n\n„Benwer“ prekyvietėje mokėjimų nepriima ir nuomos sutarčių nesudaro. Nuomos sutartis sudaroma tarp jūsų ir įmonės."
+        },
+        {
+          "title": "Kokią informaciją renkame",
+          "body": "Priklausomai nuo to, kaip naudojatės prekyviete, galime tvarkyti:\n\n• Paieškos ir naudojimo duomenis — jūsų įvestas vietoves ir datas, peržiūrėtus puslapius bei pagrindinius techninius duomenis, tokius kaip IP adresas, naršyklės ir įrenginio informacija.\n• Kalbos nuostatą — saugomą kaip būtiną slapuką, kad galėtume rodyti pasirinktą kalbą.\n• Slapukų sutikimą — saugomą jūsų įrenginyje, kad prisimintume jūsų pasirinkimą.\n• Kontaktų žinutes — vardą, el. paštą, temą ir žinutę, jei mums rašote. Jas pažymime kaip gautas iš prekyvietės.\n\nPrekyvietėje neprašome susikurti paskyros. Užsakymo ir mokėjimo duomenis renka nuomos įmonė savo svetainėje pagal savo privatumo politiką."
+        },
+        {
+          "title": "Kaip naudojame duomenis",
+          "body": "Asmens duomenis naudojame prekyvietei valdyti ir tobulinti, kalbos ir slapukų pasirinkimams išsaugoti, atsakyti į kontaktų žinutes, užtikrinti paslaugos saugumą ir vykdyti teisinius įsipareigojimus.\n\nJūsų asmens duomenų neparduodame."
+        },
+        {
+          "title": "Teisiniai pagrindai (EEE / JK)",
+          "body": "Kai taikoma, remiamės teisėtais interesais (viešo katalogo veikimu ir svetainės saugumu), sutikimu (pasirenkamiems slapukams, jei jie įdiegiami), teisine prievole ir veiksmais, būtinais atsakyti į jūsų užklausą."
+        },
+        {
+          "title": "Dalijimasis duomenimis",
+          "body": "Galime naudotis patikimais prieglobos ir el. pašto pristatymo paslaugų teikėjais. Jie duomenis tvarko pagal mūsų nurodymus.\n\nJei pereinate į įmonės svetainę, ta įmonė tampa visų ten pateiktų duomenų valdytoja. Jūsų kontaktų formos žinutės nuomos įmonėms neperduodame, nebent patys to paprašote."
+        },
+        {
+          "title": "Slapukai",
+          "body": "Naudojame būtiną kalbos slapuką ir išsaugome jūsų slapukų pasirinkimą jūsų įrenginyje. Išsamiau žr. slapukų politikoje. Pasirenkami slapukai lieka išjungti, kol jų nepriimate."
+        },
+        {
+          "title": "Saugojimas",
+          "body": "Kontaktų žinutes saugome tiek, kiek reikia atsakyti, ir protingą laikotarpį tolesniam bendravimui. Techniniai žurnalai saugomi trumpą laiką. Jūsų slapukų pasirinkimas galioja tol, kol jį pakeičiate arba išvalote svetainės duomenis."
+        },
+        {
+          "title": "Jūsų teisės",
+          "body": "Priklausomai nuo jūsų gyvenamosios vietos, galite turėti teisę susipažinti su savo duomenimis, juos ištaisyti, ištrinti, apriboti jų tvarkymą, perkelti duomenis bei nesutikti su tam tikru tvarkymu. Taip pat galite pateikti skundą vietinei priežiūros institucijai.\n\nNorėdami pasinaudoti savo teisėmis, naudokite kontaktų puslapį."
+        },
+        {
+          "title": "Tarptautiniai perdavimai",
+          "body": "Jei duomenys perduodami už jūsų šalies ribų, taikome tinkamas apsaugos priemones, pvz., standartines sutarčių sąlygas arba lygiaverčius mechanizmus, kai to reikalauja įstatymai."
+        },
+        {
+          "title": "Pakeitimai",
+          "body": "Šią politiką galime retkarčiais atnaujinti. Pakeistą versiją paskelbsime šiame puslapyje ir atnaujinsime „Paskutinį kartą atnaujinta“ datą."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Naudojimo sąlygos",
+      "lede": "„Benwer Cars“ prekyvietės naudojimo taisyklės ieškant nuomos autoparkų.",
+      "updated": "Paskutinį kartą atnaujinta: 2026 m. rugsėjo 13 d.",
+      "sections": [
+        {
+          "title": "Prekyvietė",
+          "body": "„Benwer Cars“ teikia viešą automobilių nuomos įmonių ir jų paskelbtų autoparkų katalogą. Galite palyginti automobilius ir pereiti į pačios įmonės svetainę nuomai užbaigti.\n\nŠios sąlygos taikomos prekyvietės svetainei. Jos nepakeičia pačios nuomos įmonės sąlygų, kurios taikomos užsakant pas ją."
+        },
+        {
+          "title": "Užsakymai sudaromi su nuomos įmonėmis",
+          "body": "„Benwer“ prekyvietėje automobilių nenuomoja, mokėjimų nepriima ir nuomos sutarčių nesudaro.\n\nJei pereinate į įmonės svetainę, bet koks užsakymas, užstatas, draudimas ir paėmimo tvarka yra tarp jūsų ir tos įmonės. Prieš patvirtindami perskaitykite jų sąlygas."
+        },
+        {
+          "title": "Skelbimai ir užimtumas",
+          "body": "Autoparko informaciją, kainas, nuotraukas ir užimtumą skelbia nuomos įmonės ir jie gali keistis. Siekiame tiksliai rodyti viešą informaciją, tačiau negarantuojame, kad automobilis vis dar bus laisvas arba kad nurodyta kaina bus pritaikyta, kol įmonė to nepatvirtins.\n\nPrekyvietėje įvestos datos padeda ieškoti. Galutinis užimtumas patvirtinamas įmonės svetainėje."
+        },
+        {
+          "title": "Tinkamas naudojimas",
+          "body": "Naudokitės prekyviete teisėtai. Draudžiama rinkti duomenis automatizuotai, perkrauti ar trikdyti paslaugą, pateikti melagingus kontaktinius duomenis ar naudoti svetainę siekiant pakenkti kitiems asmenims ar įmonėms."
+        },
+        {
+          "title": "Atsakomybė",
+          "body": "Prekyvietė teikiama kaip paieškos paslauga. Kiek leidžia įstatymai, „Benwer“ neatsako už nuomos ginčus, transporto priemonių būklę ar užsakymus, atliktus įmonės svetainėje.\n\nNiekas šiose sąlygose neriboja jūsų kaip vartotojo teisių, kurių negalima atsisakyti pagal taikomus įstatymus."
+        },
+        {
+          "title": "Pakeitimai",
+          "body": "Šias sąlygas galime atnaujinti. Dabartinę versiją rodo šiame puslapyje nurodyta „Paskutinį kartą atnaujinta“ data. Tolesnis naudojimasis po pakeitimo reiškia, kad sutinkate su atnaujintomis sąlygomis."
+        },
+        {
+          "title": "Kontaktai",
+          "body": "Klausimus apie šias sąlygas ar prekyvietę galite siųsti per kontaktų puslapį. Dėl jau pradėto užsakymo kreipkitės tiesiogiai į nuomos įmonę."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Slapukų politika",
+      "lede": "Kaip naudojame slapukus ir panašias technologijas prekyvietėje.",
+      "updated": "Paskutinį kartą atnaujinta: 2026 m. rugsėjo 13 d.",
+      "sections": [
+        {
+          "title": "Ką naudojame",
+          "body": "Slapukai yra nedideli tekstiniai failai, saugomi jūsų įrenginyje. Taip pat naudojame panašią saugyklą, pvz., vietinę saugyklą, pasirinkimams prisiminti.\n\nŠi politika taikoma „Benwer Cars“ prekyvietei. Kai pereinate į nuomos įmonės svetainę, ta svetainė gali įrašyti savo slapukus."
+        },
+        {
+          "title": "Būtini slapukai",
+          "body": "Naudojame kalbos slapuką, kad svetainė rodytų jūsų pasirinktą kalbą. Tai būtina, kad prekyvietė veiktų taip, kaip tikitės.\n\nJūsų slapukų juostos pasirinkimas išsaugomas jūsų įrenginyje, kad neklaustume kiekvieno apsilankymo metu. Ši saugykla nenaudojama reklamai."
+        },
+        {
+          "title": "Pasirenkami slapukai",
+          "body": "Pasirenkami slapukai (pvz., analizės) lieka išjungti, nebent pasirenkate „Priimti visus“.\n\nŠiuo metu prekyvietė nenaudoja analizės ar rinkodaros slapukų. Jei ateityje juos pridėsime, aprašysime juos čia ir jiems vis tiek reikės jūsų sutikimo."
+        },
+        {
+          "title": "Slapukų valdymas",
+          "body": "Naudokite juostą norėdami priimti visus slapukus arba palikti tik būtinus. Slapukus ir svetainės duomenis taip pat galite ištrinti naršyklėje. Užblokavus kalbos slapuką, kito apsilankymo metu kalbos pasirinkimas gali būti atstatytas."
+        },
+        {
+          "title": "Daugiau informacijos",
+          "body": "Apie tai, kaip tvarkome asmens duomenis, skaitykite privatumo politikoje arba parašykite žinutę per kontaktų puslapį."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} pradžia",
+    "defaultHeadline": "Išsinuomokite automobilį su {name}",
+    "footerTagline": "Užsisakykite tiesiogiai iš šios nuomos įmonės.",
+    "previewBanner": "Peržiūra — šis puslapis nėra viešas. Paieškos sistemos jo neindeksuos.",
+    "editLink": "Redaguoti",
+    "editContactEmpty": "Kontaktiniai duomenys paslėpti. Redaguokite juos administravimo sistemoje.",
+    "editBranchesEmpty": "Padalinių dar nėra. Pridėkite juos administravimo sistemoje.",
+    "editRulesHint": "Užsakymo režimas, minimalus įspėjimo laikas ir užklausos langas.",
+    "editDomainHint": "Pasirinktinis domenas ir veikiantis URL.",
+    "editSection": {
+      "hero": "Pagrindinė skiltis",
+      "search": "Paieška",
+      "fleet": "Autoparkas",
+      "branches": "Padaliniai",
+      "contact": "Kontaktai",
+      "rules": "Užsakymo taisyklės",
+      "domain": "Domenas"
+    },
+    "pausedTitle": "Užsakymai nepriimami",
+    "pausedDescription": "Ši įmonė laikinai sustabdė užsakymus internetu. Vis tiek galite naršyti autoparką.",
+    "notFoundTitle": "Svetainė nerasta",
+    "notFoundDescription": "Ši nuomos svetainė nepasiekiama.",
+    "loadErrorTitle": "Svetainė nepasiekiama",
+    "loadErrorDescription": "Nepavyko įkelti šios nuomos svetainės. Bandykite dar kartą netrukus.",
+    "search": "Ieškoti automobilių",
+    "searchAria": "Ieškoti pagal datas ir vietovę",
+    "searchTitle": "Ieškoti automobilių",
+    "searchDescription": "Pasirinkite datas ir vietovę, kad pamatytumėte, kas laisva.",
+    "branch": "Paėmimo vieta",
+    "anyBranch": "Bet kuri vieta",
+    "ownerSignIn": "Savininko prisijungimas",
+    "returnBranch": "Grąžinimo vieta",
+    "differentReturn": "Grąžinti kitoje vietoje",
+    "returnSame": "Ta pati kaip paėmimo",
+    "driverAge": "Vairuotojo amžius",
+    "driverAgeYears": "{band} m.",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Redaguokite savo svetainę",
+    "signInHint": "Savininkai svetainės redaktorių atidaro iš „Benwer“ administravimo sistemos. Spustelėkite ten mygtuką „Redaguoti svetainę“ ir čia būsite prijungti automatiškai.",
+    "signedInTitle": "Esate prisijungę",
+    "signedInHint": "Jei galite valdyti šią svetainę, redaktorius atsidarys pradiniame puslapyje.",
+    "openEditor": "Atidaryti svetainės redaktorių",
+    "disabledTitle": "Savininko redagavimas nepasiekiamas",
+    "disabledDescription": "Darbuotojų „Firebase“ šioje prekyvietėje nesukonfigūruota.",
+    "signOut": "Atsijungti",
+    "auth": {
+      "tooManyRequests": "Per daug bandymų. Bandykite vėliau.",
+      "unknown": "Nepavyko prisijungti. Bandykite dar kartą.",
+      "invalidToken": "Ši prisijungimo nuoroda nebegalioja arba jau buvo panaudota. Dar kartą atidarykite redaktorių iš „Benwer“ administravimo sistemos."
+    },
+    "signingIn": "Jungiama…",
+    "openAdmin": "Atidaryti „Benwer“ administravimą",
+    "accountMenu": "Savininko paskyra",
+    "signedInAs": "Prisijungta kaip savininkas",
+    "guestSignedOut": "Buvote atjungti nuo svečio paskyros. Savininko ir svečio seansai šioje naršyklėje negali būti aktyvūs vienu metu."
+  },
+  "guest": {
+    "googleAction": "Prisijungti su „Google“",
+    "googleCreate": "Tęsti su „Google“",
+    "or": "arba",
+    "forgotPassword": "Pamiršote slaptažodį?",
+    "resetTitle": "Atkurti slaptažodį",
+    "resetHint": "Įveskite savo el. pašto adresą ir atsiųsime nuorodą naujam slaptažodžiui pasirinkti.",
+    "resetAction": "Siųsti atkūrimo nuorodą",
+    "resetSentTitle": "Patikrinkite el. paštą",
+    "resetSentHint": "Jei šiam adresui yra sukurta paskyra, išsiuntėme slaptažodžio atkūrimo instrukcijas. Negavote? Patikrinkite šlamšto aplanką arba palaukite kelias minutes prieš bandydami dar kartą.",
+    "backToSignIn": "Grįžti į prisijungimą",
+    "signInNav": "Prisijungti",
+    "myBookings": "Mano užsakymai",
+    "signInTitle": "Prisijungti",
+    "signInHint": "Naudokite savo šios nuomos įmonės svečio paskyrą. Tai nėra darbuotojų prisijungimas.",
+    "signInAction": "Prisijungti",
+    "createTitle": "Sukurti svečio paskyrą",
+    "createHint": "Išsaugokite savo užsakymus šioje įmonėje. Darbuotojai naudoja kitą prisijungimą.",
+    "createAction": "Sukurti paskyrą",
+    "needAccount": "Neturite paskyros? Susikurkite",
+    "haveAccount": "Jau turite paskyrą? Prisijunkite",
+    "email": "El. paštas",
+    "password": "Slaptažodis",
+    "bookingsTitle": "Mano užsakymai",
+    "bookingsMeta": "Susieti šios nuomos įmonės užsakymai.",
+    "bookingsHint": "Prisijungta kaip {email} įmonėje {company}.",
+    "emptyTitle": "Užsakymų dar nėra",
+    "emptyDescription": "Jau užsakėte anksčiau? Susiekite tą užsakymą naudodami naudotą el. paštą arba patvirtinimo kodą.",
+    "bookingFallback": "Užsakymas",
+    "loadErrorTitle": "Nepavyko įkelti užsakymų",
+    "linkTitle": "Susieti užsakymą",
+    "linkHint": "Įveskite užsakymui naudotą el. paštą arba patvirtinimo kodą. Jei rasime atitikmenį, išsiųsime nuorodą el. paštu — niekada neatskleidžiame, ar paskyra egzistuoja.",
+    "linkEmail": "Užsakymo el. paštas",
+    "linkToken": "Užsakymo kodas",
+    "linkAction": "Siųsti nuorodą",
+    "linkSent": "Jei rasime atitinkantį užsakymą, išsiųsime patvirtinimo nuorodą el. paštu.",
+    "accountTitle": "Paskyra",
+    "accountHint": "Atsijunkite nuo savo paskyros šioje svetainėje.",
+    "signOut": "Atsijungti",
+    "erase": "Ištrinti mano duomenis čia",
+    "eraseConfirm": "Taip, ištrinti mano duomenis šioje įmonėje",
+    "confirmTitle": "Susiejamas jūsų užsakymas",
+    "confirmHint": "Palaukite, kol prijungsime šį užsakymą prie jūsų paskyros.",
+    "confirmSignIn": "Prisijunkite prie savo svečio paskyros, kad užbaigtumėte šio užsakymo susiejimą.",
+    "confirmMissing": "Trūksta patvirtinimo kodo",
+    "confirmMissingHint": "Dar kartą atidarykite nuorodą iš savo el. pašto.",
+    "confirmError": "Nepavyko patvirtinti šios nuorodos",
+    "disabledTitle": "Svečių paskyros dar nepasiekiamos",
+    "disabledDescription": "Ši įmonė dar neįjungė svečių prisijungimo. Vis tiek galite užsakyti nurodę savo vardą, el. paštą ir telefoną.",
+    "auth": {
+      "popupClosed": "Prisijungimas atšauktas.",
+      "popupBlocked": "Naršyklė užblokavo „Google“ langą. Leiskite iššokančiuosius langus ir bandykite dar kartą.",
+      "differentProvider": "Šis el. paštas jau naudoja kitą prisijungimo būdą. Naudokite slaptažodį.",
+      "providerUnavailable": "Prisijungimas su „Google“ šioje svetainėje dar nepasiekiamas. Naudokite el. paštą ir slaptažodį.",
+      "invalidEmail": "Įveskite teisingą el. pašto adresą.",
+      "emailInUse": "Šis el. paštas jau turi svečio paskyrą. Prisijunkite.",
+      "weakPassword": "Naudokite ilgesnį slaptažodį.",
+      "tooManyRequests": "Per daug bandymų. Bandykite vėliau po kelių minučių.",
+      "invalidCredentials": "Neteisingas el. paštas arba slaptažodis.",
+      "unknown": "Nepavyko prisijungti. Bandykite dar kartą.",
+      "googleDisabled": "Prisijungimas su „Google“ šioje svetainėje dar neįjungtas. Naudokite el. paštą ir slaptažodį.",
+      "domainNotAuthorised": "Prisijungimas su „Google“ šiam svetainės adresui dar nesukonfigūruotas. Kol kas naudokite el. paštą ir slaptažodį."
+    },
+    "accountMenu": "Jūsų paskyra",
+    "profileNav": "Profilis",
+    "profileTitle": "Profilis",
+    "profileMeta": "Jūsų svečio paskyra šioje nuomos įmonėje.",
+    "linkCancel": "Atšaukti",
+    "eraseTitle": "Ištrinti mano duomenis",
+    "eraseHint": "Ištrina jūsų svečio duomenis šioje įmonėje ir atjungia jus. Kitoms įmonėms tai įtakos neturi.",
+    "profileDetailsTitle": "Jūsų duomenys",
+    "profileDetailsHint": "Naudojami jūsų užsakymams šioje įmonėje užpildyti.",
+    "profileFullName": "Vardas ir pavardė",
+    "profilePhone": "Telefono numeris",
+    "profileDob": "Gimimo data",
+    "profileSave": "Išsaugoti duomenis",
+    "profileNotLinked": "Jūsų vardas ir telefonas čia išsaugomi po pirmojo užsakymo šiuo el. paštu. Jau užsakėte kitu el. paštu? Susiekite tą užsakymą skiltyje „Mano užsakymai“.",
+    "verifyTitle": "Patvirtinkite el. paštą, kad matytumėte užsakymus",
+    "verifyHint": "Išsiuntėme nuorodą adresu {email}. Atidarykite ją ir grįžkite čia. Kol el. paštas nepatvirtintas, negalime rodyti jūsų užsakymų ar išsaugoti vardo ir telefono.",
+    "verifyResend": "Siųsti laišką dar kartą",
+    "verifySent": "Laiškas išsiųstas. Patikrinkite gautuosius ir šlamšto aplanką.",
+    "verifyDone": "Patvirtinau el. paštą",
+    "verifyStillPending": "Jūsų el. paštas dar nepatvirtintas. Atidarykite nuorodą laiške ir bandykite dar kartą.",
+    "verifyBanner": "Jūsų paskyra dar neaktyvi. Patvirtinkite {email}, kad matytumėte užsakymus ir naudotumėte išsaugotus duomenis.",
+    "verifyBannerAction": "Patvirtinti el. paštą",
+    "profileEdit": "Redaguoti duomenis",
+    "profileCancel": "Atšaukti",
+    "profileEmail": "El. paštas",
+    "profileEmpty": "Nepridėta",
+    "bookingsUpcoming": "Artėjantys",
+    "bookingsPast": "Praėję",
+    "ownerSignedOut": "Buvote atjungti nuo svetainės redaktoriaus. Savininko ir svečio seansai šioje naršyklėje negali būti aktyvūs vienu metu."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "{name} pasiūlymai",
+      "slideAlt": "{name} reklamjuostė {position}",
+      "slideLabel": "{position} iš {count}",
+      "previous": "Ankstesnė reklamjuostė",
+      "next": "Kita reklamjuostė",
+      "goTo": "Rodyti {position} reklamjuostę",
+      "presets": {
+        "airport": {
+          "script": "ką tik nusileidote?",
+          "highlight": "Paėmimas oro uoste",
+          "joiner": "per",
+          "boxed": "10 minučių",
+          "description": "Be eilių: pasirašykite sutartį telefone ir išvažiuokite su pilnu draudimu"
+        },
+        "weekend": {
+          "script": "užsisakykite šiam savaitgaliui",
+          "highlight": "Sutaupykite 20%",
+          "joiner": "nuo",
+          "boxed": "Savaitgalio nuomos",
+          "description": "Paimkite penktadienį, grąžinkite pirmadienį. Nemokama vaikiška kėdutė ir papildomas vairuotojas įskaičiuoti"
+        },
+        "roadtrip": {
+          "script": "jūsų kita kelionė",
+          "highlight": "Prasideda čia",
+          "joiner": "įteikiame jums",
+          "boxed": "Raktelius",
+          "description": "Nemokamas atšaukimas likus 24 val. iki paėmimo, neribota rida ir jokių paslėptų mokesčių"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Įskaičiuota į kiekvieną kainą",
+      "title": "Matoma kaina yra galutinė kaina",
+      "description": "Jokių netikėtumų prie langelio. Tai visada įskaičiuota į kainą.",
+      "presets": {
+        "insurance": {
+          "title": "Bazinis draudimas",
+          "text": "Draudimas nuo susidūrimo, vagystės ir civilinės atsakomybės.",
+          "tag": "Įskaičiuota"
+        },
+        "mileage": {
+          "title": "Neriboti kilometrai",
+          "text": "Važiuokite kiek norite be jokių mokesčių už kilometrą.",
+          "tag": "Be apribojimų"
+        },
+        "fuel": {
+          "title": "Pilnas–pilnas kuro bakas",
+          "text": "Paimkite automobilį su pilnu baku ir grąžinkite su pilnu.",
+          "tag": "Be išankstinio apmokėjimo"
+        },
+        "cancellation": {
+          "title": "Nemokamas atšaukimas",
+          "text": "Pasikeitė planai? Atšaukite nemokamai.",
+          "tag": "Lankstu"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Atsiliepimai",
+      "title": "Ką apie mus sako vairuotojai",
+      "seeAll": "Žiūrėti visus {count, plural, one {# atsiliepimą} few {# atsiliepimus} other {# atsiliepimų}}",
+      "seeAllOn": "Žiūrėti visus {count, plural, one {# atsiliepimą} few {# atsiliepimus} other {# atsiliepimų}} platformoje {source}",
+      "basedOn": "Pagal {count, plural, one {# atsiliepimą} few {# atsiliepimus} other {# atsiliepimų}}",
+      "basedOnSource": "Pagal {count, plural, one {# atsiliepimą} few {# atsiliepimus} other {# atsiliepimų}} platformoje {source}",
+      "ratingAria": "Įvertinta {rating} iš 5",
+      "rented": "Nuomotas: {vehicle}",
+      "verified": "Patvirtinta nuoma",
+      "distributionAria": "Įvertinimų pasiskirstymas",
+      "emptyTitle": "Atsiliepimų dar nėra",
+      "emptyText": "Klientai gali palikti atsiliepimą grąžinę automobilį. Patvirtinti atsiliepimai pasirodys čia."
+    },
+    "app": {
+      "eyebrow": "Mobilioji programėlė",
+      "title": "Jūsų užsakymas kelyje",
+      "text": "Registruokitės internetu, matykite paėmimo informaciją ir rašykite mums — viskas jūsų telefone.",
+      "platformBoth": "iOS ir Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Nuskaitykite, kad atsisiųstumėte",
+      "qrAlt": "QR kodas programėlei atsisiųsti",
+      "appStore": {
+        "prefix": "Atsisiųskite iš",
+        "name": "App Store",
+        "aria": "Atsisiųskite iš „App Store“",
+        "unavailable": "Dar nepasiekiama „App Store“"
+      },
+      "googlePlay": {
+        "prefix": "Gaukite iš",
+        "name": "Google Play",
+        "aria": "Gaukite iš „Google Play“",
+        "unavailable": "Dar nepasiekiama „Google Play“"
+      },
+      "comingSoon": "Netrukus"
+    },
+    "locations": {
+      "eyebrow": "Vietovės",
+      "title": "{count, plural, one {Mūsų biuras} few {Mūsų biurai} other {Mūsų biurai}}",
+      "description": "{count, plural, one {Pasiimkite ir grąžinkite automobilį čia.} few {Pasiimkite ir grąžinkite automobilį bet kuriame mūsų biure.} other {Pasiimkite ir grąžinkite automobilį bet kuriame mūsų biure.}}",
+      "directions": "Nuorodos",
+      "directionsTo": "Nuorodos į {name}",
+      "call": "Skambinti"
+    },
+    "faq": {
+      "eyebrow": "DUK",
+      "title": "Klausimai prieš užsakant",
+      "description": "Neradote atsakymo? Susisiekite su mumis, mielai padėsime."
+    },
+    "contact": {
+      "title": "Turite klausimų? Pasikalbėkite su mumis.",
+      "description": "Parašykite žinutę arba paskambinkite ir padėsime rasti tinkamą automobilį.",
+      "whatsapp": "WhatsApp",
+      "email": "Parašykite mums",
+      "whatsappMessage": "Sveiki, {name}, turiu klausimą dėl automobilio nuomos."
+    },
+    "nav": {
+      "reviews": "Atsiliepimai",
+      "faq": "DUK",
+      "contact": "Kontaktai",
+      "app": "Programėlė",
+      "branches": "Vietovės"
+    },
+    "footer": {
+      "contact": "Kontaktai",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Priimame",
+      "rating": "{score} · {count, plural, one {# atsiliepimas} few {# atsiliepimai} other {# atsiliepimų}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Grynieji"
+    }
+  },
+  "siteEditor": {
+    "aria": "Svetainės redaktorius",
+    "title": "Svetainės redaktorius",
+    "signOut": "Atsijungti",
+    "tabsAria": "Redaktoriaus skiltys",
+    "status": {
+      "draft": "Juodraštis",
+      "published": "Paskelbta",
+      "paused": "Pristabdyta"
+    },
+    "tabs": {
+      "sections": "Skiltys",
+      "design": "Dizainas",
+      "settings": "Nustatymai",
+      "legal": "Teisinė informacija"
+    },
+    "contentLanguage": "Redagavimo kalba",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Visos skiltys",
+    "sections": {
+      "company": "Įmonė",
+      "fleet": "Automobiliai",
+      "included": "Įskaičiuota į kiekvieną kainą",
+      "reviews": "Atsiliepimai",
+      "app": "Mobilioji programėlė",
+      "faq": "DUK",
+      "contact": "Kontaktai",
+      "hero": "Reklamjuostės ir paieška",
+      "branches": "Vietovės"
+    },
+    "sectionsHint": "Įjunkite arba išjunkite skiltis ir keiskite jų tvarką. Atidarykite skiltį, kad redaguotumėte jos turinį.",
+    "orderHint": "Automobiliai rodomi visada. Biurai paimami iš jūsų padalinių „Benwer“ administravimo sistemoje.",
+    "hiddenUntilContent": "Paslėpta, kol nepridėsite turinio",
+    "summary": {
+      "banners": "{count, plural, one {# reklamjuostė} few {# reklamjuostės} other {# reklamjuosčių}}",
+      "bannersEmpty": "Reklamjuosčių dar nėra, rodoma prekės ženklo spalva",
+      "company": "Antraštė, įžanga ir kontaktiniai duomenys",
+      "fleet": "Iš jūsų „Benwer“ autoparko",
+      "included": "{count, plural, one {# elementas} few {# elementai} other {# elementų}}",
+      "reviews": "{count, plural, one {# atsiliepimas} few {# atsiliepimai} other {# atsiliepimų}}",
+      "app": "Parduotuvių nuorodos ir QR kodas",
+      "locations": "{count, plural, one {# biuras} few {# biurai} other {# biurų}} iš „Benwer“",
+      "faq": "{count, plural, one {# klausimas} few {# klausimai} other {# klausimų}}",
+      "contactWhatsapp": "WhatsApp, telefonas ir darbo laikas",
+      "contact": "Telefonas ir el. paštas"
+    },
+    "unsaved": "Neišsaugoti pakeitimai",
+    "saved": "Visi pakeitimai išsaugoti",
+    "discard": "Atmesti",
+    "save": "Išsaugoti pakeitimus",
+    "common": {
+      "moveUp": "Perkelti {item} aukštyn",
+      "moveDown": "Perkelti {item} žemyn",
+      "remove": "Pašalinti {item}",
+      "show": "Rodyti {item}"
+    },
+    "banners": {
+      "title": "Reklamjuostės",
+      "description": "Iki {max} skaidrių. Tuščiuose laukuose naudojamas numatytasis pilkas tekstas.",
+      "empty": "Reklamjuosčių nėra. Reklamjuostės srityje rodoma jūsų fono spalva.",
+      "item": "Reklamjuostė {position}",
+      "image": "Paveikslėlis",
+      "imageHint": "Įkelkite platų paveikslėlį, apie 1600 × 560 px. JPG, PNG arba WebP iki 25 MB. Permatomas PNG rodomas ant jūsų reklamjuostės spalvos.",
+      "add": "Pridėti reklamjuostę",
+      "fields": {
+        "script": "Rankraštinė eilutė",
+        "highlight": "Paryškinta antraštė",
+        "joiner": "Trumpas jungtukas",
+        "boxed": "Antraštė rėmelyje",
+        "description": "Aprašymas"
+      },
+      "colorsTitle": "Reklamjuosčių spalvos",
+      "colorsDescription": "Taikoma kiekvienai reklamjuostei. Fonui tinka bet kokia spalva.",
+      "resetColors": "Atkurti numatytąsias spalvas",
+      "colors": {
+        "background": "Fonas",
+        "text": "Tekstas",
+        "highlight": "Paryškinimo laukelis",
+        "highlightText": "Paryškinimo tekstas",
+        "box": "Baltas laukelis",
+        "boxText": "Balto laukelio tekstas",
+        "script": "Jungtuko tekstas"
+      },
+      "noImage": "Paveikslėlio dar nėra",
+      "uploadImage": "Įkelti paveikslėlį",
+      "replaceImage": "Pakeisti paveikslėlį",
+      "tooLarge": "Šis failas didesnis nei 25 MB. Pasirinkite mažesnį paveikslėlį.",
+      "uploadFailed": "Įkelti nepavyko. Bandykite dar kartą."
+    },
+    "company": {
+      "title": "Įmonės antraštė",
+      "description": "Jūsų pavadinimas, antraštė ir trumpas pristatymas.",
+      "headline": "Antraštė",
+      "headlinePlaceholder": "Išsinuomokite automobilį su {name}",
+      "intro": "Pristatymas",
+      "introHint": "Vienas ar du sakiniai apie jūsų įmonę.",
+      "contactTitle": "Kontaktiniai duomenys",
+      "contactDescription": "Rodoma antraštėje, vietovių ir kontaktų skiltyse.",
+      "showPhone": "Rodyti telefono numerį",
+      "showEmail": "Rodyti el. paštą",
+      "showAddress": "Rodyti adresą"
+    },
+    "included": {
+      "title": "Įskaičiuota į kiekvieną kainą",
+      "description": "Iki 6 pažadų, kurie visada įskaičiuoti į jūsų kainą.",
+      "accuracy": "Nurodykite tik tai, kas galioja kiekvienai nuomai. Numatytasis tekstas yra pasiūlymas — patikrinkite, ar jis atitinka jūsų nuomos sąlygas.",
+      "item": "Elementas {position}",
+      "icon": "Piktograma",
+      "itemTitle": "Pavadinimas",
+      "itemText": "Aprašymas",
+      "itemTag": "Akcentas",
+      "tagHint": "Trumpa žalia žyma, pvz., „Franšizė 1 000 €“.",
+      "presets": {
+        "insurance": "Bazinis draudimas",
+        "mileage": "Neriboti km",
+        "fuel": "Pilnas–pilnas kuro bakas",
+        "cancellation": "Nemokamas atšaukimas"
+      },
+      "addCustom": "Savas elementas"
+    },
+    "icons": {
+      "shield": "Skydas",
+      "gauge": "Spidometras",
+      "fuel": "Degalinės kolonėlė",
+      "calendar_check": "Kalendorius",
+      "check": "Varnelė",
+      "car": "Automobilis",
+      "users": "Žmonės",
+      "baby": "Vaikiška kėdutė",
+      "plane": "Lėktuvas",
+      "key": "Raktas"
+    },
+    "reviews": {
+      "title": "Klientų atsiliepimai",
+      "description": "Klientai įvertina nuomą grąžinę automobilį. Rodomi tik jūsų patvirtinti atsiliepimai.",
+      "summary": "Vidurkis {average} iš {count, plural, one {# patvirtinto atsiliepimo} few {# patvirtintų atsiliepimų} other {# patvirtintų atsiliepimų}}",
+      "none": "Patvirtintų atsiliepimų dar nėra. Kol nepatvirtinsite bent vieno, klientams rodoma trumpa žinutė.",
+      "manage": "Tvarkykite atsiliepimus „Benwer“ administravimo sistemoje",
+      "demo": "Tai demonstraciniai atsiliepimai, rodomi šioje bandomojoje įmonėje, kol „Benwer“ administravimo sistemoje nepatvirtinsite tikrų."
+    },
+    "app": {
+      "benwerAppTitle": "„Benwer Cars“ programėlė",
+      "benwerApp": "Rodyti „Benwer Cars“ programėlę",
+      "benwerAppDescription": "Klientai gauna nemokamą „Benwer Cars“ programėlę. Ženkliukai veda į oficialias parduotuves, o QR kodas atidaro jūsų įmonę programėlėje.",
+      "storesWithBenwerApp": "Reikalinga tik jei jūsų įmonė turi savo programėlę. Kol įjungta „Benwer Cars“ programėlė, skiltis naudoja jos parduotuvių nuorodas.",
+      "storesTitle": "Parduotuvių nuorodos",
+      "storesDescription": "Nuorodos į jūsų pačių programėlę. Trūkstama parduotuvė rodoma pilkai. Jei nuorodų nėra ir „Benwer Cars“ programėlė išjungta, skiltis lieka paslėpta.",
+      "ios": "„App Store“ nuoroda",
+      "android": "„Google Play“ nuoroda",
+      "qrHint": "QR kodas atidaro „Google Play“ nuorodą arba „App Store“ nuorodą, jei „Google Play“ nuorodos nėra.",
+      "copyTitle": "Tekstas",
+      "title": "Antraštė",
+      "text": "Aprašymas"
+    },
+    "faq": {
+      "title": "Klausimai",
+      "description": "Iki {max} klausimų su trumpais atsakymais.",
+      "empty": "Klausimų dar nėra. Skiltis lieka paslėpta, kol nepridėsite bent vieno.",
+      "item": "Klausimas {position}",
+      "question": "Klausimas",
+      "answer": "Atsakymas",
+      "incompleteHint": "Klausimai be atsakymo svetainėje nerodomi.",
+      "add": "Pridėti klausimą"
+    },
+    "contact": {
+      "title": "Kontaktai",
+      "description": "Kaip klientai gali su jumis susisiekti. Telefonas ir el. paštas paimami iš įmonės skilties.",
+      "whatsapp": "„WhatsApp“ numeris",
+      "whatsappHint": "Įtraukite šalies kodą. Palikite tuščią, jei norite paslėpti „WhatsApp“ mygtuką.",
+      "hours": "Kada atsakote",
+      "hoursPlaceholder": "Atsakome kasdien nuo 08:00 iki 22:00.",
+      "payments": "Mokėjimo būdai",
+      "paymentsHint": "Rodoma jūsų poraštėje."
+    },
+    "design": {
+      "colorTitle": "Prekės ženklo spalva",
+      "colorDescription": "Naudojama mygtukams, nuorodoms ir akcentams visoje svetainėje. Reklamjuostės fonas atitinka šią spalvą; ją vis tiek galite tikslinti skiltyje „Reklamjuostės“.",
+      "presets": "Siūlomos spalvos",
+      "custom": "Pasirinktinė spalva",
+      "customHint": "Naudokite šešioliktainį kodą, pvz., #4f46e5.",
+      "picker": "Pasirinkite spalvą",
+      "lowContrast": "Ši spalva per šviesi baltam mygtukų tekstui. Pasirinkite tamsesnę, kitaip išsaugoti nepavyks.",
+      "fontTitle": "Šriftas",
+      "fontDescription": "Naudojamas visam jūsų svetainės tekstui.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Švarus ir modernus"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klasikinis ir elegantiškas"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Ryškus ir draugiškas"
+        }
+      },
+      "cornersTitle": "Kampai",
+      "cornersDescription": "Suapvalinti arba statūs mygtukų, kortelių ir laukų kampai visoje svetainėje.",
+      "corners": {
+        "round": {
+          "name": "Suapvalinti",
+          "hint": "Švelnūs ir draugiški"
+        },
+        "square": {
+          "name": "Statūs",
+          "hint": "Griežti ir minimalistiniai"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Svetainė",
+      "websiteEnabled": "Užsakymų svetainė įjungta",
+      "websiteEnabledHint": "Kai tai įjungta, klientai gali matyti ir užsakyti jūsų paskelbtoje svetainėje. Įjungus taip pat paskelbiami jūsų išsaugoti pakeitimai. Tai tas pats jungiklis kaip ir „Benwer“ administravimo sistemoje.",
+      "bookingTitle": "Užsakymai",
+      "bookingDescription": "Kaip klientai užsako jūsų svetainėje.",
+      "bookingMode": "Užsakymo režimas",
+      "mode": {
+        "instant": "Momentinis",
+        "request": "Pagal užklausą"
+      },
+      "modeHint": {
+        "instant": "Užsakymai patvirtinami iš karto.",
+        "request": "Kiekvieną užsakymą priimate arba atmetate per užklausos laiką."
+      },
+      "minLead": "Minimalus įspėjimo laikas",
+      "requestWindow": "Laikas atsakyti",
+      "hoursUnit": "Valandomis",
+      "differentReturnTitle": "Grąžinimas kitoje vietoje",
+      "differentReturnLabel": "Leisti klientams grąžinti automobilį kitoje vietoje",
+      "differentReturnHint": "Ieškodami klientai pasirenka grąžinimo vietą. Prie kainos pridedamas „Benwer“ administravimo sistemoje nurodytas grąžinimo kitoje vietoje mokestis.",
+      "differentReturnOff": "Norėdami tai pasiūlyti, „Benwer“ administravimo sistemoje įjunkite nuomą į vieną pusę."
+    },
+    "savedNotPublished": "Išsaugota, dar nepaskelbta",
+    "publish": "Paskelbti",
+    "branding": {
+      "logosTitle": "Logotipai",
+      "logosDescription": "Tai jūsų įmonės logotipas. Pakeitus jį čia, jis atnaujinamas ir „Benwer admin“, ir „Benwer Cars“ programėlėje.",
+      "headerLogo": "Viršutinės juostos logotipas",
+      "headerLogoHint": "Rodomas juostoje kiekvieno puslapio viršuje. Geriausiai tinka platus logotipas.",
+      "companyLogo": "Įmonės skilties logotipas",
+      "companyLogoHint": "Rodomas virš jūsų antraštės, prieš įmonės skiltį.",
+      "usingCompanyLogo": "Naudojamas jūsų įmonės logotipas",
+      "upload": "Įkelti logotipą",
+      "replace": "Pakeisti",
+      "uploadFailed": "Nepavyko įkelti logotipo. Naudokite PNG, JPG arba WebP paveikslėlį ir bandykite dar kartą.",
+      "tooLarge": "Šis paveikslėlis didesnis nei 25 MB.",
+      "backgroundTitle": "Puslapio fonas",
+      "backgroundDescription": "Spalva už jūsų svetainės turinio.",
+      "backgroundPresets": "Siūlomi fonai",
+      "backgroundCustom": "Pasirinktinis fonas",
+      "backgroundPicker": "Pasirinkite fono spalvą",
+      "needsApi": "Bus pasiekiama, kai pradės veikti „Benwer“ API atnaujinimas svetainėms.",
+      "headerLogoDark": "Viršutinės juostos logotipas — tamsusis režimas",
+      "companyLogoDark": "Įmonės skilties logotipas — tamsusis režimas",
+      "squareLogo": "Kvadratinis logotipas (1:1)",
+      "squareLogoHint": "Būtinas norint paskelbti. Rodomas šalia jūsų įmonės pavadinimo kortelėse, paieškos rezultatuose ir mobiliuosiuose sąrašuose.",
+      "cropTitle": "Apkirpti logotipą į 2:1",
+      "cropHint": "Tempkite ir priartinkite, kad logotipas tvarkingai tilptų 2:1 rėmelyje.",
+      "cropZoom": "Priartinimas",
+      "cropCancel": "Atšaukti",
+      "cropSave": "Apkirpti ir įkelti",
+      "darkLogoHint": "Nebūtina. Rodoma, kai lankytojai naudoja tamsųjį režimą. Naudokite šviesią arba baltą logotipo versiją.",
+      "darkNeedsApi": "Tamsiojo režimo logotipai bus pasiekiami, kai pradės veikti atitinkamas „Benwer“ API atnaujinimas.",
+      "logo": "Logotipas (2:1)",
+      "logoHint": "Privaloma norint publikuoti. Vienas logotipas šviesiam ir tamsiam režimui: jūsų prekės ženklo spalva fone ir baltas pavadinimas, apkirptas 2:1 santykiu."
+    },
+    "legal": {
+      "hint": "Kiekvienas puslapis prasideda nuo standartinio teksto, todėl galite pakeisti tik reikiamas dalis. Kiekvienai paantraštei pridėkite skiltį. „Grįžti prie standartinio teksto“ atšaukia jūsų pakeitimus.",
+      "needsApi": "Bus pasiekiama, kai pradės veikti „Benwer“ API atnaujinimas svetainėms.",
+      "privacyTitle": "Privatumo politika",
+      "privacyDescription": "Rodoma jūsų svetainės poraštėje skiltyje „Privatumas“.",
+      "termsTitle": "Naudojimo sąlygos",
+      "termsDescription": "Rodoma jūsų svetainės poraštėje skiltyje „Sąlygos“.",
+      "text": "Tekstas",
+      "intro": "Įžanga",
+      "subtitle": "Paantraštė",
+      "sectionItem": "Skiltis {position}",
+      "addSection": "Pridėti skiltį",
+      "reset": "Grįžti prie standartinio teksto",
+      "pageTitle": "Puslapio pavadinimas",
+      "privacyLooksLikeTerms": "Jūsų privatumo politikos tekstas sutampa su naudojimo sąlygomis. Spustelėkite „Grįžti prie standartinio teksto“ skiltyje „Privatumo politika“ arba parašykite savo privatumo tekstą ir išsaugokite."
+    },
+    "preview": "Peržiūra",
+    "fullscreen": "Viso ekrano redaktorius",
+    "exitFullscreen": "Rodyti peržiūrą šalia redaktoriaus",
+    "previewBarAria": "Peržiūros valdikliai",
+    "previewing": "Peržiūrite savo svetainę",
+    "backToEdit": "Redaguoti"
+  },
+  "marketplaceBanners": {
+    "aria": "„Benwer“ akcentai",
+    "slideLabel": "{position} iš {count}",
+    "goTo": "Rodyti {position} reklamjuostę",
+    "previous": "Ankstesnė reklamjuostė",
+    "next": "Kita reklamjuostė",
+    "trust": {
+      "script": "užsisakykite užtikrintai",
+      "highlight": "Patikrintos įmonės",
+      "joiner": "ir",
+      "boxed": "Saugus užsakymas",
+      "description": "Tikri atsiliepimai, aiškios sąlygos ir skaitmeninės sutartys, kurias pasirašote telefone"
+    },
+    "prices": {
+      "script": "viena paieška",
+      "highlight": "Palyginkite kainas",
+      "joiner": "iš",
+      "boxed": "Partnerių įmonių",
+      "description": "Prieš užsakydami palyginkite partnerių nuomos įmonių kainas, draudimą ir užstatus vienoje vietoje"
+    },
+    "anywhere": {
+      "script": "raskite savo automobilį",
+      "highlight": "Visoje Malagoje",
+      "joiner": "su",
+      "boxed": "Vietinėmis nuomos įmonėmis",
+      "description": "Partnerių nuomos įmonės visuose Malagos provincijos miestuose vienoje vietoje"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Paskelbė {name}.",
+    "cookies": {
+      "title": "Slapukų politika",
+      "lede": "Kaip {name} šioje svetainėje naudoja slapukus ir panašias technologijas.",
+      "updated": "Paskelbė {name}.",
+      "sections": [
+        {
+          "title": "Ką naudojame",
+          "body": "Slapukai yra nedideli tekstiniai failai, saugomi jūsų įrenginyje. Ši svetainė taip pat naudoja panašią saugyklą, pvz., vietinę saugyklą, jūsų pasirinkimams, krepšeliui ir prisijungimui prisiminti."
+        },
+        {
+          "title": "Būtini slapukai",
+          "body": "Kalbos slapukas leidžia svetainei rodyti jūsų kalbą, o slapukų juostos pasirinkimas išsaugomas, kad neklaustume kiekvieno apsilankymo metu. Jei prisijungiate, prisijungimo teikėjas išsaugo seansą jūsų įrenginyje, kad liktumėte prisijungę. Mokėjimus kortele apdoroja „Stripe“, kuris gali nustatyti savo slapukus sukčiavimui užkardyti."
+        },
+        {
+          "title": "Pasirenkami slapukai",
+          "body": "Pasirenkami slapukai (pvz., analizės) lieka išjungti, nebent pasirenkate „Priimti visus“. Ši svetainė šiuo metu nenaudoja analizės ar rinkodaros slapukų."
+        },
+        {
+          "title": "Slapukų valdymas",
+          "body": "Norėdami pakeisti pasirinkimą, naudokite poraštėje esančią slapukų nustatymų nuorodą. Slapukus ir svetainės duomenis taip pat galite ištrinti naršyklėje. Užblokavus būtiną saugyklą, galite būti atjungti arba gali ištuštėti krepšelis."
+        },
+        {
+          "title": "Daugiau informacijos",
+          "body": "Apie tai, kaip {name} tvarko asmens duomenis, skaitykite privatumo politikoje arba naudokite poraštėje nurodytus kontaktinius duomenis."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Pagalba",
+    "fabCloseLabel": "Uždaryti pagalbos meniu",
+    "messageAction": "Tiesioginė žinutė",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Sveiki, turiu klausimą apie „Benwer Cars“."
+  },
+  "guestApp": {
+    "metaTitle": "„Benwer Cars“ programėlė",
+    "metaDescription": "Užsisakykite automobilius, laikykite visas keliones vienoje vietoje ir gaukite užsakymo atnaujinimus telefone.",
+    "eyebrow": "Mobilioji programėlė",
+    "title": "Automobilio nuoma jūsų kišenėje",
+    "description": "Užsisakykite automobilius iš vietinių įmonių, laikykite visas keliones vienoje vietoje, mokėkite ir gaukite atnaujinimus telefone.",
+    "featureTrips": "Visos jūsų kelionės iš skirtingų įmonių",
+    "featureBooking": "Užsisakykite ir sumokėkite keliais bakstelėjimais",
+    "featurePush": "Pranešimai pasikeitus jūsų užsakymui",
+    "unavailableTitle": "Programėlė pasirodys netrukus",
+    "unavailableDescription": "„Benwer Cars“ programėlės parduotuvėse dar nėra. Vis tiek galite užsisakyti svetainėje.",
+    "browse": "Naršyti automobilius",
+    "badgeTitle": "Gaukite „Benwer Cars“ programėlę",
+    "companyText": "Užsisakykite iš {company} savo telefone ir laikykite keliones vienoje vietoje.",
+    "bookingText": "Matykite šį užsakymą, mokėkite ir gaukite atnaujinimus telefone."
+  }
+}

@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Podjetja",
+    "title": "Poiščite popoln avto",
+    "subtitle": "Primerjajte avtomobile partnerskih podjetij za najem vozil in nato nadaljujte na spletni strani podjetja.",
+    "searchPlaceholder": "Kam ste namenjeni?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Izpostavljena podjetja",
+    "companiesSubtitle": "Partnerska podjetja za najem vozil po provinci Málaga — vozni parki, s katerimi sodelujemo, ne nepreverjeni oglasi",
+    "trustLocal": "Partnerska podjetja",
+    "trustGuest": "Najem na strani podjetja",
+    "trustArea": "Provinca Málaga",
+    "viewAllCompanies": "Prikaži vsa podjetja"
+  },
+  "featuredCars": {
+    "viewAllCount": "Prikaži vseh {count} avtomobilov",
+    "eyebrow": "Avtomobili",
+    "title": "Razpoložljivi avtomobili",
+    "subtitle": "Vsi avtomobili, ki so jih objavila partnerska podjetja, drug ob drugem. Izberite enega za rezervacijo na strani podjetja.",
+    "viewAll": "Išči med vsemi avtomobili",
+    "seeAll": "Prikaži vse",
+    "emptyTitle": "Še ni objavljenih avtomobilov",
+    "emptyHint": "Javni vozni parki se bodo tukaj prikazali, ko jih podjetja objavijo."
+  },
+  "whatYouGet": {
+    "eyebrow": "Za podjetja za najem vozil",
+    "title": "Kaj dobite",
+    "subtitle": "En sistem za pisarno, parkirišče in popotnike, ki iščejo vozila v Málagi.",
+    "admin": {
+      "title": "Popoln skrbniški sistem",
+      "body": "Upravljajte vozila, cene, razpoložljivost in rezervacije na eni nadzorni plošči — v istem katalogu, iz katerega črpa tržnica."
+    },
+    "mobile": {
+      "title": "Mobilna aplikacija za osebje",
+      "body": "Izdajajte in prevzemajte vozila ter spremljajte današnje rezervacije neposredno na parkirišču."
+    },
+    "storefront": {
+      "title": "Lastna blagovna predstavitev",
+      "body": "Vpis na tržnici ter vaša lastna spletna stran in poddomena."
+    },
+    "preview": {
+      "utilisation": "Izkoriščenost",
+      "utilisationValue": "82 %",
+      "pickups": "Današnji prevzemi",
+      "pickupsValue": "14",
+      "revenue": "Ta mesec",
+      "revenueValue": "9,4 tis. €",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Nadzorna plošča",
+      "navFleet": "Vozni park",
+      "navCalendar": "Koledar",
+      "navReservations": "Rezervacije",
+      "calendarTitle": "Razpoložljivost",
+      "calendarMonth": "Naslednja 2 tedna",
+      "viaBenwer": "Prek Benwer",
+      "direct": "Neposredno",
+      "free": "Prosto",
+      "carA": "Kompaktni",
+      "carB": "Mestni avto",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Danes",
+      "phoneDate": "Ponedeljek",
+      "pickUp": "Prevzem",
+      "return": "Vračilo",
+      "checkedOut": "Prevzeto",
+      "due": "Za vračilo",
+      "tabToday": "Danes",
+      "tabFleet": "Vozni park",
+      "tabScan": "Skeniraj",
+      "storeName": "Vaše podjetje",
+      "storeNavCars": "Avtomobili",
+      "storeNavContact": "Kontakt",
+      "storeHeadline": "Najemite avto v Málagi",
+      "storeSearch": "Prevzem in datumi",
+      "storeSearchCta": "Išči",
+      "storePrice": "Prikaži cene",
+      "carE": "Kombilimuzina",
+      "carF": "Karavan"
+    }
+  },
+  "faq": {
+    "eyebrow": "Pogosta vprašanja",
+    "title": "Pred rezervacijo",
+    "subtitle": "Partnerski vozni parki, kako poteka rezervacija in kaj Benwer ureja — ter česa ne.",
+    "items": {
+      "partners": {
+        "question": "Ali so ti avtomobili iz pravih podjetij za najem vozil?",
+        "answer": "Da. Vsak oglas je javno vozilo partnerja Benwer — pravega podjetja za najem vozil, s katerim sodelujemo, ne nepreverjen zasebni oglas. Če podjetje ali vozilo ni objavljeno na platformi, se tukaj ne prikaže."
+      },
+      "booking": {
+        "question": "Ali rezerviram in plačam na Benwer?",
+        "answer": "Ne. Tukaj primerjate partnerske vozne parke, nato pa nadaljujete na spletno stran podjetja za najem vozil, kjer potrdite najem, varščino in prevzem. Benwer na tej tržnici ne sprejema plačil."
+      },
+      "photos": {
+        "question": "Ali lahko zaupam fotografijam in razpoložljivosti?",
+        "answer": "Oglasi uporabljajo javne fotografije in razpoložljivost, ki jih objavi partnersko podjetje — isti katalog, ki ga upravljajo v skrbniškem vmesniku. Če vozilo še nima javne fotografije, prikažemo prazno stanje namesto nadomestne slike drugega avtomobila. Končna razpoložljivost se potrdi na strani podjetja."
+      },
+      "account": {
+        "question": "Ali potrebujem račun?",
+        "answer": "Za iskanje ne potrebujete računa. Če pošljete kontaktno sporočilo, te podatke uporabimo izključno za odgovor."
+      },
+      "safety": {
+        "question": "Kdo je odgovoren za najem?",
+        "answer": "Pogodba je sklenjena med vami in partnerskim podjetjem za najem vozil. Pred potrditvijo preberite njihove pogoje. Benwer vam pomaga najti vozilo iz partnerskega voznega parka; tukaj vozil ne oddaja in ne sprejema plačil."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Aplikacija Benwer Cars",
+    "description": "Namestite Benwer Cars na svoj telefon. Aplikacija za Android je v zgodnjem testiranju v Google Play — pridružite se testu in jo pomagajte oblikovati."
+  },
+  "partners": {
+    "eyebrow": "Za podjetja za najem vozil",
+    "title": "Spremenite proste dni v rezervacije",
+    "description": "Popotniki na Benwer že iščejo avtomobile v Málagi. Objavite svoj vozni park enkrat in zapolnite dni, ko bi vozila sicer stala prazna.",
+    "cta": "Več informacij",
+    "ctaAria": "Več informacij na marketinški strani Benwer (odpre se v novem zavihku)",
+    "demo": "Oglejte si demo v živo",
+    "demoAria": "Oglejte si demo v živo (odpre se v novem zavihku)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Najem vozil",
+    "companyDescription": "Najemite avto pri {name} v kraju {location}.",
+    "companyDescriptionPlain": "Najemite avto pri {name}.",
+    "companyFallback": "Najem vozil",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Najemite {brand} {model} pri {company}.",
+    "carDescriptionSpecs": "Najemite {brand} {model} — {seats, plural, one {# sedež} two {# sedeža} few {# sedeži} other {# sedežev}}, {transmission}.",
+    "carsTitle": "Najem vozil po provinci Málaga"
+  },
+  "tenant": {
+    "notFoundTitle": "Podjetje ni bilo najdeno",
+    "notFoundDescription": "Te predstavitvene strani ni bilo mogoče naložiti.",
+    "loadErrorTitle": "Podatki o podjetju niso na voljo",
+    "loadErrorDescription": "Te predstavitvene strani ni bilo mogoče naložiti iz kataloga v živo. Poskusite znova — ob napaki API-ja ne prikazujemo nadomestnih avtomobilov.",
+    "logoAlt": "Logotip {name}"
+  },
+  "howItWorks": {
+    "eyebrow": "Trije koraki",
+    "title": "Kako deluje",
+    "subtitle": "Primerjajte partnerske vozne parke po Málagi, nato pa rezervirajte neposredno pri podjetju. Račun Benwer ni potreben.",
+    "stepLabel": "Korak {number}",
+    "searchTitle": "Izberite datume in kraj",
+    "searchBody": "Izberite kraj na obali Costa del Sol in dni, ki jih potrebujete. Prikazani so samo preverjeni partnerski vozni parki.",
+    "compareTitle": "Primerjajte prave avtomobile",
+    "compareBody": "Sedeži, menjalnik, fotografije in dnevna cena drug ob drugem pri vseh partnerjih.",
+    "continueTitle": "Rezervirajte pri podjetju",
+    "continueBody": "Potrdite prevzem, zavarovanje in plačilo pri podjetju za najem vozil, ki je lastnik avtomobila.",
+    "cta": "Začni iskanje",
+    "preview": {
+      "place": "Letališče Málaga",
+      "dates": "Pet → Pet · 7 dni",
+      "carA": "Kompaktni avto",
+      "carASpecs": "4 sedeži · Ročni",
+      "carB": "Družinski SUV",
+      "carBSpecs": "5 sedežev · Samodejni",
+      "confirmed": "Rezervacija potrjena",
+      "confirmedDetail": "Prevzem ob 10:00",
+      "example": "Primer"
+    }
+  },
+  "search": {
+    "locationLabel": "Kraj prevzema",
+    "locationPlaceholder": "Iskanje lokacij",
+    "locationEmpty": "Ni ujemajoče lokacije",
+    "allLocations": "Vse lokacije",
+    "allLocationsHint": "Vsako mesto z razpoložljivimi avtomobili",
+    "provinceSelected": "Vse lokacije",
+    "provinceHint": "Vsako mesto z razpoložljivimi avtomobili",
+    "pickupLabel": "Prevzem",
+    "dropoffLabel": "Vračilo",
+    "pickupPlaceholder": "Dodaj datum",
+    "dropoffPlaceholder": "Dodaj datum",
+    "pickupTrigger": "Datum prevzema, {date}",
+    "dropoffTrigger": "Datum vračila, {date}",
+    "calendarLabel": "Izberite datume",
+    "datesRequired": "Za iskanje izberite datum prevzema in vračila.",
+    "submit": "Išči",
+    "returnLocationLabel": "Kraj vračila",
+    "differentReturn": "Vrni na drugi lokaciji",
+    "returnSame": "Enako kot prevzem",
+    "returnNotOffered": "{company} ne ponuja vračila na drugi lokaciji.",
+    "branchChoose": "Izberite lokacijo",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Nalaganje lokacij…",
+    "branchAnyHint": "Vsaka poslovalnica z avtomobili"
+  },
+  "browseLocation": {
+    "title": "Brskajte po lokaciji",
+    "subtitle": "Priljubljena mesta v provinci Málaga",
+    "emptyTitle": "Še ni lokacij",
+    "emptyDescription": "Izpostavljena mesta se bodo prikazala tukaj.",
+    "cityAria": "Brskajte po avtomobilih v mestu {city}"
+  },
+  "map": {
+    "teaserTitle": "Poglejte, kje lahko prevzamete avto",
+    "teaserSubtitle": "Lokalni vozni parki po provinci Málaga — odprite zemljevid in skočite neposredno k podjetju.",
+    "teaserCta": "Odpri zemljevid",
+    "teaserCityAria": "Prikaži podjetja na zemljevidu v mestu {city}",
+    "listLabel": "Seznam",
+    "mapLabel": "Zemljevid",
+    "viewToggleAria": "Prikaži podjetja kot seznam ali zemljevid",
+    "regionAria": "Zemljevid podjetij za najem vozil v provinci Málaga",
+    "pinAria": "{name} v kraju {city}",
+    "fleetHint": "{count, plural, =0 {Še ni objavljenih avtomobilov} one {# avto na voljo} two {# avtomobila na voljo} few {# avtomobili na voljo} other {# avtomobilov na voljo}}",
+    "fleetHintUnknown": "Prikaži razpoložljive avtomobile",
+    "viewFleet": "Prikaži vozni park",
+    "closePin": "Zapri",
+    "loading": "Nalaganje podjetij…",
+    "errorDescription": "Zemljevida ni bilo mogoče naložiti. Namesto tega brskajte po seznamu.",
+    "emptyTitle": "Na zemljevidu ni podjetij",
+    "emptyDescription": "Poskusite drugo mesto v provinci Málaga.",
+    "resultsCount": "{count, plural, one {# podjetje v provinci Málaga} two {# podjetji v provinci Málaga} few {# podjetja v provinci Málaga} other {# podjetij v provinci Málaga}}",
+    "resultsInCity": "{count, plural, one {# podjetje v mestu {city}} two {# podjetji v mestu {city}} few {# podjetja v mestu {city}} other {# podjetij v mestu {city}}}",
+    "resultsAtBranch": "{count, plural, one {# podjetje v poslovalnici {branch}} two {# podjetji v poslovalnici {branch}} few {# podjetja v poslovalnici {branch}} other {# podjetij v poslovalnici {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Prikazanih {shown} od {total} avtomobilov",
+    "loadMore": "Prikaži več avtomobilov",
+    "seeAll": "Prikaži vse",
+    "title": "Razpoložljivi avtomobili",
+    "subtitle": "Vsi javni avtomobili partnerskih podjetij za najem vozil po provinci Málaga. Izberite datume in preverite razpoložljivost.",
+    "searchEmptyTitle": "Temu iskanju ne ustreza noben avto",
+    "searchEmptyHint": "Poskusite druge datume ali drugo lokacijo v provinci Málaga. Vsako mesto ostane na seznamu — tudi če tam danes ni objavljenih avtomobilov.",
+    "resultsInProvince": "{count, plural, one {# avto na vseh lokacijah} two {# avtomobila na vseh lokacijah} few {# avtomobili na vseh lokacijah} other {# avtomobilov na vseh lokacijah}}",
+    "resultsInCity": "{count, plural, one {# avto v mestu {city}} two {# avtomobila v mestu {city}} few {# avtomobili v mestu {city}} other {# avtomobilov v mestu {city}}}",
+    "allCompanies": "Vsa podjetja",
+    "companyPlaceholder": "Iskanje podjetij",
+    "companyTrigger": "Podjetje, {company}",
+    "perDay": "{price} / dan",
+    "perDaySuffix": " / dan",
+    "viewDetails": "Prikaži podrobnosti",
+    "notAvailableForDates": "Ni na voljo za te datume",
+    "bookUnavailable": "Prikaži avto",
+    "fleetSummary": "{total, plural, one {# avto} two {# avtomobila} few {# avtomobili} other {# avtomobilov}} · {available, plural, one {# na voljo} two {# na voljo} few {# na voljo} other {# na voljo}}",
+    "fleetSummaryForDates": "{total, plural, one {# avto} two {# avtomobila} few {# avtomobili} other {# avtomobilov}} · {available, plural, one {# na voljo} two {# na voljo} few {# na voljo} other {# na voljo}} · {from} – {to}",
+    "seats": "{count} sedežev",
+    "resultsCount": "{count, plural, one {# avto na voljo} two {# avtomobila na voljo} few {# avtomobili na voljo} other {# avtomobilov na voljo}}",
+    "resultsForDates": "{count, plural, one {# avto} two {# avtomobila} few {# avtomobili} other {# avtomobilov}} · {from} – {to}",
+    "emptyTitle": "Ta vozni park še ni javen",
+    "emptyHint": "To podjetje je navedeno, vendar njegova vozila še niso objavljena na Benwer. To je pričakovano, dokler vozila niso označena kot javna — ne gre za napako strani.",
+    "noResults": "Temu iskanju ne ustreza noben avto",
+    "noResultsHint": "Poskusite druge datume, drugo lokacijo ali manj filtrov.",
+    "browseCompanies": "Brskajte po podjetjih",
+    "clearFilters": "Počisti filtre",
+    "searchPlaceholder": "Išči po znamki ali modelu",
+    "filters": {
+      "title": "Filtri",
+      "seats": "Sedeži",
+      "transmission": "Menjalnik",
+      "company": "Podjetje",
+      "dates": "Datumi",
+      "from": "Datum prevzema",
+      "to": "Datum vračila",
+      "category": "Kategorija",
+      "fuel": "Vrsta goriva",
+      "all": "Vse",
+      "clear": "Počisti",
+      "selectedCount": "Izbrano: {count}"
+    },
+    "types": {
+      "car": "Avto",
+      "suv": "SUV",
+      "van": "Kombi",
+      "truck": "Tovornjak",
+      "motorcycle": "Motorno kolo"
+    },
+    "transmission": {
+      "automatic": "Samodejni",
+      "manual": "Ročni"
+    },
+    "fuel": {
+      "petrol": "Bencin",
+      "diesel": "Dizel",
+      "electric": "Elektrika",
+      "hybrid": "Hibrid",
+      "plugin_hybrid": "Priključni hibrid"
+    },
+    "rowDeposit": "Varščina {amount}",
+    "rowAvailable": "Na voljo za vaše datume",
+    "rowTotal": "Skupaj {amount} · {days, plural, one {# dan} two {# dneva} few {# dni} other {# dni}}",
+    "bookNow": "Rezerviraj zdaj",
+    "availableCount": "{count, plural, =0 {Ni razpoložljivih avtomobilov} one {# avto na voljo} two {# avtomobila na voljo} few {# avtomobili na voljo} other {# avtomobilov na voljo}}",
+    "availableForDates": "{count, plural, =0 {Ni razpoložljivih avtomobilov} one {# avto na voljo} two {# avtomobila na voljo} few {# avtomobili na voljo} other {# avtomobilov na voljo}} · {from} – {to}",
+    "categories": {
+      "economy": "Ekonomični",
+      "sedan": "Limuzina",
+      "suv": "SUV",
+      "minivan": "Enoprostorec",
+      "van": "Kombi",
+      "other": "Drugo"
+    },
+    "sort": {
+      "label": "Razvrsti po",
+      "recommended": "Priporočeno",
+      "pricePerDay_asc": "Najnižja dnevna cena",
+      "pricePerDay_desc": "Najvišja dnevna cena"
+    },
+    "colors": {
+      "white": "Bela",
+      "black": "Črna",
+      "silver": "Srebrna",
+      "grey": "Siva",
+      "red": "Rdeča",
+      "blue": "Modra",
+      "green": "Zelena",
+      "orange": "Oranžna",
+      "yellow": "Rumena",
+      "brown": "Rjava",
+      "beige": "Bež",
+      "gold": "Zlata",
+      "purple": "Vijolična"
+    },
+    "viewCar": "Prikaži avto",
+    "opensCompanySite": "(odpre spletno stran podjetja)"
+  },
+  "carDetail": {
+    "bookNow": "Rezerviraj zdaj",
+    "continueOnCompany": "Nadaljuj na {company}",
+    "rentOnCompanySite": "Najem na strani podjetja",
+    "handoffHint": "Preden vas preusmerimo na spletno stran podjetja za dokončanje rezervacije, vas bomo vprašali za potrditev.",
+    "pricePerDay": "{price} na dan",
+    "specs": "Specifikacije",
+    "year": "Letnik",
+    "type": "Tip",
+    "transmission": "Menjalnik",
+    "fuel": "Gorivo",
+    "seats": "Sedeži",
+    "availability": "Razpoložljivost",
+    "availabilityError": "Razpoložljivosti ni bilo mogoče naložiti. Poskusite znova.",
+    "availabilityUnavailable": "Razpoložljivost ni na voljo",
+    "checkingAvailability": "Preverjanje razpoložljivosti…",
+    "notAvailable": "Ta avto za izbrane datume ni na voljo.",
+    "selectPickup": "Izberite datum prevzema",
+    "selectDropoff": "Zdaj izberite datum vračila",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Počisti datume",
+    "addDate": "Dodaj datum",
+    "calendarLabel": "Koledar razpoložljivosti",
+    "legend": "Legenda koledarja",
+    "available": "Na voljo",
+    "selected": "Izbrano",
+    "unavailable": "Ni na voljo",
+    "openDates": "V naslednjih {months} mesecih ni rezerviranih terminov.",
+    "breadcrumbAria": "Drobtinice",
+    "photoEmpty": "Fotografije bodo kmalu na voljo",
+    "previousPhoto": "Prejšnja fotografija",
+    "nextPhoto": "Naslednja fotografija",
+    "viewPhoto": "Prikaži fotografijo {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, fotografija {index}",
+    "backToFleet": "Nazaj na vozni park",
+    "metaTitle": "Podrobnosti o avtomobilu",
+    "about": "O tem avtomobilu",
+    "category": "Kategorija",
+    "color": "Barva",
+    "deposit": "Varščina",
+    "mileage": "Prevoženi kilometri",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Preusmerjamo vas na spletno stran za rezervacije podjetja {company}, da dokončate svojo rezervacijo.",
+    "handoffTrust": "{company} je zaupanja vreden partner Benwer.",
+    "handoffContinue": "Nadaljuj",
+    "handoffCancel": "Prekliči",
+    "handoffCompanyFallback": "podjetja"
+  },
+  "booking": {
+    "title": "Dokončajte rezervacijo",
+    "subtitle": "Potrdite svoje podatke — račun ni potreben.",
+    "details": "Vaši podatki",
+    "detailsHint": "Te podatke bomo uporabili izključno za potrditev te rezervacije.",
+    "guestName": "Polno ime",
+    "guestNamePlaceholder": "Ana Novak",
+    "guestEmail": "E-poštni naslov",
+    "guestEmailPlaceholder": "ana@example.com",
+    "guestEmailHint": "Potrditev bo poslana na ta naslov.",
+    "guestPhone": "Telefonska številka",
+    "guestPhonePlaceholder": "+386 40 000 000",
+    "guestPhoneHint": "Podjetje za najem vozil vas lahko kontaktira glede prevzema.",
+    "startDate": "Datum prevzema",
+    "endDate": "Datum vračila",
+    "datesHint": "Datumi izhajajo iz koledarja vozila. Tukaj jih lahko prilagodite.",
+    "addDate": "Dodaj datum",
+    "changeDates": "Spremeni datume na koledarju",
+    "summary": "Povzetek rezervacije",
+    "vehicle": "Vozilo",
+    "company": "Podjetje",
+    "rate": "Dnevna cena",
+    "duration": "Trajanje",
+    "totalPrice": "Skupaj",
+    "nights": "{count, plural, one {# dan} two {# dneva} few {# dni} other {# dni}}",
+    "stickyMeta": "{name} · {count, plural, one {# dan} two {# dneva} few {# dni} other {# dni}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Potrdi rezervacijo",
+    "confirmRequest": "Pošlji zahtevo",
+    "requesting": "Pošiljanje zahteve…",
+    "confirming": "Potrjevanje…",
+    "sitePaused": "Ne sprejema rezervacij",
+    "insurance": "Zavarovanje",
+    "termsLabel": "Pogoji najema",
+    "termsAccept": "Strinjam se s",
+    "termsLink": "pogoji najema",
+    "successTitle": "Rezervacija je potrjena!",
+    "successMessage": "Potrditev je bila poslana na {email}.",
+    "viewBooking": "Prikaži mojo rezervacijo",
+    "selectDates": "Za nadaljevanje izberite datume",
+    "invalidDates": "Izberite veljaven razpon datumov",
+    "backToCar": "Nazaj na {name}",
+    "trustNoAccount": "Račun ni potreben",
+    "trustEmail": "Potrditev po e-pošti",
+    "trustNoPayment": "Brez plačila zdaj",
+    "trustCardPayment": "Plačilo s kartico po rezervaciji",
+    "trustFooter": "S potrditvijo zaprosite za to vozilo za navedene datume. Podjetje bo rezervacijo upoštevalo.",
+    "missingTitle": "Za nadaljevanje izberite avto",
+    "missingDescription": "Pred dokončanjem rezervacije izberite vozilo in datume.",
+    "browseCars": "Brskajte po avtomobilih",
+    "vehicleMissingTitle": "Ta avto ni več na voljo",
+    "vehicleMissingDescription": "Morda je že bil rezerviran. Izberite drugega iz voznega parka.",
+    "viewFleet": "Prikaži vozni park",
+    "datesMissingTitle": "Dodajte datume potovanja",
+    "datesMissingDescription": "Vrnite se k avtomobilu in izberite proste datume ali jih vnesite v obrazec.",
+    "pickDates": "Izberite datume za avto",
+    "formAria": "Podatki gosta za rezervacijo",
+    "validation": {
+      "nameMin": "Vnesite polno ime (vsaj 2 znaka).",
+      "email": "Vnesite veljaven e-poštni naslov.",
+      "phone": "Vnesite veljavno telefonsko številko.",
+      "startDate": "Izberite datum prevzema.",
+      "endDate": "Izberite datum vračila.",
+      "endAfterStart": "Datum vračila mora biti po datumu prevzema.",
+      "terms": "Za nadaljevanje sprejmite pogoje najema.",
+      "fixErrors": "Popravite označena polja."
+    },
+    "averageRate": "Povprečna dnevna cena",
+    "breakdownTitle": "Razčlenitev cene",
+    "standardRate": "Standardna cena",
+    "weekendRate": "Vikend",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Najemi v tej sezoni morajo trajati vsaj {limit, plural, one {# dan} two {# dneva} few {# dni} other {# dni}}. Za rezervacijo spremenite datume.",
+    "warningMaxDays": "Najemi v tej sezoni lahko trajajo največ {limit, plural, one {# dan} two {# dneva} few {# dni} other {# dni}}. Za rezervacijo spremenite datume.",
+    "returnLocation": "Kraj vračila",
+    "oneWayFee": "Doplačilo za vračilo na drugi lokaciji",
+    "signedInAs": "Prijavljeni kot {email}",
+    "signInPrompt": "Imate račun?",
+    "signInLink": "Prijavite se za samodejno izpolnitev podatkov",
+    "subtitleSignedIn": "Preverite svoje podatke in potrdite.",
+    "trustPaymentAfter": "Podatki za plačilo sledijo po rezervaciji",
+    "extras": "Dodatki",
+    "extraPerDay": "{price} / dan",
+    "extraFixed": "{price} / najem",
+    "tripDetails": "Podrobnosti potovanja",
+    "pickupTime": "Ura prevzema",
+    "returnTime": "Ura vračila",
+    "timeAny": "Kadar koli",
+    "flightNumber": "Številka leta",
+    "flightNumberHint": "Prevzem je na letališču. Dodajte številko leta, da lahko podjetje spremlja morebitne zamude.",
+    "flightNumberOptional": "Dodajte jo, če prihajate z letalom.",
+    "notes": "Opombe",
+    "notesPlaceholder": "Ali mora podjetje vedeti še kaj?",
+    "dateOfBirth": "Datum rojstva",
+    "optional": "neobvezno",
+    "extraSoldOut": "Ni na voljo za te datume"
+  },
+  "reservationStatus": {
+    "title": "Vaša rezervacija",
+    "successTitle": "Rezervacija je uspešna",
+    "successSubtitle": "Potrditev smo poslali na {email}.",
+    "status": {
+      "draft": "V čakanju",
+      "confirmed": "Potrjena",
+      "active": "Aktivna — prijetno potovanje!",
+      "completed": "Zaključena",
+      "cancelled": "Preklicana"
+    },
+    "vehicle": "Vozilo",
+    "company": "Podjetje",
+    "dates": "Datumi",
+    "pickup": "Prevzem",
+    "dropoff": "Vračilo",
+    "guest": "Gost",
+    "email": "E-pošta",
+    "phone": "Telefon",
+    "total": "Skupaj",
+    "reference": "Referenca",
+    "referenceHint": "Pokažite ob prevzemu.",
+    "trustCopy": "Shranite to stran — to je vaše potrdilo o rezervaciji. Od tu naprej bo poskrbelo podjetje za najem vozil.",
+    "trustEmail": "Potrditev poslana po e-pošti",
+    "trustPickup": "Pokažite to stran ob prevzemu",
+    "nextTitle": "Kaj sledi",
+    "nextEmail": "Preverite e-pošto {email} za potrditev.",
+    "nextPickup": "Ob prevzemu pokažite svojo referenco.",
+    "browseMore": "Brskajte po drugih avtomobilih",
+    "notFoundTitle": "Rezervacija ni bila najdena",
+    "notFoundDescription": "Preverite povezavo v potrditvenem e-poštnem sporočilu ali začnite novo iskanje.",
+    "backHome": "Nazaj na domačo stran",
+    "requestExpires": "Zahteva poteče",
+    "cancelReason": "Razlog za preklic",
+    "withdraw": "Umakni zahtevo",
+    "paymentStatus": "Plačilo",
+    "paidAmount": "Plačano",
+    "payment": {
+      "unpaid": "Neplačano",
+      "partially_paid": "Delno plačano",
+      "paid": "Plačano",
+      "refund_due": "Za vračilo",
+      "authorized": "Kartica avtorizirana"
+    },
+    "reasons": {
+      "unpaid_timeout": "Plačilo ni bilo opravljeno pravočasno",
+      "request_expired": "Podjetje ni odgovorilo pravočasno",
+      "request_declined": "Podjetje je to zahtevo zavrnilo",
+      "customer_request": "To zahtevo ste umaknili"
+    },
+    "insurance": "Zavarovanje",
+    "extras": "Dodatki",
+    "fees": "Stroški prevzema in vračila",
+    "priceTitle": "Povzetek cene"
+  },
+  "payment": {
+    "title": "Plačilo predujma",
+    "amountDue": "Znesek za plačilo: {amount}",
+    "countdown": "Dokončajte plačilo v {time}",
+    "requestAuthorize": "Vaša kartica se zdaj avtorizira, bremenjena pa bo šele, ko podjetje sprejme zahtevo.",
+    "pay": "Plačaj zdaj",
+    "paying": "Obdelava…",
+    "confirming": "Potrjevanje vašega plačila",
+    "confirmingHint": "Prosimo počakajte — plačilo potrjujemo pri podjetju, ne prek obrazca za kartico.",
+    "declined": "Kartica je bila zavrnjena. Poskusite drugo kartico.",
+    "secure": "Podatke o kartici obdeluje Stripe v testnem načinu.",
+    "cancelBooking": "Prekliči rezervacijo",
+    "cancelTitle": "Želite preklicati to rezervacijo?",
+    "cancelDescription": "Uporabila se bodo pravila odpovedi podjetja. Pred potrditvijo preverite strošek odpovedi in vračilo.",
+    "cancelFee": "Strošek odpovedi",
+    "cancelRefund": "Vračilo",
+    "confirmCancel": "Potrdi preklic",
+    "keepBooking": "Obdrži rezervacijo",
+    "cancelled": "Vaša rezervacija je bila preklicana."
+  },
+  "companies": {
+    "title": "Podjetja za najem vozil",
+    "subtitle": "Brskajte po partnerskih podjetjih za najem vozil po Málagi — na zemljevidu ali na seznamu",
+    "searchPlaceholder": "Iskanje podjetij…",
+    "noResults": "Nobeno podjetje ni bilo najdeno",
+    "noResultsHint": "Poskusite drugo lokacijo v provinci Málaga.",
+    "emptyTitle": "Še ni objavljenih podjetij",
+    "emptyDescription": "Še ni objavljenih podjetij za najem vozil.",
+    "clearFilters": "Počisti iskanje",
+    "viewFleet": "Prikaži vozni park",
+    "visitWebsite": "Obišči spletno stran",
+    "contact": "Kontakt",
+    "backToList": "Vsa podjetja",
+    "notFoundTitle": "Podjetje ni bilo najdeno",
+    "notFoundDescription": "To podjetje za najem vozil ni na seznamu. Oglejte si druga v bližini.",
+    "loadErrorTitle": "Podatki o podjetju niso na voljo",
+    "loadErrorDescription": "Tega podjetja za najem vozil ni bilo mogoče naložiti iz kataloga v živo. Poskusite znova — ob napaki API-ja ne prikazujemo nadomestnih avtomobilov.",
+    "browseCars": "Brskajte po avtomobilih",
+    "featuredEmpty": "Še ni izpostavljenih podjetij",
+    "featuredEmptyHint": "Preverite kmalu znova ali brskajte po avtomobilih lokalnih voznih parkov.",
+    "locationUnknown": "Lokacija ni navedena",
+    "noDescription": "Še ni opisa."
+  },
+  "contact": {
+    "title": "Stopite v stik z nami",
+    "lede": "Imate vprašanja o tržnici? Pošljite nam sporočilo in odgovorili vam bomo takoj, ko bo mogoče.",
+    "bookingHint": "Ta obrazec ni namenjen rezervacijam. Za najem avtomobila nadaljujte na spletni strani podjetja za najem vozil.",
+    "name": "Polno ime",
+    "email": "E-poštni naslov",
+    "subject": "Zadeva",
+    "message": "Sporočilo",
+    "submit": "Pošlji sporočilo",
+    "privacyNote": "Te podatke uporabimo samo za odgovor.",
+    "errors": {
+      "nameMin": "Vnesite svoje ime (vsaj 2 znaka).",
+      "email": "Vnesite veljaven e-poštni naslov.",
+      "subjectMin": "Vnesite zadevo (vsaj 3 znake).",
+      "messageMin": "Vnesite sporočilo (vsaj 10 znakov)."
+    },
+    "eyebrow": "Podpora",
+    "namePlaceholder": "Ana Novak",
+    "emailPlaceholder": "vi@example.com",
+    "subjectPlaceholder": "Kako vam lahko pomagamo?",
+    "messagePlaceholder": "Povejte nam, kaj potrebujete…",
+    "supportSubjectDefault": "Zahteva za podporo",
+    "submitting": "Pošiljanje…",
+    "submittedTitle": "Sporočilo poslano",
+    "submittedDescription": "Hvala, ker ste nam pisali. Na vaš e-poštni naslov bomo odgovorili takoj, ko bo mogoče.",
+    "sendAnother": "Pošlji novo sporočilo",
+    "backHome": "Nazaj na domačo stran",
+    "whatsappTitle": "Raje uporabljate WhatsApp?",
+    "whatsappDescription": "Klepetajte neposredno z ekipo Benwer Cars."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Politika zasebnosti",
+      "lede": "Kako ravnamo z osebnimi podatki, ko uporabljate tržnico Benwer Cars.",
+      "updated": "Zadnja posodobitev: 13. september 2026",
+      "sections": [
+        {
+          "title": "Kdo smo",
+          "body": "Benwer Cars (»Benwer«, »mi«, »nas«) upravlja potrošniško tržnico, ki popotnikom pomaga odkrivati vozne parke za najem vozil v provinci Málaga.\n\nTa politika velja samo za spletno stran tržnice. Če za rezervacijo nadaljujete na lastno spletno stran podjetja za najem vozil, je za podatke, ki jih tam oddate, odgovorno to podjetje."
+        },
+        {
+          "title": "Kaj počne ta tržnica",
+          "body": "Iščete lahko avtomobile in podjetja, primerjate javne podatke o voznih parkih in nadaljujete na spletno stran podjetja za najem vozil, da dokončate rezervacijo.\n\nBenwer na tržnici ne sprejema plačil in ne sklepa najemnih pogodb. Najemna pogodba je sklenjena med vami in podjetjem."
+        },
+        {
+          "title": "Katere podatke zbiramo",
+          "body": "Glede na to, kako uporabljate tržnico, lahko obdelujemo:\n\n• Podatke o iskanju in uporabi — lokacijo in datume, ki jih vnesete, strani, ki si jih ogledate, ter osnovne tehnične podatke, kot so naslov IP, brskalnik in informacije o napravi.\n• Izbiro jezika — shranjeno kot nujno potreben piškotek, da vam lahko prikažemo izbrani jezik.\n• Soglasje za piškotke — shranjeno v vaši napravi, da si zapomnimo vašo izbiro.\n• Kontaktna sporočila — ime, e-pošto, zadevo in sporočilo, če nam pišete. Ta sporočila označimo kot poslana s tržnice.\n\nNa tržnici od vas ne zahtevamo ustvarjanja računa. Podatke za rezervacijo in plačilo zbira podjetje za najem vozil na svoji spletni strani v skladu z lastno politiko zasebnosti."
+        },
+        {
+          "title": "Kako uporabljamo podatke",
+          "body": "Osebne podatke uporabljamo za delovanje in izboljševanje tržnice, pomnjenje izbire jezika in piškotkov, odgovarjanje na kontaktna sporočila, zagotavljanje varnosti storitve in izpolnjevanje zakonskih obveznosti.\n\nVaših osebnih podatkov ne prodajamo."
+        },
+        {
+          "title": "Pravne podlage (EGP / Združeno kraljestvo)",
+          "body": "Kjer je to primerno, se opiramo na zakoniti interes (vodenje javnega imenika in varovanje spletnega mesta), privolitev (izbirni piškotki, če bodo uvedeni), zakonsko obveznost in ukrepe, potrebne za odgovor, ko stopite v stik z nami."
+        },
+        {
+          "title": "Deljenje podatkov",
+          "body": "Za gostovanje in dostavo e-pošte lahko uporabljamo zaupanja vredne ponudnike. Ti podatke obdelujejo po naših navodilih.\n\nČe nadaljujete na spletno stran podjetja, to podjetje postane upravljavec vseh podatkov, ki jih tam oddate. Vašega sporočila iz kontaktnega obrazca ne posredujemo podjetjem za najem vozil, razen če nas za to zaprosite."
+        },
+        {
+          "title": "Piškotki",
+          "body": "Uporabljamo nujno potreben jezikovni piškotek in vašo izbiro glede piškotkov shranjujemo v vaši napravi. Podrobnosti najdete v politiki piškotkov. Izbirni piškotki ostanejo izklopljeni, razen če jih sprejmete."
+        },
+        {
+          "title": "Hramba podatkov",
+          "body": "Kontaktna sporočila hranimo toliko časa, kolikor je potrebno za odgovor in razumno nadaljnje obdobje. Tehnične dnevnike hranimo kratek čas. Vaša izbira glede piškotkov ostane shranjena, dokler je ne spremenite ali ne počistite podatkov spletnega mesta."
+        },
+        {
+          "title": "Vaše pravice",
+          "body": "Odvisno od vaše lokacije imate lahko pravico do dostopa, popravka, izbrisa, omejitve obdelave ali prenosljivosti podatkov ter pravico do ugovora določeni obdelavi. Prav tako lahko vložite pritožbo pri lokalnem nadzornem organu.\n\nZa uveljavljanje svojih pravic uporabite stran za stik."
+        },
+        {
+          "title": "Mednarodni prenosi",
+          "body": "Če se podatki prenašajo izven vaše države, uporabljamo ustrezne zaščitne ukrepe, kot so standardne pogodbene klavzule ali enakovredni mehanizmi, kjer to zahteva zakon."
+        },
+        {
+          "title": "Spremembe",
+          "body": "To politiko lahko občasno posodobimo. Posodobljeno različico bomo objavili na tej strani in spremenili datum »Zadnja posodobitev«."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Pogoji uporabe",
+      "lede": "Pravila za uporabo tržnice Benwer Cars za odkrivanje voznih parkov za najem vozil.",
+      "updated": "Zadnja posodobitev: 13. september 2026",
+      "sections": [
+        {
+          "title": "Tržnica",
+          "body": "Benwer Cars ponuja javni imenik podjetij za najem vozil in njihovih objavljenih voznih parkov. Avtomobile lahko primerjate in nadaljujete na lastno spletno stran podjetja, da dokončate najem.\n\nTi pogoji veljajo za spletno stran tržnice. Ne nadomeščajo lastnih pogojev podjetja za najem vozil, ki veljajo pri rezervaciji pri njih."
+        },
+        {
+          "title": "Rezervacije potekajo pri podjetjih za najem vozil",
+          "body": "Benwer na tržnici ne oddaja vozil, ne sprejema plačil in ne sklepa najemnih pogodb.\n\nČe nadaljujete na spletno stran podjetja, so vse rezervacije, varščine, zavarovanja in dogovori o prevzemu med vami in tem podjetjem. Pred potrditvijo preberite njihove pogoje."
+        },
+        {
+          "title": "Oglasi in razpoložljivost",
+          "body": "Podatke o voznem parku, cene, fotografije in razpoložljivost objavljajo podjetja za najem vozil in se lahko spremenijo. Javne informacije si prizadevamo prikazovati natančno, vendar ne jamčimo, da bo avto še na voljo ali da bo navedena cena veljala, dokler je podjetje ne potrdi.\n\nDatumi, ki jih vnesete na tržnici, vam pomagajo pri iskanju. Končna razpoložljivost se potrdi na strani podjetja."
+        },
+        {
+          "title": "Sprejemljiva uporaba",
+          "body": "Tržnico uporabljajte zakonito. Ne izvajajte samodejnega zajemanja podatkov, ne preobremenjujte ali motite storitve, ne oddajajte lažnih kontaktnih podatkov in spletnega mesta ne uporabljajte za škodovanje drugim osebam ali podjetjem."
+        },
+        {
+          "title": "Odgovornost",
+          "body": "Tržnica je na voljo kot storitev za odkrivanje ponudbe. V obsegu, ki ga dovoljuje zakon, Benwer ne odgovarja za spore glede najema, stanje vozil ali rezervacije, zaključene na spletni strani podjetja.\n\nNič v teh pogojih ne omejuje pravic, ki jih imate kot potrošnik in se jim po veljavnem pravu ni mogoče odpovedati."
+        },
+        {
+          "title": "Spremembe",
+          "body": "Te pogoje lahko posodobimo. Datum »Zadnja posodobitev« na tej strani prikazuje trenutno različico. Nadaljnja uporaba po spremembi pomeni, da se strinjate s posodobljenimi pogoji."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Vprašanja o teh pogojih ali tržnici lahko pošljete prek strani za stik. Glede rezervacije, ki ste jo že začeli, se obrnite neposredno na podjetje za najem vozil."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Politika piškotkov",
+      "lede": "Kako na tržnici uporabljamo piškotke in podobne tehnologije.",
+      "updated": "Zadnja posodobitev: 13. september 2026",
+      "sections": [
+        {
+          "title": "Kaj uporabljamo",
+          "body": "Piškotki so majhne besedilne datoteke, shranjene v vaši napravi. Za pomnjenje vaših izbir uporabljamo tudi podobno shrambo, kot je lokalna shramba.\n\nTa politika velja za tržnico Benwer Cars. Ko nadaljujete na spletno stran podjetja za najem vozil, lahko ta stran nastavi svoje piškotke."
+        },
+        {
+          "title": "Nujno potrebni piškotki",
+          "body": "Uporabljamo jezikovni piškotek, da lahko spletno mesto prikaže vaš izbrani jezik. To je potrebno, da tržnica deluje po vaših pričakovanjih.\n\nVaša izbira v pasici za piškotke se shrani v vaši napravi, da vas ne sprašujemo znova ob vsakem obisku. Ta shramba se ne uporablja za oglaševanje."
+        },
+        {
+          "title": "Izbirni piškotki",
+          "body": "Izbirni piškotki (na primer analitični) ostanejo izklopljeni, razen če izberete Sprejmi vse.\n\nDanes tržnica ne nastavlja analitičnih ali marketinških piškotkov. Če jih bomo dodali pozneje, jih bomo opisali tukaj in še vedno bodo zahtevali vaše soglasje."
+        },
+        {
+          "title": "Upravljanje piškotkov",
+          "body": "Uporabite pasico, da sprejmete vse piškotke ali obdržite samo nujne. Piškotke in podatke spletnih mest lahko izbrišete tudi v svojem brskalniku. Blokiranje jezikovnega piškotka lahko ob naslednjem obisku ponastavi privzeti jezik."
+        },
+        {
+          "title": "Več informacij",
+          "body": "Oglejte si politiko zasebnosti za informacije o ravnanju z osebnimi podatki ali pošljite sporočilo prek strani za stik."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} domov",
+    "defaultHeadline": "Najemite avto pri {name}",
+    "footerTagline": "Rezervirajte neposredno pri tem podjetju za najem vozil.",
+    "previewBanner": "Predogled — ta stran ni javna. Iskalniki je ne bodo indeksirali.",
+    "editLink": "Uredi",
+    "editContactEmpty": "Kontaktni podatki so skriti. Uredite jih v skrbniškem vmesniku.",
+    "editBranchesEmpty": "Še ni poslovalnic. Dodajte jih v skrbniškem vmesniku.",
+    "editRulesHint": "Način rezervacije, najkrajši čas pred prevzemom in rok za odgovor.",
+    "editDomainHint": "Domena po meri in javni URL.",
+    "editSection": {
+      "hero": "Uvod",
+      "search": "Iskanje",
+      "fleet": "Vozni park",
+      "branches": "Poslovalnice",
+      "contact": "Kontakt",
+      "rules": "Pravila rezervacij",
+      "domain": "Domena"
+    },
+    "pausedTitle": "Ne sprejema rezervacij",
+    "pausedDescription": "To podjetje je začasno ustavilo spletne rezervacije. Še vedno pa lahko brskate po voznem parku.",
+    "notFoundTitle": "Spletna stran ni bila najdena",
+    "notFoundDescription": "Ta spletna stran za najem vozil ni na voljo.",
+    "loadErrorTitle": "Spletna stran ni na voljo",
+    "loadErrorDescription": "Te spletne strani za najem vozil ni bilo mogoče naložiti. Kmalu poskusite znova.",
+    "search": "Išči avtomobile",
+    "searchAria": "Iskanje po datumih in lokaciji",
+    "searchTitle": "Išči avtomobile",
+    "searchDescription": "Izberite datume in lokacijo, da vidite, kaj je na voljo.",
+    "branch": "Kraj prevzema",
+    "anyBranch": "Katera koli lokacija",
+    "ownerSignIn": "Prijava lastnika",
+    "returnBranch": "Kraj vračila",
+    "differentReturn": "Vrni na drugi lokaciji",
+    "returnSame": "Enako kot prevzem",
+    "driverAge": "Starost voznika",
+    "driverAgeYears": "{band} let",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Uredite svojo spletno stran",
+    "signInHint": "Lastniki odprejo urejevalnik spletne strani iz skrbniškega vmesnika Benwer. Tam uporabite gumb »Uredi spletno stran« in tukaj boste samodejno prijavljeni.",
+    "signedInTitle": "Prijavljeni ste",
+    "signedInHint": "Če lahko upravljate to spletno stran, se urejevalnik odpre na domači strani.",
+    "openEditor": "Odpri urejevalnik spletne strani",
+    "disabledTitle": "Urejanje za lastnike ni na voljo",
+    "disabledDescription": "Firebase za osebje na tej tržnici ni nastavljen.",
+    "signOut": "Odjava",
+    "auth": {
+      "tooManyRequests": "Preveč poskusov. Poskusite pozneje.",
+      "unknown": "Prijava ni uspela. Poskusite znova.",
+      "invalidToken": "Ta prijavna povezava je potekla ali je že bila uporabljena. Znova odprite urejevalnik iz skrbniškega vmesnika Benwer."
+    },
+    "signingIn": "Prijavljanje…",
+    "openAdmin": "Odpri skrbniški vmesnik Benwer",
+    "accountMenu": "Račun lastnika",
+    "signedInAs": "Prijavljeni kot lastnik",
+    "guestSignedOut": "Odjavljeni ste bili iz računa za goste. Seji lastnika in gosta v tem brskalniku ne moreta biti odprti hkrati."
+  },
+  "guest": {
+    "googleAction": "Prijava z računom Google",
+    "googleCreate": "Nadaljuj z računom Google",
+    "or": "ali",
+    "forgotPassword": "Ste pozabili geslo?",
+    "resetTitle": "Ponastavitev gesla",
+    "resetHint": "Vnesite svoj e-poštni naslov in poslali vam bomo povezavo za izbiro novega gesla.",
+    "resetAction": "Pošlji povezavo za ponastavitev",
+    "resetSentTitle": "Preverite svojo e-pošto",
+    "resetSentHint": "Če za ta naslov obstaja račun, smo poslali navodila za ponastavitev gesla. Niste prejeli? Preverite mapo z neželeno pošto ali počakajte nekaj minut in poskusite znova.",
+    "backToSignIn": "Nazaj na prijavo",
+    "signInNav": "Prijava",
+    "myBookings": "Moje rezervacije",
+    "signInTitle": "Prijava",
+    "signInHint": "Uporabite svoj račun za goste za to podjetje za najem vozil. To ni prijava za osebje.",
+    "signInAction": "Prijava",
+    "createTitle": "Ustvarite račun za goste",
+    "createHint": "Shranite svoje rezervacije pri tem podjetju. Osebje uporablja drugo prijavo.",
+    "createAction": "Ustvari račun",
+    "needAccount": "Potrebujete račun? Ustvarite ga",
+    "haveAccount": "Že imate račun? Prijavite se",
+    "email": "E-pošta",
+    "password": "Geslo",
+    "bookingsTitle": "Moje rezervacije",
+    "bookingsMeta": "Povezane rezervacije za to podjetje za najem vozil.",
+    "bookingsHint": "Prijavljeni kot {email} pri {company}.",
+    "emptyTitle": "Še ni rezervacij",
+    "emptyDescription": "Ste že prej rezervirali? Povežite tisto rezervacijo z e-poštnim naslovom, ki ste ga uporabili, ali z njenim potrditvenim žetonom.",
+    "bookingFallback": "Rezervacija",
+    "loadErrorTitle": "Rezervacij ni bilo mogoče naložiti",
+    "linkTitle": "Poveži rezervacijo",
+    "linkHint": "Vnesite e-poštni naslov, uporabljen pri rezervaciji, ali potrditveni žeton. Če najdemo ujemanje, bomo povezavo poslali po e-pošti — nikoli ne razkrijemo, ali račun obstaja.",
+    "linkEmail": "E-pošta rezervacije",
+    "linkToken": "Žeton rezervacije",
+    "linkAction": "Pošlji povezavo",
+    "linkSent": "Če najdemo ujemajočo se rezervacijo, bomo po e-pošti poslali potrditveno povezavo.",
+    "accountTitle": "Račun",
+    "accountHint": "Odjavite se iz svojega računa na tej strani.",
+    "signOut": "Odjava",
+    "erase": "Izbriši moje podatke tukaj",
+    "eraseConfirm": "Da, izbriši moje podatke za to podjetje",
+    "confirmTitle": "Povezovanje vaše rezervacije",
+    "confirmHint": "Počakajte, da to rezervacijo povežemo z vašim računom.",
+    "confirmSignIn": "Za dokončanje povezovanja te rezervacije se prijavite s svojim računom za goste.",
+    "confirmMissing": "Manjka potrditveni žeton",
+    "confirmMissingHint": "Znova odprite povezavo iz svoje e-pošte.",
+    "confirmError": "Te povezave ni bilo mogoče potrditi",
+    "disabledTitle": "Računi za goste še niso na voljo",
+    "disabledDescription": "To podjetje še ni omogočilo prijave gostov. Še vedno lahko rezervirate s svojim imenom, e-pošto in telefonom.",
+    "auth": {
+      "popupClosed": "Prijava je bila preklicana.",
+      "popupBlocked": "Vaš brskalnik je blokiral okno Google. Dovoli pojavna okna in poskusite znova.",
+      "differentProvider": "Ta e-poštni naslov se že prijavlja na drug način. Namesto tega uporabite geslo.",
+      "providerUnavailable": "Prijava z računom Google na tej strani še ni na voljo. Uporabite e-pošto in geslo.",
+      "invalidEmail": "Vnesite veljaven e-poštni naslov.",
+      "emailInUse": "Ta e-poštni naslov že ima račun za goste. Namesto tega se prijavite.",
+      "weakPassword": "Uporabite daljše geslo.",
+      "tooManyRequests": "Preveč poskusov. Poskusite znova čez nekaj minut.",
+      "invalidCredentials": "E-poštni naslov ali geslo ni pravilno.",
+      "unknown": "Prijava ni uspela. Poskusite znova.",
+      "googleDisabled": "Prijava z računom Google za to stran še ni vključena. Uporabite e-pošto in geslo.",
+      "domainNotAuthorised": "Prijava z računom Google za naslov te strani še ni nastavljena. Za zdaj uporabite e-pošto in geslo."
+    },
+    "accountMenu": "Vaš račun",
+    "profileNav": "Profil",
+    "profileTitle": "Profil",
+    "profileMeta": "Vaš račun za goste za to podjetje za najem vozil.",
+    "linkCancel": "Prekliči",
+    "eraseTitle": "Izbriši moje podatke",
+    "eraseHint": "Izbriše vaše podatke gosta za to podjetje in vas odjavi. To ne vpliva na druga podjetja.",
+    "profileDetailsTitle": "Vaši podatki",
+    "profileDetailsHint": "Uporabljajo se za izpolnjevanje vaših rezervacij pri tem podjetju.",
+    "profileFullName": "Polno ime",
+    "profilePhone": "Telefonska številka",
+    "profileDob": "Datum rojstva",
+    "profileSave": "Shrani podatke",
+    "profileNotLinked": "Vaše ime in telefon se tukaj shranita po vaši prvi rezervaciji s to e-pošto. Ste že rezervirali z drugim e-poštnim naslovom? Povežite tisto rezervacijo v razdelku Moje rezervacije.",
+    "verifyTitle": "Potrdite svoj e-poštni naslov za ogled rezervacij",
+    "verifyHint": "Poslali smo povezavo na {email}. Odprite jo in se vrnite sem. Dokler vaš e-poštni naslov ni potrjen, ne moremo prikazati vaših rezervacij niti shraniti vašega imena in telefona.",
+    "verifyResend": "Ponovno pošlji e-pošto",
+    "verifySent": "E-pošta je poslana. Preverite mapo Prejeto in neželeno pošto.",
+    "verifyDone": "Potrdil(a) sem svoj e-poštni naslov",
+    "verifyStillPending": "Vaš e-poštni naslov še ni potrjen. Odprite povezavo v e-pošti in poskusite znova.",
+    "verifyBanner": "Vaš račun še ni aktiven. Potrdite {email}, da si ogledate rezervacije in uporabite shranjene podatke.",
+    "verifyBannerAction": "Potrdi e-pošto",
+    "profileEdit": "Uredi podatke",
+    "profileCancel": "Prekliči",
+    "profileEmail": "E-pošta",
+    "profileEmpty": "Ni dodano",
+    "bookingsUpcoming": "Prihajajoče",
+    "bookingsPast": "Pretekle",
+    "ownerSignedOut": "Odjavljeni ste bili iz urejevalnika spletne strani. Seji lastnika in gosta v tem brskalniku ne moreta biti odprti hkrati."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Ponudbe {name}",
+      "slideAlt": "Pasica {name} {position}",
+      "slideLabel": "{position} od {count}",
+      "previous": "Prejšnja pasica",
+      "next": "Naslednja pasica",
+      "goTo": "Prikaži pasico {position}",
+      "presets": {
+        "airport": {
+          "script": "pravkar pristali?",
+          "highlight": "Prevzem na letališču",
+          "joiner": "v",
+          "boxed": "10 minutah",
+          "description": "Preskočite vrsto: podpišite pogodbo na telefonu in se odpeljite s polnim zavarovanjem"
+        },
+        "weekend": {
+          "script": "rezervirajte ta vikend",
+          "highlight": "Prihranite 20 %",
+          "joiner": "pri",
+          "boxed": "Vikend najemih",
+          "description": "Prevzem v petek, vračilo v ponedeljek. Brezplačen otroški sedež in dodaten voznik vključena"
+        },
+        "roadtrip": {
+          "script": "vaš naslednji izlet",
+          "highlight": "Se začne tukaj",
+          "joiner": "izročimo vam",
+          "boxed": "Ključe",
+          "description": "Brezplačna odpoved do 24 ur pred prevzemom, neomejeni km in brez skritih stroškov"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Vključeno v vsako ceno",
+      "title": "Cena, ki jo vidite, je cena, ki jo plačate",
+      "description": "Brez presenečenj na okencu. To je vedno del cene.",
+      "presets": {
+        "insurance": {
+          "title": "Osnovno zavarovanje",
+          "text": "Kritje za trk, krajo in odgovornost do tretjih oseb.",
+          "tag": "Vključeno"
+        },
+        "mileage": {
+          "title": "Neomejeni kilometri",
+          "text": "Vozite kolikor želite, brez doplačil na kilometer.",
+          "tag": "Brez omejitev"
+        },
+        "fuel": {
+          "title": "Polno za polno",
+          "text": "Avto prevzamete s polnim rezervoarjem in ga polnega vrnete.",
+          "tag": "Brez predplačanega goriva"
+        },
+        "cancellation": {
+          "title": "Brezplačna odpoved",
+          "text": "Sprememba načrtov? Prekličite brezplačno.",
+          "tag": "Prilagodljivo"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Ocene",
+      "title": "Kaj o nas pravijo vozniki",
+      "seeAll": "Prikaži {count, plural, one {# oceno} two {vsi # oceni} few {vse # ocene} other {vseh # ocen}}",
+      "seeAllOn": "Prikaži {count, plural, one {# oceno} two {vsi # oceni} few {vse # ocene} other {vseh # ocen}} na {source}",
+      "basedOn": "Na podlagi {count, plural, one {# ocene} two {# ocen} few {# ocen} other {# ocen}}",
+      "basedOnSource": "Na podlagi {count, plural, one {# ocene} two {# ocen} few {# ocen} other {# ocen}} na {source}",
+      "ratingAria": "Ocena {rating} od 5",
+      "rented": "Najeto: {vehicle}",
+      "verified": "Preverjen najem",
+      "distributionAria": "Razporeditev ocen",
+      "emptyTitle": "Še ni ocen",
+      "emptyText": "Gostje lahko ocenijo svoj najem po vračilu avtomobila. Odobrene ocene se prikažejo tukaj."
+    },
+    "app": {
+      "eyebrow": "Mobilna aplikacija",
+      "title": "Vaša rezervacija na poti",
+      "text": "Prijavite se prek spleta, oglejte si podatke o prevzemu in nam pišite — vse s svojega telefona.",
+      "platformBoth": "iOS in Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Skenirajte za prenos",
+      "qrAlt": "Koda QR za prenos aplikacije",
+      "appStore": {
+        "prefix": "Prenesite iz",
+        "name": "App Store",
+        "aria": "Prenesite iz trgovine App Store",
+        "unavailable": "Še ni na voljo v App Store"
+      },
+      "googlePlay": {
+        "prefix": "Na voljo v",
+        "name": "Google Play",
+        "aria": "Na voljo v trgovini Google Play",
+        "unavailable": "Še ni na voljo v Google Play"
+      },
+      "comingSoon": "Kmalu na voljo"
+    },
+    "locations": {
+      "eyebrow": "Lokacije",
+      "title": "{count, plural, one {Naša poslovalnica} two {Naši poslovalnici} few {Naše poslovalnice} other {Naše poslovalnice}}",
+      "description": "{count, plural, one {Tukaj prevzemite in vrnite svoj avto.} two {Prevzemite in vrnite svoj avto v kateri koli od naših poslovalnic.} few {Prevzemite in vrnite svoj avto v kateri koli od naših poslovalnic.} other {Prevzemite in vrnite svoj avto v kateri koli od naših poslovalnic.}}",
+      "directions": "Navodila za pot",
+      "directionsTo": "Navodila za pot do {name}",
+      "call": "Pokliči"
+    },
+    "faq": {
+      "eyebrow": "Pogosta vprašanja",
+      "title": "Vprašanja pred rezervacijo",
+      "description": "Ne najdete odgovora? Stopite v stik z nami, z veseljem vam pomagamo."
+    },
+    "contact": {
+      "title": "Imate vprašanja? Pogovorite se z nami.",
+      "description": "Pošljite nam sporočilo ali nas pokličite in pomagali vam bomo najti pravi avto.",
+      "whatsapp": "WhatsApp",
+      "email": "Pišite nam",
+      "whatsappMessage": "Pozdravljeni, {name}, imam vprašanje glede najema avtomobila."
+    },
+    "nav": {
+      "reviews": "Ocene",
+      "faq": "Pogosta vprašanja",
+      "contact": "Kontakt",
+      "app": "Aplikacija",
+      "branches": "Lokacije"
+    },
+    "footer": {
+      "contact": "Kontakt",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Sprejemamo",
+      "rating": "{score} · {count, plural, one {# ocena} two {# oceni} few {# ocene} other {# ocen}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Gotovina"
+    }
+  },
+  "siteEditor": {
+    "aria": "Urejevalnik spletne strani",
+    "title": "Urejevalnik spletne strani",
+    "signOut": "Odjava",
+    "tabsAria": "Razdelki urejevalnika",
+    "status": {
+      "draft": "Osnutek",
+      "published": "Objavljeno",
+      "paused": "Začasno ustavljeno"
+    },
+    "tabs": {
+      "sections": "Razdelki",
+      "design": "Oblikovanje",
+      "settings": "Nastavitve",
+      "legal": "Pravno"
+    },
+    "contentLanguage": "Jezik urejanja",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Vsi razdelki",
+    "sections": {
+      "company": "Podjetje",
+      "fleet": "Avtomobili",
+      "included": "Vključeno v vsako ceno",
+      "reviews": "Ocene",
+      "app": "Mobilna aplikacija",
+      "faq": "Pogosta vprašanja",
+      "contact": "Kontakt",
+      "hero": "Pasice in iskanje",
+      "branches": "Lokacije"
+    },
+    "sectionsHint": "Vklopite ali izklopite razdelke in spremenite njihov vrstni red. Odprite razdelek, da uredite njegovo vsebino.",
+    "orderHint": "Avtomobili so vedno prikazani. Poslovalnice izhajajo iz vaših poslovalnic v skrbniškem vmesniku Benwer.",
+    "hiddenUntilContent": "Skrito, dokler ne dodate vsebine",
+    "summary": {
+      "banners": "{count, plural, one {# pasica} two {# pasici} few {# pasice} other {# pasic}}",
+      "bannersEmpty": "Še ni pasic, prikazana je barva blagovne znamke",
+      "company": "Naslov, uvod in kontaktni podatki",
+      "fleet": "Iz vašega voznega parka Benwer",
+      "included": "{count, plural, one {# postavka} two {# postavki} few {# postavke} other {# postavk}}",
+      "reviews": "{count, plural, one {# ocena} two {# oceni} few {# ocene} other {# ocen}}",
+      "app": "Povezave do trgovin in koda QR",
+      "locations": "{count, plural, one {# poslovalnica} two {# poslovalnici} few {# poslovalnice} other {# poslovalnic}} iz Benwer",
+      "faq": "{count, plural, one {# vprašanje} two {# vprašanji} few {# vprašanja} other {# vprašanj}}",
+      "contactWhatsapp": "WhatsApp, telefon in delovni čas",
+      "contact": "Telefon in e-pošta"
+    },
+    "unsaved": "Neshranjene spremembe",
+    "saved": "Vse spremembe so shranjene",
+    "discard": "Zavrzi",
+    "save": "Shrani spremembe",
+    "common": {
+      "moveUp": "Premakni {item} gor",
+      "moveDown": "Premakni {item} dol",
+      "remove": "Odstrani {item}",
+      "show": "Prikaži {item}"
+    },
+    "banners": {
+      "title": "Pasice",
+      "description": "Do {max} diapozitivov. Prazna polja uporabijo privzeto besedilo, prikazano v sivi barvi.",
+      "empty": "Ni pasic. Območje pasice prikazuje barvo ozadja.",
+      "item": "Pasica {position}",
+      "image": "Slika",
+      "imageHint": "Naložite široko sliko, približno 1600 × 560 px. JPG, PNG ali WebP do 25 MB. Prosojen PNG se prikaže na barvi pasice.",
+      "add": "Dodaj pasico",
+      "fields": {
+        "script": "Ročno pisana vrstica",
+        "highlight": "Poudarjen naslov",
+        "joiner": "Kratek veznik",
+        "boxed": "Naslov v okvirju",
+        "description": "Opis"
+      },
+      "colorsTitle": "Barve pasic",
+      "colorsDescription": "Uporabljajo se za vsako pasico. Za ozadje deluje katera koli barva.",
+      "resetColors": "Ponastavi na privzete barve",
+      "colors": {
+        "background": "Ozadje",
+        "text": "Besedilo",
+        "highlight": "Poudarjeni okvir",
+        "highlightText": "Poudarjeno besedilo",
+        "box": "Beli okvir",
+        "boxText": "Besedilo belega okvirja",
+        "script": "Besedilo veznika"
+      },
+      "noImage": "Še ni slike",
+      "uploadImage": "Naloži sliko",
+      "replaceImage": "Zamenjaj sliko",
+      "tooLarge": "Ta datoteka presega 25 MB. Izberite manjšo sliko.",
+      "uploadFailed": "Nalaganje ni uspelo. Poskusite znova."
+    },
+    "company": {
+      "title": "Glava podjetja",
+      "description": "Vaše ime, naslov in kratek uvod.",
+      "headline": "Naslov",
+      "headlinePlaceholder": "Najemite avto pri {name}",
+      "intro": "Uvod",
+      "introHint": "En ali dva stavka o vašem podjetju.",
+      "contactTitle": "Kontaktni podatki",
+      "contactDescription": "Prikazani v glavi ter razdelkih lokacij in stika.",
+      "showPhone": "Prikaži telefonsko številko",
+      "showEmail": "Prikaži e-pošto",
+      "showAddress": "Prikaži naslov"
+    },
+    "included": {
+      "title": "Vključeno v vsako ceno",
+      "description": "Do 6 obljub, ki so vedno del vaše cene.",
+      "accuracy": "Navedite samo to, kar velja za vsak najem. Privzeto besedilo je predlog; preverite, ali ustreza vašim pogojem najema.",
+      "item": "Postavka {position}",
+      "icon": "Ikona",
+      "itemTitle": "Naslov",
+      "itemText": "Opis",
+      "itemTag": "Oznaka",
+      "tagHint": "Kratka oznaka v zeleni barvi, na primer »Odbitna franšiza 1.000 €«.",
+      "presets": {
+        "insurance": "Osnovno zavarovanje",
+        "mileage": "Neomejeni km",
+        "fuel": "Polno za polno",
+        "cancellation": "Brezplačna odpoved"
+      },
+      "addCustom": "Postavka po meri"
+    },
+    "icons": {
+      "shield": "Ščit",
+      "gauge": "Merilnik hitrosti",
+      "fuel": "Črpalka",
+      "calendar_check": "Koledar",
+      "check": "Kljukica",
+      "car": "Avto",
+      "users": "Ljudje",
+      "baby": "Otroški sedež",
+      "plane": "Letalo",
+      "key": "Ključ"
+    },
+    "reviews": {
+      "title": "Ocene gostov",
+      "description": "Gostje ocenijo najem po vračilu avtomobila. Prikazane so samo ocene, ki jih odobrite.",
+      "summary": "Povprečje {average} iz {count, plural, one {# odobrene ocene} two {# odobrenih ocen} few {# odobrenih ocen} other {# odobrenih ocen}}",
+      "none": "Še ni odobrenih ocen. Gostje vidijo kratko obvestilo, dokler ne odobrite prve.",
+      "manage": "Odobrite ali skrijte ocene v skrbniškem vmesniku Benwer",
+      "demo": "To so predstavitvene ocene, prikazane za to testno podjetje, dokler v skrbniškem vmesniku Benwer ne odobrite pravih."
+    },
+    "app": {
+      "benwerAppTitle": "Aplikacija Benwer Cars",
+      "benwerApp": "Prikaži aplikacijo Benwer Cars",
+      "benwerAppDescription": "Gostje dobijo brezplačno aplikacijo Benwer Cars. Značke vodijo do uradnih trgovin, koda QR pa odpre vaše podjetje v aplikaciji.",
+      "storesWithBenwerApp": "Potrebno samo, če ima vaše podjetje lastno aplikacijo. Dokler je aplikacija Benwer Cars vklopljena, razdelek uporablja njene povezave do trgovin.",
+      "storesTitle": "Povezave do trgovin",
+      "storesDescription": "Povezave do vaše lastne aplikacije. Manjkajoča trgovina je prikazana sivo. Brez povezav in z izklopljeno aplikacijo Benwer Cars ostane razdelek skrit.",
+      "ios": "Povezava do App Store",
+      "android": "Povezava do Google Play",
+      "qrHint": "Koda QR odpre povezavo do Google Play ali povezavo do App Store, če povezave do Google Play ni.",
+      "copyTitle": "Besedilo",
+      "title": "Naslov",
+      "text": "Opis"
+    },
+    "faq": {
+      "title": "Vprašanja",
+      "description": "Do {max} vprašanj s kratkimi odgovori.",
+      "empty": "Še ni vprašanj. Razdelek ostane skrit, dokler ne dodate vsaj enega.",
+      "item": "Vprašanje {position}",
+      "question": "Vprašanje",
+      "answer": "Odgovor",
+      "incompleteHint": "Vprašanja brez odgovora se na spletni strani ne prikažejo.",
+      "add": "Dodaj vprašanje"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kako stranke stopijo v stik z vami. Telefon in e-pošta izhajata iz razdelka podjetja.",
+      "whatsapp": "Številka WhatsApp",
+      "whatsappHint": "Vključite kodo države. Pustite prazno, da skrijete gumb WhatsApp.",
+      "hours": "Kdaj odgovarjate",
+      "hoursPlaceholder": "Odgovarjamo vsak dan od 08:00 do 22:00.",
+      "payments": "Načini plačila",
+      "paymentsHint": "Prikazano v nogi strani."
+    },
+    "design": {
+      "colorTitle": "Barva blagovne znamke",
+      "colorDescription": "Uporablja se za gumbe, povezave in poudarke po celotni strani. Ozadje pasice sledi tej barvi; še vedno jo lahko prilagodite v razdelku Pasice.",
+      "presets": "Predlagane barve",
+      "custom": "Barva po meri",
+      "customHint": "Uporabite šestnajstiško kodo, na primer #4f46e5.",
+      "picker": "Izberite barvo",
+      "lowContrast": "Ta barva je presvetla za belo besedilo na gumbih. Izberite temnejšo, sicer shranjevanje ne bo uspelo.",
+      "fontTitle": "Pisava",
+      "fontDescription": "Uporablja se za vse besedilo na vaši spletni strani.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Čista in sodobna"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klasična in elegantna"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Izrazita in prijazna"
+        }
+      },
+      "cornersTitle": "Vogali",
+      "cornersDescription": "Zaobljeni ali ostri vogali na gumbih, karticah in poljih na vaši spletni strani.",
+      "corners": {
+        "round": {
+          "name": "Zaobljeni",
+          "hint": "Mehki in prijazni"
+        },
+        "square": {
+          "name": "Ostri",
+          "hint": "Jasni in minimalistični"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Spletna stran",
+      "websiteEnabled": "Spletna stran za rezervacije vklopljena",
+      "websiteEnabledHint": "Ko je vklopljena, si lahko gostje ogledajo vašo objavljeno stran in na njej rezervirajo. Vklop hkrati objavi vaše shranjene spremembe. To je isto stikalo kot v skrbniškem vmesniku Benwer.",
+      "bookingTitle": "Rezervacije",
+      "bookingDescription": "Kako stranke rezervirajo na vaši spletni strani.",
+      "bookingMode": "Način rezervacije",
+      "mode": {
+        "instant": "Takojšnja",
+        "request": "Na zahtevo"
+      },
+      "modeHint": {
+        "instant": "Rezervacije se potrdijo takoj.",
+        "request": "Vsako rezervacijo sprejmete ali zavrnete v roku za odgovor."
+      },
+      "minLead": "Najkrajši čas pred prevzemom",
+      "requestWindow": "Čas za odgovor",
+      "hoursUnit": "V urah",
+      "differentReturnTitle": "Vračilo na drugi lokaciji",
+      "differentReturnLabel": "Omogoči gostom vračilo na drugi lokaciji",
+      "differentReturnHint": "Gostje pri iskanju izberejo kraj vračila. K ceni se prišteje doplačilo za enosmerni najem iz skrbniškega vmesnika Benwer.",
+      "differentReturnOff": "Če želite to ponuditi, vklopite enosmerne najeme v skrbniškem vmesniku Benwer."
+    },
+    "savedNotPublished": "Shranjeno, še ni objavljeno",
+    "publish": "Objavi",
+    "branding": {
+      "logosTitle": "Logotipi",
+      "logosDescription": "To je logotip vašega podjetja. Sprememba tukaj posodobi tudi Benwer admin in aplikacijo Benwer Cars.",
+      "headerLogo": "Logotip v zgornji vrstici",
+      "headerLogoHint": "Prikazan v vrstici na vrhu vsake strani. Najbolje deluje širok logotip.",
+      "companyLogo": "Logotip v razdelku podjetja",
+      "companyLogoHint": "Prikazan nad naslovom, pred razdelkom podjetja.",
+      "usingCompanyLogo": "Uporablja se logotip vašega podjetja",
+      "upload": "Naloži logotip",
+      "replace": "Zamenjaj",
+      "uploadFailed": "Logotipa ni bilo mogoče naložiti. Uporabite sliko PNG, JPG ali WebP in poskusite znova.",
+      "tooLarge": "Ta slika je večja od 25 MB.",
+      "backgroundTitle": "Ozadje strani",
+      "backgroundDescription": "Barva za vsebino vaše spletne strani.",
+      "backgroundPresets": "Predlagana ozadja",
+      "backgroundCustom": "Ozadje po meri",
+      "backgroundPicker": "Izberite barvo ozadja",
+      "needsApi": "Na voljo, ko bo objavljena posodobitev Benwer API za spletne strani.",
+      "headerLogoDark": "Logotip v zgornji vrstici — temni način",
+      "companyLogoDark": "Logotip v razdelku podjetja — temni način",
+      "squareLogo": "Kvadratni logotip (1:1)",
+      "squareLogoHint": "Obvezno za objavo. Prikazan poleg imena podjetja na karticah, v rezultatih iskanja in mobilnih seznamih.",
+      "cropTitle": "Obreži logotip na 2:1",
+      "cropHint": "Povlecite in povečajte, da se logotip lepo prilega okviru 2:1.",
+      "cropZoom": "Povečava",
+      "cropCancel": "Prekliči",
+      "cropSave": "Obreži in naloži",
+      "darkLogoHint": "Neobvezno. Prikazan, ko obiskovalci uporabljajo temni način. Uporabite svetlo ali belo različico logotipa.",
+      "darkNeedsApi": "Logotipi za temni način bodo na voljo po objavi posodobitve Benwer API.",
+      "logo": "Logotip (2:1)",
+      "logoHint": "Obvezno za objavo. En logotip za svetli in temni način: barva vaše blagovne znamke kot ozadje z belim imenom, obrezan v razmerju 2:1."
+    },
+    "legal": {
+      "hint": "Vsaka stran se začne s standardnim besedilom, tako da lahko spremenite le dele, ki jih potrebujete. Za vsak podnaslov dodajte razdelek. »Nazaj na standardno besedilo« razveljavi vaše spremembe.",
+      "needsApi": "Na voljo, ko bo objavljena posodobitev Benwer API za spletne strani.",
+      "privacyTitle": "Politika zasebnosti",
+      "privacyDescription": "Prikazana pod povezavo Zasebnost v nogi vaše spletne strani.",
+      "termsTitle": "Pogoji poslovanja",
+      "termsDescription": "Prikazani pod povezavo Pogoji v nogi vaše spletne strani.",
+      "text": "Besedilo",
+      "intro": "Uvod",
+      "subtitle": "Podnaslov",
+      "sectionItem": "Razdelek {position}",
+      "addSection": "Dodaj razdelek",
+      "reset": "Nazaj na standardno besedilo",
+      "pageTitle": "Naslov strani",
+      "privacyLooksLikeTerms": "Vaša politika zasebnosti ima enako besedilo kot pogoji. Uporabite »Nazaj na standardno besedilo« pod Politiko zasebnosti ali napišite lastno besedilo o zasebnosti in ga shranite."
+    },
+    "preview": "Predogled",
+    "fullscreen": "Celozaslonski urejevalnik",
+    "exitFullscreen": "Prikaži predogled poleg urejevalnika",
+    "previewBarAria": "Kontrole predogleda",
+    "previewing": "Ogledujete si predogled svoje spletne strani",
+    "backToEdit": "Uredi"
+  },
+  "marketplaceBanners": {
+    "aria": "Izpostavljeno na Benwer",
+    "slideLabel": "{position} od {count}",
+    "goTo": "Prikaži pasico {position}",
+    "previous": "Prejšnja pasica",
+    "next": "Naslednja pasica",
+    "trust": {
+      "script": "rezervirajte brez skrbi",
+      "highlight": "Preverjena podjetja",
+      "joiner": "in",
+      "boxed": "Varna rezervacija",
+      "description": "Prave ocene, jasni pogoji in digitalne pogodbe, ki jih podpišete na telefonu"
+    },
+    "prices": {
+      "script": "eno iskanje",
+      "highlight": "Primerjajte cene",
+      "joiner": "pri",
+      "boxed": "Partnerskih podjetjih",
+      "description": "Pred rezervacijo primerjajte cene, zavarovanje in varščine partnerskih podjetij za najem vozil"
+    },
+    "anywhere": {
+      "script": "poiščite svoje vozilo",
+      "highlight": "Po vsej Málagi",
+      "joiner": "z",
+      "boxed": "Lokalna podjetja za najem",
+      "description": "Partnerska podjetja za najem vozil v mestih po provinci Málaga, vse na enem mestu"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Objavilo podjetje {name}.",
+    "cookies": {
+      "title": "Politika piškotkov",
+      "lede": "Kako {name} uporablja piškotke in podobne tehnologije na tej spletni strani.",
+      "updated": "Objavilo podjetje {name}.",
+      "sections": [
+        {
+          "title": "Kaj uporabljamo",
+          "body": "Piškotki so majhne besedilne datoteke, shranjene v vaši napravi. Ta spletna stran uporablja tudi podobno shrambo, kot je lokalna shramba, za pomnjenje vaših izbir, košarice in prijave."
+        },
+        {
+          "title": "Nujno potrebni piškotki",
+          "body": "Jezikovni piškotek omogoča prikaz vašega jezika, vaša izbira v pasici za piškotke pa se shrani, da vas ne sprašujemo znova ob vsakem obisku. Če se prijavite, ponudnik prijave shrani sejo v vaši napravi, da ostanete prijavljeni. Plačila s kartico obdeluje Stripe, ki lahko za preprečevanje prevar nastavi lastne piškotke."
+        },
+        {
+          "title": "Izbirni piškotki",
+          "body": "Izbirni piškotki (na primer analitični) ostanejo izklopljeni, razen če izberete Sprejmi vse. Ta spletna stran danes ne nastavlja analitičnih ali marketinških piškotkov."
+        },
+        {
+          "title": "Upravljanje piškotkov",
+          "body": "Za spremembo svoje izbire uporabite povezavo Nastavitve piškotkov v nogi. Piškotke in podatke spletnih mest lahko izbrišete tudi v svojem brskalniku. Blokiranje nujno potrebne shrambe vas lahko odjavi ali izprazni vašo košarico."
+        },
+        {
+          "title": "Več informacij",
+          "body": "Oglejte si politiko zasebnosti za informacije o tem, kako {name} ravna z osebnimi podatki, ali uporabite kontaktne podatke v nogi."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Podpora",
+    "fabCloseLabel": "Zapri meni podpore",
+    "messageAction": "Neposredno sporočilo",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Pozdravljeni, imam vprašanje glede Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "Aplikacija Benwer Cars",
+    "metaDescription": "Rezervirajte avtomobile, imejte vsa potovanja na enem mestu in prejemajte posodobitve rezervacij na telefonu.",
+    "eyebrow": "Mobilna aplikacija",
+    "title": "Vaš najem avtomobila v žepu",
+    "description": "Rezervirajte avtomobile pri lokalnih podjetjih, imejte vsako potovanje na enem mestu, plačajte in prejemajte obvestila na telefonu.",
+    "featureTrips": "Vsa vaša potovanja pri različnih podjetjih",
+    "featureBooking": "Rezervacija in plačilo v nekaj dotikih",
+    "featurePush": "Obvestila ob spremembi vaše rezervacije",
+    "unavailableTitle": "Aplikacija prihaja kmalu",
+    "unavailableDescription": "Aplikacija Benwer Cars še ni v trgovinah. Še vedno pa lahko rezervirate na spletu.",
+    "browse": "Brskajte po avtomobilih",
+    "badgeTitle": "Prenesite aplikacijo Benwer Cars",
+    "companyText": "Rezervirajte pri {company} na telefonu in imejte vsa potovanja na enem mestu.",
+    "bookingText": "Oglejte si to rezervacijo, plačajte in prejemajte posodobitve na telefonu."
+  }
+}

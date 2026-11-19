@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { env } from "@/env";
+import { routing } from "@/i18n/routing";
 import { vehicleImageUrls } from "@/lib/vehicleImage";
 import type { Vehicle } from "@/types/vehicle";
 
@@ -98,7 +99,7 @@ export function websiteJsonLd(input: {
         name: input.name,
         url,
         description: input.description,
-        inLanguage: ["en-GB", "es-ES", "pt-PT"],
+        inLanguage: [...routing.locales],
       },
     ],
   };

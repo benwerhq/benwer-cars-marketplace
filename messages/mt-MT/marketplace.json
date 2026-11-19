@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Kumpaniji",
+    "title": "Sib il-karozza perfetta tiegħek",
+    "subtitle": "Qabbel karozzi minn kumpaniji msieħba tal-kiri, imbagħad kompli fuq is-sit tal-kumpanija.",
+    "searchPlaceholder": "Fejn sejjer?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Kumpaniji ewlenin",
+    "companiesSubtitle": "Kumpaniji msieħba tal-kiri madwar il-provinċja ta' Málaga — flotot li naħdmu magħhom, mhux avviżi mhux ivverifikati",
+    "trustLocal": "Kumpaniji msieħba",
+    "trustGuest": "Kiri fuq is-sit tal-kumpanija",
+    "trustArea": "Provinċja ta' Málaga",
+    "viewAllCompanies": "Ara l-kumpaniji kollha"
+  },
+  "featuredCars": {
+    "viewAllCount": "Ara l-{count} karozzi kollha",
+    "eyebrow": "Karozzi",
+    "title": "Karozzi disponibbli",
+    "subtitle": "Kull karozza ppubblikata mill-kumpaniji msieħba, ħdejn xulxin. Agħżel waħda biex tibbukkja fuq is-sit tal-kumpanija stess.",
+    "viewAll": "Fittex il-karozzi kollha",
+    "seeAll": "Ara kollox",
+    "emptyTitle": "Għad m'hemm l-ebda karozza elenkata",
+    "emptyHint": "Flotot pubbliċi se jidhru hawn meta l-kumpaniji jippubblikawhom."
+  },
+  "whatYouGet": {
+    "eyebrow": "Għal kumpaniji tal-kiri",
+    "title": "X'tikseb",
+    "subtitle": "Sistema waħda għall-uffiċċju, il-parkeġġ, u l-vjaġġaturi li qed ifittxu f'Málaga.",
+    "admin": {
+      "title": "Sistema sħiħa ta' amministrazzjoni",
+      "body": "Immaniġġja karozzi, prezzijiet, disponibbiltà u riservazzjonijiet minn dashboard operattiv wieħed — l-istess katalgu li jaqra l-marketplace."
+    },
+    "mobile": {
+      "title": "App mobbli għall-istaff",
+      "body": "Irreġistra l-ħruġ u r-ritorn tal-karozzi u ara l-bookings tal-lum direttament mill-parkeġġ."
+    },
+    "storefront": {
+      "title": "Sit web bil-marka tiegħek",
+      "body": "Elenkar fil-marketplace flimkien mas-sit u s-subdominju tiegħek."
+    },
+    "preview": {
+      "utilisation": "Użu",
+      "utilisationValue": "82%",
+      "pickups": "Ġbir illum",
+      "pickupsValue": "14",
+      "revenue": "Dan ix-xahar",
+      "revenueValue": "€9.4k",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Dashboard",
+      "navFleet": "Flotta",
+      "navCalendar": "Kalendarju",
+      "navReservations": "Riservazzjonijiet",
+      "calendarTitle": "Disponibbiltà",
+      "calendarMonth": "Il-ġimgħatejn li ġejjin",
+      "viaBenwer": "Permezz ta' Benwer",
+      "direct": "Dirett",
+      "free": "Disponibbli",
+      "carA": "Kompatta",
+      "carB": "Karozza tal-belt",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Illum",
+      "phoneDate": "It-Tnejn",
+      "pickUp": "Ġbir",
+      "return": "Ritorn",
+      "checkedOut": "Mogħtija",
+      "due": "Mistennija",
+      "tabToday": "Illum",
+      "tabFleet": "Flotta",
+      "tabScan": "Skennja",
+      "storeName": "Il-kumpanija tiegħek",
+      "storeNavCars": "Karozzi",
+      "storeNavContact": "Kuntatt",
+      "storeHeadline": "Kri karozza f'Málaga",
+      "storeSearch": "Ġbir u dati",
+      "storeSearchCta": "Fittex",
+      "storePrice": "Ara l-prezzijiet",
+      "carE": "Hatchback",
+      "carF": "Estate"
+    }
+  },
+  "faq": {
+    "eyebrow": "Mistoqsijiet frekwenti",
+    "title": "Qabel tibbukkja",
+    "subtitle": "Flotot msieħba, kif jaħdem il-booking, u x'jagħmel — u x'ma jagħmilx — Benwer.",
+    "items": {
+      "partners": {
+        "question": "Dawn il-karozzi huma minn kumpaniji reali tal-kiri?",
+        "answer": "Iva. Kull elenkar huwa karozza pubblika minn sieħeb ta' Benwer — kumpanija reali tal-kiri li naħdmu magħha, mhux avviż privat mhux ivverifikat. Jekk kumpanija jew karozza mhijiex ippubblikata fuq il-pjattaforma, ma tidhirx hawn."
+      },
+      "booking": {
+        "question": "Nibbukkja u nħallas fuq Benwer?",
+        "answer": "Le. Hawn tqabbel flotot msieħba, imbagħad tkompli fuq is-sit tal-kumpanija tal-kiri biex tikkonferma l-kiri, id-depożitu u l-ġbir. Benwer ma jiħux ħlas fuq dan il-marketplace."
+      },
+      "photos": {
+        "question": "Nista' nafda r-ritratti u d-disponibbiltà?",
+        "answer": "L-elenkar juża r-ritratti pubbliċi u d-disponibbiltà li tippubblika l-kumpanija msieħba — l-istess katalgu li timmaniġġja fl-amministrazzjoni. Jekk karozza għad m'għandhiex ritratt pubbliku, nuru spazju vojt minflok ritratt ġeneriku ta' karozza oħra. Id-disponibbiltà finali tiġi kkonfermata fuq is-sit tal-kumpanija."
+      },
+      "account": {
+        "question": "Għandi bżonn kont?",
+        "answer": "L-ebda kont mhu meħtieġ biex tfittex. Jekk tibgħat messaġġ ta' kuntatt, nużaw dawk id-dettalji biss biex inwieġbu."
+      },
+      "safety": {
+        "question": "Min hu responsabbli għall-kiri?",
+        "answer": "Il-kuntratt huwa bejnek u l-kumpanija msieħba tal-kiri. Aqra t-termini tagħhom qabel tikkonferma. Benwer jgħinek issib karozza minn flotta msieħba; ma jikrix vetturi u ma jiħux ħlas hawn."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "L-app Benwer Cars",
+    "description": "Niżżel Benwer Cars fuq il-mowbajl tiegħek. L-app ta' Android tinsab fi stadju bikri ta' ttestjar fuq Google Play — ingħaqad mat-test u għinna ntejbuha."
+  },
+  "partners": {
+    "eyebrow": "Għal kumpaniji tal-kiri tal-karozzi",
+    "title": "Ibdel il-ġranet vojta f'bookings",
+    "description": "Il-vjaġġaturi diġà qed ifittxu karozzi f'Málaga fuq Benwer. Ippubblika l-flotta tiegħek darba u imla l-ġranet li kieku jibqgħu vojta.",
+    "cta": "Sir af aktar",
+    "ctaAria": "Sir af aktar fuq is-sit ta' marketing ta' Benwer (jinfetaħ f'tab ġdida)",
+    "demo": "Ara d-demo live",
+    "demoAria": "Ara d-demo live (jinfetaħ f'tab ġdida)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Kiri ta' karozzi",
+    "companyDescription": "Kri karozza mingħand {name} f’{location}.",
+    "companyDescriptionPlain": "Kri karozza mingħand {name}.",
+    "companyFallback": "Kiri ta' karozzi",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Kri {brand} {model} mingħand {company}.",
+    "carDescriptionSpecs": "Kri {brand} {model} — {seats, plural, one {siġġu #} few {# siġġijiet} many {#-il siġġu} other {# siġġu}}, {transmission}.",
+    "carsTitle": "Karozzi għall-kiri madwar il-provinċja ta' Málaga"
+  },
+  "tenant": {
+    "notFoundTitle": "Il-kumpanija ma nstabitx",
+    "notFoundDescription": "Dan is-sit ma setax jitgħabba.",
+    "loadErrorTitle": "Id-dettalji tal-kumpanija mhumiex disponibbli",
+    "loadErrorDescription": "Ma stajniex ngħabbu dan is-sit mill-katalgu dirett. Erġa' pprova — ma nurux karozzi finta meta l-API tfalli.",
+    "logoAlt": "Logo ta' {name}"
+  },
+  "howItWorks": {
+    "eyebrow": "Tliet passi",
+    "title": "Kif taħdem",
+    "subtitle": "Qabbel flotot msieħba madwar Málaga, imbagħad ibbukkja direttament mal-kumpanija. M'hemmx bżonn ta' kont Benwer.",
+    "stepLabel": "Pass {number}",
+    "searchTitle": "Agħżel id-dati u l-post",
+    "searchBody": "Agħżel lokalità fil-Costa del Sol u l-ġranet li għandek bżonn. Jidhru biss flotot msieħba vverifikati.",
+    "compareTitle": "Qabbel karozzi reali",
+    "compareBody": "Siġġijiet, gearbox, ritratti u r-rata ta' kuljum, ħdejn xulxin mingħand kull sieħeb.",
+    "continueTitle": "Ibbukkja mal-kumpanija",
+    "continueBody": "Ikkonferma l-ġbir, l-assigurazzjoni u l-ħlas mal-kumpanija tal-kiri li għandha l-karozza.",
+    "cta": "Ibda fittex",
+    "preview": {
+      "place": "Ajruport ta' Málaga",
+      "dates": "Ġim → Ġim · 7 ijiem",
+      "carA": "Karozza kompatta",
+      "carASpecs": "4 siġġijiet · Manwali",
+      "carB": "SUV tal-familja",
+      "carBSpecs": "5 siġġijiet · Awtomatika",
+      "confirmed": "Booking ikkonfermat",
+      "confirmedDetail": "Ġbir fl-10:00",
+      "example": "Eżempju"
+    }
+  },
+  "search": {
+    "locationLabel": "Post tal-ġbir",
+    "locationPlaceholder": "Fittex postijiet",
+    "locationEmpty": "L-ebda post ma jaqbel",
+    "allLocations": "Il-postijiet kollha",
+    "allLocationsHint": "Kull belt b'karozzi disponibbli",
+    "provinceSelected": "Il-postijiet kollha",
+    "provinceHint": "Kull belt b'karozzi disponibbli",
+    "pickupLabel": "Ġbir",
+    "dropoffLabel": "Ritorn",
+    "pickupPlaceholder": "Żid data",
+    "dropoffPlaceholder": "Żid data",
+    "pickupTrigger": "Data tal-ġbir, {date}",
+    "dropoffTrigger": "Data tar-ritorn, {date}",
+    "calendarLabel": "Agħżel id-dati",
+    "datesRequired": "Agħżel id-dati tal-ġbir u tar-ritorn biex tfittex.",
+    "submit": "Fittex",
+    "returnLocationLabel": "Post tar-ritorn",
+    "differentReturn": "Irrestitwixxi f'post differenti",
+    "returnSame": "L-istess bħall-ġbir",
+    "returnNotOffered": "{company} ma toffrix ritorn f'post ieħor.",
+    "branchChoose": "Agħżel post",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Qed ngħabbu l-postijiet…",
+    "branchAnyHint": "Kull fergħa b'karozzi"
+  },
+  "browseLocation": {
+    "title": "Fittex skont il-post",
+    "subtitle": "Bliet popolari fil-provinċja ta' Málaga",
+    "emptyTitle": "Għad m'hemmx postijiet",
+    "emptyDescription": "Il-bliet ewlenin se jidhru hawn.",
+    "cityAria": "Fittex karozzi f’{city}"
+  },
+  "map": {
+    "teaserTitle": "Ara fejn tista' tiġbor il-karozza",
+    "teaserSubtitle": "Flotot lokali madwar il-provinċja ta' Málaga — iftaħ il-mappa u mur dritt għand kumpanija.",
+    "teaserCta": "Iftaħ il-mappa",
+    "teaserCityAria": "Ara kumpaniji fuq il-mappa f’{city}",
+    "listLabel": "Lista",
+    "mapLabel": "Mappa",
+    "viewToggleAria": "Uri l-kumpaniji bħala lista jew mappa",
+    "regionAria": "Mappa tal-kumpaniji tal-kiri fil-provinċja ta' Málaga",
+    "pinAria": "{name} f’{city}",
+    "fleetHint": "{count, plural, =0 {Għad m'hemm l-ebda karozza elenkata} one {# karozza disponibbli} few {# karozzi disponibbli} many {#-il karozza disponibbli} other {# karozza disponibbli}}",
+    "fleetHintUnknown": "Ara l-karozzi disponibbli",
+    "viewFleet": "Ara l-flotta",
+    "closePin": "Agħlaq",
+    "loading": "Qed ngħabbu l-kumpaniji…",
+    "errorDescription": "Il-mappa ma setgħetx titgħabba. Fittex fil-lista minflok.",
+    "emptyTitle": "L-ebda kumpanija fuq il-mappa",
+    "emptyDescription": "Ipprova belt oħra fil-provinċja ta' Málaga.",
+    "resultsCount": "{count, plural, one {# kumpanija madwar il-provinċja ta' Málaga} few {# kumpaniji madwar il-provinċja ta' Málaga} many {#-il kumpanija madwar il-provinċja ta' Málaga} other {# kumpanija madwar il-provinċja ta' Málaga}}",
+    "resultsInCity": "{count, plural, one {# kumpanija f’{city}} few {# kumpaniji f’{city}} many {#-il kumpanija f’{city}} other {# kumpanija f’{city}}}",
+    "resultsAtBranch": "{count, plural, one {# kumpanija f’{branch}} few {# kumpaniji f’{branch}} many {#-il kumpanija f’{branch}} other {# kumpanija f’{branch}}}"
+  },
+  "cars": {
+    "showingOf": "Qed jintwerew {shown} minn {total} karozzi",
+    "loadMore": "Uri aktar karozzi",
+    "seeAll": "Ara kollox",
+    "title": "Karozzi disponibbli",
+    "subtitle": "Kull karozza pubblika minn kumpaniji msieħba tal-kiri madwar il-provinċja ta' Málaga. Agħżel id-dati tiegħek biex tara x'inhu disponibbli.",
+    "searchEmptyTitle": "L-ebda karozza ma taqbel ma' din it-tfittxija",
+    "searchEmptyHint": "Ipprova dati differenti jew post ieħor fil-provinċja ta' Málaga. Kull belt tibqa' fil-lista — anke jekk illum m'hemm l-ebda karozza elenkata hemm.",
+    "resultsInProvince": "{count, plural, one {# karozza fil-postijiet kollha} few {# karozzi fil-postijiet kollha} many {#-il karozza fil-postijiet kollha} other {# karozza fil-postijiet kollha}}",
+    "resultsInCity": "{count, plural, one {# karozza f’{city}} few {# karozzi f’{city}} many {#-il karozza f’{city}} other {# karozza f’{city}}}",
+    "allCompanies": "Il-kumpaniji kollha",
+    "companyPlaceholder": "Fittex kumpaniji",
+    "companyTrigger": "Kumpanija, {company}",
+    "perDay": "{price} / jum",
+    "perDaySuffix": " / jum",
+    "viewDetails": "Ara d-dettalji",
+    "notAvailableForDates": "Mhux disponibbli għal dawn id-dati",
+    "bookUnavailable": "Ara l-karozza",
+    "fleetSummary": "{total, plural, one {# karozza} few {# karozzi} many {#-il karozza} other {# karozza}} · {available, plural, one {# disponibbli} few {# disponibbli} many {# disponibbli} other {# disponibbli}}",
+    "fleetSummaryForDates": "{total, plural, one {# karozza} few {# karozzi} many {#-il karozza} other {# karozza}} · {available, plural, one {# disponibbli} few {# disponibbli} many {# disponibbli} other {# disponibbli}} · {from} – {to}",
+    "seats": "{count} siġġijiet",
+    "resultsCount": "{count, plural, one {# karozza disponibbli} few {# karozzi disponibbli} many {#-il karozza disponibbli} other {# karozza disponibbli}}",
+    "resultsForDates": "{count, plural, one {# karozza} few {# karozzi} many {#-il karozza} other {# karozza}} · {from} – {to}",
+    "emptyTitle": "Din il-flotta għadha mhix pubblika",
+    "emptyHint": "Din il-kumpanija hija elenkata, iżda l-karozzi tagħha għadhom mhumiex ippubblikati fuq Benwer. Dan huwa mistenni sakemm il-vetturi jiġu mmarkati bħala pubbliċi — il-paġna mhix imkissra.",
+    "noResults": "L-ebda karozza ma taqbel ma' din it-tfittxija",
+    "noResultsHint": "Ipprova dati differenti, post ieħor, jew inqas filtri.",
+    "browseCompanies": "Fittex kumpaniji",
+    "clearFilters": "Neħħi l-filtri",
+    "searchPlaceholder": "Fittex skont l-għamla jew il-mudell",
+    "filters": {
+      "title": "Filtri",
+      "seats": "Siġġijiet",
+      "transmission": "Trażmissjoni",
+      "company": "Kumpanija",
+      "dates": "Dati",
+      "from": "Data tal-ġbir",
+      "to": "Data tar-ritorn",
+      "category": "Kategorija",
+      "fuel": "Tip ta' fjuwil",
+      "all": "Kollox",
+      "clear": "Neħħi",
+      "selectedCount": "{count} magħżula"
+    },
+    "types": {
+      "car": "Karozza",
+      "suv": "SUV",
+      "van": "Vann",
+      "truck": "Trakk",
+      "motorcycle": "Mutur"
+    },
+    "transmission": {
+      "automatic": "Awtomatika",
+      "manual": "Manwali"
+    },
+    "fuel": {
+      "petrol": "Petrol",
+      "diesel": "Diżil",
+      "electric": "Elettriku",
+      "hybrid": "Ibridu",
+      "plugin_hybrid": "Ibridu plug-in"
+    },
+    "rowDeposit": "Depożitu {amount}",
+    "rowAvailable": "Disponibbli għad-dati tiegħek",
+    "rowTotal": "{amount} b'kollox · {days, plural, one {# jum} few {# ijiem} many {#-il jum} other {# jum}}",
+    "bookNow": "Ibbukkja issa",
+    "availableCount": "{count, plural, =0 {L-ebda karozza disponibbli} one {# karozza disponibbli} few {# karozzi disponibbli} many {#-il karozza disponibbli} other {# karozza disponibbli}}",
+    "availableForDates": "{count, plural, =0 {L-ebda karozza disponibbli} one {# karozza disponibbli} few {# karozzi disponibbli} many {#-il karozza disponibbli} other {# karozza disponibbli}} · {from} – {to}",
+    "categories": {
+      "economy": "Ekonomika",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "Minivan",
+      "van": "Vann",
+      "other": "Oħra"
+    },
+    "sort": {
+      "label": "Irranġa skont",
+      "recommended": "Rakkomandati",
+      "pricePerDay_asc": "L-inqas rata ta' kuljum",
+      "pricePerDay_desc": "L-ogħla rata ta' kuljum"
+    },
+    "colors": {
+      "white": "Abjad",
+      "black": "Iswed",
+      "silver": "Fidda",
+      "grey": "Griż",
+      "red": "Aħmar",
+      "blue": "Blu",
+      "green": "Aħdar",
+      "orange": "Oranġjo",
+      "yellow": "Isfar",
+      "brown": "Kannella",
+      "beige": "Bejġ",
+      "gold": "Deheb",
+      "purple": "Vjola"
+    },
+    "viewCar": "Ara l-karozza",
+    "opensCompanySite": "(jiftaħ is-sit tal-kumpanija)"
+  },
+  "carDetail": {
+    "bookNow": "Ibbukkja issa",
+    "continueOnCompany": "Kompli fuq {company}",
+    "rentOnCompanySite": "Kri fuq is-sit tal-kumpanija",
+    "handoffHint": "Nistaqsuk qabel ma nibagħtuk fuq is-sit tal-kumpanija biex tlesti l-prenotazzjoni.",
+    "pricePerDay": "{price} kuljum",
+    "specs": "Speċifikazzjonijiet",
+    "year": "Sena",
+    "type": "Tip",
+    "transmission": "Trażmissjoni",
+    "fuel": "Fjuwil",
+    "seats": "Siġġijiet",
+    "availability": "Disponibbiltà",
+    "availabilityError": "Ma stajniex ngħabbu d-disponibbiltà. Erġa' pprova.",
+    "availabilityUnavailable": "Id-disponibbiltà mhix disponibbli",
+    "checkingAvailability": "Qed niċċekkjaw id-disponibbiltà…",
+    "notAvailable": "Din il-karozza mhijiex disponibbli għad-dati magħżula.",
+    "selectPickup": "Agħżel data tal-ġbir",
+    "selectDropoff": "Issa agħżel data tar-ritorn",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Neħħi d-dati",
+    "addDate": "Żid data",
+    "calendarLabel": "Kalendarju tad-disponibbiltà",
+    "legend": "Leġġenda tal-kalendarju",
+    "available": "Disponibbli",
+    "selected": "Magħżula",
+    "unavailable": "Mhux disponibbli",
+    "openDates": "L-ebda data bbukkjata fix-{months} xhur li ġejjin.",
+    "breadcrumbAria": "Mogħdija tan-navigazzjoni",
+    "photoEmpty": "Ritratti dalwaqt",
+    "previousPhoto": "Ritratt ta' qabel",
+    "nextPhoto": "Ritratt li jmiss",
+    "viewPhoto": "Ara r-ritratt {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, ritratt {index}",
+    "backToFleet": "Lura lejn il-flotta",
+    "metaTitle": "Dettalji tal-karozza",
+    "about": "Dwar din il-karozza",
+    "category": "Kategorija",
+    "color": "Kulur",
+    "deposit": "Depożitu",
+    "mileage": "Kilometraġġ",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Qed tiġi indirizzat lejn is-sit tal-prenotazzjonijiet ta' {company} biex tlesti l-prenotazzjoni tiegħek.",
+    "handoffTrust": "{company} huwa sieħeb ta' fiduċja ta' Benwer.",
+    "handoffContinue": "Kompli",
+    "handoffCancel": "Ikkanċella",
+    "handoffCompanyFallback": "il-kumpanija"
+  },
+  "booking": {
+    "title": "Lesti l-booking tiegħek",
+    "subtitle": "Ikkonferma d-dettalji tiegħek — m'hemmx bżonn ta' kont.",
+    "details": "Id-dettalji tiegħek",
+    "detailsHint": "Nużaw dawn biss biex nikkonfermaw dan il-booking.",
+    "guestName": "Isem sħiħ",
+    "guestNamePlaceholder": "Mario Borg",
+    "guestEmail": "Indirizz tal-email",
+    "guestEmailPlaceholder": "mario@ezempju.mt",
+    "guestEmailHint": "Il-konferma tiegħek tintbagħat hawn.",
+    "guestPhone": "Numru tat-telefown",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Il-kumpanija tal-kiri tista' tikkuntattjak dwar il-ġbir.",
+    "startDate": "Data tal-ġbir",
+    "endDate": "Data tar-ritorn",
+    "datesHint": "Id-dati ġew mill-kalendarju tal-karozza. Tista' taġġustahom hawn.",
+    "addDate": "Żid data",
+    "changeDates": "Ibdel id-dati fuq il-kalendarju",
+    "summary": "Sommarju tal-booking",
+    "vehicle": "Vettura",
+    "company": "Kumpanija",
+    "rate": "Rata ta' kuljum",
+    "duration": "Tul ta' żmien",
+    "totalPrice": "Total",
+    "nights": "{count, plural, one {# jum} few {# ijiem} many {#-il jum} other {# jum}}",
+    "stickyMeta": "{name} · {count, plural, one {# jum} few {# ijiem} many {#-il jum} other {# jum}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Ikkonferma l-booking",
+    "confirmRequest": "Ibgħat talba",
+    "requesting": "Qed tintbagħat it-talba…",
+    "confirming": "Qed nikkonfermaw…",
+    "sitePaused": "Mhux qed jintlaqgħu bookings",
+    "insurance": "Assigurazzjoni",
+    "termsLabel": "Termini tal-kiri",
+    "termsAccept": "Naċċetta t-",
+    "termsLink": "termini tal-kiri",
+    "successTitle": "Booking ikkonfermat!",
+    "successMessage": "Il-konferma tiegħek intbagħtet lil {email}.",
+    "viewBooking": "Ara l-booking tiegħi",
+    "selectDates": "Agħżel id-dati biex tkompli",
+    "invalidDates": "Agħżel firxa ta' dati valida",
+    "backToCar": "Lura għal {name}",
+    "trustNoAccount": "L-ebda kont meħtieġ",
+    "trustEmail": "Konferma bl-email",
+    "trustNoPayment": "L-ebda ħlas issa",
+    "trustCardPayment": "Ħallas b'kard wara l-booking",
+    "trustFooter": "Meta tikkonferma, qed titlob din il-karozza għad-dati ta' hawn fuq. Il-kumpanija se tonora r-riservazzjoni.",
+    "missingTitle": "Agħżel karozza biex tkompli",
+    "missingDescription": "Agħżel vettura u dati qabel ma tlesti l-booking tiegħek.",
+    "browseCars": "Fittex karozzi",
+    "vehicleMissingTitle": "Din il-karozza m'għadhiex disponibbli",
+    "vehicleMissingDescription": "Jista' jkun li diġà ġiet irriżervata. Agħżel oħra mill-flotta.",
+    "viewFleet": "Ara l-flotta",
+    "datesMissingTitle": "Żid id-dati tal-vjaġġ tiegħek",
+    "datesMissingDescription": "Mur lura għall-karozza biex tagħżel dati disponibbli, jew daħħalhom fil-formola.",
+    "pickDates": "Agħżel dati fuq il-karozza",
+    "formAria": "Dettalji tal-booking tal-klijent",
+    "validation": {
+      "nameMin": "Daħħal ismek sħiħ (mill-inqas 2 karattri).",
+      "email": "Daħħal indirizz tal-email validu.",
+      "phone": "Daħħal numru tat-telefown validu.",
+      "startDate": "Agħżel data tal-ġbir.",
+      "endDate": "Agħżel data tar-ritorn.",
+      "endAfterStart": "Ir-ritorn irid ikun wara l-ġbir.",
+      "terms": "Aċċetta t-termini tal-kiri biex tkompli.",
+      "fixErrors": "Jekk jogħġbok irranġa l-oqsma enfasizzati."
+    },
+    "averageRate": "Rata medja ta' kuljum",
+    "breakdownTitle": "Dettall tal-prezz",
+    "standardRate": "Rata standard",
+    "weekendRate": "Tmiem il-ġimgħa",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Il-kiri f'dan l-istaġun irid idum mill-inqas {limit, plural, one {# jum} few {# ijiem} many {#-il jum} other {# jum}}. Ibdel id-dati biex tibbukkja.",
+    "warningMaxDays": "Il-kiri f'dan l-istaġun jista' jdum l-aktar {limit, plural, one {# jum} few {# ijiem} many {#-il jum} other {# jum}}. Ibdel id-dati biex tibbukkja.",
+    "returnLocation": "Post tar-ritorn",
+    "oneWayFee": "Tariffa għal ritorn f'post differenti",
+    "signedInAs": "Dħalt bħala {email}",
+    "signInPrompt": "Għandek kont?",
+    "signInLink": "Idħol biex timla d-dettalji tiegħek",
+    "subtitleSignedIn": "Iċċekkja d-dettalji tiegħek u kkonferma.",
+    "trustPaymentAfter": "Id-dettalji tal-ħlas jaslu wara l-booking",
+    "extras": "Extras",
+    "extraPerDay": "{price} / jum",
+    "extraFixed": "{price} / kiri",
+    "tripDetails": "Dettalji tal-vjaġġ",
+    "pickupTime": "Ħin tal-ġbir",
+    "returnTime": "Ħin tar-ritorn",
+    "timeAny": "Kull ħin",
+    "flightNumber": "Numru tat-titjira",
+    "flightNumberHint": "Il-ġbir tiegħek huwa fl-ajruport. Żid it-titjira tiegħek biex il-kumpanija tkun tista' ssegwi dewmien.",
+    "flightNumberOptional": "Żidu jekk tasal bl-ajruplan.",
+    "notes": "Kummenti",
+    "notesPlaceholder": "Hemm xi ħaġa li l-kumpanija għandha tkun taf?",
+    "dateOfBirth": "Data tat-twelid",
+    "optional": "mhux obbligatorju",
+    "extraSoldOut": "Mhux disponibbli għal dawn id-dati"
+  },
+  "reservationStatus": {
+    "title": "Ir-riservazzjoni tiegħek",
+    "successTitle": "Inti bbukkjat",
+    "successSubtitle": "Bgħatna konferma lil {email}.",
+    "status": {
+      "draft": "Pendenti",
+      "confirmed": "Ikkonfermata",
+      "active": "Attiva — igawdi l-vjaġġ tiegħek!",
+      "completed": "Mitmuma",
+      "cancelled": "Ikkanċellata"
+    },
+    "vehicle": "Vettura",
+    "company": "Kumpanija",
+    "dates": "Dati",
+    "pickup": "Ġbir",
+    "dropoff": "Ritorn",
+    "guest": "Klijent",
+    "email": "Email",
+    "phone": "Telefown",
+    "total": "Total",
+    "reference": "Referenza",
+    "referenceHint": "Uri dan waqt il-ġbir.",
+    "trustCopy": "Issejvja din il-paġna — hija l-irċevuta tal-booking tiegħek. Il-kumpanija tal-kiri tieħu ħsieb minn hawn 'il quddiem.",
+    "trustEmail": "Konferma mibgħuta bl-email",
+    "trustPickup": "Uri din il-paġna waqt il-ġbir",
+    "nextTitle": "X'jiġri wara",
+    "nextEmail": "Iċċekkja {email} għall-konferma tiegħek.",
+    "nextPickup": "Uri r-referenza tiegħek waqt il-ġbir.",
+    "browseMore": "Fittex aktar karozzi",
+    "notFoundTitle": "Ir-riservazzjoni ma nstabitx",
+    "notFoundDescription": "Iċċekkja l-link fl-email ta' konferma tiegħek, jew ibda tfittxija ġdida.",
+    "backHome": "Lura lejn il-paġna ewlenija",
+    "requestExpires": "It-talba tiskadi",
+    "cancelReason": "Raġuni tal-kanċellazzjoni",
+    "withdraw": "Irtira t-talba",
+    "paymentStatus": "Ħlas",
+    "paidAmount": "Imħallas",
+    "payment": {
+      "unpaid": "Mhux imħallas",
+      "partially_paid": "Imħallas parzjalment",
+      "paid": "Imħallas",
+      "refund_due": "Rifużjoni dovuta",
+      "authorized": "Kard awtorizzata"
+    },
+    "reasons": {
+      "unpaid_timeout": "Il-ħlas ma tlestiex fil-ħin",
+      "request_expired": "Il-kumpanija ma wiġbitx fil-ħin",
+      "request_declined": "Il-kumpanija rrifjutat din it-talba",
+      "customer_request": "Int irtirajt din it-talba"
+    },
+    "insurance": "Assigurazzjoni",
+    "extras": "Extras",
+    "fees": "Tariffi tal-ġbir u r-ritorn",
+    "priceTitle": "Sommarju tal-prezz"
+  },
+  "payment": {
+    "title": "Ħallas il-ħlas bil-quddiem",
+    "amountDue": "Ammont dovut: {amount}",
+    "countdown": "Lesti l-ħlas fi żmien {time}",
+    "requestAuthorize": "Il-kard tiegħek tiġi awtorizzata issa u tiġi ċċarġjata biss meta l-kumpanija taċċetta.",
+    "pay": "Ħallas issa",
+    "paying": "Qed nipproċessaw…",
+    "confirming": "Qed nikkonfermaw il-ħlas tiegħek",
+    "confirmingHint": "Jekk jogħġbok stenna — nikkonfermaw il-ħlas mill-kumpanija, mhux mill-formola tal-kard.",
+    "declined": "Il-kard ġiet irrifjutata. Ipprova kard oħra.",
+    "secure": "Id-dettalji tal-kard jiġu mmaniġġjati minn Stripe fil-modalità ta' test.",
+    "cancelBooking": "Ikkanċella l-booking",
+    "cancelTitle": "Tikkanċella dan il-booking?",
+    "cancelDescription": "Se napplikaw ir-regoli tal-kanċellazzjoni tal-kumpanija. Iċċekkja t-tariffa u r-rifużjoni qabel tikkonferma.",
+    "cancelFee": "Tariffa tal-kanċellazzjoni",
+    "cancelRefund": "Rifużjoni",
+    "confirmCancel": "Ikkonferma l-kanċellazzjoni",
+    "keepBooking": "Żomm il-booking",
+    "cancelled": "Il-booking tiegħek ġie kkanċellat."
+  },
+  "companies": {
+    "title": "Kumpaniji tal-kiri",
+    "subtitle": "Fittex kumpaniji msieħba tal-kiri madwar Málaga — fuq il-mappa jew fil-lista",
+    "searchPlaceholder": "Fittex kumpaniji…",
+    "noResults": "L-ebda kumpanija ma nstabet",
+    "noResultsHint": "Ipprova post ieħor fil-provinċja ta' Málaga.",
+    "emptyTitle": "Għad m'hemm l-ebda kumpanija elenkata",
+    "emptyDescription": "Għad m'hemm l-ebda kumpanija tal-kiri elenkata.",
+    "clearFilters": "Neħħi t-tfittxija",
+    "viewFleet": "Ara l-flotta",
+    "visitWebsite": "Żur is-sit web",
+    "contact": "Kuntatt",
+    "backToList": "Il-kumpaniji kollha",
+    "notFoundTitle": "Il-kumpanija ma nstabitx",
+    "notFoundDescription": "Din il-kumpanija tal-kiri mhijiex elenkata. Fittex oħrajn fil-qrib.",
+    "loadErrorTitle": "Id-dettalji tal-kumpanija mhumiex disponibbli",
+    "loadErrorDescription": "Ma stajniex ngħabbu din il-kumpanija tal-kiri mill-katalgu dirett. Erġa' pprova — ma nurux karozzi finta meta l-API tfalli.",
+    "browseCars": "Fittex karozzi",
+    "featuredEmpty": "Għad m'hemm l-ebda kumpanija ewlenija",
+    "featuredEmptyHint": "Erġa' iċċekkja dalwaqt, jew fittex karozzi minn flotot lokali.",
+    "locationUnknown": "Il-post mhux elenkat",
+    "noDescription": "Għad m'hemmx deskrizzjoni."
+  },
+  "contact": {
+    "title": "Ikkuntattjana",
+    "lede": "Għandek mistoqsijiet dwar il-marketplace? Ibgħatilna messaġġ u nwieġbuk kemm jista' jkun malajr.",
+    "bookingHint": "Din il-formola mhijiex għall-bookings. Biex tikri karozza, kompli fuq is-sit tal-kumpanija tal-kiri stess.",
+    "name": "Isem sħiħ",
+    "email": "Indirizz tal-email",
+    "subject": "Suġġett",
+    "message": "Messaġġ",
+    "submit": "Ibgħat messaġġ",
+    "privacyNote": "Nużaw dawn id-dettalji biss biex inwieġbu.",
+    "errors": {
+      "nameMin": "Daħħal ismek (mill-inqas 2 karattri).",
+      "email": "Daħħal indirizz tal-email validu.",
+      "subjectMin": "Daħħal suġġett (mill-inqas 3 karattri).",
+      "messageMin": "Daħħal messaġġ (mill-inqas 10 karattri)."
+    },
+    "eyebrow": "Appoġġ",
+    "namePlaceholder": "Mario Borg",
+    "emailPlaceholder": "inti@ezempju.mt",
+    "subjectPlaceholder": "Kif nistgħu ngħinuk?",
+    "messagePlaceholder": "Għidilna x'għandek bżonn…",
+    "supportSubjectDefault": "Talba ta' appoġġ",
+    "submitting": "Qed jintbagħat…",
+    "submittedTitle": "Messaġġ mibgħut",
+    "submittedDescription": "Grazzi talli kkuntattjajtna. Inwieġbu lill-email tiegħek kemm jista' jkun malajr.",
+    "sendAnother": "Ibgħat messaġġ ieħor",
+    "backHome": "Lura lejn il-paġna ewlenija",
+    "whatsappTitle": "Tippreferi WhatsApp?",
+    "whatsappDescription": "Tkellem direttament mat-tim ta' Benwer Cars."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Politika tal-privatezza",
+      "lede": "Kif nittrattaw id-data personali meta tuża l-marketplace ta' Benwer Cars.",
+      "updated": "Aġġornata l-aħħar: 13 ta' Settembru 2026",
+      "sections": [
+        {
+          "title": "Min aħna",
+          "body": "Benwer Cars (“Benwer”, “aħna”, “tagħna”) topera marketplace għall-konsumaturi li jgħin lill-vjaġġaturi jiskopru flotot tal-kiri tal-karozzi fil-provinċja ta' Málaga.\n\nDin il-politika tkopri biss is-sit tal-marketplace. Jekk tkompli fuq is-sit tal-kumpanija tal-kiri biex tibbukkja, dik il-kumpanija hija responsabbli għad-data li tissottometti hemm."
+        },
+        {
+          "title": "X'jagħmel dan il-marketplace",
+          "body": "Tista' tfittex karozzi u kumpaniji, tqabbel dettalji pubbliċi tal-flotot, u tkompli fuq is-sit ta' kumpanija tal-kiri biex tlesti booking.\n\nBenwer ma jiħux ħlas u ma joħloqx kuntratt ta' kiri fuq il-marketplace. Il-ftehim tal-kiri huwa bejnek u l-kumpanija."
+        },
+        {
+          "title": "Informazzjoni li niġbru",
+          "body": "Skont kif tuża l-marketplace, nistgħu nipproċessaw:\n\n• Data ta' tfittxija u użu — il-post u d-dati li ddaħħal, il-paġni li tara, u data teknika bażika bħall-indirizz IP, il-browser u l-informazzjoni tat-tagħmir.\n• Preferenza tal-lingwa — maħżuna bħala cookie strettament meħtieġa biex nuru l-lingwa magħżula tiegħek.\n• Kunsens tal-cookies — maħżun fuq it-tagħmir tiegħek biex niftakru l-għażla tiegħek.\n• Messaġġi ta' kuntatt — isem, email, suġġett u messaġġ jekk tikteb lilna. Nittikkettaw dawn bħala li ġejjin mill-marketplace.\n\nMa nitolbukx toħloq kont fuq il-marketplace. Id-dettalji tal-booking u tal-ħlas jinġabru mill-kumpanija tal-kiri fuq is-sit tagħha, skont il-politika tal-privatezza tagħha."
+        },
+        {
+          "title": "Kif nużaw id-data",
+          "body": "Nużaw id-data personali biex noperaw u ntejbu l-marketplace, niftakru l-għażliet tal-lingwa u l-cookies, inwieġbu għal messaġġi ta' kuntatt, inżommu s-servizz sigur u nissodisfaw obbligi legali.\n\nMa nbigħux id-data personali tiegħek."
+        },
+        {
+          "title": "Bażijiet legali (ŻEE / Renju Unit)",
+          "body": "Fejn applikabbli, niddependu fuq interessi leġittimi (it-tħaddim ta' direttorju pubbliku u s-sigurtà tas-sit), kunsens (cookies mhux obbligatorji, jekk jiġu introdotti), obbligu legali, u passi meħtieġa biex inwieġbu meta tikkuntattjana."
+        },
+        {
+          "title": "Qsim tad-data",
+          "body": "Nistgħu nużaw fornituri fdati għall-hosting u t-twassil tal-emails. Huma jipproċessaw id-data skont l-istruzzjonijiet tagħna.\n\nJekk tkompli fuq sit ta' kumpanija, dik il-kumpanija ssir il-kontrollur ta' kwalunkwe data li tissottometti hemm. Ma ngħaddux il-messaġġ tiegħek mill-formola ta' kuntatt lill-kumpaniji tal-kiri sakemm ma titlobniex int."
+        },
+        {
+          "title": "Cookies",
+          "body": "Nużaw cookie tal-lingwa strettament meħtieġa u naħżnu l-għażla tiegħek tal-cookies fuq it-tagħmir tiegħek. Ara l-politika tal-cookies għad-dettalji. Il-cookies mhux obbligatorji jibqgħu mitfija sakemm ma taċċettahomx."
+        },
+        {
+          "title": "Żamma tad-data",
+          "body": "Inżommu l-messaġġi ta' kuntatt sakemm ikun meħtieġ biex inwieġbu u għal perjodu raġonevoli ta' segwitu. Ir-reġistri tekniċi jinżammu għal perjodu qasir. L-għażla tiegħek tal-cookies tibqa' sakemm tibdilha jew tħassar id-data tas-sit."
+        },
+        {
+          "title": "Id-drittijiet tiegħek",
+          "body": "Skont fejn tinsab, jista' jkollok drittijiet ta' aċċess, rettifika, tħassir, restrizzjoni jew portabbiltà tad-data tiegħek, u li toġġezzjona għal ċertu proċessar. Tista' wkoll tressaq ilment lill-awtorità superviżorja lokali tiegħek.\n\nBiex teżerċita d-drittijiet tiegħek, uża l-paġna ta' kuntatt."
+        },
+        {
+          "title": "Trasferimenti internazzjonali",
+          "body": "Jekk id-data tiġi trasferita barra minn pajjiżek, nużaw salvagwardji xierqa bħal klawżoli kuntrattwali standard jew mekkaniżmi ekwivalenti fejn meħtieġ bil-liġi."
+        },
+        {
+          "title": "Bidliet",
+          "body": "Nistgħu naġġornaw din il-politika minn żmien għal żmien. Se nippubblikaw il-verżjoni riveduta fuq din il-paġna u naġġornaw id-data ta' “Aġġornata l-aħħar”."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Termini tal-użu",
+      "lede": "Ir-regoli għall-użu tal-marketplace ta' Benwer Cars biex tiskopri flotot tal-kiri.",
+      "updated": "Aġġornata l-aħħar: 13 ta' Settembru 2026",
+      "sections": [
+        {
+          "title": "Il-marketplace",
+          "body": "Benwer Cars jipprovdi direttorju pubbliku ta' kumpaniji tal-kiri tal-karozzi u l-flotot ippubblikati tagħhom. Tista' tqabbel karozzi u tkompli fuq is-sit tal-kumpanija stess biex tlesti kiri.\n\nDawn it-termini japplikaw għas-sit tal-marketplace. Ma jissostitwixxux it-termini tal-kumpanija tal-kiri stess, li japplikaw meta tibbukkja magħha."
+        },
+        {
+          "title": "Il-bookings isiru mal-kumpaniji tal-kiri",
+          "body": "Benwer ma jikrix karozzi, ma jiħux ħlas u ma jidħolx f'kuntratt ta' kiri fuq il-marketplace.\n\nJekk tkompli fuq sit ta' kumpanija, kull booking, depożitu, assigurazzjoni u arranġament ta' ġbir huwa bejnek u dik il-kumpanija. Aqra t-termini tagħhom qabel tikkonferma."
+        },
+        {
+          "title": "Elenkar u disponibbiltà",
+          "body": "Id-dettalji tal-flotta, il-prezzijiet, ir-ritratti u d-disponibbiltà jiġu ppubblikati mill-kumpaniji tal-kiri u jistgħu jinbidlu. Nimmiraw li nuru informazzjoni pubblika b'mod preċiż, iżda ma niggarantixxux li karozza tibqa' disponibbli jew li prezz elenkat jiġi onorat sakemm il-kumpanija ma tikkonfermahx.\n\nId-dati li ddaħħal fuq il-marketplace jgħinuk tfittex. Id-disponibbiltà finali tiġi kkonfermata fuq is-sit tal-kumpanija."
+        },
+        {
+          "title": "Użu aċċettabbli",
+          "body": "Uża l-marketplace b'mod legali. Tiġborx data b'mod awtomatizzat, tgħabbix iżżejjed jew tinterferixxix mas-servizz, tissottomettix dettalji ta' kuntatt foloz, u tużax is-sit biex tagħmel ħsara lil nies jew negozji oħra."
+        },
+        {
+          "title": "Responsabbiltà",
+          "body": "Il-marketplace huwa pprovdut bħala servizz ta' skoperta. Sal-limitu permess mil-liġi, Benwer mhux responsabbli għal tilwim dwar kiri, kundizzjoni ta' vetturi, jew bookings kompluti fuq sit ta' kumpanija.\n\nXejn f'dawn it-termini ma jillimita drittijiet li għandek bħala konsumatur li ma jistgħux jitwarrbu taħt il-liġi applikabbli."
+        },
+        {
+          "title": "Bidliet",
+          "body": "Nistgħu naġġornaw dawn it-termini. Id-data ta' “Aġġornata l-aħħar” fuq din il-paġna turi l-verżjoni kurrenti. L-użu kontinwu wara bidla jfisser li taċċetta t-termini aġġornati."
+        },
+        {
+          "title": "Kuntatt",
+          "body": "Mistoqsijiet dwar dawn it-termini jew il-marketplace jistgħu jintbagħtu mill-paġna ta' kuntatt. Għal booking li diġà bdejt, ikkuntattja direttament lill-kumpanija tal-kiri."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Politika tal-cookies",
+      "lede": "Kif nużaw il-cookies u teknoloġiji simili fuq il-marketplace.",
+      "updated": "Aġġornata l-aħħar: 13 ta' Settembru 2026",
+      "sections": [
+        {
+          "title": "X'nużaw",
+          "body": "Il-cookies huma fajls żgħar ta' test maħżuna fuq it-tagħmir tiegħek. Nużaw ukoll ħażna simili, bħal ħażna lokali, biex niftakru l-għażliet.\n\nDin il-politika tkopri l-marketplace ta' Benwer Cars. Meta tkompli fuq is-sit ta' kumpanija tal-kiri, dak is-sit jista' jistabbilixxi l-cookies tiegħu stess."
+        },
+        {
+          "title": "Strettament meħtieġa",
+          "body": "Nużaw cookie tal-lingwa biex is-sit juri l-lingwa magħżula tiegħek. Dan huwa meħtieġ biex il-marketplace jaħdem kif tistenna.\n\nL-għażla tiegħek fil-banner tal-cookies tinħażen fuq it-tagħmir tiegħek biex ma nerġgħux nistaqsuk f'kull żjara. Dik il-ħażna ma tintużax għar-reklamar."
+        },
+        {
+          "title": "Cookies mhux obbligatorji",
+          "body": "Il-cookies mhux obbligatorji (pereżempju tal-analitika) jibqgħu mitfija sakemm ma tagħżilx “Aċċetta kollox”.\n\nIllum il-marketplace ma jistabbilixxix cookies tal-analitika jew tal-marketing. Jekk inżiduhom aktar tard, niddeskrivuhom hawn u xorta se jeħtieġu l-aċċettazzjoni tiegħek."
+        },
+        {
+          "title": "Ġestjoni tal-cookies",
+          "body": "Uża l-banner biex taċċetta l-cookies kollha jew iżżomm biss dawk meħtieġa. Tista' wkoll tħassar il-cookies u d-data tas-sit fil-browser tiegħek. L-imblukkar tal-cookie tal-lingwa jista' jirrisettja l-lingwa fiż-żjara li jmiss."
+        },
+        {
+          "title": "Aktar informazzjoni",
+          "body": "Ara l-politika tal-privatezza għal kif nittrattaw id-data personali, jew ibgħat messaġġ mill-paġna ta' kuntatt."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "Paġna ewlenija ta' {name}",
+    "defaultHeadline": "Kri karozza ma' {name}",
+    "footerTagline": "Ibbukkja direttament ma' din il-kumpanija tal-kiri.",
+    "previewBanner": "Previżjoni — din il-paġna mhix pubblika. Il-magni tat-tfittxija mhux se jindiċizzawha.",
+    "editLink": "Editja",
+    "editContactEmpty": "Id-dettalji ta' kuntatt huma moħbija. Editjahom fl-amministrazzjoni.",
+    "editBranchesEmpty": "Għad m'hemmx fergħat. Żidhom fl-amministrazzjoni.",
+    "editRulesHint": "Modalità tal-booking, żmien minimu ta' avviż, u tieqa tat-talbiet.",
+    "editDomainHint": "Dominju personalizzat u URL attiv.",
+    "editSection": {
+      "hero": "Sezzjoni ewlenija",
+      "search": "Tfittxija",
+      "fleet": "Flotta",
+      "branches": "Fergħat",
+      "contact": "Kuntatt",
+      "rules": "Regoli tal-booking",
+      "domain": "Dominju"
+    },
+    "pausedTitle": "Mhux qed jintlaqgħu bookings",
+    "pausedDescription": "Din il-kumpanija waqqfet temporanjament il-bookings online. Xorta tista' tfittex fil-flotta.",
+    "notFoundTitle": "Is-sit web ma nstabx",
+    "notFoundDescription": "Dan is-sit tal-kiri mhuwiex disponibbli.",
+    "loadErrorTitle": "Is-sit web mhuwiex disponibbli",
+    "loadErrorDescription": "Ma stajniex ngħabbu dan is-sit tal-kiri. Erġa' pprova dalwaqt.",
+    "search": "Fittex karozzi",
+    "searchAria": "Fittex skont id-dati u l-post",
+    "searchTitle": "Fittex karozzi",
+    "searchDescription": "Agħżel id-dati u post biex tara x'inhu disponibbli.",
+    "branch": "Post tal-ġbir",
+    "anyBranch": "Kull post",
+    "ownerSignIn": "Dħul tas-sid",
+    "returnBranch": "Post tar-ritorn",
+    "differentReturn": "Irrestitwixxi f'post differenti",
+    "returnSame": "L-istess bħall-ġbir",
+    "driverAge": "Età tas-sewwieq",
+    "driverAgeYears": "{band} sena",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Editja s-sit web tiegħek",
+    "signInHint": "Is-sidien jiftħu l-editur tas-sit mill-amministrazzjoni ta' Benwer. Uża l-buttuna “Editja s-sit” hemm u tidħol hawn awtomatikament.",
+    "signedInTitle": "Inti dħalt fil-kont",
+    "signedInHint": "Jekk tista' timmaniġġja dan is-sit, l-editur jinfetaħ fuq il-paġna ewlenija.",
+    "openEditor": "Iftaħ l-editur tas-sit",
+    "disabledTitle": "L-editjar tas-sid mhuwiex disponibbli",
+    "disabledDescription": "Firebase tal-istaff mhuwiex ikkonfigurat fuq dan il-marketplace.",
+    "signOut": "Oħroġ",
+    "auth": {
+      "tooManyRequests": "Wisq tentattivi. Erġa' pprova aktar tard.",
+      "unknown": "Ma stajniex indaħħluk fil-kont. Erġa' pprova.",
+      "invalidToken": "Din il-link tad-dħul skadiet jew diġà ntużat. Erġa' iftaħ l-editur mill-amministrazzjoni ta' Benwer."
+    },
+    "signingIn": "Qed tidħol fil-kont…",
+    "openAdmin": "Iftaħ l-amministrazzjoni ta' Benwer",
+    "accountMenu": "Kont tas-sid",
+    "signedInAs": "Dħalt bħala sid",
+    "guestSignedOut": "Ħriġt mill-kont tal-klijent tiegħek. Sessjonijiet tas-sid u tal-klijent ma jistgħux ikunu miftuħa fl-istess ħin f'dan il-browser."
+  },
+  "guest": {
+    "googleAction": "Idħol b'Google",
+    "googleCreate": "Kompli b'Google",
+    "or": "jew",
+    "forgotPassword": "Insejt il-password?",
+    "resetTitle": "Irrisettja l-password tiegħek",
+    "resetHint": "Daħħal l-indirizz tal-email tiegħek u nibagħtulek link biex tagħżel password ġdida.",
+    "resetAction": "Ibgħat link ta' risettjar",
+    "resetSentTitle": "Iċċekkja l-email tiegħek",
+    "resetSentHint": "Jekk jeżisti kont għal dak l-indirizz, bgħatna struzzjonijiet biex tirrisettja l-password. Ma rċevejtx? Iċċekkja l-folder tal-ispam jew stenna ftit minuti qabel terġa' tipprova.",
+    "backToSignIn": "Lura għad-dħul",
+    "signInNav": "Idħol",
+    "myBookings": "Il-bookings tiegħi",
+    "signInTitle": "Idħol",
+    "signInHint": "Uża l-kont tal-klijent tiegħek għal din il-kumpanija tal-kiri. Dan mhux dħul għall-istaff.",
+    "signInAction": "Idħol",
+    "createTitle": "Oħloq kont ta' klijent",
+    "createHint": "Issejvja l-bookings tiegħek ma' din il-kumpanija. L-istaff juża dħul differenti.",
+    "createAction": "Oħloq kont",
+    "needAccount": "Għandek bżonn kont? Oħloq wieħed",
+    "haveAccount": "Diġà għandek kont? Idħol",
+    "email": "Email",
+    "password": "Password",
+    "bookingsTitle": "Il-bookings tiegħi",
+    "bookingsMeta": "Bookings marbuta ma' din il-kumpanija tal-kiri.",
+    "bookingsHint": "Dħalt bħala {email} għand {company}.",
+    "emptyTitle": "Għad m'hemmx bookings",
+    "emptyDescription": "Ibbukkjajt qabel? Orbot dak il-booking bl-email li użajt jew bit-token ta' konferma tiegħu.",
+    "bookingFallback": "Booking",
+    "loadErrorTitle": "Ma stajniex ngħabbu l-bookings",
+    "linkTitle": "Orbot booking",
+    "linkHint": "Daħħal l-email użat biex tibbukkja, jew it-token ta' konferma. Jekk insibu qbil nibagħtu link bl-email — qatt ma ngħidu jekk jeżistix kont.",
+    "linkEmail": "Email tal-booking",
+    "linkToken": "Token tal-booking",
+    "linkAction": "Ibgħat link",
+    "linkSent": "Jekk insibu booking li jaqbel, nibagħtu link ta' konferma bl-email.",
+    "accountTitle": "Kont",
+    "accountHint": "Oħroġ mill-kont tiegħek fuq dan is-sit.",
+    "signOut": "Oħroġ",
+    "erase": "Ħassar id-data tiegħi hawn",
+    "eraseConfirm": "Iva, ħassar id-data tiegħi għal din il-kumpanija",
+    "confirmTitle": "Qed norbtu l-booking tiegħek",
+    "confirmHint": "Jekk jogħġbok stenna sakemm norbtu dan il-booking mal-kont tiegħek.",
+    "confirmSignIn": "Idħol bil-kont tal-klijent tiegħek biex tlesti r-rabta ta' dan il-booking.",
+    "confirmMissing": "Token ta' konferma nieqes",
+    "confirmMissingHint": "Erġa' iftaħ il-link mill-email tiegħek.",
+    "confirmError": "Ma stajniex nikkonfermaw din il-link",
+    "disabledTitle": "Il-kontijiet tal-klijenti għadhom mhumiex disponibbli",
+    "disabledDescription": "Din il-kumpanija għadha ma attivatx id-dħul għall-klijenti. Xorta tista' tibbukkja b'ismek, l-email u t-telefown tiegħek.",
+    "auth": {
+      "popupClosed": "Id-dħul ġie kkanċellat.",
+      "popupBlocked": "Il-browser tiegħek imblokka t-tieqa ta' Google. Ippermetti pop-ups u erġa' pprova.",
+      "differentProvider": "Dan l-email diġà jidħol b'mod ieħor. Uża l-password tiegħek minflok.",
+      "providerUnavailable": "Id-dħul b'Google għadu mhuwiex disponibbli fuq dan is-sit. Uża l-email u l-password tiegħek.",
+      "invalidEmail": "Daħħal indirizz tal-email validu.",
+      "emailInUse": "Dak l-email diġà għandu kont ta' klijent. Idħol minflok.",
+      "weakPassword": "Uża password itwal.",
+      "tooManyRequests": "Wisq tentattivi. Erġa' pprova fi ftit minuti.",
+      "invalidCredentials": "L-email jew il-password mhijiex korretta.",
+      "unknown": "Ma stajniex indaħħluk fil-kont. Erġa' pprova.",
+      "googleDisabled": "Id-dħul b'Google għadu mhuwiex attivat għal dan is-sit. Uża l-email u l-password tiegħek.",
+      "domainNotAuthorised": "Id-dħul b'Google għadu mhuwiex ikkonfigurat għall-indirizz ta' dan is-sit. Uża l-email u l-password tiegħek għalissa."
+    },
+    "accountMenu": "Il-kont tiegħek",
+    "profileNav": "Profil",
+    "profileTitle": "Profil",
+    "profileMeta": "Il-kont tal-klijent tiegħek għal din il-kumpanija tal-kiri.",
+    "linkCancel": "Ikkanċella",
+    "eraseTitle": "Ħassar id-data tiegħi",
+    "eraseHint": "Iħassar id-data tal-klijent tiegħek għal din il-kumpanija u joħorġok mill-kont. Kumpaniji oħra ma jiġux affettwati.",
+    "profileDetailsTitle": "Id-dettalji tiegħek",
+    "profileDetailsHint": "Jintużaw biex jimlew il-bookings tiegħek ma' din il-kumpanija.",
+    "profileFullName": "Isem sħiħ",
+    "profilePhone": "Numru tat-telefown",
+    "profileDob": "Data tat-twelid",
+    "profileSave": "Issejvja d-dettalji",
+    "profileNotLinked": "Ismek u t-telefown tiegħek jiġu ssejvjati hawn wara l-ewwel booking tiegħek b'dan l-email. Diġà bbukkjajt b'email ieħor? Orbot dak il-booking minn “Il-bookings tiegħi”.",
+    "verifyTitle": "Ivverifika l-email tiegħek biex tara l-bookings tiegħek",
+    "verifyHint": "Bgħatna link lil {email}. Iftaħha, imbagħad erġa' ejja hawn. Sakemm l-email tiegħek ma jiġix ivverifikat ma nistgħux nuru l-bookings tiegħek jew nissejvjaw ismek u t-telefown tiegħek.",
+    "verifyResend": "Erġa' ibgħat l-email",
+    "verifySent": "L-email intbagħat. Iċċekkja l-inbox u l-folder tal-ispam.",
+    "verifyDone": "Ivverifikajt l-email tiegħi",
+    "verifyStillPending": "L-email tiegħek għadu mhux ivverifikat. Iftaħ il-link fl-email, imbagħad erġa' pprova.",
+    "verifyBanner": "Il-kont tiegħek għadu mhux attiv. Ivverifika {email} biex tara l-bookings tiegħek u tuża d-dettalji ssejvjati tiegħek.",
+    "verifyBannerAction": "Ivverifika l-email",
+    "profileEdit": "Editja d-dettalji",
+    "profileCancel": "Ikkanċella",
+    "profileEmail": "Email",
+    "profileEmpty": "Mhux miżjud",
+    "bookingsUpcoming": "Li ġejjin",
+    "bookingsPast": "Tal-passat",
+    "ownerSignedOut": "Ħriġt mill-editur tas-sit web. Sessjonijiet tas-sid u tal-klijent ma jistgħux ikunu miftuħa fl-istess ħin f'dan il-browser."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Offerti ta' {name}",
+      "slideAlt": "Banner {position} ta' {name}",
+      "slideLabel": "{position} minn {count}",
+      "previous": "Banner ta' qabel",
+      "next": "Banner li jmiss",
+      "goTo": "Uri l-banner {position}",
+      "presets": {
+        "airport": {
+          "script": "għadek kif inżilt?",
+          "highlight": "Ġbir mill-ajruport",
+          "joiner": "f'",
+          "boxed": "10 minuti",
+          "description": "Aqbeż il-kju: iffirma l-kuntratt fuq il-mowbajl tiegħek u suq b'assigurazzjoni sħiħa"
+        },
+        "weekend": {
+          "script": "ibbukkja għal tmiem il-ġimgħa",
+          "highlight": "Iffranka 20%",
+          "joiner": "fuq",
+          "boxed": "Kiri ta' tmiem il-ġimgħa",
+          "description": "Iġbor il-Ġimgħa, irrestitwixxi t-Tnejn. Siġġu tat-tfal b'xejn u sewwieq żejjed inklużi"
+        },
+        "roadtrip": {
+          "script": "il-vjaġġ li jmiss tiegħek",
+          "highlight": "Jibda hawn",
+          "joiner": "ngħaddulek iċ-",
+          "boxed": "Ċwievet",
+          "description": "Kanċellazzjoni b'xejn sa 24 siegħa qabel il-ġbir, kilometri bla limitu u l-ebda ħlas moħbi"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Inkluż f'kull prezz",
+      "title": "Il-prezz li tara huwa l-prezz li tħallas",
+      "description": "L-ebda sorpriża fl-uffiċċju. Dawn huma dejjem parti mill-prezz.",
+      "presets": {
+        "insurance": {
+          "title": "Assigurazzjoni bażika",
+          "text": "Kopertura għal ħabta, serq u terzi persuni.",
+          "tag": "Inkluża"
+        },
+        "mileage": {
+          "title": "Kilometri bla limitu",
+          "text": "Suq kemm trid, mingħajr ħlas għal kull kilometru.",
+          "tag": "Bla limiti"
+        },
+        "fuel": {
+          "title": "Fjuwil mimli għal mimli",
+          "text": "Iġbor il-karozza bit-tank mimli u ġibha lura mimlija.",
+          "tag": "Bla tank imħallas minn qabel"
+        },
+        "cancellation": {
+          "title": "Kanċellazzjoni b'xejn",
+          "text": "Inbidlu l-pjanijiet? Ikkanċella b'xejn.",
+          "tag": "Flessibbli"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Reċensjonijiet",
+      "title": "X'jgħidu s-sewwieqa dwarna",
+      "seeAll": "Ara {count, plural, one {ir-reċensjoni #} few {il-# reċensjonijiet kollha} many {il-#-il reċensjoni kollha} other {il-# reċensjoni kollha}}",
+      "seeAllOn": "Ara {count, plural, one {ir-reċensjoni #} few {il-# reċensjonijiet kollha} many {il-#-il reċensjoni kollha} other {il-# reċensjoni kollha}} fuq {source}",
+      "basedOn": "Ibbażat fuq {count, plural, one {# reċensjoni} few {# reċensjonijiet} many {#-il reċensjoni} other {# reċensjoni}}",
+      "basedOnSource": "Ibbażat fuq {count, plural, one {# reċensjoni} few {# reċensjonijiet} many {#-il reċensjoni} other {# reċensjoni}} fuq {source}",
+      "ratingAria": "Valutat {rating} minn 5",
+      "rented": "Mikrija: {vehicle}",
+      "verified": "Kiri vverifikat",
+      "distributionAria": "Tqassim tal-valutazzjonijiet",
+      "emptyTitle": "Għad m'hemmx reċensjonijiet",
+      "emptyText": "Il-klijenti jistgħu jħallu reċensjoni wara li jirritornaw il-karozza. Ir-reċensjonijiet approvati jidhru hawn."
+    },
+    "app": {
+      "eyebrow": "App mobbli",
+      "title": "Il-booking tiegħek, dejjem miegħek",
+      "text": "Agħmel check-in online, ara d-dettalji tal-ġbir u ibgħatilna messaġġ, kollox mill-mowbajl tiegħek.",
+      "platformBoth": "iOS u Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Skennja biex tniżżel",
+      "qrAlt": "Kodiċi QR biex tniżżel l-app",
+      "appStore": {
+        "prefix": "Niżżel minn",
+        "name": "App Store",
+        "aria": "Niżżel minn App Store",
+        "unavailable": "Għadha mhix disponibbli fuq App Store"
+      },
+      "googlePlay": {
+        "prefix": "Ikseb minn",
+        "name": "Google Play",
+        "aria": "Ikseb minn Google Play",
+        "unavailable": "Għadha mhix disponibbli fuq Google Play"
+      },
+      "comingSoon": "Dalwaqt"
+    },
+    "locations": {
+      "eyebrow": "Postijiet",
+      "title": "{count, plural, one {L-uffiċċju tagħna} few {L-uffiċċji tagħna} many {L-uffiċċji tagħna} other {L-uffiċċji tagħna}}",
+      "description": "{count, plural, one {Iġbor u rritorna l-karozza tiegħek hawn.} few {Iġbor u rritorna l-karozza tiegħek fi kwalunkwe uffiċċju tagħna.} many {Iġbor u rritorna l-karozza tiegħek fi kwalunkwe uffiċċju tagħna.} other {Iġbor u rritorna l-karozza tiegħek fi kwalunkwe uffiċċju tagħna.}}",
+      "directions": "Direzzjonijiet",
+      "directionsTo": "Direzzjonijiet lejn {name}",
+      "call": "Ċempel"
+    },
+    "faq": {
+      "eyebrow": "Mistoqsijiet frekwenti",
+      "title": "Mistoqsijiet qabel tibbukkja",
+      "description": "Ma tistax issib it-tweġiba tiegħek? Ikkuntattjana, nieħdu pjaċir ngħinuk."
+    },
+    "contact": {
+      "title": "Għandek mistoqsijiet? Tkellem ma' persuna.",
+      "description": "Ibgħatilna messaġġ jew ċemplilna u ngħinuk issib il-karozza t-tajba.",
+      "whatsapp": "WhatsApp",
+      "email": "Ibgħatilna email",
+      "whatsappMessage": "Hello {name}, għandi mistoqsija dwar kiri ta' karozza."
+    },
+    "nav": {
+      "reviews": "Reċensjonijiet",
+      "faq": "Mistoqsijiet frekwenti",
+      "contact": "Kuntatt",
+      "app": "App",
+      "branches": "Postijiet"
+    },
+    "footer": {
+      "contact": "Kuntatt",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Naċċettaw",
+      "rating": "{score} · {count, plural, one {# reċensjoni} few {# reċensjonijiet} many {#-il reċensjoni} other {# reċensjoni}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Flus kontanti"
+    }
+  },
+  "siteEditor": {
+    "aria": "Editur tas-sit web",
+    "title": "Editur tas-sit web",
+    "signOut": "Oħroġ",
+    "tabsAria": "Sezzjonijiet tal-editur",
+    "status": {
+      "draft": "Abbozz",
+      "published": "Attiv",
+      "paused": "Imwaqqaf"
+    },
+    "tabs": {
+      "sections": "Sezzjonijiet",
+      "design": "Disinn",
+      "settings": "Settings",
+      "legal": "Legali"
+    },
+    "contentLanguage": "Lingwa tal-editjar",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Is-sezzjonijiet kollha",
+    "sections": {
+      "company": "Kumpanija",
+      "fleet": "Karozzi",
+      "included": "Inkluż f'kull prezz",
+      "reviews": "Reċensjonijiet",
+      "app": "App mobbli",
+      "faq": "Mistoqsijiet frekwenti",
+      "contact": "Kuntatt",
+      "hero": "Banners u tfittxija",
+      "branches": "Postijiet"
+    },
+    "sectionsHint": "Ixgħel jew itfi s-sezzjonijiet u biddel l-ordni tagħhom. Iftaħ sezzjoni biex teditja l-kontenut tagħha.",
+    "orderHint": "Il-karozzi dejjem jidhru. L-uffiċċji jiġu mill-fergħat tiegħek fl-amministrazzjoni ta' Benwer.",
+    "hiddenUntilContent": "Moħbi sakemm iżżid kontenut",
+    "summary": {
+      "banners": "{count, plural, one {# banner} few {# banners} many {#-il banner} other {# banner}}",
+      "bannersEmpty": "Għad m'hemmx banners, jintwera l-kulur tal-marka",
+      "company": "Titlu, introduzzjoni u dettalji ta' kuntatt",
+      "fleet": "Mill-flotta tiegħek ta' Benwer",
+      "included": "{count, plural, one {# element} few {# elementi} many {#-il element} other {# element}}",
+      "reviews": "{count, plural, one {# reċensjoni} few {# reċensjonijiet} many {#-il reċensjoni} other {# reċensjoni}}",
+      "app": "Links tal-ħwienet u kodiċi QR",
+      "locations": "{count, plural, one {# uffiċċju} few {# uffiċċji} many {#-il uffiċċju} other {# uffiċċju}} minn Benwer",
+      "faq": "{count, plural, one {# mistoqsija} few {# mistoqsijiet} many {#-il mistoqsija} other {# mistoqsija}}",
+      "contactWhatsapp": "WhatsApp, telefown u ħinijiet tal-ftuħ",
+      "contact": "Telefown u email"
+    },
+    "unsaved": "Bidliet mhux issejvjati",
+    "saved": "Il-bidliet kollha ġew issejvjati",
+    "discard": "Armi",
+    "save": "Issejvja l-bidliet",
+    "common": {
+      "moveUp": "Mexxi {item} 'il fuq",
+      "moveDown": "Mexxi {item} 'l isfel",
+      "remove": "Neħħi {item}",
+      "show": "Uri {item}"
+    },
+    "banners": {
+      "title": "Banners",
+      "description": "Sa {max} slides. L-oqsma vojta jużaw it-test default muri bil-griż.",
+      "empty": "L-ebda banner. Iż-żona tal-banner turi l-kulur tal-isfond tiegħek.",
+      "item": "Banner {position}",
+      "image": "Stampa",
+      "imageHint": "Tella' stampa wiesgħa, madwar 1600 × 560 px. JPG, PNG jew WebP sa 25 MB. PNG trasparenti joqgħod fuq il-kulur tal-banner tiegħek.",
+      "add": "Żid banner",
+      "fields": {
+        "script": "Linja miktuba bl-idejn",
+        "highlight": "Titlu enfasizzat",
+        "joiner": "Konnettur żgħir",
+        "boxed": "Titlu f'kaxxa",
+        "description": "Deskrizzjoni"
+      },
+      "colorsTitle": "Kuluri tal-banners",
+      "colorsDescription": "Użati minn kull banner. Kwalunkwe kulur jaħdem għall-isfond.",
+      "resetColors": "Irrisettja għall-kuluri default",
+      "colors": {
+        "background": "Sfond",
+        "text": "Test",
+        "highlight": "Kaxxa enfasizzata",
+        "highlightText": "Test enfasizzat",
+        "box": "Kaxxa bajda",
+        "boxText": "Test tal-kaxxa bajda",
+        "script": "Test tal-konnettur"
+      },
+      "noImage": "Għad m'hemmx stampa",
+      "uploadImage": "Tella' stampa",
+      "replaceImage": "Ibdel l-istampa",
+      "tooLarge": "Dak il-fajl jaqbeż il-25 MB. Agħżel stampa iżgħar.",
+      "uploadFailed": "It-tlugħ falla. Erġa' pprova."
+    },
+    "company": {
+      "title": "Intestatura tal-kumpanija",
+      "description": "Ismek, titlu u introduzzjoni qasira.",
+      "headline": "Titlu",
+      "headlinePlaceholder": "Kri karozza ma' {name}",
+      "intro": "Introduzzjoni",
+      "introHint": "Sentenza jew tnejn dwar il-kumpanija tiegħek.",
+      "contactTitle": "Dettalji ta' kuntatt",
+      "contactDescription": "Jidhru fl-intestatura, fil-postijiet u fis-sezzjonijiet ta' kuntatt.",
+      "showPhone": "Uri n-numru tat-telefown",
+      "showEmail": "Uri l-email",
+      "showAddress": "Uri l-indirizz"
+    },
+    "included": {
+      "title": "Inkluż f'kull prezz",
+      "description": "Sa 6 wegħdiet li huma dejjem parti mill-prezz tiegħek.",
+      "accuracy": "Elenka biss dak li jgħodd għal kull kiri. It-test default huwa suġġeriment — iċċekkja li jaqbel mal-kundizzjonijiet tal-kiri tiegħek.",
+      "item": "Element {position}",
+      "icon": "Ikona",
+      "itemTitle": "Titlu",
+      "itemText": "Deskrizzjoni",
+      "itemTag": "Enfasi",
+      "tagHint": "Tikketta qasira bl-aħdar, bħal “Eċċess €1,000”.",
+      "presets": {
+        "insurance": "Assigurazzjoni bażika",
+        "mileage": "Km bla limitu",
+        "fuel": "Fjuwil mimli għal mimli",
+        "cancellation": "Kanċellazzjoni b'xejn"
+      },
+      "addCustom": "Element personalizzat"
+    },
+    "icons": {
+      "shield": "Tarka",
+      "gauge": "Speedometer",
+      "fuel": "Pompa tal-fjuwil",
+      "calendar_check": "Kalendarju",
+      "check": "Immarkar",
+      "car": "Karozza",
+      "users": "Nies",
+      "baby": "Siġġu tat-tfal",
+      "plane": "Ajruplan",
+      "key": "Ċavetta"
+    },
+    "reviews": {
+      "title": "Reċensjonijiet tal-klijenti",
+      "description": "Il-klijenti jirrevedu l-kiri tagħhom wara li jirritornaw il-karozza. Jidhru biss ir-reċensjonijiet li tapprova int.",
+      "summary": "Medja ta' {average} minn {count, plural, one {# reċensjoni approvata} few {# reċensjonijiet approvati} many {#-il reċensjoni approvata} other {# reċensjoni approvata}}",
+      "none": "Għad m'hemmx reċensjonijiet approvati. Il-klijenti jaraw nota qasira sakemm tapprova waħda.",
+      "manage": "Approva jew aħbi reċensjonijiet fl-amministrazzjoni ta' Benwer",
+      "demo": "Dawn huma reċensjonijiet demo murija fuq din il-kumpanija ta' test sakemm tapprova oħrajn reali fl-amministrazzjoni ta' Benwer."
+    },
+    "app": {
+      "benwerAppTitle": "App Benwer Cars",
+      "benwerApp": "Uri l-app Benwer Cars",
+      "benwerAppDescription": "Il-klijenti jiksbu l-app b'xejn ta' Benwer Cars. Il-badges iwasslu għall-ħwienet uffiċjali u l-kodiċi QR jiftaħ il-kumpanija tiegħek fl-app.",
+      "storesWithBenwerApp": "Meħtieġ biss jekk il-kumpanija tiegħek għandha l-app tagħha stess. Sakemm l-app Benwer Cars tkun mixgħula, is-sezzjoni tuża l-links tal-ħwienet tagħha.",
+      "storesTitle": "Links tal-ħwienet",
+      "storesDescription": "Links għall-app tiegħek stess. Ħanut nieqes jidher bil-griż. Mingħajr links u bl-app Benwer Cars mitfija, is-sezzjoni tibqa' moħbija.",
+      "ios": "Link tal-App Store",
+      "android": "Link ta' Google Play",
+      "qrHint": "Il-kodiċi QR jiftaħ il-link ta' Google Play, jew il-link tal-App Store jekk m'hemmx link ta' Google Play.",
+      "copyTitle": "Test",
+      "title": "Titlu",
+      "text": "Deskrizzjoni"
+    },
+    "faq": {
+      "title": "Mistoqsijiet",
+      "description": "Sa {max} mistoqsijiet bi tweġibiet qosra.",
+      "empty": "Għad m'hemmx mistoqsijiet. Is-sezzjoni tibqa' moħbija sakemm iżżid waħda.",
+      "item": "Mistoqsija {position}",
+      "question": "Mistoqsija",
+      "answer": "Tweġiba",
+      "incompleteHint": "Mistoqsijiet mingħajr tweġiba ma jidhrux fuq is-sit.",
+      "add": "Żid mistoqsija"
+    },
+    "contact": {
+      "title": "Kuntatt",
+      "description": "Kif il-klijenti jilħquk. It-telefown u l-email jiġu mis-sezzjoni tal-kumpanija.",
+      "whatsapp": "Numru ta' WhatsApp",
+      "whatsappHint": "Inkludi l-kodiċi tal-pajjiż. Ħalli vojt biex taħbi l-buttuna ta' WhatsApp.",
+      "hours": "Meta twieġeb",
+      "hoursPlaceholder": "Inwieġbu kuljum mit-08:00 sal-22:00.",
+      "payments": "Metodi ta' ħlas",
+      "paymentsHint": "Jidhru fil-qiegħ tas-sit tiegħek."
+    },
+    "design": {
+      "colorTitle": "Kulur tal-marka",
+      "colorDescription": "Użat għall-buttuni, links u enfasi madwar is-sit tiegħek. L-isfond tal-banner isegwi dan il-kulur; xorta tista' taġġustah taħt Banners.",
+      "presets": "Kuluri suġġeriti",
+      "custom": "Kulur personalizzat",
+      "customHint": "Uża kodiċi hex, bħal #4f46e5.",
+      "picker": "Agħżel kulur",
+      "lowContrast": "Dan il-kulur huwa ċar wisq għal test abjad fuq il-buttuni. Agħżel wieħed aktar skur, inkella s-salvataġġ ifalli.",
+      "fontTitle": "Font",
+      "fontDescription": "Użat għat-test kollu fuq is-sit web tiegħek.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Nadif u modern"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klassiku u eleganti"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Qawwi u amikevoli"
+        }
+      },
+      "cornersTitle": "Kantunieri",
+      "cornersDescription": "Kantunieri tondi jew kwadri fuq buttuni, kards u oqsma madwar is-sit web tiegħek.",
+      "corners": {
+        "round": {
+          "name": "Tondi",
+          "hint": "Artbi u amikevoli"
+        },
+        "square": {
+          "name": "Kwadri",
+          "hint": "Preċiżi u minimalisti"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Sit web",
+      "websiteEnabled": "Sit web tal-bookings mixgħul",
+      "websiteEnabledHint": "Meta dan ikun mixgħul, il-klijenti jistgħu jaraw u jibbukkjaw fuq is-sit ippubblikat tiegħek. Jekk tixgħelu tippubblika wkoll il-bidliet issejvjati tiegħek. Dan huwa l-istess swiċċ bħal fl-amministrazzjoni ta' Benwer.",
+      "bookingTitle": "Bookings",
+      "bookingDescription": "Kif il-klijenti jibbukkjaw mis-sit tiegħek.",
+      "bookingMode": "Modalità tal-booking",
+      "mode": {
+        "instant": "Istantanju",
+        "request": "Fuq talba"
+      },
+      "modeHint": {
+        "instant": "Il-bookings jiġu kkonfermati minnufih.",
+        "request": "Taċċetta jew tirrifjuta kull booking fiż-żmien tat-talba."
+      },
+      "minLead": "Avviż minimu",
+      "requestWindow": "Ħin biex twieġeb",
+      "hoursUnit": "F'sigħat",
+      "differentReturnTitle": "Ritorn f'post ieħor",
+      "differentReturnLabel": "Ħalli lill-klijenti jirritornaw f'post differenti",
+      "differentReturnHint": "Il-klijenti jagħżlu post tar-ritorn meta jfittxu. It-tariffa ta' direzzjoni waħda mill-amministrazzjoni ta' Benwer tiżdied mal-prezz.",
+      "differentReturnOff": "Ixgħel il-kiri ta' direzzjoni waħda fl-amministrazzjoni ta' Benwer biex toffri dan."
+    },
+    "savedNotPublished": "Issejvjat, għadu mhux ippubblikat",
+    "publish": "Ippubblika",
+    "branding": {
+      "logosTitle": "Logos",
+      "logosDescription": "Dan huwa l-logo tal-kumpanija tiegħek. Jekk tibdlu hawn, jiġi aġġornat ukoll f'Benwer admin u fl-app Benwer Cars.",
+      "headerLogo": "Logo tal-istrixxa ta' fuq",
+      "headerLogoHint": "Jidher fl-istrixxa fil-quċċata ta' kull paġna. Logo wiesa' jaħdem l-aħjar.",
+      "companyLogo": "Logo tas-sezzjoni tal-kumpanija",
+      "companyLogoHint": "Jidher fuq it-titlu tiegħek, qabel is-sezzjoni tal-kumpanija.",
+      "usingCompanyLogo": "Qed jintuża l-logo tal-kumpanija tiegħek",
+      "upload": "Tella' logo",
+      "replace": "Ibdel",
+      "uploadFailed": "Il-logo ma setax jittella'. Uża stampa PNG, JPG jew WebP u erġa' pprova.",
+      "tooLarge": "Din l-istampa hija akbar minn 25 MB.",
+      "backgroundTitle": "Sfond tal-paġna",
+      "backgroundDescription": "Il-kulur wara l-kontenut tas-sit web tiegħek.",
+      "backgroundPresets": "Sfondi suġġeriti",
+      "backgroundCustom": "Sfond personalizzat",
+      "backgroundPicker": "Agħżel kulur tal-isfond",
+      "needsApi": "Disponibbli ladarba l-aġġornament tal-API ta' Benwer għas-siti jkun attiv.",
+      "headerLogoDark": "Logo tal-istrixxa ta' fuq — modalità skura",
+      "companyLogoDark": "Logo tas-sezzjoni tal-kumpanija — modalità skura",
+      "squareLogo": "Logo kwadru (1:1)",
+      "squareLogoHint": "Meħtieġ biex tippubblika. Jidher ħdejn isem il-kumpanija tiegħek fuq kards, riżultati tat-tfittxija u listi mobbli.",
+      "cropTitle": "Aqta' l-logo għal 2:1",
+      "cropHint": "Kaxkar u żżumja biex il-logo tiegħek joqgħod pulit fil-qafas 2:1.",
+      "cropZoom": "Żum",
+      "cropCancel": "Ikkanċella",
+      "cropSave": "Aqta' u tella'",
+      "darkLogoHint": "Mhux obbligatorju. Jidher meta l-viżitaturi jużaw il-modalità skura. Uża verżjoni ċara jew bajda tal-logo tiegħek.",
+      "darkNeedsApi": "Il-logos tal-modalità skura jkunu disponibbli ladarba l-aġġornament tal-API ta' Benwer għalihom ikun attiv.",
+      "logo": "Logo (2:1)",
+      "logoHint": "Meħtieġ biex tippubblika. Logo wieħed għall-modalità ċara u skura: il-kulur tal-marka tiegħek bħala sfond bl-isem bl-abjad, maqtugħ f'2:1."
+    },
+    "legal": {
+      "hint": "Kull paġna tibda bit-test standard, sabiex tkun tista' tbiddel biss il-partijiet li għandek bżonn. Żid sezzjoni għal kull sottotitlu. “Lura għat-test standard” ineħħi l-bidliet tiegħek.",
+      "needsApi": "Disponibbli ladarba l-aġġornament tal-API ta' Benwer għas-siti jkun attiv.",
+      "privacyTitle": "Politika tal-privatezza",
+      "privacyDescription": "Tidher f'Privatezza fil-qiegħ tas-sit web tiegħek.",
+      "termsTitle": "Termini u kundizzjonijiet",
+      "termsDescription": "Jidhru f'Termini fil-qiegħ tas-sit web tiegħek.",
+      "text": "Test",
+      "intro": "Introduzzjoni",
+      "subtitle": "Sottotitlu",
+      "sectionItem": "Sezzjoni {position}",
+      "addSection": "Żid sezzjoni",
+      "reset": "Lura għat-test standard",
+      "pageTitle": "Titlu tal-paġna",
+      "privacyLooksLikeTerms": "Il-politika tal-privatezza tiegħek għandha l-istess test bħat-termini. Uża “Lura għat-test standard” taħt Politika tal-privatezza, jew ikteb it-test tal-privatezza tiegħek stess, imbagħad issejvja."
+    },
+    "preview": "Previżjoni",
+    "fullscreen": "Editur full-screen",
+    "exitFullscreen": "Uri l-previżjoni ħdejn l-editur",
+    "previewBarAria": "Kontrolli tal-previżjoni",
+    "previewing": "Qed tara previżjoni tas-sit web tiegħek",
+    "backToEdit": "Editja"
+  },
+  "marketplaceBanners": {
+    "aria": "Punti ewlenin ta' Benwer",
+    "slideLabel": "{position} minn {count}",
+    "goTo": "Uri l-banner {position}",
+    "previous": "Banner ta' qabel",
+    "next": "Banner li jmiss",
+    "trust": {
+      "script": "ibbukkja b'kunfidenza",
+      "highlight": "Kumpaniji vverifikati",
+      "joiner": "u",
+      "boxed": "Booking sigur",
+      "description": "Reċensjonijiet reali, termini ċari u kuntratti diġitali li tiffirma mill-mowbajl tiegħek"
+    },
+    "prices": {
+      "script": "tfittxija waħda",
+      "highlight": "Qabbel il-prezzijiet",
+      "joiner": "minn",
+      "boxed": "Kumpaniji msieħba",
+      "description": "Ara l-prezzijiet, l-assigurazzjoni u d-depożiti minn kumpaniji msieħba tal-kiri ħdejn xulxin qabel tibbukkja"
+    },
+    "anywhere": {
+      "script": "sib il-karozza tiegħek",
+      "highlight": "Madwar Málaga",
+      "joiner": "ma'",
+      "boxed": "Kumpaniji lokali tal-kiri",
+      "description": "Kumpaniji msieħba tal-kiri fi bliet madwar il-provinċja ta' Málaga, kollha f'post wieħed"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Ippubblikat minn {name}.",
+    "cookies": {
+      "title": "Politika tal-cookies",
+      "lede": "Kif {name} tuża l-cookies u teknoloġiji simili fuq dan is-sit web.",
+      "updated": "Ippubblikat minn {name}.",
+      "sections": [
+        {
+          "title": "X'nużaw",
+          "body": "Il-cookies huma fajls żgħar ta' test maħżuna fuq it-tagħmir tiegħek. Dan is-sit web juża wkoll ħażna simili, bħal ħażna lokali, biex jiftakar l-għażliet tiegħek, il-karrettun tiegħek u d-dħul tiegħek."
+        },
+        {
+          "title": "Strettament meħtieġa",
+          "body": "Cookie tal-lingwa tħalli s-sit juri l-lingwa tiegħek, u l-għażla tiegħek fil-banner tal-cookies tinħażen biex ma nerġgħux nistaqsuk f'kull żjara. Jekk tidħol fil-kont, il-fornitur tad-dħul jaħżen sessjoni fuq it-tagħmir tiegħek biex tibqa' dħalt. Il-ħlasijiet bil-kard jiġu mmaniġġjati minn Stripe, li jista' jistabbilixxi l-cookies tiegħu stess biex jipprevjeni l-frodi."
+        },
+        {
+          "title": "Cookies mhux obbligatorji",
+          "body": "Il-cookies mhux obbligatorji (pereżempju tal-analitika) jibqgħu mitfija sakemm ma tagħżilx “Aċċetta kollox”. Dan is-sit web ma jistabbilixxix cookies tal-analitika jew tal-marketing illum."
+        },
+        {
+          "title": "Ġestjoni tal-cookies",
+          "body": "Uża l-link tas-settings tal-cookies fil-qiegħ tas-sit biex tibdel l-għażla tiegħek. Tista' wkoll tħassar il-cookies u d-data tas-sit fil-browser tiegħek. L-imblukkar tal-ħażna strettament meħtieġa jista' joħorġok mill-kont jew ibattal il-karrettun tiegħek."
+        },
+        {
+          "title": "Aktar informazzjoni",
+          "body": "Ara l-politika tal-privatezza għal kif {name} tittratta d-data personali, jew uża d-dettalji ta' kuntatt fil-qiegħ tas-sit."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Appoġġ",
+    "fabCloseLabel": "Agħlaq il-menu tal-appoġġ",
+    "messageAction": "Messaġġ dirett",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Hello, għandi mistoqsija dwar Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "L-app Benwer Cars",
+    "metaDescription": "Ibbukkja karozzi, żomm il-vjaġġi tiegħek kollha f'post wieħed u irċievi aġġornamenti tal-booking fuq il-mowbajl tiegħek.",
+    "eyebrow": "App mobbli",
+    "title": "Il-kiri tal-karozza tiegħek, fil-but tiegħek",
+    "description": "Ibbukkja karozzi minn kumpaniji lokali, żomm kull vjaġġ f'post wieħed, ħallas u irċievi aġġornamenti fuq il-mowbajl tiegħek.",
+    "featureTrips": "Il-vjaġġi tiegħek kollha, minn kumpaniji differenti",
+    "featureBooking": "Ibbukkja u ħallas bi ftit taptip",
+    "featurePush": "Aġġornamenti meta jinbidel il-booking tiegħek",
+    "unavailableTitle": "L-app ġejja dalwaqt",
+    "unavailableDescription": "L-app Benwer Cars għadha mhix fil-ħwienet. Xorta tista' tibbukkja fuq il-web.",
+    "browse": "Fittex karozzi",
+    "badgeTitle": "Ikseb l-app Benwer Cars",
+    "companyText": "Ibbukkja ma' {company} fuq il-mowbajl tiegħek u żomm il-vjaġġi tiegħek f'post wieħed.",
+    "bookingText": "Ara dan il-booking, ħallas u irċievi aġġornamenti fuq il-mowbajl tiegħek."
+  }
+}

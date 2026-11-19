@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Företag",
+    "title": "Hitta din perfekta bil",
+    "subtitle": "Jämför bilar från partnerföretag inom biluthyrning och fortsätt sedan på företagets webbplats.",
+    "searchPlaceholder": "Vart ska du åka?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Utvalda företag",
+    "companiesSubtitle": "Partnerföretag inom biluthyrning i hela Málagaprovinsen — bilflottor vi samarbetar med, inte overifierade annonser",
+    "trustLocal": "Partnerföretag",
+    "trustGuest": "Hyr på företagets webbplats",
+    "trustArea": "Málagaprovinsen",
+    "viewAllCompanies": "Visa alla företag"
+  },
+  "featuredCars": {
+    "viewAllCount": "Visa alla {count} bilar",
+    "eyebrow": "Bilar",
+    "title": "Tillgängliga bilar",
+    "subtitle": "Alla bilar som partnerföretagen har publicerat, sida vid sida. Välj en bil för att boka på företagets egen webbplats.",
+    "viewAll": "Sök bland alla bilar",
+    "seeAll": "Visa alla",
+    "emptyTitle": "Inga bilar listade ännu",
+    "emptyHint": "Publika bilflottor visas här när företagen publicerar dem."
+  },
+  "whatYouGet": {
+    "eyebrow": "För biluthyrningsföretag",
+    "title": "Vad du får",
+    "subtitle": "Ett samlat system för kontoret, gårdsplanen och resenärer som söker i Málaga.",
+    "admin": {
+      "title": "Komplett adminsystem",
+      "body": "Hantera bilar, priser, tillgänglighet och bokningar från en och samma kontrollpanel — samma katalog som marknadsplatsen läser från."
+    },
+    "mobile": {
+      "title": "Mobilapp för personal",
+      "body": "Lämna ut och ta emot bilar och se dagens bokningar direkt ute på gårdsplanen."
+    },
+    "storefront": {
+      "title": "Egen varumärkt webbplats",
+      "body": "En plats på marknadsplatsen samt din egen webbplats och underdomän."
+    },
+    "preview": {
+      "utilisation": "Beläggning",
+      "utilisationValue": "82 %",
+      "pickups": "Upphämtningar idag",
+      "pickupsValue": "14",
+      "revenue": "Den här månaden",
+      "revenueValue": "9,4 tkr €",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Översikt",
+      "navFleet": "Bilflotta",
+      "navCalendar": "Kalender",
+      "navReservations": "Bokningar",
+      "calendarTitle": "Tillgänglighet",
+      "calendarMonth": "Nästa 2 veckor",
+      "viaBenwer": "Via Benwer",
+      "direct": "Direkt",
+      "free": "Ledig",
+      "carA": "Kompakt",
+      "carB": "Stadsbil",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Idag",
+      "phoneDate": "Måndag",
+      "pickUp": "Upphämtning",
+      "return": "Återlämning",
+      "checkedOut": "Utlämnad",
+      "due": "Förfaller",
+      "tabToday": "Idag",
+      "tabFleet": "Flotta",
+      "tabScan": "Skanna",
+      "storeName": "Ditt företag",
+      "storeNavCars": "Bilar",
+      "storeNavContact": "Kontakt",
+      "storeHeadline": "Hyr bil i Málaga",
+      "storeSearch": "Upphämtning och datum",
+      "storeSearchCta": "Sök",
+      "storePrice": "Se priser",
+      "carE": "Halvkombi",
+      "carF": "Kombi"
+    }
+  },
+  "faq": {
+    "eyebrow": "Vanliga frågor",
+    "title": "Innan du bokar",
+    "subtitle": "Partnerflottor, hur bokningen fungerar och vad Benwer hanterar — och inte hanterar.",
+    "items": {
+      "partners": {
+        "question": "Kommer bilarna från riktiga biluthyrningsföretag?",
+        "answer": "Ja. Varje annons är en publik bil från en Benwer-partner — ett riktigt biluthyrningsföretag vi samarbetar med, inte en overifierad privatannons. Om ett företag eller en bil inte är publicerad på plattformen visas den inte här."
+      },
+      "booking": {
+        "question": "Bokar och betalar jag på Benwer?",
+        "answer": "Nej. Här jämför du partnerflottor och fortsätter sedan på uthyrningsföretagets webbplats för att bekräfta hyran, depositionen och upphämtningen. Benwer tar inte emot betalningar på den här marknadsplatsen."
+      },
+      "photos": {
+        "question": "Kan jag lita på bilderna och tillgängligheten?",
+        "answer": "Annonserna använder de publika bilder och den tillgänglighet som partnerföretaget publicerar — samma katalog som de hanterar i admin. Om en bil ännu saknar publik bild visar vi ett tomt tillstånd istället för en genrebild på en annan bil. Slutlig tillgänglighet bekräftas på företagets webbplats."
+      },
+      "account": {
+        "question": "Behöver jag ett konto?",
+        "answer": "Inget konto krävs för att söka. Om du skickar ett kontaktmeddelande använder vi bara uppgifterna för att svara."
+      },
+      "safety": {
+        "question": "Vem ansvarar för hyran?",
+        "answer": "Avtalet ingås mellan dig och partnerföretaget. Läs deras villkor innan du bekräftar. Benwer hjälper dig att hitta en bil från en partnerflotta; vi hyr inte ut fordon och tar inte betalt här."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Benwer Cars-appen",
+    "description": "Skaffa Benwer Cars till din telefon. Android-appen är i tidig testfas på Google Play — gå med i testet och hjälp till att forma den."
+  },
+  "partners": {
+    "eyebrow": "För biluthyrningsföretag",
+    "title": "Förvandla lediga dagar till bokningar",
+    "description": "Resenärer söker redan efter bilar i Málaga på Benwer. Publicera din flotta en gång och fyll dagar som annars skulle stå tomma.",
+    "cta": "Läs mer",
+    "ctaAria": "Läs mer på Benwers marknadsföringssida (öppnas i en ny flik)",
+    "demo": "Visa live-demo",
+    "demoAria": "Visa live-demo (öppnas i en ny flik)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Biluthyrning",
+    "companyDescription": "Hyr bil från {name} i {location}.",
+    "companyDescriptionPlain": "Hyr bil från {name}.",
+    "companyFallback": "Biluthyrning",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Hyr en {brand} {model} från {company}.",
+    "carDescriptionSpecs": "Hyr en {brand} {model} — {seats, plural, one {# säte} other {# säten}}, {transmission}.",
+    "carsTitle": "Hyrbilar i hela Málagaprovinsen"
+  },
+  "tenant": {
+    "notFoundTitle": "Företaget hittades inte",
+    "notFoundDescription": "Den här webbplatsen kunde inte läsas in.",
+    "loadErrorTitle": "Företagsinformation ej tillgänglig",
+    "loadErrorDescription": "Vi kunde inte läsa in den här webbplatsen från livekatalogen. Försök igen — vi visar inte platshållarbilar när API:et inte svarar.",
+    "logoAlt": "{name}-logotyp"
+  },
+  "howItWorks": {
+    "eyebrow": "Tre steg",
+    "title": "Så fungerar det",
+    "subtitle": "Jämför partnerflottor i hela Málaga och boka sedan direkt hos företaget. Inget Benwer-konto krävs.",
+    "stepLabel": "Steg {number}",
+    "searchTitle": "Välj datum och plats",
+    "searchBody": "Välj en stad på Costa del Sol och de dagar du behöver. Endast verifierade partnerflottor visas.",
+    "compareTitle": "Jämför riktiga bilar",
+    "compareBody": "Antal säten, växellåda, bilder och dygnspris, sida vid sida från varje partner.",
+    "continueTitle": "Boka hos företaget",
+    "continueBody": "Bekräfta upphämtning, försäkring och betalning med uthyrningsföretaget som äger bilen.",
+    "cta": "Börja söka",
+    "preview": {
+      "place": "Málaga flygplats",
+      "dates": "Fre → Fre · 7 dagar",
+      "carA": "Kompaktbil",
+      "carASpecs": "4 säten · Manuell",
+      "carB": "Familje-SUV",
+      "carBSpecs": "5 säten · Automat",
+      "confirmed": "Bokning bekräftad",
+      "confirmedDetail": "Upphämtning kl. 10:00",
+      "example": "Exempel"
+    }
+  },
+  "search": {
+    "locationLabel": "Upphämtningsplats",
+    "locationPlaceholder": "Sök platser",
+    "locationEmpty": "Ingen matchande plats",
+    "allLocations": "Alla platser",
+    "allLocationsHint": "Varje stad med tillgängliga bilar",
+    "provinceSelected": "Alla platser",
+    "provinceHint": "Varje stad med tillgängliga bilar",
+    "pickupLabel": "Upphämtning",
+    "dropoffLabel": "Återlämning",
+    "pickupPlaceholder": "Lägg till datum",
+    "dropoffPlaceholder": "Lägg till datum",
+    "pickupTrigger": "Upphämtningsdatum, {date}",
+    "dropoffTrigger": "Återlämningsdatum, {date}",
+    "calendarLabel": "Välj datum",
+    "datesRequired": "Välj upphämtnings- och återlämningsdatum för att söka.",
+    "submit": "Sök",
+    "returnLocationLabel": "Återlämningsplats",
+    "differentReturn": "Återlämna på en annan plats",
+    "returnSame": "Samma som upphämtning",
+    "returnNotOffered": "{company} erbjuder inte återlämning på en annan plats.",
+    "branchChoose": "Välj en plats",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Läser in platser…",
+    "branchAnyHint": "Varje kontor med bilar"
+  },
+  "browseLocation": {
+    "title": "Bläddra efter plats",
+    "subtitle": "Populära städer i Málagaprovinsen",
+    "emptyTitle": "Inga platser ännu",
+    "emptyDescription": "Utvalda städer visas här.",
+    "cityAria": "Bläddra bland bilar i {city}"
+  },
+  "map": {
+    "teaserTitle": "Se var du kan hämta upp",
+    "teaserSubtitle": "Lokala bilflottor i hela Málagaprovinsen — öppna kartan och gå direkt till ett företag.",
+    "teaserCta": "Öppna kartan",
+    "teaserCityAria": "Se företag på kartan i {city}",
+    "listLabel": "Lista",
+    "mapLabel": "Karta",
+    "viewToggleAria": "Visa företag som lista eller karta",
+    "regionAria": "Karta över biluthyrningsföretag i Málagaprovinsen",
+    "pinAria": "{name} i {city}",
+    "fleetHint": "{count, plural, =0 {Inga bilar listade ännu} one {# tillgänglig bil} other {# tillgängliga bilar}}",
+    "fleetHintUnknown": "Visa tillgängliga bilar",
+    "viewFleet": "Visa bilflotta",
+    "closePin": "Stäng",
+    "loading": "Läser in företag…",
+    "errorDescription": "Kartan kunde inte läsas in. Bläddra i listan istället.",
+    "emptyTitle": "Inga företag på kartan",
+    "emptyDescription": "Prova en annan stad i Málagaprovinsen.",
+    "resultsCount": "{count, plural, one {# företag i Málagaprovinsen} other {# företag i Málagaprovinsen}}",
+    "resultsInCity": "{count, plural, one {# företag i {city}} other {# företag i {city}}}",
+    "resultsAtBranch": "{count, plural, one {# företag vid {branch}} other {# företag vid {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Visar {shown} av {total} bilar",
+    "loadMore": "Visa fler bilar",
+    "seeAll": "Visa alla",
+    "title": "Tillgängliga bilar",
+    "subtitle": "Alla publika bilar från partnerföretag i hela Málagaprovinsen. Välj dina datum för att se vad som är ledigt.",
+    "searchEmptyTitle": "Inga bilar matchar sökningen",
+    "searchEmptyHint": "Prova andra datum eller en annan plats i Málagaprovinsen. Varje stad finns kvar i listan — även om inga bilar är listade där idag.",
+    "resultsInProvince": "{count, plural, one {# bil på alla platser} other {# bilar på alla platser}}",
+    "resultsInCity": "{count, plural, one {# bil i {city}} other {# bilar i {city}}}",
+    "allCompanies": "Alla företag",
+    "companyPlaceholder": "Sök företag",
+    "companyTrigger": "Företag, {company}",
+    "perDay": "{price} / dag",
+    "perDaySuffix": " / dag",
+    "viewDetails": "Visa detaljer",
+    "notAvailableForDates": "Ej tillgänglig för dessa datum",
+    "bookUnavailable": "Visa bil",
+    "fleetSummary": "{total, plural, one {# bil} other {# bilar}} · {available, plural, one {# tillgänglig} other {# tillgängliga}}",
+    "fleetSummaryForDates": "{total, plural, one {# bil} other {# bilar}} · {available, plural, one {# tillgänglig} other {# tillgängliga}} · {from} – {to}",
+    "seats": "{count} säten",
+    "resultsCount": "{count, plural, one {# tillgänglig bil} other {# tillgängliga bilar}}",
+    "resultsForDates": "{count, plural, one {# bil} other {# bilar}} · {from} – {to}",
+    "emptyTitle": "Den här bilflottan är inte publik ännu",
+    "emptyHint": "Det här företaget är listat, men dess bilar har inte publicerats på Benwer ännu. Det är förväntat tills fordonen markeras som publika — inte en trasig sida.",
+    "noResults": "Inga bilar matchar sökningen",
+    "noResultsHint": "Prova andra datum, en annan plats eller färre filter.",
+    "browseCompanies": "Bläddra bland företag",
+    "clearFilters": "Rensa filter",
+    "searchPlaceholder": "Sök efter märke eller modell",
+    "filters": {
+      "title": "Filter",
+      "seats": "Säten",
+      "transmission": "Växellåda",
+      "company": "Företag",
+      "dates": "Datum",
+      "from": "Upphämtningsdatum",
+      "to": "Återlämningsdatum",
+      "category": "Kategori",
+      "fuel": "Bränsletyp",
+      "all": "Alla",
+      "clear": "Rensa",
+      "selectedCount": "{count} valda"
+    },
+    "types": {
+      "car": "Personbil",
+      "suv": "SUV",
+      "van": "Skåpbil",
+      "truck": "Lastbil",
+      "motorcycle": "Motorcykel"
+    },
+    "transmission": {
+      "automatic": "Automat",
+      "manual": "Manuell"
+    },
+    "fuel": {
+      "petrol": "Bensin",
+      "diesel": "Diesel",
+      "electric": "El",
+      "hybrid": "Hybrid",
+      "plugin_hybrid": "Laddhybrid"
+    },
+    "rowDeposit": "Deposition {amount}",
+    "rowAvailable": "Tillgänglig för dina datum",
+    "rowTotal": "{amount} totalt · {days, plural, one {# dag} other {# dagar}}",
+    "bookNow": "Boka nu",
+    "availableCount": "{count, plural, =0 {Inga tillgängliga bilar} one {# tillgänglig bil} other {# tillgängliga bilar}}",
+    "availableForDates": "{count, plural, =0 {Inga tillgängliga bilar} one {# tillgänglig bil} other {# tillgängliga bilar}} · {from} – {to}",
+    "categories": {
+      "economy": "Ekonomi",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "Minibuss",
+      "van": "Skåpbil",
+      "other": "Övrigt"
+    },
+    "sort": {
+      "label": "Sortera efter",
+      "recommended": "Rekommenderat",
+      "pricePerDay_asc": "Lägsta dygnspris",
+      "pricePerDay_desc": "Högsta dygnspris"
+    },
+    "colors": {
+      "white": "Vit",
+      "black": "Svart",
+      "silver": "Silver",
+      "grey": "Grå",
+      "red": "Röd",
+      "blue": "Blå",
+      "green": "Grön",
+      "orange": "Orange",
+      "yellow": "Gul",
+      "brown": "Brun",
+      "beige": "Beige",
+      "gold": "Guld",
+      "purple": "Lila"
+    },
+    "viewCar": "Visa bil",
+    "opensCompanySite": "(öppnar företagets webbplats)"
+  },
+  "carDetail": {
+    "bookNow": "Boka nu",
+    "continueOnCompany": "Fortsätt på {company}",
+    "rentOnCompanySite": "Hyr på företagets webbplats",
+    "handoffHint": "Vi frågar dig innan vi skickar dig vidare till företagets webbplats för att slutföra bokningen.",
+    "pricePerDay": "{price} per dag",
+    "specs": "Specifikationer",
+    "year": "Årsmodell",
+    "type": "Typ",
+    "transmission": "Växellåda",
+    "fuel": "Bränsle",
+    "seats": "Säten",
+    "availability": "Tillgänglighet",
+    "availabilityError": "Vi kunde inte läsa in tillgängligheten. Försök igen.",
+    "availabilityUnavailable": "Tillgänglighet ej tillgänglig",
+    "checkingAvailability": "Kontrollerar tillgänglighet…",
+    "notAvailable": "Den här bilen är inte tillgänglig för de valda datumen.",
+    "selectPickup": "Välj ett upphämtningsdatum",
+    "selectDropoff": "Välj nu ett återlämningsdatum",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Rensa datum",
+    "addDate": "Lägg till datum",
+    "calendarLabel": "Tillgänglighetskalender",
+    "legend": "Kalenderförklaring",
+    "available": "Tillgänglig",
+    "selected": "Vald",
+    "unavailable": "Ej tillgänglig",
+    "openDates": "Inga bokade datum de kommande {months} månaderna.",
+    "breadcrumbAria": "Brödsmulor",
+    "photoEmpty": "Bilder kommer snart",
+    "previousPhoto": "Föregående bild",
+    "nextPhoto": "Nästa bild",
+    "viewPhoto": "Visa bild {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, bild {index}",
+    "backToFleet": "Tillbaka till bilflottan",
+    "metaTitle": "Bildetaljer",
+    "about": "Om den här bilen",
+    "category": "Kategori",
+    "color": "Färg",
+    "deposit": "Deposition",
+    "mileage": "Mätarställning",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Du skickas vidare till {company}s bokningssida för att slutföra din bokning.",
+    "handoffTrust": "{company} är en Benwer-partner du kan lita på.",
+    "handoffContinue": "Fortsätt",
+    "handoffCancel": "Avbryt",
+    "handoffCompanyFallback": "företaget"
+  },
+  "booking": {
+    "title": "Slutför din bokning",
+    "subtitle": "Bekräfta dina uppgifter — inget konto krävs.",
+    "details": "Dina uppgifter",
+    "detailsHint": "Vi använder dem bara för att bekräfta den här bokningen.",
+    "guestName": "Fullständigt namn",
+    "guestNamePlaceholder": "Anna Andersson",
+    "guestEmail": "E-postadress",
+    "guestEmailPlaceholder": "anna@example.com",
+    "guestEmailHint": "Din bekräftelse skickas hit.",
+    "guestPhone": "Telefonnummer",
+    "guestPhonePlaceholder": "+46 70 000 00 00",
+    "guestPhoneHint": "Uthyrningsföretaget kan kontakta dig angående upphämtningen.",
+    "startDate": "Upphämtningsdatum",
+    "endDate": "Återlämningsdatum",
+    "datesHint": "Datumen hämtas från bilkalendern. Du kan justera dem här.",
+    "addDate": "Lägg till datum",
+    "changeDates": "Ändra datum i kalendern",
+    "summary": "Bokningsöversikt",
+    "vehicle": "Fordon",
+    "company": "Företag",
+    "rate": "Dygnspris",
+    "duration": "Hyrestid",
+    "totalPrice": "Totalt",
+    "nights": "{count, plural, one {# dag} other {# dagar}}",
+    "stickyMeta": "{name} · {count, plural, one {# dag} other {# dagar}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Bekräfta bokning",
+    "confirmRequest": "Skicka förfrågan",
+    "requesting": "Skickar förfrågan…",
+    "confirming": "Bekräftar…",
+    "sitePaused": "Tar inte emot bokningar",
+    "insurance": "Försäkring",
+    "termsLabel": "Hyresvillkor",
+    "termsAccept": "Jag godkänner",
+    "termsLink": "hyresvillkoren",
+    "successTitle": "Bokning bekräftad!",
+    "successMessage": "Din bekräftelse har skickats till {email}.",
+    "viewBooking": "Visa min bokning",
+    "selectDates": "Välj datum för att fortsätta",
+    "invalidDates": "Välj ett giltigt datumintervall",
+    "backToCar": "Tillbaka till {name}",
+    "trustNoAccount": "Inget konto krävs",
+    "trustEmail": "Bekräftelse via e-post",
+    "trustNoPayment": "Ingen betalning nu",
+    "trustCardPayment": "Betala med kort efter bokning",
+    "trustFooter": "Genom att bekräfta begär du detta fordon för datumen ovan. Företaget kommer att hedra bokningen.",
+    "missingTitle": "Välj en bil för att fortsätta",
+    "missingDescription": "Välj ett fordon och datum innan du slutför din bokning.",
+    "browseCars": "Bläddra bland bilar",
+    "vehicleMissingTitle": "Den här bilen är inte längre tillgänglig",
+    "vehicleMissingDescription": "Den kan ha blivit bokad. Välj en annan från bilflottan.",
+    "viewFleet": "Visa bilflotta",
+    "datesMissingTitle": "Lägg till dina resedatum",
+    "datesMissingDescription": "Gå tillbaka till bilen för att välja lediga datum eller ange dem i formuläret.",
+    "pickDates": "Välj datum för bilen",
+    "formAria": "Gästens bokningsuppgifter",
+    "validation": {
+      "nameMin": "Ange ditt fullständiga namn (minst 2 tecken).",
+      "email": "Ange en giltig e-postadress.",
+      "phone": "Ange ett giltigt telefonnummer.",
+      "startDate": "Välj ett upphämtningsdatum.",
+      "endDate": "Välj ett återlämningsdatum.",
+      "endAfterStart": "Återlämning måste ske efter upphämtning.",
+      "terms": "Godkänn hyresvillkoren för att fortsätta.",
+      "fixErrors": "Rätta de markerade fälten."
+    },
+    "averageRate": "Genomsnittligt dygnspris",
+    "breakdownTitle": "Prisspecifikation",
+    "standardRate": "Standardpris",
+    "weekendRate": "Helg",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Hyror under den här säsongen måste vara minst {limit, plural, one {# dag} other {# dagar}}. Ändra dina datum för att boka.",
+    "warningMaxDays": "Hyror under den här säsongen får vara högst {limit, plural, one {# dag} other {# dagar}}. Ändra dina datum för att boka.",
+    "returnLocation": "Återlämningsplats",
+    "oneWayFee": "Avgift för annan återlämningsplats",
+    "signedInAs": "Inloggad som {email}",
+    "signInPrompt": "Har du ett konto?",
+    "signInLink": "Logga in för att fylla i dina uppgifter",
+    "subtitleSignedIn": "Kontrollera dina uppgifter och bekräfta.",
+    "trustPaymentAfter": "Betalningsuppgifter följer efter bokning",
+    "extras": "Tillval",
+    "extraPerDay": "{price} / dag",
+    "extraFixed": "{price} / hyra",
+    "tripDetails": "Resedetaljer",
+    "pickupTime": "Upphämtningstid",
+    "returnTime": "Återlämningstid",
+    "timeAny": "Valfri tid",
+    "flightNumber": "Flightnummer",
+    "flightNumberHint": "Din upphämtning sker på en flygplats. Lägg till ditt flightnummer så att företaget kan följa förseningar.",
+    "flightNumberOptional": "Lägg till det om du anländer med flyg.",
+    "notes": "Kommentarer",
+    "notesPlaceholder": "Något företaget bör känna till?",
+    "dateOfBirth": "Födelsedatum",
+    "optional": "valfritt",
+    "extraSoldOut": "Ej tillgängligt för dessa datum"
+  },
+  "reservationStatus": {
+    "title": "Din bokning",
+    "successTitle": "Du är bokad",
+    "successSubtitle": "Vi har skickat en bekräftelse till {email}.",
+    "status": {
+      "draft": "Väntande",
+      "confirmed": "Bekräftad",
+      "active": "Aktiv — trevlig resa!",
+      "completed": "Avslutad",
+      "cancelled": "Avbokad"
+    },
+    "vehicle": "Fordon",
+    "company": "Företag",
+    "dates": "Datum",
+    "pickup": "Upphämtning",
+    "dropoff": "Återlämning",
+    "guest": "Gäst",
+    "email": "E-post",
+    "phone": "Telefon",
+    "total": "Totalt",
+    "reference": "Referens",
+    "referenceHint": "Visa detta vid upphämtning.",
+    "trustCopy": "Spara den här sidan — det är ditt bokningskvitto. Uthyrningsföretaget tar hand om resten.",
+    "trustEmail": "Bekräftelse skickad via e-post",
+    "trustPickup": "Visa den här sidan vid upphämtning",
+    "nextTitle": "Vad händer nu",
+    "nextEmail": "Kontrollera {email} för din bekräftelse.",
+    "nextPickup": "Visa din referens vid upphämtning.",
+    "browseMore": "Bläddra bland fler bilar",
+    "notFoundTitle": "Bokningen hittades inte",
+    "notFoundDescription": "Kontrollera länken i ditt bekräftelsemejl eller gör en ny sökning.",
+    "backHome": "Tillbaka till startsidan",
+    "requestExpires": "Förfrågan löper ut",
+    "cancelReason": "Anledning till avbokning",
+    "withdraw": "Dra tillbaka förfrågan",
+    "paymentStatus": "Betalning",
+    "paidAmount": "Betalt",
+    "payment": {
+      "unpaid": "Obetald",
+      "partially_paid": "Delvis betald",
+      "paid": "Betald",
+      "refund_due": "Återbetalning väntar",
+      "authorized": "Kort reserverat"
+    },
+    "reasons": {
+      "unpaid_timeout": "Betalningen slutfördes inte i tid",
+      "request_expired": "Företaget svarade inte i tid",
+      "request_declined": "Företaget nekade den här förfrågan",
+      "customer_request": "Du drog tillbaka den här förfrågan"
+    },
+    "insurance": "Försäkring",
+    "extras": "Tillval",
+    "fees": "Avgifter för upphämtning och återlämning",
+    "priceTitle": "Prisöversikt"
+  },
+  "payment": {
+    "title": "Betala förskottet",
+    "amountDue": "Belopp att betala: {amount}",
+    "countdown": "Slutför betalningen inom {time}",
+    "requestAuthorize": "Ditt kort reserveras nu och debiteras först när företaget godkänner förfrågan.",
+    "pay": "Betala nu",
+    "paying": "Bearbetar…",
+    "confirming": "Bekräftar din betalning",
+    "confirmingHint": "Vänta — vi bekräftar betalningen från företaget, inte från kortformuläret.",
+    "declined": "Kortet nekades. Prova ett annat kort.",
+    "secure": "Kortuppgifter hanteras av Stripe i testläge.",
+    "cancelBooking": "Avboka",
+    "cancelTitle": "Avboka den här bokningen?",
+    "cancelDescription": "Vi tillämpar företagets avbokningsregler. Kontrollera avgiften och återbetalningen innan du bekräftar.",
+    "cancelFee": "Avbokningsavgift",
+    "cancelRefund": "Återbetalning",
+    "confirmCancel": "Bekräfta avbokning",
+    "keepBooking": "Behåll bokningen",
+    "cancelled": "Din bokning har avbokats."
+  },
+  "companies": {
+    "title": "Biluthyrningsföretag",
+    "subtitle": "Bläddra bland partnerföretag i hela Málaga — på kartan eller i listan",
+    "searchPlaceholder": "Sök företag…",
+    "noResults": "Inga företag hittades",
+    "noResultsHint": "Prova en annan plats i Málagaprovinsen.",
+    "emptyTitle": "Inga företag listade ännu",
+    "emptyDescription": "Inga biluthyrningsföretag är listade ännu.",
+    "clearFilters": "Rensa sökning",
+    "viewFleet": "Visa bilflotta",
+    "visitWebsite": "Besök webbplats",
+    "contact": "Kontakt",
+    "backToList": "Alla företag",
+    "notFoundTitle": "Företaget hittades inte",
+    "notFoundDescription": "Det här biluthyrningsföretaget är inte listat. Bläddra bland andra i närheten.",
+    "loadErrorTitle": "Företagsinformation ej tillgänglig",
+    "loadErrorDescription": "Vi kunde inte läsa in det här biluthyrningsföretaget från livekatalogen. Försök igen — vi visar inte platshållarbilar när API:et inte svarar.",
+    "browseCars": "Bläddra bland bilar",
+    "featuredEmpty": "Inga utvalda företag ännu",
+    "featuredEmptyHint": "Kika in snart igen eller bläddra bland bilar från lokala flottor.",
+    "locationUnknown": "Plats inte angiven",
+    "noDescription": "Ingen beskrivning ännu."
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "lede": "Frågor om marknadsplatsen? Skicka ett meddelande så återkommer vi så snart vi kan.",
+    "bookingHint": "Det här formuläret är inte för bokningar. För att hyra bil, fortsätt på uthyrningsföretagets egen webbplats.",
+    "name": "Fullständigt namn",
+    "email": "E-postadress",
+    "subject": "Ämne",
+    "message": "Meddelande",
+    "submit": "Skicka meddelande",
+    "privacyNote": "Vi använder bara de här uppgifterna för att svara.",
+    "errors": {
+      "nameMin": "Ange ditt namn (minst 2 tecken).",
+      "email": "Ange en giltig e-postadress.",
+      "subjectMin": "Ange ett ämne (minst 3 tecken).",
+      "messageMin": "Ange ett meddelande (minst 10 tecken)."
+    },
+    "eyebrow": "Support",
+    "namePlaceholder": "Anna Andersson",
+    "emailPlaceholder": "du@example.com",
+    "subjectPlaceholder": "Hur kan vi hjälpa dig?",
+    "messagePlaceholder": "Berätta vad du behöver…",
+    "supportSubjectDefault": "Supportärende",
+    "submitting": "Skickar…",
+    "submittedTitle": "Meddelande skickat",
+    "submittedDescription": "Tack för att du hörde av dig. Vi svarar till din e-post så snart vi kan.",
+    "sendAnother": "Skicka ett nytt meddelande",
+    "backHome": "Tillbaka till startsidan",
+    "whatsappTitle": "Föredrar du WhatsApp?",
+    "whatsappDescription": "Chatta direkt med teamet på Benwer Cars."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Integritetspolicy",
+      "lede": "Hur vi hanterar personuppgifter när du använder marknadsplatsen Benwer Cars.",
+      "updated": "Senast uppdaterad: 13 september 2026",
+      "sections": [
+        {
+          "title": "Vilka vi är",
+          "body": "Benwer Cars (”Benwer”, ”vi”, ”oss”) driver en konsumentmarknadsplats som hjälper resenärer att upptäcka biluthyrningsflottor i Málagaprovinsen.\n\nDen här policyn gäller endast marknadsplatsens webbplats. Om du fortsätter till ett uthyrningsföretags egen webbplats för att boka ansvarar det företaget för uppgifterna du lämnar där."
+        },
+        {
+          "title": "Vad marknadsplatsen gör",
+          "body": "Du kan söka bilar och företag, jämföra publik flottinformation och fortsätta till ett uthyrningsföretags webbplats för att slutföra en bokning.\n\nBenwer tar inte emot betalningar och ingår inga hyresavtal på marknadsplatsen. Hyresavtalet är mellan dig och företaget."
+        },
+        {
+          "title": "Information vi samlar in",
+          "body": "Beroende på hur du använder marknadsplatsen kan vi behandla:\n\n• Sök- och användningsdata — plats och datum du anger, sidor du besöker samt grundläggande tekniska uppgifter såsom IP-adress, webbläsare och enhetsinformation.\n• Språkval — sparas som en nödvändig kaka så att vi kan visa ditt valda språk.\n• Samtycke för kakor — sparas på din enhet så att vi kommer ihåg ditt val.\n• Kontaktmeddelanden — namn, e-post, ämne och meddelande om du skriver till oss. Vi märker dessa som skickade från marknadsplatsen.\n\nVi ber dig inte skapa något konto på marknadsplatsen. Boknings- och betalningsuppgifter samlas in av uthyrningsföretaget på deras egen webbplats enligt deras egen integritetspolicy."
+        },
+        {
+          "title": "Hur vi använder uppgifter",
+          "body": "Vi använder personuppgifter för att driva och förbättra marknadsplatsen, komma ihåg språk- och kakval, besvara kontaktmeddelanden, hålla tjänsten säker och uppfylla lagstadgade skyldigheter.\n\nVi säljer inte dina personuppgifter."
+        },
+        {
+          "title": "Rättsliga grunder (EES / Storbritannien)",
+          "body": "Där det är tillämpligt stödjer vi oss på berättigat intresse (att driva en publik katalog och säkra webbplatsen), samtycke (valfria kakor, om sådana införs), rättslig förpliktelse och åtgärder som behövs för att svara när du kontaktar oss."
+        },
+        {
+          "title": "Delning",
+          "body": "Vi kan använda betrodda leverantörer för drift och e-postleverans. De behandlar uppgifter enligt våra instruktioner.\n\nOm du fortsätter till ett företags webbplats blir det företaget personuppgiftsansvarigt för alla uppgifter du lämnar där. Vi vidarebefordrar inte ditt meddelande från kontaktformuläret till uthyrningsföretag om du inte ber oss om det."
+        },
+        {
+          "title": "Kakor",
+          "body": "Vi använder en nödvändig språkkaka och sparar ditt kakval på din enhet. Se vår kakpolicy för detaljer. Valfria kakor förblir avstängda om du inte godkänner dem."
+        },
+        {
+          "title": "Lagringstid",
+          "body": "Vi sparar kontaktmeddelanden så länge det behövs för att svara och under en rimlig uppföljningsperiod. Tekniska loggar sparas under en kort period. Ditt kakval ligger kvar tills du ändrar det eller rensar webbplatsdata."
+        },
+        {
+          "title": "Dina rättigheter",
+          "body": "Beroende på var du bor kan du ha rätt till tillgång, rättelse, radering, begränsning eller dataportabilitet samt rätt att invända mot viss behandling. Du kan även lämna in ett klagomål till din lokala tillsynsmyndighet.\n\nAnvänd kontaktsidan för att utöva dina rättigheter."
+        },
+        {
+          "title": "Internationella överföringar",
+          "body": "Om uppgifter överförs utanför ditt land använder vi lämpliga skyddsåtgärder såsom standardavtalsklausuler eller motsvarande mekanismer där lagen kräver det."
+        },
+        {
+          "title": "Ändringar",
+          "body": "Vi kan uppdatera den här policyn då och då. Vi publicerar den reviderade versionen på den här sidan och uppdaterar datumet för ”Senast uppdaterad”."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Användarvillkor",
+      "lede": "Reglerna för att använda marknadsplatsen Benwer Cars för att upptäcka hyrbilsflottor.",
+      "updated": "Senast uppdaterad: 13 september 2026",
+      "sections": [
+        {
+          "title": "Marknadsplatsen",
+          "body": "Benwer Cars tillhandahåller en publik katalog över biluthyrningsföretag och deras publicerade bilflottor. Du kan jämföra bilar och fortsätta till ett företags egen webbplats för att slutföra en hyra.\n\nDessa villkor gäller marknadsplatsens webbplats. De ersätter inte uthyrningsföretagets egna villkor, som gäller när du bokar hos dem."
+        },
+        {
+          "title": "Bokningar sker hos uthyrningsföretagen",
+          "body": "Benwer hyr inte ut bilar, tar inte emot betalningar och ingår inte hyresavtal på marknadsplatsen.\n\nOm du fortsätter till ett företags webbplats sker varje bokning, deposition, försäkring och upphämtningsöverenskommelse mellan dig och det företaget. Läs deras villkor innan du bekräftar."
+        },
+        {
+          "title": "Annonser och tillgänglighet",
+          "body": "Uppgifter om bilflottan, priser, bilder och tillgänglighet publiceras av uthyrningsföretagen och kan ändras. Vi strävar efter att visa publik information korrekt, men garanterar inte att en bil fortfarande är tillgänglig eller att ett angivet pris gäller förrän företaget bekräftar det.\n\nDatum du anger på marknadsplatsen hjälper dig att söka. Slutlig tillgänglighet bekräftas på företagets webbplats."
+        },
+        {
+          "title": "Tillåten användning",
+          "body": "Använd marknadsplatsen på ett lagligt sätt. Skrapa inte data, överbelasta eller stör inte tjänsten, skicka inte falska kontaktuppgifter och använd inte webbplatsen för att skada andra personer eller företag."
+        },
+        {
+          "title": "Ansvar",
+          "body": "Marknadsplatsen tillhandahålls som en söktjänst. I den utsträckning lagen tillåter ansvarar Benwer inte för hyrestvister, fordonens skick eller bokningar som slutförs på ett företags webbplats.\n\nIngenting i dessa villkor begränsar rättigheter du har som konsument och som inte kan avtalas bort enligt tillämplig lag."
+        },
+        {
+          "title": "Ändringar",
+          "body": "Vi kan uppdatera dessa villkor. Datumet för ”Senast uppdaterad” på den här sidan visar den aktuella versionen. Fortsatt användning efter en ändring innebär att du godkänner de uppdaterade villkoren."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Frågor om dessa villkor eller marknadsplatsen kan skickas via kontaktsidan. För en bokning du redan påbörjat, kontakta uthyrningsföretaget direkt."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Kakpolicy",
+      "lede": "Hur vi använder kakor och liknande tekniker på marknadsplatsen.",
+      "updated": "Senast uppdaterad: 13 september 2026",
+      "sections": [
+        {
+          "title": "Vad vi använder",
+          "body": "Kakor är små textfiler som lagras på din enhet. Vi använder även liknande lagring, såsom lokal lagring, för att komma ihåg dina val.\n\nDen här policyn gäller marknadsplatsen Benwer Cars. När du fortsätter till ett uthyrningsföretags webbplats kan den webbplatsen sätta sina egna kakor."
+        },
+        {
+          "title": "Strikt nödvändiga",
+          "body": "Vi använder en språkkaka så att webbplatsen kan visa ditt valda språk. Den krävs för att marknadsplatsen ska fungera som förväntat.\n\nDitt val i kakbannern lagras på din enhet så att vi inte frågar igen vid varje besök. Den lagringen används inte för reklam."
+        },
+        {
+          "title": "Valfria kakor",
+          "body": "Valfria kakor (till exempel analys) förblir avstängda om du inte väljer Acceptera alla.\n\nIdag sätter marknadsplatsen inga analys- eller marknadsföringskakor. Om vi lägger till dem senare beskriver vi dem här och de kommer fortfarande att kräva ditt godkännande."
+        },
+        {
+          "title": "Hantera kakor",
+          "body": "Använd bannern för att acceptera alla kakor eller behålla endast nödvändiga. Du kan också radera kakor och webbplatsdata i din webbläsare. Om du blockerar språkkakan kan standardspråket återställas vid nästa besök."
+        },
+        {
+          "title": "Mer information",
+          "body": "Se integritetspolicyn för hur vi hanterar personuppgifter, eller skicka ett meddelande via kontaktsidan."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} startsida",
+    "defaultHeadline": "Hyr bil med {name}",
+    "footerTagline": "Boka direkt hos det här uthyrningsföretaget.",
+    "previewBanner": "Förhandsgranskning — den här sidan är inte publik. Sökmotorer indexerar den inte.",
+    "editLink": "Redigera",
+    "editContactEmpty": "Kontaktuppgifter är dolda. Redigera dem i admin.",
+    "editBranchesEmpty": "Inga kontor ännu. Lägg till dem i admin.",
+    "editRulesHint": "Bokningsläge, minsta framförhållning och svarstid.",
+    "editDomainHint": "Egen domän och publik webbadress.",
+    "editSection": {
+      "hero": "Hero",
+      "search": "Sök",
+      "fleet": "Bilflotta",
+      "branches": "Kontor",
+      "contact": "Kontakt",
+      "rules": "Bokningsregler",
+      "domain": "Domän"
+    },
+    "pausedTitle": "Tar inte emot bokningar",
+    "pausedDescription": "Det här företaget har pausat onlinebokningar. Du kan fortfarande bläddra i bilflottan.",
+    "notFoundTitle": "Webbplatsen hittades inte",
+    "notFoundDescription": "Den här uthyrningswebbplatsen är inte tillgänglig.",
+    "loadErrorTitle": "Webbplatsen ej tillgänglig",
+    "loadErrorDescription": "Vi kunde inte läsa in den här uthyrningswebbplatsen. Försök igen om en stund.",
+    "search": "Sök bilar",
+    "searchAria": "Sök efter datum och plats",
+    "searchTitle": "Sök bilar",
+    "searchDescription": "Välj datum och plats för att se vad som är tillgängligt.",
+    "branch": "Upphämtningsplats",
+    "anyBranch": "Valfri plats",
+    "ownerSignIn": "Ägarinloggning",
+    "returnBranch": "Återlämningsplats",
+    "differentReturn": "Återlämna på en annan plats",
+    "returnSame": "Samma som upphämtning",
+    "driverAge": "Förarens ålder",
+    "driverAgeYears": "{band} år",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Redigera din webbplats",
+    "signInHint": "Ägare öppnar webbplatsredigeraren från Benwer admin. Använd knappen ”Redigera webbplats” där så loggas du in här automatiskt.",
+    "signedInTitle": "Du är inloggad",
+    "signedInHint": "Om du kan hantera den här webbplatsen öppnas redigeraren på startsidan.",
+    "openEditor": "Öppna webbplatsredigeraren",
+    "disabledTitle": "Ägarredigering är inte tillgänglig",
+    "disabledDescription": "Personal-Firebase är inte konfigurerat på den här marknadsplatsen.",
+    "signOut": "Logga ut",
+    "auth": {
+      "tooManyRequests": "För många försök. Försök igen senare.",
+      "unknown": "Kunde inte logga in. Försök igen.",
+      "invalidToken": "Den här inloggningslänken har löpt ut eller redan använts. Öppna redigeraren igen från Benwer admin."
+    },
+    "signingIn": "Loggar in…",
+    "openAdmin": "Öppna Benwer admin",
+    "accountMenu": "Ägarkonto",
+    "signedInAs": "Inloggad som ägare",
+    "guestSignedOut": "Du loggades ut från ditt gästkonto. Ägar- och gästsessioner kan inte vara öppna samtidigt i samma webbläsare."
+  },
+  "guest": {
+    "googleAction": "Logga in med Google",
+    "googleCreate": "Fortsätt med Google",
+    "or": "eller",
+    "forgotPassword": "Glömt lösenordet?",
+    "resetTitle": "Återställ ditt lösenord",
+    "resetHint": "Ange din e-postadress så skickar vi en länk för att välja ett nytt lösenord.",
+    "resetAction": "Skicka återställningslänk",
+    "resetSentTitle": "Kontrollera din e-post",
+    "resetSentHint": "Om det finns ett konto för den adressen har vi skickat instruktioner för att återställa lösenordet. Inte fått något mejl? Kontrollera skräpposten eller vänta några minuter innan du försöker igen.",
+    "backToSignIn": "Tillbaka till inloggning",
+    "signInNav": "Logga in",
+    "myBookings": "Mina bokningar",
+    "signInTitle": "Logga in",
+    "signInHint": "Använd ditt gästkonto för det här uthyrningsföretaget. Detta är inte en personalinloggning.",
+    "signInAction": "Logga in",
+    "createTitle": "Skapa ett gästkonto",
+    "createHint": "Spara dina bokningar hos det här företaget. Personal använder en annan inloggning.",
+    "createAction": "Skapa konto",
+    "needAccount": "Behöver du ett konto? Skapa ett",
+    "haveAccount": "Har du redan ett konto? Logga in",
+    "email": "E-post",
+    "password": "Lösenord",
+    "bookingsTitle": "Mina bokningar",
+    "bookingsMeta": "Kopplade bokningar för det här uthyrningsföretaget.",
+    "bookingsHint": "Inloggad som {email} hos {company}.",
+    "emptyTitle": "Inga bokningar ännu",
+    "emptyDescription": "Bokat tidigare? Koppla den bokningen med e-postadressen du använde eller dess bekräftelsetoken.",
+    "bookingFallback": "Bokning",
+    "loadErrorTitle": "Kunde inte läsa in bokningar",
+    "linkTitle": "Koppla en bokning",
+    "linkHint": "Ange e-postadressen som användes vid bokningen eller bekräftelsetoken. Om vi hittar en träff skickar vi en länk via e-post — vi anger aldrig om ett konto finns.",
+    "linkEmail": "Bokningens e-post",
+    "linkToken": "Bokningstoken",
+    "linkAction": "Skicka länk",
+    "linkSent": "Om vi hittar en matchande bokning skickar vi en bekräftelselänk via e-post.",
+    "accountTitle": "Konto",
+    "accountHint": "Logga ut från ditt konto på den här webbplatsen.",
+    "signOut": "Logga ut",
+    "erase": "Radera mina uppgifter här",
+    "eraseConfirm": "Ja, radera mina uppgifter för det här företaget",
+    "confirmTitle": "Kopplar din bokning",
+    "confirmHint": "Vänta medan vi kopplar den här bokningen till ditt konto.",
+    "confirmSignIn": "Logga in med ditt gästkonto för att slutföra kopplingen av bokningen.",
+    "confirmMissing": "Bekräftelsetoken saknas",
+    "confirmMissingHint": "Öppna länken från ditt mejl igen.",
+    "confirmError": "Vi kunde inte bekräfta den här länken",
+    "disabledTitle": "Gästkonton är inte tillgängliga ännu",
+    "disabledDescription": "Det här företaget har inte aktiverat gästinloggning. Du kan fortfarande boka med ditt namn, e-post och telefonnummer.",
+    "auth": {
+      "popupClosed": "Inloggningen avbröts.",
+      "popupBlocked": "Din webbläsare blockerade Google-fönstret. Tillåt popup-fönster och försök igen.",
+      "differentProvider": "Den här e-postadressen loggar redan in på ett annat sätt. Använd ditt lösenord istället.",
+      "providerUnavailable": "Google-inloggning är inte tillgänglig på den här webbplatsen ännu. Använd e-post och lösenord.",
+      "invalidEmail": "Ange en giltig e-postadress.",
+      "emailInUse": "Den e-postadressen har redan ett gästkonto. Logga in istället.",
+      "weakPassword": "Använd ett längre lösenord.",
+      "tooManyRequests": "För många försök. Försök igen om några minuter.",
+      "invalidCredentials": "E-postadress eller lösenord stämmer inte.",
+      "unknown": "Kunde inte logga in. Försök igen.",
+      "googleDisabled": "Google-inloggning är inte aktiverad för den här webbplatsen ännu. Använd e-post och lösenord.",
+      "domainNotAuthorised": "Google-inloggning är inte konfigurerad för den här webbplatsens adress ännu. Använd e-post och lösenord så länge."
+    },
+    "accountMenu": "Ditt konto",
+    "profileNav": "Profil",
+    "profileTitle": "Profil",
+    "profileMeta": "Ditt gästkonto för det här uthyrningsföretaget.",
+    "linkCancel": "Avbryt",
+    "eraseTitle": "Radera mina uppgifter",
+    "eraseHint": "Raderar dina gästuppgifter för det här företaget och loggar ut dig. Andra företag påverkas inte.",
+    "profileDetailsTitle": "Dina uppgifter",
+    "profileDetailsHint": "Används för att fylla i dina bokningar hos det här företaget.",
+    "profileFullName": "Fullständigt namn",
+    "profilePhone": "Telefonnummer",
+    "profileDob": "Födelsedatum",
+    "profileSave": "Spara uppgifter",
+    "profileNotLinked": "Ditt namn och telefonnummer sparas här efter din första bokning med den här e-postadressen. Har du redan bokat med en annan e-postadress? Koppla bokningen under Mina bokningar.",
+    "verifyTitle": "Verifiera din e-post för att se dina bokningar",
+    "verifyHint": "Vi har skickat en länk till {email}. Öppna den och kom sedan tillbaka hit. Tills din e-post är verifierad kan vi inte visa dina bokningar eller spara ditt namn och telefonnummer.",
+    "verifyResend": "Skicka mejl igen",
+    "verifySent": "Mejl skickat. Kontrollera inkorgen och skräpposten.",
+    "verifyDone": "Jag har verifierat min e-post",
+    "verifyStillPending": "Din e-post är inte verifierad ännu. Öppna länken i mejlet och försök igen.",
+    "verifyBanner": "Ditt konto är inte aktivt ännu. Verifiera {email} för att se dina bokningar och använda dina sparade uppgifter.",
+    "verifyBannerAction": "Verifiera e-post",
+    "profileEdit": "Redigera uppgifter",
+    "profileCancel": "Avbryt",
+    "profileEmail": "E-post",
+    "profileEmpty": "Inte tillagt",
+    "bookingsUpcoming": "Kommande",
+    "bookingsPast": "Tidigare",
+    "ownerSignedOut": "Du loggades ut från webbplatsredigeraren. Ägar- och gästsessioner kan inte vara öppna samtidigt i samma webbläsare."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Erbjudanden från {name}",
+      "slideAlt": "{name} banner {position}",
+      "slideLabel": "{position} av {count}",
+      "previous": "Föregående banner",
+      "next": "Nästa banner",
+      "goTo": "Visa banner {position}",
+      "presets": {
+        "airport": {
+          "script": "nyss landat?",
+          "highlight": "Upphämtning på flygplatsen",
+          "joiner": "på",
+          "boxed": "10 minuter",
+          "description": "Slipp kön: signera avtalet i telefonen och kör iväg med helförsäkring"
+        },
+        "weekend": {
+          "script": "boka i helgen",
+          "highlight": "Spara 20 %",
+          "joiner": "på",
+          "boxed": "Helghyror",
+          "description": "Hämta fredag, lämna måndag. Gratis bilbarnstol och extra förare ingår"
+        },
+        "roadtrip": {
+          "script": "din nästa bilresa",
+          "highlight": "Börjar här",
+          "joiner": "vi ger dig",
+          "boxed": "Nycklarna",
+          "description": "Gratis avbokning upp till 24 timmar före upphämtning, fria mil och inga dolda avgifter"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Ingår i varje pris",
+      "title": "Priset du ser är priset du betalar",
+      "description": "Inga överraskningar vid disken. Det här ingår alltid i priset.",
+      "presets": {
+        "insurance": {
+          "title": "Grundförsäkring",
+          "text": "Skade-, stöld- och trafikförsäkring.",
+          "tag": "Ingår"
+        },
+        "mileage": {
+          "title": "Fria kilometer",
+          "text": "Kör hur långt du vill utan kilometeravgift.",
+          "tag": "Inga gränser"
+        },
+        "fuel": {
+          "title": "Full-till-full bränsle",
+          "text": "Hämta bilen fulltankad och lämna tillbaka den fulltankad.",
+          "tag": "Ingen förbetald tank"
+        },
+        "cancellation": {
+          "title": "Gratis avbokning",
+          "text": "Ändrade planer? Avboka kostnadsfritt.",
+          "tag": "Flexibelt"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Omdömen",
+      "title": "Vad förare säger om oss",
+      "seeAll": "Visa {count, plural, one {# omdöme} other {alla # omdömen}}",
+      "seeAllOn": "Visa {count, plural, one {# omdöme} other {alla # omdömen}} på {source}",
+      "basedOn": "Baserat på {count, plural, one {# omdöme} other {# omdömen}}",
+      "basedOnSource": "Baserat på {count, plural, one {# omdöme} other {# omdömen}} på {source}",
+      "ratingAria": "Betyg {rating} av 5",
+      "rented": "Hyrde: {vehicle}",
+      "verified": "Verifierad hyra",
+      "distributionAria": "Betygsfördelning",
+      "emptyTitle": "Inga omdömen ännu",
+      "emptyText": "Gäster kan lämna omdöme efter att de lämnat tillbaka bilen. Godkända omdömen visas här."
+    },
+    "app": {
+      "eyebrow": "Mobilapp",
+      "title": "Din bokning, på språng",
+      "text": "Checka in online, se dina upphämtningsuppgifter och skriv till oss — allt från telefonen.",
+      "platformBoth": "iOS och Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Skanna för att ladda ner",
+      "qrAlt": "QR-kod för att ladda ner appen",
+      "appStore": {
+        "prefix": "Ladda ner i",
+        "name": "App Store",
+        "aria": "Ladda ner i App Store",
+        "unavailable": "Inte tillgänglig i App Store ännu"
+      },
+      "googlePlay": {
+        "prefix": "Ladda ner på",
+        "name": "Google Play",
+        "aria": "Ladda ner på Google Play",
+        "unavailable": "Inte tillgänglig på Google Play ännu"
+      },
+      "comingSoon": "Kommer snart"
+    },
+    "locations": {
+      "eyebrow": "Platser",
+      "title": "{count, plural, one {Vårt kontor} other {Våra kontor}}",
+      "description": "{count, plural, one {Hämta och lämna din bil här.} other {Hämta och lämna din bil på något av våra kontor.}}",
+      "directions": "Vägbeskrivning",
+      "directionsTo": "Vägbeskrivning till {name}",
+      "call": "Ring"
+    },
+    "faq": {
+      "eyebrow": "Vanliga frågor",
+      "title": "Frågor inför bokning",
+      "description": "Hittar du inte svaret? Hör av dig så hjälper vi gärna till."
+    },
+    "contact": {
+      "title": "Frågor? Prata med oss.",
+      "description": "Skicka ett meddelande eller ring oss så hjälper vi dig att hitta rätt bil.",
+      "whatsapp": "WhatsApp",
+      "email": "Mejla oss",
+      "whatsappMessage": "Hej {name}, jag har en fråga om att hyra bil."
+    },
+    "nav": {
+      "reviews": "Omdömen",
+      "faq": "Vanliga frågor",
+      "contact": "Kontakt",
+      "app": "App",
+      "branches": "Platser"
+    },
+    "footer": {
+      "contact": "Kontakt",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Vi accepterar",
+      "rating": "{score} · {count, plural, one {# omdöme} other {# omdömen}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Kontanter"
+    }
+  },
+  "siteEditor": {
+    "aria": "Webbplatsredigerare",
+    "title": "Webbplatsredigerare",
+    "signOut": "Logga ut",
+    "tabsAria": "Redigerarsektioner",
+    "status": {
+      "draft": "Utkast",
+      "published": "Publicerad",
+      "paused": "Pausad"
+    },
+    "tabs": {
+      "sections": "Sektioner",
+      "design": "Design",
+      "settings": "Inställningar",
+      "legal": "Juridiskt"
+    },
+    "contentLanguage": "Redigeringsspråk",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Alla sektioner",
+    "sections": {
+      "company": "Företag",
+      "fleet": "Bilar",
+      "included": "Ingår i varje pris",
+      "reviews": "Omdömen",
+      "app": "Mobilapp",
+      "faq": "Vanliga frågor",
+      "contact": "Kontakt",
+      "hero": "Banners och sök",
+      "branches": "Platser"
+    },
+    "sectionsHint": "Slå på eller av sektioner och ändra deras ordning. Öppna en sektion för att redigera innehållet.",
+    "orderHint": "Bilar visas alltid. Kontor hämtas från dina kontor i Benwer admin.",
+    "hiddenUntilContent": "Dold tills du lägger till innehåll",
+    "summary": {
+      "banners": "{count, plural, one {# banner} other {# banners}}",
+      "bannersEmpty": "Inga banners ännu, varumärkesfärgen visas",
+      "company": "Rubrik, introduktion och kontaktuppgifter",
+      "fleet": "Från din Benwer-flotta",
+      "included": "{count, plural, one {# punkt} other {# punkter}}",
+      "reviews": "{count, plural, one {# omdöme} other {# omdömen}}",
+      "app": "Butikslänkar och QR-kod",
+      "locations": "{count, plural, one {# kontor} other {# kontor}} från Benwer",
+      "faq": "{count, plural, one {# fråga} other {# frågor}}",
+      "contactWhatsapp": "WhatsApp, telefon och öppettider",
+      "contact": "Telefon och e-post"
+    },
+    "unsaved": "Osparade ändringar",
+    "saved": "Alla ändringar sparade",
+    "discard": "Ignorera",
+    "save": "Spara ändringar",
+    "common": {
+      "moveUp": "Flytta {item} uppåt",
+      "moveDown": "Flytta {item} nedåt",
+      "remove": "Ta bort {item}",
+      "show": "Visa {item}"
+    },
+    "banners": {
+      "title": "Banners",
+      "description": "Upp till {max} bilder. Tomma fält använder standardtexten som visas i grått.",
+      "empty": "Inga banners. Bannerytan visar din bakgrundsfärg.",
+      "item": "Banner {position}",
+      "image": "Bild",
+      "imageHint": "Ladda upp en bred bild, cirka 1600 × 560 px. JPG, PNG eller WebP upp till 25 MB. En transparent PNG visas mot din bannerfärg.",
+      "add": "Lägg till banner",
+      "fields": {
+        "script": "Handskriven rad",
+        "highlight": "Markerad rubrik",
+        "joiner": "Kort bindeord",
+        "boxed": "Inramad rubrik",
+        "description": "Beskrivning"
+      },
+      "colorsTitle": "Bannerfärger",
+      "colorsDescription": "Används för alla banners. Vilken färg som helst fungerar som bakgrund.",
+      "resetColors": "Återställ till standardfärger",
+      "colors": {
+        "background": "Bakgrund",
+        "text": "Text",
+        "highlight": "Markeringsruta",
+        "highlightText": "Markeringstext",
+        "box": "Vit ruta",
+        "boxText": "Text i vit ruta",
+        "script": "Bindeordstext"
+      },
+      "noImage": "Ingen bild ännu",
+      "uploadImage": "Ladda upp bild",
+      "replaceImage": "Byt bild",
+      "tooLarge": "Filen är större än 25 MB. Välj en mindre bild.",
+      "uploadFailed": "Uppladdningen misslyckades. Försök igen."
+    },
+    "company": {
+      "title": "Företagshuvud",
+      "description": "Ditt namn, en rubrik och en kort introduktion.",
+      "headline": "Rubrik",
+      "headlinePlaceholder": "Hyr bil med {name}",
+      "intro": "Introduktion",
+      "introHint": "En eller två meningar om ditt företag.",
+      "contactTitle": "Kontaktuppgifter",
+      "contactDescription": "Visas i sidhuvudet, platssektionen och kontaktsektionen.",
+      "showPhone": "Visa telefonnummer",
+      "showEmail": "Visa e-post",
+      "showAddress": "Visa adress"
+    },
+    "included": {
+      "title": "Ingår i varje pris",
+      "description": "Upp till 6 löften som alltid ingår i ditt pris.",
+      "accuracy": "Ange bara det som gäller för varje hyra. Standardtexten är ett förslag — kontrollera att den stämmer med dina hyresvillkor.",
+      "item": "Punkt {position}",
+      "icon": "Ikon",
+      "itemTitle": "Titel",
+      "itemText": "Beskrivning",
+      "itemTag": "Markering",
+      "tagHint": "Kort etikett i grönt, till exempel ”Självrisk 1 000 €”.",
+      "presets": {
+        "insurance": "Grundförsäkring",
+        "mileage": "Fria km",
+        "fuel": "Full-till-full bränsle",
+        "cancellation": "Gratis avbokning"
+      },
+      "addCustom": "Egen punkt"
+    },
+    "icons": {
+      "shield": "Sköld",
+      "gauge": "Hastighetsmätare",
+      "fuel": "Bränslepump",
+      "calendar_check": "Kalender",
+      "check": "Bock",
+      "car": "Bil",
+      "users": "Personer",
+      "baby": "Bilbarnstol",
+      "plane": "Flygplan",
+      "key": "Nyckel"
+    },
+    "reviews": {
+      "title": "Gästomdömen",
+      "description": "Gäster lämnar omdöme efter att de återlämnat bilen. Endast omdömen du godkänner visas.",
+      "summary": "{average} i snitt från {count, plural, one {# godkänt omdöme} other {# godkända omdömen}}",
+      "none": "Inga godkända omdömen ännu. Gäster ser en kort text tills du godkänner ett.",
+      "manage": "Godkänn eller dölj omdömen i Benwer admin",
+      "demo": "Det här är demo-omdömen som visas på det här testföretaget tills du godkänner riktiga i Benwer admin."
+    },
+    "app": {
+      "benwerAppTitle": "Benwer Cars-appen",
+      "benwerApp": "Visa Benwer Cars-appen",
+      "benwerAppDescription": "Gäster får den kostnadsfria Benwer Cars-appen. Knapparna länkar till de officiella butikerna och QR-koden öppnar ditt företag i appen.",
+      "storesWithBenwerApp": "Behövs bara om ditt företag har en egen app. När Benwer Cars-appen är påslagen använder sektionen dess butikslänkar.",
+      "storesTitle": "Butikslänkar",
+      "storesDescription": "Länkar till din egen app. En saknad butik visas gråmarkerad. Utan länkar och med Benwer Cars-appen avstängd förblir sektionen dold.",
+      "ios": "App Store-länk",
+      "android": "Google Play-länk",
+      "qrHint": "QR-koden öppnar Google Play-länken, eller App Store-länken om det inte finns någon Google Play-länk.",
+      "copyTitle": "Text",
+      "title": "Titel",
+      "text": "Beskrivning"
+    },
+    "faq": {
+      "title": "Frågor",
+      "description": "Upp till {max} frågor med korta svar.",
+      "empty": "Inga frågor ännu. Sektionen förblir dold tills du lägger till en.",
+      "item": "Fråga {position}",
+      "question": "Fråga",
+      "answer": "Svar",
+      "incompleteHint": "Frågor utan svar visas inte på webbplatsen.",
+      "add": "Lägg till fråga"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Hur kunder når dig. Telefon och e-post hämtas från företagssektionen.",
+      "whatsapp": "WhatsApp-nummer",
+      "whatsappHint": "Inkludera landskod. Lämna tomt för att dölja WhatsApp-knappen.",
+      "hours": "När du svarar",
+      "hoursPlaceholder": "Vi svarar varje dag kl. 08:00–22:00.",
+      "payments": "Betalningsmetoder",
+      "paymentsHint": "Visas i sidfoten."
+    },
+    "design": {
+      "colorTitle": "Varumärkesfärg",
+      "colorDescription": "Används för knappar, länkar och markeringar på hela webbplatsen. Bannerbakgrunden följer den här färgen; du kan fortfarande finjustera den under Banners.",
+      "presets": "Föreslagna färger",
+      "custom": "Egen färg",
+      "customHint": "Använd en hex-kod, till exempel #4f46e5.",
+      "picker": "Välj en färg",
+      "lowContrast": "Den här färgen är för ljus för vit text på knappar. Välj en mörkare, annars misslyckas sparningen.",
+      "fontTitle": "Typsnitt",
+      "fontDescription": "Används för all text på din webbplats.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Rent och modernt"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klassiskt och elegant"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Djärvt och vänligt"
+        }
+      },
+      "cornersTitle": "Hörn",
+      "cornersDescription": "Rundade eller raka hörn på knappar, kort och fält på hela webbplatsen.",
+      "corners": {
+        "round": {
+          "name": "Rundade",
+          "hint": "Mjuka och vänliga"
+        },
+        "square": {
+          "name": "Raka",
+          "hint": "Skarpa och minimalistiska"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Webbplats",
+      "websiteEnabled": "Bokningswebbplats på",
+      "websiteEnabledHint": "När den är på kan gäster se och boka på din publicerade webbplats. Att slå på den publicerar även dina sparade ändringar. Detta är samma reglage som i Benwer admin.",
+      "bookingTitle": "Bokningar",
+      "bookingDescription": "Hur kunder bokar på din webbplats.",
+      "bookingMode": "Bokningsläge",
+      "mode": {
+        "instant": "Direkt",
+        "request": "På förfrågan"
+      },
+      "modeHint": {
+        "instant": "Bokningar bekräftas direkt.",
+        "request": "Du godkänner eller nekar varje bokning inom svarstiden."
+      },
+      "minLead": "Minsta framförhållning",
+      "requestWindow": "Svarstid",
+      "hoursUnit": "I timmar",
+      "differentReturnTitle": "Återlämning på annan plats",
+      "differentReturnLabel": "Låt gäster återlämna på en annan plats",
+      "differentReturnHint": "Gäster väljer en återlämningsplats när de söker. Envägsavgiften från Benwer admin läggs till i priset.",
+      "differentReturnOff": "Aktivera envägshyror i Benwer admin för att erbjuda detta."
+    },
+    "savedNotPublished": "Sparat, ännu inte publicerat",
+    "publish": "Publicera",
+    "branding": {
+      "logosTitle": "Logotyper",
+      "logosDescription": "Detta är ditt företags logotyp. Om du ändrar den här uppdateras den även i Benwer admin och i Benwer Cars-appen.",
+      "headerLogo": "Logotyp i sidhuvudet",
+      "headerLogoHint": "Visas i fältet högst upp på varje sida. En bred logotyp fungerar bäst.",
+      "companyLogo": "Logotyp i företagssektionen",
+      "companyLogoHint": "Visas ovanför din rubrik, före företagssektionen.",
+      "usingCompanyLogo": "Använder din företagslogotyp",
+      "upload": "Ladda upp logotyp",
+      "replace": "Byt ut",
+      "uploadFailed": "Logotypen kunde inte laddas upp. Använd en PNG-, JPG- eller WebP-bild och försök igen.",
+      "tooLarge": "Den här bilden är större än 25 MB.",
+      "backgroundTitle": "Sidbakgrund",
+      "backgroundDescription": "Färgen bakom innehållet på din webbplats.",
+      "backgroundPresets": "Föreslagna bakgrunder",
+      "backgroundCustom": "Egen bakgrund",
+      "backgroundPicker": "Välj en bakgrundsfärg",
+      "needsApi": "Tillgängligt när Benwer API-uppdateringen för webbplatser är live.",
+      "headerLogoDark": "Logotyp i sidhuvudet — mörkt läge",
+      "companyLogoDark": "Logotyp i företagssektionen — mörkt läge",
+      "squareLogo": "Kvadratisk logotyp (1:1)",
+      "squareLogoHint": "Krävs för publicering. Visas bredvid ditt företagsnamn på kort, i sökresultat och i mobila listor.",
+      "cropTitle": "Beskär logotyp till 2:1",
+      "cropHint": "Dra och zooma så att din logotyp passar snyggt inom 2:1-ramen.",
+      "cropZoom": "Zoom",
+      "cropCancel": "Avbryt",
+      "cropSave": "Beskär och ladda upp",
+      "darkLogoHint": "Valfritt. Visas när besökare använder mörkt läge. Använd en ljus eller vit version av din logotyp.",
+      "darkNeedsApi": "Logotyper för mörkt läge blir tillgängliga när Benwer API-uppdateringen för dem är live.",
+      "logo": "Logotyp (2:1)",
+      "logoHint": "Krävs för publicering. En logotyp för både ljust och mörkt läge: din varumärkesfärg som bakgrund med namnet i vitt, beskuren till 2:1."
+    },
+    "legal": {
+      "hint": "Varje sida börjar med standardtexten, så du kan ändra bara de delar du behöver. Lägg till en sektion för varje underrubrik. ”Återgå till standardtext” ångrar dina ändringar.",
+      "needsApi": "Tillgängligt när Benwer API-uppdateringen för webbplatser är live.",
+      "privacyTitle": "Integritetspolicy",
+      "privacyDescription": "Visas under Integritet i sidfoten på din webbplats.",
+      "termsTitle": "Villkor",
+      "termsDescription": "Visas under Villkor i sidfoten på din webbplats.",
+      "text": "Text",
+      "intro": "Introduktion",
+      "subtitle": "Underrubrik",
+      "sectionItem": "Sektion {position}",
+      "addSection": "Lägg till sektion",
+      "reset": "Återgå till standardtext",
+      "pageTitle": "Sidtitel",
+      "privacyLooksLikeTerms": "Din integritetspolicy har samma text som villkoren. Använd ”Återgå till standardtext” under Integritetspolicy, eller skriv din egen integritetstext och spara."
+    },
+    "preview": "Förhandsgranska",
+    "fullscreen": "Helskärmsredigerare",
+    "exitFullscreen": "Visa förhandsgranskning bredvid redigeraren",
+    "previewBarAria": "Förhandsgranskningskontroller",
+    "previewing": "Du förhandsgranskar din webbplats",
+    "backToEdit": "Redigera"
+  },
+  "marketplaceBanners": {
+    "aria": "Höjdpunkter från Benwer",
+    "slideLabel": "{position} av {count}",
+    "goTo": "Visa banner {position}",
+    "previous": "Föregående banner",
+    "next": "Nästa banner",
+    "trust": {
+      "script": "boka med trygghet",
+      "highlight": "Verifierade företag",
+      "joiner": "och",
+      "boxed": "Säker bokning",
+      "description": "Riktiga omdömen, tydliga villkor och digitala avtal som du signerar i telefonen"
+    },
+    "prices": {
+      "script": "en sökning",
+      "highlight": "Jämför priser",
+      "joiner": "från",
+      "boxed": "Partnerföretag",
+      "description": "Se priser, försäkring och depositioner från partnerföretag sida vid sida innan du bokar"
+    },
+    "anywhere": {
+      "script": "hitta din bil",
+      "highlight": "I hela Málaga",
+      "joiner": "med",
+      "boxed": "Lokala uthyrningsföretag",
+      "description": "Partnerföretag i städer över hela Málagaprovinsen, samlade på ett ställe"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Publicerad av {name}.",
+    "cookies": {
+      "title": "Kakpolicy",
+      "lede": "Hur {name} använder kakor och liknande tekniker på den här webbplatsen.",
+      "updated": "Publicerad av {name}.",
+      "sections": [
+        {
+          "title": "Vad vi använder",
+          "body": "Kakor är små textfiler som lagras på din enhet. Den här webbplatsen använder även liknande lagring, såsom lokal lagring, för att komma ihåg dina val, din varukorg och din inloggning."
+        },
+        {
+          "title": "Strikt nödvändiga",
+          "body": "En språkkaka gör att webbplatsen kan visa ditt språk, och ditt val i kakbannern sparas så att vi inte frågar igen vid varje besök. Om du loggar in lagrar inloggningsleverantören en session på din enhet så att du förblir inloggad. Kortbetalningar hanteras av Stripe, som kan sätta egna kakor för att förhindra bedrägerier."
+        },
+        {
+          "title": "Valfria kakor",
+          "body": "Valfria kakor (till exempel analys) förblir avstängda om du inte väljer Acceptera alla. Den här webbplatsen sätter idag inga analys- eller marknadsföringskakor."
+        },
+        {
+          "title": "Hantera kakor",
+          "body": "Använd länken för kakinställningar i sidfoten för att ändra ditt val. Du kan också radera kakor och webbplatsdata i din webbläsare. Om du blockerar strikt nödvändig lagring kan du bli utloggad eller få din varukorg tömd."
+        },
+        {
+          "title": "Mer information",
+          "body": "Se integritetspolicyn för hur {name} hanterar personuppgifter, eller använd kontaktuppgifterna i sidfoten."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Support",
+    "fabCloseLabel": "Stäng supportmenyn",
+    "messageAction": "Direktmeddelande",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Hej, jag har en fråga om Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "Benwer Cars-appen",
+    "metaDescription": "Boka bilar, samla alla dina resor på ett ställe och få bokningsuppdateringar i telefonen.",
+    "eyebrow": "Mobilapp",
+    "title": "Din hyrbil, direkt i fickan",
+    "description": "Boka bilar från lokala företag, samla varje resa på ett ställe, betala och få uppdateringar i telefonen.",
+    "featureTrips": "Alla dina resor, över alla företag",
+    "featureBooking": "Boka och betala med några få tryck",
+    "featurePush": "Uppdateringar när din bokning ändras",
+    "unavailableTitle": "Appen kommer snart",
+    "unavailableDescription": "Benwer Cars-appen finns inte i butikerna ännu. Du kan fortfarande boka på webben.",
+    "browse": "Bläddra bland bilar",
+    "badgeTitle": "Skaffa Benwer Cars-appen",
+    "companyText": "Boka hos {company} i telefonen och samla dina resor på ett ställe.",
+    "bookingText": "Se den här bokningen, betala och få uppdateringar i telefonen."
+  }
+}

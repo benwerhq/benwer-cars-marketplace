@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Uzņēmumi",
+    "title": "Atrodiet sev piemērotāko automašīnu",
+    "subtitle": "Salīdziniet partneru nomas uzņēmumu automašīnas un turpiniet uzņēmuma vietnē.",
+    "searchPlaceholder": "Kurp dodaties?",
+    "eyebrow": "Malaga · Kostadelsola",
+    "companiesHeading": "Ieteicamie uzņēmumi",
+    "companiesSubtitle": "Partneru nomas uzņēmumi Malagas provincē — autoparki, ar kuriem sadarbojamies, nevis nepārbaudīti sludinājumi",
+    "trustLocal": "Partneru uzņēmumi",
+    "trustGuest": "Noma uzņēmuma vietnē",
+    "trustArea": "Malagas province",
+    "viewAllCompanies": "Skatīt visus uzņēmumus"
+  },
+  "featuredCars": {
+    "viewAllCount": "Skatīt visas {count} automašīnas",
+    "eyebrow": "Automašīnas",
+    "title": "Pieejamās automašīnas",
+    "subtitle": "Visas partneru uzņēmumu publicētās automašīnas vienuviet. Izvēlieties vienu un rezervējiet paša uzņēmuma vietnē.",
+    "viewAll": "Meklēt visas automašīnas",
+    "seeAll": "Skatīt visas",
+    "emptyTitle": "Automašīnas vēl nav pievienotas",
+    "emptyHint": "Publiskie autoparki šeit parādīsies, kad uzņēmumi tos publicēs."
+  },
+  "whatYouGet": {
+    "eyebrow": "Nomas uzņēmumiem",
+    "title": "Ko jūs iegūstat",
+    "subtitle": "Viena sistēma birojam, stāvlaukumam un ceļotājiem, kas meklē automašīnas Malagā.",
+    "admin": {
+      "title": "Pilna administrēšanas sistēma",
+      "body": "Pārvaldiet automašīnas, cenas, pieejamību un rezervācijas vienā darba panelī — tajā pašā katalogā, ko izmanto platforma."
+    },
+    "mobile": {
+      "title": "Mobilā lietotne darbiniekiem",
+      "body": "Izsniedziet un pieņemiet automašīnas un skatiet šodienas rezervācijas tieši stāvlaukumā."
+    },
+    "storefront": {
+      "title": "Uzņēmuma zīmola vietne",
+      "body": "Saraksta ieraksts platformā, kā arī jūsu pašu vietne un apakšdomēns."
+    },
+    "preview": {
+      "utilisation": "Noslodze",
+      "utilisationValue": "82%",
+      "pickups": "Saņemšanas šodien",
+      "pickupsValue": "14",
+      "revenue": "Šomēnes",
+      "revenueValue": "9,4 tūkst. €",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Panelis",
+      "navFleet": "Autoparks",
+      "navCalendar": "Kalendārs",
+      "navReservations": "Rezervācijas",
+      "calendarTitle": "Pieejamība",
+      "calendarMonth": "Nākamās 2 nedēļas",
+      "viaBenwer": "Caur Benwer",
+      "direct": "Tiešā",
+      "free": "Brīvs",
+      "carA": "Kompaktklase",
+      "carB": "Pilsētas auto",
+      "carC": "SUV",
+      "carD": "Krosovers",
+      "phoneTitle": "Šodien",
+      "phoneDate": "Pirmdiena",
+      "pickUp": "Saņemšana",
+      "return": "Atdošana",
+      "checkedOut": "Izsniegts",
+      "due": "Gaidāms",
+      "tabToday": "Šodien",
+      "tabFleet": "Autoparks",
+      "tabScan": "Skenēt",
+      "storeName": "Jūsu uzņēmums",
+      "storeNavCars": "Automašīnas",
+      "storeNavContact": "Kontakti",
+      "storeHeadline": "Iznomājiet automašīnu Malagā",
+      "storeSearch": "Saņemšana un datumi",
+      "storeSearchCta": "Meklēt",
+      "storePrice": "Skatīt cenas",
+      "carE": "Hečbeks",
+      "carF": "Universālis"
+    }
+  },
+  "faq": {
+    "eyebrow": "BUJ",
+    "title": "Pirms rezervēšanas",
+    "subtitle": "Partneru autoparki, kā darbojas rezervēšana un ko Benwer dara — un ko nedara.",
+    "items": {
+      "partners": {
+        "question": "Vai šīs automašīnas pieder īstiem nomas uzņēmumiem?",
+        "answer": "Jā. Katrs sludinājums ir Benwer partnera publiska automašīna — īsta nomas uzņēmuma, ar kuru sadarbojamies, nevis nepārbaudīts privāts sludinājums. Ja uzņēmums vai automašīna nav publicēta platformā, tā šeit neparādās."
+      },
+      "booking": {
+        "question": "Vai es rezervēju un maksāju Benwer vietnē?",
+        "answer": "Nē. Šeit jūs salīdzināt partneru autoparkus, bet pēc tam turpināt nomas uzņēmuma vietnē, lai apstiprinātu nomu, drošības naudu un saņemšanu. Benwer šajā platformā maksājumus nepieņem."
+      },
+      "photos": {
+        "question": "Vai varu uzticēties fotoattēliem un pieejamībai?",
+        "answer": "Sludinājumos tiek izmantoti publiskie fotoattēli un pieejamība, ko publicē partnera uzņēmums — no tā paša kataloga, ko tas pārvalda administrēšanas sistēmā. Ja automašīnai vēl nav publiska fotoattēla, mēs rādām tukšu vietu, nevis citas automašīnas ilustrāciju. Galīgā pieejamība tiek apstiprināta uzņēmuma vietnē."
+      },
+      "account": {
+        "question": "Vai man ir nepieciešams konts?",
+        "answer": "Meklēšanai konts nav nepieciešams. Ja nosūtāt ziņojumu caur kontaktu formu, šos datus izmantojam tikai atbildei."
+      },
+      "safety": {
+        "question": "Kurš ir atbildīgs par nomu?",
+        "answer": "Līgums tiek noslēgts starp jums un partnera nomas uzņēmumu. Pirms apstiprināšanas izlasiet viņu noteikumus. Benwer palīdz atrast automašīnu partneru autoparkā, bet pats transportlīdzekļus neiznomā un maksājumus šeit nepieņem."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Benwer Cars lietotne",
+    "description": "Iegūstiet Benwer Cars savā tālrunī. Android lietotne pašlaik ir agrīnā testēšanā Google Play — pievienojieties testam un palīdziet to pilnveidot."
+  },
+  "partners": {
+    "eyebrow": "Auto nomas uzņēmumiem",
+    "title": "Pārvērtiet brīvās dienas rezervācijās",
+    "description": "Ceļotāji jau meklē automašīnas Malagā vietnē Benwer. Publicējiet savu autoparku vienreiz un aizpildiet dienas, kas citādi paliktu brīvas.",
+    "cta": "Uzzināt vairāk",
+    "ctaAria": "Uzzināt vairāk Benwer mārketinga vietnē (atveras jaunā cilnē)",
+    "demo": "Skatīt tiešsaistes demonstrāciju",
+    "demoAria": "Skatīt tiešsaistes demonstrāciju (atveras jaunā cilnē)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Auto noma",
+    "companyDescription": "Iznomājiet automašīnu no {name} vietā {location}.",
+    "companyDescriptionPlain": "Iznomājiet automašīnu no {name}.",
+    "companyFallback": "Auto noma",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Iznomājiet {brand} {model} no {company}.",
+    "carDescriptionSpecs": "Iznomājiet {brand} {model} — {seats, plural, one {# sēdvieta} other {# sēdvietas}}, {transmission}.",
+    "carsTitle": "Nomas automašīnas Malagas provincē"
+  },
+  "tenant": {
+    "notFoundTitle": "Uzņēmums nav atrasts",
+    "notFoundDescription": "Šo vietni neizdevās ielādēt.",
+    "loadErrorTitle": "Uzņēmuma informācija nav pieejama",
+    "loadErrorDescription": "Neizdevās ielādēt šo vietni no tiešsaistes kataloga. Mēģiniet vēlreiz — kad API nedarbojas, mēs nerādām neīstas automašīnas.",
+    "logoAlt": "{name} logotips"
+  },
+  "howItWorks": {
+    "eyebrow": "Trīs soļi",
+    "title": "Kā tas darbojas",
+    "subtitle": "Salīdziniet partneru autoparkus Malagā un rezervējiet tieši pie uzņēmuma. Benwer konts nav nepieciešams.",
+    "stepLabel": "{number}. solis",
+    "searchTitle": "Izvēlieties datumus un vietu",
+    "searchBody": "Izvēlieties Kostadelsolas pilsētu un nepieciešamās dienas. Tiek rādīti tikai pārbaudīti partneru autoparki.",
+    "compareTitle": "Salīdziniet reālas automašīnas",
+    "compareBody": "Sēdvietas, pārnesumkārba, fotoattēli un dienas cena — līdzās no katra partnera.",
+    "continueTitle": "Rezervējiet pie uzņēmuma",
+    "continueBody": "Apstipriniet saņemšanu, apdrošināšanu un maksājumu ar nomas uzņēmumu, kuram pieder automašīna.",
+    "cta": "Sākt meklēšanu",
+    "preview": {
+      "place": "Malagas lidosta",
+      "dates": "Pk → Pk · 7 dienas",
+      "carA": "Kompakts auto",
+      "carASpecs": "4 sēdvietas · Manuālā",
+      "carB": "Ģimenes SUV",
+      "carBSpecs": "5 sēdvietas · Automātiskā",
+      "confirmed": "Rezervācija apstiprināta",
+      "confirmedDetail": "Saņemšana plkst. 10:00",
+      "example": "Piemērs"
+    }
+  },
+  "search": {
+    "locationLabel": "Saņemšanas vieta",
+    "locationPlaceholder": "Meklēt vietas",
+    "locationEmpty": "Atbilstoša vieta nav atrasta",
+    "allLocations": "Visas vietas",
+    "allLocationsHint": "Visas pilsētas ar pieejamām automašīnām",
+    "provinceSelected": "Visas vietas",
+    "provinceHint": "Visas pilsētas ar pieejamām automašīnām",
+    "pickupLabel": "Saņemšana",
+    "dropoffLabel": "Atdošana",
+    "pickupPlaceholder": "Pievienot datumu",
+    "dropoffPlaceholder": "Pievienot datumu",
+    "pickupTrigger": "Saņemšanas datums, {date}",
+    "dropoffTrigger": "Atdošanas datums, {date}",
+    "calendarLabel": "Izvēlieties datumus",
+    "datesRequired": "Lai meklētu, izvēlieties saņemšanas un atdošanas datumus.",
+    "submit": "Meklēt",
+    "returnLocationLabel": "Atdošanas vieta",
+    "differentReturn": "Atdot citā vietā",
+    "returnSame": "Tā pati kā saņemšanas",
+    "returnNotOffered": "{company} nepiedāvā atdošanu citā vietā.",
+    "branchChoose": "Izvēlieties vietu",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Ielādē vietas…",
+    "branchAnyHint": "Visas filiāles ar automašīnām"
+  },
+  "browseLocation": {
+    "title": "Pārlūkot pēc vietas",
+    "subtitle": "Populāras pilsētas Malagas provincē",
+    "emptyTitle": "Vēl nav nevienas vietas",
+    "emptyDescription": "Šeit parādīsies populārākās pilsētas.",
+    "cityAria": "Pārlūkot automašīnas pilsētā {city}"
+  },
+  "map": {
+    "teaserTitle": "Skatiet, kur varat saņemt auto",
+    "teaserSubtitle": "Vietējie autoparki Malagas provincē — atveriet karti un pārejiet tieši pie uzņēmuma.",
+    "teaserCta": "Atvērt karti",
+    "teaserCityAria": "Skatīt uzņēmumus kartē pilsētā {city}",
+    "listLabel": "Saraksts",
+    "mapLabel": "Karte",
+    "viewToggleAria": "Rādīt uzņēmumus sarakstā vai kartē",
+    "regionAria": "Nomas uzņēmumu karte Malagas provincē",
+    "pinAria": "{name} pilsētā {city}",
+    "fleetHint": "{count, plural, =0 {Automašīnas vēl nav pievienotas} one {# pieejama automašīna} other {# pieejamas automašīnas}}",
+    "fleetHintUnknown": "Skatīt pieejamās automašīnas",
+    "viewFleet": "Skatīt autoparku",
+    "closePin": "Aizvērt",
+    "loading": "Ielādē uzņēmumus…",
+    "errorDescription": "Karti neizdevās ielādēt. Pārlūkojiet sarakstu.",
+    "emptyTitle": "Kartē nav uzņēmumu",
+    "emptyDescription": "Izmēģiniet citu pilsētu Malagas provincē.",
+    "resultsCount": "{count, plural, one {# uzņēmums Malagas provincē} other {# uzņēmumi Malagas provincē}}",
+    "resultsInCity": "{count, plural, one {# uzņēmums pilsētā {city}} other {# uzņēmumi pilsētā {city}}}",
+    "resultsAtBranch": "{count, plural, one {# uzņēmums filiālē {branch}} other {# uzņēmumi filiālē {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Tiek rādītas {shown} no {total} automašīnām",
+    "loadMore": "Rādīt vairāk automašīnu",
+    "seeAll": "Skatīt visas",
+    "title": "Pieejamās automašīnas",
+    "subtitle": "Visas publiskās partneru nomas uzņēmumu automašīnas Malagas provincē. Izvēlieties datumus, lai redzētu pieejamību.",
+    "searchEmptyTitle": "Neviena automašīna neatbilst šim meklējumam",
+    "searchEmptyHint": "Izmēģiniet citus datumus vai citu vietu Malagas provincē. Katra pilsēta paliek sarakstā — pat ja šodien tur nav pieejamu automašīnu.",
+    "resultsInProvince": "{count, plural, one {# automašīna visās vietās} other {# automašīnas visās vietās}}",
+    "resultsInCity": "{count, plural, one {# automašīna pilsētā {city}} other {# automašīnas pilsētā {city}}}",
+    "allCompanies": "Visi uzņēmumi",
+    "companyPlaceholder": "Meklēt uzņēmumus",
+    "companyTrigger": "Uzņēmums, {company}",
+    "perDay": "{price} / dienā",
+    "perDaySuffix": " / dienā",
+    "viewDetails": "Skatīt informāciju",
+    "notAvailableForDates": "Nav pieejams šajos datumos",
+    "bookUnavailable": "Skatīt auto",
+    "fleetSummary": "{total, plural, one {# automašīna} other {# automašīnas}} · {available, plural, one {# pieejama} other {# pieejamas}}",
+    "fleetSummaryForDates": "{total, plural, one {# automašīna} other {# automašīnas}} · {available, plural, one {# pieejama} other {# pieejamas}} · {from} – {to}",
+    "seats": "{count} sēdvietas",
+    "resultsCount": "{count, plural, one {# pieejama automašīna} other {# pieejamas automašīnas}}",
+    "resultsForDates": "{count, plural, one {# automašīna} other {# automašīnas}} · {from} – {to}",
+    "emptyTitle": "Šis autoparks vēl nav publisks",
+    "emptyHint": "Šis uzņēmums ir sarakstā, taču tā automašīnas vēl nav publicētas Benwer. Tas ir normāli, kamēr transportlīdzekļi nav atzīmēti kā publiski — lapa darbojas pareizi.",
+    "noResults": "Neviena automašīna neatbilst šim meklējumam",
+    "noResultsHint": "Izmēģiniet citus datumus, citu vietu vai mazāk filtru.",
+    "browseCompanies": "Pārlūkot uzņēmumus",
+    "clearFilters": "Notīrīt filtrus",
+    "searchPlaceholder": "Meklēt pēc markas vai modeļa",
+    "filters": {
+      "title": "Filtri",
+      "seats": "Sēdvietas",
+      "transmission": "Pārnesumkārba",
+      "company": "Uzņēmums",
+      "dates": "Datumi",
+      "from": "Saņemšanas datums",
+      "to": "Atdošanas datums",
+      "category": "Kategorija",
+      "fuel": "Degvielas veids",
+      "all": "Visi",
+      "clear": "Notīrīt",
+      "selectedCount": "Izvēlēti: {count}"
+    },
+    "types": {
+      "car": "Vieglais auto",
+      "suv": "SUV",
+      "van": "Mikroautobuss",
+      "truck": "Kravas auto",
+      "motorcycle": "Motocikls"
+    },
+    "transmission": {
+      "automatic": "Automātiskā",
+      "manual": "Manuālā"
+    },
+    "fuel": {
+      "petrol": "Benzīns",
+      "diesel": "Dīzelis",
+      "electric": "Elektro",
+      "hybrid": "Hibrīds",
+      "plugin_hybrid": "Uzlādējamais hibrīds"
+    },
+    "rowDeposit": "Drošības nauda {amount}",
+    "rowAvailable": "Pieejams jūsu datumos",
+    "rowTotal": "Kopā {amount} · {days, plural, one {# diena} other {# dienas}}",
+    "bookNow": "Rezervēt tūlīt",
+    "availableCount": "{count, plural, =0 {Nav pieejamu automašīnu} one {# pieejama automašīna} other {# pieejamas automašīnas}}",
+    "availableForDates": "{count, plural, =0 {Nav pieejamu automašīnu} one {# pieejama automašīna} other {# pieejamas automašīnas}} · {from} – {to}",
+    "categories": {
+      "economy": "Ekonomiskā",
+      "sedan": "Sedans",
+      "suv": "SUV",
+      "minivan": "Minivens",
+      "van": "Mikroautobuss",
+      "other": "Cita"
+    },
+    "sort": {
+      "label": "Kārtot pēc",
+      "recommended": "Ieteicamajiem",
+      "pricePerDay_asc": "Zemākās dienas cenas",
+      "pricePerDay_desc": "Augstākās dienas cenas"
+    },
+    "colors": {
+      "white": "Balta",
+      "black": "Melna",
+      "silver": "Sudraba",
+      "grey": "Pelēka",
+      "red": "Sarkana",
+      "blue": "Zila",
+      "green": "Zaļa",
+      "orange": "Oranža",
+      "yellow": "Dzeltena",
+      "brown": "Brūna",
+      "beige": "Bēša",
+      "gold": "Zelta",
+      "purple": "Violeta"
+    },
+    "viewCar": "Skatīt auto",
+    "opensCompanySite": "(atver uzņēmuma vietni)"
+  },
+  "carDetail": {
+    "bookNow": "Rezervēt tūlīt",
+    "continueOnCompany": "Turpināt vietnē {company}",
+    "rentOnCompanySite": "Nomāt uzņēmuma vietnē",
+    "handoffHint": "Pirms pāradresācijas uz uzņēmuma vietni rezervācijas pabeigšanai mēs lūgsim jūsu apstiprinājumu.",
+    "pricePerDay": "{price} dienā",
+    "specs": "Specifikācijas",
+    "year": "Gads",
+    "type": "Tips",
+    "transmission": "Pārnesumkārba",
+    "fuel": "Degviela",
+    "seats": "Sēdvietas",
+    "availability": "Pieejamība",
+    "availabilityError": "Neizdevās ielādēt pieejamību. Mēģiniet vēlreiz.",
+    "availabilityUnavailable": "Pieejamība nav pieejama",
+    "checkingAvailability": "Pārbauda pieejamību…",
+    "notAvailable": "Šī automašīna izvēlētajos datumos nav pieejama.",
+    "selectPickup": "Izvēlieties saņemšanas datumu",
+    "selectDropoff": "Tagad izvēlieties atdošanas datumu",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Notīrīt datumus",
+    "addDate": "Pievienot datumu",
+    "calendarLabel": "Pieejamības kalendārs",
+    "legend": "Kalendāra skaidrojums",
+    "available": "Pieejams",
+    "selected": "Izvēlēts",
+    "unavailable": "Nav pieejams",
+    "openDates": "Nākamajos {months} mēnešos nav rezervētu datumu.",
+    "breadcrumbAria": "Navigācijas ceļš",
+    "photoEmpty": "Fotoattēli drīzumā",
+    "previousPhoto": "Iepriekšējais fotoattēls",
+    "nextPhoto": "Nākamais fotoattēls",
+    "viewPhoto": "Skatīt {index}. fotoattēlu",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, fotoattēls {index}",
+    "backToFleet": "Atpakaļ uz autoparku",
+    "metaTitle": "Automašīnas informācija",
+    "about": "Par šo automašīnu",
+    "category": "Kategorija",
+    "color": "Krāsa",
+    "deposit": "Drošības nauda",
+    "mileage": "Nobraukums",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Jūs tiekat pāradresēts uz {company} rezervāciju vietni, lai pabeigtu savu rezervāciju.",
+    "handoffTrust": "{company} ir uzticams Benwer partneris.",
+    "handoffContinue": "Turpināt",
+    "handoffCancel": "Atcelt",
+    "handoffCompanyFallback": "uzņēmuma"
+  },
+  "booking": {
+    "title": "Pabeidziet rezervāciju",
+    "subtitle": "Apstipriniet savus datus — konts nav nepieciešams.",
+    "details": "Jūsu dati",
+    "detailsHint": "Tos izmantosim tikai šīs rezervācijas apstiprināšanai.",
+    "guestName": "Vārds un uzvārds",
+    "guestNamePlaceholder": "Jānis Bērziņš",
+    "guestEmail": "E-pasta adrese",
+    "guestEmailPlaceholder": "janis@piemers.lv",
+    "guestEmailHint": "Uz šo adresi tiks nosūtīts apstiprinājums.",
+    "guestPhone": "Tālruņa numurs",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Nomas uzņēmums var ar jums sazināties par saņemšanu.",
+    "startDate": "Saņemšanas datums",
+    "endDate": "Atdošanas datums",
+    "datesHint": "Datumi ņemti no automašīnas kalendāra. Šeit varat tos pielāgot.",
+    "addDate": "Pievienot datumu",
+    "changeDates": "Mainīt datumus kalendārā",
+    "summary": "Rezervācijas kopsavilkums",
+    "vehicle": "Transportlīdzeklis",
+    "company": "Uzņēmums",
+    "rate": "Dienas cena",
+    "duration": "Ilgums",
+    "totalPrice": "Kopā",
+    "nights": "{count, plural, one {# diena} other {# dienas}}",
+    "stickyMeta": "{name} · {count, plural, one {# diena} other {# dienas}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Apstiprināt rezervāciju",
+    "confirmRequest": "Nosūtīt pieprasījumu",
+    "requesting": "Nosūta pieprasījumu…",
+    "confirming": "Apstiprina…",
+    "sitePaused": "Rezervācijas netiek pieņemtas",
+    "insurance": "Apdrošināšana",
+    "termsLabel": "Nomas noteikumi",
+    "termsAccept": "Es piekrītu",
+    "termsLink": "nomas noteikumiem",
+    "successTitle": "Rezervācija apstiprināta!",
+    "successMessage": "Apstiprinājums nosūtīts uz {email}.",
+    "viewBooking": "Skatīt manu rezervāciju",
+    "selectDates": "Izvēlieties datumus, lai turpinātu",
+    "invalidDates": "Izvēlieties derīgu datumu diapazonu",
+    "backToCar": "Atpakaļ pie {name}",
+    "trustNoAccount": "Konts nav nepieciešams",
+    "trustEmail": "Apstiprinājums e-pastā",
+    "trustNoPayment": "Tagad nav jāmaksā",
+    "trustCardPayment": "Maksājiet ar karti pēc rezervēšanas",
+    "trustFooter": "Apstiprinot jūs pieprasāt šo automašīnu norādītajos datumos. Uzņēmums nodrošinās rezervāciju.",
+    "missingTitle": "Izvēlieties automašīnu, lai turpinātu",
+    "missingDescription": "Pirms rezervācijas pabeigšanas izvēlieties transportlīdzekli un datumus.",
+    "browseCars": "Pārlūkot automašīnas",
+    "vehicleMissingTitle": "Šī automašīna vairs nav pieejama",
+    "vehicleMissingDescription": "Iespējams, tā jau ir rezervēta. Izvēlieties citu no autoparka.",
+    "viewFleet": "Skatīt autoparku",
+    "datesMissingTitle": "Pievienojiet ceļojuma datumus",
+    "datesMissingDescription": "Dodieties atpakaļ pie automašīnas, lai izvēlētos pieejamos datumus, vai ievadiet tos veidlapā.",
+    "pickDates": "Izvēlēties datumus pie automašīnas",
+    "formAria": "Viesa rezervācijas dati",
+    "validation": {
+      "nameMin": "Ievadiet vārdu un uzvārdu (vismaz 2 rakstzīmes).",
+      "email": "Ievadiet derīgu e-pasta adresi.",
+      "phone": "Ievadiet derīgu tālruņa numuru.",
+      "startDate": "Izvēlieties saņemšanas datumu.",
+      "endDate": "Izvēlieties atdošanas datumu.",
+      "endAfterStart": "Atdošanas datumam jābūt pēc saņemšanas datuma.",
+      "terms": "Lai turpinātu, piekrītiet nomas noteikumiem.",
+      "fixErrors": "Lūdzu, izlabojiet izceltos laukus."
+    },
+    "averageRate": "Vidējā dienas cena",
+    "breakdownTitle": "Cenas sadalījums",
+    "standardRate": "Standarta tarifs",
+    "weekendRate": "Nedēļas nogale",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Nomai šajā sezonā jāilgst vismaz {limit, plural, one {# diena} other {# dienas}}. Lai rezervētu, mainiet datumus.",
+    "warningMaxDays": "Noma šajā sezonā var ilgt ne vairāk kā {limit, plural, one {# dienu} other {# dienas}}. Lai rezervētu, mainiet datumus.",
+    "returnLocation": "Atdošanas vieta",
+    "oneWayFee": "Maksa par atdošanu citā vietā",
+    "signedInAs": "Pierakstījies kā {email}",
+    "signInPrompt": "Vai jums ir konts?",
+    "signInLink": "Pierakstieties, lai aizpildītu savus datus",
+    "subtitleSignedIn": "Pārbaudiet savus datus un apstipriniet.",
+    "trustPaymentAfter": "Maksājuma informācija sekos pēc rezervēšanas",
+    "extras": "Papildpakalpojumi",
+    "extraPerDay": "{price} / dienā",
+    "extraFixed": "{price} / nomai",
+    "tripDetails": "Ceļojuma informācija",
+    "pickupTime": "Saņemšanas laiks",
+    "returnTime": "Atdošanas laiks",
+    "timeAny": "Jebkurā laikā",
+    "flightNumber": "Lidojuma numurs",
+    "flightNumberHint": "Saņemšana notiek lidostā. Pievienojiet lidojuma numuru, lai uzņēmums varētu sekot kavējumiem.",
+    "flightNumberOptional": "Pievienojiet, ja ierodaties ar lidmašīnu.",
+    "notes": "Komentāri",
+    "notesPlaceholder": "Vai uzņēmumam būtu kaut kas jāzina?",
+    "dateOfBirth": "Dzimšanas datums",
+    "optional": "neobligāti",
+    "extraSoldOut": "Nav pieejams šajos datumos"
+  },
+  "reservationStatus": {
+    "title": "Jūsu rezervācija",
+    "successTitle": "Rezervēts",
+    "successSubtitle": "Mēs nosūtījām apstiprinājumu uz {email}.",
+    "status": {
+      "draft": "Gaida apstiprinājumu",
+      "confirmed": "Apstiprināta",
+      "active": "Aktīva — patīkamu ceļojumu!",
+      "completed": "Pabeigta",
+      "cancelled": "Atcelta"
+    },
+    "vehicle": "Transportlīdzeklis",
+    "company": "Uzņēmums",
+    "dates": "Datumi",
+    "pickup": "Saņemšana",
+    "dropoff": "Atdošana",
+    "guest": "Klients",
+    "email": "E-pasts",
+    "phone": "Tālrunis",
+    "total": "Kopā",
+    "reference": "Atsauces numurs",
+    "referenceHint": "Uzrādiet to saņemšanas brīdī.",
+    "trustCopy": "Saglabājiet šo lapu — tā ir jūsu rezervācijas kvīts. Tālāk visu nokārtos nomas uzņēmums.",
+    "trustEmail": "Apstiprinājums nosūtīts e-pastā",
+    "trustPickup": "Uzrādiet šo lapu saņemšanas brīdī",
+    "nextTitle": "Kas notiks tālāk",
+    "nextEmail": "Pārbaudiet apstiprinājumu e-pastā {email}.",
+    "nextPickup": "Uzrādiet atsauces numuru saņemšanas brīdī.",
+    "browseMore": "Pārlūkot vairāk automašīnu",
+    "notFoundTitle": "Rezervācija nav atrasta",
+    "notFoundDescription": "Pārbaudiet saiti apstiprinājuma e-pastā vai sāciet jaunu meklēšanu.",
+    "backHome": "Atpakaļ uz sākumu",
+    "requestExpires": "Pieprasījuma termiņš beidzas",
+    "cancelReason": "Atcelšanas iemesls",
+    "withdraw": "Atsaukt pieprasījumu",
+    "paymentStatus": "Maksājums",
+    "paidAmount": "Samaksāts",
+    "payment": {
+      "unpaid": "Neapmaksāts",
+      "partially_paid": "Daļēji apmaksāts",
+      "paid": "Apmaksāts",
+      "refund_due": "Jāatmaksā",
+      "authorized": "Karte autorizēta"
+    },
+    "reasons": {
+      "unpaid_timeout": "Maksājums netika veikts laikā",
+      "request_expired": "Uzņēmums neatbildēja laikā",
+      "request_declined": "Uzņēmums noraidīja šo pieprasījumu",
+      "customer_request": "Jūs atsaucāt šo pieprasījumu"
+    },
+    "insurance": "Apdrošināšana",
+    "extras": "Papildpakalpojumi",
+    "fees": "Saņemšanas un atdošanas maksas",
+    "priceTitle": "Cenas kopsavilkums"
+  },
+  "payment": {
+    "title": "Samaksāt avansu",
+    "amountDue": "Maksājamā summa: {amount}",
+    "countdown": "Veiciet maksājumu {time} laikā",
+    "requestAuthorize": "Jūsu karte tiek autorizēta tagad, un nauda tiks ieturēta tikai tad, kad uzņēmums apstiprinās rezervāciju.",
+    "pay": "Maksāt tagad",
+    "paying": "Apstrādā…",
+    "confirming": "Apstiprina jūsu maksājumu",
+    "confirmingHint": "Lūdzu, uzgaidiet — mēs apstiprinām maksājumu no uzņēmuma, nevis no kartes veidlapas.",
+    "declined": "Karte tika noraidīta. Izmēģiniet citu karti.",
+    "secure": "Kartes datus testa režīmā apstrādā Stripe.",
+    "cancelBooking": "Atcelt rezervāciju",
+    "cancelTitle": "Atcelt šo rezervāciju?",
+    "cancelDescription": "Tiks piemēroti uzņēmuma atcelšanas noteikumi. Pirms apstiprināšanas pārbaudiet maksu un atmaksājamo summu.",
+    "cancelFee": "Atcelšanas maksa",
+    "cancelRefund": "Atmaksa",
+    "confirmCancel": "Apstiprināt atcelšanu",
+    "keepBooking": "Saglabāt rezervāciju",
+    "cancelled": "Jūsu rezervācija ir atcelta."
+  },
+  "companies": {
+    "title": "Nomas uzņēmumi",
+    "subtitle": "Pārlūkojiet partneru nomas uzņēmumus Malagā — kartē vai sarakstā",
+    "searchPlaceholder": "Meklēt uzņēmumus…",
+    "noResults": "Uzņēmumi nav atrasti",
+    "noResultsHint": "Izmēģiniet citu vietu Malagas provincē.",
+    "emptyTitle": "Uzņēmumi vēl nav pievienoti",
+    "emptyDescription": "Nomas uzņēmumi vēl nav pievienoti sarakstam.",
+    "clearFilters": "Notīrīt meklēšanu",
+    "viewFleet": "Skatīt autoparku",
+    "visitWebsite": "Apmeklēt vietni",
+    "contact": "Kontakti",
+    "backToList": "Visi uzņēmumi",
+    "notFoundTitle": "Uzņēmums nav atrasts",
+    "notFoundDescription": "Šis nomas uzņēmums nav sarakstā. Pārlūkojiet citus tuvumā.",
+    "loadErrorTitle": "Uzņēmuma informācija nav pieejama",
+    "loadErrorDescription": "Neizdevās ielādēt šo nomas uzņēmumu no tiešsaistes kataloga. Mēģiniet vēlreiz — kad API nedarbojas, mēs nerādām neīstas automašīnas.",
+    "browseCars": "Pārlūkot automašīnas",
+    "featuredEmpty": "Ieteicamo uzņēmumu vēl nav",
+    "featuredEmptyHint": "Ieskatieties vēlāk vai pārlūkojiet vietējo autoparku automašīnas.",
+    "locationUnknown": "Vieta nav norādīta",
+    "noDescription": "Apraksta vēl nav."
+  },
+  "contact": {
+    "title": "Sazinieties ar mums",
+    "lede": "Jautājumi par platformu? Nosūtiet mums ziņojumu, un mēs atbildēsim, tiklīdz varēsim.",
+    "bookingHint": "Šī veidlapa nav paredzēta rezervācijām. Lai iznomātu automašīnu, turpiniet paša nomas uzņēmuma vietnē.",
+    "name": "Vārds un uzvārds",
+    "email": "E-pasta adrese",
+    "subject": "Tēma",
+    "message": "Ziņojums",
+    "submit": "Nosūtīt ziņojumu",
+    "privacyNote": "Šos datus izmantojam tikai atbildei.",
+    "errors": {
+      "nameMin": "Ievadiet savu vārdu (vismaz 2 rakstzīmes).",
+      "email": "Ievadiet derīgu e-pasta adresi.",
+      "subjectMin": "Ievadiet tēmu (vismaz 3 rakstzīmes).",
+      "messageMin": "Ievadiet ziņojumu (vismaz 10 rakstzīmes)."
+    },
+    "eyebrow": "Atbalsts",
+    "namePlaceholder": "Jānis Bērziņš",
+    "emailPlaceholder": "jus@piemers.lv",
+    "subjectPlaceholder": "Kā mēs varam palīdzēt?",
+    "messagePlaceholder": "Pastāstiet, kas jums nepieciešams…",
+    "supportSubjectDefault": "Atbalsta pieprasījums",
+    "submitting": "Nosūta…",
+    "submittedTitle": "Ziņojums nosūtīts",
+    "submittedDescription": "Paldies par sazināšanos. Atbildēsim uz jūsu e-pastu, tiklīdz varēsim.",
+    "sendAnother": "Nosūtīt citu ziņojumu",
+    "backHome": "Atpakaļ uz sākumu",
+    "whatsappTitle": "Dodat priekšroku WhatsApp?",
+    "whatsappDescription": "Sazinieties tieši ar Benwer Cars komandu."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privātuma politika",
+      "lede": "Kā mēs apstrādājam personas datus, kad izmantojat Benwer Cars platformu.",
+      "updated": "Pēdējo reizi atjaunināta: 2026. gada 13. septembrī",
+      "sections": [
+        {
+          "title": "Kas mēs esam",
+          "body": "Benwer Cars (“Benwer”, “mēs”, “mūsu”) uztur patērētāju platformu, kas palīdz ceļotājiem atrast auto nomas autoparkus Malagas provincē.\n\nŠī politika attiecas tikai uz platformas tīmekļa vietni. Ja pārejat uz paša nomas uzņēmuma vietni, lai veiktu rezervāciju, par tur iesniegtajiem datiem atbild attiecīgais uzņēmums."
+        },
+        {
+          "title": "Ko dara šī platforma",
+          "body": "Jūs varat meklēt automašīnas un uzņēmumus, salīdzināt publisko autoparku informāciju un pāriet uz nomas uzņēmuma vietni, lai pabeigtu rezervāciju.\n\nBenwer platformā nepieņem maksājumus un neslēdz nomas līgumus. Nomas līgums tiek noslēgts starp jums un uzņēmumu."
+        },
+        {
+          "title": "Kādu informāciju mēs apkopojam",
+          "body": "Atkarībā no tā, kā izmantojat platformu, mēs varam apstrādāt:\n\n• Meklēšanas un lietošanas datus — jūsu ievadītās vietas un datumus, skatītās lapas un pamata tehniskos datus, piemēram, IP adresi, pārlūka un ierīces informāciju.\n• Valodas izvēli — saglabāta kā obligāta sīkdatne, lai varētu rādīt izvēlēto valodu.\n• Sīkdatņu piekrišanu — saglabāta jūsu ierīcē, lai atcerētos jūsu izvēli.\n• Kontaktu ziņojumus — vārdu, e-pastu, tēmu un ziņojumu, ja rakstāt mums. Mēs tos atzīmējam kā saņemtus no platformas.\n\nMēs neprasa jums izveidot kontu platformā. Rezervācijas un maksājuma datus apkopo nomas uzņēmums savā vietnē saskaņā ar savu privātuma politiku."
+        },
+        {
+          "title": "Kā mēs izmantojam datus",
+          "body": "Mēs izmantojam personas datus, lai uzturētu un uzlabotu platformu, saglabātu valodas un sīkdatņu izvēles, atbildētu uz kontaktu ziņojumiem, nodrošinātu pakalpojuma drošību un izpildītu juridiskos pienākumus.\n\nMēs nepārdodam jūsu personas datus."
+        },
+        {
+          "title": "Juridiskais pamats (EEZ / Apvienotā Karaliste)",
+          "body": "Attiecīgajos gadījumos mēs balstāmies uz leģitīmajām interesēm (publiska kataloga uzturēšanu un vietnes drošību), piekrišanu (neobligātajām sīkdatnēm, ja tādas tiek ieviestas), juridisku pienākumu un darbībām, kas nepieciešamas, lai atbildētu uz jūsu ziņojumu."
+        },
+        {
+          "title": "Datu kopīgošana",
+          "body": "Mēs varam izmantot uzticamus mitināšanas un e-pasta piegādes pakalpojumu sniedzējus. Viņi apstrādā datus saskaņā ar mūsu norādījumiem.\n\nJa pārejat uz uzņēmuma vietni, šis uzņēmums kļūst par visu tur iesniegto datu pārzini. Mēs nenododam jūsu kontaktu veidlapas ziņojumu nomas uzņēmumiem, ja vien jūs to nelūdzat."
+        },
+        {
+          "title": "Sīkdatnes",
+          "body": "Mēs izmantojam obligāto valodas sīkdatni un saglabājam jūsu sīkdatņu izvēli jūsu ierīcē. Plašāku informāciju skatiet sīkdatņu politikā. Neobligātās sīkdatnes paliek izslēgtas, kamēr tās nepieņemat."
+        },
+        {
+          "title": "Glabāšana",
+          "body": "Kontaktu ziņojumus glabājam tik ilgi, cik nepieciešams atbildei un saprātīgam turpmākās saziņas periodam. Tehniskie žurnāli tiek glabāti īsu laiku. Jūsu sīkdatņu izvēle paliek spēkā, līdz to maināt vai izdzēšat vietnes datus."
+        },
+        {
+          "title": "Jūsu tiesības",
+          "body": "Atkarībā no jūsu atrašanās vietas jums var būt tiesības piekļūt saviem datiem, tos labot, dzēst, ierobežot apstrādi, pārnest datus un iebilst pret noteiktu apstrādi. Jūs varat arī iesniegt sūdzību vietējai uzraudzības iestādei.\n\nLai izmantotu savas tiesības, izmantojiet kontaktu lapu."
+        },
+        {
+          "title": "Starptautiskā datu pārsūtīšana",
+          "body": "Ja dati tiek pārsūtīti ārpus jūsu valsts, mēs izmantojam atbilstošus aizsardzības pasākumus, piemēram, standarta līguma klauzulas vai līdzvērtīgus mehānismus, kad to pieprasa likums."
+        },
+        {
+          "title": "Izmaiņas",
+          "body": "Mēs laiku pa laikam varam atjaunināt šo politiku. Pārskatīto versiju publicēsim šajā lapā un atjaunināsim datumu “Pēdējo reizi atjaunināta”."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Lietošanas noteikumi",
+      "lede": "Noteikumi Benwer Cars platformas izmantošanai nomas autoparku meklēšanai.",
+      "updated": "Pēdējo reizi atjaunināta: 2026. gada 13. septembrī",
+      "sections": [
+        {
+          "title": "Platforma",
+          "body": "Benwer Cars nodrošina publisku auto nomas uzņēmumu un to publicēto autoparku katalogu. Jūs varat salīdzināt automašīnas un pāriet uz uzņēmuma paša vietni, lai pabeigtu nomu.\n\nŠie noteikumi attiecas uz platformas tīmekļa vietni. Tie neaizstāj paša nomas uzņēmuma noteikumus, kas ir spēkā, kad rezervējat pie tā."
+        },
+        {
+          "title": "Rezervācijas tiek veiktas ar nomas uzņēmumiem",
+          "body": "Benwer platformā neiznomā automašīnas, nepieņem maksājumus un neslēdz nomas līgumus.\n\nJa pārejat uz uzņēmuma vietni, jebkura rezervācija, drošības nauda, apdrošināšana un saņemšanas kārtība ir starp jums un šo uzņēmumu. Pirms apstiprināšanas izlasiet viņu noteikumus."
+        },
+        {
+          "title": "Sludinājumi un pieejamība",
+          "body": "Autoparka informāciju, cenas, fotoattēlus un pieejamību publicē nomas uzņēmumi, un tie var mainīties. Mēs cenšamies precīzi attēlot publisko informāciju, taču negarantējam, ka automašīna joprojām būs pieejama vai ka norādītā cena tiks piemērota, kamēr uzņēmums to neapstiprina.\n\nPlatformā ievadītie datumi palīdz meklēt. Galīgā pieejamība tiek apstiprināta uzņēmuma vietnē."
+        },
+        {
+          "title": "Pieņemamā lietošana",
+          "body": "Izmantojiet platformu likumīgi. Aizliegts automatizēti vākt datus, pārslogot vai traucēt pakalpojumu, iesniegt nepatiesus kontaktinformācijas datus vai izmantot vietni, lai kaitētu citām personām vai uzņēmumiem."
+        },
+        {
+          "title": "Atbildība",
+          "body": "Platforma tiek nodrošināta kā meklēšanas pakalpojums. Ciktāl to pieļauj likums, Benwer neatbild par nomas strīdiem, transportlīdzekļu stāvokli vai rezervācijām, kas pabeigtas uzņēmuma vietnē.\n\nNekas šajos noteikumos neierobežo jūsu kā patērētāja tiesības, no kurām saskaņā ar piemērojamajiem tiesību aktiem nevar atteikties."
+        },
+        {
+          "title": "Izmaiņas",
+          "body": "Mēs varam atjaunināt šos noteikumus. Pašreizējo versiju norāda datums “Pēdējo reizi atjaunināta” šajā lapā. Turpmāka lietošana pēc izmaiņām nozīmē, ka piekrītat atjauninātajiem noteikumiem."
+        },
+        {
+          "title": "Kontakti",
+          "body": "Jautājumus par šiem noteikumiem vai platformu varat nosūtīt caur kontaktu lapu. Par jau sāktu rezervāciju sazinieties tieši ar nomas uzņēmumu."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Sīkdatņu politika",
+      "lede": "Kā mēs izmantojam sīkdatnes un līdzīgas tehnoloģijas platformā.",
+      "updated": "Pēdējo reizi atjaunināta: 2026. gada 13. septembrī",
+      "sections": [
+        {
+          "title": "Ko mēs izmantojam",
+          "body": "Sīkdatnes ir nelieli teksta faili, kas tiek saglabāti jūsu ierīcē. Mēs izmantojam arī līdzīgu krātuvi, piemēram, vietējo krātuvi, lai atcerētos izvēles.\n\nŠī politika attiecas uz Benwer Cars platformu. Pārejot uz nomas uzņēmuma vietni, tā var iestatīt savas sīkdatnes."
+        },
+        {
+          "title": "Obligātās sīkdatnes",
+          "body": "Mēs izmantojam valodas sīkdatni, lai vietne rādītu jūsu izvēlēto valodu. Tas ir nepieciešams, lai platforma darbotos, kā paredzēts.\n\nJūsu sīkdatņu joslas izvēle tiek saglabāta jūsu ierīcē, lai nejautātu atkārtoti katrā apmeklējumā. Šī krātuve netiek izmantota reklāmai."
+        },
+        {
+          "title": "Neobligātās sīkdatnes",
+          "body": "Neobligātās sīkdatnes (piemēram, analītikas) paliek izslēgtas, ja vien neizvēlaties “Pieņemt visas”.\n\nPašlaik platforma neiestata analītikas vai mārketinga sīkdatnes. Ja tās pievienosim vēlāk, aprakstīsim tās šeit, un tām joprojām būs nepieciešama jūsu piekrišana."
+        },
+        {
+          "title": "Sīkdatņu pārvaldība",
+          "body": "Izmantojiet joslu, lai pieņemtu visas sīkdatnes vai saglabātu tikai obligātās. Sīkdatnes un vietnes datus varat izdzēst arī pārlūkprogrammā. Valodas sīkdatnes bloķēšana nākamajā apmeklējumā var atiestatīt valodas izvēli."
+        },
+        {
+          "title": "Plašāka informācija",
+          "body": "Skatiet privātuma politiku, lai uzzinātu, kā mēs apstrādājam personas datus, vai nosūtiet ziņojumu no kontaktu lapas."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} sākums",
+    "defaultHeadline": "Iznomājiet automašīnu ar {name}",
+    "footerTagline": "Rezervējiet tieši pie šī nomas uzņēmuma.",
+    "previewBanner": "Priekšskatījums — šī lapa nav publiska. Meklētājprogrammas to neindeksēs.",
+    "editLink": "Rediģēt",
+    "editContactEmpty": "Kontaktinformācija ir paslēpta. Rediģējiet to administrēšanas sistēmā.",
+    "editBranchesEmpty": "Filiāļu vēl nav. Pievienojiet tās administrēšanas sistēmā.",
+    "editRulesHint": "Rezervēšanas režīms, minimālais paziņošanas laiks un pieprasījuma termiņš.",
+    "editDomainHint": "Pielāgots domēns un aktīvais URL.",
+    "editSection": {
+      "hero": "Galvene",
+      "search": "Meklēšana",
+      "fleet": "Autoparks",
+      "branches": "Filiāles",
+      "contact": "Kontakti",
+      "rules": "Rezervēšanas noteikumi",
+      "domain": "Domēns"
+    },
+    "pausedTitle": "Rezervācijas netiek pieņemtas",
+    "pausedDescription": "Šis uzņēmums ir apturējis tiešsaistes rezervācijas. Jūs joprojām varat pārlūkot autoparku.",
+    "notFoundTitle": "Vietne nav atrasta",
+    "notFoundDescription": "Šī nomas vietne nav pieejama.",
+    "loadErrorTitle": "Vietne nav pieejama",
+    "loadErrorDescription": "Neizdevās ielādēt šo nomas vietni. Mēģiniet vēlreiz pēc brīža.",
+    "search": "Meklēt automašīnas",
+    "searchAria": "Meklēt pēc datumiem un vietas",
+    "searchTitle": "Meklēt automašīnas",
+    "searchDescription": "Izvēlieties datumus un vietu, lai redzētu, kas ir pieejams.",
+    "branch": "Saņemšanas vieta",
+    "anyBranch": "Jebkura vieta",
+    "ownerSignIn": "Īpašnieka pierakstīšanās",
+    "returnBranch": "Atdošanas vieta",
+    "differentReturn": "Atdot citā vietā",
+    "returnSame": "Tā pati kā saņemšanas",
+    "driverAge": "Vadītāja vecums",
+    "driverAgeYears": "{band} gadi",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Rediģējiet savu vietni",
+    "signInHint": "Īpašnieki atver vietnes redaktoru no Benwer administrēšanas sistēmas. Noklikšķiniet tur uz pogas “Rediģēt vietni”, un jūs šeit tiksiet pierakstīts automātiski.",
+    "signedInTitle": "Esat pierakstījies",
+    "signedInHint": "Ja varat pārvaldīt šo vietni, redaktors atveras sākumlapā.",
+    "openEditor": "Atvērt vietnes redaktoru",
+    "disabledTitle": "Īpašnieka rediģēšana nav pieejama",
+    "disabledDescription": "Darbinieku Firebase šajā platformā nav konfigurēts.",
+    "signOut": "Izrakstīties",
+    "auth": {
+      "tooManyRequests": "Pārāk daudz mēģinājumu. Mēģiniet vēlāk.",
+      "unknown": "Neizdevās pierakstīties. Mēģiniet vēlreiz.",
+      "invalidToken": "Šīs pierakstīšanās saites termiņš ir beidzies vai tā jau ir izmantota. Atveriet redaktoru vēlreiz no Benwer administrēšanas sistēmas."
+    },
+    "signingIn": "Notiek pierakstīšanās…",
+    "openAdmin": "Atvērt Benwer administrēšanu",
+    "accountMenu": "Īpašnieka konts",
+    "signedInAs": "Pierakstījies kā īpašnieks",
+    "guestSignedOut": "Jūs tikāt izrakstīts no viesa konta. Īpašnieka un viesa sesijas šajā pārlūkā nevar būt atvērtas vienlaikus."
+  },
+  "guest": {
+    "googleAction": "Pierakstīties ar Google",
+    "googleCreate": "Turpināt ar Google",
+    "or": "vai",
+    "forgotPassword": "Aizmirsāt paroli?",
+    "resetTitle": "Atiestatīt paroli",
+    "resetHint": "Ievadiet savu e-pasta adresi, un mēs nosūtīsim saiti jaunas paroles izvēlei.",
+    "resetAction": "Nosūtīt atiestatīšanas saiti",
+    "resetSentTitle": "Pārbaudiet savu e-pastu",
+    "resetSentHint": "Ja šai adresei pastāv konts, esam nosūtījuši paroles atiestatīšanas norādījumus. Nesaņēmāt? Pārbaudiet mēstuļu mapi vai uzgaidiet dažas minūtes pirms atkārtota mēģinājuma.",
+    "backToSignIn": "Atpakaļ uz pierakstīšanos",
+    "signInNav": "Pierakstīties",
+    "myBookings": "Manas rezervācijas",
+    "signInTitle": "Pierakstīties",
+    "signInHint": "Izmantojiet savu šī nomas uzņēmuma viesa kontu. Šī nav darbinieku pierakstīšanās.",
+    "signInAction": "Pierakstīties",
+    "createTitle": "Izveidot viesa kontu",
+    "createHint": "Saglabājiet savas rezervācijas šajā uzņēmumā. Darbinieki izmanto citu pierakstīšanos.",
+    "createAction": "Izveidot kontu",
+    "needAccount": "Nepieciešams konts? Izveidojiet to",
+    "haveAccount": "Jau ir konts? Pierakstieties",
+    "email": "E-pasts",
+    "password": "Parole",
+    "bookingsTitle": "Manas rezervācijas",
+    "bookingsMeta": "Piesaistītās rezervācijas šim nomas uzņēmumam.",
+    "bookingsHint": "Pierakstījies kā {email} uzņēmumā {company}.",
+    "emptyTitle": "Vēl nav rezervāciju",
+    "emptyDescription": "Rezervējāt iepriekš? Piesaistiet šo rezervāciju, izmantojot e-pastu vai apstiprinājuma kodu.",
+    "bookingFallback": "Rezervācija",
+    "loadErrorTitle": "Neizdevās ielādēt rezervācijas",
+    "linkTitle": "Piesaistīt rezervāciju",
+    "linkHint": "Ievadiet rezervēšanai izmantoto e-pastu vai apstiprinājuma kodu. Ja atradīsim atbilstību, nosūtīsim saiti e-pastā — mēs nekad nenorādām, vai konts eksistē.",
+    "linkEmail": "Rezervācijas e-pasts",
+    "linkToken": "Rezervācijas kods",
+    "linkAction": "Nosūtīt saiti",
+    "linkSent": "Ja atradīsim atbilstošu rezervāciju, nosūtīsim apstiprinājuma saiti e-pastā.",
+    "accountTitle": "Konts",
+    "accountHint": "Izrakstieties no sava konta šajā vietnē.",
+    "signOut": "Izrakstīties",
+    "erase": "Dzēst manus datus šeit",
+    "eraseConfirm": "Jā, dzēst manus datus šim uzņēmumam",
+    "confirmTitle": "Rezervācijas piesaistīšana",
+    "confirmHint": "Lūdzu, uzgaidiet, kamēr piesaistām šo rezervāciju jūsu kontam.",
+    "confirmSignIn": "Pierakstieties savā viesa kontā, lai pabeigtu šīs rezervācijas piesaistīšanu.",
+    "confirmMissing": "Trūkst apstiprinājuma koda",
+    "confirmMissingHint": "Atveriet saiti no sava e-pasta vēlreiz.",
+    "confirmError": "Neizdevās apstiprināt šo saiti",
+    "disabledTitle": "Viesu konti vēl nav pieejami",
+    "disabledDescription": "Šis uzņēmums vēl nav ieslēdzis viesu pierakstīšanos. Jūs joprojām varat rezervēt ar savu vārdu, e-pastu un tālruni.",
+    "auth": {
+      "popupClosed": "Pierakstīšanās tika atcelta.",
+      "popupBlocked": "Jūsu pārlūks bloķēja Google logu. Atļaujiet uznirstošos logus un mēģiniet vēlreiz.",
+      "differentProvider": "Šis e-pasts jau pierakstās citā veidā. Izmantojiet paroli.",
+      "providerUnavailable": "Pierakstīšanās ar Google šajā vietnē vēl nav pieejama. Izmantojiet e-pastu un paroli.",
+      "invalidEmail": "Ievadiet derīgu e-pasta adresi.",
+      "emailInUse": "Šim e-pastam jau ir viesa konts. Pierakstieties.",
+      "weakPassword": "Izmantojiet garāku paroli.",
+      "tooManyRequests": "Pārāk daudz mēģinājumu. Mēģiniet vēlreiz pēc dažām minūtēm.",
+      "invalidCredentials": "E-pasts vai parole nav pareiza.",
+      "unknown": "Neizdevās pierakstīties. Mēģiniet vēlreiz.",
+      "googleDisabled": "Pierakstīšanās ar Google šajā vietnē vēl nav ieslēgta. Izmantojiet e-pastu un paroli.",
+      "domainNotAuthorised": "Pierakstīšanās ar Google šai vietnes adresei vēl nav iestatīta. Pagaidām izmantojiet e-pastu un paroli."
+    },
+    "accountMenu": "Jūsu konts",
+    "profileNav": "Profils",
+    "profileTitle": "Profils",
+    "profileMeta": "Jūsu viesa konts šim nomas uzņēmumam.",
+    "linkCancel": "Atcelt",
+    "eraseTitle": "Dzēst manus datus",
+    "eraseHint": "Dzēš jūsu viesa datus šim uzņēmumam un izraksta jūs. Citi uzņēmumi netiek ietekmēti.",
+    "profileDetailsTitle": "Jūsu dati",
+    "profileDetailsHint": "Tiek izmantoti jūsu rezervāciju aizpildīšanai šajā uzņēmumā.",
+    "profileFullName": "Vārds un uzvārds",
+    "profilePhone": "Tālruņa numurs",
+    "profileDob": "Dzimšanas datums",
+    "profileSave": "Saglabāt datus",
+    "profileNotLinked": "Jūsu vārds un tālrunis šeit tiek saglabāti pēc pirmās rezervācijas ar šo e-pastu. Jau rezervējāt ar citu e-pastu? Piesaistiet to sadaļā “Manas rezervācijas”.",
+    "verifyTitle": "Apstipriniet e-pastu, lai redzētu rezervācijas",
+    "verifyHint": "Nosūtījām saiti uz {email}. Atveriet to un atgriezieties šeit. Kamēr e-pasts nav apstiprināts, nevaram rādīt jūsu rezervācijas vai saglabāt vārdu un tālruni.",
+    "verifyResend": "Nosūtīt e-pastu vēlreiz",
+    "verifySent": "E-pasts nosūtīts. Pārbaudiet iesūtni un mēstuļu mapi.",
+    "verifyDone": "Es apstiprināju savu e-pastu",
+    "verifyStillPending": "Jūsu e-pasts vēl nav apstiprināts. Atveriet saiti e-pastā un mēģiniet vēlreiz.",
+    "verifyBanner": "Jūsu konts vēl nav aktīvs. Apstipriniet {email}, lai redzētu rezervācijas un izmantotu saglabātos datus.",
+    "verifyBannerAction": "Apstiprināt e-pastu",
+    "profileEdit": "Rediģēt datus",
+    "profileCancel": "Atcelt",
+    "profileEmail": "E-pasts",
+    "profileEmpty": "Nav pievienots",
+    "bookingsUpcoming": "Gaidāmās",
+    "bookingsPast": "Iepriekšējās",
+    "ownerSignedOut": "Jūs tikāt izrakstīts no vietnes redaktora. Īpašnieka un viesa sesijas šajā pārlūkā nevar būt atvērtas vienlaikus."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "{name} piedāvājumi",
+      "slideAlt": "{name} baneris {position}",
+      "slideLabel": "{position} no {count}",
+      "previous": "Iepriekšējais baneris",
+      "next": "Nākamais baneris",
+      "goTo": "Rādīt {position}. baneri",
+      "presets": {
+        "airport": {
+          "script": "tikko nolaidāties?",
+          "highlight": "Saņemšana lidostā",
+          "joiner": "tikai",
+          "boxed": "10 minūtēs",
+          "description": "Bez rindām: parakstiet līgumu tālrunī un dodieties ceļā ar pilnu apdrošināšanu"
+        },
+        "weekend": {
+          "script": "rezervējiet šai nedēļas nogalei",
+          "highlight": "Ietaupiet 20%",
+          "joiner": "uz",
+          "boxed": "Nedēļas nogales nomu",
+          "description": "Saņemiet piektdien, atdodiet pirmdien. Bezmaksas bērnu sēdeklītis un papildu vadītājs iekļauts"
+        },
+        "roadtrip": {
+          "script": "jūsu nākamais brauciens",
+          "highlight": "Sākas šeit",
+          "joiner": "mēs jums nododam",
+          "boxed": "Atslēgas",
+          "description": "Bezmaksas atcelšana līdz 24 st. pirms saņemšanas, neierobežots nobraukums un bez slēptām maksām"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Iekļauts katrā cenā",
+      "title": "Cena, ko redzat, ir cena, ko maksājat",
+      "description": "Nekādu pārsteigumu pie letes. Tas vienmēr ir iekļauts cenā.",
+      "presets": {
+        "insurance": {
+          "title": "Pamata apdrošināšana",
+          "text": "Sadursmes, zādzības un civiltiesiskās atbildības segums.",
+          "tag": "Iekļauts"
+        },
+        "mileage": {
+          "title": "Neierobežots nobraukums",
+          "text": "Brauciet cik tālu vēlaties bez maksas par kilometru.",
+          "tag": "Bez ierobežojumiem"
+        },
+        "fuel": {
+          "title": "Pilna–pilna degviela",
+          "text": "Saņemiet auto ar pilnu tvertni un atdodiet ar pilnu.",
+          "tag": "Bez priekšapmaksas bākas"
+        },
+        "cancellation": {
+          "title": "Bezmaksas atcelšana",
+          "text": "Mainījās plāni? Atceliet bez maksas.",
+          "tag": "Elastīgi"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Atsauksmes",
+      "title": "Ko par mums saka vadītāji",
+      "seeAll": "Skatīt visas {count, plural, one {# atsauksmi} other {# atsauksmes}}",
+      "seeAllOn": "Skatīt visas {count, plural, one {# atsauksmi} other {# atsauksmes}} platformā {source}",
+      "basedOn": "Pamatojoties uz {count, plural, one {# atsauksmi} other {# atsauksmēm}}",
+      "basedOnSource": "Pamatojoties uz {count, plural, one {# atsauksmi} other {# atsauksmēm}} platformā {source}",
+      "ratingAria": "Novērtēts ar {rating} no 5",
+      "rented": "Nomāts: {vehicle}",
+      "verified": "Pārbaudīta noma",
+      "distributionAria": "Vērtējumu sadalījums",
+      "emptyTitle": "Atsauksmju vēl nav",
+      "emptyText": "Klienti var novērtēt nomu pēc automašīnas atdošanas. Apstiprinātās atsauksmes parādīsies šeit."
+    },
+    "app": {
+      "eyebrow": "Mobilā lietotne",
+      "title": "Jūsu rezervācija vienmēr līdzi",
+      "text": "Reģistrējieties tiešsaistē, skatiet saņemšanas datus un rakstiet mums — viss savā tālrunī.",
+      "platformBoth": "iOS un Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Skenējiet, lai lejupielādētu",
+      "qrAlt": "QR kods lietotnes lejupielādei",
+      "appStore": {
+        "prefix": "Lejupielādēt",
+        "name": "App Store",
+        "aria": "Lejupielādēt App Store",
+        "unavailable": "Vēl nav pieejams App Store"
+      },
+      "googlePlay": {
+        "prefix": "Iegūt",
+        "name": "Google Play",
+        "aria": "Iegūt Google Play",
+        "unavailable": "Vēl nav pieejams Google Play"
+      },
+      "comingSoon": "Drīzumā"
+    },
+    "locations": {
+      "eyebrow": "Vietas",
+      "title": "{count, plural, one {Mūsu birojs} other {Mūsu biroji}}",
+      "description": "{count, plural, one {Saņemiet un atdodiet savu automašīnu šeit.} other {Saņemiet un atdodiet savu automašīnu jebkurā mūsu birojā.}}",
+      "directions": "Norādes",
+      "directionsTo": "Norādes uz {name}",
+      "call": "Zvanīt"
+    },
+    "faq": {
+      "eyebrow": "BUJ",
+      "title": "Jautājumi pirms rezervēšanas",
+      "description": "Nevarat atrast atbildi? Sazinieties ar mums, labprāt palīdzēsim."
+    },
+    "contact": {
+      "title": "Ir jautājumi? Runājiet ar īstu cilvēku.",
+      "description": "Nosūtiet mums ziņojumu vai piezvaniet, un mēs palīdzēsim atrast īsto automašīnu.",
+      "whatsapp": "WhatsApp",
+      "email": "Rakstiet mums",
+      "whatsappMessage": "Sveiki, {name}, man ir jautājums par automašīnas nomu."
+    },
+    "nav": {
+      "reviews": "Atsauksmes",
+      "faq": "BUJ",
+      "contact": "Kontakti",
+      "app": "Lietotne",
+      "branches": "Vietas"
+    },
+    "footer": {
+      "contact": "Kontakti",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Mēs pieņemam",
+      "rating": "{score} · {count, plural, one {# atsauksme} other {# atsauksmes}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Skaidra nauda"
+    }
+  },
+  "siteEditor": {
+    "aria": "Vietnes redaktors",
+    "title": "Vietnes redaktors",
+    "signOut": "Izrakstīties",
+    "tabsAria": "Redaktora sadaļas",
+    "status": {
+      "draft": "Melnraksts",
+      "published": "Publicēta",
+      "paused": "Apturēta"
+    },
+    "tabs": {
+      "sections": "Sadaļas",
+      "design": "Dizains",
+      "settings": "Iestatījumi",
+      "legal": "Juridiskā informācija"
+    },
+    "contentLanguage": "Rediģēšanas valoda",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Visas sadaļas",
+    "sections": {
+      "company": "Uzņēmums",
+      "fleet": "Automašīnas",
+      "included": "Iekļauts katrā cenā",
+      "reviews": "Atsauksmes",
+      "app": "Mobilā lietotne",
+      "faq": "BUJ",
+      "contact": "Kontakti",
+      "hero": "Baneri un meklēšana",
+      "branches": "Vietas"
+    },
+    "sectionsHint": "Ieslēdziet vai izslēdziet sadaļas un mainiet to secību. Atveriet sadaļu, lai rediģētu tās saturu.",
+    "orderHint": "Automašīnas vienmēr tiek rādītas. Biroji tiek ņemti no jūsu filiālēm Benwer administrēšanas sistēmā.",
+    "hiddenUntilContent": "Paslēpts, līdz pievienosiet saturu",
+    "summary": {
+      "banners": "{count, plural, one {# baneris} other {# baneri}}",
+      "bannersEmpty": "Baneru vēl nav, tiek rādīta zīmola krāsa",
+      "company": "Virsraksts, ievads un kontaktinformācija",
+      "fleet": "No jūsu Benwer autoparka",
+      "included": "{count, plural, one {# vienums} other {# vienumi}}",
+      "reviews": "{count, plural, one {# atsauksme} other {# atsauksmes}}",
+      "app": "Veikalu saites un QR kods",
+      "locations": "{count, plural, one {# birojs} other {# biroji}} no Benwer",
+      "faq": "{count, plural, one {# jautājums} other {# jautājumi}}",
+      "contactWhatsapp": "WhatsApp, tālrunis un darba laiks",
+      "contact": "Tālrunis un e-pasts"
+    },
+    "unsaved": "Nesaglabātas izmaiņas",
+    "saved": "Visas izmaiņas saglabātas",
+    "discard": "Atmest",
+    "save": "Saglabāt izmaiņas",
+    "common": {
+      "moveUp": "Pārvietot {item} augšup",
+      "moveDown": "Pārvietot {item} lejup",
+      "remove": "Noņemt {item}",
+      "show": "Rādīt {item}"
+    },
+    "banners": {
+      "title": "Baneri",
+      "description": "Līdz {max} slaidiem. Tukšajos laukos tiek izmantots noklusējuma pelēkais teksts.",
+      "empty": "Baneru nav. Banera zonā tiek rādīta jūsu fona krāsa.",
+      "item": "Baneris {position}",
+      "image": "Attēls",
+      "imageHint": "Augšupielādējiet platu attēlu, apmēram 1600 × 560 px. JPG, PNG vai WebP līdz 25 MB. Caurspīdīgs PNG tiek attēlots uz jūsu banera krāsas.",
+      "add": "Pievienot baneri",
+      "fields": {
+        "script": "Rokraksta rindiņa",
+        "highlight": "Izceltais virsraksts",
+        "joiner": "Mazais savienotājs",
+        "boxed": "Virsraksts rāmītī",
+        "description": "Apraksts"
+      },
+      "colorsTitle": "Baneru krāsas",
+      "colorsDescription": "Tiek izmantotas katram banerim. Fonam der jebkura krāsa.",
+      "resetColors": "Atiestatīt uz noklusējuma krāsām",
+      "colors": {
+        "background": "Fons",
+        "text": "Teksts",
+        "highlight": "Izcēluma lodziņš",
+        "highlightText": "Izcēluma teksts",
+        "box": "Baltais lodziņš",
+        "boxText": "Baltā lodziņa teksts",
+        "script": "Savienotāja teksts"
+      },
+      "noImage": "Attēla vēl nav",
+      "uploadImage": "Augšupielādēt attēlu",
+      "replaceImage": "Aizstāt attēlu",
+      "tooLarge": "Šis fails pārsniedz 25 MB. Izvēlieties mazāku attēlu.",
+      "uploadFailed": "Augšupielāde neizdevās. Mēģiniet vēlreiz."
+    },
+    "company": {
+      "title": "Uzņēmuma galvene",
+      "description": "Jūsu nosaukums, virsraksts un īss apraksts.",
+      "headline": "Virsraksts",
+      "headlinePlaceholder": "Iznomājiet automašīnu ar {name}",
+      "intro": "Ievads",
+      "introHint": "Viens vai divi teikumi par jūsu uzņēmumu.",
+      "contactTitle": "Kontaktinformācija",
+      "contactDescription": "Tiek rādīta galvenē, vietu un kontaktu sadaļās.",
+      "showPhone": "Rādīt tālruņa numuru",
+      "showEmail": "Rādīt e-pastu",
+      "showAddress": "Rādīt adresi"
+    },
+    "included": {
+      "title": "Iekļauts katrā cenā",
+      "description": "Līdz 6 solījumiem, kas vienmēr ir iekļauti jūsu cenā.",
+      "accuracy": "Norādiet tikai to, kas attiecas uz katru nomu. Noklusējuma teksts ir ieteikums — pārbaudiet, vai tas atbilst jūsu nomas noteikumiem.",
+      "item": "Vienums {position}",
+      "icon": "Ikona",
+      "itemTitle": "Nosaukums",
+      "itemText": "Apraksts",
+      "itemTag": "Izcēlums",
+      "tagHint": "Īsa zaļa birka, piemēram, “Pašrisks 1 000 €”.",
+      "presets": {
+        "insurance": "Pamata apdrošināšana",
+        "mileage": "Neierobežoti km",
+        "fuel": "Pilna–pilna degviela",
+        "cancellation": "Bezmaksas atcelšana"
+      },
+      "addCustom": "Pielāgots vienums"
+    },
+    "icons": {
+      "shield": "Vairogs",
+      "gauge": "Spidometrs",
+      "fuel": "Degvielas sūknis",
+      "calendar_check": "Kalendārs",
+      "check": "Ķeksītis",
+      "car": "Automašīna",
+      "users": "Cilvēki",
+      "baby": "Bērnu sēdeklītis",
+      "plane": "Lidmašīna",
+      "key": "Atslēga"
+    },
+    "reviews": {
+      "title": "Klientu atsauksmes",
+      "description": "Klienti novērtē nomu pēc automašīnas atdošanas. Tiek rādītas tikai jūsu apstiprinātās atsauksmes.",
+      "summary": "Vidēji {average} no {count, plural, one {# apstiprinātas atsauksmes} other {# apstiprinātām atsauksmēm}}",
+      "none": "Apstiprinātu atsauksmju vēl nav. Kamēr neapstiprināsiet kādu, klienti redzēs īsu paziņojumu.",
+      "manage": "Apstipriniet vai paslēpiet atsauksmes Benwer administrēšanas sistēmā",
+      "demo": "Šīs ir demonstrācijas atsauksmes, kas tiek rādītas šajā testa uzņēmumā, līdz Benwer administrēšanas sistēmā apstiprināsiet īstas."
+    },
+    "app": {
+      "benwerAppTitle": "Benwer Cars lietotne",
+      "benwerApp": "Rādīt Benwer Cars lietotni",
+      "benwerAppDescription": "Klienti iegūst bezmaksas Benwer Cars lietotni. Pogas ved uz oficiālajiem veikaliem, bet QR kods atver jūsu uzņēmumu lietotnē.",
+      "storesWithBenwerApp": "Nepieciešams tikai tad, ja jūsu uzņēmumam ir sava lietotne. Kamēr Benwer Cars lietotne ir ieslēgta, sadaļa izmanto tās veikalu saites.",
+      "storesTitle": "Veikalu saites",
+      "storesDescription": "Saites uz jūsu pašu lietotni. Trūkstošais veikals tiek rādīts pelēks. Ja nav saišu un Benwer Cars lietotne ir izslēgta, sadaļa paliek paslēpta.",
+      "ios": "App Store saite",
+      "android": "Google Play saite",
+      "qrHint": "QR kods atver Google Play saiti vai App Store saiti, ja Google Play saites nav.",
+      "copyTitle": "Teksts",
+      "title": "Virsraksts",
+      "text": "Apraksts"
+    },
+    "faq": {
+      "title": "Jautājumi",
+      "description": "Līdz {max} jautājumiem ar īsām atbildēm.",
+      "empty": "Jautājumu vēl nav. Sadaļa paliek paslēpta, līdz pievienojat kādu.",
+      "item": "Jautājums {position}",
+      "question": "Jautājums",
+      "answer": "Atbilde",
+      "incompleteHint": "Jautājumi bez atbildes vietnē netiek rādīti.",
+      "add": "Pievienot jautājumu"
+    },
+    "contact": {
+      "title": "Kontakti",
+      "description": "Kā klienti var ar jums sazināties. Tālrunis un e-pasts tiek ņemti no uzņēmuma sadaļas.",
+      "whatsapp": "WhatsApp numurs",
+      "whatsappHint": "Iekļaujiet valsts kodu. Atstājiet tukšu, lai paslēptu WhatsApp pogu.",
+      "hours": "Kad atbildat",
+      "hoursPlaceholder": "Atbildam katru dienu no 08:00 līdz 22:00.",
+      "payments": "Maksājumu veidi",
+      "paymentsHint": "Tiek rādīti jūsu kājenē."
+    },
+    "design": {
+      "colorTitle": "Zīmola krāsa",
+      "colorDescription": "Tiek izmantota pogām, saitēm un akcentiem visā vietnē. Banera fons seko šai krāsai; to joprojām varat precizēt sadaļā “Baneri”.",
+      "presets": "Ieteicamās krāsas",
+      "custom": "Pielāgota krāsa",
+      "customHint": "Izmantojiet heksadecimālo kodu, piemēram, #4f46e5.",
+      "picker": "Izvēlieties krāsu",
+      "lowContrast": "Šī krāsa ir pārāk gaiša baltam tekstam uz pogām. Izvēlieties tumšāku, citādi saglabāšana neizdosies.",
+      "fontTitle": "Fonts",
+      "fontDescription": "Tiek izmantots visam tekstam jūsu vietnē.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Tīrs un moderns"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klasisks un elegants"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Izteiksmīgs un draudzīgs"
+        }
+      },
+      "cornersTitle": "Stūri",
+      "cornersDescription": "Noapaļoti vai taisni pogu, kartīšu un lauku stūri visā vietnē.",
+      "corners": {
+        "round": {
+          "name": "Noapaļoti",
+          "hint": "Maigi un draudzīgi"
+        },
+        "square": {
+          "name": "Taisni",
+          "hint": "Asi un minimālistiski"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Vietne",
+      "websiteEnabled": "Rezervēšanas vietne ieslēgta",
+      "websiteEnabledHint": "Kad tā ir ieslēgta, klienti var skatīt un rezervēt jūsu publicētajā vietnē. Ieslēgšana arī publicē saglabātās izmaiņas. Tas ir tas pats slēdzis kā Benwer administrēšanas sistēmā.",
+      "bookingTitle": "Rezervācijas",
+      "bookingDescription": "Kā klienti rezervē jūsu vietnē.",
+      "bookingMode": "Rezervēšanas režīms",
+      "mode": {
+        "instant": "Tūlītēja",
+        "request": "Pēc pieprasījuma"
+      },
+      "modeHint": {
+        "instant": "Rezervācijas tiek apstiprinātas uzreiz.",
+        "request": "Jūs apstiprināt vai noraidāt katru rezervāciju pieprasījuma termiņā."
+      },
+      "minLead": "Minimālais paziņošanas laiks",
+      "requestWindow": "Laiks atbildei",
+      "hoursUnit": "Stundās",
+      "differentReturnTitle": "Atdošana citā vietā",
+      "differentReturnLabel": "Ļaut klientiem atdot automašīnu citā vietā",
+      "differentReturnHint": "Meklējot klienti izvēlas atdošanas vietu. Cenai tiek pievienota vienvirziena nomas maksa no Benwer administrēšanas sistēmas.",
+      "differentReturnOff": "Lai to piedāvātu, Benwer administrēšanas sistēmā ieslēdziet vienvirziena nomu."
+    },
+    "savedNotPublished": "Saglabāts, vēl nav publicēts",
+    "publish": "Publicēt",
+    "branding": {
+      "logosTitle": "Logotipi",
+      "logosDescription": "Šis ir jūsu uzņēmuma logotips. Mainot to šeit, tas tiek atjaunināts arī Benwer admin un Benwer Cars lietotnē.",
+      "headerLogo": "Augšējās joslas logotips",
+      "headerLogoHint": "Tiek rādīts joslā katras lapas augšpusē. Vislabāk der plats logotips.",
+      "companyLogo": "Uzņēmuma sadaļas logotips",
+      "companyLogoHint": "Tiek rādīts virs jūsu virsraksta, pirms uzņēmuma sadaļas.",
+      "usingCompanyLogo": "Tiek izmantots jūsu uzņēmuma logotips",
+      "upload": "Augšupielādēt logotipu",
+      "replace": "Aizstāt",
+      "uploadFailed": "Logotipu neizdevās augšupielādēt. Izmantojiet PNG, JPG vai WebP attēlu un mēģiniet vēlreiz.",
+      "tooLarge": "Šis attēls ir lielāks par 25 MB.",
+      "backgroundTitle": "Lapas fons",
+      "backgroundDescription": "Krāsa aiz jūsu vietnes satura.",
+      "backgroundPresets": "Ieteicamie foni",
+      "backgroundCustom": "Pielāgots fons",
+      "backgroundPicker": "Izvēlieties fona krāsu",
+      "needsApi": "Pieejams, tiklīdz būs aktīvs Benwer API atjauninājums vietnēm.",
+      "headerLogoDark": "Augšējās joslas logotips — tumšais režīms",
+      "companyLogoDark": "Uzņēmuma sadaļas logotips — tumšais režīms",
+      "squareLogo": "Kvadrātveida logotips (1:1)",
+      "squareLogoHint": "Nepieciešams publicēšanai. Tiek rādīts blakus uzņēmuma nosaukumam kartītēs, meklēšanas rezultātos un mobilajos sarakstos.",
+      "cropTitle": "Apgriezt logotipu uz 2:1",
+      "cropHint": "Velciet un pietuviniet, lai logotips kārtīgi iekļautos 2:1 rāmī.",
+      "cropZoom": "Tālummaiņa",
+      "cropCancel": "Atcelt",
+      "cropSave": "Apgriezt un augšupielādēt",
+      "darkLogoHint": "Neobligāti. Tiek rādīts, kad apmeklētāji izmanto tumšo režīmu. Izmantojiet gaišu vai baltu logotipa versiju.",
+      "darkNeedsApi": "Tumšā režīma logotipi būs pieejami, tiklīdz būs aktīvs atbilstošais Benwer API atjauninājums.",
+      "logo": "Logotips (2:1)",
+      "logoHint": "Nepieciešams publicēšanai. Viens logotips gaišajam un tumšajam režīmam: jūsu zīmola krāsa kā fons ar baltu nosaukumu, apgriezts 2:1 proporcijā."
+    },
+    "legal": {
+      "hint": "Katra lapa sākas ar standarta tekstu, tāpēc varat mainīt tikai nepieciešamās daļas. Katram apakšvirsrakstam pievienojiet sadaļu. “Atgriezties pie standarta teksta” atceļ jūsu izmaiņas.",
+      "needsApi": "Pieejams, tiklīdz būs aktīvs Benwer API atjauninājums vietnēm.",
+      "privacyTitle": "Privātuma politika",
+      "privacyDescription": "Tiek rādīta sadaļā “Privātums” jūsu vietnes kājenē.",
+      "termsTitle": "Noteikumi un nosacījumi",
+      "termsDescription": "Tiek rādīti sadaļā “Noteikumi” jūsu vietnes kājenē.",
+      "text": "Teksts",
+      "intro": "Ievads",
+      "subtitle": "Apakšvirsraksts",
+      "sectionItem": "Sadaļa {position}",
+      "addSection": "Pievienot sadaļu",
+      "reset": "Atgriezties pie standarta teksta",
+      "pageTitle": "Lapas nosaukums",
+      "privacyLooksLikeTerms": "Jūsu privātuma politikai ir tāds pats teksts kā noteikumiem. Sadaļā “Privātuma politika” izmantojiet “Atgriezties pie standarta teksta” vai uzrakstiet savu privātuma tekstu un saglabājiet."
+    },
+    "preview": "Priekšskatījums",
+    "fullscreen": "Pilnekrāna redaktors",
+    "exitFullscreen": "Rādīt priekšskatījumu blakus redaktoram",
+    "previewBarAria": "Priekšskatījuma vadīklas",
+    "previewing": "Jūs priekšskatāt savu vietni",
+    "backToEdit": "Rediģēt"
+  },
+  "marketplaceBanners": {
+    "aria": "Benwer aktualitātes",
+    "slideLabel": "{position} no {count}",
+    "goTo": "Rādīt {position}. baneri",
+    "previous": "Iepriekšējais baneris",
+    "next": "Nākamais baneris",
+    "trust": {
+      "script": "rezervējiet droši",
+      "highlight": "Pārbaudīti uzņēmumi",
+      "joiner": "un",
+      "boxed": "Droša rezervēšana",
+      "description": "Īstas atsauksmes, skaidri noteikumi un digitāli līgumi, ko parakstāt tālrunī"
+    },
+    "prices": {
+      "script": "viena meklēšana",
+      "highlight": "Salīdziniet cenas",
+      "joiner": "no",
+      "boxed": "Partneru uzņēmumiem",
+      "description": "Pirms rezervēšanas līdzās salīdziniet partneru nomas uzņēmumu cenas, apdrošināšanu un drošības naudas"
+    },
+    "anywhere": {
+      "script": "atrodiet savu auto",
+      "highlight": "Visā Malagā",
+      "joiner": "ar",
+      "boxed": "Vietējiem nomas uzņēmumiem",
+      "description": "Partneru nomas uzņēmumi pilsētās visā Malagas provincē vienuviet"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Publicējis {name}.",
+    "cookies": {
+      "title": "Sīkdatņu politika",
+      "lede": "Kā {name} šajā vietnē izmanto sīkdatnes un līdzīgas tehnoloģijas.",
+      "updated": "Publicējis {name}.",
+      "sections": [
+        {
+          "title": "Ko mēs izmantojam",
+          "body": "Sīkdatnes ir nelieli teksta faili, kas tiek saglabāti jūsu ierīcē. Šī vietne izmanto arī līdzīgu krātuvi, piemēram, vietējo krātuvi, lai atcerētos jūsu izvēles, grozu un pierakstīšanos."
+        },
+        {
+          "title": "Obligātās sīkdatnes",
+          "body": "Valodas sīkdatne ļauj vietnei rādīt jūsu valodu, un sīkdatņu joslas izvēle tiek saglabāta, lai nejautātu katrā apmeklējumā. Ja pierakstāties, pierakstīšanās nodrošinātājs saglabā sesiju jūsu ierīcē, lai jūs paliktu pierakstījies. Karšu maksājumus apstrādā Stripe, kas var iestatīt savas sīkdatnes krāpšanas novēršanai."
+        },
+        {
+          "title": "Neobligātās sīkdatnes",
+          "body": "Neobligātās sīkdatnes (piemēram, analītikas) paliek izslēgtas, ja vien neizvēlaties “Pieņemt visas”. Šī vietne pašlaik neiestata analītikas vai mārketinga sīkdatnes."
+        },
+        {
+          "title": "Sīkdatņu pārvaldība",
+          "body": "Izmantojiet sīkdatņu iestatījumu saiti kājenē, lai mainītu savu izvēli. Sīkdatnes un vietnes datus varat izdzēst arī pārlūkprogrammā. Obligātās krātuves bloķēšana var jūs izrakstīt vai iztukšot grozu."
+        },
+        {
+          "title": "Plašāka informācija",
+          "body": "Skatiet privātuma politiku, lai uzzinātu, kā {name} apstrādā personas datus, vai izmantojiet kājenē norādīto kontaktinformāciju."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Atbalsts",
+    "fabCloseLabel": "Aizvērt atbalsta izvēlni",
+    "messageAction": "Tiešais ziņojums",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Sveiki, man ir jautājums par Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "Benwer Cars lietotne",
+    "metaDescription": "Rezervējiet automašīnas, glabājiet visus ceļojumus vienuviet un saņemiet rezervāciju atjauninājumus tālrunī.",
+    "eyebrow": "Mobilā lietotne",
+    "title": "Auto noma jūsu kabatā",
+    "description": "Rezervējiet automašīnas no vietējiem uzņēmumiem, glabājiet katru ceļojumu vienuviet, maksājiet un saņemiet atjauninājumus tālrunī.",
+    "featureTrips": "Visi jūsu ceļojumi dažādos uzņēmumos",
+    "featureBooking": "Rezervējiet un samaksājiet ar dažiem pieskārieniem",
+    "featurePush": "Atjauninājumi, kad mainās jūsu rezervācija",
+    "unavailableTitle": "Lietotne drīzumā",
+    "unavailableDescription": "Benwer Cars lietotne vēl nav veikalos. Jūs joprojām varat rezervēt tīmeklī.",
+    "browse": "Pārlūkot automašīnas",
+    "badgeTitle": "Iegūstiet Benwer Cars lietotni",
+    "companyText": "Rezervējiet {company} savā tālrunī un glabājiet ceļojumus vienuviet.",
+    "bookingText": "Skatiet šo rezervāciju, maksājiet un saņemiet atjauninājumus tālrunī."
+  }
+}

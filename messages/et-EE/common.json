@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Midagi läks valesti. Palun proovi uuesti.",
+    "network": "Serveriga ei õnnestu ühendust saada. Kontrolli oma internetiühendust.",
+    "vehicle": {
+      "not_found": "See sõiduk ei ole enam saadaval."
+    },
+    "company": {
+      "not_found": "Seda ettevõtet ei leitud."
+    },
+    "reservation": {
+      "overlap": "See sõiduk on neil kuupäevadel juba broneeritud.",
+      "not_found": "Broneeringut ei leitud. Kontrolli oma kinnituslinki.",
+      "invalid_dates": "Tagastamiskuupäev peab olema pärast pealevõtmiskuupäeva.",
+      "min_lead": "Pealevõtmine on liiga varajane. Vali hilisem kuupäev.",
+      "terms_required": "Jätkamiseks nõustu renditingimustega.",
+      "max_open_requests": "Sul on juba kaks avatud päringut. Tühista üks enne uue saatmist.",
+      "request_expired": "See päring on aegunud. Alusta uut.",
+      "not_cancellable": "Seda broneeringut ei saa enam veebis tühistada."
+    },
+    "booking": {
+      "payment_not_required": "Selle broneeringu eest ei ole veebimakse vajalik.",
+      "payment_window_elapsed": "15-minutiline makseaeg on lõppenud. Kui vajad endiselt autot, alusta uut broneeringut.",
+      "payment_not_open": "Makse ei ole selle broneeringu jaoks saadaval. Proovi uuesti või võta ettevõttega ühendust."
+    },
+    "rental_payments": {
+      "already_paid": "See broneering on juba tasutud."
+    },
+    "site": {
+      "not_found": "Seda autorendi veebilehte ei leitud.",
+      "paused": "See ettevõte ei võta praegu broneeringuid vastu.",
+      "not_published": "See veebileht ei ole veel broneeringuteks avatud."
+    },
+    "website_domain": {
+      "not_found": "See veebiaadress ei ole ühegi autorendiettevõttega seotud."
+    },
+    "staff": {
+      "unauthenticated": "Selle veebilehe muutmiseks logi sisse ettevõtte omanikuna.",
+      "forbidden": "Sul puudub õigus seda veebilehte muuta."
+    },
+    "guest": {
+      "not_configured": "Külaliskontod ei ole selle ettevõtte jaoks veel saadaval.",
+      "not_linked": "Selle kontoga ei ole veel ühtegi broneeringut seotud.",
+      "invalid_token": "See kinnituslink on vigane või aegunud.",
+      "unauthenticated": "Jätkamiseks logi sisse."
+    },
+    "pricing": {
+      "min_days": "Need kuupäevad on hooaja jaoks liiga lühikesed. Vali pikem rendiperiood.",
+      "max_days": "Need kuupäevad on hooaja jaoks liiga pikad. Vali lühem rendiperiood.",
+      "rental_too_long": "See rendiperiood on veebis broneerimiseks liiga pikk. Võta ettevõttega ühendust."
+    },
+    "contact": {
+      "not_configured": "Kontaktmeiliaadress ei ole veel seadistatud. Palun proovi hiljem uuesti.",
+      "delivery_failed": "Me ei saanud sinu sõnumit praegu saata. Palun proovi hiljem uuesti."
+    }
+  },
+  "nav": {
+    "home": "Avaleht",
+    "cars": "Autod",
+    "companies": "Ettevõtted",
+    "contact": "Kontakt",
+    "privacy": "Privaatsus",
+    "terms": "Tingimused",
+    "cookies": "Küpsised",
+    "mainAria": "Peamine navigeerimine",
+    "footerAria": "Jaluse navigeerimine",
+    "menu": "Menüü"
+  },
+  "meta": {
+    "siteTitle": "Leia kohalikud rendiautod",
+    "siteDescription": "Võrdle partner-rendiettevõtete autosid kogu Málaga provintsis ja jätka ettevõtte enda veebilehel."
+  },
+  "notFound": {
+    "title": "Lehte ei leitud",
+    "description": "Seda lehte ei ole olemas. Mine tagasi ja otsi autot.",
+    "action": "Tagasi avalehele"
+  },
+  "hostUnknown": {
+    "title": "See veebileht ei ole saadaval",
+    "description": "Kontrolli sisestatud aadressi. See leht ei kuulu ühelegi Benwer Carsi autorendilehele."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, avaleht",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Lülitu tumedale režiimile",
+    "toLight": "Lülitu heledale režiimile"
+  },
+  "locale": {
+    "label": "Keel",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Otsi keeli",
+    "noResults": "Ühtegi keelt ei leitud"
+  },
+  "footer": {
+    "tagline": "Võrdle partner-rendiettevõtete autosid.",
+    "trust": "Partnerite autopargid · Málaga · Rendi ettevõtte veebilehel",
+    "poweredBy": "Broneeritud Benwer Carsi kaudu",
+    "explore": "Avasta",
+    "legal": "Õigusteave",
+    "copyright": "© {year} Benwer Cars. Kõik õigused kaitstud."
+  },
+  "cookieBanner": {
+    "body": "Kasutame keeleküpsist ja salvestame selle valiku sinu seadmesse. Valikulised küpsised jäävad välja lülitatuks, kui sa nendega ei nõustu.",
+    "policy": "Küpsiste poliitika",
+    "necessary": "Keeldu kõigist",
+    "accept": "Nõustu kõigiga",
+    "title": "Väärtustame sinu privaatsust",
+    "settings": "Küpsiste seaded"
+  },
+  "actions": {
+    "retry": "Proovi uuesti",
+    "back": "Tagasi",
+    "viewAll": "Vaata kõiki",
+    "close": "Sulge"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Riigikood, {country} {dial}",
+    "search": "Otsi riike",
+    "countries": "Riigid",
+    "noResults": "Ühtegi sobivat riiki ei leitud",
+    "invalid": "Sisesta kehtiv telefoninumber.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Tühjenda kuupäev"
+  },
+  "guestNotifications": {
+    "title": "Teavitused",
+    "openLabel": "Ava teavitused",
+    "unreadCount": "{count} lugemata teavitust",
+    "emptyTitle": "Teavitusi veel ei ole",
+    "emptyBody": "Broneeringu uuendused, maksemeeldetuletused ja pealevõtmise teated ilmuvad siia.",
+    "error": "Teavitusi ei õnnestunud laadida.",
+    "retry": "Proovi uuesti",
+    "markAllRead": "Märgi kõik loetuks",
+    "dismiss": "Sulge",
+    "loadMore": "Laadi rohkem",
+    "enablePush": "Luba brauseri teavitused",
+    "pushEnabled": "Brauseri teavitused on lubatud",
+    "pushBlocked": "Brauseri teavitused on seadetes blokeeritud",
+    "disablePush": "Keela brauseri teavitused"
+  }
+}

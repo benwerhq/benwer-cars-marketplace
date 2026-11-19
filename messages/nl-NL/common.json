@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Er is iets misgegaan. Probeer het opnieuw.",
+    "network": "Kan de server niet bereiken. Controleer je verbinding.",
+    "vehicle": {
+      "not_found": "Dit voertuig is niet meer beschikbaar."
+    },
+    "company": {
+      "not_found": "Dit bedrijf kon niet worden gevonden."
+    },
+    "reservation": {
+      "overlap": "Dit voertuig is al geboekt voor die data.",
+      "not_found": "Reservering niet gevonden. Controleer je bevestigingslink.",
+      "invalid_dates": "De inleverdatum moet na de ophaaldatum liggen.",
+      "min_lead": "Ophalen is te snel. Kies een latere datum.",
+      "terms_required": "Accepteer de huurvoorwaarden om door te gaan.",
+      "max_open_requests": "Je hebt al twee openstaande aanvragen. Trek er eerst een in voordat je een nieuwe verstuurt.",
+      "request_expired": "Deze aanvraag is verlopen. Start een nieuwe.",
+      "not_cancellable": "Deze boeking kan niet meer online worden geannuleerd."
+    },
+    "booking": {
+      "payment_not_required": "Voor deze boeking is geen online betaling vereist.",
+      "payment_window_elapsed": "Het betaalvenster van 15 minuten is verstreken. Start een nieuwe boeking als je de auto nog nodig hebt.",
+      "payment_not_open": "Betalen is niet mogelijk voor deze boeking. Probeer het opnieuw of neem contact op met het bedrijf."
+    },
+    "rental_payments": {
+      "already_paid": "Deze boeking is al betaald."
+    },
+    "site": {
+      "not_found": "Deze verhuurwebsite kon niet worden gevonden.",
+      "paused": "Dit bedrijf accepteert momenteel geen boekingen.",
+      "not_published": "Deze website is nog niet open voor boekingen."
+    },
+    "website_domain": {
+      "not_found": "Dit webadres is niet gekoppeld aan een verhuurbedrijf."
+    },
+    "staff": {
+      "unauthenticated": "Log in als bedrijfseigenaar om deze website te bewerken.",
+      "forbidden": "Je hebt geen toestemming om deze website te bewerken."
+    },
+    "guest": {
+      "not_configured": "Gastaccounts zijn nog niet beschikbaar voor dit bedrijf.",
+      "not_linked": "Er zijn nog geen boekingen gekoppeld aan dit account.",
+      "invalid_token": "Deze bevestigingslink is ongeldig of verlopen.",
+      "unauthenticated": "Log in om door te gaan."
+    },
+    "pricing": {
+      "min_days": "Deze periode is te kort voor dit seizoen. Kies een langere huurperiode.",
+      "max_days": "Deze periode is te lang voor dit seizoen. Kies een kortere huurperiode.",
+      "rental_too_long": "Deze huurperiode is te lang om online te boeken. Neem contact op met het bedrijf."
+    },
+    "contact": {
+      "not_configured": "Het contact-e-mailadres is nog niet ingesteld. Probeer het later opnieuw.",
+      "delivery_failed": "We konden je bericht nu niet verzenden. Probeer het later opnieuw."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "cars": "Auto's",
+    "companies": "Bedrijven",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "cookies": "Cookies",
+    "mainAria": "Hoofdnavigatie",
+    "footerAria": "Voettekstnavigatie",
+    "menu": "Menu"
+  },
+  "meta": {
+    "siteTitle": "Vind lokale huurauto's",
+    "siteDescription": "Vergelijk auto's van partnerverhuurbedrijven in de provincie Málaga en ga daarna verder op de website van het bedrijf."
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "description": "Die pagina bestaat niet. Ga terug en zoek een auto.",
+    "action": "Terug naar home"
+  },
+  "hostUnknown": {
+    "title": "Deze website is niet beschikbaar",
+    "description": "Controleer het ingevoerde adres. Deze pagina hoort niet bij een verhuurwebsite van Benwer Cars."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, home",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Overschakelen naar donkere modus",
+    "toLight": "Overschakelen naar lichte modus"
+  },
+  "locale": {
+    "label": "Taal",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Talen zoeken",
+    "noResults": "Geen overeenkomende talen"
+  },
+  "footer": {
+    "tagline": "Vergelijk auto's van partnerverhuurbedrijven.",
+    "trust": "Partnervloten · Málaga · Huur op de site van het bedrijf",
+    "poweredBy": "Geboekt via Benwer Cars",
+    "explore": "Ontdek",
+    "legal": "Juridisch",
+    "copyright": "© {year} Benwer Cars. Alle rechten voorbehouden."
+  },
+  "cookieBanner": {
+    "body": "We gebruiken een taalcookie en onthouden deze keuze op je apparaat. Optionele cookies blijven uit tenzij je ze accepteert.",
+    "policy": "Cookiebeleid",
+    "necessary": "Alles weigeren",
+    "accept": "Alles accepteren",
+    "title": "Wij respecteren je privacy",
+    "settings": "Cookie-instellingen"
+  },
+  "actions": {
+    "retry": "Opnieuw proberen",
+    "back": "Ga terug",
+    "viewAll": "Alles bekijken",
+    "close": "Sluiten"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Landcode, {country} {dial}",
+    "search": "Zoek landen",
+    "countries": "Landen",
+    "noResults": "Geen landen gevonden",
+    "invalid": "Voer een geldig telefoonnummer in.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Datum wissen"
+  },
+  "guestNotifications": {
+    "title": "Meldingen",
+    "openLabel": "Meldingen openen",
+    "unreadCount": "{count} ongelezen meldingen",
+    "emptyTitle": "Nog geen meldingen",
+    "emptyBody": "Updates over je boeking, betalingsherinneringen en ophaalmeldingen verschijnen hier.",
+    "error": "Kan meldingen niet laden.",
+    "retry": "Opnieuw proberen",
+    "markAllRead": "Alles als gelezen markeren",
+    "dismiss": "Sluiten",
+    "loadMore": "Meer laden",
+    "enablePush": "Browsermeldingen inschakelen",
+    "pushEnabled": "Browsermeldingen ingeschakeld",
+    "pushBlocked": "Browsermeldingen geblokkeerd in instellingen",
+    "disablePush": "Browsermeldingen uitschakelen"
+  }
+}

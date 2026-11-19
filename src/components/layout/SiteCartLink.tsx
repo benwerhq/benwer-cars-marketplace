@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import * as Dialog from "@radix-ui/react-dialog";
 import { ShoppingCart } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { IconTooltip } from "@/components/ui/IconTooltip";
 import { useCart } from "@/lib/cart";
 import { cartHrefFromHome } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import { HEADER_ICON_BUTTON, MENU_ITEM } from "./LocaleSwitcher";
+import { MOBILE_MENU_ITEM } from "./HeaderMobileMenu";
+import { HEADER_ICON_BUTTON } from "./LocaleSwitcher";
 
 /** Header cart icon with a count; hidden while the cart is empty. */
 export function SiteCartLink({ slug, homeHref }: { slug: string; homeHref: string }) {
@@ -45,14 +46,14 @@ export function SiteCartMenuItem({ slug, homeHref }: { slug: string; homeHref: s
   }
 
   return (
-    <DropdownMenu.Item asChild className={MENU_ITEM}>
-      <Link href={cartHrefFromHome(homeHref)}>
-        <ShoppingCart size={15} aria-hidden />
+    <Dialog.Close asChild>
+      <Link href={cartHrefFromHome(homeHref)} className={MOBILE_MENU_ITEM}>
+        <ShoppingCart size={16} className="shrink-0 text-muted-foreground" aria-hidden />
         <span className="flex-1">{t("open", { count: items.length })}</span>
         <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-semibold text-primary-foreground tabular-nums">
           {items.length}
         </span>
       </Link>
-    </DropdownMenu.Item>
+    </Dialog.Close>
   );
 }

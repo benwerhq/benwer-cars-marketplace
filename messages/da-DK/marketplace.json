@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Virksomheder",
+    "title": "Find din perfekte bil",
+    "subtitle": "Sammenlign biler fra partner-udlejningsvirksomheder, og fortsæt derefter på virksomhedens egen side.",
+    "searchPlaceholder": "Hvor skal du hen?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Udvalgte virksomheder",
+    "companiesSubtitle": "Partner-udlejningsvirksomheder i Málaga-provinsen — flåder vi samarbejder med, ikke ubekræftede opslag",
+    "trustLocal": "Partnervirksomheder",
+    "trustGuest": "Lej på virksomhedens side",
+    "trustArea": "Málaga-provinsen",
+    "viewAllCompanies": "Vis alle virksomheder"
+  },
+  "featuredCars": {
+    "viewAllCount": "Vis alle {count} biler",
+    "eyebrow": "Biler",
+    "title": "Tilgængelige biler",
+    "subtitle": "Alle biler, som partnervirksomheder har udgivet, side om side. Vælg en bil for at booke på virksomhedens egen side.",
+    "viewAll": "Søg i alle biler",
+    "seeAll": "Se alle",
+    "emptyTitle": "Ingen biler opført endnu",
+    "emptyHint": "Offentlige flåder vises her, når virksomheder udgiver dem."
+  },
+  "whatYouGet": {
+    "eyebrow": "Til biludlejningsvirksomheder",
+    "title": "Hvad du får",
+    "subtitle": "Én samlet løsning til kontoret, pladsen og rejsende, der søger i Málaga.",
+    "admin": {
+      "title": "Komplet administrationssystem",
+      "body": "Administrer biler, priser, tilgængelighed og reservationer fra ét driftspanel — det samme katalog, som markedspladsen læser fra."
+    },
+    "mobile": {
+      "title": "Mobilapp til personalet",
+      "body": "Udlever og modtag biler, og se dagens bookinger direkte fra pladsen."
+    },
+    "storefront": {
+      "title": "Brandet hjemmeside",
+      "body": "En profil på markedspladsen samt din egen hjemmeside og subdomæne."
+    },
+    "preview": {
+      "utilisation": "Udnyttelse",
+      "utilisationValue": "82%",
+      "pickups": "Afhentninger i dag",
+      "pickupsValue": "14",
+      "revenue": "Denne måned",
+      "revenueValue": "€9.4k",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Oversigt",
+      "navFleet": "Flåde",
+      "navCalendar": "Kalender",
+      "navReservations": "Reservationer",
+      "calendarTitle": "Tilgængelighed",
+      "calendarMonth": "Næste 2 uger",
+      "viaBenwer": "Via Benwer",
+      "direct": "Direkte",
+      "free": "Ledig",
+      "carA": "Kompakt",
+      "carB": "Bybil",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "I dag",
+      "phoneDate": "Mandag",
+      "pickUp": "Afhentning",
+      "return": "Aflevering",
+      "checkedOut": "Udleveret",
+      "due": "Afventer",
+      "tabToday": "I dag",
+      "tabFleet": "Flåde",
+      "tabScan": "Scan",
+      "storeName": "Din virksomhed",
+      "storeNavCars": "Biler",
+      "storeNavContact": "Kontakt",
+      "storeHeadline": "Lej en bil i Málaga",
+      "storeSearch": "Afhentning og datoer",
+      "storeSearchCta": "Søg",
+      "storePrice": "Se priser",
+      "carE": "Hatchback",
+      "carF": "Stationcar"
+    }
+  },
+  "faq": {
+    "eyebrow": "Ofte stillede spørgsmål",
+    "title": "Før du booker",
+    "subtitle": "Partnerflåder, hvordan booking fungerer, og hvad Benwer tager sig af — og ikke tager sig af.",
+    "items": {
+      "partners": {
+        "question": "Kommer disse biler fra rigtige udlejningsvirksomheder?",
+        "answer": "Ja. Hvert opslag er en offentlig bil fra en Benwer-partner — en rigtig udlejningsvirksomhed, vi samarbejder med, ikke en ubekræftet privatannonce. Hvis en virksomhed eller bil ikke er udgivet på platformen, vises den ikke her."
+      },
+      "booking": {
+        "question": "Booker og betaler jeg på Benwer?",
+        "answer": "Nej. Du sammenligner partnerflåder her og fortsætter derefter på udlejningsvirksomhedens egen side for at bekræfte leje, depositum og afhentning. Benwer modtager ikke betaling på denne markedsplads."
+      },
+      "photos": {
+        "question": "Kan jeg stole på billederne og tilgængeligheden?",
+        "answer": "Opslagene bruger de offentlige billeder og den tilgængelighed, som partnervirksomheden udgiver — det samme katalog, de administrerer i adminpanelet. Hvis en bil endnu ikke har et offentligt billede, viser vi en tom plads i stedet for et modelfoto af en anden bil. Endelig tilgængelighed bekræftes på virksomhedens side."
+      },
+      "account": {
+        "question": "Skal jeg bruge en konto?",
+        "answer": "Det kræver ingen konto at søge. Hvis du sender en kontaktbesked, bruger vi kun disse oplysninger til at svare dig."
+      },
+      "safety": {
+        "question": "Hvem er ansvarlig for lejen?",
+        "answer": "Kontrakten indgås mellem dig og partner-udlejningsvirksomheden. Læs deres vilkår, før du bekræfter. Benwer hjælper dig med at finde en bil fra en partnerflåde; vi udlejer ikke køretøjer og modtager ikke betaling her."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Benwer Cars-appen",
+    "description": "Få Benwer Cars på din telefon. Android-appen er i tidlig test på Google Play — deltag i testen og hjælp med at forme den."
+  },
+  "partners": {
+    "eyebrow": "Til biludlejningsvirksomheder",
+    "title": "Gør ledige dage til bookinger",
+    "description": "Rejsende søger allerede efter biler i Málaga på Benwer. Udgiv din flåde én gang, og fyld dage, hvor bilerne ellers ville stå stille.",
+    "cta": "Læs mere",
+    "ctaAria": "Læs mere på Benwers marketingside (åbner i en ny fane)",
+    "demo": "Se live demo",
+    "demoAria": "Se live demo (åbner i en ny fane)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Biludlejning",
+    "companyDescription": "Lej en bil fra {name} i {location}.",
+    "companyDescriptionPlain": "Lej en bil fra {name}.",
+    "companyFallback": "Biludlejning",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Lej en {brand} {model} fra {company}.",
+    "carDescriptionSpecs": "Lej en {brand} {model} — {seats, plural, one {# sæde} other {# sæder}}, {transmission}.",
+    "carsTitle": "Lejebiler i hele Málaga-provinsen"
+  },
+  "tenant": {
+    "notFoundTitle": "Virksomhed ikke fundet",
+    "notFoundDescription": "Denne hjemmeside kunne ikke indlæses.",
+    "loadErrorTitle": "Virksomhedsoplysninger ikke tilgængelige",
+    "loadErrorDescription": "Vi kunne ikke indlæse denne side fra live-kataloget. Prøv igen — vi viser ikke eksempelbiler, når API'et fejler.",
+    "logoAlt": "{name}-logo"
+  },
+  "howItWorks": {
+    "eyebrow": "Tre trin",
+    "title": "Sådan fungerer det",
+    "subtitle": "Sammenlign partnerflåder i hele Málaga, og book derefter direkte hos virksomheden. Ingen Benwer-konto nødvendig.",
+    "stepLabel": "Trin {number}",
+    "searchTitle": "Vælg datoer og sted",
+    "searchBody": "Vælg en by på Costa del Sol og de dage, du har brug for. Kun verificerede partnerflåder vises.",
+    "compareTitle": "Sammenlign rigtige biler",
+    "compareBody": "Sæder, gearkasse, billeder og dagspris side om side fra hver partner.",
+    "continueTitle": "Book hos virksomheden",
+    "continueBody": "Bekræft afhentning, forsikring og betaling hos den udlejningsvirksomhed, der ejer bilen.",
+    "cta": "Start søgning",
+    "preview": {
+      "place": "Málaga Lufthavn",
+      "dates": "Fre → Fre · 7 dage",
+      "carA": "Kompakt bil",
+      "carASpecs": "4 sæder · Manuel",
+      "carB": "Familie-SUV",
+      "carBSpecs": "5 sæder · Automatisk",
+      "confirmed": "Booking bekræftet",
+      "confirmedDetail": "Afhentning kl. 10:00",
+      "example": "Eksempel"
+    }
+  },
+  "search": {
+    "locationLabel": "Afhentningssted",
+    "locationPlaceholder": "Søg efter steder",
+    "locationEmpty": "Intet matchende sted",
+    "allLocations": "Alle steder",
+    "allLocationsHint": "Alle byer med ledige biler",
+    "provinceSelected": "Alle steder",
+    "provinceHint": "Alle byer med ledige biler",
+    "pickupLabel": "Afhentning",
+    "dropoffLabel": "Aflevering",
+    "pickupPlaceholder": "Tilføj dato",
+    "dropoffPlaceholder": "Tilføj dato",
+    "pickupTrigger": "Afhentningsdato, {date}",
+    "dropoffTrigger": "Afleveringsdato, {date}",
+    "calendarLabel": "Vælg datoer",
+    "datesRequired": "Vælg afhentnings- og afleveringsdato for at søge.",
+    "submit": "Søg",
+    "returnLocationLabel": "Afleveringssted",
+    "differentReturn": "Aflever et andet sted",
+    "returnSame": "Samme som afhentning",
+    "returnNotOffered": "{company} tilbyder ikke aflevering på en anden lokation.",
+    "branchChoose": "Vælg en lokation",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Indlæser lokationer…",
+    "branchAnyHint": "Alle afdelinger med biler"
+  },
+  "browseLocation": {
+    "title": "Udforsk efter lokation",
+    "subtitle": "Populære byer i Málaga-provinsen",
+    "emptyTitle": "Ingen lokationer endnu",
+    "emptyDescription": "Udvalgte byer vises her.",
+    "cityAria": "Udforsk biler i {city}"
+  },
+  "map": {
+    "teaserTitle": "Se, hvor du kan afhente",
+    "teaserSubtitle": "Lokale flåder i hele Málaga-provinsen — åbn kortet og gå direkte til en virksomhed.",
+    "teaserCta": "Åbn kortet",
+    "teaserCityAria": "Se virksomheder på kortet i {city}",
+    "listLabel": "Liste",
+    "mapLabel": "Kort",
+    "viewToggleAria": "Vis virksomheder som liste eller kort",
+    "regionAria": "Kort over udlejningsvirksomheder i Málaga-provinsen",
+    "pinAria": "{name} i {city}",
+    "fleetHint": "{count, plural, =0 {Ingen biler opført endnu} one {# ledig bil} other {# ledige biler}}",
+    "fleetHintUnknown": "Se tilgængelige biler",
+    "viewFleet": "Se flåde",
+    "closePin": "Luk",
+    "loading": "Indlæser virksomheder…",
+    "errorDescription": "Kortet kunne ikke indlæses. Gennemse listen i stedet.",
+    "emptyTitle": "Ingen virksomheder på kortet",
+    "emptyDescription": "Prøv en anden by i Málaga-provinsen.",
+    "resultsCount": "{count, plural, one {# virksomhed i Málaga-provinsen} other {# virksomheder i Málaga-provinsen}}",
+    "resultsInCity": "{count, plural, one {# virksomhed i {city}} other {# virksomheder i {city}}}",
+    "resultsAtBranch": "{count, plural, one {# virksomhed ved {branch}} other {# virksomheder ved {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Viser {shown} af {total} biler",
+    "loadMore": "Vis flere biler",
+    "seeAll": "Se alle",
+    "title": "Tilgængelige biler",
+    "subtitle": "Alle offentlige biler fra partner-udlejningsvirksomheder i Málaga-provinsen. Vælg dine datoer for at se, hvad der er ledigt.",
+    "searchEmptyTitle": "Ingen biler matcher denne søgning",
+    "searchEmptyHint": "Prøv andre datoer eller en anden lokation i Málaga-provinsen. Alle byer forbliver på listen — også selvom der ikke er opført biler der i dag.",
+    "resultsInProvince": "{count, plural, one {# bil på tværs af alle lokationer} other {# biler på tværs af alle lokationer}}",
+    "resultsInCity": "{count, plural, one {# bil i {city}} other {# biler i {city}}}",
+    "allCompanies": "Alle virksomheder",
+    "companyPlaceholder": "Søg efter virksomheder",
+    "companyTrigger": "Virksomhed, {company}",
+    "perDay": "{price} / dag",
+    "perDaySuffix": " / dag",
+    "viewDetails": "Se detaljer",
+    "notAvailableForDates": "Ikke ledig for disse datoer",
+    "bookUnavailable": "Se bil",
+    "fleetSummary": "{total, plural, one {# bil} other {# biler}} · {available, plural, one {# ledig} other {# ledige}}",
+    "fleetSummaryForDates": "{total, plural, one {# bil} other {# biler}} · {available, plural, one {# ledig} other {# ledige}} · {from} – {to}",
+    "seats": "{count} sæder",
+    "resultsCount": "{count, plural, one {# ledig bil} other {# ledige biler}}",
+    "resultsForDates": "{count, plural, one {# bil} other {# biler}} · {from} – {to}",
+    "emptyTitle": "Denne flåde er endnu ikke offentlig",
+    "emptyHint": "Denne virksomhed er opført, men dens biler er endnu ikke udgivet på Benwer. Det er forventet, indtil bilerne markeres som offentlige — siden er ikke i stykker.",
+    "noResults": "Ingen biler matcher denne søgning",
+    "noResultsHint": "Prøv andre datoer, en anden lokation eller færre filtre.",
+    "browseCompanies": "Udforsk virksomheder",
+    "clearFilters": "Ryd filtre",
+    "searchPlaceholder": "Søg efter mærke eller model",
+    "filters": {
+      "title": "Filtre",
+      "seats": "Sæder",
+      "transmission": "Gearkasse",
+      "company": "Virksomhed",
+      "dates": "Datoer",
+      "from": "Afhentningsdato",
+      "to": "Afleveringsdato",
+      "category": "Kategori",
+      "fuel": "Brændstof",
+      "all": "Alle",
+      "clear": "Ryd",
+      "selectedCount": "{count} valgt"
+    },
+    "types": {
+      "car": "Personbil",
+      "suv": "SUV",
+      "van": "Varevogn",
+      "truck": "Lastbil",
+      "motorcycle": "Motorcykel"
+    },
+    "transmission": {
+      "automatic": "Automatisk",
+      "manual": "Manuel"
+    },
+    "fuel": {
+      "petrol": "Benzin",
+      "diesel": "Diesel",
+      "electric": "El",
+      "hybrid": "Hybrid",
+      "plugin_hybrid": "Plug-in hybrid"
+    },
+    "rowDeposit": "Depositum {amount}",
+    "rowAvailable": "Ledig på dine datoer",
+    "rowTotal": "{amount} i alt · {days, plural, one {# dag} other {# dage}}",
+    "bookNow": "Book nu",
+    "availableCount": "{count, plural, =0 {Ingen ledige biler} one {# ledig bil} other {# ledige biler}}",
+    "availableForDates": "{count, plural, =0 {Ingen ledige biler} one {# ledig bil} other {# ledige biler}} · {from} – {to}",
+    "categories": {
+      "economy": "Økonomi",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "Minivan",
+      "van": "Varevogn",
+      "other": "Andet"
+    },
+    "sort": {
+      "label": "Sortér efter",
+      "recommended": "Anbefalet",
+      "pricePerDay_asc": "Laveste dagspris",
+      "pricePerDay_desc": "Højeste dagspris"
+    },
+    "colors": {
+      "white": "Hvid",
+      "black": "Sort",
+      "silver": "Sølv",
+      "grey": "Grå",
+      "red": "Rød",
+      "blue": "Blå",
+      "green": "Grøn",
+      "orange": "Orange",
+      "yellow": "Gul",
+      "brown": "Brun",
+      "beige": "Beige",
+      "gold": "Guld",
+      "purple": "Lilla"
+    },
+    "viewCar": "Se bil",
+    "opensCompanySite": "(åbner virksomhedens hjemmeside)"
+  },
+  "carDetail": {
+    "bookNow": "Book nu",
+    "continueOnCompany": "Fortsæt på {company}",
+    "rentOnCompanySite": "Lej på virksomhedens side",
+    "handoffHint": "Vi spørger dig, før vi sender dig videre til udlejerens side for at færdiggøre bookingen.",
+    "pricePerDay": "{price} pr. dag",
+    "specs": "Specifikationer",
+    "year": "Årgang",
+    "type": "Type",
+    "transmission": "Gearkasse",
+    "fuel": "Brændstof",
+    "seats": "Sæder",
+    "availability": "Tilgængelighed",
+    "availabilityError": "Vi kunne ikke indlæse tilgængeligheden. Prøv igen.",
+    "availabilityUnavailable": "Tilgængelighed ikke tilgængelig",
+    "checkingAvailability": "Tjekker tilgængelighed…",
+    "notAvailable": "Denne bil er ikke ledig for de valgte datoer.",
+    "selectPickup": "Vælg en afhentningsdato",
+    "selectDropoff": "Vælg nu en afleveringsdato",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Ryd datoer",
+    "addDate": "Tilføj dato",
+    "calendarLabel": "Tilgængelighedskalender",
+    "legend": "Kalenderforklaring",
+    "available": "Ledig",
+    "selected": "Valgt",
+    "unavailable": "Optaget",
+    "openDates": "Ingen bookede datoer de næste {months} måneder.",
+    "breadcrumbAria": "Brødkrummesti",
+    "photoEmpty": "Billeder kommer snart",
+    "previousPhoto": "Forrige billede",
+    "nextPhoto": "Næste billede",
+    "viewPhoto": "Vis billede {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, billede {index}",
+    "backToFleet": "Tilbage til flåden",
+    "metaTitle": "Bildetaljer",
+    "about": "Om denne bil",
+    "category": "Kategori",
+    "color": "Farve",
+    "deposit": "Depositum",
+    "mileage": "Kilometertal",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Du bliver viderestillet til {company}s bookingside for at færdiggøre din reservation.",
+    "handoffTrust": "{company} er en Benwer-partner, du kan stole på.",
+    "handoffContinue": "Fortsæt",
+    "handoffCancel": "Annuller",
+    "handoffCompanyFallback": "udlejeren"
+  },
+  "booking": {
+    "title": "Færdiggør din booking",
+    "subtitle": "Bekræft dine oplysninger — ingen konto nødvendig.",
+    "details": "Dine oplysninger",
+    "detailsHint": "Vi bruger dem kun til at bekræfte denne booking.",
+    "guestName": "Fulde navn",
+    "guestNamePlaceholder": "Mette Jensen",
+    "guestEmail": "E-mailadresse",
+    "guestEmailPlaceholder": "mette@example.com",
+    "guestEmailHint": "Din bekræftelse sendes hertil.",
+    "guestPhone": "Telefonnummer",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Udlejningsvirksomheden kan kontakte dig vedrørende afhentning.",
+    "startDate": "Afhentningsdato",
+    "endDate": "Afleveringsdato",
+    "datesHint": "Datoerne kommer fra bilens kalender. Du kan justere dem her.",
+    "addDate": "Tilføj dato",
+    "changeDates": "Skift datoer i kalenderen",
+    "summary": "Bookingoversigt",
+    "vehicle": "Køretøj",
+    "company": "Virksomhed",
+    "rate": "Dagspris",
+    "duration": "Varighed",
+    "totalPrice": "I alt",
+    "nights": "{count, plural, one {# dag} other {# dage}}",
+    "stickyMeta": "{name} · {count, plural, one {# dag} other {# dage}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Bekræft booking",
+    "confirmRequest": "Send forespørgsel",
+    "requesting": "Sender forespørgsel…",
+    "confirming": "Bekræfter…",
+    "sitePaused": "Tager ikke imod bookinger",
+    "insurance": "Forsikring",
+    "termsLabel": "Lejebetingelser",
+    "termsAccept": "Jeg accepterer",
+    "termsLink": "lejebetingelserne",
+    "successTitle": "Booking bekræftet!",
+    "successMessage": "Din bekræftelse er sendt til {email}.",
+    "viewBooking": "Se min booking",
+    "selectDates": "Vælg datoer for at fortsætte",
+    "invalidDates": "Vælg et gyldigt datointerval",
+    "backToCar": "Tilbage til {name}",
+    "trustNoAccount": "Ingen konto nødvendig",
+    "trustEmail": "Bekræftelse på e-mail",
+    "trustNoPayment": "Ingen betaling nu",
+    "trustCardPayment": "Betal med kort efter booking",
+    "trustFooter": "Ved at bekræfte anmoder du om denne bil på ovenstående datoer. Virksomheden vil overholde reservationen.",
+    "missingTitle": "Vælg en bil for at fortsætte",
+    "missingDescription": "Vælg et køretøj og datoer, før du færdiggør din booking.",
+    "browseCars": "Udforsk biler",
+    "vehicleMissingTitle": "Denne bil er ikke længere tilgængelig",
+    "vehicleMissingDescription": "Den kan være blevet reserveret. Vælg en anden fra flåden.",
+    "viewFleet": "Se flåde",
+    "datesMissingTitle": "Tilføj dine rejsedatoer",
+    "datesMissingDescription": "Gå tilbage til bilen for at vælge ledige datoer, eller indtast dem i formularen.",
+    "pickDates": "Vælg datoer på bilen",
+    "formAria": "Gæsteoplysninger til booking",
+    "validation": {
+      "nameMin": "Indtast dit fulde navn (mindst 2 tegn).",
+      "email": "Indtast en gyldig e-mailadresse.",
+      "phone": "Indtast et gyldigt telefonnummer.",
+      "startDate": "Vælg en afhentningsdato.",
+      "endDate": "Vælg en afleveringsdato.",
+      "endAfterStart": "Aflevering skal være efter afhentning.",
+      "terms": "Accepter lejebetingelserne for at fortsætte.",
+      "fixErrors": "Ret venligst de markerede felter."
+    },
+    "averageRate": "Gennemsnitlig dagspris",
+    "breakdownTitle": "Prisspecifikation",
+    "standardRate": "Standardpris",
+    "weekendRate": "Weekend",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Lejeperioder i denne sæson skal vare mindst {limit, plural, one {# dag} other {# dage}}. Skift dine datoer for at booke.",
+    "warningMaxDays": "Lejeperioder i denne sæson må højst vare {limit, plural, one {# dag} other {# dage}}. Skift dine datoer for at booke.",
+    "returnLocation": "Afleveringssted",
+    "oneWayFee": "Gebyr for aflevering på anden lokation",
+    "signedInAs": "Logget ind som {email}",
+    "signInPrompt": "Har du en konto?",
+    "signInLink": "Log ind for at udfylde dine oplysninger",
+    "subtitleSignedIn": "Tjek dine oplysninger og bekræft.",
+    "trustPaymentAfter": "Betalingsoplysninger følger efter booking",
+    "extras": "Ekstraudstyr",
+    "extraPerDay": "{price} / dag",
+    "extraFixed": "{price} / leje",
+    "tripDetails": "Rejsedetaljer",
+    "pickupTime": "Afhentningstidspunkt",
+    "returnTime": "Afleveringstidspunkt",
+    "timeAny": "Når som helst",
+    "flightNumber": "Flynummer",
+    "flightNumberHint": "Din afhentning er i en lufthavn. Tilføj dit flynummer, så virksomheden kan følge eventuelle forsinkelser.",
+    "flightNumberOptional": "Tilføj det, hvis du ankommer med fly.",
+    "notes": "Kommentarer",
+    "notesPlaceholder": "Er der noget, virksomheden bør vide?",
+    "dateOfBirth": "Fødselsdato",
+    "optional": "valgfri",
+    "extraSoldOut": "Ikke tilgængelig for disse datoer"
+  },
+  "reservationStatus": {
+    "title": "Din reservation",
+    "successTitle": "Du er booket",
+    "successSubtitle": "Vi har sendt en bekræftelse til {email}.",
+    "status": {
+      "draft": "Afventer",
+      "confirmed": "Bekræftet",
+      "active": "Aktiv — god tur!",
+      "completed": "Afsluttet",
+      "cancelled": "Annulleret"
+    },
+    "vehicle": "Køretøj",
+    "company": "Virksomhed",
+    "dates": "Datoer",
+    "pickup": "Afhentning",
+    "dropoff": "Aflevering",
+    "guest": "Gæst",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "total": "I alt",
+    "reference": "Reference",
+    "referenceHint": "Vis denne ved afhentning.",
+    "trustCopy": "Gem denne side — den er din bookingkvittering. Udlejningsvirksomheden tager over herfra.",
+    "trustEmail": "Bekræftelse sendt på e-mail",
+    "trustPickup": "Vis denne side ved afhentning",
+    "nextTitle": "Hvad sker der nu",
+    "nextEmail": "Tjek {email} for din bekræftelse.",
+    "nextPickup": "Vis din reference ved afhentning.",
+    "browseMore": "Udforsk flere biler",
+    "notFoundTitle": "Reservation ikke fundet",
+    "notFoundDescription": "Tjek linket i din bekræftelses-e-mail, eller start en ny søgning.",
+    "backHome": "Tilbage til forsiden",
+    "requestExpires": "Forespørgslen udløber",
+    "cancelReason": "Årsag til annullering",
+    "withdraw": "Træk forespørgsel tilbage",
+    "paymentStatus": "Betaling",
+    "paidAmount": "Betalt",
+    "payment": {
+      "unpaid": "Ikke betalt",
+      "partially_paid": "Delvist betalt",
+      "paid": "Betalt",
+      "refund_due": "Refusion afventer",
+      "authorized": "Kort autoriseret"
+    },
+    "reasons": {
+      "unpaid_timeout": "Betalingen blev ikke gennemført i tide",
+      "request_expired": "Virksomheden svarede ikke i tide",
+      "request_declined": "Virksomheden afviste denne forespørgsel",
+      "customer_request": "Du trak denne forespørgsel tilbage"
+    },
+    "insurance": "Forsikring",
+    "extras": "Ekstraudstyr",
+    "fees": "Gebyrer for afhentning og aflevering",
+    "priceTitle": "Prisoversigt"
+  },
+  "payment": {
+    "title": "Betal forudbetalingen",
+    "amountDue": "Beløb til betaling: {amount}",
+    "countdown": "Gennemfør betalingen inden for {time}",
+    "requestAuthorize": "Dit kort autoriseres nu og trækkes kun, hvis virksomheden accepterer.",
+    "pay": "Betal nu",
+    "paying": "Behandler…",
+    "confirming": "Bekræfter din betaling",
+    "confirmingHint": "Vent venligst — vi bekræfter betalingen fra virksomheden, ikke fra kortformularen.",
+    "declined": "Kortet blev afvist. Prøv et andet kort.",
+    "secure": "Kortoplysninger håndteres af Stripe i testtilstand.",
+    "cancelBooking": "Annuller booking",
+    "cancelTitle": "Annuller denne booking?",
+    "cancelDescription": "Vi anvender virksomhedens annulleringsregler. Tjek gebyret og refusionen, før du bekræfter.",
+    "cancelFee": "Annulleringsgebyr",
+    "cancelRefund": "Refusion",
+    "confirmCancel": "Bekræft annullering",
+    "keepBooking": "Behold booking",
+    "cancelled": "Din booking er blevet annulleret."
+  },
+  "companies": {
+    "title": "Udlejningsvirksomheder",
+    "subtitle": "Udforsk partner-udlejningsvirksomheder i hele Málaga — på kortet eller på listen",
+    "searchPlaceholder": "Søg efter virksomheder…",
+    "noResults": "Ingen virksomheder fundet",
+    "noResultsHint": "Prøv en anden lokation i Málaga-provinsen.",
+    "emptyTitle": "Ingen virksomheder opført endnu",
+    "emptyDescription": "Der er endnu ikke opført nogen udlejningsvirksomheder.",
+    "clearFilters": "Ryd søgning",
+    "viewFleet": "Se flåde",
+    "visitWebsite": "Besøg hjemmeside",
+    "contact": "Kontakt",
+    "backToList": "Alle virksomheder",
+    "notFoundTitle": "Virksomhed ikke fundet",
+    "notFoundDescription": "Denne udlejningsvirksomhed er ikke opført. Udforsk andre i nærheden.",
+    "loadErrorTitle": "Virksomhedsoplysninger ikke tilgængelige",
+    "loadErrorDescription": "Vi kunne ikke indlæse denne udlejningsvirksomhed fra live-kataloget. Prøv igen — vi viser ikke eksempelbiler, når API'et fejler.",
+    "browseCars": "Udforsk biler",
+    "featuredEmpty": "Ingen udvalgte virksomheder endnu",
+    "featuredEmptyHint": "Kig forbi igen snart, eller udforsk biler fra lokale flåder.",
+    "locationUnknown": "Lokation ikke oplyst",
+    "noDescription": "Ingen beskrivelse endnu."
+  },
+  "contact": {
+    "title": "Kontakt os",
+    "lede": "Spørgsmål om markedspladsen? Send os en besked, så vender vi tilbage hurtigst muligt.",
+    "bookingHint": "Denne formular er ikke til bookinger. For at leje en bil skal du fortsætte på udlejningsvirksomhedens egen side.",
+    "name": "Fulde navn",
+    "email": "E-mailadresse",
+    "subject": "Emne",
+    "message": "Besked",
+    "submit": "Send besked",
+    "privacyNote": "Vi bruger kun disse oplysninger til at svare dig.",
+    "errors": {
+      "nameMin": "Indtast dit navn (mindst 2 tegn).",
+      "email": "Indtast en gyldig e-mailadresse.",
+      "subjectMin": "Indtast et emne (mindst 3 tegn).",
+      "messageMin": "Indtast en besked (mindst 10 tegn)."
+    },
+    "eyebrow": "Support",
+    "namePlaceholder": "Mette Jensen",
+    "emailPlaceholder": "you@example.com",
+    "subjectPlaceholder": "Hvordan kan vi hjælpe?",
+    "messagePlaceholder": "Fortæl os, hvad du har brug for…",
+    "supportSubjectDefault": "Supporthenvendelse",
+    "submitting": "Sender…",
+    "submittedTitle": "Besked sendt",
+    "submittedDescription": "Tak for din henvendelse. Vi svarer på din e-mail hurtigst muligt.",
+    "sendAnother": "Send en ny besked",
+    "backHome": "Tilbage til forsiden",
+    "whatsappTitle": "Foretrækker du WhatsApp?",
+    "whatsappDescription": "Chat direkte med Benwer Cars-teamet."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privatlivspolitik",
+      "lede": "Sådan håndterer vi personoplysninger, når du bruger Benwer Cars-markedspladsen.",
+      "updated": "Sidst opdateret: 13. september 2026",
+      "sections": [
+        {
+          "title": "Hvem vi er",
+          "body": "Benwer Cars (\"Benwer\", \"vi\", \"os\") driver en forbrugermarkedsplads, der hjælper rejsende med at opdage biludlejningsflåder i Málaga-provinsen.\n\nDenne politik dækker kun markedspladsens hjemmeside. Hvis du fortsætter til en udlejningsvirksomheds egen side for at booke, er den pågældende virksomhed ansvarlig for de oplysninger, du indsender der."
+        },
+        {
+          "title": "Hvad denne markedsplads gør",
+          "body": "Du kan søge efter biler og virksomheder, sammenligne offentlige flådeoplysninger og fortsætte til en udlejningsvirksomheds side for at færdiggøre en booking.\n\nBenwer modtager ikke betaling og indgår ikke en lejekontrakt på markedspladsen. Lejeaftalen indgås mellem dig og virksomheden."
+        },
+        {
+          "title": "Oplysninger vi indsamler",
+          "body": "Afhængigt af hvordan du bruger markedspladsen, kan vi behandle:\n\n• Søge- og brugsdata — lokation og datoer du indtaster, sider du besøger samt grundlæggende tekniske data såsom IP-adresse, browser og enhedsoplysninger.\n• Sprogpræference — gemmes som en strengt nødvendig cookie, så vi kan vise dit valgte sprog.\n• Cookiesamtykke — gemmes på din enhed, så vi husker dit valg.\n• Kontaktbeskeder — navn, e-mail, emne og besked, hvis du skriver til os. Vi markerer disse som kommende fra markedspladsen.\n\nVi beder dig ikke om at oprette en konto på markedspladsen. Booking- og betalingsoplysninger indsamles af udlejningsvirksomheden på deres egen side under deres egen privatlivspolitik."
+        },
+        {
+          "title": "Sådan bruger vi data",
+          "body": "Vi bruger personoplysninger til at drive og forbedre markedspladsen, huske sprog- og cookievalg, besvare kontaktbeskeder, holde tjenesten sikker og overholde juridiske forpligtelser.\n\nVi sælger ikke dine personoplysninger."
+        },
+        {
+          "title": "Retsgrundlag (EØS / Storbritannien)",
+          "body": "Hvor det er relevant, baserer vi os på legitim interesse (drift af en offentlig oversigt og sikring af siden), samtykke (valgfrie cookies, hvis de indføres), retlig forpligtelse samt skridt, der er nødvendige for at svare, når du kontakter os."
+        },
+        {
+          "title": "Deling",
+          "body": "Vi kan bruge betroede leverandører til hosting og e-maillevering. De behandler data efter vores instruks.\n\nHvis du fortsætter til en virksomheds side, bliver den virksomhed dataansvarlig for de oplysninger, du indsender der. Vi videregiver ikke din kontaktformularbesked til udlejningsvirksomheder, medmindre du beder os om det."
+        },
+        {
+          "title": "Cookies",
+          "body": "Vi bruger en strengt nødvendig sprogcookie og gemmer dit cookievalg på din enhed. Se cookiepolitikken for detaljer. Valgfrie cookies forbliver slået fra, medmindre du accepterer dem."
+        },
+        {
+          "title": "Opbevaring",
+          "body": "Vi opbevarer kontaktbeskeder, så længe det er nødvendigt for at svare og i en rimelig opfølgningsperiode. Tekniske logfiler opbevares i en kort periode. Dit cookievalg forbliver gemt, indtil du ændrer det eller rydder sidedata."
+        },
+        {
+          "title": "Dine rettigheder",
+          "body": "Afhængigt af din placering kan du have ret til indsigt, berigtigelse, sletning, begrænsning eller dataportabilitet samt ret til at gøre indsigelse mod visse former for behandling. Du kan også indgive en klage til din lokale tilsynsmyndighed.\n\nBrug kontaktsiden for at udøve dine rettigheder."
+        },
+        {
+          "title": "Internationale overførsler",
+          "body": "Hvis data overføres uden for dit land, anvender vi passende sikkerhedsforanstaltninger såsom standardkontraktbestemmelser eller tilsvarende mekanismer, hvor loven kræver det."
+        },
+        {
+          "title": "Ændringer",
+          "body": "Vi kan opdatere denne politik fra tid til anden. Vi offentliggør den reviderede version på denne side og opdaterer datoen for \"Sidst opdateret\"."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Brugervilkår",
+      "lede": "Reglerne for brug af Benwer Cars-markedspladsen til at opdage udlejningsflåder.",
+      "updated": "Sidst opdateret: 13. september 2026",
+      "sections": [
+        {
+          "title": "Markedspladsen",
+          "body": "Benwer Cars stiller en offentlig oversigt over biludlejningsvirksomheder og deres udgivne flåder til rådighed. Du kan sammenligne biler og fortsætte til en virksomheds egen hjemmeside for at gennemføre lejen.\n\nDisse vilkår gælder for markedspladsens hjemmeside. De erstatter ikke udlejningsvirksomhedens egne vilkår, som gælder, når du booker hos dem."
+        },
+        {
+          "title": "Bookinger sker hos udlejningsvirksomheder",
+          "body": "Benwer udlejer ikke biler, modtager ikke betaling og indgår ikke lejekontrakter på markedspladsen.\n\nHvis du fortsætter til en virksomheds side, indgås enhver aftale om booking, depositum, forsikring og afhentning mellem dig og den pågældende virksomhed. Læs deres vilkår, før du bekræfter."
+        },
+        {
+          "title": "Opslag og tilgængelighed",
+          "body": "Flådeoplysninger, priser, billeder og tilgængelighed udgives af udlejningsvirksomhederne og kan ændre sig. Vi tilstræber at vise offentlige oplysninger nøjagtigt, men vi garanterer ikke, at en bil stadig er ledig, eller at en oplyst pris overholdes, før virksomheden har bekræftet den.\n\nDatoer, du indtaster på markedspladsen, hjælper dig med at søge. Endelig tilgængelighed bekræftes på virksomhedens side."
+        },
+        {
+          "title": "Acceptabel brug",
+          "body": "Brug markedspladsen lovligt. Du må ikke scrape, overbelaste eller forstyrre tjenesten, indsende falske kontaktoplysninger eller bruge siden til at skade andre personer eller virksomheder."
+        },
+        {
+          "title": "Ansvar",
+          "body": "Markedspladsen stilles til rådighed som en søgetjeneste. I det omfang loven tillader det, er Benwer ikke ansvarlig for lejetvister, køretøjets stand eller bookinger gennemført på en virksomheds side.\n\nIntet i disse vilkår begrænser dine rettigheder som forbruger, som ikke kan fraviges i henhold til gældende lovgivning."
+        },
+        {
+          "title": "Ændringer",
+          "body": "Vi kan opdatere disse vilkår. Datoen for \"Sidst opdateret\" på denne side viser den gældende version. Fortsat brug efter en ændring betyder, at du accepterer de opdaterede vilkår."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Spørgsmål om disse vilkår eller markedspladsen kan sendes via kontaktsiden. Ved en booking, du allerede har påbegyndt, bedes du kontakte udlejningsvirksomheden direkte."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookiepolitik",
+      "lede": "Sådan bruger vi cookies og lignende teknologier på markedspladsen.",
+      "updated": "Sidst opdateret: 13. september 2026",
+      "sections": [
+        {
+          "title": "Hvad vi bruger",
+          "body": "Cookies er små tekstfiler, der gemmes på din enhed. Vi bruger også lignende lagring, såsom local storage, til at huske valg.\n\nDenne politik dækker Benwer Cars-markedspladsen. Når du fortsætter til en udlejningsvirksomheds side, kan den side sætte sine egne cookies."
+        },
+        {
+          "title": "Strengt nødvendige",
+          "body": "Vi bruger en sprogcookie, så siden kan vise dit valgte sprog. Dette er nødvendigt for, at markedspladsen fungerer som forventet.\n\nDit valg i cookiebanneret gemmes på din enhed, så vi ikke spørger igen ved hvert besøg. Denne lagring bruges ikke til annoncering."
+        },
+        {
+          "title": "Valgfrie cookies",
+          "body": "Valgfrie cookies (for eksempel til analyse) forbliver slået fra, medmindre du vælger \"Accepter alle\".\n\nI dag sætter markedspladsen ingen analyse- eller marketingcookies. Hvis vi tilføjer dem senere, beskriver vi dem her, og de vil stadig kræve dit samtykke."
+        },
+        {
+          "title": "Administration af cookies",
+          "body": "Brug banneret til at acceptere alle cookies eller kun beholde de nødvendige. Du kan også slette cookies og sidedata i din browser. Blokering af sprogcookien kan nulstille sprogvalget ved dit næste besøg."
+        },
+        {
+          "title": "Mere information",
+          "body": "Se privatlivspolitikken for, hvordan vi håndterer personoplysninger, eller send en besked via kontaktsiden."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} forside",
+    "defaultHeadline": "Lej en bil med {name}",
+    "footerTagline": "Book direkte hos denne udlejningsvirksomhed.",
+    "previewBanner": "Forhåndsvisning — denne side er ikke offentlig. Søgemaskiner vil ikke indeksere den.",
+    "editLink": "Rediger",
+    "editContactEmpty": "Kontaktoplysninger er skjult. Rediger dem i admin.",
+    "editBranchesEmpty": "Ingen afdelinger endnu. Tilføj dem i admin.",
+    "editRulesHint": "Bookingtilstand, varsel og svarvindue for forespørgsler.",
+    "editDomainHint": "Brugerdefineret domæne og live-URL.",
+    "editSection": {
+      "hero": "Topsektion",
+      "search": "Søgning",
+      "fleet": "Flåde",
+      "branches": "Afdelinger",
+      "contact": "Kontakt",
+      "rules": "Bookingregler",
+      "domain": "Domæne"
+    },
+    "pausedTitle": "Tager ikke imod bookinger",
+    "pausedDescription": "Denne virksomhed har sat online bookinger på pause. Du kan stadig se flåden.",
+    "notFoundTitle": "Hjemmeside ikke fundet",
+    "notFoundDescription": "Denne udlejningshjemmeside er ikke tilgængelig.",
+    "loadErrorTitle": "Hjemmeside ikke tilgængelig",
+    "loadErrorDescription": "Vi kunne ikke indlæse denne udlejningshjemmeside. Prøv igen om lidt.",
+    "search": "Søg efter biler",
+    "searchAria": "Søg efter datoer og lokation",
+    "searchTitle": "Søg efter biler",
+    "searchDescription": "Vælg datoer og en lokation for at se, hvad der er ledigt.",
+    "branch": "Afhentningssted",
+    "anyBranch": "Alle lokationer",
+    "ownerSignIn": "Ejer-login",
+    "returnBranch": "Afleveringssted",
+    "differentReturn": "Aflever et andet sted",
+    "returnSame": "Samme som afhentning",
+    "driverAge": "Førerens alder",
+    "driverAgeYears": "{band} år",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Rediger din hjemmeside",
+    "signInHint": "Ejere åbner hjemmesideredigereren fra Benwer admin. Brug knappen \"Rediger hjemmeside\" dér, så bliver du logget ind her automatisk.",
+    "signedInTitle": "Du er logget ind",
+    "signedInHint": "Hvis du kan administrere denne hjemmeside, åbner redigereren på forsiden.",
+    "openEditor": "Åbn hjemmesideredigering",
+    "disabledTitle": "Ejerredigering er ikke tilgængelig",
+    "disabledDescription": "Staff Firebase er ikke konfigureret på denne markedsplads.",
+    "signOut": "Log ud",
+    "auth": {
+      "tooManyRequests": "For mange forsøg. Prøv igen senere.",
+      "unknown": "Kunne ikke logge ind. Prøv igen.",
+      "invalidToken": "Dette login-link er udløbet eller allerede brugt. Åbn redigereren igen fra Benwer admin."
+    },
+    "signingIn": "Logger dig ind…",
+    "openAdmin": "Åbn Benwer admin",
+    "accountMenu": "Ejerkonto",
+    "signedInAs": "Logget ind som ejer",
+    "guestSignedOut": "Du blev logget ud af din gæstekonto. Ejer- og gæstesessioner kan ikke være åbne samtidig i denne browser."
+  },
+  "guest": {
+    "googleAction": "Log ind med Google",
+    "googleCreate": "Fortsæt med Google",
+    "or": "eller",
+    "forgotPassword": "Glemt adgangskode?",
+    "resetTitle": "Nulstil din adgangskode",
+    "resetHint": "Indtast din e-mailadresse, så sender vi dig et link til at vælge en ny adgangskode.",
+    "resetAction": "Send nulstillingslink",
+    "resetSentTitle": "Tjek din e-mail",
+    "resetSentHint": "Hvis der findes en konto til den adresse, har vi sendt instruktioner til nulstilling af adgangskode. Har du ikke modtaget den? Tjek din spammappe, eller vent et par minutter, før du prøver igen.",
+    "backToSignIn": "Tilbage til login",
+    "signInNav": "Log ind",
+    "myBookings": "Mine bookinger",
+    "signInTitle": "Log ind",
+    "signInHint": "Brug din gæstekonto til denne udlejningsvirksomhed. Dette er ikke et personalelogin.",
+    "signInAction": "Log ind",
+    "createTitle": "Opret en gæstekonto",
+    "createHint": "Gem dine bookinger hos denne virksomhed. Personalet bruger et andet login.",
+    "createAction": "Opret konto",
+    "needAccount": "Brug for en konto? Opret en",
+    "haveAccount": "Har du allerede en konto? Log ind",
+    "email": "E-mail",
+    "password": "Adgangskode",
+    "bookingsTitle": "Mine bookinger",
+    "bookingsMeta": "Tilknyttede bookinger for denne udlejningsvirksomhed.",
+    "bookingsHint": "Logget ind som {email} hos {company}.",
+    "emptyTitle": "Ingen bookinger endnu",
+    "emptyDescription": "Har du booket før? Tilknyt bookingen med den e-mail, du brugte, eller med dens bekræftelsestoken.",
+    "bookingFallback": "Booking",
+    "loadErrorTitle": "Kunne ikke indlæse bookinger",
+    "linkTitle": "Tilknyt en booking",
+    "linkHint": "Indtast den e-mail, der blev brugt til at booke, eller bekræftelsestokenet. Hvis vi finder et match, sender vi et link på e-mail — vi oplyser aldrig, om en konto eksisterer.",
+    "linkEmail": "Booking-e-mail",
+    "linkToken": "Booking-token",
+    "linkAction": "Send link",
+    "linkSent": "Hvis vi finder en matchende booking, sender vi et bekræftelseslink på e-mail.",
+    "accountTitle": "Konto",
+    "accountHint": "Log ud af din konto på denne side.",
+    "signOut": "Log ud",
+    "erase": "Slet mine data her",
+    "eraseConfirm": "Ja, slet mine data for denne virksomhed",
+    "confirmTitle": "Tilknytter din booking",
+    "confirmHint": "Vent venligst, mens vi knytter denne booking til din konto.",
+    "confirmSignIn": "Log ind med din gæstekonto for at færdiggøre tilknytningen af denne booking.",
+    "confirmMissing": "Manglende bekræftelsestoken",
+    "confirmMissingHint": "Åbn linket fra din e-mail igen.",
+    "confirmError": "Vi kunne ikke bekræfte dette link",
+    "disabledTitle": "Gæstekonti er ikke tilgængelige endnu",
+    "disabledDescription": "Denne virksomhed har ikke slået gæstelogin til. Du kan stadig booke med dit navn, e-mail og telefonnummer.",
+    "auth": {
+      "popupClosed": "Login blev annulleret.",
+      "popupBlocked": "Din browser blokerede Google-vinduet. Tillad pop-ups, og prøv igen.",
+      "differentProvider": "Denne e-mail logger allerede ind på en anden måde. Brug din adgangskode i stedet.",
+      "providerUnavailable": "Google-login er endnu ikke tilgængeligt på denne side. Brug din e-mail og adgangskode.",
+      "invalidEmail": "Indtast en gyldig e-mailadresse.",
+      "emailInUse": "Den e-mail har allerede en gæstekonto. Log ind i stedet.",
+      "weakPassword": "Brug en længere adgangskode.",
+      "tooManyRequests": "For mange forsøg. Prøv igen om et par minutter.",
+      "invalidCredentials": "E-mail eller adgangskode er ikke korrekt.",
+      "unknown": "Kunne ikke logge ind. Prøv igen.",
+      "googleDisabled": "Google-login er endnu ikke slået til for denne side. Brug din e-mail og adgangskode.",
+      "domainNotAuthorised": "Google-login er endnu ikke opsat for denne sides adresse. Brug din e-mail og adgangskode indtil videre."
+    },
+    "accountMenu": "Din konto",
+    "profileNav": "Profil",
+    "profileTitle": "Profil",
+    "profileMeta": "Din gæstekonto for denne udlejningsvirksomhed.",
+    "linkCancel": "Annuller",
+    "eraseTitle": "Slet mine data",
+    "eraseHint": "Sletter dine gæstedata for denne virksomhed og logger dig ud. Andre virksomheder påvirkes ikke.",
+    "profileDetailsTitle": "Dine oplysninger",
+    "profileDetailsHint": "Bruges til at udfylde dine bookinger hos denne virksomhed.",
+    "profileFullName": "Fulde navn",
+    "profilePhone": "Telefonnummer",
+    "profileDob": "Fødselsdato",
+    "profileSave": "Gem oplysninger",
+    "profileNotLinked": "Dit navn og telefonnummer gemmes her efter din første booking med denne e-mail. Har du allerede booket med en anden e-mail? Tilknyt den booking under Mine bookinger.",
+    "verifyTitle": "Bekræft din e-mail for at se dine bookinger",
+    "verifyHint": "Vi sendte et link til {email}. Åbn det, og vend derefter tilbage hertil. Indtil din e-mail er bekræftet, kan vi ikke vise dine bookinger eller gemme dit navn og telefonnummer.",
+    "verifyResend": "Send e-mail igen",
+    "verifySent": "E-mail sendt. Tjek din indbakke og spammappe.",
+    "verifyDone": "Jeg har bekræftet min e-mail",
+    "verifyStillPending": "Din e-mail er ikke bekræftet endnu. Åbn linket i e-mailen, og prøv igen.",
+    "verifyBanner": "Din konto er ikke aktiv endnu. Bekræft {email} for at se dine bookinger og bruge dine gemte oplysninger.",
+    "verifyBannerAction": "Bekræft e-mail",
+    "profileEdit": "Rediger oplysninger",
+    "profileCancel": "Annuller",
+    "profileEmail": "E-mail",
+    "profileEmpty": "Ikke tilføjet",
+    "bookingsUpcoming": "Kommende",
+    "bookingsPast": "Tidligere",
+    "ownerSignedOut": "Du blev logget ud af hjemmesideredigereren. Ejer- og gæstesessioner kan ikke være åbne samtidig i denne browser."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "{name} tilbud",
+      "slideAlt": "{name} banner {position}",
+      "slideLabel": "{position} af {count}",
+      "previous": "Forrige banner",
+      "next": "Næste banner",
+      "goTo": "Vis banner {position}",
+      "presets": {
+        "airport": {
+          "script": "lige landet?",
+          "highlight": "Lufthavnsafhentning",
+          "joiner": "på",
+          "boxed": "10 minutter",
+          "description": "Spring køen over: underskriv din kontrakt på telefonen og kør afsted med fuld forsikring"
+        },
+        "weekend": {
+          "script": "book denne weekend",
+          "highlight": "Spar 20 %",
+          "joiner": "på",
+          "boxed": "Weekendleje",
+          "description": "Afhent fredag, aflever mandag. Gratis barnesæde og ekstra fører inkluderet"
+        },
+        "roadtrip": {
+          "script": "dit næste roadtrip",
+          "highlight": "Starter her",
+          "joiner": "vi rækker dig",
+          "boxed": "Nøglerne",
+          "description": "Gratis annullering op til 24 t før afhentning, ubegrænsede km og ingen skjulte gebyrer"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Inkluderet i hver pris",
+      "title": "Den pris du ser, er den pris du betaler",
+      "description": "Ingen overraskelser ved skranken. Disse er altid en del af prisen.",
+      "presets": {
+        "insurance": {
+          "title": "Basisforsikring",
+          "text": "Kasko-, tyveri- og ansvarsdækning.",
+          "tag": "Inkluderet"
+        },
+        "mileage": {
+          "title": "Ubegrænsede kilometer",
+          "text": "Kør så langt du vil uden gebyr pr. kilometer.",
+          "tag": "Ingen grænser"
+        },
+        "fuel": {
+          "title": "Fuld-til-fuld brændstof",
+          "text": "Afhent bilen med fuld tank og aflever den fuld.",
+          "tag": "Ingen forudbetalt tank"
+        },
+        "cancellation": {
+          "title": "Gratis annullering",
+          "text": "Ændrede planer? Annuller gratis.",
+          "tag": "Fleksibel"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Anmeldelser",
+      "title": "Hvad bilister siger om os",
+      "seeAll": "Se alle {count, plural, one {# anmeldelse} other {# anmeldelser}}",
+      "seeAllOn": "Se alle {count, plural, one {# anmeldelse} other {# anmeldelser}} på {source}",
+      "basedOn": "Baseret på {count, plural, one {# anmeldelse} other {# anmeldelser}}",
+      "basedOnSource": "Baseret på {count, plural, one {# anmeldelse} other {# anmeldelser}} på {source}",
+      "ratingAria": "Vurderet til {rating} ud af 5",
+      "rented": "Lejede: {vehicle}",
+      "verified": "Verificeret leje",
+      "distributionAria": "Vurderingsfordeling",
+      "emptyTitle": "Ingen anmeldelser endnu",
+      "emptyText": "Gæster kan anmelde deres leje, når de har afleveret bilen. Godkendte anmeldelser vises her."
+    },
+    "app": {
+      "eyebrow": "Mobilapp",
+      "title": "Din booking på farten",
+      "text": "Tjek ind online, se dine afhentningsoplysninger og skriv til os — alt sammen fra din telefon.",
+      "platformBoth": "iOS og Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Scan for at hente",
+      "qrAlt": "QR-kode til at hente appen",
+      "appStore": {
+        "prefix": "Hent i",
+        "name": "App Store",
+        "aria": "Hent i App Store",
+        "unavailable": "Endnu ikke tilgængelig i App Store"
+      },
+      "googlePlay": {
+        "prefix": "Hent den på",
+        "name": "Google Play",
+        "aria": "Hent den på Google Play",
+        "unavailable": "Endnu ikke tilgængelig på Google Play"
+      },
+      "comingSoon": "Kommer snart"
+    },
+    "locations": {
+      "eyebrow": "Lokationer",
+      "title": "{count, plural, one {Vores kontor} other {Vores kontorer}}",
+      "description": "{count, plural, one {Afhent og aflever din bil her.} other {Afhent og aflever din bil på et hvilket som helst af vores kontorer.}}",
+      "directions": "Rutevejledning",
+      "directionsTo": "Rutevejledning til {name}",
+      "call": "Ring"
+    },
+    "faq": {
+      "eyebrow": "Ofte stillede spørgsmål",
+      "title": "Spørgsmål før booking",
+      "description": "Finder du ikke svar? Kontakt os, vi hjælper gerne."
+    },
+    "contact": {
+      "title": "Spørgsmål? Tal med et menneske.",
+      "description": "Send os en besked eller giv os et opkald, så hjælper vi dig med at finde den rette bil.",
+      "whatsapp": "WhatsApp",
+      "email": "Send os en e-mail",
+      "whatsappMessage": "Hej {name}, jeg har et spørgsmål om billeje."
+    },
+    "nav": {
+      "reviews": "Anmeldelser",
+      "faq": "FAQ",
+      "contact": "Kontakt",
+      "app": "App",
+      "branches": "Lokationer"
+    },
+    "footer": {
+      "contact": "Kontakt",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Vi modtager",
+      "rating": "{score} · {count, plural, one {# anmeldelse} other {# anmeldelser}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Kontant"
+    }
+  },
+  "siteEditor": {
+    "aria": "Hjemmesideredigering",
+    "title": "Hjemmesideredigering",
+    "signOut": "Log ud",
+    "tabsAria": "Redigeringssektioner",
+    "status": {
+      "draft": "Kladde",
+      "published": "Live",
+      "paused": "Sat på pause"
+    },
+    "tabs": {
+      "sections": "Sektioner",
+      "design": "Design",
+      "settings": "Indstillinger",
+      "legal": "Juridisk"
+    },
+    "contentLanguage": "Redigeringssprog",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Alle sektioner",
+    "sections": {
+      "company": "Virksomhed",
+      "fleet": "Biler",
+      "included": "Inkluderet i hver pris",
+      "reviews": "Anmeldelser",
+      "app": "Mobilapp",
+      "faq": "FAQ",
+      "contact": "Kontakt",
+      "hero": "Bannere og søgning",
+      "branches": "Lokationer"
+    },
+    "sectionsHint": "Slå sektioner til eller fra, og skift deres rækkefølge. Åbn en sektion for at redigere indholdet.",
+    "orderHint": "Biler vises altid. Kontorer hentes fra dine afdelinger i Benwer admin.",
+    "hiddenUntilContent": "Skjult, indtil du tilføjer indhold",
+    "summary": {
+      "banners": "{count, plural, one {# banner} other {# bannere}}",
+      "bannersEmpty": "Ingen bannere endnu, brandfarven vises",
+      "company": "Overskrift, introduktion og kontaktoplysninger",
+      "fleet": "Fra din Benwer-flåde",
+      "included": "{count, plural, one {# punkt} other {# punkter}}",
+      "reviews": "{count, plural, one {# anmeldelse} other {# anmeldelser}}",
+      "app": "Butikslinks og QR-kode",
+      "locations": "{count, plural, one {# kontor} other {# kontorer}} fra Benwer",
+      "faq": "{count, plural, one {# spørgsmål} other {# spørgsmål}}",
+      "contactWhatsapp": "WhatsApp, telefon og åbningstider",
+      "contact": "Telefon og e-mail"
+    },
+    "unsaved": "Ikke-gemte ændringer",
+    "saved": "Alle ændringer gemt",
+    "discard": "Kassér",
+    "save": "Gem ændringer",
+    "common": {
+      "moveUp": "Flyt {item} op",
+      "moveDown": "Flyt {item} ned",
+      "remove": "Fjern {item}",
+      "show": "Vis {item}"
+    },
+    "banners": {
+      "title": "Bannere",
+      "description": "Op til {max} slides. Tomme felter bruger standardteksten vist i grå.",
+      "empty": "Ingen bannere. Bannerområdet viser din baggrundsfarve.",
+      "item": "Banner {position}",
+      "image": "Billede",
+      "imageHint": "Upload et bredt billede, ca. 1600 × 560 px. JPG, PNG eller WebP op til 25 MB. En gennemsigtig PNG placeres på din bannerfarve.",
+      "add": "Tilføj banner",
+      "fields": {
+        "script": "Håndskrevet linje",
+        "highlight": "Fremhævet titel",
+        "joiner": "Lille bindeord",
+        "boxed": "Titel i boks",
+        "description": "Beskrivelse"
+      },
+      "colorsTitle": "Bannerfarver",
+      "colorsDescription": "Bruges til hvert banner. Enhver farve kan bruges som baggrund.",
+      "resetColors": "Nulstil til standardfarver",
+      "colors": {
+        "background": "Baggrund",
+        "text": "Tekst",
+        "highlight": "Fremhævningsboks",
+        "highlightText": "Fremhævet tekst",
+        "box": "Hvid boks",
+        "boxText": "Tekst i hvid boks",
+        "script": "Bindetekst"
+      },
+      "noImage": "Intet billede endnu",
+      "uploadImage": "Upload billede",
+      "replaceImage": "Erstat billede",
+      "tooLarge": "Filen er over 25 MB. Vælg et mindre billede.",
+      "uploadFailed": "Upload mislykkedes. Prøv igen."
+    },
+    "company": {
+      "title": "Virksomhedsheader",
+      "description": "Dit navn, en overskrift og en kort introduktion.",
+      "headline": "Overskrift",
+      "headlinePlaceholder": "Lej en bil med {name}",
+      "intro": "Introduktion",
+      "introHint": "En eller to sætninger om din virksomhed.",
+      "contactTitle": "Kontaktoplysninger",
+      "contactDescription": "Vises i headeren, lokationer og kontaktsektionen.",
+      "showPhone": "Vis telefonnummer",
+      "showEmail": "Vis e-mail",
+      "showAddress": "Vis adresse"
+    },
+    "included": {
+      "title": "Inkluderet i hver pris",
+      "description": "Op til 6 løfter, der altid er en del af din pris.",
+      "accuracy": "Angiv kun det, der gælder for enhver leje. Standardteksten er et forslag — tjek at den stemmer med dine lejebetingelser.",
+      "item": "Punkt {position}",
+      "icon": "Ikon",
+      "itemTitle": "Titel",
+      "itemText": "Beskrivelse",
+      "itemTag": "Fremhævning",
+      "tagHint": "Kort etiket vist i grøn, f.eks. \"Selvrisiko €1.000\".",
+      "presets": {
+        "insurance": "Basisforsikring",
+        "mileage": "Ubegrænsede km",
+        "fuel": "Fuld-til-fuld brændstof",
+        "cancellation": "Gratis annullering"
+      },
+      "addCustom": "Tilpasset punkt"
+    },
+    "icons": {
+      "shield": "Skjold",
+      "gauge": "Speedometer",
+      "fuel": "Benzinpumpe",
+      "calendar_check": "Kalender",
+      "check": "Flueben",
+      "car": "Bil",
+      "users": "Personer",
+      "baby": "Barnesæde",
+      "plane": "Fly",
+      "key": "Nøgle"
+    },
+    "reviews": {
+      "title": "Gæsteanmeldelser",
+      "description": "Gæster anmelder deres leje efter aflevering af bilen. Kun anmeldelser, du godkender, bliver vist.",
+      "summary": "{average} i gennemsnit fra {count, plural, one {# godkendt anmeldelse} other {# godkendte anmeldelser}}",
+      "none": "Ingen godkendte anmeldelser endnu. Gæster ser en kort besked, indtil du godkender en.",
+      "manage": "Godkend eller skjul anmeldelser i Benwer admin",
+      "demo": "Dette er demoanmeldelser vist på denne testvirksomhed, indtil du godkender rigtige i Benwer admin."
+    },
+    "app": {
+      "benwerAppTitle": "Benwer Cars-app",
+      "benwerApp": "Vis Benwer Cars-appen",
+      "benwerAppDescription": "Gæster får den gratis Benwer Cars-app. Knapperne linker til de officielle butikker, og QR-koden åbner din virksomhed i appen.",
+      "storesWithBenwerApp": "Kun nødvendigt, hvis din virksomhed har sin egen app. Mens Benwer Cars-appen er slået til, bruger sektionen dens butikslinks.",
+      "storesTitle": "Butikslinks",
+      "storesDescription": "Links til din egen app. En manglende butik vises nedtonet. Uden links og med Benwer Cars-appen slået fra forbliver sektionen skjult.",
+      "ios": "App Store-link",
+      "android": "Google Play-link",
+      "qrHint": "QR-koden åbner Google Play-linket eller App Store-linket, hvis der ikke er noget Google Play-link.",
+      "copyTitle": "Tekst",
+      "title": "Titel",
+      "text": "Beskrivelse"
+    },
+    "faq": {
+      "title": "Spørgsmål",
+      "description": "Op til {max} spørgsmål med korte svar.",
+      "empty": "Ingen spørgsmål endnu. Sektion forbliver skjult, indtil du tilføjer et.",
+      "item": "Spørgsmål {position}",
+      "question": "Spørgsmål",
+      "answer": "Svar",
+      "incompleteHint": "Spørgsmål uden svar vises ikke på siden.",
+      "add": "Tilføj spørgsmål"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Sådan kontakter kunder dig. Telefon og e-mail hentes fra virksomhedssektionen.",
+      "whatsapp": "WhatsApp-nummer",
+      "whatsappHint": "Inkluder landekode. Lad feltet være tomt for at skjule WhatsApp-knappen.",
+      "hours": "Hvornår I svarer",
+      "hoursPlaceholder": "Vi svarer hver dag fra 08:00 til 22:00.",
+      "payments": "Betalingsmetoder",
+      "paymentsHint": "Vises i din sidefod."
+    },
+    "design": {
+      "colorTitle": "Brandfarve",
+      "colorDescription": "Bruges til knapper, links og fremhævninger på hele din side. Bannerbaggrunden følger denne farve; du kan stadig finjustere den under Bannere.",
+      "presets": "Foreslåede farver",
+      "custom": "Brugerdefineret farve",
+      "customHint": "Brug en hex-kode, f.eks. #4f46e5.",
+      "picker": "Vælg en farve",
+      "lowContrast": "Denne farve er for lys til hvid tekst på knapper. Vælg en mørkere, ellers fejler lagringen.",
+      "fontTitle": "Skrifttype",
+      "fontDescription": "Bruges til al tekst på din hjemmeside.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Ren og moderne"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klassisk og elegant"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Markant og venlig"
+        }
+      },
+      "cornersTitle": "Hjørner",
+      "cornersDescription": "Afrundede eller skarpe hjørner på knapper, kort og felter på hele din hjemmeside.",
+      "corners": {
+        "round": {
+          "name": "Afrundede",
+          "hint": "Bløde og venlige"
+        },
+        "square": {
+          "name": "Skarpe",
+          "hint": "Skarpe og minimalistiske"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Hjemmeside",
+      "websiteEnabled": "Bookinghjemmeside slået til",
+      "websiteEnabledHint": "Når denne er slået til, kan gæster se og booke på din udgivne side. Hvis du slår den til, udgives dine gemte ændringer også. Dette er den samme knap som i Benwer admin.",
+      "bookingTitle": "Bookinger",
+      "bookingDescription": "Sådan booker kunder fra din side.",
+      "bookingMode": "Bookingtilstand",
+      "mode": {
+        "instant": "Øjeblikkelig",
+        "request": "På forespørgsel"
+      },
+      "modeHint": {
+        "instant": "Bookinger bekræftes med det samme.",
+        "request": "Du accepterer eller afviser hver booking inden for svarvinduet."
+      },
+      "minLead": "Minimumsvarsel",
+      "requestWindow": "Tid til at svare",
+      "hoursUnit": "I timer",
+      "differentReturnTitle": "Aflevering på en anden lokation",
+      "differentReturnLabel": "Lad gæster aflevere på en anden lokation",
+      "differentReturnHint": "Gæster vælger en afleveringslokation, når de søger. Envejsgebyret fra Benwer admin lægges til prisen.",
+      "differentReturnOff": "Slå envejsleje til i Benwer admin for at tilbyde dette."
+    },
+    "savedNotPublished": "Gemt, ikke udgivet endnu",
+    "publish": "Udgiv",
+    "branding": {
+      "logosTitle": "Logoer",
+      "logosDescription": "Dette er din virksomheds logo. Hvis du ændrer det her, opdateres det også i Benwer admin og Benwer Cars-appen.",
+      "headerLogo": "Logo i topbjælken",
+      "headerLogoHint": "Vises i bjælken øverst på hver side. Et bredt logo fungerer bedst.",
+      "companyLogo": "Logo i virksomhedssektionen",
+      "companyLogoHint": "Vises over din overskrift før virksomhedssektionen.",
+      "usingCompanyLogo": "Bruger dit virksomhedslogo",
+      "upload": "Upload logo",
+      "replace": "Erstat",
+      "uploadFailed": "Logoet kunne ikke uploades. Brug et PNG-, JPG- eller WebP-billede og prøv igen.",
+      "tooLarge": "Dette billede er større end 25 MB.",
+      "backgroundTitle": "Sidebaggrund",
+      "backgroundDescription": "Farven bag indholdet på din hjemmeside.",
+      "backgroundPresets": "Foreslåede baggrunde",
+      "backgroundCustom": "Brugerdefineret baggrund",
+      "backgroundPicker": "Vælg en baggrundsfarve",
+      "needsApi": "Tilgængelig, når Benwer API-opdateringen til hjemmesider er live.",
+      "headerLogoDark": "Logo i topbjælken — mørk tilstand",
+      "companyLogoDark": "Logo i virksomhedssektionen — mørk tilstand",
+      "squareLogo": "Kvadratisk logo (1:1)",
+      "squareLogoHint": "Påkrævet for at udgive. Vises ved siden af dit virksomhedsnavn på kort, i søgeresultater og på mobillister.",
+      "cropTitle": "Beskær logo til 2:1",
+      "cropHint": "Træk og zoom, så dit logo passer pænt inden i 2:1-rammen.",
+      "cropZoom": "Zoom",
+      "cropCancel": "Annuller",
+      "cropSave": "Beskær og upload",
+      "darkLogoHint": "Valgfri. Vises, når besøgende bruger mørk tilstand. Brug en lys eller hvid version af dit logo.",
+      "darkNeedsApi": "Logoer til mørk tilstand er tilgængelige, når Benwer API-opdateringen til dem er live.",
+      "logo": "Logo (2:1)",
+      "logoHint": "Påkrævet for at udgive. Ét logo til både lys og mørk tilstand: din brandfarve som baggrund med navnet i hvid, beskåret til 2:1."
+    },
+    "legal": {
+      "hint": "Hver side starter med standardteksten, så du kun behøver at ændre de dele, du har brug for. Tilføj en sektion for hver underoverskrift. \"Tilbage til standardtekst\" fortryder dine ændringer.",
+      "needsApi": "Tilgængelig, når Benwer API-opdateringen til hjemmesider er live.",
+      "privacyTitle": "Privatlivspolitik",
+      "privacyDescription": "Vises under Privatliv i sidefoden på din hjemmeside.",
+      "termsTitle": "Vilkår og betingelser",
+      "termsDescription": "Vises under Vilkår i sidefoden på din hjemmeside.",
+      "text": "Tekst",
+      "intro": "Introduktion",
+      "subtitle": "Underoverskrift",
+      "sectionItem": "Sektion {position}",
+      "addSection": "Tilføj sektion",
+      "reset": "Tilbage til standardtekst",
+      "pageTitle": "Sidetitel",
+      "privacyLooksLikeTerms": "Din privatlivspolitik har samme tekst som vilkårene. Brug \"Tilbage til standardtekst\" under Privatlivspolitik, eller skriv din egen privatlivstekst, og gem derefter."
+    },
+    "preview": "Forhåndsvisning",
+    "fullscreen": "Fuldskærmsredigering",
+    "exitFullscreen": "Vis forhåndsvisning ved siden af redigereren",
+    "previewBarAria": "Kontrolelementer til forhåndsvisning",
+    "previewing": "Du forhåndsviser din hjemmeside",
+    "backToEdit": "Rediger"
+  },
+  "marketplaceBanners": {
+    "aria": "Benwer-højdepunkter",
+    "slideLabel": "{position} af {count}",
+    "goTo": "Vis banner {position}",
+    "previous": "Forrige banner",
+    "next": "Næste banner",
+    "trust": {
+      "script": "book med ro i sindet",
+      "highlight": "Verificerede virksomheder",
+      "joiner": "og",
+      "boxed": "Sikker booking",
+      "description": "Rigtige anmeldelser, klare vilkår og digitale kontrakter, du underskriver fra din telefon"
+    },
+    "prices": {
+      "script": "én søgning",
+      "highlight": "Sammenlign priser",
+      "joiner": "fra",
+      "boxed": "Partnervirksomheder",
+      "description": "Se priser, forsikring og depositum fra partner-udlejningsvirksomheder side om side, før du booker"
+    },
+    "anywhere": {
+      "script": "find din bil",
+      "highlight": "I hele Málaga",
+      "joiner": "med",
+      "boxed": "Lokale udlejningsvirksomheder",
+      "description": "Partner-udlejningsvirksomheder i byer i hele Málaga-provinsen, samlet ét sted"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Udgivet af {name}.",
+    "cookies": {
+      "title": "Cookiepolitik",
+      "lede": "Sådan bruger {name} cookies og lignende teknologier på denne hjemmeside.",
+      "updated": "Udgivet af {name}.",
+      "sections": [
+        {
+          "title": "Hvad vi bruger",
+          "body": "Cookies er små tekstfiler, der gemmes på din enhed. Denne hjemmeside bruger også lignende lagring, såsom local storage, til at huske dine valg, din kurv og dit login."
+        },
+        {
+          "title": "Strengt nødvendige",
+          "body": "En sprogcookie gør det muligt for siden at vise dit sprog, og dit valg i cookiebanneret gemmes, så vi ikke spørger igen ved hvert besøg. Hvis du logger ind, gemmer login-udbyderen en session på din enhed, så du forbliver logget ind. Kortbetalinger håndteres af Stripe, som kan sætte sine egne cookies for at forebygge svindel."
+        },
+        {
+          "title": "Valgfrie cookies",
+          "body": "Valgfrie cookies (for eksempel til analyse) forbliver slået fra, medmindre du vælger \"Accepter alle\". Denne hjemmeside sætter i dag ingen analyse- eller marketingcookies."
+        },
+        {
+          "title": "Administration af cookies",
+          "body": "Brug linket til cookieindstillinger i sidefoden for at ændre dit valg. Du kan også slette cookies og sidedata i din browser. Blokering af strengt nødvendig lagring kan logge dig ud eller tømme din kurv."
+        },
+        {
+          "title": "Mere information",
+          "body": "Se privatlivspolitikken for, hvordan {name} håndterer personoplysninger, eller brug kontaktoplysningerne i sidefoden."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Support",
+    "fabCloseLabel": "Luk supportmenu",
+    "messageAction": "Direkte besked",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Hej, jeg har et spørgsmål om Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "Benwer Cars-appen",
+    "metaDescription": "Book biler, saml alle dine rejser ét sted og få bookingopdateringer på din telefon.",
+    "eyebrow": "Mobilapp",
+    "title": "Din billeje, lige i lommen",
+    "description": "Book biler fra lokale virksomheder, hold alle rejser samlet ét sted, betal og få opdateringer på din telefon.",
+    "featureTrips": "Alle dine rejser på tværs af virksomheder",
+    "featureBooking": "Book og betal med få tryk",
+    "featurePush": "Opdateringer når din booking ændres",
+    "unavailableTitle": "Appen kommer snart",
+    "unavailableDescription": "Benwer Cars-appen er endnu ikke i butikkerne. Du kan stadig booke på nettet.",
+    "browse": "Udforsk biler",
+    "badgeTitle": "Hent Benwer Cars-appen",
+    "companyText": "Book {company} på din telefon, og hold dine rejser samlet ét sted.",
+    "bookingText": "Se denne booking, betal og få opdateringer på din telefon."
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Ceva nu a funcționat corect. Te rugăm să încerci din nou.",
+    "network": "Nu putem contacta serverul. Verifică-ți conexiunea.",
+    "vehicle": {
+      "not_found": "Acest vehicul nu mai este disponibil."
+    },
+    "company": {
+      "not_found": "Această companie nu a putut fi găsită."
+    },
+    "reservation": {
+      "overlap": "Acest vehicul este deja rezervat pentru acele date.",
+      "not_found": "Rezervarea nu a fost găsită. Verifică linkul de confirmare.",
+      "invalid_dates": "Data de returnare trebuie să fie după data de preluare.",
+      "min_lead": "Preluarea este prea curând. Alege o dată mai târzie.",
+      "terms_required": "Te rugăm să accepți termenii de închiriere pentru a continua.",
+      "max_open_requests": "Ai deja două cereri deschise. Retrage una înainte de a trimite alta.",
+      "request_expired": "Această cerere a expirat. Începe una nouă.",
+      "not_cancellable": "Această rezervare nu mai poate fi anulată online."
+    },
+    "booking": {
+      "payment_not_required": "Nu este necesară nicio plată online pentru această rezervare.",
+      "payment_window_elapsed": "Intervalul de 15 minute pentru plată a expirat. Începe o rezervare nouă dacă mai ai nevoie de mașină.",
+      "payment_not_open": "Plata nu este disponibilă pentru această rezervare. Încearcă din nou sau contactează compania."
+    },
+    "rental_payments": {
+      "already_paid": "Această rezervare este deja plătită."
+    },
+    "site": {
+      "not_found": "Acest site de închirieri nu a putut fi găsit.",
+      "paused": "Această companie nu acceptă rezervări momentan.",
+      "not_published": "Acest site nu este încă deschis pentru rezervări."
+    },
+    "website_domain": {
+      "not_found": "Această adresă web nu este asociată unei companii de închirieri."
+    },
+    "staff": {
+      "unauthenticated": "Conectează-te ca proprietar al companiei pentru a edita acest site.",
+      "forbidden": "Nu ai permisiunea de a edita acest site."
+    },
+    "guest": {
+      "not_configured": "Conturile de client nu sunt încă disponibile pentru această companie.",
+      "not_linked": "Nu există încă rezervări asociate acestui cont.",
+      "invalid_token": "Acest link de confirmare este invalid sau a expirat.",
+      "unauthenticated": "Conectează-te pentru a continua."
+    },
+    "pricing": {
+      "min_days": "Aceste date sunt prea scurte pentru sezon. Alege o închiriere mai lungă.",
+      "max_days": "Aceste date sunt prea lungi pentru sezon. Alege o închiriere mai scurtă.",
+      "rental_too_long": "Această închiriere este prea lungă pentru a fi rezervată online. Contactează compania."
+    },
+    "contact": {
+      "not_configured": "Adresa de e-mail de contact nu este încă configurată. Te rugăm să încerci mai târziu.",
+      "delivery_failed": "Nu am putut trimite mesajul tău acum. Te rugăm să încerci mai târziu."
+    }
+  },
+  "nav": {
+    "home": "Acasă",
+    "cars": "Mașini",
+    "companies": "Companii",
+    "contact": "Contact",
+    "privacy": "Confidențialitate",
+    "terms": "Termeni",
+    "cookies": "Cookie-uri",
+    "mainAria": "Navigare principală",
+    "footerAria": "Navigare subsol",
+    "menu": "Meniu"
+  },
+  "meta": {
+    "siteTitle": "Găsește mașini de închiriat locale",
+    "siteDescription": "Compară mașini de la companii partenere de închirieri din provincia Málaga, apoi continuă pe site-ul companiei."
+  },
+  "notFound": {
+    "title": "Pagina nu a fost găsită",
+    "description": "Această pagină nu există. Întoarce-te și caută o mașină.",
+    "action": "Înapoi acasă"
+  },
+  "hostUnknown": {
+    "title": "Acest site nu este disponibil",
+    "description": "Verifică adresa introdusă. Această pagină nu aparține unui site de închirieri Benwer Cars."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, acasă",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Comută la modul întunecat",
+    "toLight": "Comută la modul luminos"
+  },
+  "locale": {
+    "label": "Limbă",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Caută limbi",
+    "noResults": "Nicio limbă nu se potrivește"
+  },
+  "footer": {
+    "tagline": "Compară mașini de la companii partenere de închirieri.",
+    "trust": "Flote partenere · Málaga · Închiriază pe site-ul companiei",
+    "poweredBy": "Rezervat prin Benwer Cars",
+    "explore": "Explorează",
+    "legal": "Legal",
+    "copyright": "© {year} Benwer Cars. Toate drepturile rezervate."
+  },
+  "cookieBanner": {
+    "body": "Folosim un cookie de limbă și reținem această alegere pe dispozitivul tău. Cookie-urile opționale rămân dezactivate dacă nu le accepți.",
+    "policy": "Politica de cookie-uri",
+    "necessary": "Respinge tot",
+    "accept": "Acceptă tot",
+    "title": "Prețuim confidențialitatea ta",
+    "settings": "Setări cookie-uri"
+  },
+  "actions": {
+    "retry": "Încearcă din nou",
+    "back": "Înapoi",
+    "viewAll": "Vezi tot",
+    "close": "Închide"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Prefix de țară, {country} {dial}",
+    "search": "Caută țări",
+    "countries": "Țări",
+    "noResults": "Nicio țară găsită",
+    "invalid": "Introdu un număr de telefon valid.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Șterge data"
+  },
+  "guestNotifications": {
+    "title": "Notificări",
+    "openLabel": "Deschide notificările",
+    "unreadCount": "{count} notificări necitite",
+    "emptyTitle": "Încă nu ai notificări",
+    "emptyBody": "Actualizările rezervărilor, mementourile de plată și alertele de preluare vor apărea aici.",
+    "error": "Nu s-au putut încărca notificările.",
+    "retry": "Încearcă din nou",
+    "markAllRead": "Marchează tot ca citit",
+    "dismiss": "Închide",
+    "loadMore": "Încarcă mai multe",
+    "enablePush": "Activează alertele în browser",
+    "pushEnabled": "Alerte în browser activate",
+    "pushBlocked": "Alertele în browser sunt blocate în setări",
+    "disablePush": "Dezactivează alertele în browser"
+  }
+}

@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Ettevõtted",
+    "title": "Leia endale sobiv auto",
+    "subtitle": "Võrdle partner-rendiettevõtete autosid ja jätka broneerimist ettevõtte enda veebilehel.",
+    "searchPlaceholder": "Kuhu sa reisid?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Esiletõstetud ettevõtted",
+    "companiesSubtitle": "Partner-rendiettevõtted kogu Málaga provintsis — autopargid, kellega teeme koostööd, mitte kontrollimata kuulutused",
+    "trustLocal": "Partnerettevõtted",
+    "trustGuest": "Rendi ettevõtte veebilehel",
+    "trustArea": "Málaga provints",
+    "viewAllCompanies": "Vaata kõiki ettevõtteid"
+  },
+  "featuredCars": {
+    "viewAllCount": "Vaata kõiki {count} autot",
+    "eyebrow": "Autod",
+    "title": "Saadaolevad autod",
+    "subtitle": "Kõik partnerettevõtete avaldatud autod kõrvuti. Vali sobiv ja broneeri ettevõtte enda veebilehel.",
+    "viewAll": "Otsi kõiki autosid",
+    "seeAll": "Vaata kõiki",
+    "emptyTitle": "Ühtegi autot pole veel lisatud",
+    "emptyHint": "Avalikud autopargid ilmuvad siia kohe, kui ettevõtted need avaldavad."
+  },
+  "whatYouGet": {
+    "eyebrow": "Autorendiettevõtetele",
+    "title": "Mida sa saad",
+    "subtitle": "Üks terviklahendus kontorile, platsile ja reisijatele, kes otsivad autot Málagas.",
+    "admin": {
+      "title": "Täielik haldussüsteem",
+      "body": "Halda autosid, hindu, saadavust ja broneeringuid ühest töölauast — samast kataloogist, mida kasutab turuplats."
+    },
+    "mobile": {
+      "title": "Mobiilirakendus töötajatele",
+      "body": "Anna autosid üle, võta neid vastu ja vaata tänaseid broneeringuid otse platsilt."
+    },
+    "storefront": {
+      "title": "Oma brändiga veebileht",
+      "body": "Turuplatsi kirje koos sinu enda veebilehe ja alamdomeeniga."
+    },
+    "preview": {
+      "utilisation": "Kasutusmäär",
+      "utilisationValue": "82%",
+      "pickups": "Pealevõtmised täna",
+      "pickupsValue": "14",
+      "revenue": "Sel kuul",
+      "revenueValue": "9,4 tuh €",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Töölaud",
+      "navFleet": "Autopark",
+      "navCalendar": "Kalender",
+      "navReservations": "Broneeringud",
+      "calendarTitle": "Saadavus",
+      "calendarMonth": "Järgmised 2 nädalat",
+      "viaBenwer": "Benweri kaudu",
+      "direct": "Otse",
+      "free": "Vaba",
+      "carA": "Kompaktauto",
+      "carB": "Linnaauto",
+      "carC": "Maastur",
+      "carD": "Krossover",
+      "phoneTitle": "Täna",
+      "phoneDate": "Esmaspäev",
+      "pickUp": "Pealevõtmine",
+      "return": "Tagastamine",
+      "checkedOut": "Välja antud",
+      "due": "Ootel",
+      "tabToday": "Täna",
+      "tabFleet": "Autopark",
+      "tabScan": "Skanni",
+      "storeName": "Sinu ettevõte",
+      "storeNavCars": "Autod",
+      "storeNavContact": "Kontakt",
+      "storeHeadline": "Rendi auto Málagas",
+      "storeSearch": "Pealevõtmine ja kuupäevad",
+      "storeSearchCta": "Otsi",
+      "storePrice": "Vaata hindu",
+      "carE": "Luukpära",
+      "carF": "Universaal"
+    }
+  },
+  "faq": {
+    "eyebrow": "KKK",
+    "title": "Enne broneerimist",
+    "subtitle": "Partnerite autopargid, kuidas broneerimine toimib ning mida Benwer teeb — ja mida mitte.",
+    "items": {
+      "partners": {
+        "question": "Kas need autod on pärit päris autorendiettevõtetelt?",
+        "answer": "Jah. Iga kuulutus on avalik sõiduk Benweri partnerilt — päris autorendiettevõttelt, kellega teeme koostööd, mitte kontrollimata erakuulutus. Kui ettevõte või auto ei ole platvormil avaldatud, siis seda siin ei näidata."
+      },
+      "booking": {
+        "question": "Kas ma broneerin ja maksan Benweris?",
+        "answer": "Ei. Siin võrdled partnerite autoparke ning jätkad seejärel rendiettevõtte veebilehel, et kinnitada rent, tagatisraha ja pealevõtmine. Benwer ei võta sellel turuplatsil makseid vastu."
+      },
+      "photos": {
+        "question": "Kas ma saan fotosid ja saadavust usaldada?",
+        "answer": "Kirjed kasutavad avalikke fotosid ja saadavust, mille partnerettevõte avaldab — sama kataloogi, mida nad haldavad haldussüsteemis. Kui autol ei ole veel avalikku fotot, näitame tühja olekut, mitte teise auto pildipanga fotot. Lõplik saadavus kinnitatakse ettevõtte veebilehel."
+      },
+      "account": {
+        "question": "Kas mul on vaja kontot?",
+        "answer": "Otsimiseks ei ole kontot vaja. Kui saadad meile kontaktivormi kaudu sõnumi, kasutame neid andmeid ainult vastamiseks."
+      },
+      "safety": {
+        "question": "Kes vastutab rendi eest?",
+        "answer": "Leping sõlmitakse sinu ja partner-rendiettevõtte vahel. Loe enne kinnitamist nende tingimusi. Benwer aitab sul leida auto partneri autopargist; Benwer ei rendi sõidukeid ega võta siin makseid vastu."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Benwer Carsi rakendus",
+    "description": "Hangi Benwer Cars oma telefoni. Androidi rakendus on Google Plays varajases testimises — liitu testiga ja aita seda kujundada."
+  },
+  "partners": {
+    "eyebrow": "Autorendiettevõtetele",
+    "title": "Muuda tühjad päevad broneeringuteks",
+    "description": "Reisijad otsivad juba Benwerist autosid Málagas. Avalda oma autopark üks kord ja täida päevad, mis muidu tühjaks jääksid.",
+    "cta": "Loe lähemalt",
+    "ctaAria": "Loe lähemalt Benweri turunduslehelt (avaneb uuel vahelehel)",
+    "demo": "Vaata reaalajas demo",
+    "demoAria": "Vaata reaalajas demo (avaneb uuel vahelehel)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Autorent",
+    "companyDescription": "Rendi auto ettevõttelt {name} asukohas {location}.",
+    "companyDescriptionPlain": "Rendi auto ettevõttelt {name}.",
+    "companyFallback": "Autorent",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Rendi {brand} {model} ettevõttelt {company}.",
+    "carDescriptionSpecs": "Rendi {brand} {model} — {seats, plural, one {# istekoht} other {# istekohta}}, {transmission}.",
+    "carsTitle": "Rendiautod kogu Málaga provintsis"
+  },
+  "tenant": {
+    "notFoundTitle": "Ettevõtet ei leitud",
+    "notFoundDescription": "Seda ettevõtte veebilehte ei õnnestunud laadida.",
+    "loadErrorTitle": "Ettevõtte andmed pole saadaval",
+    "loadErrorDescription": "Me ei saanud seda veebilehte reaalajas kataloogist laadida. Proovi uuesti — me ei näita API tõrke korral näidisautosid.",
+    "logoAlt": "{name} logo"
+  },
+  "howItWorks": {
+    "eyebrow": "Kolm sammu",
+    "title": "Kuidas see töötab",
+    "subtitle": "Võrdle partnerite autoparke üle kogu Málaga ja broneeri otse ettevõttega. Benweri kontot pole vaja.",
+    "stepLabel": "Samm {number}",
+    "searchTitle": "Vali kuupäevad ja asukoht",
+    "searchBody": "Vali linn Costa del Solis ja sobivad päevad. Näidatakse ainult kontrollitud partnerite autoparke.",
+    "compareTitle": "Võrdle päris autosid",
+    "compareBody": "Istekohad, käigukast, fotod ja päevahind kõrvuti kõigilt partneritelt.",
+    "continueTitle": "Broneeri ettevõttega",
+    "continueBody": "Kinnita pealevõtmine, kindlustus ja makse otse autorendiettevõttega, kellele auto kuulub.",
+    "cta": "Alusta otsingut",
+    "preview": {
+      "place": "Málaga lennujaam",
+      "dates": "R → R · 7 päeva",
+      "carA": "Kompaktauto",
+      "carASpecs": "4 kohta · Manuaal",
+      "carB": "Pere-maastur",
+      "carBSpecs": "5 kohta · Automaat",
+      "confirmed": "Broneering kinnitatud",
+      "confirmedDetail": "Pealevõtmine kell 10:00",
+      "example": "Näide"
+    }
+  },
+  "search": {
+    "locationLabel": "Pealevõtmise asukoht",
+    "locationPlaceholder": "Otsi asukohti",
+    "locationEmpty": "Sobivat asukohta ei leitud",
+    "allLocations": "Kõik asukohad",
+    "allLocationsHint": "Kõik linnad, kus on vabu autosid",
+    "provinceSelected": "Kõik asukohad",
+    "provinceHint": "Kõik linnad, kus on vabu autosid",
+    "pickupLabel": "Pealevõtmine",
+    "dropoffLabel": "Tagastamine",
+    "pickupPlaceholder": "Lisa kuupäev",
+    "dropoffPlaceholder": "Lisa kuupäev",
+    "pickupTrigger": "Pealevõtmise kuupäev, {date}",
+    "dropoffTrigger": "Tagastamise kuupäev, {date}",
+    "calendarLabel": "Vali kuupäevad",
+    "datesRequired": "Otsimiseks vali pealevõtmise ja tagastamise kuupäevad.",
+    "submit": "Otsi",
+    "returnLocationLabel": "Tagastamise asukoht",
+    "differentReturn": "Tagastamine teise asukohta",
+    "returnSame": "Sama mis pealevõtmisel",
+    "returnNotOffered": "{company} ei paku tagastamist teise asukohta.",
+    "branchChoose": "Vali asukoht",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Asukohtade laadimine…",
+    "branchAnyHint": "Kõik esindused, kus on autosid"
+  },
+  "browseLocation": {
+    "title": "Sirvi asukoha järgi",
+    "subtitle": "Populaarsed linnad Málaga provintsis",
+    "emptyTitle": "Asukohti veel pole",
+    "emptyDescription": "Esiletõstetud linnad ilmuvad siia.",
+    "cityAria": "Sirvi autosid linnas {city}"
+  },
+  "map": {
+    "teaserTitle": "Vaata, kust saad auto peale võtta",
+    "teaserSubtitle": "Kohalikud autopargid üle kogu Málaga provintsi — ava kaart ja liigu otse ettevõtte juurde.",
+    "teaserCta": "Ava kaart",
+    "teaserCityAria": "Vaata ettevõtteid kaardil linnas {city}",
+    "listLabel": "Loend",
+    "mapLabel": "Kaart",
+    "viewToggleAria": "Näita ettevõtteid loendi või kaardina",
+    "regionAria": "Autorendiettevõtete kaart Málaga provintsis",
+    "pinAria": "{name} linnas {city}",
+    "fleetHint": "{count, plural, =0 {Autosid pole veel lisatud} one {# auto saadaval} other {# autot saadaval}}",
+    "fleetHintUnknown": "Vaata saadaolevaid autosid",
+    "viewFleet": "Vaata autoparki",
+    "closePin": "Sulge",
+    "loading": "Ettevõtete laadimine…",
+    "errorDescription": "Kaarti ei õnnestunud laadida. Sirvi selle asemel loendit.",
+    "emptyTitle": "Kaardil pole ettevõtteid",
+    "emptyDescription": "Proovi mõnda teist linna Málaga provintsis.",
+    "resultsCount": "{count, plural, one {# ettevõte kogu Málaga provintsis} other {# ettevõtet kogu Málaga provintsis}}",
+    "resultsInCity": "{count, plural, one {# ettevõte linnas {city}} other {# ettevõtet linnas {city}}}",
+    "resultsAtBranch": "{count, plural, one {# ettevõte asukohas {branch}} other {# ettevõtet asukohas {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Kuvatakse {shown} / {total} autost",
+    "loadMore": "Näita rohkem autosid",
+    "seeAll": "Vaata kõiki",
+    "title": "Saadaolevad autod",
+    "subtitle": "Kõik partner-rendiettevõtete avalikud autod kogu Málaga provintsis. Vali kuupäevad, et näha, mis on vaba.",
+    "searchEmptyTitle": "Sellele otsingule vastavaid autosid ei leitud",
+    "searchEmptyHint": "Proovi teisi kuupäevi või muud asukohta Málaga provintsis. Kõik linnad jäävad loendisse — ka siis, kui seal täna ühtegi autot pole.",
+    "resultsInProvince": "{count, plural, one {# auto kõigis asukohtades} other {# autot kõigis asukohtades}}",
+    "resultsInCity": "{count, plural, one {# auto linnas {city}} other {# autot linnas {city}}}",
+    "allCompanies": "Kõik ettevõtted",
+    "companyPlaceholder": "Otsi ettevõtteid",
+    "companyTrigger": "Ettevõte, {company}",
+    "perDay": "{price} / päev",
+    "perDaySuffix": " / päev",
+    "viewDetails": "Vaata üksikasju",
+    "notAvailableForDates": "Neil kuupäevadel pole saadaval",
+    "bookUnavailable": "Vaata autot",
+    "fleetSummary": "{total, plural, one {# auto} other {# autot}} · {available, plural, one {# saadaval} other {# saadaval}}",
+    "fleetSummaryForDates": "{total, plural, one {# auto} other {# autot}} · {available, plural, one {# saadaval} other {# saadaval}} · {from} – {to}",
+    "seats": "{count} kohta",
+    "resultsCount": "{count, plural, one {# auto saadaval} other {# autot saadaval}}",
+    "resultsForDates": "{count, plural, one {# auto} other {# autot}} · {from} – {to}",
+    "emptyTitle": "See autopark pole veel avalik",
+    "emptyHint": "See ettevõte on loetletud, kuid tema autod ei ole veel Benweris avaldatud. See on ootuspärane, kuni sõidukid märgitakse avalikuks — leht ei ole katki.",
+    "noResults": "Sellele otsingule vastavaid autosid ei leitud",
+    "noResultsHint": "Proovi teisi kuupäevi, muud asukohta või vähem filtreid.",
+    "browseCompanies": "Sirvi ettevõtteid",
+    "clearFilters": "Tühjenda filtrid",
+    "searchPlaceholder": "Otsi margi või mudeli järgi",
+    "filters": {
+      "title": "Filtrid",
+      "seats": "Istekohad",
+      "transmission": "Käigukast",
+      "company": "Ettevõte",
+      "dates": "Kuupäevad",
+      "from": "Pealevõtmise kuupäev",
+      "to": "Tagastamise kuupäev",
+      "category": "Kategooria",
+      "fuel": "Kütus",
+      "all": "Kõik",
+      "clear": "Tühjenda",
+      "selectedCount": "{count} valitud"
+    },
+    "types": {
+      "car": "Sõiduauto",
+      "suv": "Maastur",
+      "van": "Kaubik",
+      "truck": "Veoauto",
+      "motorcycle": "Mootorratas"
+    },
+    "transmission": {
+      "automatic": "Automaat",
+      "manual": "Manuaal"
+    },
+    "fuel": {
+      "petrol": "Bensiin",
+      "diesel": "Diisel",
+      "electric": "Elekter",
+      "hybrid": "Hübriid",
+      "plugin_hybrid": "Pistikhübriid"
+    },
+    "rowDeposit": "Tagatisraha {amount}",
+    "rowAvailable": "Sinu kuupäevadel saadaval",
+    "rowTotal": "Kokku {amount} · {days, plural, one {# päev} other {# päeva}}",
+    "bookNow": "Broneeri kohe",
+    "availableCount": "{count, plural, =0 {Ühtegi autot pole saadaval} one {# auto saadaval} other {# autot saadaval}}",
+    "availableForDates": "{count, plural, =0 {Ühtegi autot pole saadaval} one {# auto saadaval} other {# autot saadaval}} · {from} – {to}",
+    "categories": {
+      "economy": "Ökonoomne",
+      "sedan": "Sedaan",
+      "suv": "Maastur",
+      "minivan": "Mahtuniversaal",
+      "van": "Kaubik",
+      "other": "Muu"
+    },
+    "sort": {
+      "label": "Sorteeri",
+      "recommended": "Soovitatud",
+      "pricePerDay_asc": "Madalaim päevahind",
+      "pricePerDay_desc": "Kõrgeim päevahind"
+    },
+    "colors": {
+      "white": "Valge",
+      "black": "Must",
+      "silver": "Hõbedane",
+      "grey": "Hall",
+      "red": "Punane",
+      "blue": "Sinine",
+      "green": "Roheline",
+      "orange": "Oranž",
+      "yellow": "Kollane",
+      "brown": "Pruun",
+      "beige": "Beež",
+      "gold": "Kuldne",
+      "purple": "Lilla"
+    },
+    "viewCar": "Vaata autot",
+    "opensCompanySite": "(avab ettevõtte veebilehe)"
+  },
+  "carDetail": {
+    "bookNow": "Broneeri kohe",
+    "continueOnCompany": "Jätka lehel {company}",
+    "rentOnCompanySite": "Rendi ettevõtte veebilehel",
+    "handoffHint": "Küsime teilt enne, kui suuname teid broneeringu lõpetamiseks ettevõtte veebilehele.",
+    "pricePerDay": "{price} päevas",
+    "specs": "Tehnilised andmed",
+    "year": "Aasta",
+    "type": "Tüüp",
+    "transmission": "Käigukast",
+    "fuel": "Kütus",
+    "seats": "Istekohad",
+    "availability": "Saadavus",
+    "availabilityError": "Saadavust ei õnnestunud laadida. Proovi uuesti.",
+    "availabilityUnavailable": "Saadavus pole kättesaadav",
+    "checkingAvailability": "Saadavuse kontrollimine…",
+    "notAvailable": "See auto ei ole valitud kuupäevadel saadaval.",
+    "selectPickup": "Vali pealevõtmise kuupäev",
+    "selectDropoff": "Nüüd vali tagastamise kuupäev",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Tühjenda kuupäevad",
+    "addDate": "Lisa kuupäev",
+    "calendarLabel": "Saadavuse kalender",
+    "legend": "Kalendri legend",
+    "available": "Saadaval",
+    "selected": "Valitud",
+    "unavailable": "Pole saadaval",
+    "openDates": "Järgmise {months} kuu jooksul broneeritud kuupäevi pole.",
+    "breadcrumbAria": "Navigeerimisrada",
+    "photoEmpty": "Fotod tulekul",
+    "previousPhoto": "Eelmine foto",
+    "nextPhoto": "Järgmine foto",
+    "viewPhoto": "Vaata fotot {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, foto {index}",
+    "backToFleet": "Tagasi autoparki",
+    "metaTitle": "Auto üksikasjad",
+    "about": "Selle auto kohta",
+    "category": "Kategooria",
+    "color": "Värv",
+    "deposit": "Tagatisraha",
+    "mileage": "Läbisõit",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Teid suunatakse ettevõtte {company} broneerimislehele, et broneering lõpule viia.",
+    "handoffTrust": "{company} on Benweri usaldusväärne partner.",
+    "handoffContinue": "Jätka",
+    "handoffCancel": "Tühista",
+    "handoffCompanyFallback": "ettevõtte"
+  },
+  "booking": {
+    "title": "Vii broneering lõpule",
+    "subtitle": "Kinnita oma andmed — kontot pole vaja.",
+    "details": "Sinu andmed",
+    "detailsHint": "Kasutame neid ainult selle broneeringu kinnitamiseks.",
+    "guestName": "Täisnimi",
+    "guestNamePlaceholder": "Mari Tamm",
+    "guestEmail": "E-posti aadress",
+    "guestEmailPlaceholder": "mari@example.com",
+    "guestEmailHint": "Kinnitus saadetakse sellele aadressile.",
+    "guestPhone": "Telefoninumber",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Autorendiettevõte võib sinuga pealevõtmise osas ühendust võtta.",
+    "startDate": "Pealevõtmise kuupäev",
+    "endDate": "Tagastamise kuupäev",
+    "datesHint": "Kuupäevad pärinevad auto kalendrist. Saad neid siin muuta.",
+    "addDate": "Lisa kuupäev",
+    "changeDates": "Muuda kuupäevi kalendris",
+    "summary": "Broneeringu kokkuvõte",
+    "vehicle": "Sõiduk",
+    "company": "Ettevõte",
+    "rate": "Päevahind",
+    "duration": "Kestus",
+    "totalPrice": "Kokku",
+    "nights": "{count, plural, one {# päev} other {# päeva}}",
+    "stickyMeta": "{name} · {count, plural, one {# päev} other {# päeva}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Kinnita broneering",
+    "confirmRequest": "Saada päring",
+    "requesting": "Päringu saatmine…",
+    "confirming": "Kinnitamine…",
+    "sitePaused": "Broneeringuid ei võeta vastu",
+    "insurance": "Kindlustus",
+    "termsLabel": "Renditingimused",
+    "termsAccept": "Nõustun",
+    "termsLink": "renditingimustega",
+    "successTitle": "Broneering kinnitatud!",
+    "successMessage": "Kinnitus on saadetud aadressile {email}.",
+    "viewBooking": "Vaata minu broneeringut",
+    "selectDates": "Jätkamiseks vali kuupäevad",
+    "invalidDates": "Vali kehtiv kuupäevavahemik",
+    "backToCar": "Tagasi auto {name} juurde",
+    "trustNoAccount": "Kontot pole vaja",
+    "trustEmail": "Kinnitus e-postiga",
+    "trustNoPayment": "Praegu makset pole",
+    "trustCardPayment": "Maksa kaardiga pärast broneerimist",
+    "trustFooter": "Kinnitades taotled seda autot ülaltoodud kuupäevadeks. Ettevõte austab sinu broneeringut.",
+    "missingTitle": "Jätkamiseks vali auto",
+    "missingDescription": "Vali sõiduk ja kuupäevad enne broneeringu lõpuleviimist.",
+    "browseCars": "Sirvi autosid",
+    "vehicleMissingTitle": "See auto ei ole enam saadaval",
+    "vehicleMissingDescription": "See võib olla juba broneeritud. Vali autopargist mõni teine.",
+    "viewFleet": "Vaata autoparki",
+    "datesMissingTitle": "Lisa oma reisikuupäevad",
+    "datesMissingDescription": "Mine tagasi auto juurde, et valida vabad kuupäevad, või sisesta need vormi.",
+    "pickDates": "Vali kuupäevad auto lehel",
+    "formAria": "Külalise broneerimisandmed",
+    "validation": {
+      "nameMin": "Sisesta oma täisnimi (vähemalt 2 tähemärki).",
+      "email": "Sisesta kehtiv e-posti aadress.",
+      "phone": "Sisesta kehtiv telefoninumber.",
+      "startDate": "Vali pealevõtmise kuupäev.",
+      "endDate": "Vali tagastamise kuupäev.",
+      "endAfterStart": "Tagastamine peab olema pärast pealevõtmist.",
+      "terms": "Jätkamiseks nõustu renditingimustega.",
+      "fixErrors": "Palun paranda esiletõstetud väljad."
+    },
+    "averageRate": "Keskmine päevahind",
+    "breakdownTitle": "Hinna jaotus",
+    "standardRate": "Tavahind",
+    "weekendRate": "Nädalavahetus",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Sellel hooajal peab rent kestma vähemalt {limit, plural, one {# päev} other {# päeva}}. Broneerimiseks muuda kuupäevi.",
+    "warningMaxDays": "Sellel hooajal võib rent kesta kõige rohkem {limit, plural, one {# päev} other {# päeva}}. Broneerimiseks muuda kuupäevi.",
+    "returnLocation": "Tagastamise asukoht",
+    "oneWayFee": "Teise asukohta tagastamise tasu",
+    "signedInAs": "Sisse logitud kui {email}",
+    "signInPrompt": "Kas sul on konto?",
+    "signInLink": "Logi sisse, et andmed eeltäita",
+    "subtitleSignedIn": "Kontrolli oma andmed üle ja kinnita.",
+    "trustPaymentAfter": "Makseandmed järgnevad pärast broneerimist",
+    "extras": "Lisavarustus",
+    "extraPerDay": "{price} / päev",
+    "extraFixed": "{price} / rent",
+    "tripDetails": "Reisi üksikasjad",
+    "pickupTime": "Pealevõtmise aeg",
+    "returnTime": "Tagastamise aeg",
+    "timeAny": "Ükskõik mis aeg",
+    "flightNumber": "Lennu number",
+    "flightNumberHint": "Sinu pealevõtmine on lennujaamas. Lisa oma lennu number, et ettevõte saaks hilinemisi jälgida.",
+    "flightNumberOptional": "Lisa, kui saabud lennukiga.",
+    "notes": "Kommentaarid",
+    "notesPlaceholder": "Kas on midagi, mida ettevõte peaks teadma?",
+    "dateOfBirth": "Sünnikuupäev",
+    "optional": "valikuline",
+    "extraSoldOut": "Neil kuupäevadel pole saadaval"
+  },
+  "reservationStatus": {
+    "title": "Sinu broneering",
+    "successTitle": "Broneering on tehtud",
+    "successSubtitle": "Saatsime kinnituse aadressile {email}.",
+    "status": {
+      "draft": "Ootel",
+      "confirmed": "Kinnitatud",
+      "active": "Aktiivne — head reisi!",
+      "completed": "Lõpetatud",
+      "cancelled": "Tühistatud"
+    },
+    "vehicle": "Sõiduk",
+    "company": "Ettevõte",
+    "dates": "Kuupäevad",
+    "pickup": "Pealevõtmine",
+    "dropoff": "Tagastamine",
+    "guest": "Külaline",
+    "email": "E-post",
+    "phone": "Telefon",
+    "total": "Kokku",
+    "reference": "Viitenumber",
+    "referenceHint": "Näita seda pealevõtmisel.",
+    "trustCopy": "Salvesta see leht — see on sinu broneeringu kinnitus. Edasi hoolitseb kõige eest autorendiettevõte.",
+    "trustEmail": "Kinnitus saadeti e-postiga",
+    "trustPickup": "Näita seda lehte pealevõtmisel",
+    "nextTitle": "Mis juhtub edasi",
+    "nextEmail": "Kontrolli oma kinnitust aadressil {email}.",
+    "nextPickup": "Näita pealevõtmisel oma viitenumbrit.",
+    "browseMore": "Sirvi veel autosid",
+    "notFoundTitle": "Broneeringut ei leitud",
+    "notFoundDescription": "Kontrolli linki oma kinnituskirjas või alusta uut otsingut.",
+    "backHome": "Tagasi avalehele",
+    "requestExpires": "Päring aegub",
+    "cancelReason": "Tühistamise põhjus",
+    "withdraw": "Tühista päring",
+    "paymentStatus": "Makse",
+    "paidAmount": "Tasutud",
+    "payment": {
+      "unpaid": "Tasumata",
+      "partially_paid": "Osaliselt tasutud",
+      "paid": "Tasutud",
+      "refund_due": "Tagasimakse ootel",
+      "authorized": "Kaart broneeritud"
+    },
+    "reasons": {
+      "unpaid_timeout": "Makset ei viidud õigeaegselt lõpule",
+      "request_expired": "Ettevõte ei vastanud õigeaegselt",
+      "request_declined": "Ettevõte lükkas selle päringu tagasi",
+      "customer_request": "Tühistasid selle päringu"
+    },
+    "insurance": "Kindlustus",
+    "extras": "Lisavarustus",
+    "fees": "Pealevõtmise ja tagastamise tasud",
+    "priceTitle": "Hinna kokkuvõte"
+  },
+  "payment": {
+    "title": "Tasuda ettemaks",
+    "amountDue": "Tasumisele kuuluv summa: {amount}",
+    "countdown": "Vii makse lõpule aja {time} jooksul",
+    "requestAuthorize": "Sinu kaart broneeritakse nüüd ja tasu võetakse alles siis, kui ettevõte päringu kinnitab.",
+    "pay": "Maksa kohe",
+    "paying": "Töötlemine…",
+    "confirming": "Sinu makse kinnitamine",
+    "confirmingHint": "Palun oota — kinnitame makse ettevõtte, mitte kaardivormi kaudu.",
+    "declined": "Kaart lükati tagasi. Proovi teist kaarti.",
+    "secure": "Kaardiandmeid töötleb Stripe testrežiimis.",
+    "cancelBooking": "Tühista broneering",
+    "cancelTitle": "Tühistada see broneering?",
+    "cancelDescription": "Rakenduvad ettevõtte tühistamisreeglid. Kontrolli enne kinnitamist tasu ja tagasimakset.",
+    "cancelFee": "Tühistamistasu",
+    "cancelRefund": "Tagasimakse",
+    "confirmCancel": "Kinnita tühistamine",
+    "keepBooking": "Jäta broneering alles",
+    "cancelled": "Sinu broneering on tühistatud."
+  },
+  "companies": {
+    "title": "Autorendiettevõtted",
+    "subtitle": "Sirvi partner-rendiettevõtteid kogu Málagas — kaardil või loendis",
+    "searchPlaceholder": "Otsi ettevõtteid…",
+    "noResults": "Ettevõtteid ei leitud",
+    "noResultsHint": "Proovi mõnda teist asukohta Málaga provintsis.",
+    "emptyTitle": "Ettevõtteid pole veel lisatud",
+    "emptyDescription": "Ühtegi autorendiettevõtet pole veel lisatud.",
+    "clearFilters": "Tühjenda otsing",
+    "viewFleet": "Vaata autoparki",
+    "visitWebsite": "Külasta veebilehte",
+    "contact": "Kontakt",
+    "backToList": "Kõik ettevõtted",
+    "notFoundTitle": "Ettevõtet ei leitud",
+    "notFoundDescription": "Seda autorendiettevõtet ei ole loetletud. Sirvi teisi läheduses asuvaid.",
+    "loadErrorTitle": "Ettevõtte andmed pole saadaval",
+    "loadErrorDescription": "Me ei saanud seda autorendiettevõtet reaalajas kataloogist laadida. Proovi uuesti — me ei näita API tõrke korral näidisautosid.",
+    "browseCars": "Sirvi autosid",
+    "featuredEmpty": "Esiletõstetud ettevõtteid veel pole",
+    "featuredEmptyHint": "Tule varsti tagasi või sirvi kohalike autoparkide autosid.",
+    "locationUnknown": "Asukoht pole märgitud",
+    "noDescription": "Kirjeldus puudub."
+  },
+  "contact": {
+    "title": "Võta meiega ühendust",
+    "lede": "Küsimusi turuplatsi kohta? Saada meile sõnum ja vastame esimesel võimalusel.",
+    "bookingHint": "See vorm ei ole broneeringute jaoks. Auto rentimiseks jätka autorendiettevõtte enda veebilehel.",
+    "name": "Täisnimi",
+    "email": "E-posti aadress",
+    "subject": "Teema",
+    "message": "Sõnum",
+    "submit": "Saada sõnum",
+    "privacyNote": "Kasutame neid andmeid ainult vastamiseks.",
+    "errors": {
+      "nameMin": "Sisesta oma nimi (vähemalt 2 tähemärki).",
+      "email": "Sisesta kehtiv e-posti aadress.",
+      "subjectMin": "Sisesta teema (vähemalt 3 tähemärki).",
+      "messageMin": "Sisesta sõnum (vähemalt 10 tähemärki)."
+    },
+    "eyebrow": "Tugi",
+    "namePlaceholder": "Mari Tamm",
+    "emailPlaceholder": "sina@example.com",
+    "subjectPlaceholder": "Kuidas saame aidata?",
+    "messagePlaceholder": "Kirjuta meile, mida vajad…",
+    "supportSubjectDefault": "Klienditoe päring",
+    "submitting": "Saatmine…",
+    "submittedTitle": "Sõnum saadetud",
+    "submittedDescription": "Aitäh, et võtsid ühendust. Vastame sinu e-posti aadressile esimesel võimalusel.",
+    "sendAnother": "Saada veel üks sõnum",
+    "backHome": "Tagasi avalehele",
+    "whatsappTitle": "Eelistad WhatsAppi?",
+    "whatsappDescription": "Kirjuta otse Benwer Carsi tiimile."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privaatsuspoliitika",
+      "lede": "Kuidas me töötleme isikuandmeid, kui kasutad Benwer Carsi turuplatsi.",
+      "updated": "Viimati uuendatud: 13. september 2026",
+      "sections": [
+        {
+          "title": "Kes me oleme",
+          "body": "Benwer Cars („Benwer“, „meie“, „meid“) haldab tarbijatele suunatud turuplatsi, mis aitab reisijatel avastada autorendi autoparke Málaga provintsis.\n\nSee poliitika kehtib ainult turuplatsi veebilehele. Kui liigud broneerimiseks edasi autorendiettevõtte enda veebilehele, vastutab seal esitatud andmete eest see ettevõte."
+        },
+        {
+          "title": "Mida see turuplats teeb",
+          "body": "Saad otsida autosid ja ettevõtteid, võrrelda avalikke autopargi andmeid ning liikuda broneeringu lõpuleviimiseks autorendiettevõtte veebilehele.\n\nBenwer ei võta turuplatsil makseid vastu ega sõlmi rendilepingut. Rendileping sõlmitakse sinu ja ettevõtte vahel."
+        },
+        {
+          "title": "Milliseid andmeid me kogume",
+          "body": "Sõltuvalt sellest, kuidas sa turuplatsi kasutad, võime töödelda:\n\n• Otsingu- ja kasutusandmed — sisestatud asukoht ja kuupäevad, vaadatud lehed ning põhilised tehnilised andmed, nagu IP-aadress, brauser ja seadme teave.\n• Keele-eelistus — salvestatakse hädavajaliku küpsisena, et saaksime kuvada sinu valitud keelt.\n• Küpsiste nõusolek — salvestatakse sinu seadmesse, et sinu valik meeles püsiks.\n• Kontaktivormi sõnumid — nimi, e-post, teema ja sõnum, kui meile kirjutad. Märgime need turuplatsilt tulnuteks.\n\nMe ei nõua turuplatsil konto loomist. Broneerimis- ja makseandmeid kogub autorendiettevõte oma veebilehel vastavalt enda privaatsuspoliitikale."
+        },
+        {
+          "title": "Kuidas me andmeid kasutame",
+          "body": "Kasutame isikuandmeid turuplatsi haldamiseks ja täiustamiseks, keele- ja küpsisevalikute meeldejätmiseks, kontaktisõnumitele vastamiseks, teenuse turvalisuse tagamiseks ning õiguslike kohustuste täitmiseks.\n\nMe ei müü sinu isikuandmeid."
+        },
+        {
+          "title": "Õiguslikud alused (EMP / Ühendkuningriik)",
+          "body": "Vajadusel tugineme õigustatud huvile (avaliku kataloogi haldamine ja saidi turvalisus), nõusolekule (valikulised küpsised, kui need kasutusele võetakse), juriidilisele kohustusele ning vajalikele sammudele sinu päringule vastamiseks."
+        },
+        {
+          "title": "Andmete jagamine",
+          "body": "Võime kasutada usaldusväärseid teenusepakkujaid veebimajutuseks ja e-kirjade edastamiseks. Nad töötlevad andmeid meie juhiste järgi.\n\nKui liigud edasi ettevõtte veebilehele, saab sellest ettevõttest seal esitatud andmete vastutav töötleja. Me ei edasta sinu kontaktivormi sõnumit rendiettevõtetele, kui sa seda ise ei palu."
+        },
+        {
+          "title": "Küpsised",
+          "body": "Kasutame hädavajalikku keeleküpsist ja salvestame sinu küpsiste valiku sinu seadmesse. Lisateavet leiad küpsiste poliitikast. Valikulised küpsised jäävad välja lülitatuks, kui sa nendega ei nõustu."
+        },
+        {
+          "title": "Säilitamine",
+          "body": "Säilitame kontaktivormi sõnumeid nii kaua, kui on vajalik vastamiseks ja mõistlikuks järelsuhtluseks. Tehnilisi logisid säilitatakse lühikest aega. Sinu küpsiste valik püsib kuni selle muutmise või saidiandmete kustutamiseni."
+        },
+        {
+          "title": "Sinu õigused",
+          "body": "Sõltuvalt sinu asukohast võib sul olla õigus oma andmetega tutvuda, neid parandada, kustutada, nende töötlemist piirata või neid üle kanda ning esitada vastuväiteid teatud töötlemisele. Samuti on sul õigus esitada kaebus kohalikule järelevalveasutusele.\n\nOma õiguste kasutamiseks kasuta kontaktilehte."
+        },
+        {
+          "title": "Rahvusvahelised edastused",
+          "body": "Kui andmeid edastatakse väljapoole sinu riiki, kasutame seadusega nõutud asjakohaseid kaitsemeetmeid, nagu lepingu tüüptingimused või samaväärsed mehhanismid."
+        },
+        {
+          "title": "Muudatused",
+          "body": "Võime seda poliitikat aeg-ajalt uuendada. Avaldame uuendatud versiooni sellel lehel ja muudame kuupäeva „Viimati uuendatud“."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Kasutustingimused",
+      "lede": "Reeglid Benwer Carsi turuplatsi kasutamiseks rendiautoparkide avastamisel.",
+      "updated": "Viimati uuendatud: 13. september 2026",
+      "sections": [
+        {
+          "title": "Turuplats",
+          "body": "Benwer Cars pakub avalikku kataloogi autorendiettevõtetest ja nende avaldatud autoparkidest. Saad võrrelda autosid ja liikuda rendi lõpuleviimiseks ettevõtte enda veebilehele.\n\nNeed tingimused kehtivad turuplatsi veebilehele. Need ei asenda autorendiettevõtte enda tingimusi, mis kehtivad temaga broneerimisel."
+        },
+        {
+          "title": "Broneeringud tehakse autorendiettevõtetega",
+          "body": "Benwer ei rendi autosid, ei võta makseid vastu ega sõlmi turuplatsil rendilepingut.\n\nKui liigud edasi ettevõtte veebilehele, lepitakse broneering, tagatisraha, kindlustus ja pealevõtmine kokku sinu ja selle ettevõtte vahel. Loe enne kinnitamist nende tingimusi."
+        },
+        {
+          "title": "Kirjed ja saadavus",
+          "body": "Autopargi andmed, hinnad, fotod ja saadavus avaldatakse autorendiettevõtete poolt ja võivad muutuda. Püüame kuvada avalikku teavet täpselt, kuid ei garanteeri, et auto on endiselt vaba või et kuvatud hind kehtib enne, kui ettevõte selle kinnitab.\n\nTuruplatsil sisestatud kuupäevad aitavad sul otsida. Lõplik saadavus kinnitatakse ettevõtte veebilehel."
+        },
+        {
+          "title": "Lubatud kasutus",
+          "body": "Kasuta turuplatsi seaduslikult. Ära kogu andmeid automatiseeritult (scraping), ära koorma ega häiri teenust, ära esita vale kontaktandmeid ega kasuta saiti teiste inimeste või ettevõtete kahjustamiseks."
+        },
+        {
+          "title": "Vastutus",
+          "body": "Turuplatsi pakutakse avastamisteenusena. Seadusega lubatud ulatuses ei vastuta Benwer rendivaidluste, sõiduki seisukorra ega ettevõtte veebilehel tehtud broneeringute eest.\n\nMiski nendes tingimustes ei piira sinu tarbijaõigusi, millest ei saa kohalduva õiguse alusel loobuda."
+        },
+        {
+          "title": "Muudatused",
+          "body": "Võime neid tingimusi uuendada. Kuupäev „Viimati uuendatud“ näitab kehtivat versiooni. Teenuse jätkuv kasutamine pärast muudatust tähendab, et nõustud uuendatud tingimustega."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Küsimused nende tingimuste või turuplatsi kohta saad saata kontaktilehelt. Juba alustatud broneeringu korral võta ühendust otse autorendiettevõttega."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Küpsiste poliitika",
+      "lede": "Kuidas me turuplatsil küpsiseid ja sarnaseid tehnoloogiaid kasutame.",
+      "updated": "Viimati uuendatud: 13. september 2026",
+      "sections": [
+        {
+          "title": "Mida me kasutame",
+          "body": "Küpsised on väikesed tekstifailid, mis salvestatakse sinu seadmesse. Kasutame ka sarnast salvestusruumi, näiteks kohalikku salvestust (local storage), et valikud meeles püsiksid.\n\nSee poliitika kehtib Benwer Carsi turuplatsile. Kui liigud edasi autorendiettevõtte veebilehele, võib see sait seada oma küpsised."
+        },
+        {
+          "title": "Hädavajalikud",
+          "body": "Kasutame keeleküpsist, et veebileht saaks kuvada sinu valitud keelt. See on vajalik turuplatsi ootuspäraseks toimimiseks.\n\nSinu valik küpsiste ribal salvestatakse sinu seadmesse, et me ei küsiks seda igal külastusel uuesti. Seda salvestust ei kasutata reklaamimiseks."
+        },
+        {
+          "title": "Valikulised küpsised",
+          "body": "Valikulised küpsised (näiteks analüütika) jäävad välja lülitatuks, kui sa ei vali „Nõustu kõigiga“.\n\nPraegu ei sea turuplats analüütika- ega turundusküpsiseid. Kui lisame need hiljem, kirjeldame neid siin ja need nõuavad endiselt sinu nõusolekut."
+        },
+        {
+          "title": "Küpsiste haldamine",
+          "body": "Kasuta riba, et nõustuda kõigi küpsistega või jätta alles ainult hädavajalikud. Saad küpsised ja saidiandmed kustutada ka oma brauseris. Keeleküpsise blokeerimine võib järgmisel külastusel keelevaliku lähtestada."
+        },
+        {
+          "title": "Lisateave",
+          "body": "Vaata privaatsuspoliitikast, kuidas me isikuandmeid töötleme, või saada sõnum kontaktilehelt."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} avaleht",
+    "defaultHeadline": "Rendi auto ettevõttega {name}",
+    "footerTagline": "Broneeri otse selle autorendiettevõttega.",
+    "previewBanner": "Eelvaade — see leht ei ole avalik. Otsingumootorid ei indekseeri seda.",
+    "editLink": "Muuda",
+    "editContactEmpty": "Kontaktandmed on peidetud. Muuda neid haldussüsteemis.",
+    "editBranchesEmpty": "Esindusi veel pole. Lisa need haldussüsteemis.",
+    "editRulesHint": "Broneerimisrežiim, etteteatamisaeg ja päringuaken.",
+    "editDomainHint": "Kohandatud domeen ja avalik URL.",
+    "editSection": {
+      "hero": "Päis",
+      "search": "Otsing",
+      "fleet": "Autopark",
+      "branches": "Esindused",
+      "contact": "Kontakt",
+      "rules": "Broneerimisreeglid",
+      "domain": "Domeen"
+    },
+    "pausedTitle": "Broneeringuid ei võeta vastu",
+    "pausedDescription": "See ettevõte on veebibroneeringud peatanud. Saad siiski autoparki sirvida.",
+    "notFoundTitle": "Veebilehte ei leitud",
+    "notFoundDescription": "See autorendi veebileht ei ole saadaval.",
+    "loadErrorTitle": "Veebileht pole saadaval",
+    "loadErrorDescription": "Me ei saanud seda autorendi veebilehte laadida. Proovi hetke pärast uuesti.",
+    "search": "Otsi autosid",
+    "searchAria": "Otsi kuupäevade ja asukoha järgi",
+    "searchTitle": "Otsi autosid",
+    "searchDescription": "Vali kuupäevad ja asukoht, et näha, mis on saadaval.",
+    "branch": "Pealevõtmise asukoht",
+    "anyBranch": "Ükskõik milline asukoht",
+    "ownerSignIn": "Omaniku sisselogimine",
+    "returnBranch": "Tagastamise asukoht",
+    "differentReturn": "Tagastamine teise asukohta",
+    "returnSame": "Sama mis pealevõtmisel",
+    "driverAge": "Juhi vanus",
+    "driverAgeYears": "{band} aastat",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Muuda oma veebilehte",
+    "signInHint": "Omanikud avavad veebilehe redaktori Benweri haldussüsteemist. Kasuta seal nuppu „Muuda veebilehte“ ja sind logitakse siin automaatselt sisse.",
+    "signedInTitle": "Oled sisse logitud",
+    "signedInHint": "Kui sul on õigus seda veebilehte hallata, avaneb redaktor avalehel.",
+    "openEditor": "Ava veebilehe redaktor",
+    "disabledTitle": "Omaniku redigeerimine pole saadaval",
+    "disabledDescription": "Töötajate Firebase ei ole sellel turuplatsil seadistatud.",
+    "signOut": "Logi välja",
+    "auth": {
+      "tooManyRequests": "Liiga palju katseid. Proovi hiljem uuesti.",
+      "unknown": "Sisselogimine ebaõnnestus. Proovi uuesti.",
+      "invalidToken": "See sisselogimislink on aegunud või juba kasutatud. Ava redaktor uuesti Benweri haldussüsteemist."
+    },
+    "signingIn": "Sisselogimine…",
+    "openAdmin": "Ava Benweri haldussüsteem",
+    "accountMenu": "Omaniku konto",
+    "signedInAs": "Sisse logitud omanikuna",
+    "guestSignedOut": "Sind logiti külaliskontolt välja. Omaniku ja külalise seansid ei saa selles brauseris korraga avatud olla."
+  },
+  "guest": {
+    "googleAction": "Logi sisse Google’iga",
+    "googleCreate": "Jätka Google’iga",
+    "or": "või",
+    "forgotPassword": "Unustasid parooli?",
+    "resetTitle": "Lähtesta parool",
+    "resetHint": "Sisesta oma e-posti aadress ja saadame sulle lingi uue parooli valimiseks.",
+    "resetAction": "Saada lähtestamislink",
+    "resetSentTitle": "Kontrolli oma e-posti",
+    "resetSentHint": "Kui selle aadressiga konto on olemas, saatsime parooli lähtestamise juhised. Ei saanud kirja? Kontrolli rämpsposti kausta või oota mõni minut enne uuesti proovimist.",
+    "backToSignIn": "Tagasi sisselogimisse",
+    "signInNav": "Logi sisse",
+    "myBookings": "Minu broneeringud",
+    "signInTitle": "Logi sisse",
+    "signInHint": "Kasuta selle autorendiettevõtte külaliskontot. See ei ole töötajate sisselogimine.",
+    "signInAction": "Logi sisse",
+    "createTitle": "Loo külaliskonto",
+    "createHint": "Salvesta oma broneeringud selle ettevõtte juures. Töötajad kasutavad teist sisselogimist.",
+    "createAction": "Loo konto",
+    "needAccount": "Pole veel kontot? Loo konto",
+    "haveAccount": "Konto on juba olemas? Logi sisse",
+    "email": "E-post",
+    "password": "Parool",
+    "bookingsTitle": "Minu broneeringud",
+    "bookingsMeta": "Seotud broneeringud selle autorendiettevõtte juures.",
+    "bookingsHint": "Sisse logitud kui {email} ettevõttes {company}.",
+    "emptyTitle": "Broneeringuid veel pole",
+    "emptyDescription": "Broneerisid varem? Seo see broneering kasutatud e-posti aadressi või kinnituskoodi abil.",
+    "bookingFallback": "Broneering",
+    "loadErrorTitle": "Broneeringuid ei õnnestunud laadida",
+    "linkTitle": "Seo broneering",
+    "linkHint": "Sisesta broneerimisel kasutatud e-post või kinnituskood. Kui leiame vaste, saadame lingi e-postiga — me ei avalda kunagi, kas konto on olemas.",
+    "linkEmail": "Broneeringu e-post",
+    "linkToken": "Broneeringu kood",
+    "linkAction": "Saada link",
+    "linkSent": "Kui leiame vastava broneeringu, saadame kinnituslingi sinu e-posti aadressile.",
+    "accountTitle": "Konto",
+    "accountHint": "Logi oma kontolt sellel saidil välja.",
+    "signOut": "Logi välja",
+    "erase": "Kustuta minu andmed siit",
+    "eraseConfirm": "Jah, kustuta minu andmed selle ettevõtte juures",
+    "confirmTitle": "Broneeringu sidumine",
+    "confirmHint": "Palun oota, kuni seome selle broneeringu sinu kontoga.",
+    "confirmSignIn": "Broneeringu sidumise lõpuleviimiseks logi sisse oma külaliskontoga.",
+    "confirmMissing": "Kinnituskood puudub",
+    "confirmMissingHint": "Ava link oma e-kirjast uuesti.",
+    "confirmError": "Me ei saanud seda linki kinnitada",
+    "disabledTitle": "Külaliskontod pole veel saadaval",
+    "disabledDescription": "See ettevõte ei ole külaliste sisselogimist lubanud. Saad endiselt broneerida nime, e-posti ja telefoninumbriga.",
+    "auth": {
+      "popupClosed": "Sisselogimine katkestati.",
+      "popupBlocked": "Sinu brauser blokeeris Google’i akna. Luba hüpikaknad ja proovi uuesti.",
+      "differentProvider": "See e-post logib juba sisse teisel viisil. Kasuta selle asemel parooli.",
+      "providerUnavailable": "Google’iga sisselogimine pole sellel saidil veel saadaval. Kasuta e-posti ja parooli.",
+      "invalidEmail": "Sisesta kehtiv e-posti aadress.",
+      "emailInUse": "Sellel e-posti aadressil on juba külaliskonto. Logi selle asemel sisse.",
+      "weakPassword": "Kasuta pikemat parooli.",
+      "tooManyRequests": "Liiga palju katseid. Proovi mõne minuti pärast uuesti.",
+      "invalidCredentials": "E-post või parool on vale.",
+      "unknown": "Sisselogimine ebaõnnestus. Proovi uuesti.",
+      "googleDisabled": "Google’iga sisselogimine pole sellel saidil veel sisse lülitatud. Kasuta e-posti ja parooli.",
+      "domainNotAuthorised": "Google’iga sisselogimine pole selle saidi aadressile veel seadistatud. Kasuta praegu e-posti ja parooli."
+    },
+    "accountMenu": "Sinu konto",
+    "profileNav": "Profiil",
+    "profileTitle": "Profiil",
+    "profileMeta": "Sinu külaliskonto selle autorendiettevõtte juures.",
+    "linkCancel": "Tühista",
+    "eraseTitle": "Kustuta minu andmed",
+    "eraseHint": "Kustutab sinu külalisandmed selle ettevõtte juures ja logib sind välja. Teisi ettevõtteid see ei mõjuta.",
+    "profileDetailsTitle": "Sinu andmed",
+    "profileDetailsHint": "Kasutatakse sinu broneeringute eeltäitmiseks selle ettevõtte juures.",
+    "profileFullName": "Täisnimi",
+    "profilePhone": "Telefoninumber",
+    "profileDob": "Sünnikuupäev",
+    "profileSave": "Salvesta andmed",
+    "profileNotLinked": "Sinu nimi ja telefon salvestatakse siia pärast esimest broneeringut selle e-postiga. Broneerisid teise e-postiga? Seo see broneering jaotisest Minu broneeringud.",
+    "verifyTitle": "Broneeringute nägemiseks kinnita oma e-post",
+    "verifyHint": "Saatsime lingi aadressile {email}. Ava see ja tule siia tagasi. Kuni sinu e-post pole kinnitatud, ei saa me näidata sinu broneeringuid ega salvestada sinu nime ja telefoni.",
+    "verifyResend": "Saada e-kiri uuesti",
+    "verifySent": "E-kiri saadetud. Kontrolli postkasti ja rämpsposti kausta.",
+    "verifyDone": "Olen oma e-posti kinnitanud",
+    "verifyStillPending": "Sinu e-post ei ole veel kinnitatud. Ava e-kirjas olev link ja proovi uuesti.",
+    "verifyBanner": "Sinu konto ei ole veel aktiivne. Kinnita {email}, et näha oma broneeringuid ja kasutada salvestatud andmeid.",
+    "verifyBannerAction": "Kinnita e-post",
+    "profileEdit": "Muuda andmeid",
+    "profileCancel": "Tühista",
+    "profileEmail": "E-post",
+    "profileEmpty": "Lisamata",
+    "bookingsUpcoming": "Tulevased",
+    "bookingsPast": "Varasemad",
+    "ownerSignedOut": "Sind logiti veebilehe redaktorist välja. Omaniku ja külalise seansid ei saa selles brauseris korraga avatud olla."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "{name} pakkumised",
+      "slideAlt": "{name} bänner {position}",
+      "slideLabel": "{position} / {count}",
+      "previous": "Eelmine bänner",
+      "next": "Järgmine bänner",
+      "goTo": "Näita bännerit {position}",
+      "presets": {
+        "airport": {
+          "script": "just maandusid?",
+          "highlight": "Pealevõtmine lennujaamas",
+          "joiner": "kõigest",
+          "boxed": "10 minutiga",
+          "description": "Jäta järjekord vahele: allkirjasta leping telefonis ja sõida minema täiskindlustusega"
+        },
+        "weekend": {
+          "script": "broneeri sel nädalavahetusel",
+          "highlight": "Säästa 20%",
+          "joiner": "kõigilt",
+          "boxed": "Nädalavahetuse rentidelt",
+          "description": "Võta reedel, tagasta esmaspäeval. Tasuta turvatool ja lisajuht hinna sees"
+        },
+        "roadtrip": {
+          "script": "sinu järgmine autoreis",
+          "highlight": "Algab siit",
+          "joiner": "anname sulle üle",
+          "boxed": "Võtmed",
+          "description": "Tasuta tühistamine kuni 24 tundi enne pealevõtmist, piiramatu läbisõit ja varjatud tasudeta"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Iga hinna sees",
+      "title": "Hind, mida näed, on hind, mille maksad",
+      "description": "Letis üllatusi ei ole. Need on alati hinna sees.",
+      "presets": {
+        "insurance": {
+          "title": "Põhikindlustus",
+          "text": "Kokkupõrke-, vargus- ja liikluskindlustus.",
+          "tag": "Hinna sees"
+        },
+        "mileage": {
+          "title": "Piiramatud kilomeetrid",
+          "text": "Sõida nii kaugele kui soovid, ilma kilomeetritasuta.",
+          "tag": "Piiranguteta"
+        },
+        "fuel": {
+          "title": "Täispaak-täispaak kütus",
+          "text": "Võta auto täis paagiga ja tagasta täis paagiga.",
+          "tag": "Ettemakstud paagita"
+        },
+        "cancellation": {
+          "title": "Tasuta tühistamine",
+          "text": "Plaanid muutusid? Tühista tasuta.",
+          "tag": "Paindlik"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Arvustused",
+      "title": "Mida juhid meie kohta ütlevad",
+      "seeAll": "Vaata {count, plural, one {# arvustust} other {kõiki # arvustust}}",
+      "seeAllOn": "Vaata {count, plural, one {# arvustust} other {kõiki # arvustust}} platvormil {source}",
+      "basedOn": "Põhineb {count, plural, one {# arvustusel} other {# arvustusel}}",
+      "basedOnSource": "Põhineb {count, plural, one {# arvustusel} other {# arvustusel}} platvormil {source}",
+      "ratingAria": "Hinnatud {rating} / 5",
+      "rented": "Renditud: {vehicle}",
+      "verified": "Kinnitatud rent",
+      "distributionAria": "Hinnangute jaotus",
+      "emptyTitle": "Arvustusi veel pole",
+      "emptyText": "Külalised saavad oma renti hinnata pärast auto tagastamist. Kinnitatud arvustused ilmuvad siia."
+    },
+    "app": {
+      "eyebrow": "Mobiilirakendus",
+      "title": "Sinu broneering alati kaasas",
+      "text": "Tee veebis check-in, vaata pealevõtmise üksikasju ja kirjuta meile — kõik oma telefonist.",
+      "platformBoth": "iOS & Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Skanni allalaadimiseks",
+      "qrAlt": "QR-kood rakenduse allalaadimiseks",
+      "appStore": {
+        "prefix": "Laadi alla",
+        "name": "App Store",
+        "aria": "Laadi alla App Store’ist",
+        "unavailable": "Pole veel App Store’is saadaval"
+      },
+      "googlePlay": {
+        "prefix": "Hangi",
+        "name": "Google Play",
+        "aria": "Hangi Google Playst",
+        "unavailable": "Pole veel Google Plays saadaval"
+      },
+      "comingSoon": "Tulekul"
+    },
+    "locations": {
+      "eyebrow": "Asukohad",
+      "title": "{count, plural, one {Meie kontor} other {Meie kontorid}}",
+      "description": "{count, plural, one {Võta auto peale ja tagasta siin.} other {Võta auto peale ja tagasta ükskõik millises meie kontoris.}}",
+      "directions": "Juhised",
+      "directionsTo": "Juhised asukohta {name}",
+      "call": "Helista"
+    },
+    "faq": {
+      "eyebrow": "KKK",
+      "title": "Küsimused enne broneerimist",
+      "description": "Ei leidnud vastust? Võta meiega ühendust, aitame hea meelega."
+    },
+    "contact": {
+      "title": "Küsimusi? Räägi inimesega.",
+      "description": "Saada meile sõnum või helista ja aitame sul leida sobiva auto.",
+      "whatsapp": "WhatsApp",
+      "email": "Kirjuta meile",
+      "whatsappMessage": "Tere {name}, mul on küsimus auto rentimise kohta."
+    },
+    "nav": {
+      "reviews": "Arvustused",
+      "faq": "KKK",
+      "contact": "Kontakt",
+      "app": "Rakendus",
+      "branches": "Asukohad"
+    },
+    "footer": {
+      "contact": "Kontakt",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Aktsepteerime",
+      "rating": "{score} · {count, plural, one {# arvustus} other {# arvustust}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Sularaha"
+    }
+  },
+  "siteEditor": {
+    "aria": "Veebilehe redaktor",
+    "title": "Veebilehe redaktor",
+    "signOut": "Logi välja",
+    "tabsAria": "Redaktori jaotised",
+    "status": {
+      "draft": "Mustand",
+      "published": "Avaldatud",
+      "paused": "Peatatud"
+    },
+    "tabs": {
+      "sections": "Jaotised",
+      "design": "Kujundus",
+      "settings": "Seaded",
+      "legal": "Õigusteave"
+    },
+    "contentLanguage": "Redigeerimiskeel",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Kõik jaotised",
+    "sections": {
+      "company": "Ettevõte",
+      "fleet": "Autod",
+      "included": "Iga hinna sees",
+      "reviews": "Arvustused",
+      "app": "Mobiilirakendus",
+      "faq": "KKK",
+      "contact": "Kontakt",
+      "hero": "Bännerid ja otsing",
+      "branches": "Asukohad"
+    },
+    "sectionsHint": "Lülita jaotisi sisse või välja ja muuda nende järjekorda. Ava jaotis selle sisu muutmiseks.",
+    "orderHint": "Autosid näidatakse alati. Kontorid tulevad sinu esindustest Benweri haldussüsteemis.",
+    "hiddenUntilContent": "Peidetud, kuni lisad sisu",
+    "summary": {
+      "banners": "{count, plural, one {# bänner} other {# bännerit}}",
+      "bannersEmpty": "Bännereid veel pole, näidatakse brändivärvi",
+      "company": "Pealkiri, tutvustus ja kontaktandmed",
+      "fleet": "Sinu Benweri autopargist",
+      "included": "{count, plural, one {# punkt} other {# punkti}}",
+      "reviews": "{count, plural, one {# arvustus} other {# arvustust}}",
+      "app": "Poe lingid ja QR-kood",
+      "locations": "{count, plural, one {# kontor} other {# kontorit}} Benwerist",
+      "faq": "{count, plural, one {# küsimus} other {# küsimust}}",
+      "contactWhatsapp": "WhatsApp, telefon ja lahtiolekuajad",
+      "contact": "Telefon ja e-post"
+    },
+    "unsaved": "Salvestamata muudatused",
+    "saved": "Kõik muudatused salvestatud",
+    "discard": "Loobu",
+    "save": "Salvesta muudatused",
+    "common": {
+      "moveUp": "Liiguta {item} üles",
+      "moveDown": "Liiguta {item} alla",
+      "remove": "Eemalda {item}",
+      "show": "Näita {item}"
+    },
+    "banners": {
+      "title": "Bännerid",
+      "description": "Kuni {max} slaidi. Tühjad väljad kasutavad hallina näidatud vaikimisi teksti.",
+      "empty": "Bännereid pole. Bänneriala näitab sinu taustavärvi.",
+      "item": "Bänner {position}",
+      "image": "Pilt",
+      "imageHint": "Laadi üles lai pilt, umbes 1600 × 560 px. JPG, PNG või WebP kuni 25 MB. Läbipaistev PNG asetub sinu bänneri värvile.",
+      "add": "Lisa bänner",
+      "fields": {
+        "script": "Käsikirjaline rida",
+        "highlight": "Esiletõstetud pealkiri",
+        "joiner": "Väike sidesõna",
+        "boxed": "Raamitud pealkiri",
+        "description": "Kirjeldus"
+      },
+      "colorsTitle": "Bänneri värvid",
+      "colorsDescription": "Kasutatakse igal bänneril. Taustaks sobib iga värv.",
+      "resetColors": "Taasta vaikimisi värvid",
+      "colors": {
+        "background": "Taust",
+        "text": "Tekst",
+        "highlight": "Esiletõstu kast",
+        "highlightText": "Esiletõstu tekst",
+        "box": "Valge kast",
+        "boxText": "Valge kasti tekst",
+        "script": "Sidetekst"
+      },
+      "noImage": "Pilti veel pole",
+      "uploadImage": "Laadi pilt üles",
+      "replaceImage": "Asenda pilt",
+      "tooLarge": "See fail on suurem kui 25 MB. Vali väiksem pilt.",
+      "uploadFailed": "Üleslaadimine ebaõnnestus. Proovi uuesti."
+    },
+    "company": {
+      "title": "Ettevõtte päis",
+      "description": "Sinu nimi, pealkiri ja lühike tutvustus.",
+      "headline": "Pealkiri",
+      "headlinePlaceholder": "Rendi auto ettevõttega {name}",
+      "intro": "Tutvustus",
+      "introHint": "Üks või kaks lauset sinu ettevõtte kohta.",
+      "contactTitle": "Kontaktandmed",
+      "contactDescription": "Näidatakse päises, asukohtade ja kontakti jaotistes.",
+      "showPhone": "Näita telefoninumbrit",
+      "showEmail": "Näita e-posti",
+      "showAddress": "Näita aadressi"
+    },
+    "included": {
+      "title": "Iga hinna sees",
+      "description": "Kuni 6 lubadust, mis on alati sinu hinna sees.",
+      "accuracy": "Loetle ainult see, mis kehtib igale rendile. Vaikimisi tekst on soovitus — kontrolli, kas see vastab sinu renditingimustele.",
+      "item": "Punkt {position}",
+      "icon": "Ikoon",
+      "itemTitle": "Pealkiri",
+      "itemText": "Kirjeldus",
+      "itemTag": "Esiletõst",
+      "tagHint": "Lühike roheline silt, näiteks „Omavastutus 1000 €“.",
+      "presets": {
+        "insurance": "Põhikindlustus",
+        "mileage": "Piiramatud km",
+        "fuel": "Täispaak-täispaak kütus",
+        "cancellation": "Tasuta tühistamine"
+      },
+      "addCustom": "Kohandatud punkt"
+    },
+    "icons": {
+      "shield": "Kilp",
+      "gauge": "Spidomeeter",
+      "fuel": "Kütusepump",
+      "calendar_check": "Kalender",
+      "check": "Linnuke",
+      "car": "Auto",
+      "users": "Inimesed",
+      "baby": "Turvatool",
+      "plane": "Lennuk",
+      "key": "Võti"
+    },
+    "reviews": {
+      "title": "Külaliste arvustused",
+      "description": "Külalised hindavad oma renti pärast auto tagastamist. Kuvatakse ainult sinu kinnitatud arvustusi.",
+      "summary": "Keskmine {average} {count, plural, one {# kinnitatud arvustuse} other {# kinnitatud arvustuse}} põhjal",
+      "none": "Kinnitatud arvustusi veel pole. Külalised näevad lühikest märkust, kuni ühe kinnitad.",
+      "manage": "Kinnita või peida arvustusi Benweri haldussüsteemis",
+      "demo": "Need on demoarvustused sellel testettevõttel, kuni kinnitad päris arvustused Benweri haldussüsteemis."
+    },
+    "app": {
+      "benwerAppTitle": "Benwer Carsi rakendus",
+      "benwerApp": "Näita Benwer Carsi rakendust",
+      "benwerAppDescription": "Külalised saavad tasuta Benwer Carsi rakenduse. Märgid viivad ametlikesse poodidesse ja QR-kood avab sinu ettevõtte rakenduses.",
+      "storesWithBenwerApp": "Vajalik ainult siis, kui sinu ettevõttel on oma rakendus. Kuni Benwer Carsi rakendus on sisse lülitatud, kasutab jaotis selle poe linke.",
+      "storesTitle": "Poe lingid",
+      "storesDescription": "Lingid sinu enda rakendusele. Puuduv pood kuvatakse hallina. Kui linke pole ja Benwer Carsi rakendus on väljas, jääb jaotis peidetuks.",
+      "ios": "App Store’i link",
+      "android": "Google Play link",
+      "qrHint": "QR-kood avab Google Play lingi või App Store’i lingi, kui Google Play link puudub.",
+      "copyTitle": "Tekst",
+      "title": "Pealkiri",
+      "text": "Kirjeldus"
+    },
+    "faq": {
+      "title": "Küsimused",
+      "description": "Kuni {max} küsimust lühikeste vastustega.",
+      "empty": "Küsimusi veel pole. Jaotis jääb peidetuks, kuni ühe lisad.",
+      "item": "Küsimus {position}",
+      "question": "Küsimus",
+      "answer": "Vastus",
+      "incompleteHint": "Ilma vastuseta küsimusi veebilehel ei kuvata.",
+      "add": "Lisa küsimus"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kuidas kliendid sinuga ühendust saavad. Telefon ja e-post tulevad ettevõtte jaotisest.",
+      "whatsapp": "WhatsAppi number",
+      "whatsappHint": "Lisa riigikood. Jäta tühjaks, et WhatsAppi nupp peita.",
+      "hours": "Millal vastad",
+      "hoursPlaceholder": "Vastame iga päev kell 08:00–22:00.",
+      "payments": "Makseviisid",
+      "paymentsHint": "Kuvatakse jaluses."
+    },
+    "design": {
+      "colorTitle": "Brändivärv",
+      "colorDescription": "Kasutatakse nuppudel, linkidel ja esiletõstudel kogu veebilehel. Bänneri taust järgib seda värvi; saad seda bännerite all peenhäälestada.",
+      "presets": "Soovitatud värvid",
+      "custom": "Kohandatud värv",
+      "customHint": "Kasuta hex-koodi, näiteks #4f46e5.",
+      "picker": "Vali värv",
+      "lowContrast": "See värv on nuppudel valge teksti jaoks liiga hele. Vali tumedam värv, muidu salvestamine ebaõnnestub.",
+      "fontTitle": "Kirjatüüp",
+      "fontDescription": "Kasutatakse kogu sinu veebilehe tekstis.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Puhas ja kaasaegne"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klassikaline ja elegantne"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Julge ja sõbralik"
+        }
+      },
+      "cornersTitle": "Nurgad",
+      "cornersDescription": "Ümarad või kandilised nurgad nuppudel, kaartidel ja väljadel üle kogu veebilehe.",
+      "corners": {
+        "round": {
+          "name": "Ümarad",
+          "hint": "Pehme ja sõbralik"
+        },
+        "square": {
+          "name": "Kandilised",
+          "hint": "Terav ja minimalistlik"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Veebileht",
+      "websiteEnabled": "Broneerimisleht sees",
+      "websiteEnabledHint": "Kui see on sees, saavad külalised sinu avaldatud lehte näha ja seal broneerida. Sisselülitamine avaldab ka sinu salvestatud muudatused. See on sama lüliti mis Benweri haldussüsteemis.",
+      "bookingTitle": "Broneeringud",
+      "bookingDescription": "Kuidas kliendid sinu veebilehel broneerivad.",
+      "bookingMode": "Broneerimisrežiim",
+      "mode": {
+        "instant": "Kohene",
+        "request": "Päringu alusel"
+      },
+      "modeHint": {
+        "instant": "Broneeringud kinnitatakse kohe.",
+        "request": "Kinnitad või lükkad iga broneeringu tagasi päringuakna jooksul."
+      },
+      "minLead": "Minimaalne etteteatamine",
+      "requestWindow": "Vastamisaeg",
+      "hoursUnit": "Tundides",
+      "differentReturnTitle": "Tagastamine teise asukohta",
+      "differentReturnLabel": "Luba külalistel tagastada auto teise asukohta",
+      "differentReturnHint": "Külalised valivad otsimisel tagastamise asukoha. Benweri haldussüsteemi ühesuunatasu lisatakse hinnale.",
+      "differentReturnOff": "Selle pakkumiseks lülita Benweri haldussüsteemis sisse ühesuuna rendid."
+    },
+    "savedNotPublished": "Salvestatud, veel avaldamata",
+    "publish": "Avalda",
+    "branding": {
+      "logosTitle": "Logod",
+      "logosDescription": "See on teie ettevõtte logo. Selle muutmine siin uuendab seda ka Benwer adminis ja Benwer Cars rakenduses.",
+      "headerLogo": "Ülemise riba logo",
+      "headerLogoHint": "Kuvatakse iga lehe ülemisel ribal. Kõige paremini sobib lai logo.",
+      "companyLogo": "Ettevõtte jaotise logo",
+      "companyLogoHint": "Kuvatakse pealkirja kohal, enne ettevõtte jaotist.",
+      "usingCompanyLogo": "Kasutatakse sinu ettevõtte logo",
+      "upload": "Laadi logo üles",
+      "replace": "Asenda",
+      "uploadFailed": "Logo ei õnnestunud üles laadida. Kasuta PNG-, JPG- või WebP-pilti ja proovi uuesti.",
+      "tooLarge": "See pilt on suurem kui 25 MB.",
+      "backgroundTitle": "Lehe taust",
+      "backgroundDescription": "Värv sinu veebilehe sisu taga.",
+      "backgroundPresets": "Soovitatud taustad",
+      "backgroundCustom": "Kohandatud taust",
+      "backgroundPicker": "Vali taustavärv",
+      "needsApi": "Saadaval kohe, kui veebilehtede Benwer API uuendus on avaldatud.",
+      "headerLogoDark": "Ülemise riba logo — tume režiim",
+      "companyLogoDark": "Ettevõtte jaotise logo — tume režiim",
+      "squareLogo": "Ruudukujuline logo (1:1)",
+      "squareLogoHint": "Avaldamiseks kohustuslik. Kuvatakse sinu ettevõtte nime kõrval kaartidel, otsingutulemustes ja mobiililoendites.",
+      "cropTitle": "Kärbi logo mõõtu 2:1",
+      "cropHint": "Lohista ja suumi, et sinu logo mahuks puhtalt 2:1 raami sisse.",
+      "cropZoom": "Suum",
+      "cropCancel": "Tühista",
+      "cropSave": "Kärbi ja laadi üles",
+      "darkLogoHint": "Valikuline. Kuvatakse, kui külastajad kasutavad tumedat režiimi. Kasuta oma logo heledat või valget versiooni.",
+      "darkNeedsApi": "Tumeda režiimi logod on saadaval kohe, kui vastav Benwer API uuendus on avaldatud.",
+      "logo": "Logo (2:1)",
+      "logoHint": "Avaldamiseks kohustuslik. Üks logo heleda ja tumeda režiimi jaoks: teie brändivärv taustaks ja nimi valgena, kärbitud suhtesse 2:1."
+    },
+    "legal": {
+      "hint": "Iga leht algab standardtekstiga, et saaksid muuta ainult vajalikke osi. Lisa iga alapealkirja jaoks jaotis. „Tagasi standardteksti juurde“ tühistab sinu muudatused.",
+      "needsApi": "Saadaval kohe, kui veebilehtede Benwer API uuendus on avaldatud.",
+      "privacyTitle": "Privaatsuspoliitika",
+      "privacyDescription": "Kuvatakse sinu veebilehe jaluses lingi Privaatsus all.",
+      "termsTitle": "Kasutustingimused",
+      "termsDescription": "Kuvatakse sinu veebilehe jaluses lingi Tingimused all.",
+      "text": "Tekst",
+      "intro": "Sissejuhatus",
+      "subtitle": "Alapealkiri",
+      "sectionItem": "Jaotis {position}",
+      "addSection": "Lisa jaotis",
+      "reset": "Tagasi standardteksti juurde",
+      "pageTitle": "Lehe pealkiri",
+      "privacyLooksLikeTerms": "Sinu privaatsuspoliitikal on sama tekst mis tingimustel. Kasuta Privaatsuspoliitika all valikut „Tagasi standardteksti juurde“ või kirjuta oma privaatsustekst ja salvesta."
+    },
+    "preview": "Eelvaade",
+    "fullscreen": "Täisekraani redaktor",
+    "exitFullscreen": "Näita eelvaadet redaktori kõrval",
+    "previewBarAria": "Eelvaate juhtnupud",
+    "previewing": "Vaatad oma veebilehe eelvaadet",
+    "backToEdit": "Muuda"
+  },
+  "marketplaceBanners": {
+    "aria": "Benweri esiletõstud",
+    "slideLabel": "{position} / {count}",
+    "goTo": "Näita bännerit {position}",
+    "previous": "Eelmine bänner",
+    "next": "Järgmine bänner",
+    "trust": {
+      "script": "broneeri kindlustundega",
+      "highlight": "Kontrollitud ettevõtted",
+      "joiner": "ja",
+      "boxed": "Turvaline broneerimine",
+      "description": "Päris arvustused, selged tingimused ja digilepingud, mille allkirjastad oma telefonis"
+    },
+    "prices": {
+      "script": "üks otsing",
+      "highlight": "Võrdle hindu",
+      "joiner": "kõigilt",
+      "boxed": "Partnerettevõtetelt",
+      "description": "Vaata enne broneerimist kõrvuti partner-rendiettevõtete hindu, kindlustust ja tagatisraha"
+    },
+    "anywhere": {
+      "script": "leia oma sõit",
+      "highlight": "Üle kogu Málaga",
+      "joiner": "koos",
+      "boxed": "Kohalike rendifirmadega",
+      "description": "Partner-rendiettevõtted linnades üle kogu Málaga provintsi — kõik ühes kohas"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Avaldanud {name}.",
+    "cookies": {
+      "title": "Küpsiste poliitika",
+      "lede": "Kuidas {name} kasutab sellel veebilehel küpsiseid ja sarnaseid tehnoloogiaid.",
+      "updated": "Avaldanud {name}.",
+      "sections": [
+        {
+          "title": "Mida me kasutame",
+          "body": "Küpsised on väikesed tekstifailid, mis salvestatakse sinu seadmesse. See veebileht kasutab ka sarnast salvestusruumi, näiteks kohalikku salvestust (local storage), et meeles pidada sinu valikuid, ostukorvi ja sisselogimist."
+        },
+        {
+          "title": "Hädavajalikud",
+          "body": "Keeleküpsis võimaldab saidil kuvada sinu keelt ning sinu valik küpsiste ribal salvestatakse, et me ei küsiks seda igal külastusel uuesti. Kui logid sisse, salvestab sisselogimisteenus sinu seadmesse seansi, et püsiksid sisse logituna. Kaardimakseid töötleb Stripe, kes võib pettuste ennetamiseks seada oma küpsised."
+        },
+        {
+          "title": "Valikulised küpsised",
+          "body": "Valikulised küpsised (näiteks analüütika) jäävad välja lülitatuks, kui sa ei vali „Nõustu kõigiga“. See veebileht ei sea praegu analüütika- ega turundusküpsiseid."
+        },
+        {
+          "title": "Küpsiste haldamine",
+          "body": "Kasuta jaluses olevat küpsiste seadete linki, et oma valikut muuta. Saad küpsised ja saidiandmed kustutada ka oma brauseris. Hädavajaliku salvestuse blokeerimine võib sind välja logida või sinu ostukorvi tühjendada."
+        },
+        {
+          "title": "Lisateave",
+          "body": "Vaata privaatsuspoliitikast, kuidas {name} isikuandmeid töötleb, või kasuta jaluses olevaid kontaktandmeid."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Tugi",
+    "fabCloseLabel": "Sulge klienditoe menüü",
+    "messageAction": "Otsesõnum",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Tere, mul on küsimus Benwer Carsi kohta."
+  },
+  "guestApp": {
+    "metaTitle": "Benwer Carsi rakendus",
+    "metaDescription": "Broneeri autosid, hoia kõik reisid ühes kohas ja saa broneeringu uuendusi oma telefoni.",
+    "eyebrow": "Mobiilirakendus",
+    "title": "Sinu autorent sinu taskus",
+    "description": "Broneeri autosid kohalikelt ettevõtetelt, hoia iga reis ühes kohas, maksa ja saa uuendusi oma telefoni.",
+    "featureTrips": "Kõik sinu reisid ettevõtete üleselt",
+    "featureBooking": "Broneeri ja maksa mõne puudutusega",
+    "featurePush": "Uuendused, kui sinu broneering muutub",
+    "unavailableTitle": "Rakendus on tulekul",
+    "unavailableDescription": "Benwer Carsi rakendus ei ole veel poodides saadaval. Saad endiselt veebis broneerida.",
+    "browse": "Sirvi autosid",
+    "badgeTitle": "Hangi Benwer Carsi rakendus",
+    "companyText": "Broneeri ettevõttega {company} oma telefonis ja hoia oma reisid ühes kohas.",
+    "bookingText": "Vaata seda broneeringut, maksa ja saa uuendusi oma telefonis."
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Chuaigh rud éigin amú. Bain triail as arís.",
+    "network": "Ní féidir teacht ar an bhfreastalaí. Seiceáil do cheangal.",
+    "vehicle": {
+      "not_found": "Níl an fheithicil seo ar fáil a thuilleadh."
+    },
+    "company": {
+      "not_found": "Níor aimsíodh an comhlacht seo."
+    },
+    "reservation": {
+      "overlap": "Tá an fheithicil seo curtha in áirithe cheana féin do na dátaí sin.",
+      "not_found": "Níor aimsíodh an áirithint. Seiceáil do nasc deimhnithe.",
+      "invalid_dates": "Caithfidh an dáta fillte a bheith i ndiaidh an dáta bailithe.",
+      "min_lead": "Tá an bailiú ró-luath. Roghnaigh dáta níos déanaí.",
+      "terms_required": "Glac leis na téarmaí cíosa chun leanúint ar aghaidh.",
+      "max_open_requests": "Tá dhá iarratas oscailte agat cheana féin. Tarraing siar ceann acu sula seolfaidh tú ceann eile.",
+      "request_expired": "Tá an t-iarratas seo imithe in éag. Tosaigh ceann nua.",
+      "not_cancellable": "Ní féidir an áirithint seo a chealú ar líne a thuilleadh."
+    },
+    "booking": {
+      "payment_not_required": "Níl aon íocaíocht ar líne dlite don áirithint seo.",
+      "payment_window_elapsed": "Tá deireadh leis an bhfuinneog íocaíochta 15 nóiméad. Tosaigh áirithint nua má tá an carr fós uait.",
+      "payment_not_open": "Níl íocaíocht ar fáil don áirithint seo. Bain triail as arís nó déan teagmháil leis an gcomhlacht."
+    },
+    "rental_payments": {
+      "already_paid": "Tá an áirithint seo íoctha cheana féin."
+    },
+    "site": {
+      "not_found": "Níor aimsíodh an suíomh cíosa seo.",
+      "paused": "Níl an comhlacht seo ag glacadh le háirithintí faoi láthair.",
+      "not_published": "Níl an suíomh seo oscailte d'áirithintí go fóill."
+    },
+    "website_domain": {
+      "not_found": "Níl an seoladh suímh seo nasctha le comhlacht cíosa."
+    },
+    "staff": {
+      "unauthenticated": "Sínigh isteach mar úinéir an chomhlachta chun an suíomh seo a chur in eagar.",
+      "forbidden": "Níl cead agat an suíomh seo a chur in eagar."
+    },
+    "guest": {
+      "not_configured": "Níl cuntais aoi ar fáil don chomhlacht seo go fóill.",
+      "not_linked": "Níl aon áirithintí nasctha leis an gcuntas seo go fóill.",
+      "invalid_token": "Tá an nasc deimhnithe seo neamhbhailí nó imithe in éag.",
+      "unauthenticated": "Sínigh isteach chun leanúint ar aghaidh."
+    },
+    "pricing": {
+      "min_days": "Tá na dátaí seo ró-ghearr don séasúr. Roghnaigh cíos níos faide.",
+      "max_days": "Tá na dátaí seo ró-fhada don séasúr. Roghnaigh cíos níos giorra.",
+      "rental_too_long": "Tá an cíos seo ró-fhada le cur in áirithe ar líne. Déan teagmháil leis an gcomhlacht."
+    },
+    "contact": {
+      "not_configured": "Níl an ríomhphost teagmhála cumraithe go fóill. Bain triail as arís níos déanaí.",
+      "delivery_failed": "Níorbh fhéidir linn do theachtaireacht a sheoladh faoi láthair. Bain triail as arís níos déanaí."
+    }
+  },
+  "nav": {
+    "home": "Baile",
+    "cars": "Carranna",
+    "companies": "Comhlachtaí",
+    "contact": "Teagmháil",
+    "privacy": "Príobháideachas",
+    "terms": "Téarmaí",
+    "cookies": "Fianáin",
+    "mainAria": "Príomhnascleanúint",
+    "footerAria": "Nascleanúint bhuntáisc",
+    "menu": "Roghchlár"
+  },
+  "meta": {
+    "siteTitle": "Aimsigh carranna cíosa áitiúla",
+    "siteDescription": "Déan comparáid idir carranna ó chomhlachtaí cíosa comhpháirtíochta ar fud chúige Málaga, agus lean ar aghaidh ar shuíomh an chomhlachta."
+  },
+  "notFound": {
+    "title": "Níor aimsíodh an leathanach",
+    "description": "Níl an leathanach sin ann. Téigh ar ais agus cuardaigh carr.",
+    "action": "Ar ais go dtí an baile"
+  },
+  "hostUnknown": {
+    "title": "Níl an suíomh seo ar fáil",
+    "description": "Seiceáil an seoladh a chlóscríobh tú. Ní le suíomh cíosa Benwer Cars an leathanach seo."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, baile",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Athraigh go mód dorcha",
+    "toLight": "Athraigh go mód geal"
+  },
+  "locale": {
+    "label": "Teanga",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Cuardaigh teangacha",
+    "noResults": "Níor aimsíodh aon teanga"
+  },
+  "footer": {
+    "tagline": "Déan comparáid idir carranna ó chomhlachtaí cíosa comhpháirtíochta.",
+    "trust": "Flíteanna comhpháirtíochta · Málaga · Cíos ar shuíomh an chomhlachta",
+    "poweredBy": "Curtha in áirithe trí Benwer Cars",
+    "explore": "Taiscéal",
+    "legal": "Dlíthiúil",
+    "copyright": "© {year} Benwer Cars. Gach ceart ar cosaint."
+  },
+  "cookieBanner": {
+    "body": "Úsáidimid fianán teanga agus cuimhnímid ar an rogha seo ar do ghléas. Fanann fianáin roghnacha múchta mura nglacann tú leo.",
+    "policy": "Polasaí fianán",
+    "necessary": "Diúltaigh do gach ceann",
+    "accept": "Glac le gach ceann",
+    "title": "Tá meas againn ar do phríobháideachas",
+    "settings": "Socruithe fianán"
+  },
+  "actions": {
+    "retry": "Bain triail as arís",
+    "back": "Téigh ar ais",
+    "viewAll": "Féach ar gach ceann",
+    "close": "Dún"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Cód tíre, {country} {dial}",
+    "search": "Cuardaigh tíortha",
+    "countries": "Tíortha",
+    "noResults": "Ní mheaitseálann aon tír",
+    "invalid": "Cuir isteach uimhir ghutháin bhailí.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Glan an dáta"
+  },
+  "guestNotifications": {
+    "title": "Fógraí",
+    "openLabel": "Oscail fógraí",
+    "unreadCount": "{count} fógra neamhléite",
+    "emptyTitle": "Gan aon fhógraí go fóill",
+    "emptyBody": "Beidh nuashonruithe áirithinte, meabhrúcháin íocaíochta, agus foláirimh bhailithe le feiceáil anseo.",
+    "error": "Níorbh fhéidir fógraí a lódáil.",
+    "retry": "Bain triail as arís",
+    "markAllRead": "Marcáil gach ceann mar léite",
+    "dismiss": "Díbhe",
+    "loadMore": "Lódáil tuilleadh",
+    "enablePush": "Cumasaigh foláirimh bhrabhsálaí",
+    "pushEnabled": "Foláirimh bhrabhsálaí cumasaithe",
+    "pushBlocked": "Foláirimh bhrabhsálaí bactha sna socruithe",
+    "disablePush": "Díchumasaigh foláirimh bhrabhsálaí"
+  }
+}

@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Yritykset",
+    "title": "Löydä täydellinen autosi",
+    "subtitle": "Vertaile kumppanivuokraamojen autoja ja jatka sitten yrityksen omalle sivustolle.",
+    "searchPlaceholder": "Minne olet matkalla?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Esitellyt yritykset",
+    "companiesSubtitle": "Kumppanivuokraamot Málagan maakunnassa — kalustoja, joiden kanssa työskentelemme, ei vahvistamattomia ilmoituksia",
+    "trustLocal": "Kumppaniyritykset",
+    "trustGuest": "Vuokraa yrityksen sivustolla",
+    "trustArea": "Málagan maakunta",
+    "viewAllCompanies": "Näytä kaikki yritykset"
+  },
+  "featuredCars": {
+    "viewAllCount": "Näytä kaikki {count} autoa",
+    "eyebrow": "Autot",
+    "title": "Saatavilla olevat autot",
+    "subtitle": "Kaikki kumppaniyritysten julkaisemat autot rinnakkain. Valitse auto ja tee varaus yrityksen omalla sivustolla.",
+    "viewAll": "Hae kaikkia autoja",
+    "seeAll": "Näytä kaikki",
+    "emptyTitle": "Autoja ei ole vielä listattu",
+    "emptyHint": "Julkiset kalustot näkyvät täällä, kun yritykset julkaisevat ne."
+  },
+  "whatYouGet": {
+    "eyebrow": "Autovuokraamoille",
+    "title": "Mitä saat",
+    "subtitle": "Yksi kokonaisuus toimistoon, pihalle ja Málagasta autoa etsiville matkailijoille.",
+    "admin": {
+      "title": "Kattava hallintajärjestelmä",
+      "body": "Hallinnoi autoja, hintoja, saatavuutta ja varauksia yhdestä ohjausnäkymästä — samasta valikoimasta, jota markkinapaikka lukee."
+    },
+    "mobile": {
+      "title": "Mobiilisovellus henkilökunnalle",
+      "body": "Kirjaa autot ulos ja sisään sekä tarkista päivän varaukset suoraan pihalta."
+    },
+    "storefront": {
+      "title": "Brändätty verkkokauppa",
+      "body": "Listaus markkinapaikalla sekä oma verkkosivusto ja alidomaini."
+    },
+    "preview": {
+      "utilisation": "Käyttöaste",
+      "utilisationValue": "82%",
+      "pickups": "Noudot tänään",
+      "pickupsValue": "14",
+      "revenue": "Tässä kuussa",
+      "revenueValue": "9,4 t€",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Yhteenveto",
+      "navFleet": "Kalusto",
+      "navCalendar": "Kalenteri",
+      "navReservations": "Varaukset",
+      "calendarTitle": "Saatavuus",
+      "calendarMonth": "Seuraavat 2 viikkoa",
+      "viaBenwer": "Benwerin kautta",
+      "direct": "Suora",
+      "free": "Vapaa",
+      "carA": "Kompakti",
+      "carB": "Kaupunkiauto",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Tänään",
+      "phoneDate": "Maanantai",
+      "pickUp": "Nouto",
+      "return": "Palautus",
+      "checkedOut": "Luovutettu",
+      "due": "Erääntyy",
+      "tabToday": "Tänään",
+      "tabFleet": "Kalusto",
+      "tabScan": "Skannaa",
+      "storeName": "Yrityksesi",
+      "storeNavCars": "Autot",
+      "storeNavContact": "Yhteystiedot",
+      "storeHeadline": "Vuokraa auto Málagassa",
+      "storeSearch": "Nouto ja päivämäärät",
+      "storeSearchCta": "Hae",
+      "storePrice": "Katso hinnat",
+      "carE": "Viistoperä",
+      "carF": "Farmari"
+    }
+  },
+  "faq": {
+    "eyebrow": "UKK",
+    "title": "Ennen varaamista",
+    "subtitle": "Kumppanikalustot, varaamisen kulku ja mitä Benwer hoitaa — ja mitä ei.",
+    "items": {
+      "partners": {
+        "question": "Ovatko nämä autot oikeilta autovuokraamoilta?",
+        "answer": "Kyllä. Jokainen ilmoitus on julkinen auto Benwer-kumppanilta — oikealta autovuokraamolta, jonka kanssa työskentelemme, ei vahvistamattomalta yksityishenkilöltä. Jos yritystä tai autoa ei ole julkaistu alustalla, se ei näy täällä."
+      },
+      "booking": {
+        "question": "Varaanko ja maksanko Benwerissä?",
+        "answer": "Et. Vertailet kumppanikalustoja täällä ja jatkat sitten autovuokraamon omalle sivustolle vahvistamaan vuokrauksen, takuumaksun ja noudon. Benwer ei ota vastaan maksuja tällä markkinapaikalla."
+      },
+      "photos": {
+        "question": "Voinko luottaa kuviin ja saatavuuteen?",
+        "answer": "Ilmoituksissa käytetään kumppaniyrityksen julkaisemia julkisia kuvia ja saatavuutta — samaa valikoimaa, jota he hallinnoivat hallintapaneelissa. Jos autolla ei vielä ole julkista kuvaa, näytämme tyhjän tilan emmekä toisen auton kuvapankkikuvaa. Lopullinen saatavuus vahvistetaan yrityksen sivustolla."
+      },
+      "account": {
+        "question": "Tarvitsenko tilin?",
+        "answer": "Hakemiseen ei tarvita tiliä. Jos lähetät yhteydenottoviestin, käytämme antamiasi tietoja vain vastaamiseen."
+      },
+      "safety": {
+        "question": "Kuka on vastuussa vuokrauksesta?",
+        "answer": "Sopimus tehdään sinun ja kumppanivuokraamon välillä. Lue heidän ehtonsa ennen vahvistamista. Benwer auttaa sinua löytämään auton kumppanikalustosta; se ei vuokraa ajoneuvoja eikä ota vastaan maksuja täällä."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Benwer Cars -sovellus",
+    "description": "Hanki Benwer Cars puhelimeesi. Android-sovellus on varhaisessa testauksessa Google Playssa — liity mukaan testaamaan ja vaikuttamaan."
+  },
+  "partners": {
+    "eyebrow": "Autovuokraamoille",
+    "title": "Muuta tyhjät päivät varauksiksi",
+    "description": "Matkailijat etsivät jo Benweristä autoja Málagassa. Julkaise kalustosi kerran ja täytä päivät, jotka muuten jäisivät tyhjiksi.",
+    "cta": "Lue lisää",
+    "ctaAria": "Lue lisää Benwerin markkinointisivustolta (avautuu uuteen välilehteen)",
+    "demo": "Katso live-demo",
+    "demoAria": "Katso live-demo (avautuu uuteen välilehteen)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Autovuokraus",
+    "companyDescription": "Vuokraa auto yritykseltä {name} kohteessa {location}.",
+    "companyDescriptionPlain": "Vuokraa auto yritykseltä {name}.",
+    "companyFallback": "Autovuokraus",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Vuokraa {brand} {model} yritykseltä {company}.",
+    "carDescriptionSpecs": "Vuokraa {brand} {model} — {seats, plural, one {# istuin} other {# istuinta}}, {transmission}.",
+    "carsTitle": "Vuokra-autot Málagan maakunnassa"
+  },
+  "tenant": {
+    "notFoundTitle": "Yritystä ei löytynyt",
+    "notFoundDescription": "Tätä sivustoa ei voitu ladata.",
+    "loadErrorTitle": "Yrityksen tiedot eivät ole saatavilla",
+    "loadErrorDescription": "Emme voineet ladata tätä sivustoa reaaliaikaisesta valikoimasta. Yritä uudelleen — emme näytä malliautoja, kun API-yhteys epäonnistuu.",
+    "logoAlt": "Yrityksen {name} logo"
+  },
+  "howItWorks": {
+    "eyebrow": "Kolme vaihetta",
+    "title": "Näin se toimii",
+    "subtitle": "Vertaile kumppanikalustoja Málagassa ja varaa suoraan yritykseltä. Benwer-tiliä ei tarvita.",
+    "stepLabel": "Vaihe {number}",
+    "searchTitle": "Valitse päivät ja paikka",
+    "searchBody": "Valitse Costa del Solin kaupunki ja tarvitsemasi päivät. Vain vahvistetut kumppanikalustot näytetään.",
+    "compareTitle": "Vertaile oikeita autoja",
+    "compareBody": "Istuinpaikat, vaihteisto, kuvat ja päivähinta rinnakkain jokaiselta kumppanilta.",
+    "continueTitle": "Varaa yritykseltä",
+    "continueBody": "Vahvista nouto, vakuutus ja maksu auton omistavan vuokrausyrityksen kanssa.",
+    "cta": "Aloita haku",
+    "preview": {
+      "place": "Málagan lentoasema",
+      "dates": "Pe → Pe · 7 päivää",
+      "carA": "Kompakti auto",
+      "carASpecs": "4 istuinta · Manuaali",
+      "carB": "Perhe-SUV",
+      "carBSpecs": "5 istuinta · Automaatti",
+      "confirmed": "Varaus vahvistettu",
+      "confirmedDetail": "Nouto klo 10:00",
+      "example": "Esimerkki"
+    }
+  },
+  "search": {
+    "locationLabel": "Noutopaikka",
+    "locationPlaceholder": "Hae sijainteja",
+    "locationEmpty": "Ei vastaavaa sijaintia",
+    "allLocations": "Kaikki sijainnit",
+    "allLocationsHint": "Kaikki kaupungit, joissa on vapaita autoja",
+    "provinceSelected": "Kaikki sijainnit",
+    "provinceHint": "Kaikki kaupungit, joissa on vapaita autoja",
+    "pickupLabel": "Nouto",
+    "dropoffLabel": "Palautus",
+    "pickupPlaceholder": "Lisää päivä",
+    "dropoffPlaceholder": "Lisää päivä",
+    "pickupTrigger": "Noutopäivä, {date}",
+    "dropoffTrigger": "Palautuspäivä, {date}",
+    "calendarLabel": "Valitse päivämäärät",
+    "datesRequired": "Valitse nouto- ja palautuspäivä hakeaksesi.",
+    "submit": "Hae",
+    "returnLocationLabel": "Palautuspaikka",
+    "differentReturn": "Palauta eri sijaintiin",
+    "returnSame": "Sama kuin noutopaikka",
+    "returnNotOffered": "{company} ei tarjoa palautusta toiseen sijaintiin.",
+    "branchChoose": "Valitse sijainti",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Ladataan sijainteja…",
+    "branchAnyHint": "Kaikki toimipisteet, joissa on autoja"
+  },
+  "browseLocation": {
+    "title": "Selaa sijainnin mukaan",
+    "subtitle": "Suositut kaupungit Málagan maakunnassa",
+    "emptyTitle": "Ei vielä sijainteja",
+    "emptyDescription": "Esitellyt kaupungit näkyvät täällä.",
+    "cityAria": "Selaa autoja kohteessa {city}"
+  },
+  "map": {
+    "teaserTitle": "Katso, mistä voit noutaa",
+    "teaserSubtitle": "Paikalliset kalustot Málagan maakunnassa — avaa kartta ja siirry suoraan yritykseen.",
+    "teaserCta": "Avaa kartta",
+    "teaserCityAria": "Näytä yritykset kartalla kohteessa {city}",
+    "listLabel": "Luettelo",
+    "mapLabel": "Kartta",
+    "viewToggleAria": "Näytä yritykset luettelona tai kartalla",
+    "regionAria": "Kartta Málagan maakunnan autovuokraamoista",
+    "pinAria": "{name} kohteessa {city}",
+    "fleetHint": "{count, plural, =0 {Autoja ei ole vielä listattu} one {# auto saatavilla} other {# autoa saatavilla}}",
+    "fleetHintUnknown": "Näytä saatavilla olevat autot",
+    "viewFleet": "Näytä kalusto",
+    "closePin": "Sulje",
+    "loading": "Ladataan yrityksiä…",
+    "errorDescription": "Karttaa ei voitu ladata. Selaa luetteloa sen sijaan.",
+    "emptyTitle": "Ei yrityksiä kartalla",
+    "emptyDescription": "Kokeile toista kaupunkia Málagan maakunnassa.",
+    "resultsCount": "{count, plural, one {# yritys Málagan maakunnassa} other {# yritystä Málagan maakunnassa}}",
+    "resultsInCity": "{count, plural, one {# yritys kohteessa {city}} other {# yritystä kohteessa {city}}}",
+    "resultsAtBranch": "{count, plural, one {# yritys toimipisteessä {branch}} other {# yritystä toimipisteessä {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Näytetään {shown} / {total} autoa",
+    "loadMore": "Näytä lisää autoja",
+    "seeAll": "Näytä kaikki",
+    "title": "Saatavilla olevat autot",
+    "subtitle": "Kaikki kumppanivuokraamojen julkiset autot Málagan maakunnassa. Valitse päivämäärät nähdäksesi vapaat autot.",
+    "searchEmptyTitle": "Hakuehtoja vastaavia autoja ei löytynyt",
+    "searchEmptyHint": "Kokeile toisia päivämääriä tai toista sijaintia Málagan maakunnassa. Kaikki kaupungit pysyvät luettelossa — vaikka autoja ei olisi listattu tänään.",
+    "resultsInProvince": "{count, plural, one {# auto kaikissa sijainneissa} other {# autoa kaikissa sijainneissa}}",
+    "resultsInCity": "{count, plural, one {# auto kohteessa {city}} other {# autoa kohteessa {city}}}",
+    "allCompanies": "Kaikki yritykset",
+    "companyPlaceholder": "Hae yrityksiä",
+    "companyTrigger": "Yritys, {company}",
+    "perDay": "{price} / päivä",
+    "perDaySuffix": " / päivä",
+    "viewDetails": "Näytä tiedot",
+    "notAvailableForDates": "Ei saatavilla näille päiville",
+    "bookUnavailable": "Näytä auto",
+    "fleetSummary": "{total, plural, one {# auto} other {# autoa}} · {available, plural, one {# saatavilla} other {# saatavilla}}",
+    "fleetSummaryForDates": "{total, plural, one {# auto} other {# autoa}} · {available, plural, one {# saatavilla} other {# saatavilla}} · {from} – {to}",
+    "seats": "{count} istuinta",
+    "resultsCount": "{count, plural, one {# auto saatavilla} other {# autoa saatavilla}}",
+    "resultsForDates": "{count, plural, one {# auto} other {# autoa}} · {from} – {to}",
+    "emptyTitle": "Tämä kalusto ei ole vielä julkinen",
+    "emptyHint": "Tämä yritys on listattu, mutta sen autoja ei ole vielä julkaistu Benwerissä. Tämä on normaalia, kunnes ajoneuvot merkitään julkisiksi — sivu ei ole rikki.",
+    "noResults": "Hakuehtoja vastaavia autoja ei löytynyt",
+    "noResultsHint": "Kokeile toisia päivämääriä, toista sijaintia tai vähemmän suodattimia.",
+    "browseCompanies": "Selaa yrityksiä",
+    "clearFilters": "Tyhjennä suodattimet",
+    "searchPlaceholder": "Hae merkin tai mallin mukaan",
+    "filters": {
+      "title": "Suodattimet",
+      "seats": "Istuimet",
+      "transmission": "Vaihteisto",
+      "company": "Yritys",
+      "dates": "Päivämäärät",
+      "from": "Noutopäivä",
+      "to": "Palautuspäivä",
+      "category": "Luokka",
+      "fuel": "Polttoaine",
+      "all": "Kaikki",
+      "clear": "Tyhjennä",
+      "selectedCount": "{count} valittu"
+    },
+    "types": {
+      "car": "Henkilöauto",
+      "suv": "SUV",
+      "van": "Pakettiauto",
+      "truck": "Kuorma-auto",
+      "motorcycle": "Moottoripyörä"
+    },
+    "transmission": {
+      "automatic": "Automaatti",
+      "manual": "Manuaali"
+    },
+    "fuel": {
+      "petrol": "Bensiini",
+      "diesel": "Diesel",
+      "electric": "Sähkö",
+      "hybrid": "Hybridi",
+      "plugin_hybrid": "Ladattava hybridi"
+    },
+    "rowDeposit": "Takuumaksu {amount}",
+    "rowAvailable": "Saatavilla valituille päiville",
+    "rowTotal": "Yhteensä {amount} · {days, plural, one {# päivä} other {# päivää}}",
+    "bookNow": "Varaa nyt",
+    "availableCount": "{count, plural, =0 {Ei vapaita autoja} one {# auto saatavilla} other {# autoa saatavilla}}",
+    "availableForDates": "{count, plural, =0 {Ei vapaita autoja} one {# auto saatavilla} other {# autoa saatavilla}} · {from} – {to}",
+    "categories": {
+      "economy": "Edullinen",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "Tila-auto",
+      "van": "Pakettiauto",
+      "other": "Muu"
+    },
+    "sort": {
+      "label": "Järjestä",
+      "recommended": "Suositellut",
+      "pricePerDay_asc": "Alin päivähinta",
+      "pricePerDay_desc": "Korkein päivähinta"
+    },
+    "colors": {
+      "white": "Valkoinen",
+      "black": "Musta",
+      "silver": "Hopea",
+      "grey": "Harmaa",
+      "red": "Punainen",
+      "blue": "Sininen",
+      "green": "Vihreä",
+      "orange": "Oranssi",
+      "yellow": "Keltainen",
+      "brown": "Ruskea",
+      "beige": "Beige",
+      "gold": "Kulta",
+      "purple": "Violetti"
+    },
+    "viewCar": "Näytä auto",
+    "opensCompanySite": "(avaa yrityksen verkkosivuston)"
+  },
+  "carDetail": {
+    "bookNow": "Varaa nyt",
+    "continueOnCompany": "Jatka sivustolla {company}",
+    "rentOnCompanySite": "Vuokraa yrityksen sivustolla",
+    "handoffHint": "Kysymme sinulta vahvistuksen ennen kuin ohjaamme sinut yrityksen sivustolle viimeistelemään varauksen.",
+    "pricePerDay": "{price} päivältä",
+    "specs": "Tekniset tiedot",
+    "year": "Vuosimalli",
+    "type": "Tyyppi",
+    "transmission": "Vaihteisto",
+    "fuel": "Polttoaine",
+    "seats": "Istuimet",
+    "availability": "Saatavuus",
+    "availabilityError": "Saatavuuden lataaminen epäonnistui. Yritä uudelleen.",
+    "availabilityUnavailable": "Saatavuus ei ole käytettävissä",
+    "checkingAvailability": "Tarkistetaan saatavuutta…",
+    "notAvailable": "Tämä auto ei ole saatavilla valituille päiville.",
+    "selectPickup": "Valitse noutopäivä",
+    "selectDropoff": "Valitse nyt palautuspäivä",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Tyhjennä päivämäärät",
+    "addDate": "Lisää päivä",
+    "calendarLabel": "Saatavuuskalenteri",
+    "legend": "Kalenterin selite",
+    "available": "Saatavilla",
+    "selected": "Valittu",
+    "unavailable": "Ei saatavilla",
+    "openDates": "Ei varattuja päiviä seuraavan {months} kuukauden aikana.",
+    "breadcrumbAria": "Murupolku",
+    "photoEmpty": "Kuvia tulossa pian",
+    "previousPhoto": "Edellinen kuva",
+    "nextPhoto": "Seuraava kuva",
+    "viewPhoto": "Näytä kuva {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, kuva {index}",
+    "backToFleet": "Takaisin kalustoon",
+    "metaTitle": "Auton tiedot",
+    "about": "Tietoa tästä autosta",
+    "category": "Luokka",
+    "color": "Väri",
+    "deposit": "Takuumaksu",
+    "mileage": "Ajokilometrit",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Sinut ohjataan yrityksen {company} varaussivustolle viimeistelemään varauksesi.",
+    "handoffTrust": "{company} on luotettava Benwer-kumppani.",
+    "handoffContinue": "Jatka",
+    "handoffCancel": "Peruuta",
+    "handoffCompanyFallback": "yrityksen"
+  },
+  "booking": {
+    "title": "Viimeistele varauksesi",
+    "subtitle": "Vahvista tietosi — tiliä ei tarvita.",
+    "details": "Tietosi",
+    "detailsHint": "Käytämme näitä tietoja vain tämän varauksen vahvistamiseen.",
+    "guestName": "Koko nimi",
+    "guestNamePlaceholder": "Maija Meikäläinen",
+    "guestEmail": "Sähköpostiosoite",
+    "guestEmailPlaceholder": "maija@example.com",
+    "guestEmailHint": "Vahvistus lähetetään tähän osoitteeseen.",
+    "guestPhone": "Puhelinnumero",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Vuokraamo voi ottaa sinuun yhteyttä noutoon liittyen.",
+    "startDate": "Noutopäivä",
+    "endDate": "Palautuspäivä",
+    "datesHint": "Päivämäärät tulevat auton kalenterista. Voit muokata niitä tässä.",
+    "addDate": "Lisää päivä",
+    "changeDates": "Vaihda päivämäärät kalenterista",
+    "summary": "Varauksen yhteenveto",
+    "vehicle": "Ajoneuvo",
+    "company": "Yritys",
+    "rate": "Päivähinta",
+    "duration": "Kesto",
+    "totalPrice": "Yhteensä",
+    "nights": "{count, plural, one {# päivä} other {# päivää}}",
+    "stickyMeta": "{name} · {count, plural, one {# päivä} other {# päivää}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Vahvista varaus",
+    "confirmRequest": "Lähetä pyyntö",
+    "requesting": "Lähetetään pyyntöä…",
+    "confirming": "Vahvistetaan…",
+    "sitePaused": "Ei ota vastaan varauksia",
+    "insurance": "Vakuutus",
+    "termsLabel": "Vuokrausehdot",
+    "termsAccept": "Hyväksyn",
+    "termsLink": "vuokrausehdot",
+    "successTitle": "Varaus vahvistettu!",
+    "successMessage": "Vahvistus on lähetetty osoitteeseen {email}.",
+    "viewBooking": "Näytä varaukseni",
+    "selectDates": "Valitse päivämäärät jatkaaksesi",
+    "invalidDates": "Valitse kelvollinen ajanjakso",
+    "backToCar": "Takaisin autoon {name}",
+    "trustNoAccount": "Tiliä ei tarvita",
+    "trustEmail": "Vahvistus sähköpostitse",
+    "trustNoPayment": "Ei maksua nyt",
+    "trustCardPayment": "Maksa kortilla varauksen jälkeen",
+    "trustFooter": "Vahvistamalla pyydät tätä autoa yllä oleville päiville. Yritys noudattaa varausta.",
+    "missingTitle": "Valitse auto jatkaaksesi",
+    "missingDescription": "Valitse ajoneuvo ja päivämäärät ennen varauksen viimeistelyä.",
+    "browseCars": "Selaa autoja",
+    "vehicleMissingTitle": "Tämä auto ei ole enää saatavilla",
+    "vehicleMissingDescription": "Se on saattanut tulla varatuksi. Valitse toinen auto kalustosta.",
+    "viewFleet": "Näytä kalusto",
+    "datesMissingTitle": "Lisää matkapäiväsi",
+    "datesMissingDescription": "Palaa auton sivulle valitsemaan vapaat päivät tai syötä ne lomakkeelle.",
+    "pickDates": "Valitse päivämäärät autolle",
+    "formAria": "Asiakkaan varaustiedot",
+    "validation": {
+      "nameMin": "Anna koko nimesi (vähintään 2 merkkiä).",
+      "email": "Anna kelvollinen sähköpostiosoite.",
+      "phone": "Anna kelvollinen puhelinnumero.",
+      "startDate": "Valitse noutopäivä.",
+      "endDate": "Valitse palautuspäivä.",
+      "endAfterStart": "Palautuspäivän on oltava noutopäivän jälkeen.",
+      "terms": "Hyväksy vuokrausehdot jatkaaksesi.",
+      "fixErrors": "Korjaa korostetut kentät."
+    },
+    "averageRate": "Keskimääräinen päivähinta",
+    "breakdownTitle": "Hintaerittely",
+    "standardRate": "Normaalihinta",
+    "weekendRate": "Viikonloppu",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Vuokrausten on kestettävä tällä kaudella vähintään {limit, plural, one {# päivä} other {# päivää}}. Muuta päivämääriä varataksesi.",
+    "warningMaxDays": "Vuokraukset voivat kestää tällä kaudella enintään {limit, plural, one {# päivä} other {# päivää}}. Muuta päivämääriä varataksesi.",
+    "returnLocation": "Palautuspaikka",
+    "oneWayFee": "Eri palautuspaikan maksu",
+    "signedInAs": "Kirjautuneena: {email}",
+    "signInPrompt": "Onko sinulla tili?",
+    "signInLink": "Kirjaudu sisään täyttääksesi tietosi",
+    "subtitleSignedIn": "Tarkista tietosi ja vahvista.",
+    "trustPaymentAfter": "Maksutiedot tulevat varauksen jälkeen",
+    "extras": "Lisäpalvelut",
+    "extraPerDay": "{price} / päivä",
+    "extraFixed": "{price} / vuokraus",
+    "tripDetails": "Matkan tiedot",
+    "pickupTime": "Noutoaika",
+    "returnTime": "Palautusaika",
+    "timeAny": "Mikä tahansa aika",
+    "flightNumber": "Lennon numero",
+    "flightNumberHint": "Noutopaikkasi on lentoasemalla. Lisää lennon numero, jotta yritys voi seurata viivästyksiä.",
+    "flightNumberOptional": "Lisää, jos saavut lentokoneella.",
+    "notes": "Kommentit",
+    "notesPlaceholder": "Jotain, mitä yrityksen olisi hyvä tietää?",
+    "dateOfBirth": "Syntymäaika",
+    "optional": "valinnainen",
+    "extraSoldOut": "Ei saatavilla näille päiville"
+  },
+  "reservationStatus": {
+    "title": "Varauksesi",
+    "successTitle": "Varauksesi on tehty",
+    "successSubtitle": "Olemme lähettäneet vahvistuksen osoitteeseen {email}.",
+    "status": {
+      "draft": "Odottaa",
+      "confirmed": "Vahvistettu",
+      "active": "Käynnissä — hyvää matkaa!",
+      "completed": "Valmis",
+      "cancelled": "Peruutettu"
+    },
+    "vehicle": "Ajoneuvo",
+    "company": "Yritys",
+    "dates": "Päivämäärät",
+    "pickup": "Nouto",
+    "dropoff": "Palautus",
+    "guest": "Asiakas",
+    "email": "Sähköposti",
+    "phone": "Puhelin",
+    "total": "Yhteensä",
+    "reference": "Viitenumero",
+    "referenceHint": "Näytä tämä noudon yhteydessä.",
+    "trustCopy": "Tallenna tämä sivu — se on varauskuittisi. Vuokraamo hoitaa asian tästä eteenpäin.",
+    "trustEmail": "Vahvistus lähetetty sähköpostitse",
+    "trustPickup": "Näytä tämä sivu noudon yhteydessä",
+    "nextTitle": "Mitä tapahtuu seuraavaksi",
+    "nextEmail": "Tarkista vahvistus osoitteesta {email}.",
+    "nextPickup": "Näytä viitenumerosi noudon yhteydessä.",
+    "browseMore": "Selaa lisää autoja",
+    "notFoundTitle": "Varausta ei löytynyt",
+    "notFoundDescription": "Tarkista vahvistussähköpostissa oleva linkki tai aloita uusi haku.",
+    "backHome": "Takaisin etusivulle",
+    "requestExpires": "Pyyntö vanhenee",
+    "cancelReason": "Peruutuksen syy",
+    "withdraw": "Peruuta pyyntö",
+    "paymentStatus": "Maksu",
+    "paidAmount": "Maksettu",
+    "payment": {
+      "unpaid": "Maksamaton",
+      "partially_paid": "Osittain maksettu",
+      "paid": "Maksettu",
+      "refund_due": "Hyvitys tulossa",
+      "authorized": "Kortti varmennettu"
+    },
+    "reasons": {
+      "unpaid_timeout": "Maksua ei suoritettu ajoissa",
+      "request_expired": "Yritys ei vastannut ajoissa",
+      "request_declined": "Yritys hylkäsi tämän pyynnön",
+      "customer_request": "Peruutit tämän pyynnön"
+    },
+    "insurance": "Vakuutus",
+    "extras": "Lisäpalvelut",
+    "fees": "Nouto- ja palautusmaksut",
+    "priceTitle": "Hintayhteenveto"
+  },
+  "payment": {
+    "title": "Maksa ennakkomaksu",
+    "amountDue": "Maksettava summa: {amount}",
+    "countdown": "Suorita maksu ajassa {time}",
+    "requestAuthorize": "Korttisi varmennetaan nyt ja veloitetaan vasta, kun yritys hyväksyy varauksen.",
+    "pay": "Maksa nyt",
+    "paying": "Käsitellään…",
+    "confirming": "Vahvistetaan maksuasi",
+    "confirmingHint": "Odota hetki — vahvistamme maksun yritykseltä, emme korttilomakkeelta.",
+    "declined": "Kortti hylättiin. Kokeile toista korttia.",
+    "secure": "Stripe käsittelee korttitiedot testitilassa.",
+    "cancelBooking": "Peruuta varaus",
+    "cancelTitle": "Peruutetaanko tämä varaus?",
+    "cancelDescription": "Sovellamme yrityksen peruutusehtoja. Tarkista peruutusmaksu ja hyvitys ennen vahvistamista.",
+    "cancelFee": "Peruutusmaksu",
+    "cancelRefund": "Hyvitys",
+    "confirmCancel": "Vahvista peruutus",
+    "keepBooking": "Pidä varaus",
+    "cancelled": "Varauksesi on peruutettu."
+  },
+  "companies": {
+    "title": "Autovuokraamot",
+    "subtitle": "Selaa kumppanivuokraamoja Málagassa — kartalla tai luettelossa",
+    "searchPlaceholder": "Hae yrityksiä…",
+    "noResults": "Yrityksiä ei löytynyt",
+    "noResultsHint": "Kokeile toista sijaintia Málagan maakunnassa.",
+    "emptyTitle": "Yrityksiä ei ole vielä listattu",
+    "emptyDescription": "Autovuokraamoja ei ole vielä listattu.",
+    "clearFilters": "Tyhjennä haku",
+    "viewFleet": "Näytä kalusto",
+    "visitWebsite": "Siirry sivustolle",
+    "contact": "Yhteystiedot",
+    "backToList": "Kaikki yritykset",
+    "notFoundTitle": "Yritystä ei löytynyt",
+    "notFoundDescription": "Tätä autovuokraamoa ei ole listattu. Selaa muita lähistöllä olevia.",
+    "loadErrorTitle": "Yrityksen tiedot eivät ole saatavilla",
+    "loadErrorDescription": "Emme voineet ladata tätä autovuokraamoa reaaliaikaisesta valikoimasta. Yritä uudelleen — emme näytä malliautoja, kun API-yhteys epäonnistuu.",
+    "browseCars": "Selaa autoja",
+    "featuredEmpty": "Ei vielä esiteltyjä yrityksiä",
+    "featuredEmptyHint": "Tarkista myöhemmin uudelleen tai selaa paikallisten kalustojen autoja.",
+    "locationUnknown": "Sijaintia ei ole ilmoitettu",
+    "noDescription": "Ei vielä kuvausta."
+  },
+  "contact": {
+    "title": "Ota yhteyttä",
+    "lede": "Kysyttävää markkinapaikasta? Lähetä meille viesti, niin vastaamme mahdollisimman pian.",
+    "bookingHint": "Tämä lomake ei ole varauksia varten. Vuokrataksesi auton jatka autovuokraamon omalle sivustolle.",
+    "name": "Koko nimi",
+    "email": "Sähköpostiosoite",
+    "subject": "Aihe",
+    "message": "Viesti",
+    "submit": "Lähetä viesti",
+    "privacyNote": "Käytämme näitä tietoja vain vastaamiseen.",
+    "errors": {
+      "nameMin": "Anna nimesi (vähintään 2 merkkiä).",
+      "email": "Anna kelvollinen sähköpostiosoite.",
+      "subjectMin": "Anna aihe (vähintään 3 merkkiä).",
+      "messageMin": "Kirjoita viesti (vähintään 10 merkkiä)."
+    },
+    "eyebrow": "Tuki",
+    "namePlaceholder": "Maija Meikäläinen",
+    "emailPlaceholder": "sinä@example.com",
+    "subjectPlaceholder": "Miten voimme auttaa?",
+    "messagePlaceholder": "Kerro meille, mitä tarvitset…",
+    "supportSubjectDefault": "Tukipyyntö",
+    "submitting": "Lähetetään…",
+    "submittedTitle": "Viesti lähetetty",
+    "submittedDescription": "Kiitos yhteydenotosta. Vastaamme sähköpostiisi mahdollisimman pian.",
+    "sendAnother": "Lähetä toinen viesti",
+    "backHome": "Takaisin etusivulle",
+    "whatsappTitle": "Haluatko käyttää WhatsAppia?",
+    "whatsappDescription": "Keskustele suoraan Benwer Cars -tiimin kanssa."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Tietosuojaseloste",
+      "lede": "Miten käsittelemme henkilötietoja, kun käytät Benwer Cars -markkinapaikkaa.",
+      "updated": "Päivitetty viimeksi: 13. syyskuuta 2026",
+      "sections": [
+        {
+          "title": "Keitä olemme",
+          "body": "Benwer Cars (”Benwer”, ”me”) ylläpitää kuluttajamarkkinapaikkaa, joka auttaa matkailijoita löytämään autovuokraamojen kalustoja Málagan maakunnassa.\n\nTämä seloste koskee vain markkinapaikkasivustoa. Jos jatkat autovuokraamon omalle sivustolle tekemään varauksen, kyseinen yritys vastaa sinne antamistasi tiedoista."
+        },
+        {
+          "title": "Mitä tämä markkinapaikka tekee",
+          "body": "Voit hakea autoja ja yrityksiä, vertailla julkisia kalustotietoja ja jatkaa autovuokraamon sivustolle viimeistelemään varauksen.\n\nBenwer ei ota vastaan maksuja eikä tee vuokrasopimusta markkinapaikalla. Vuokrasopimus syntyy sinun ja yrityksen välille."
+        },
+        {
+          "title": "Keräämämme tiedot",
+          "body": "Sen mukaan, miten käytät markkinapaikkaa, saatamme käsitellä seuraavia tietoja:\n\n• Haku- ja käyttötiedot — syöttämäsi sijainti ja päivämäärät, katsomasi sivut sekä perustason tekniset tiedot, kuten IP-osoite, selain ja laitetiedot.\n• Kieliasetus — tallennetaan välttämättömänä evästeenä, jotta voimme näyttää valitsemasi kielen.\n• Evästesuostumus — tallennetaan laitteellesi, jotta muistamme valintasi.\n• Yhteydenottoviestit — nimi, sähköpostiosoite, aihe ja viesti, jos kirjoitat meille. Merkitsemme ne markkinapaikalta tulleiksi.\n\nEmme pyydä sinua luomaan tiliä markkinapaikalle. Autovuokraamo kerää varaus- ja maksutiedot omalla sivustollaan oman tietosuojaselosteensa mukaisesti."
+        },
+        {
+          "title": "Miten käytämme tietoja",
+          "body": "Käytämme henkilötietoja markkinapaikan ylläpitämiseen ja kehittämiseen, kieli- ja evästevalintojen muistamiseen, yhteydenottoviesteihin vastaamiseen, palvelun turvallisuuden varmistamiseen sekä lakisääteisten velvoitteiden täyttämiseen.\n\nEmme myy henkilötietojasi."
+        },
+        {
+          "title": "Oikeusperusteet (ETA / Yhdistynyt kuningaskunta)",
+          "body": "Soveltuvin osin perustamme käsittelyn oikeutettuun etuun (julkisen hakemiston ylläpito ja sivuston suojaaminen), suostumukseen (valinnaiset evästeet, jos niitä otetaan käyttöön), lakisääteiseen velvoitteeseen sekä tarvittaviin toimenpiteisiin yhteydenottoosi vastaamiseksi."
+        },
+        {
+          "title": "Tietojen jakaminen",
+          "body": "Voimme käyttää luotettuja palveluntarjoajia sivuston ylläpitoon ja sähköpostien toimittamiseen. He käsittelevät tietoja ohjeidemme mukaisesti.\n\nJos jatkat yrityksen sivustolle, kyseisestä yrityksestä tulee sinne antamiesi tietojen rekisterinpitäjä. Emme välitä yhteydenottolomakkeella lähettämääsi viestiä autovuokraamoille, ellet sitä pyydä."
+        },
+        {
+          "title": "Evästeet",
+          "body": "Käytämme välttämätöntä kielievästettä ja tallennamme evästevalintasi laitteellesi. Katso lisätiedot evästekäytännöstä. Valinnaiset evästeet pysyvät pois päältä, ellet hyväksy niitä."
+        },
+        {
+          "title": "Säilytysaika",
+          "body": "Säilytämme yhteydenottoviestejä niin kauan kuin vastaaminen ja kohtuullinen jälkiseuranta edellyttävät. Teknisiä lokeja säilytetään lyhyen ajan. Evästevalintasi säilyy, kunnes muutat sitä tai tyhjennät sivustotiedot."
+        },
+        {
+          "title": "Oikeutesi",
+          "body": "Sijainnistasi riippuen sinulla voi olla oikeus tarkastaa, oikaista, poistaa, rajoittaa tai siirtää tietojasi sekä vastustaa tiettyä käsittelyä. Voit myös tehdä valituksen paikalliselle valvontaviranomaiselle.\n\nVoit käyttää oikeuksiasi yhteydenottosivun kautta."
+        },
+        {
+          "title": "Kansainväliset siirrot",
+          "body": "Jos tietoja siirretään maasi ulkopuolelle, käytämme asianmukaisia suojatoimia, kuten vakiosopimuslausekkeita tai vastaavia lain edellyttämiä mekanismeja."
+        },
+        {
+          "title": "Muutokset",
+          "body": "Voimme päivittää tätä selostetta ajoittain. Julkaisemme päivitetyn version tällä sivulla ja päivitämme ”Päivitetty viimeksi” -päivämäärän."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Käyttöehdot",
+      "lede": "Säännöt Benwer Cars -markkinapaikan käyttämiseen vuokrausyritysten kalustojen selaamiseen.",
+      "updated": "Päivitetty viimeksi: 13. syyskuuta 2026",
+      "sections": [
+        {
+          "title": "Markkinapaikka",
+          "body": "Benwer Cars tarjoaa julkisen hakemiston autovuokraamoista ja niiden julkaisemista kalustoista. Voit vertailla autoja ja jatkaa yrityksen omalle verkkosivustolle viimeistelemään vuokrauksen.\n\nNämä ehdot koskevat markkinapaikkasivustoa. Ne eivät korvaa autovuokraamon omia ehtoja, joita sovelletaan, kun teet varauksen heidän kanssaan."
+        },
+        {
+          "title": "Varaukset tehdään autovuokraamojen kanssa",
+          "body": "Benwer ei vuokraa autoja, ota vastaan maksuja eikä tee vuokrasopimuksia markkinapaikalla.\n\nJos jatkat yrityksen sivustolle, kaikki varaukseen, takuumaksuun, vakuutukseen ja noutoon liittyvät järjestelyt tehdään sinun ja kyseisen yrityksen välillä. Lue heidän ehtonsa ennen vahvistamista."
+        },
+        {
+          "title": "Ilmoitukset ja saatavuus",
+          "body": "Autovuokraamot julkaisevat kalustotiedot, hinnat, kuvat ja saatavuuden, ja ne voivat muuttua. Pyrimme näyttämään julkiset tiedot täsmällisesti, mutta emme takaa, että auto on edelleen saatavilla tai että ilmoitettu hinta on voimassa, ennen kuin yritys vahvistaa sen.\n\nMarkkinapaikalle syöttämäsi päivämäärät auttavat sinua haussa. Lopullinen saatavuus vahvistetaan yrityksen sivustolla."
+        },
+        {
+          "title": "Hyväksyttävä käyttö",
+          "body": "Käytä markkinapaikkaa lainmukaisesti. Älä kerää tietoja automaattisesti (scraping), ylikuormita tai häiritse palvelua, lähetä vääriä yhteystietoja tai käytä sivustoa muiden ihmisten tai yritysten vahingoittamiseen."
+        },
+        {
+          "title": "Vastuu",
+          "body": "Markkinapaikka tarjotaan hakupalveluna. Lain sallimissa rajoissa Benwer ei vastaa vuokrauskiistoista, ajoneuvon kunnosta tai yrityksen sivustolla tehdyistä varauksista.\n\nMikään näissä ehdoissa ei rajoita sinulle kuluttajana kuuluvia oikeuksia, joista ei voida luopua sovellettavan lain nojalla."
+        },
+        {
+          "title": "Muutokset",
+          "body": "Voimme päivittää näitä ehtoja. Tämän sivun ”Päivitetty viimeksi” -päivämäärä osoittaa nykyisen version. Palvelun käytön jatkaminen muutoksen jälkeen tarkoittaa, että hyväksyt päivitetyt ehdot."
+        },
+        {
+          "title": "Yhteystiedot",
+          "body": "Näitä ehtoja tai markkinapaikkaa koskevat kysymykset voi lähettää yhteydenottosivulta. Jos olet jo aloittanut varauksen, ota yhteyttä suoraan autovuokraamoon."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Evästekäytäntö",
+      "lede": "Miten käytämme evästeitä ja vastaavia tekniikoita markkinapaikalla.",
+      "updated": "Päivitetty viimeksi: 13. syyskuuta 2026",
+      "sections": [
+        {
+          "title": "Mitä käytämme",
+          "body": "Evästeet ovat pieniä tekstitiedostoja, jotka tallennetaan laitteellesi. Käytämme myös vastaavaa tallennustilaa, kuten paikallista tallennustilaa (local storage), valintojen muistamiseen.\n\nTämä käytäntö koskee Benwer Cars -markkinapaikkaa. Kun jatkat autovuokraamon sivustolle, kyseinen sivusto voi asettaa omia evästeitään."
+        },
+        {
+          "title": "Välttämättömät evästeet",
+          "body": "Käytämme kielievästettä, jotta sivusto voi näyttää valitsemasi kielen. Tämä on välttämätöntä, jotta markkinapaikka toimii odotetulla tavalla.\n\nEvästebannerin valintasi tallennetaan laitteellesi, jotta emme kysy sitä uudelleen jokaisella käynnillä. Tätä tallennustilaa ei käytetä mainontaan."
+        },
+        {
+          "title": "Valinnaiset evästeet",
+          "body": "Valinnaiset evästeet (esimerkiksi analytiikka) pysyvät pois päältä, ellet valitse Hyväksy kaikki.\n\nTällä hetkellä markkinapaikka ei aseta analytiikka- tai markkinointievästeitä. Jos lisäämme niitä myöhemmin, kuvaamme ne täällä ja ne edellyttävät edelleen hyväksyntääsi."
+        },
+        {
+          "title": "Evästeiden hallinta",
+          "body": "Käytä banneria hyväksyäksesi kaikki evästeet tai säilyttääksesi vain välttämättömät. Voit myös poistaa evästeet ja sivustotiedot selaimestasi. Kielievästeen estäminen voi palauttaa oletuskielen seuraavalla käynnillä."
+        },
+        {
+          "title": "Lisätietoja",
+          "body": "Katso tietosuojaselosteesta, miten käsittelemme henkilötietoja, tai lähetä viesti yhteydenottosivulta."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} etusivu",
+    "defaultHeadline": "Vuokraa auto yritykseltä {name}",
+    "footerTagline": "Varaa suoraan tästä autovuokraamosta.",
+    "previewBanner": "Esikatselu — tämä sivu ei ole julkinen. Hakukoneet eivät indeksoi sitä.",
+    "editLink": "Muokkaa",
+    "editContactEmpty": "Yhteystiedot on piilotettu. Muokkaa niitä hallintapaneelissa.",
+    "editBranchesEmpty": "Ei vielä toimipisteitä. Lisää niitä hallintapaneelissa.",
+    "editRulesHint": "Varaustapa, ennakkoaika ja pyynnön vastausaika.",
+    "editDomainHint": "Oma verkkotunnus ja julkinen URL-osoite.",
+    "editSection": {
+      "hero": "Otsikkobanneri",
+      "search": "Haku",
+      "fleet": "Kalusto",
+      "branches": "Toimipisteet",
+      "contact": "Yhteystiedot",
+      "rules": "Varaussäännöt",
+      "domain": "Verkkotunnus"
+    },
+    "pausedTitle": "Ei ota vastaan varauksia",
+    "pausedDescription": "Tämä yritys on keskeyttänyt verkkovaraukset. Voit silti selata kalustoa.",
+    "notFoundTitle": "Sivustoa ei löytynyt",
+    "notFoundDescription": "Tämä vuokraussivusto ei ole käytettävissä.",
+    "loadErrorTitle": "Sivusto ei ole käytettävissä",
+    "loadErrorDescription": "Emme voineet ladata tätä vuokraussivustoa. Yritä hetken kuluttua uudelleen.",
+    "search": "Hae autoja",
+    "searchAria": "Hae päivämäärien ja sijainnin mukaan",
+    "searchTitle": "Hae autoja",
+    "searchDescription": "Valitse päivämäärät ja sijainti nähdäksesi saatavilla olevat autot.",
+    "branch": "Noutopaikka",
+    "anyBranch": "Mikä tahansa sijainti",
+    "ownerSignIn": "Omistajan kirjautuminen",
+    "returnBranch": "Palautuspaikka",
+    "differentReturn": "Palauta eri sijaintiin",
+    "returnSame": "Sama kuin noutopaikka",
+    "driverAge": "Kuljettajan ikä",
+    "driverAgeYears": "{band} vuotta",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Muokkaa sivustoasi",
+    "signInHint": "Omistajat avaavat sivustoeditorin Benwerin hallintapaneelista. Käytä siellä olevaa ”Muokkaa sivustoa” -painiketta, niin kirjaudut tänne automaattisesti.",
+    "signedInTitle": "Olet kirjautunut sisään",
+    "signedInHint": "Jos sinulla on oikeus hallinnoida tätä sivustoa, editori avautuu etusivulla.",
+    "openEditor": "Avaa sivustoeditori",
+    "disabledTitle": "Omistajan muokkaus ei ole käytettävissä",
+    "disabledDescription": "Henkilökunnan Firebasea ei ole määritetty tälle markkinapaikalle.",
+    "signOut": "Kirjaudu ulos",
+    "auth": {
+      "tooManyRequests": "Liian monta yritystä. Yritä myöhemmin uudelleen.",
+      "unknown": "Kirjautuminen epäonnistui. Yritä uudelleen.",
+      "invalidToken": "Tämä kirjautumislinkki on vanhentunut tai jo käytetty. Avaa editori uudelleen Benwerin hallintapaneelista."
+    },
+    "signingIn": "Kirjaudutaan sisään…",
+    "openAdmin": "Avaa Benwerin hallintapaneeli",
+    "accountMenu": "Omistajan tili",
+    "signedInAs": "Kirjautunut omistajana",
+    "guestSignedOut": "Sinut kirjattiin ulos asiakastililtäsi. Omistajan ja asiakkaan istunnot eivät voi olla auki samanaikaisesti tässä selaimessa."
+  },
+  "guest": {
+    "googleAction": "Kirjaudu sisään Googlella",
+    "googleCreate": "Jatka Googlella",
+    "or": "tai",
+    "forgotPassword": "Unohditko salasanasi?",
+    "resetTitle": "Nollaa salasanasi",
+    "resetHint": "Anna sähköpostiosoitteesi, niin lähetämme sinulle linkin uuden salasanan valitsemiseen.",
+    "resetAction": "Lähetä nollauslinkki",
+    "resetSentTitle": "Tarkista sähköpostisi",
+    "resetSentHint": "Jos tällä osoitteella on tili, olemme lähettäneet salasanan nollausohjeet. Etkö saanut viestiä? Tarkista roskapostikansiosi tai odota muutama minuutti ennen uutta yritystä.",
+    "backToSignIn": "Takaisin kirjautumiseen",
+    "signInNav": "Kirjaudu sisään",
+    "myBookings": "Omat varaukset",
+    "signInTitle": "Kirjaudu sisään",
+    "signInHint": "Käytä tämän autovuokraamon asiakastiliäsi. Tämä ei ole henkilökunnan kirjautuminen.",
+    "signInAction": "Kirjaudu sisään",
+    "createTitle": "Luo asiakastili",
+    "createHint": "Tallenna varauksesi tässä yrityksessä. Henkilökunta käyttää eri kirjautumista.",
+    "createAction": "Luo tili",
+    "needAccount": "Tarvitsetko tilin? Luo tili",
+    "haveAccount": "Onko sinulla jo tili? Kirjaudu sisään",
+    "email": "Sähköposti",
+    "password": "Salasana",
+    "bookingsTitle": "Omat varaukset",
+    "bookingsMeta": "Tähän autovuokraamoon liitetyt varaukset.",
+    "bookingsHint": "Kirjautuneena: {email} yrityksessä {company}.",
+    "emptyTitle": "Ei vielä varauksia",
+    "emptyDescription": "Oletko varannut aiemmin? Liitä varaus käyttämälläsi sähköpostilla tai vahvistuskoodilla.",
+    "bookingFallback": "Varaus",
+    "loadErrorTitle": "Varauksia ei voitu ladata",
+    "linkTitle": "Liitä varaus",
+    "linkHint": "Anna varaamiseen käytetty sähköposti tai vahvistuskoodi. Jos löydämme vastaavuuden, lähetämme linkin sähköpostitse — emme koskaan paljasta, onko tiliä olemassa.",
+    "linkEmail": "Varauksen sähköposti",
+    "linkToken": "Varauksen vahvistuskoodi",
+    "linkAction": "Lähetä linkki",
+    "linkSent": "Jos löydämme vastaavan varauksen, lähetämme vahvistuslinkin sähköpostitse.",
+    "accountTitle": "Tili",
+    "accountHint": "Kirjaudu ulos tililtäsi tällä sivustolla.",
+    "signOut": "Kirjaudu ulos",
+    "erase": "Poista tietoni täältä",
+    "eraseConfirm": "Kyllä, poista tietoni tältä yritykseltä",
+    "confirmTitle": "Liitetään varaustasi",
+    "confirmHint": "Odota hetki, kun liitämme tämän varauksen tiliisi.",
+    "confirmSignIn": "Kirjaudu sisään asiakastililläsi viimeistelläksesi varauksen liittämisen.",
+    "confirmMissing": "Vahvistuskoodi puuttuu",
+    "confirmMissingHint": "Avaa linkki uudelleen sähköpostistasi.",
+    "confirmError": "Emme voineet vahvistaa tätä linkkiä",
+    "disabledTitle": "Asiakastilit eivät ole vielä käytettävissä",
+    "disabledDescription": "Tämä yritys ei ole ottanut asiakaskirjautumista käyttöön. Voit silti varata nimelläsi, sähköpostillasi ja puhelinnumerollasi.",
+    "auth": {
+      "popupClosed": "Kirjautuminen peruutettiin.",
+      "popupBlocked": "Selaimesi esti Google-ikkunan. Salli ponnahdusikkunat ja yritä uudelleen.",
+      "differentProvider": "Tällä sähköpostilla kirjaudutaan jo toisella tavalla. Käytä salasanaasi sen sijaan.",
+      "providerUnavailable": "Google-kirjautuminen ei ole vielä käytettävissä tällä sivustolla. Käytä sähköpostiasi ja salasanaasi.",
+      "invalidEmail": "Anna kelvollinen sähköpostiosoite.",
+      "emailInUse": "Tällä sähköpostilla on jo asiakastili. Kirjaudu sisään sen sijaan.",
+      "weakPassword": "Käytä pidempää salasanaa.",
+      "tooManyRequests": "Liian monta yritystä. Yritä muutaman minuutin kuluttua uudelleen.",
+      "invalidCredentials": "Sähköposti tai salasana on virheellinen.",
+      "unknown": "Kirjautuminen epäonnistui. Yritä uudelleen.",
+      "googleDisabled": "Google-kirjautumista ei ole vielä otettu käyttöön tällä sivustolla. Käytä sähköpostiasi ja salasanaasi.",
+      "domainNotAuthorised": "Google-kirjautumista ei ole vielä määritetty tämän sivuston osoitteelle. Käytä toistaiseksi sähköpostiasi ja salasanaasi."
+    },
+    "accountMenu": "Tilisi",
+    "profileNav": "Profiili",
+    "profileTitle": "Profiili",
+    "profileMeta": "Asiakastilisi tässä autovuokraamossa.",
+    "linkCancel": "Peruuta",
+    "eraseTitle": "Poista tietoni",
+    "eraseHint": "Poistaa asiakastietosi tältä yritykseltä ja kirjaa sinut ulos. Tämä ei vaikuta muihin yrityksiin.",
+    "profileDetailsTitle": "Tietosi",
+    "profileDetailsHint": "Käytetään varaustesi esitäyttämiseen tässä yrityksessä.",
+    "profileFullName": "Koko nimi",
+    "profilePhone": "Puhelinnumero",
+    "profileDob": "Syntymäaika",
+    "profileSave": "Tallenna tiedot",
+    "profileNotLinked": "Nimesi ja puhelinnumerosi tallennetaan tänne ensimmäisen tällä sähköpostilla tehdyn varauksen jälkeen. Oletko jo varannut toisella sähköpostilla? Liitä varaus kohdasta Omat varaukset.",
+    "verifyTitle": "Vahvista sähköpostisi nähdäksesi varauksesi",
+    "verifyHint": "Lähetimme linkin osoitteeseen {email}. Avaa se ja palaa sitten tänne. Ennen kuin sähköpostisi on vahvistettu, emme voi näyttää varauksiasi tai tallentaa nimeäsi ja puhelinnumeroasi.",
+    "verifyResend": "Lähetä sähköposti uudelleen",
+    "verifySent": "Sähköposti lähetetty. Tarkista saapuneet- ja roskapostikansiosi.",
+    "verifyDone": "Olen vahvistanut sähköpostini",
+    "verifyStillPending": "Sähköpostiasi ei ole vielä vahvistettu. Avaa sähköpostissa oleva linkki ja yritä sitten uudelleen.",
+    "verifyBanner": "Tilisi ei ole vielä aktiivinen. Vahvista osoite {email} nähdäksesi varauksesi ja käyttääksesi tallennettuja tietojasi.",
+    "verifyBannerAction": "Vahvista sähköposti",
+    "profileEdit": "Muokkaa tietoja",
+    "profileCancel": "Peruuta",
+    "profileEmail": "Sähköposti",
+    "profileEmpty": "Ei lisätty",
+    "bookingsUpcoming": "Tulevat",
+    "bookingsPast": "Menneet",
+    "ownerSignedOut": "Sinut kirjattiin ulos sivustoeditorista. Omistajan ja asiakkaan istunnot eivät voi olla auki samanaikaisesti tässä selaimessa."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Yrityksen {name} tarjoukset",
+      "slideAlt": "Yrityksen {name} banneri {position}",
+      "slideLabel": "{position} / {count}",
+      "previous": "Edellinen banneri",
+      "next": "Seuraava banneri",
+      "goTo": "Näytä banneri {position}",
+      "presets": {
+        "airport": {
+          "script": "juuri laskeutunut?",
+          "highlight": "Lentoasemanouto",
+          "joiner": "vain",
+          "boxed": "10 minuutissa",
+          "description": "Ohita jonot: allekirjoita sopimus puhelimellasi ja lähde ajamaan täydellä vakuutuksella"
+        },
+        "weekend": {
+          "script": "varaa tämä viikonloppu",
+          "highlight": "Säästä 20 %",
+          "joiner": "kaikista",
+          "boxed": "Viikonloppuvuokrauksista",
+          "description": "Nouda perjantaina, palauta maanantaina. Ilmainen lastenistuin ja lisäkuljettaja sisältyvät"
+        },
+        "roadtrip": {
+          "script": "seuraava automatkasi",
+          "highlight": "Alkaa täältä",
+          "joiner": "ojennamme sinulle",
+          "boxed": "Avaimet",
+          "description": "Ilmainen peruutus 24 t ennen noutoa, rajattomat kilometrit eikä piilokuluja"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Sisältyy jokaiseen hintaan",
+      "title": "Näkemäsi hinta on hinta, jonka maksat",
+      "description": "Ei yllätyksiä tiskillä. Nämä sisältyvät aina hintaan.",
+      "presets": {
+        "insurance": {
+          "title": "Perusvakuutus",
+          "text": "Kolari-, varkaus- ja vastuuvakuutus.",
+          "tag": "Sisältyy"
+        },
+        "mileage": {
+          "title": "Rajattomat kilometrit",
+          "text": "Aja niin pitkälle kuin haluat ilman kilometrimaksuja.",
+          "tag": "Ei rajoja"
+        },
+        "fuel": {
+          "title": "Täysi tankki – täysi tankki",
+          "text": "Nouda auto tankki täynnä ja palauta se tankki täynnä.",
+          "tag": "Ei ennakkotankkausta"
+        },
+        "cancellation": {
+          "title": "Ilmainen peruutus",
+          "text": "Suunnitelmat muuttuivat? Peruuta ilmaiseksi.",
+          "tag": "Joustava"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Arvostelut",
+      "title": "Mitä kuljettajat sanovat meistä",
+      "seeAll": "Näytä kaikki {count, plural, one {# arvostelu} other {# arvostelua}}",
+      "seeAllOn": "Näytä kaikki {count, plural, one {# arvostelu} other {# arvostelua}} palvelussa {source}",
+      "basedOn": "Perustuu {count, plural, one {# arvosteluun} other {# arvosteluun}}",
+      "basedOnSource": "Perustuu {count, plural, one {# arvosteluun} other {# arvosteluun}} palvelussa {source}",
+      "ratingAria": "Arvosana {rating} / 5",
+      "rented": "Vuokrattu: {vehicle}",
+      "verified": "Vahvistettu vuokraus",
+      "distributionAria": "Arvosanojen jakauma",
+      "emptyTitle": "Ei vielä arvosteluja",
+      "emptyText": "Asiakkaat voivat arvostella vuokrauksensa auton palauttamisen jälkeen. Hyväksytyt arvostelut näkyvät täällä."
+    },
+    "app": {
+      "eyebrow": "Mobiilisovellus",
+      "title": "Varauksesi aina mukana",
+      "text": "Tee lähtöselvitys verkossa, katso noutotietosi ja lähetä meille viesti suoraan puhelimestasi.",
+      "platformBoth": "iOS ja Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Skannaa ladataksesi",
+      "qrAlt": "QR-koodi sovelluksen lataamiseen",
+      "appStore": {
+        "prefix": "Lataa palvelusta",
+        "name": "App Store",
+        "aria": "Lataa App Storesta",
+        "unavailable": "Ei vielä saatavilla App Storessa"
+      },
+      "googlePlay": {
+        "prefix": "Hanki palvelusta",
+        "name": "Google Play",
+        "aria": "Hanki Google Playsta",
+        "unavailable": "Ei vielä saatavilla Google Playssa"
+      },
+      "comingSoon": "Tulossa pian"
+    },
+    "locations": {
+      "eyebrow": "Sijainnit",
+      "title": "{count, plural, one {Toimipisteemme} other {Toimipisteemme}}",
+      "description": "{count, plural, one {Nouda ja palauta autosi täältä.} other {Nouda ja palauta autosi mistä tahansa toimipisteestämme.}}",
+      "directions": "Reittiohjeet",
+      "directionsTo": "Reittiohjeet kohteeseen {name}",
+      "call": "Soita"
+    },
+    "faq": {
+      "eyebrow": "UKK",
+      "title": "Kysymyksiä ennen varaamista",
+      "description": "Etkö löytänyt vastaustasi? Ota yhteyttä, autamme mielellämme."
+    },
+    "contact": {
+      "title": "Kysyttävää? Keskustele ihmisen kanssa.",
+      "description": "Lähetä meille viesti tai soita, niin autamme sinua löytämään oikean auton.",
+      "whatsapp": "WhatsApp",
+      "email": "Lähetä sähköpostia",
+      "whatsappMessage": "Hei {name}, minulla on kysymys auton vuokraamisesta."
+    },
+    "nav": {
+      "reviews": "Arvostelut",
+      "faq": "UKK",
+      "contact": "Yhteystiedot",
+      "app": "Sovellus",
+      "branches": "Sijainnit"
+    },
+    "footer": {
+      "contact": "Yhteystiedot",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Hyväksymme",
+      "rating": "{score} · {count, plural, one {# arvostelu} other {# arvostelua}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Käteinen"
+    }
+  },
+  "siteEditor": {
+    "aria": "Sivustoeditori",
+    "title": "Sivustoeditori",
+    "signOut": "Kirjaudu ulos",
+    "tabsAria": "Editorin osiot",
+    "status": {
+      "draft": "Luonnos",
+      "published": "Julkaistu",
+      "paused": "Keskeytetty"
+    },
+    "tabs": {
+      "sections": "Osiot",
+      "design": "Ulkoasu",
+      "settings": "Asetukset",
+      "legal": "Lakitiedot"
+    },
+    "contentLanguage": "Muokkauskieli",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Kaikki osiot",
+    "sections": {
+      "company": "Yritys",
+      "fleet": "Autot",
+      "included": "Sisältyy jokaiseen hintaan",
+      "reviews": "Arvostelut",
+      "app": "Mobiilisovellus",
+      "faq": "UKK",
+      "contact": "Yhteystiedot",
+      "hero": "Bannerit ja haku",
+      "branches": "Sijainnit"
+    },
+    "sectionsHint": "Ota osioita käyttöön tai pois käytöstä ja muuta niiden järjestystä. Avaa osio muokataksesi sen sisältöä.",
+    "orderHint": "Autot näytetään aina. Toimipisteet tulevat Benwerin hallintapaneelista.",
+    "hiddenUntilContent": "Piilotettu, kunnes lisäät sisältöä",
+    "summary": {
+      "banners": "{count, plural, one {# banneri} other {# banneria}}",
+      "bannersEmpty": "Ei vielä bannereita, brändiväri käytössä",
+      "company": "Otsikko, esittely ja yhteystiedot",
+      "fleet": "Benwer-kalustostasi",
+      "included": "{count, plural, one {# kohta} other {# kohtaa}}",
+      "reviews": "{count, plural, one {# arvostelu} other {# arvostelua}}",
+      "app": "Kauppalinkit ja QR-koodi",
+      "locations": "{count, plural, one {# toimipiste} other {# toimipistettä}} Benweristä",
+      "faq": "{count, plural, one {# kysymys} other {# kysymystä}}",
+      "contactWhatsapp": "WhatsApp, puhelin ja aukioloajat",
+      "contact": "Puhelin ja sähköposti"
+    },
+    "unsaved": "Tallentamattomia muutoksia",
+    "saved": "Kaikki muutokset tallennettu",
+    "discard": "Hylkää",
+    "save": "Tallenna muutokset",
+    "common": {
+      "moveUp": "Siirrä {item} ylös",
+      "moveDown": "Siirrä {item} alas",
+      "remove": "Poista {item}",
+      "show": "Näytä {item}"
+    },
+    "banners": {
+      "title": "Bannerit",
+      "description": "Enintään {max} diaa. Tyhjät kentät käyttävät harmaalla näytettyä oletustekstiä.",
+      "empty": "Ei bannereita. Bannerialue näyttää taustavärisi.",
+      "item": "Banneri {position}",
+      "image": "Kuva",
+      "imageHint": "Lataa leveä kuva, noin 1600 × 560 px. JPG, PNG tai WebP enintään 25 Mt. Läpinäkyvä PNG asettuu bannerivärisi päälle.",
+      "add": "Lisää banneri",
+      "fields": {
+        "script": "Käsin kirjoitettu rivi",
+        "highlight": "Korostettu otsikko",
+        "joiner": "Pieni yhdistävä sana",
+        "boxed": "Kehystetty otsikko",
+        "description": "Kuvaus"
+      },
+      "colorsTitle": "Bannerin värit",
+      "colorsDescription": "Käytetään jokaisessa bannerissa. Mikä tahansa väri sopii taustaksi.",
+      "resetColors": "Palauta oletusvärit",
+      "colors": {
+        "background": "Tausta",
+        "text": "Teksti",
+        "highlight": "Korostuslaatikko",
+        "highlightText": "Korostusteksti",
+        "box": "Valkoinen laatikko",
+        "boxText": "Valkoisen laatikon teksti",
+        "script": "Yhdistävä teksti"
+      },
+      "noImage": "Ei vielä kuvaa",
+      "uploadImage": "Lataa kuva",
+      "replaceImage": "Korvaa kuva",
+      "tooLarge": "Tiedosto on yli 25 Mt. Valitse pienempi kuva.",
+      "uploadFailed": "Lataus epäonnistui. Yritä uudelleen."
+    },
+    "company": {
+      "title": "Yrityksen ylätunniste",
+      "description": "Nimesi, otsikko ja lyhyt esittely.",
+      "headline": "Otsikko",
+      "headlinePlaceholder": "Vuokraa auto yritykseltä {name}",
+      "intro": "Esittely",
+      "introHint": "Yksi tai kaksi lausetta yrityksestäsi.",
+      "contactTitle": "Yhteystiedot",
+      "contactDescription": "Näkyvät ylätunnisteessa, sijainneissa ja yhteystieto-osiossa.",
+      "showPhone": "Näytä puhelinnumero",
+      "showEmail": "Näytä sähköposti",
+      "showAddress": "Näytä osoite"
+    },
+    "included": {
+      "title": "Sisältyy jokaiseen hintaan",
+      "description": "Enintään 6 lupausta, jotka sisältyvät aina hintaan.",
+      "accuracy": "Listaa vain asiat, jotka pitävät paikkansa jokaisessa vuokrauksessa. Oletusteksti on ehdotus — tarkista, että se vastaa vuokrausehtojasi.",
+      "item": "Kohta {position}",
+      "icon": "Kuvake",
+      "itemTitle": "Otsikko",
+      "itemText": "Kuvaus",
+      "itemTag": "Korostus",
+      "tagHint": "Lyhyt vihreällä näkyvä merkintä, kuten ”Omavastuu 1 000 €”.",
+      "presets": {
+        "insurance": "Perusvakuutus",
+        "mileage": "Rajattomat km",
+        "fuel": "Täysi tankki – täysi tankki",
+        "cancellation": "Ilmainen peruutus"
+      },
+      "addCustom": "Oma kohta"
+    },
+    "icons": {
+      "shield": "Kilpi",
+      "gauge": "Nopeusmittari",
+      "fuel": "Polttoainepumppu",
+      "calendar_check": "Kalenteri",
+      "check": "Valintamerkki",
+      "car": "Auto",
+      "users": "Ihmiset",
+      "baby": "Lastenistuin",
+      "plane": "Lentokone",
+      "key": "Avain"
+    },
+    "reviews": {
+      "title": "Asiakkaiden arvostelut",
+      "description": "Asiakkaat arvostelevat vuokrauksensa auton palauttamisen jälkeen. Vain hyväksymäsi arvostelut näytetään.",
+      "summary": "Keskiarvo {average} ({count, plural, one {# hyväksytty arvostelu} other {# hyväksyttyä arvostelua}})",
+      "none": "Ei vielä hyväksyttyjä arvosteluja. Asiakkaat näkevät lyhyen ilmoituksen, kunnes hyväksyt yhden.",
+      "manage": "Hyväksy tai piilota arvosteluja Benwerin hallintapaneelissa",
+      "demo": "Nämä ovat testiyrityksellä näytettäviä demoarvosteluja, kunnes hyväksyt oikeita arvosteluja Benwerin hallintapaneelissa."
+    },
+    "app": {
+      "benwerAppTitle": "Benwer Cars -sovellus",
+      "benwerApp": "Näytä Benwer Cars -sovellus",
+      "benwerAppDescription": "Asiakkaat saavat ilmaisen Benwer Cars -sovelluksen. Merkit linkittävät virallisiin sovelluskauppoihin, ja QR-koodi avaa yrityksesi sovelluksessa.",
+      "storesWithBenwerApp": "Tarvitaan vain, jos yritykselläsi on oma sovellus. Kun Benwer Cars -sovellus on käytössä, osio käyttää sen kauppalinkkejä.",
+      "storesTitle": "Kauppalinkit",
+      "storesDescription": "Linkit omaan sovellukseesi. Puuttuva kauppa näkyy harmaana. Jos linkkejä ei ole ja Benwer Cars -sovellus on pois päältä, osio pysyy piilotettuna.",
+      "ios": "App Store -linkki",
+      "android": "Google Play -linkki",
+      "qrHint": "QR-koodi avaa Google Play -linkin tai App Store -linkin, jos Google Play -linkkiä ei ole.",
+      "copyTitle": "Teksti",
+      "title": "Otsikko",
+      "text": "Kuvaus"
+    },
+    "faq": {
+      "title": "Kysymykset",
+      "description": "Enintään {max} kysymystä lyhyine vastauksineen.",
+      "empty": "Ei vielä kysymyksiä. Osio pysyy piilotettuna, kunnes lisäät yhden.",
+      "item": "Kysymys {position}",
+      "question": "Kysymys",
+      "answer": "Vastaus",
+      "incompleteHint": "Kysymyksiä ilman vastausta ei näytetä sivustolla.",
+      "add": "Lisää kysymys"
+    },
+    "contact": {
+      "title": "Yhteystiedot",
+      "description": "Miten asiakkaat tavoittavat sinut. Puhelinnumero ja sähköposti tulevat yritysosiosta.",
+      "whatsapp": "WhatsApp-numero",
+      "whatsappHint": "Sisällytä maatunnus. Jätä tyhjäksi piilottaaksesi WhatsApp-painikkeen.",
+      "hours": "Milloin vastaat",
+      "hoursPlaceholder": "Vastaamme joka päivä klo 08:00–22:00.",
+      "payments": "Maksutavat",
+      "paymentsHint": "Näkyvät alatunnisteessa."
+    },
+    "design": {
+      "colorTitle": "Brändiväri",
+      "colorDescription": "Käytetään painikkeissa, linkeissä ja korostuksissa koko sivustolla. Bannerin tausta seuraa tätä väriä; voit hienosäätää sitä Bannerit-osiossa.",
+      "presets": "Ehdotetut värit",
+      "custom": "Oma väri",
+      "customHint": "Käytä heksakoodia, kuten #4f46e5.",
+      "picker": "Valitse väri",
+      "lowContrast": "Tämä väri on liian vaalea valkoiselle painiketekstille. Valitse tummempi väri, muuten tallennus epäonnistuu.",
+      "fontTitle": "Fontti",
+      "fontDescription": "Käytetään kaikessa sivustosi tekstissä.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Selkeä ja moderni"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klassinen ja tyylikäs"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Rohkea ja ystävällinen"
+        }
+      },
+      "cornersTitle": "Kulmat",
+      "cornersDescription": "Pyöristetyt tai terävät kulmat painikkeissa, korteissa ja kentissä koko sivustolla.",
+      "corners": {
+        "round": {
+          "name": "Pyöristetyt",
+          "hint": "Pehmeä ja ystävällinen"
+        },
+        "square": {
+          "name": "Terävät",
+          "hint": "Tarkka ja minimalistinen"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Verkkosivusto",
+      "websiteEnabled": "Varaussivusto käytössä",
+      "websiteEnabledHint": "Kun tämä on päällä, asiakkaat voivat nähdä julkaistun sivustosi ja tehdä varauksia. Päälle kytkeminen julkaisee myös tallennetut muutoksesi. Tämä on sama kytkin kuin Benwerin hallintapaneelissa.",
+      "bookingTitle": "Varaukset",
+      "bookingDescription": "Miten asiakkaat varaavat sivustoltasi.",
+      "bookingMode": "Varaustapa",
+      "mode": {
+        "instant": "Välitön",
+        "request": "Pyynnöstä"
+      },
+      "modeHint": {
+        "instant": "Varaukset vahvistetaan välittömästi.",
+        "request": "Hyväksyt tai hylkäät jokaisen varauksen vastausajan puitteissa."
+      },
+      "minLead": "Vähimmäisennakkoaika",
+      "requestWindow": "Vastausaika",
+      "hoursUnit": "Tunteina",
+      "differentReturnTitle": "Palautus toiseen sijaintiin",
+      "differentReturnLabel": "Salli asiakkaiden palauttaa auto eri sijaintiin",
+      "differentReturnHint": "Asiakkaat valitsevat palautuspaikan haun yhteydessä. Benwerin hallintapaneelissa määritetty yhdensuuntaisen vuokrauksen maksu lisätään hintaan.",
+      "differentReturnOff": "Ota yhdensuuntaiset vuokraukset käyttöön Benwerin hallintapaneelissa tarjotaksesi tämän."
+    },
+    "savedNotPublished": "Tallennettu, ei vielä julkaistu",
+    "publish": "Julkaise",
+    "branding": {
+      "logosTitle": "Logot",
+      "logosDescription": "Tämä on yrityksesi logo. Sen muuttaminen täällä päivittää sen myös Benwer adminiin ja Benwer Cars -sovellukseen.",
+      "headerLogo": "Yläpalkin logo",
+      "headerLogoHint": "Näkyy jokaisen sivun yläpalkissa. Leveä logo toimii parhaiten.",
+      "companyLogo": "Yritysosion logo",
+      "companyLogoHint": "Näkyy otsikkosi yläpuolella, ennen yritysosiota.",
+      "usingCompanyLogo": "Käytetään yrityksesi logoa",
+      "upload": "Lataa logo",
+      "replace": "Korvaa",
+      "uploadFailed": "Logon lataus epäonnistui. Käytä PNG-, JPG- tai WebP-kuvaa ja yritä uudelleen.",
+      "tooLarge": "Tämä kuva on yli 25 Mt.",
+      "backgroundTitle": "Sivun tausta",
+      "backgroundDescription": "Väri sivustosi sisällön takana.",
+      "backgroundPresets": "Ehdotetut taustat",
+      "backgroundCustom": "Oma tausta",
+      "backgroundPicker": "Valitse taustaväri",
+      "needsApi": "Käytettävissä, kun Benwerin verkkosivustojen API-päivitys on julkaistu.",
+      "headerLogoDark": "Yläpalkin logo — tumma tila",
+      "companyLogoDark": "Yritysosion logo — tumma tila",
+      "squareLogo": "Neliölogo (1:1)",
+      "squareLogoHint": "Vaaditaan julkaisuun. Näkyy yrityksesi nimen vieressä korteissa, hakutuloksissa ja mobiililuetteloissa.",
+      "cropTitle": "Rajaa logo suhteeseen 2:1",
+      "cropHint": "Vedä ja zoomaa, jotta logosi mahtuu siististi 2:1-kehykseen.",
+      "cropZoom": "Zoomaus",
+      "cropCancel": "Peruuta",
+      "cropSave": "Rajaa ja lataa",
+      "darkLogoHint": "Valinnainen. Näkyy, kun kävijät käyttävät tummaa tilaa. Käytä vaaleaa tai valkoista versiota logostasi.",
+      "darkNeedsApi": "Tumman tilan logot ovat käytettävissä, kun niiden Benwer API -päivitys on julkaistu.",
+      "logo": "Logo (2:1)",
+      "logoHint": "Vaaditaan julkaisuun. Yksi logo vaaleaan ja tummaan tilaan: brändivärisi taustana ja nimi valkoisena, rajattuna suhteeseen 2:1."
+    },
+    "legal": {
+      "hint": "Jokainen sivu alkaa vakiotekstillä, joten voit muuttaa vain tarvitsemasi osat. Lisää osio jokaiselle alaotsikolle. ”Palauta vakioteksti” kumoaa muutoksesi.",
+      "needsApi": "Käytettävissä, kun Benwerin verkkosivustojen API-päivitys on julkaistu.",
+      "privacyTitle": "Tietosuojaseloste",
+      "privacyDescription": "Näkyy sivustosi alatunnisteen Tietosuoja-linkissä.",
+      "termsTitle": "Käyttöehdot",
+      "termsDescription": "Näkyy sivustosi alatunnisteen Ehdot-linkissä.",
+      "text": "Teksti",
+      "intro": "Johdanto",
+      "subtitle": "Alaotsikko",
+      "sectionItem": "Osio {position}",
+      "addSection": "Lisää osio",
+      "reset": "Palauta vakioteksti",
+      "pageTitle": "Sivun otsikko",
+      "privacyLooksLikeTerms": "Tietosuojaselosteesi teksti on sama kuin käyttöehdoissa. Käytä ”Palauta vakioteksti” -toimintoa Tietosuojaseloste-osiossa tai kirjoita oma tietosuojatekstisi ja tallenna."
+    },
+    "preview": "Esikatselu",
+    "fullscreen": "Koko näytön editori",
+    "exitFullscreen": "Näytä esikatselu editorin vieressä",
+    "previewBarAria": "Esikatselun säätimet",
+    "previewing": "Esikatselet sivustoasi",
+    "backToEdit": "Muokkaa"
+  },
+  "marketplaceBanners": {
+    "aria": "Benwer-nostot",
+    "slideLabel": "{position} / {count}",
+    "goTo": "Näytä banneri {position}",
+    "previous": "Edellinen banneri",
+    "next": "Seuraava banneri",
+    "trust": {
+      "script": "varaa luottavaisin mielin",
+      "highlight": "Vahvistetut yritykset",
+      "joiner": "ja",
+      "boxed": "Turvallinen varaus",
+      "description": "Oikeat arvostelut, selkeät ehdot ja digitaaliset sopimukset, jotka allekirjoitat puhelimellasi"
+    },
+    "prices": {
+      "script": "yksi haku",
+      "highlight": "Vertaile hintoja",
+      "joiner": "kaikilta",
+      "boxed": "Kumppaniyrityksiltä",
+      "description": "Vertaa kumppanivuokraamojen hintoja, vakuutuksia ja takuumaksuja rinnakkain ennen varaamista"
+    },
+    "anywhere": {
+      "script": "löydä autosi",
+      "highlight": "Koko Málagassa",
+      "joiner": "yhdessä",
+      "boxed": "Paikallisten vuokraamojen kanssa",
+      "description": "Kumppanivuokraamot Málagan maakunnan kaupungeissa, kaikki yhdessä paikassa"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Julkaisija: {name}.",
+    "cookies": {
+      "title": "Evästekäytäntö",
+      "lede": "Miten {name} käyttää evästeitä ja vastaavia tekniikoita tällä sivustolla.",
+      "updated": "Julkaisija: {name}.",
+      "sections": [
+        {
+          "title": "Mitä käytämme",
+          "body": "Evästeet ovat pieniä tekstitiedostoja, jotka tallennetaan laitteellesi. Tämä sivusto käyttää myös vastaavaa tallennustilaa, kuten paikallista tallennustilaa (local storage), muistaakseen valintasi, ostoskorisi ja kirjautumisesi."
+        },
+        {
+          "title": "Välttämättömät evästeet",
+          "body": "Kielieväste antaa sivuston näyttää kielesi, ja evästebannerin valintasi tallennetaan, jotta emme kysy sitä uudelleen jokaisella käynnillä. Jos kirjaudut sisään, kirjautumispalvelu tallentaa istunnon laitteellesi, jotta pysyt kirjautuneena. Korttimaksut käsittelee Stripe, joka voi asettaa omia evästeitään petosten estämiseksi."
+        },
+        {
+          "title": "Valinnaiset evästeet",
+          "body": "Valinnaiset evästeet (esimerkiksi analytiikka) pysyvät pois päältä, ellet valitse Hyväksy kaikki. Tämä sivusto ei aseta tällä hetkellä analytiikka- tai markkinointievästeitä."
+        },
+        {
+          "title": "Evästeiden hallinta",
+          "body": "Voit muuttaa valintaasi alatunnisteen evästeasetuslinkistä. Voit myös poistaa evästeet ja sivustotiedot selaimestasi. Välttämättömän tallennustilan estäminen voi kirjata sinut ulos tai tyhjentää ostoskorisi."
+        },
+        {
+          "title": "Lisätietoja",
+          "body": "Katso tietosuojaselosteesta, miten {name} käsittelee henkilötietoja, tai käytä alatunnisteen yhteystietoja."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Tuki",
+    "fabCloseLabel": "Sulje tukivalikko",
+    "messageAction": "Suora viesti",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Hei, minulla on kysymys Benwer Carsista."
+  },
+  "guestApp": {
+    "metaTitle": "Benwer Cars -sovellus",
+    "metaDescription": "Varaa autoja, pidä kaikki matkasi yhdessä paikassa ja saat varauspäivitykset puhelimeesi.",
+    "eyebrow": "Mobiilisovellus",
+    "title": "Autovuokrauksesi taskussasi",
+    "description": "Varaa autoja paikallisilta yrityksiltä, pidä kaikki matkat yhdessä paikassa, maksa ja saa päivitykset puhelimeesi.",
+    "featureTrips": "Kaikki matkasi eri yrityksiltä",
+    "featureBooking": "Varaa ja maksa muutamalla napautuksella",
+    "featurePush": "Päivitykset, kun varauksesi muuttuu",
+    "unavailableTitle": "Sovellus tulossa pian",
+    "unavailableDescription": "Benwer Cars -sovellus ei ole vielä sovelluskaupoissa. Voit silti varata verkossa.",
+    "browse": "Selaa autoja",
+    "badgeTitle": "Hanki Benwer Cars -sovellus",
+    "companyText": "Varaa yritykseltä {company} puhelimellasi ja pidä matkasi yhdessä paikassa.",
+    "bookingText": "Katso tämä varaus, maksa ja saa päivitykset puhelimeesi."
+  }
+}

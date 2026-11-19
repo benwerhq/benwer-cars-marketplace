@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Comhlachtaí",
+    "title": "Aimsigh an carr foirfe duit",
+    "subtitle": "Déan comparáid idir carranna ó chomhlachtaí cíosa comhpháirtíochta, agus lean ar aghaidh ar shuíomh an chomhlachta.",
+    "searchPlaceholder": "Cén áit a bhfuil tú ag dul?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Comhlachtaí roghnaithe",
+    "companiesSubtitle": "Comhlachtaí cíosa comhpháirtíochta ar fud chúige Málaga — flíteanna a oibrímid leo, ní fógraí gan fhíorú",
+    "trustLocal": "Comhlachtaí comhpháirtíochta",
+    "trustGuest": "Cíos ar shuíomh an chomhlachta",
+    "trustArea": "Cúige Málaga",
+    "viewAllCompanies": "Féach ar gach comhlacht"
+  },
+  "featuredCars": {
+    "viewAllCount": "Féach ar gach ceann de na {count} carr",
+    "eyebrow": "Carranna",
+    "title": "Carranna atá ar fáil",
+    "subtitle": "Gach carr atá foilsithe ag comhlachtaí comhpháirtíochta, taobh le taobh. Roghnaigh ceann le cur in áirithe ar shuíomh an chomhlachta féin.",
+    "viewAll": "Cuardaigh gach carr",
+    "seeAll": "Féach ar gach ceann",
+    "emptyTitle": "Níl aon charranna liostaithe go fóill",
+    "emptyHint": "Beidh flíteanna poiblí le feiceáil anseo nuair a fhoilseoidh comhlachtaí iad."
+  },
+  "whatYouGet": {
+    "eyebrow": "Do chomhlachtaí cíosa carranna",
+    "title": "An méid a fhaigheann tú",
+    "subtitle": "Córas amháin don oifig, don chlós, agus do thaistealaithe atá ag cuardach i Málaga.",
+    "admin": {
+      "title": "Córas riaracháin iomlán",
+      "body": "Bainistigh carranna, praghsanna, infhaighteacht, agus áirithintí ó phainéal oibríochta amháin — an chatalóg chéanna a léann an margadh."
+    },
+    "mobile": {
+      "title": "Aip shoghluaiste don fhoireann",
+      "body": "Seiceáil carranna amach agus isteach agus féach ar áirithintí an lae inniu ón gclós."
+    },
+    "storefront": {
+      "title": "Suíomh gréasáin brandáilte",
+      "body": "Liostú ar an margadh chomh maith le do shuíomh agus fofhearann féin."
+    },
+    "preview": {
+      "utilisation": "Úsáid",
+      "utilisationValue": "82%",
+      "pickups": "Bailithe inniu",
+      "pickupsValue": "14",
+      "revenue": "An mhí seo",
+      "revenueValue": "€9.4k",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Painéal",
+      "navFleet": "Flít",
+      "navCalendar": "Féilire",
+      "navReservations": "Áirithintí",
+      "calendarTitle": "Infhaighteacht",
+      "calendarMonth": "An chéad 2 sheachtain eile",
+      "viaBenwer": "Trí Benwer",
+      "direct": "Díreach",
+      "free": "Saor",
+      "carA": "Dlúthcharr",
+      "carB": "Carr cathrach",
+      "carC": "SUV",
+      "carD": "Trascharr",
+      "phoneTitle": "Inniu",
+      "phoneDate": "Dé Luain",
+      "pickUp": "Bailiú",
+      "return": "Filleadh",
+      "checkedOut": "Seiceáilte amach",
+      "due": "Dlite",
+      "tabToday": "Inniu",
+      "tabFleet": "Flít",
+      "tabScan": "Scan",
+      "storeName": "Do chomhlacht",
+      "storeNavCars": "Carranna",
+      "storeNavContact": "Teagmháil",
+      "storeHeadline": "Cíosaigh carr i Málaga",
+      "storeSearch": "Bailiú agus dátaí",
+      "storeSearchCta": "Cuardaigh",
+      "storePrice": "Féach ar phraghsanna",
+      "carE": "Cúl-laiste",
+      "carF": "Carr eastáit"
+    }
+  },
+  "faq": {
+    "eyebrow": "CCanna",
+    "title": "Sula gcuireann tú in áirithe",
+    "subtitle": "Flíteanna comhpháirtíochta, conas a oibríonn áirithintí, agus céard a láimhseálann Benwer — agus céard nach láimhseálann.",
+    "items": {
+      "partners": {
+        "question": "An ó fhíorchomhlachtaí cíosa a thagann na carranna seo?",
+        "answer": "Sea. Is carr poiblí ó chomhpháirtí Benwer gach liostú — fíorchomhlacht cíosa a oibrímid leis, ní fógra príobháideach gan fhíorú. Mura bhfuil comhlacht nó carr foilsithe ar an ardán, ní fheicfear anseo é."
+      },
+      "booking": {
+        "question": "An gcuirim in áirithe agus an íocaim ar Benwer?",
+        "answer": "Ní hea. Déanann tú comparáid idir flíteanna comhpháirtíochta anseo, agus ansin leanann tú ar aghaidh ar shuíomh an chomhlachta cíosa chun an cíos, an éarlais agus an bailiú a dheimhniú. Ní ghlacann Benwer le híocaíocht ar an margadh seo."
+      },
+      "photos": {
+        "question": "An féidir liom muinín a bheith agam as na grianghraif agus an infhaighteacht?",
+        "answer": "Úsáideann liostuithe na grianghraif phoiblí agus an infhaighteacht a fhoilsíonn an comhlacht comhpháirtíochta — an chatalóg chéanna a bhainistíonn siad sa riarachán. Mura bhfuil grianghraf poiblí ag carr go fóill, taispeánaimid staid fholamh seachas stocghrianghraf de charr eile. Deimhnítear an infhaighteacht deiridh ar shuíomh an chomhlachta."
+      },
+      "account": {
+        "question": "An bhfuil cuntas ag teastáil uaim?",
+        "answer": "Níl aon chuntas ag teastáil chun cuardach. Má sheolann tú teachtaireacht teagmhála, ní úsáidimid na sonraí sin ach amháin chun freagra a thabhairt."
+      },
+      "safety": {
+        "question": "Cé atá freagrach as an gcíos?",
+        "answer": "Tá an conradh idir tú féin agus an comhlacht cíosa comhpháirtíochta. Léigh a gcuid téarmaí sula ndeimhníonn tú. Cabhraíonn Benwer leat carr a aimsiú ó fhlít chomhpháirtíochta; ní thugann sé feithiclí ar cíos ná ní ghlacann sé le híocaíocht anseo."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Aip Benwer Cars",
+    "description": "Faigh Benwer Cars ar do ghuthán. Tá an aip Android i mbun tástála luaithe ar Google Play — glac páirt sa tástáil agus cabhraigh linn í a mhúnlú."
+  },
+  "partners": {
+    "eyebrow": "Do chomhlachtaí cíosa carranna",
+    "title": "Déan áirithintí de laethanta folmha",
+    "description": "Tá taistealaithe ag cuardach carranna i Málaga ar Benwer cheana féin. Foilsigh do fhlít uair amháin agus líon laethanta a bheadh folamh murach sin.",
+    "cta": "Foghlaim tuilleadh",
+    "ctaAria": "Foghlaim tuilleadh ar shuíomh margaíochta Benwer (osclaíonn i gcluaisín nua)",
+    "demo": "Féach ar thaispeántas beo",
+    "demoAria": "Féach ar an taispeántas beo (osclaíonn i gcluaisín nua)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Cíos carranna",
+    "companyDescription": "Cíosaigh carr ó {name} i {location}.",
+    "companyDescriptionPlain": "Cíosaigh carr ó {name}.",
+    "companyFallback": "Cíos carranna",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Cíosaigh {brand} {model} ó {company}.",
+    "carDescriptionSpecs": "Cíosaigh {brand} {model} — {seats, plural, one {# suíochán} other {# suíochán}}, {transmission}.",
+    "carsTitle": "Carranna cíosa ar fud chúige Málaga"
+  },
+  "tenant": {
+    "notFoundTitle": "Níor aimsíodh an comhlacht",
+    "notFoundDescription": "Níorbh fhéidir an suíomh gréasáin seo a lódáil.",
+    "loadErrorTitle": "Sonraí an chomhlachta gan a bheith ar fáil",
+    "loadErrorDescription": "Níorbh fhéidir linn an suíomh seo a lódáil ón gcatalóg bheo. Bain triail as arís — ní thaispeánaimid carranna ionaid nuair a theipeann ar an API.",
+    "logoAlt": "Lógó {name}"
+  },
+  "howItWorks": {
+    "eyebrow": "Trí chéim",
+    "title": "Conas a oibríonn sé",
+    "subtitle": "Déan comparáid idir flíteanna comhpháirtíochta ar fud Málaga, agus ansin cuir in áirithe go díreach leis an gcomhlacht. Níl cuntas Benwer ag teastáil.",
+    "stepLabel": "Céim {number}",
+    "searchTitle": "Roghnaigh dátaí agus áit",
+    "searchBody": "Roghnaigh baile ar an Costa del Sol agus na laethanta a theastaíonn uait. Ní thaispeántar ach flíteanna comhpháirtíochta fíoraithe.",
+    "compareTitle": "Déan comparáid idir fíorcharranna",
+    "compareBody": "Suíocháin, giarbhosca, grianghraif agus an ráta laethúil, taobh le taobh ó gach comhpháirtí.",
+    "continueTitle": "Cuir in áirithe leis an gcomhlacht",
+    "continueBody": "Deimhnigh bailiú, árachas agus íocaíocht leis an gcomhlacht cíosa ar leis an carr.",
+    "cta": "Tosaigh ag cuardach",
+    "preview": {
+      "place": "Aerfort Málaga",
+      "dates": "Aoine → Aoine · 7 lá",
+      "carA": "Dlúthcharr",
+      "carASpecs": "4 shuíochán · Lámhleabhar",
+      "carB": "SUV teaghlaigh",
+      "carBSpecs": "5 shuíochán · Uathoibríoch",
+      "confirmed": "Áirithint deimhnithe",
+      "confirmedDetail": "Bailiú ag 10:00",
+      "example": "Sampla"
+    }
+  },
+  "search": {
+    "locationLabel": "Suíomh bailithe",
+    "locationPlaceholder": "Cuardaigh suíomhanna",
+    "locationEmpty": "Níl aon suíomh meaitseála ann",
+    "allLocations": "Gach suíomh",
+    "allLocationsHint": "Gach cathair ina bhfuil carranna ar fáil",
+    "provinceSelected": "Gach suíomh",
+    "provinceHint": "Gach cathair ina bhfuil carranna ar fáil",
+    "pickupLabel": "Bailiú",
+    "dropoffLabel": "Filleadh",
+    "pickupPlaceholder": "Cuir dáta leis",
+    "dropoffPlaceholder": "Cuir dáta leis",
+    "pickupTrigger": "Dáta bailithe, {date}",
+    "dropoffTrigger": "Dáta fillte, {date}",
+    "calendarLabel": "Roghnaigh dátaí",
+    "datesRequired": "Roghnaigh do dhátaí bailithe agus fillte chun cuardach.",
+    "submit": "Cuardaigh",
+    "returnLocationLabel": "Suíomh fillte",
+    "differentReturn": "Fill ar shuíomh eile",
+    "returnSame": "Mar an gcéanna leis an mbailiú",
+    "returnNotOffered": "Ní thairgeann {company} filleadh ag suíomh eile.",
+    "branchChoose": "Roghnaigh suíomh",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Suíomhanna á lódáil…",
+    "branchAnyHint": "Gach brainse ina bhfuil carranna"
+  },
+  "browseLocation": {
+    "title": "Brabhsáil de réir suímh",
+    "subtitle": "Cathracha coitianta i gcúige Málaga",
+    "emptyTitle": "Gan aon suíomhanna go fóill",
+    "emptyDescription": "Beidh cathracha roghnaithe le feiceáil anseo.",
+    "cityAria": "Brabhsáil carranna i {city}"
+  },
+  "map": {
+    "teaserTitle": "Féach cá bhféadfá bailiú",
+    "teaserSubtitle": "Flíteanna áitiúla ar fud chúige Málaga — oscail an léarscáil agus téigh go díreach chuig comhlacht.",
+    "teaserCta": "Oscail an léarscáil",
+    "teaserCityAria": "Féach ar chomhlachtaí ar an léarscáil i {city}",
+    "listLabel": "Liosta",
+    "mapLabel": "Léarscáil",
+    "viewToggleAria": "Taispeáin comhlachtaí mar liosta nó léarscáil",
+    "regionAria": "Léarscáil de chomhlachtaí cíosa i gcúige Málaga",
+    "pinAria": "{name} i {city}",
+    "fleetHint": "{count, plural, =0 {Níl aon charranna liostaithe go fóill} one {# carr ar fáil} other {# carr ar fáil}}",
+    "fleetHintUnknown": "Féach ar charranna atá ar fáil",
+    "viewFleet": "Féach ar an bhflít",
+    "closePin": "Dún",
+    "loading": "Comhlachtaí á lódáil…",
+    "errorDescription": "Níorbh fhéidir an léarscáil a lódáil. Brabhsáil an liosta ina ionad.",
+    "emptyTitle": "Níl aon chomhlachtaí ar an léarscáil",
+    "emptyDescription": "Bain triail as cathair eile i gcúige Málaga.",
+    "resultsCount": "{count, plural, one {# comhlacht ar fud chúige Málaga} other {# comhlacht ar fud chúige Málaga}}",
+    "resultsInCity": "{count, plural, one {# comhlacht i {city}} other {# comhlacht i {city}}}",
+    "resultsAtBranch": "{count, plural, one {# comhlacht ag {branch}} other {# comhlacht ag {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Ag taispeáint {shown} as {total} carr",
+    "loadMore": "Taispeáin tuilleadh carranna",
+    "seeAll": "Féach ar gach ceann",
+    "title": "Carranna atá ar fáil",
+    "subtitle": "Gach carr poiblí ó chomhlachtaí cíosa comhpháirtíochta ar fud chúige Málaga. Roghnaigh do dhátaí chun a fheiceáil cad atá saor.",
+    "searchEmptyTitle": "Ní mheaitseálann aon charr an cuardach seo",
+    "searchEmptyHint": "Bain triail as dátaí eile nó suíomh eile i gcúige Málaga. Fanann gach cathair sa liosta — fiú mura bhfuil aon charr liostaithe ann inniu.",
+    "resultsInProvince": "{count, plural, one {# carr ar fud gach suímh} other {# carr ar fud gach suímh}}",
+    "resultsInCity": "{count, plural, one {# carr i {city}} other {# carr i {city}}}",
+    "allCompanies": "Gach comhlacht",
+    "companyPlaceholder": "Cuardaigh comhlachtaí",
+    "companyTrigger": "Comhlacht, {company}",
+    "perDay": "{price} / lá",
+    "perDaySuffix": " / lá",
+    "viewDetails": "Féach ar shonraí",
+    "notAvailableForDates": "Níl sé ar fáil do na dátaí seo",
+    "bookUnavailable": "Féach ar an gcarr",
+    "fleetSummary": "{total, plural, one {# carr} other {# carr}} · {available, plural, one {# ar fáil} other {# ar fáil}}",
+    "fleetSummaryForDates": "{total, plural, one {# carr} other {# carr}} · {available, plural, one {# ar fáil} other {# ar fáil}} · {from} – {to}",
+    "seats": "{count} suíochán",
+    "resultsCount": "{count, plural, one {# carr ar fáil} other {# carr ar fáil}}",
+    "resultsForDates": "{count, plural, one {# carr} other {# carr}} · {from} – {to}",
+    "emptyTitle": "Níl an fhlít seo poiblí go fóill",
+    "emptyHint": "Tá an comhlacht seo liostaithe, ach níl a chuid carranna foilsithe ar Benwer go fóill. Tá súil leis sin go dtí go marcáiltear feithiclí mar phoiblí — ní leathanach briste é.",
+    "noResults": "Ní mheaitseálann aon charr an cuardach seo",
+    "noResultsHint": "Bain triail as dátaí eile, suíomh eile, nó níos lú scagairí.",
+    "browseCompanies": "Brabhsáil comhlachtaí",
+    "clearFilters": "Glan scagairí",
+    "searchPlaceholder": "Cuardaigh de réir déanamh nó múnla",
+    "filters": {
+      "title": "Scagairí",
+      "seats": "Suíocháin",
+      "transmission": "Tarchur",
+      "company": "Comhlacht",
+      "dates": "Dátaí",
+      "from": "Dáta bailithe",
+      "to": "Dáta fillte",
+      "category": "Catagóir",
+      "fuel": "Cineál breosla",
+      "all": "Gach ceann",
+      "clear": "Glan",
+      "selectedCount": "{count} roghnaithe"
+    },
+    "types": {
+      "car": "Carr",
+      "suv": "SUV",
+      "van": "Veain",
+      "truck": "Trucail",
+      "motorcycle": "Gluaisrothar"
+    },
+    "transmission": {
+      "automatic": "Uathoibríoch",
+      "manual": "Lámhleabhar"
+    },
+    "fuel": {
+      "petrol": "Peitreal",
+      "diesel": "Díosal",
+      "electric": "Leictreach",
+      "hybrid": "Hibrideach",
+      "plugin_hybrid": "Hibrideach inphlugáilte"
+    },
+    "rowDeposit": "Éarlais {amount}",
+    "rowAvailable": "Ar fáil do do dhátaí",
+    "rowTotal": "{amount} san iomlán · {days, plural, one {# lá} other {# lá}}",
+    "bookNow": "Cuir in áirithe anois",
+    "availableCount": "{count, plural, =0 {Níl aon charr ar fáil} one {# carr ar fáil} other {# carr ar fáil}}",
+    "availableForDates": "{count, plural, =0 {Níl aon charr ar fáil} one {# carr ar fáil} other {# carr ar fáil}} · {from} – {to}",
+    "categories": {
+      "economy": "Eacnamaíoch",
+      "sedan": "Seadán",
+      "suv": "SUV",
+      "minivan": "Mionveain",
+      "van": "Veain",
+      "other": "Eile"
+    },
+    "sort": {
+      "label": "Sórtáil de réir",
+      "recommended": "Molta",
+      "pricePerDay_asc": "An ráta laethúil is ísle",
+      "pricePerDay_desc": "An ráta laethúil is airde"
+    },
+    "colors": {
+      "white": "Bán",
+      "black": "Dubh",
+      "silver": "Airgead",
+      "grey": "Liath",
+      "red": "Dearg",
+      "blue": "Gorm",
+      "green": "Glas",
+      "orange": "Oráiste",
+      "yellow": "Buí",
+      "brown": "Donn",
+      "beige": "Béas",
+      "gold": "Ór",
+      "purple": "Corcra"
+    },
+    "viewCar": "Féach ar an gcarr",
+    "opensCompanySite": "(osclaíonn suíomh gréasáin an chomhlachta)"
+  },
+  "carDetail": {
+    "bookNow": "Cuir in áirithe anois",
+    "continueOnCompany": "Lean ar aghaidh ar {company}",
+    "rentOnCompanySite": "Cíosaigh ar shuíomh an chomhlachta",
+    "handoffHint": "Iarrfaimid do chead sula seolfaimid chuig suíomh na cuideachta thú chun an áirithint a chríochnú.",
+    "pricePerDay": "{price} in aghaidh an lae",
+    "specs": "Sonraíochtaí",
+    "year": "Bliain",
+    "type": "Cineál",
+    "transmission": "Tarchur",
+    "fuel": "Breosla",
+    "seats": "Suíocháin",
+    "availability": "Infhaighteacht",
+    "availabilityError": "Níorbh fhéidir linn an infhaighteacht a lódáil. Bain triail as arís.",
+    "availabilityUnavailable": "Níl infhaighteacht ar fáil",
+    "checkingAvailability": "Infhaighteacht á seiceáil…",
+    "notAvailable": "Níl an carr seo ar fáil do na dátaí roghnaithe.",
+    "selectPickup": "Roghnaigh dáta bailithe",
+    "selectDropoff": "Anois roghnaigh dáta fillte",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Glan dátaí",
+    "addDate": "Cuir dáta leis",
+    "calendarLabel": "Féilire infhaighteachta",
+    "legend": "Eochair an fhéilire",
+    "available": "Ar fáil",
+    "selected": "Roghnaithe",
+    "unavailable": "Gan a bheith ar fáil",
+    "openDates": "Níl aon dátaí curtha in áirithe sna {months} mhí amach romhainn.",
+    "breadcrumbAria": "Grabhróga aráin",
+    "photoEmpty": "Grianghraif ag teacht go luath",
+    "previousPhoto": "Grianghraf roimhe seo",
+    "nextPhoto": "An chéad ghrianghraf eile",
+    "viewPhoto": "Féach ar ghrianghraf {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, grianghraf {index}",
+    "backToFleet": "Ar ais chuig an bhflít",
+    "metaTitle": "Sonraí an chairr",
+    "about": "Faoi an gcarr seo",
+    "category": "Catagóir",
+    "color": "Dath",
+    "deposit": "Éarlais",
+    "mileage": "Míleáiste",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Tá tú á atreorú chuig suíomh áirithinte {company} chun d'áirithint a chríochnú.",
+    "handoffTrust": "Is comhpháirtí iontaofa de chuid Benwer é {company}.",
+    "handoffContinue": "Lean ar aghaidh",
+    "handoffCancel": "Cealaigh",
+    "handoffCompanyFallback": "na cuideachta"
+  },
+  "booking": {
+    "title": "Críochnaigh d'áirithint",
+    "subtitle": "Deimhnigh do shonraí — níl cuntas ag teastáil.",
+    "details": "Do shonraí",
+    "detailsHint": "Ní úsáidfimid iad seo ach chun an áirithint seo a dheimhniú.",
+    "guestName": "Ainm iomlán",
+    "guestNamePlaceholder": "Siobhán Ní Mhurchú",
+    "guestEmail": "Seoladh ríomhphoist",
+    "guestEmailPlaceholder": "siobhan@example.com",
+    "guestEmailHint": "Seolfar do dheimhniú anseo.",
+    "guestPhone": "Uimhir ghutháin",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Seans go ndéanfaidh an comhlacht cíosa teagmháil leat faoin mbailiú.",
+    "startDate": "Dáta bailithe",
+    "endDate": "Dáta fillte",
+    "datesHint": "Tagann na dátaí ó fhéilire an chairr. Is féidir leat iad a choigeartú anseo.",
+    "addDate": "Cuir dáta leis",
+    "changeDates": "Athraigh dátaí ar an bhféilire",
+    "summary": "Achoimre na háirithinte",
+    "vehicle": "Feithicil",
+    "company": "Comhlacht",
+    "rate": "Ráta laethúil",
+    "duration": "Fad",
+    "totalPrice": "Iomlán",
+    "nights": "{count, plural, one {# lá} other {# lá}}",
+    "stickyMeta": "{name} · {count, plural, one {# lá} other {# lá}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Deimhnigh an áirithint",
+    "confirmRequest": "Seol iarratas",
+    "requesting": "Iarratas á sheoladh…",
+    "confirming": "Á dheimhniú…",
+    "sitePaused": "Gan glacadh le háirithintí",
+    "insurance": "Árachas",
+    "termsLabel": "Téarmaí cíosa",
+    "termsAccept": "Glacaim leis na",
+    "termsLink": "téarmaí cíosa",
+    "successTitle": "Áirithint deimhnithe!",
+    "successMessage": "Seoladh do dheimhniú chuig {email}.",
+    "viewBooking": "Féach ar m'áirithint",
+    "selectDates": "Roghnaigh dátaí chun leanúint ar aghaidh",
+    "invalidDates": "Roghnaigh raon dátaí bailí",
+    "backToCar": "Ar ais chuig {name}",
+    "trustNoAccount": "Níl cuntas ag teastáil",
+    "trustEmail": "Deimhniú trí ríomhphost",
+    "trustNoPayment": "Gan íocaíocht anois",
+    "trustCardPayment": "Íoc le cárta tar éis áirithinte",
+    "trustFooter": "Trí dheimhniú, iarrann tú an carr seo do na dátaí thuas. Urramóidh an comhlacht an áirithint.",
+    "missingTitle": "Roghnaigh carr chun leanúint ar aghaidh",
+    "missingDescription": "Roghnaigh feithicil agus dátaí sula gcríochnaíonn tú d'áirithint.",
+    "browseCars": "Brabhsáil carranna",
+    "vehicleMissingTitle": "Níl an carr seo ar fáil a thuilleadh",
+    "vehicleMissingDescription": "Seans go bhfuil sé curtha in áirithe. Roghnaigh ceann eile ón bhflít.",
+    "viewFleet": "Féach ar an bhflít",
+    "datesMissingTitle": "Cuir do dhátaí taistil leis",
+    "datesMissingDescription": "Téigh ar ais chuig an gcarr chun dátaí atá ar fáil a roghnú, nó cuir isteach sa bhfoirm iad.",
+    "pickDates": "Roghnaigh dátaí ar an gcarr",
+    "formAria": "Sonraí áirithinte an aoi",
+    "validation": {
+      "nameMin": "Cuir isteach d'ainm iomlán (2 charachtar ar a laghad).",
+      "email": "Cuir isteach seoladh ríomhphoist bailí.",
+      "phone": "Cuir isteach uimhir ghutháin bhailí.",
+      "startDate": "Roghnaigh dáta bailithe.",
+      "endDate": "Roghnaigh dáta fillte.",
+      "endAfterStart": "Caithfidh an dáta fillte a bheith i ndiaidh an dáta bailithe.",
+      "terms": "Glac leis na téarmaí cíosa chun leanúint ar aghaidh.",
+      "fixErrors": "Ceartaigh na réimsí aibhsithe le do thoil."
+    },
+    "averageRate": "Meánráta laethúil",
+    "breakdownTitle": "Miondealú praghais",
+    "standardRate": "Ráta caighdeánach",
+    "weekendRate": "Deireadh seachtaine",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Caithfidh cíosanna sa séasúr seo maireachtáil {limit, plural, one {# lá} other {# lá}} ar a laghad. Athraigh do dhátaí chun cur in áirithe.",
+    "warningMaxDays": "Ní féidir le cíosanna sa séasúr seo maireachtáil níos mó ná {limit, plural, one {# lá} other {# lá}}. Athraigh do dhátaí chun cur in áirithe.",
+    "returnLocation": "Suíomh fillte",
+    "oneWayFee": "Táille suímh fillte eile",
+    "signedInAs": "Sínithe isteach mar {email}",
+    "signInPrompt": "An bhfuil cuntas agat?",
+    "signInLink": "Sínigh isteach chun do shonraí a líonadh",
+    "subtitleSignedIn": "Seiceáil do shonraí agus deimhnigh.",
+    "trustPaymentAfter": "Tagann sonraí íocaíochta tar éis na háirithinte",
+    "extras": "Breiseanna",
+    "extraPerDay": "{price} / lá",
+    "extraFixed": "{price} / cíos",
+    "tripDetails": "Sonraí an turais",
+    "pickupTime": "Am bailithe",
+    "returnTime": "Am fillte",
+    "timeAny": "Am ar bith",
+    "flightNumber": "Uimhir eitilte",
+    "flightNumberHint": "Tá do bhailiú ag aerfort. Cuir d'uimhir eitilte leis ionas go bhféadfaidh an comhlacht moilleanna a leanúint.",
+    "flightNumberOptional": "Cuir leis é má thagann tú ar eitleán.",
+    "notes": "Tuairimí",
+    "notesPlaceholder": "Aon rud ar cheart don chomhlacht a bheith ar eolas aige?",
+    "dateOfBirth": "Dáta breithe",
+    "optional": "roghnach",
+    "extraSoldOut": "Níl sé ar fáil do na dátaí seo"
+  },
+  "reservationStatus": {
+    "title": "D'áirithint",
+    "successTitle": "Tá tú curtha in áirithe",
+    "successSubtitle": "Sheolamar deimhniú chuig {email}.",
+    "status": {
+      "draft": "Ar feitheamh",
+      "confirmed": "Deimhnithe",
+      "active": "Gníomhach — bain taitneamh as do thuras!",
+      "completed": "Críochnaithe",
+      "cancelled": "Cealaithe"
+    },
+    "vehicle": "Feithicil",
+    "company": "Comhlacht",
+    "dates": "Dátaí",
+    "pickup": "Bailiú",
+    "dropoff": "Filleadh",
+    "guest": "Aoi",
+    "email": "Ríomhphost",
+    "phone": "Guthán",
+    "total": "Iomlán",
+    "reference": "Tagairt",
+    "referenceHint": "Taispeáin é seo ag an mbailiú.",
+    "trustCopy": "Sábháil an leathanach seo — is é d'admháil áirithinte é. Tógfaidh an comhlacht cíosa as seo amach é.",
+    "trustEmail": "Deimhniú seolta trí ríomhphost",
+    "trustPickup": "Taispeáin an leathanach seo ag an mbailiú",
+    "nextTitle": "Cad a tharlaíonn ina dhiaidh sin",
+    "nextEmail": "Seiceáil {email} le haghaidh do dheimhnithe.",
+    "nextPickup": "Taispeáin do thagairt ag an mbailiú.",
+    "browseMore": "Brabhsáil tuilleadh carranna",
+    "notFoundTitle": "Níor aimsíodh an áirithint",
+    "notFoundDescription": "Seiceáil an nasc i do ríomhphost deimhnithe, nó tosaigh cuardach nua.",
+    "backHome": "Ar ais go dtí an baile",
+    "requestExpires": "Téann an t-iarratas in éag",
+    "cancelReason": "Cúis chealaithe",
+    "withdraw": "Tarraing siar iarratas",
+    "paymentStatus": "Íocaíocht",
+    "paidAmount": "Íoctha",
+    "payment": {
+      "unpaid": "Gan íoc",
+      "partially_paid": "Íoctha go páirteach",
+      "paid": "Íoctha",
+      "refund_due": "Aisíocaíocht dlite",
+      "authorized": "Cárta údaraithe"
+    },
+    "reasons": {
+      "unpaid_timeout": "Níor críochnaíodh an íocaíocht in am",
+      "request_expired": "Níor fhreagair an comhlacht in am",
+      "request_declined": "Dhiúltaigh an comhlacht don iarratas seo",
+      "customer_request": "Tharraing tú siar an t-iarratas seo"
+    },
+    "insurance": "Árachas",
+    "extras": "Breiseanna",
+    "fees": "Táillí bailithe agus fillte",
+    "priceTitle": "Achoimre praghais"
+  },
+  "payment": {
+    "title": "Íoc an réamhíocaíocht",
+    "amountDue": "Méid dlite: {amount}",
+    "countdown": "Críochnaigh an íocaíocht laistigh de {time}",
+    "requestAuthorize": "Údaraítear do chárta anois agus ní ghearrtar táille air ach nuair a ghlacann an comhlacht.",
+    "pay": "Íoc anois",
+    "paying": "Á phróiseáil…",
+    "confirming": "D'íocaíocht á deimhniú",
+    "confirmingHint": "Fan le do thoil — deimhnímid an íocaíocht ón gcomhlacht, ní ón bhfoirm chárta.",
+    "declined": "Diúltaíodh don chárta. Bain triail as cárta eile.",
+    "secure": "Láimhseálann Stripe sonraí cárta i mód tástála.",
+    "cancelBooking": "Cealaigh an áirithint",
+    "cancelTitle": "An áirithint seo a chealú?",
+    "cancelDescription": "Cuirfimid rialacha cealaithe an chomhlachta i bhfeidhm. Seiceáil an táille agus an aisíocaíocht sula ndeimhníonn tú.",
+    "cancelFee": "Táille chealaithe",
+    "cancelRefund": "Aisíocaíocht",
+    "confirmCancel": "Deimhnigh an cealú",
+    "keepBooking": "Coinnigh an áirithint",
+    "cancelled": "Cealaíodh d'áirithint."
+  },
+  "companies": {
+    "title": "Comhlachtaí cíosa",
+    "subtitle": "Brabhsáil comhlachtaí cíosa comhpháirtíochta ar fud Málaga — ar an léarscáil nó sa liosta",
+    "searchPlaceholder": "Cuardaigh comhlachtaí…",
+    "noResults": "Níor aimsíodh aon chomhlachtaí",
+    "noResultsHint": "Bain triail as suíomh eile i gcúige Málaga.",
+    "emptyTitle": "Níl aon chomhlachtaí liostaithe go fóill",
+    "emptyDescription": "Níl aon chomhlachtaí cíosa liostaithe go fóill.",
+    "clearFilters": "Glan an cuardach",
+    "viewFleet": "Féach ar an bhflít",
+    "visitWebsite": "Tabhair cuairt ar an suíomh",
+    "contact": "Teagmháil",
+    "backToList": "Gach comhlacht",
+    "notFoundTitle": "Níor aimsíodh an comhlacht",
+    "notFoundDescription": "Níl an comhlacht cíosa seo liostaithe. Brabhsáil cinn eile in aice láimhe.",
+    "loadErrorTitle": "Sonraí an chomhlachta gan a bheith ar fáil",
+    "loadErrorDescription": "Níorbh fhéidir linn an comhlacht cíosa seo a lódáil ón gcatalóg bheo. Bain triail as arís — ní thaispeánaimid carranna ionaid nuair a theipeann ar an API.",
+    "browseCars": "Brabhsáil carranna",
+    "featuredEmpty": "Gan aon chomhlachtaí roghnaithe go fóill",
+    "featuredEmptyHint": "Seiceáil ar ais go luath, nó brabhsáil carranna ó fhlíteanna áitiúla.",
+    "locationUnknown": "Suíomh gan liostú",
+    "noDescription": "Gan aon chur síos go fóill."
+  },
+  "contact": {
+    "title": "Déan teagmháil linn",
+    "lede": "Ceisteanna faoin margadh? Seol teachtaireacht chugainn agus tiocfaimid ar ais chugat chomh luath agus is féidir.",
+    "bookingHint": "Ní le haghaidh áirithintí an fhoirm seo. Chun carr a ligean ar cíos, lean ar aghaidh ar shuíomh an chomhlachta cíosa féin.",
+    "name": "Ainm iomlán",
+    "email": "Seoladh ríomhphoist",
+    "subject": "Ábhar",
+    "message": "Teachtaireacht",
+    "submit": "Seol teachtaireacht",
+    "privacyNote": "Ní úsáidimid na sonraí seo ach chun freagra a thabhairt.",
+    "errors": {
+      "nameMin": "Cuir isteach d'ainm (2 charachtar ar a laghad).",
+      "email": "Cuir isteach seoladh ríomhphoist bailí.",
+      "subjectMin": "Cuir isteach ábhar (3 charachtar ar a laghad).",
+      "messageMin": "Cuir isteach teachtaireacht (10 gcarachtar ar a laghad)."
+    },
+    "eyebrow": "Tacaíocht",
+    "namePlaceholder": "Siobhán Ní Mhurchú",
+    "emailPlaceholder": "tusa@example.com",
+    "subjectPlaceholder": "Conas is féidir linn cabhrú?",
+    "messagePlaceholder": "Inis dúinn cad atá uait…",
+    "supportSubjectDefault": "Iarratas tacaíochta",
+    "submitting": "Á sheoladh…",
+    "submittedTitle": "Teachtaireacht seolta",
+    "submittedDescription": "Go raibh maith agat as teagmháil a dhéanamh linn. Freagróimid do ríomhphost chomh luath agus is féidir.",
+    "sendAnother": "Seol teachtaireacht eile",
+    "backHome": "Ar ais go dtí an baile",
+    "whatsappTitle": "Arbh fhearr leat WhatsApp?",
+    "whatsappDescription": "Déan comhrá go díreach le foireann Benwer Cars."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Polasaí príobháideachais",
+      "lede": "Conas a láimhseálaimid sonraí pearsanta nuair a úsáideann tú margadh Benwer Cars.",
+      "updated": "Nuashonraithe go deireanach: 13 Meán Fómhair 2026",
+      "sections": [
+        {
+          "title": "Cé muid féin",
+          "body": "Oibríonn Benwer Cars (“Benwer”, “sinn”, “muid”) margadh tomhaltóirí a chabhraíonn le taistealaithe flíteanna cíosa carranna i gcúige Málaga a aimsiú.\n\nNí chlúdaíonn an polasaí seo ach suíomh gréasáin an mhargaidh. Má leanann tú ar aghaidh chuig suíomh comhlachta cíosa féin chun cur in áirithe, tá an comhlacht sin freagrach as na sonraí a chuireann tú isteach ansin."
+        },
+        {
+          "title": "Cad a dhéanann an margadh seo",
+          "body": "Is féidir leat carranna agus comhlachtaí a chuardach, sonraí flíte poiblí a chur i gcomparáid, agus leanúint ar aghaidh chuig suíomh comhlachta cíosa chun áirithint a chríochnú.\n\nNí ghlacann Benwer le híocaíocht ná ní chruthaíonn sé conradh cíosa ar an margadh. Tá an comhaontú cíosa idir tú féin agus an comhlacht."
+        },
+        {
+          "title": "Eolas a bhailímid",
+          "body": "Ag brath ar an gcaoi a n-úsáideann tú an margadh, d'fhéadfaimis an méid seo a leanas a phróiseáil:\n\n• Sonraí cuardaigh agus úsáide — an suíomh agus na dátaí a chuireann tú isteach, na leathanaigh a fheiceann tú, agus sonraí teicniúla bunúsacha amhail seoladh IP, brabhsálaí, agus faisnéis gléis.\n• Rogha teanga — stóráilte mar fhianán atá fíor-riachtanach ionas gur féidir linn do theanga a thaispeáint.\n• Toiliú fianán — stóráilte ar do ghléas ionas go gcuimhnímid ar do rogha.\n• Teachtaireachtaí teagmhála — ainm, ríomhphost, ábhar, agus teachtaireacht má scríobhann tú chugainn. Clibeálaimid iad seo mar theachtaireachtaí ón margadh.\n\nNí iarraimid ort cuntas a chruthú ar an margadh. Bailíonn an comhlacht cíosa sonraí áirithinte agus íocaíochta ar a shuíomh féin, faoina pholasaí príobháideachais féin."
+        },
+        {
+          "title": "Conas a úsáidimid sonraí",
+          "body": "Úsáidimid sonraí pearsanta chun an margadh a oibriú agus a fheabhsú, chun roghanna teanga agus fianán a mheabhrú, chun freagra a thabhairt ar theachtaireachtaí teagmhála, chun an tseirbhís a choinneáil slán, agus chun oibleagáidí dlíthiúla a chomhlíonadh.\n\nNí dhíolaimid do shonraí pearsanta."
+        },
+        {
+          "title": "Bunúis dhlíthiúla (LEE / An Ríocht Aontaithe)",
+          "body": "Nuair is infheidhme, brathaimid ar leasanna dlisteanacha (eolaire poiblí a rith agus an suíomh a chosaint), toiliú (fianáin roghnacha, má thugtar isteach iad), oibleagáid dhlíthiúil, agus céimeanna is gá chun freagra a thabhairt nuair a dhéanann tú teagmháil linn."
+        },
+        {
+          "title": "Roinnt",
+          "body": "D'fhéadfaimis soláthraithe iontaofa a úsáid le haghaidh óstála agus seachadadh ríomhphoist. Próiseálann siad sonraí de réir ár dtreoracha.\n\nMá leanann tú ar aghaidh chuig suíomh comhlachta, bíonn an comhlacht sin ina rialaitheoir ar aon sonraí a chuireann tú isteach ansin. Ní sheolaimid do theachtaireacht ón bhfoirm theagmhála chuig comhlachtaí cíosa mura n-iarrann tú orainn é sin a dhéanamh."
+        },
+        {
+          "title": "Fianáin",
+          "body": "Úsáidimid fianán teanga atá fíor-riachtanach agus stórálaimid do rogha fianán ar do ghléas. Féach ar an bpolasaí fianán le haghaidh sonraí. Fanann fianáin roghnacha múchta mura nglacann tú leo."
+        },
+        {
+          "title": "Coinneáil",
+          "body": "Coinnímid teachtaireachtaí teagmhála chomh fada agus is gá chun freagra a thabhairt agus ar feadh tréimhse leantach réasúnta. Coinnítear logaí teicniúla ar feadh tréimhse ghearr. Fanann do rogha fianán go dtí go n-athraíonn tú í nó go nglanann tú sonraí an tsuímh."
+        },
+        {
+          "title": "Do chearta",
+          "body": "Ag brath ar do shuíomh, d'fhéadfadh cearta a bheith agat rochtain a fháil ar do shonraí, iad a cheartú, a léirscriosadh, a shrianadh nó a aistriú, agus agóid a dhéanamh in aghaidh próiseála áirithe. Is féidir leat gearán a dhéanamh le d'údarás maoirseachta áitiúil freisin.\n\nChun do chearta a fheidhmiú, úsáid an leathanach teagmhála."
+        },
+        {
+          "title": "Aistrithe idirnáisiúnta",
+          "body": "Má aistrítear sonraí lasmuigh de do thír, úsáidimid coimircí cuí amhail clásail chonarthacha chaighdeánacha nó sásraí coibhéiseacha nuair a éilíonn an dlí é."
+        },
+        {
+          "title": "Athruithe",
+          "body": "D'fhéadfaimis an polasaí seo a nuashonrú ó am go ham. Foilseoimid an leagan athbhreithnithe ar an leathanach seo agus nuashonróimid an dáta “Nuashonraithe go deireanach”."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Téarmaí úsáide",
+      "lede": "Na rialacha maidir le margadh Benwer Cars a úsáid chun flíteanna cíosa a aimsiú.",
+      "updated": "Nuashonraithe go deireanach: 13 Meán Fómhair 2026",
+      "sections": [
+        {
+          "title": "An margadh",
+          "body": "Soláthraíonn Benwer Cars eolaire poiblí de chomhlachtaí cíosa carranna agus a gcuid flíteanna foilsithe. Is féidir leat carranna a chur i gcomparáid agus leanúint ar aghaidh chuig suíomh gréasáin comhlachta féin chun cíos a chríochnú.\n\nBaineann na téarmaí seo le suíomh gréasáin an mhargaidh. Ní ghlacann siad ionad téarmaí an chomhlachta cíosa féin, a bhaineann nuair a chuireann tú in áirithe leo."
+        },
+        {
+          "title": "Déantar áirithintí le comhlachtaí cíosa",
+          "body": "Ní thugann Benwer carranna ar cíos, ní ghlacann sé le híocaíocht, agus ní dhéanann sé conradh cíosa ar an margadh.\n\nMá leanann tú ar aghaidh chuig suíomh comhlachta, tá aon áirithint, éarlais, árachas, agus socrú bailithe idir tú féin agus an comhlacht sin. Léigh a gcuid téarmaí sula ndeimhníonn tú."
+        },
+        {
+          "title": "Liostuithe agus infhaighteacht",
+          "body": "Foilsíonn comhlachtaí cíosa sonraí flíte, praghsanna, grianghraif, agus infhaighteacht, agus d'fhéadfadh siad athrú. Tá sé mar aidhm againn faisnéis phoiblí a thaispeáint go cruinn, ach ní ráthaímid go mbeidh carr fós ar fáil nó go n-urramófar praghas liostaithe go dtí go ndeimhneoidh an comhlacht é.\n\nCabhraíonn na dátaí a chuireann tú isteach ar an margadh leat cuardach. Deimhnítear an infhaighteacht deiridh ar shuíomh an chomhlachta."
+        },
+        {
+          "title": "Úsáid inghlactha",
+          "body": "Úsáid an margadh go dleathach. Ná scríob, ná ró-ualaigh, agus ná cuir isteach ar an tseirbhís, ná cuir isteach sonraí teagmhála bréagacha, agus ná húsáid an suíomh chun dochar a dhéanamh do dhaoine nó do ghnólachtaí eile."
+        },
+        {
+          "title": "Dliteanas",
+          "body": "Soláthraítear an margadh mar sheirbhís aimsithe. A mhéid a cheadaítear faoin dlí, níl Benwer faoi dhliteanas i leith díospóidí cíosa, riocht feithicle, nó áirithintí a chuirtear i gcrích ar shuíomh comhlachta.\n\nNí chuireann aon ní sna téarmaí seo srian ar chearta atá agat mar thomhaltóir nach féidir a tharscaoileadh faoin dlí is infheidhme."
+        },
+        {
+          "title": "Athruithe",
+          "body": "D'fhéadfaimis na téarmaí seo a nuashonrú. Taispeánann an dáta “Nuashonraithe go deireanach” ar an leathanach seo an leagan reatha. Ciallaíonn úsáid leanúnach tar éis athraithe go nglacann tú leis na téarmaí nuashonraithe."
+        },
+        {
+          "title": "Teagmháil",
+          "body": "Is féidir ceisteanna faoi na téarmaí seo nó faoin margadh a sheoladh ón leathanach teagmhála. Maidir le háirithint a thosaigh tú cheana féin, déan teagmháil go díreach leis an gcomhlacht cíosa."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Polasaí fianán",
+      "lede": "Conas a úsáidimid fianáin agus teicneolaíochtaí comhchosúla ar an margadh.",
+      "updated": "Nuashonraithe go deireanach: 13 Meán Fómhair 2026",
+      "sections": [
+        {
+          "title": "Cad a úsáidimid",
+          "body": "Is comhaid bheaga téacs iad fianáin a stóráiltear ar do ghléas. Úsáidimid stóráil chomhchosúil freisin, amhail stóráil áitiúil, chun cuimhneamh ar roghanna.\n\nClúdaíonn an polasaí seo margadh Benwer Cars. Nuair a leanann tú ar aghaidh chuig suíomh comhlachta cíosa, d'fhéadfadh an suíomh sin a chuid fianán féin a shocrú."
+        },
+        {
+          "title": "Fíor-riachtanach",
+          "body": "Úsáidimid fianán teanga ionas gur féidir leis an suíomh do theanga roghnaithe a thaispeáint. Tá sé seo riachtanach chun go n-oibreoidh an margadh mar a bheifeá ag súil leis.\n\nStóráiltear do rogha ón mbratach fianán ar do ghléas ionas nach bhfiafraímid arís ar gach cuairt. Ní úsáidtear an stóráil sin chun fógraíocht a dhéanamh leat."
+        },
+        {
+          "title": "Fianáin roghnacha",
+          "body": "Fanann fianáin roghnacha (mar shampla anailísíocht) múchta mura roghnaíonn tú Glac le gach ceann.\n\nInniu ní shocraíonn an margadh fianáin anailísíochta ná margaíochta. Má chuirimid leo níos déanaí, déanfaimid cur síos orthu anseo agus beidh do ghlacadh fós ag teastáil."
+        },
+        {
+          "title": "Fianáin a bhainistiú",
+          "body": "Úsáid an bhratach chun glacadh le gach fianán nó gan ach an méid is gá a choinneáil. Is féidir leat fianáin agus sonraí suímh a scriosadh i do bhrabhsálaí freisin. D'fhéadfadh bac a chur ar an bhfianán teanga do rogha teanga a athshocrú ar do chéad chuairt eile."
+        },
+        {
+          "title": "Tuilleadh eolais",
+          "body": "Féach ar an bpolasaí príobháideachais chun a fháil amach conas a láimhseálaimid sonraí pearsanta, nó seol teachtaireacht ón leathanach teagmhála."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "Baile {name}",
+    "defaultHeadline": "Cíosaigh carr le {name}",
+    "footerTagline": "Cuir in áirithe go díreach leis an gcomhlacht cíosa seo.",
+    "previewBanner": "Réamhamharc — níl an leathanach seo poiblí. Ní dhéanfaidh innill chuardaigh é a innéacsú.",
+    "editLink": "Cuir in eagar",
+    "editContactEmpty": "Tá sonraí teagmhála i bhfolach. Cuir in eagar iad sa riarachán.",
+    "editBranchesEmpty": "Gan aon bhrainsí go fóill. Cuir leis iad sa riarachán.",
+    "editRulesHint": "Mód áirithinte, am fógra, agus fuinneog an iarratais.",
+    "editDomainHint": "Fearann saincheaptha agus URL beo.",
+    "editSection": {
+      "hero": "Príomhbhratach",
+      "search": "Cuardach",
+      "fleet": "Flít",
+      "branches": "Brainsí",
+      "contact": "Teagmháil",
+      "rules": "Rialacha áirithinte",
+      "domain": "Fearann"
+    },
+    "pausedTitle": "Gan glacadh le háirithintí",
+    "pausedDescription": "Tá áirithintí ar líne curtha ar sos ag an gcomhlacht seo. Is féidir leat an fhlít a bhrabhsáil fós.",
+    "notFoundTitle": "Níor aimsíodh an suíomh",
+    "notFoundDescription": "Níl an suíomh cíosa seo ar fáil.",
+    "loadErrorTitle": "Suíomh gan a bheith ar fáil",
+    "loadErrorDescription": "Níorbh fhéidir linn an suíomh cíosa seo a lódáil. Bain triail as arís go luath.",
+    "search": "Cuardaigh carranna",
+    "searchAria": "Cuardaigh de réir dátaí agus suímh",
+    "searchTitle": "Cuardaigh carranna",
+    "searchDescription": "Roghnaigh dátaí agus suíomh chun a fheiceáil cad atá ar fáil.",
+    "branch": "Suíomh bailithe",
+    "anyBranch": "Suíomh ar bith",
+    "ownerSignIn": "Sínigh isteach mar úinéir",
+    "returnBranch": "Suíomh fillte",
+    "differentReturn": "Fill ar shuíomh eile",
+    "returnSame": "Mar an gcéanna leis an mbailiú",
+    "driverAge": "Aois an tiománaí",
+    "driverAgeYears": "{band} bliain",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Cuir do shuíomh in eagar",
+    "signInHint": "Osclaíonn úinéirí eagarthóir an tsuímh ó riarachán Benwer. Úsáid an cnaipe “Cuir suíomh in eagar” ansin agus síneofar isteach anseo thú go huathoibríoch.",
+    "signedInTitle": "Tá tú sínithe isteach",
+    "signedInHint": "Más féidir leat an suíomh seo a bhainistiú, osclaíonn an t-eagarthóir ar an leathanach baile.",
+    "openEditor": "Oscail eagarthóir an tsuímh",
+    "disabledTitle": "Níl eagarthóireacht úinéara ar fáil",
+    "disabledDescription": "Níl Firebase foirne cumraithe ar an margadh seo.",
+    "signOut": "Sínigh amach",
+    "auth": {
+      "tooManyRequests": "An iomarca iarrachtaí. Bain triail as arís níos déanaí.",
+      "unknown": "Níorbh fhéidir síniú isteach. Bain triail as arís.",
+      "invalidToken": "Tá an nasc sínithe isteach seo imithe in éag nó úsáidte cheana. Oscail an t-eagarthóir arís ó riarachán Benwer."
+    },
+    "signingIn": "Do shíniú isteach…",
+    "openAdmin": "Oscail riarachán Benwer",
+    "accountMenu": "Cuntas úinéara",
+    "signedInAs": "Sínithe isteach mar úinéir",
+    "guestSignedOut": "Síníodh amach as do chuntas aoi thú. Ní féidir seisiúin úinéara agus aoi a bheith oscailte ag an am céanna sa bhrabhsálaí seo."
+  },
+  "guest": {
+    "googleAction": "Sínigh isteach le Google",
+    "googleCreate": "Lean ar aghaidh le Google",
+    "or": "nó",
+    "forgotPassword": "An ndearna tú dearmad ar do phasfhocal?",
+    "resetTitle": "Athshocraigh do phasfhocal",
+    "resetHint": "Cuir isteach do sheoladh ríomhphoist agus seolfaimid nasc chugat chun pasfhocal nua a roghnú.",
+    "resetAction": "Seol nasc athshocraithe",
+    "resetSentTitle": "Seiceáil do ríomhphost",
+    "resetSentHint": "Má tá cuntas ann don seoladh sin, tá treoracha athshocraithe pasfhocail seolta againn. Nár bhfuair tú é? Seiceáil d'fhillteán turscair nó fan cúpla nóiméad sula mbainfidh tú triail as arís.",
+    "backToSignIn": "Ar ais chuig síniú isteach",
+    "signInNav": "Sínigh isteach",
+    "myBookings": "Mo chuid áirithintí",
+    "signInTitle": "Sínigh isteach",
+    "signInHint": "Úsáid do chuntas aoi don chomhlacht cíosa seo. Ní logáil isteach foirne é seo.",
+    "signInAction": "Sínigh isteach",
+    "createTitle": "Cruthaigh cuntas aoi",
+    "createHint": "Sábháil do chuid áirithintí leis an gcomhlacht seo. Úsáideann an fhoireann síniú isteach eile.",
+    "createAction": "Cruthaigh cuntas",
+    "needAccount": "Cuntas uait? Cruthaigh ceann",
+    "haveAccount": "An bhfuil cuntas agat cheana? Sínigh isteach",
+    "email": "Ríomhphost",
+    "password": "Pasfhocal",
+    "bookingsTitle": "Mo chuid áirithintí",
+    "bookingsMeta": "Áirithintí nasctha don chomhlacht cíosa seo.",
+    "bookingsHint": "Sínithe isteach mar {email} ag {company}.",
+    "emptyTitle": "Gan aon áirithintí go fóill",
+    "emptyDescription": "Ar chuir tú in áirithe cheana? Nasc an áirithint sin leis an ríomhphost a d'úsáid tú nó lena comhartha deimhnithe.",
+    "bookingFallback": "Áirithint",
+    "loadErrorTitle": "Níorbh fhéidir áirithintí a lódáil",
+    "linkTitle": "Nasc áirithint",
+    "linkHint": "Cuir isteach an ríomhphost a úsáideadh chun cur in áirithe, nó an comhartha deimhnithe. Má aimsímid meaitseáil seolfaimid nasc ar ríomhphost — ní deirimid riamh an bhfuil cuntas ann.",
+    "linkEmail": "Ríomhphost áirithinte",
+    "linkToken": "Comhartha áirithinte",
+    "linkAction": "Seol nasc",
+    "linkSent": "Má aimsímid áirithint mheaitseála, seolfaimid nasc deimhnithe ar ríomhphost.",
+    "accountTitle": "Cuntas",
+    "accountHint": "Sínigh amach as do chuntas ar an suíomh seo.",
+    "signOut": "Sínigh amach",
+    "erase": "Léirscrios mo shonraí anseo",
+    "eraseConfirm": "Sea, léirscrios mo shonraí don chomhlacht seo",
+    "confirmTitle": "D'áirithint á nascadh",
+    "confirmHint": "Fan le do thoil fad is a cheanglaímid an áirithint seo le do chuntas.",
+    "confirmSignIn": "Sínigh isteach le do chuntas aoi chun nascadh na háirithinte seo a chríochnú.",
+    "confirmMissing": "Comhartha deimhnithe ar iarraidh",
+    "confirmMissingHint": "Oscail an nasc ó do ríomhphost arís.",
+    "confirmError": "Níorbh fhéidir linn an nasc seo a dheimhniú",
+    "disabledTitle": "Níl cuntais aoi ar fáil go fóill",
+    "disabledDescription": "Níl síniú isteach aoi curtha ar siúl ag an gcomhlacht seo. Is féidir leat cur in áirithe fós le d'ainm, ríomhphost agus guthán.",
+    "auth": {
+      "popupClosed": "Cealaíodh an síniú isteach.",
+      "popupBlocked": "Chuir do bhrabhsálaí bac ar fhuinneog Google. Ceadaigh preabfhuinneoga agus bain triail as arís.",
+      "differentProvider": "Síníonn an ríomhphost seo isteach ar bhealach eile cheana féin. Úsáid do phasfhocal ina ionad.",
+      "providerUnavailable": "Níl síniú isteach Google ar fáil ar an suíomh seo go fóill. Úsáid do ríomhphost agus do phasfhocal.",
+      "invalidEmail": "Cuir isteach seoladh ríomhphoist bailí.",
+      "emailInUse": "Tá cuntas aoi ag an ríomhphost sin cheana féin. Sínigh isteach ina ionad.",
+      "weakPassword": "Úsáid pasfhocal níos faide.",
+      "tooManyRequests": "An iomarca iarrachtaí. Bain triail as arís i gceann cúpla nóiméad.",
+      "invalidCredentials": "Níl an ríomhphost nó an pasfhocal ceart.",
+      "unknown": "Níorbh fhéidir síniú isteach. Bain triail as arís.",
+      "googleDisabled": "Níl síniú isteach Google curtha ar siúl don suíomh seo go fóill. Úsáid do ríomhphost agus do phasfhocal.",
+      "domainNotAuthorised": "Níl síniú isteach Google socraithe do sheoladh an tsuímh seo go fóill. Úsáid do ríomhphost agus do phasfhocal faoi láthair."
+    },
+    "accountMenu": "Do chuntas",
+    "profileNav": "Próifíl",
+    "profileTitle": "Próifíl",
+    "profileMeta": "Do chuntas aoi don chomhlacht cíosa seo.",
+    "linkCancel": "Cealaigh",
+    "eraseTitle": "Léirscrios mo shonraí",
+    "eraseHint": "Scriosann sé do shonraí aoi don chomhlacht seo agus síníonn sé amach thú. Ní dhéantar difear do chomhlachtaí eile.",
+    "profileDetailsTitle": "Do shonraí",
+    "profileDetailsHint": "Úsáidtear iad chun d'áirithintí leis an gcomhlacht seo a líonadh.",
+    "profileFullName": "Ainm iomlán",
+    "profilePhone": "Uimhir ghutháin",
+    "profileDob": "Dáta breithe",
+    "profileSave": "Sábháil sonraí",
+    "profileNotLinked": "Sábháiltear d'ainm agus do ghuthán anseo tar éis do chéad áirithinte leis an ríomhphost seo. Ar chuir tú in áirithe le ríomhphost eile cheana? Nasc an áirithint sin ó Mo chuid áirithintí.",
+    "verifyTitle": "Fíoraigh do ríomhphost chun do chuid áirithintí a fheiceáil",
+    "verifyHint": "Sheolamar nasc chuig {email}. Oscail é, agus ansin tar ar ais anseo. Go dtí go mbeidh do ríomhphost fíoraithe ní féidir linn do chuid áirithintí a thaispeáint ná d'ainm agus do ghuthán a shábháil.",
+    "verifyResend": "Athsheol ríomhphost",
+    "verifySent": "Ríomhphost seolta. Seiceáil do bhosca isteach agus d'fhillteán turscair.",
+    "verifyDone": "Tá mo ríomhphost fíoraithe agam",
+    "verifyStillPending": "Níl do ríomhphost fíoraithe go fóill. Oscail an nasc sa ríomhphost, agus ansin bain triail as arís.",
+    "verifyBanner": "Níl do chuntas gníomhach go fóill. Fíoraigh {email} chun do chuid áirithintí a fheiceáil agus do shonraí sábháilte a úsáid.",
+    "verifyBannerAction": "Fíoraigh ríomhphost",
+    "profileEdit": "Cuir sonraí in eagar",
+    "profileCancel": "Cealaigh",
+    "profileEmail": "Ríomhphost",
+    "profileEmpty": "Gan cur leis",
+    "bookingsUpcoming": "Le teacht",
+    "bookingsPast": "Caite",
+    "ownerSignedOut": "Síníodh amach as eagarthóir an tsuímh thú. Ní féidir seisiúin úinéara agus aoi a bheith oscailte ag an am céanna sa bhrabhsálaí seo."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Tairiscintí {name}",
+      "slideAlt": "Bratach {position} de {name}",
+      "slideLabel": "{position} as {count}",
+      "previous": "Bratach roimhe seo",
+      "next": "An chéad bhratach eile",
+      "goTo": "Taispeáin bratach {position}",
+      "presets": {
+        "airport": {
+          "script": "díreach tar éis tuirlingt?",
+          "highlight": "Bailiú aerfoirt",
+          "joiner": "i",
+          "boxed": "10 nóiméad",
+          "description": "Seachain an scuaine: sínigh do chonradh ar do ghuthán agus tiomáin leat le hárachas iomlán"
+        },
+        "weekend": {
+          "script": "cuir in áirithe an deireadh seachtaine seo",
+          "highlight": "Sábháil 20%",
+          "joiner": "ar",
+          "boxed": "Chíosanna deireadh seachtaine",
+          "description": "Bailigh Dé hAoine, fill Dé Luain. Suíochán linbh saor in aisce agus tiománaí breise san áireamh"
+        },
+        "roadtrip": {
+          "script": "do chéad turas bóthair eile",
+          "highlight": "Tosaíonn anseo",
+          "joiner": "tugaimid duit na",
+          "boxed": "Heochracha",
+          "description": "Cealú saor in aisce suas le 24 uair roimh bhailiú, km neamhtheoranta agus gan táillí folaithe"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "San áireamh i ngach praghas",
+      "title": "Is é an praghas a fheiceann tú an praghas a íocann tú",
+      "description": "Gan aon iontas ag an deasc. Tá siad seo i gcónaí mar chuid den phraghas.",
+      "presets": {
+        "insurance": {
+          "title": "Árachas bunúsach",
+          "text": "Clúdach imbhuailte, gadaíochta agus tríú páirtí.",
+          "tag": "San áireamh"
+        },
+        "mileage": {
+          "title": "Ciliméadair neamhtheoranta",
+          "text": "Tiomáin chomh fada agus is mian leat, gan táillí in aghaidh an km.",
+          "tag": "Gan teorainn"
+        },
+        "fuel": {
+          "title": "Breosla lán go lán",
+          "text": "Bailigh an carr lán agus tabhair ar ais lán é.",
+          "tag": "Gan umar réamhíoctha"
+        },
+        "cancellation": {
+          "title": "Cealú saor in aisce",
+          "text": "Ar athraigh do phleananna? Cealaigh saor in aisce.",
+          "tag": "Solúbtha"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Léirmheasanna",
+      "title": "A deir tiománaithe fúinn",
+      "seeAll": "Féach ar gach ceann de na {count, plural, one {# léirmheas} other {# léirmheas}}",
+      "seeAllOn": "Féach ar gach ceann de na {count, plural, one {# léirmheas} other {# léirmheas}} ar {source}",
+      "basedOn": "Bunaithe ar {count, plural, one {# léirmheas} other {# léirmheas}}",
+      "basedOnSource": "Bunaithe ar {count, plural, one {# léirmheas} other {# léirmheas}} ar {source}",
+      "ratingAria": "Rátáil {rating} as 5",
+      "rented": "Cíosaithe: {vehicle}",
+      "verified": "Cíos fíoraithe",
+      "distributionAria": "Miondealú rátála",
+      "emptyTitle": "Gan aon léirmheasanna go fóill",
+      "emptyText": "Is féidir le haíonna léirmheas a dhéanamh ar a gcíos nuair a fhilleann siad an carr. Beidh léirmheasanna ceadaithe le feiceáil anseo."
+    },
+    "app": {
+      "eyebrow": "Aip shoghluaiste",
+      "title": "D'áirithint, ar an mbóthar",
+      "text": "Seiceáil isteach ar líne, féach ar do shonraí bailithe agus seol teachtaireacht chugainn, go léir ó do ghuthán.",
+      "platformBoth": "iOS agus Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Scan le híoslódáil",
+      "qrAlt": "Cód QR chun an aip a íoslódáil",
+      "appStore": {
+        "prefix": "Íoslódáil ar an",
+        "name": "App Store",
+        "aria": "Íoslódáil ar an App Store",
+        "unavailable": "Níl sé ar fáil ar an App Store go fóill"
+      },
+      "googlePlay": {
+        "prefix": "Faigh é ar",
+        "name": "Google Play",
+        "aria": "Faigh é ar Google Play",
+        "unavailable": "Níl sé ar fáil ar Google Play go fóill"
+      },
+      "comingSoon": "Ag teacht go luath"
+    },
+    "locations": {
+      "eyebrow": "Suíomhanna",
+      "title": "{count, plural, one {Ár n-oifig} other {Ár n-oifigí}}",
+      "description": "{count, plural, one {Bailigh agus fill do charr anseo.} other {Bailigh agus fill do charr ag aon cheann dár n-oifigí.}}",
+      "directions": "Treoracha",
+      "directionsTo": "Treoracha chuig {name}",
+      "call": "Glaoigh"
+    },
+    "faq": {
+      "eyebrow": "CCanna",
+      "title": "Ceisteanna sula gcuireann tú in áirithe",
+      "description": "Nach bhfaigheann tú do fhreagra? Déan teagmháil linn, tá áthas orainn cabhrú."
+    },
+    "contact": {
+      "title": "Ceisteanna? Labhair le duine.",
+      "description": "Seol teachtaireacht chugainn nó cuir glaoch orainn agus cabhróimid leat an carr ceart a aimsiú.",
+      "whatsapp": "WhatsApp",
+      "email": "Seol ríomhphost chugainn",
+      "whatsappMessage": "Dia duit {name}, tá ceist agam faoi charr a ligean ar cíos."
+    },
+    "nav": {
+      "reviews": "Léirmheasanna",
+      "faq": "CCanna",
+      "contact": "Teagmháil",
+      "app": "Aip",
+      "branches": "Suíomhanna"
+    },
+    "footer": {
+      "contact": "Teagmháil",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Glacaimid le",
+      "rating": "{score} · {count, plural, one {# léirmheas} other {# léirmheas}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Airgead tirim"
+    }
+  },
+  "siteEditor": {
+    "aria": "Eagarthóir suímh gréasáin",
+    "title": "Eagarthóir suímh gréasáin",
+    "signOut": "Sínigh amach",
+    "tabsAria": "Rannáin an eagarthóra",
+    "status": {
+      "draft": "Dréacht",
+      "published": "Beo",
+      "paused": "Ar sos"
+    },
+    "tabs": {
+      "sections": "Rannáin",
+      "design": "Dearadh",
+      "settings": "Socruithe",
+      "legal": "Dlíthiúil"
+    },
+    "contentLanguage": "Teanga eagarthóireachta",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Gach rannán",
+    "sections": {
+      "company": "Comhlacht",
+      "fleet": "Carranna",
+      "included": "San áireamh i ngach praghas",
+      "reviews": "Léirmheasanna",
+      "app": "Aip shoghluaiste",
+      "faq": "CCanna",
+      "contact": "Teagmháil",
+      "hero": "Bratacha agus cuardach",
+      "branches": "Suíomhanna"
+    },
+    "sectionsHint": "Cas rannáin air nó as agus athraigh a n-ord. Oscail rannán chun a ábhar a chur in eagar.",
+    "orderHint": "Taispeántar carranna i gcónaí. Tagann oifigí ó do bhrainsí i riarachán Benwer.",
+    "hiddenUntilContent": "I bhfolach go dtí go gcuireann tú ábhar leis",
+    "summary": {
+      "banners": "{count, plural, one {# bratach} other {# bratach}}",
+      "bannersEmpty": "Gan aon bhratacha go fóill, dath an bhranda á thaispeáint",
+      "company": "Ceannlíne, réamhrá agus sonraí teagmhála",
+      "fleet": "Ó do fhlít Benwer",
+      "included": "{count, plural, one {# mhír} other {# mír}}",
+      "reviews": "{count, plural, one {# léirmheas} other {# léirmheas}}",
+      "app": "Naisc siopa agus cód QR",
+      "locations": "{count, plural, one {# oifig} other {# oifig}} ó Benwer",
+      "faq": "{count, plural, one {# cheist} other {# ceist}}",
+      "contactWhatsapp": "WhatsApp, guthán agus uaireanta oscailte",
+      "contact": "Guthán agus ríomhphost"
+    },
+    "unsaved": "Athruithe gan sábháil",
+    "saved": "Gach athrú sábháilte",
+    "discard": "Cuir i leataobh",
+    "save": "Sábháil athruithe",
+    "common": {
+      "moveUp": "Bog {item} suas",
+      "moveDown": "Bog {item} síos",
+      "remove": "Bain {item}",
+      "show": "Taispeáin {item}"
+    },
+    "banners": {
+      "title": "Bratacha",
+      "description": "Suas le {max} sleamhnán. Úsáideann réimsí folmha an téacs réamhshocraithe a thaispeántar i liath.",
+      "empty": "Gan aon bhratacha. Taispeánann limistéar na brataí do dhath cúlra.",
+      "item": "Bratach {position}",
+      "image": "Íomhá",
+      "imageHint": "Uaslódáil íomhá leathan, thart ar 1600 × 560 px. JPG, PNG nó WebP suas le 25 MB. Suíonn PNG trédhearcach ar dhath do bhrataí.",
+      "add": "Cuir bratach leis",
+      "fields": {
+        "script": "Líne lámhscríofa",
+        "highlight": "Teideal aibhsithe",
+        "joiner": "Ceanglóir beag",
+        "boxed": "Teideal i mbosca",
+        "description": "Cur síos"
+      },
+      "colorsTitle": "Dathanna brataí",
+      "colorsDescription": "Úsáidte ag gach bratach. Oibríonn aon dath don chúlra.",
+      "resetColors": "Athshocraigh go dathanna réamhshocraithe",
+      "colors": {
+        "background": "Cúlra",
+        "text": "Téacs",
+        "highlight": "Bosca aibhsithe",
+        "highlightText": "Téacs aibhsithe",
+        "box": "Bosca bán",
+        "boxText": "Téacs an bhosca bháin",
+        "script": "Téacs ceanglóra"
+      },
+      "noImage": "Gan íomhá go fóill",
+      "uploadImage": "Uaslódáil íomhá",
+      "replaceImage": "Ionadaigh íomhá",
+      "tooLarge": "Tá an comhad sin os cionn 25 MB. Roghnaigh íomhá níos lú.",
+      "uploadFailed": "Theip ar an uaslódáil. Bain triail as arís."
+    },
+    "company": {
+      "title": "Ceanntásc an chomhlachta",
+      "description": "D'ainm, ceannlíne agus réamhrá gearr.",
+      "headline": "Ceannlíne",
+      "headlinePlaceholder": "Cíosaigh carr le {name}",
+      "intro": "Réamhrá",
+      "introHint": "Abairt amháin nó dhó faoi do chomhlacht.",
+      "contactTitle": "Sonraí teagmhála",
+      "contactDescription": "Taispeánta sa cheanntásc, sna suíomhanna agus sa rannán teagmhála.",
+      "showPhone": "Taispeáin uimhir ghutháin",
+      "showEmail": "Taispeáin ríomhphost",
+      "showAddress": "Taispeáin seoladh"
+    },
+    "included": {
+      "title": "San áireamh i ngach praghas",
+      "description": "Suas le 6 ghealltanas atá mar chuid de do phraghas i gcónaí.",
+      "accuracy": "Ná liostaigh ach an méid atá fíor do gach cíos. Is moladh an téacs réamhshocraithe — seiceáil go meaitseálann sé do choinníollacha cíosa.",
+      "item": "Mír {position}",
+      "icon": "Deilbhín",
+      "itemTitle": "Teideal",
+      "itemText": "Cur síos",
+      "itemTag": "Aibhsiú",
+      "tagHint": "Lipéad gearr a thaispeántar i nglas, amhail “Barris €1,000”.",
+      "presets": {
+        "insurance": "Árachas bunúsach",
+        "mileage": "Km neamhtheoranta",
+        "fuel": "Breosla lán go lán",
+        "cancellation": "Cealú saor in aisce"
+      },
+      "addCustom": "Mír shaincheaptha"
+    },
+    "icons": {
+      "shield": "Sciath",
+      "gauge": "Luasmhéadar",
+      "fuel": "Caidéal breosla",
+      "calendar_check": "Féilire",
+      "check": "Tic",
+      "car": "Carr",
+      "users": "Daoine",
+      "baby": "Suíochán linbh",
+      "plane": "Eitleán",
+      "key": "Eochair"
+    },
+    "reviews": {
+      "title": "Léirmheasanna aíonna",
+      "description": "Déanann aíonna léirmheas ar a gcíos tar éis dóibh an carr a thabhairt ar ais. Ní thaispeántar ach léirmheasanna a cheadaíonn tú.",
+      "summary": "Meán {average} ó {count, plural, one {# léirmheas ceadaithe} other {# léirmheas ceadaithe}}",
+      "none": "Gan aon léirmheasanna ceadaithe go fóill. Feiceann aíonna nóta gearr go dtí go gceadaíonn tú ceann.",
+      "manage": "Ceadaigh nó folaigh léirmheasanna i riarachán Benwer",
+      "demo": "Is léirmheasanna taispeána iad seo a thaispeántar ar an gcomhlacht tástála seo go dtí go gceadaíonn tú fíorléirmheasanna i riarachán Benwer."
+    },
+    "app": {
+      "benwerAppTitle": "Aip Benwer Cars",
+      "benwerApp": "Taispeáin aip Benwer Cars",
+      "benwerAppDescription": "Faigheann aíonna aip Benwer Cars saor in aisce. Nascann na suaitheantais leis na siopaí oifigiúla agus osclaíonn an cód QR do chomhlacht san aip.",
+      "storesWithBenwerApp": "Ní gá é seo ach má tá a aip féin ag do chomhlacht. Fad is atá aip Benwer Cars ar siúl, úsáideann an rannán a naisc siopa.",
+      "storesTitle": "Naisc siopa",
+      "storesDescription": "Naisc chuig d'aip féin. Taispeántar siopa ar iarraidh i liath. Gan naisc agus aip Benwer Cars múchta, fanann an rannán i bhfolach.",
+      "ios": "Nasc App Store",
+      "android": "Nasc Google Play",
+      "qrHint": "Osclaíonn an cód QR nasc Google Play, nó nasc App Store mura bhfuil nasc Google Play ann.",
+      "copyTitle": "Téacs",
+      "title": "Teideal",
+      "text": "Cur síos"
+    },
+    "faq": {
+      "title": "Ceisteanna",
+      "description": "Suas le {max} ceist le freagraí gearra.",
+      "empty": "Gan aon cheisteanna go fóill. Fanann an rannán i bhfolach go dtí go gcuireann tú ceann leis.",
+      "item": "Ceist {position}",
+      "question": "Ceist",
+      "answer": "Freagra",
+      "incompleteHint": "Ní thaispeántar ceisteanna gan freagra ar an suíomh.",
+      "add": "Cuir ceist leis"
+    },
+    "contact": {
+      "title": "Teagmháil",
+      "description": "Conas a shroicheann custaiméirí thú. Tagann guthán agus ríomhphost ón rannán comhlachta.",
+      "whatsapp": "Uimhir WhatsApp",
+      "whatsappHint": "Cuir an cód tíre san áireamh. Fág folamh chun an cnaipe WhatsApp a chur i bhfolach.",
+      "hours": "Cathain a fhreagraíonn tú",
+      "hoursPlaceholder": "Freagraímid gach lá ó 08:00 go 22:00.",
+      "payments": "Modhanna íocaíochta",
+      "paymentsHint": "Taispeánta i do bhuntásc."
+    },
+    "design": {
+      "colorTitle": "Dath an bhranda",
+      "colorDescription": "Úsáidte do chnaipí, naisc agus aibhsithe ar fud do shuímh. Leanann cúlra na brataí an dath seo; is féidir leat é a mhionchoigeartú faoi Bratacha fós.",
+      "presets": "Dathanna molta",
+      "custom": "Dath saincheaptha",
+      "customHint": "Úsáid cód heicsidheachúlach, amhail #4f46e5.",
+      "picker": "Roghnaigh dath",
+      "lowContrast": "Tá an dath seo ró-éadrom do théacs bán ar chnaipí. Roghnaigh ceann níos dorcha, nó teipfidh ar an sábháil.",
+      "fontTitle": "Cló",
+      "fontDescription": "Úsáidte don téacs go léir ar do shuíomh gréasáin.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Glan agus nua-aimseartha"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Clasaiceach agus galánta"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Trom agus cairdiúil"
+        }
+      },
+      "cornersTitle": "Coirnéil",
+      "cornersDescription": "Coirnéil chruinne nó chearnacha ar chnaipí, cártaí agus réimsí ar fud do shuímh gréasáin.",
+      "corners": {
+        "round": {
+          "name": "Cruinn",
+          "hint": "Bog agus cairdiúil"
+        },
+        "square": {
+          "name": "Cearnach",
+          "hint": "Géar agus íostach"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Suíomh gréasáin",
+      "websiteEnabled": "Suíomh áirithinte ar siúl",
+      "websiteEnabledHint": "Nuair atá sé seo ar siúl, is féidir le haíonna do shuíomh foilsithe a fheiceáil agus cur in áirithe air. Foilsíonn casadh air do chuid athruithe sábháilte freisin. Is é an lasc céanna é agus atá i riarachán Benwer.",
+      "bookingTitle": "Áirithintí",
+      "bookingDescription": "Conas a chuireann custaiméirí in áirithe ó do shuíomh.",
+      "bookingMode": "Mód áirithinte",
+      "mode": {
+        "instant": "Meandarach",
+        "request": "Ar iarratas"
+      },
+      "modeHint": {
+        "instant": "Deimhnítear áirithintí láithreach.",
+        "request": "Glacann tú nó diúltaíonn tú do gach áirithint laistigh de fhuinneog an iarratais."
+      },
+      "minLead": "Fógra íosta",
+      "requestWindow": "Am chun freagra a thabhairt",
+      "hoursUnit": "In uaireanta",
+      "differentReturnTitle": "Filleadh ag suíomh eile",
+      "differentReturnLabel": "Lig d'aíonna filleadh ag suíomh eile",
+      "differentReturnHint": "Roghnaíonn aíonna suíomh fillte nuair a chuardaíonn siad. Cuirtear an táille aon-bhealaigh ó riarachán Benwer leis an bpraghas.",
+      "differentReturnOff": "Cas cíosanna aon-bhealaigh air i riarachán Benwer chun é seo a thairiscint."
+    },
+    "savedNotPublished": "Sábháilte, gan foilsiú go fóill",
+    "publish": "Foilsigh",
+    "branding": {
+      "logosTitle": "Lógónna",
+      "logosDescription": "Seo lógó do chuideachta. Nuashonraíonn athrú anseo Benwer admin agus aip Benwer Cars freisin.",
+      "headerLogo": "Lógó an bharra barr",
+      "headerLogoHint": "Taispeánta sa bharra ag barr gach leathanaigh. Oibríonn lógó leathan is fearr.",
+      "companyLogo": "Lógó rannán an chomhlachta",
+      "companyLogoHint": "Taispeánta os cionn do cheannlíne, roimh rannán an chomhlachta.",
+      "usingCompanyLogo": "Lógó do chomhlachta á úsáid",
+      "upload": "Uaslódáil lógó",
+      "replace": "Ionadaigh",
+      "uploadFailed": "Níorbh fhéidir an lógó a uaslódáil. Úsáid íomhá PNG, JPG nó WebP agus bain triail as arís.",
+      "tooLarge": "Tá an íomhá seo níos mó ná 25 MB.",
+      "backgroundTitle": "Cúlra an leathanaigh",
+      "backgroundDescription": "An dath taobh thiar d'ábhar do shuímh gréasáin.",
+      "backgroundPresets": "Cúlraí molta",
+      "backgroundCustom": "Cúlra saincheaptha",
+      "backgroundPicker": "Roghnaigh dath cúlra",
+      "needsApi": "Ar fáil nuair a bheidh nuashonrú API Benwer do shuíomhanna gréasáin beo.",
+      "headerLogoDark": "Lógó an bharra barr — mód dorcha",
+      "companyLogoDark": "Lógó rannán an chomhlachta — mód dorcha",
+      "squareLogo": "Lógó cearnach (1:1)",
+      "squareLogoHint": "Riachtanach chun foilsiú. Taispeánta in aice le hainm do chomhlachta ar chártaí, torthaí cuardaigh agus liostaí soghluaiste.",
+      "cropTitle": "Bearr an lógó go 2:1",
+      "cropHint": "Tarraing agus zúmáil ionas go luíonn do lógó go glan laistigh den fhráma 2:1.",
+      "cropZoom": "Zúmáil",
+      "cropCancel": "Cealaigh",
+      "cropSave": "Bearr agus uaslódáil",
+      "darkLogoHint": "Roghnach. Taispeánta nuair a úsáideann cuairteoirí mód dorcha. Úsáid leagan geal nó bán de do lógó.",
+      "darkNeedsApi": "Beidh lógónna móid dhorcha ar fáil nuair a bheidh a nuashonrú API Benwer beo.",
+      "logo": "Lógó (2:1)",
+      "logoHint": "Riachtanach chun foilsiú. Lógó amháin don mhód geal agus dorcha: dath do bhranda mar chúlra leis an ainm i mbán, bearrtha go 2:1."
+    },
+    "legal": {
+      "hint": "Tosaíonn gach leathanach leis an téacs caighdeánach, ionas nach gá duit ach na codanna a theastaíonn uait a athrú. Cuir rannán leis do gach fotheideal. Cealaíonn “Ar ais chuig an téacs caighdeánach” do chuid athruithe.",
+      "needsApi": "Ar fáil nuair a bheidh nuashonrú API Benwer do shuíomhanna gréasáin beo.",
+      "privacyTitle": "Polasaí príobháideachais",
+      "privacyDescription": "Taispeánta ag Príobháideachas i mbuntásc do shuímh gréasáin.",
+      "termsTitle": "Téarmaí agus coinníollacha",
+      "termsDescription": "Taispeánta ag Téarmaí i mbuntásc do shuímh gréasáin.",
+      "text": "Téacs",
+      "intro": "Réamhrá",
+      "subtitle": "Fotheideal",
+      "sectionItem": "Rannán {position}",
+      "addSection": "Cuir rannán leis",
+      "reset": "Ar ais chuig an téacs caighdeánach",
+      "pageTitle": "Teideal an leathanaigh",
+      "privacyLooksLikeTerms": "Tá an téacs céanna i do pholasaí príobháideachais agus atá sna téarmaí. Úsáid \"Ar ais chuig an téacs caighdeánach\" faoi Pholasaí príobháideachais, nó scríobh do théacs príobháideachais féin, agus ansin sábháil."
+    },
+    "preview": "Réamhamharc",
+    "fullscreen": "Eagarthóir lánscáileáin",
+    "exitFullscreen": "Taispeáin réamhamharc in aice leis an eagarthóir",
+    "previewBarAria": "Rialtáin réamhamhairc",
+    "previewing": "Tá tú ag féachaint ar réamhamharc do shuímh gréasáin",
+    "backToEdit": "Cuir in eagar"
+  },
+  "marketplaceBanners": {
+    "aria": "Buaicphointí Benwer",
+    "slideLabel": "{position} as {count}",
+    "goTo": "Taispeáin bratach {position}",
+    "previous": "Bratach roimhe seo",
+    "next": "An chéad bhratach eile",
+    "trust": {
+      "script": "cuir in áirithe le muinín",
+      "highlight": "Comhlachtaí fíoraithe",
+      "joiner": "agus",
+      "boxed": "Áirithint shlán",
+      "description": "Fíorléirmheasanna, téarmaí soiléire agus conarthaí digiteacha a shíníonn tú ó do ghuthán"
+    },
+    "prices": {
+      "script": "cuardach amháin",
+      "highlight": "Déan comparáid idir praghsanna",
+      "joiner": "ó",
+      "boxed": "Chomhlachtaí comhpháirtíochta",
+      "description": "Féach ar phraghsanna, árachas agus éarlaisí ó chomhlachtaí cíosa comhpháirtíochta taobh le taobh sula gcuireann tú in áirithe"
+    },
+    "anywhere": {
+      "script": "aimsigh do charr",
+      "highlight": "Ar fud Málaga",
+      "joiner": "le",
+      "boxed": "Comhlachtaí cíosa áitiúla",
+      "description": "Comhlachtaí cíosa comhpháirtíochta i mbailte ar fud chúige Málaga, iad go léir in aon áit amháin"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Foilsithe ag {name}.",
+    "cookies": {
+      "title": "Polasaí fianán",
+      "lede": "Conas a úsáideann {name} fianáin agus teicneolaíochtaí comhchosúla ar an suíomh gréasáin seo.",
+      "updated": "Foilsithe ag {name}.",
+      "sections": [
+        {
+          "title": "Cad a úsáidimid",
+          "body": "Is comhaid bheaga téacs iad fianáin a stóráiltear ar do ghléas. Úsáideann an suíomh gréasáin seo stóráil chomhchosúil freisin, amhail stóráil áitiúil, chun cuimhneamh ar do roghanna, do thralaí agus do shíniú isteach."
+        },
+        {
+          "title": "Fíor-riachtanach",
+          "body": "Ligeann fianán teanga don suíomh do theanga a thaispeáint, agus stóráiltear do rogha ón mbratach fianán ionas nach bhfiafraímid arís ar gach cuairt. Má shíníonn tú isteach, stórálann an soláthraí sínithe isteach seisiún ar do ghléas ionas go bhfanann tú sínithe isteach. Láimhseálann Stripe íocaíochtaí cárta, agus d'fhéadfadh sé a chuid fianán féin a shocrú chun calaois a chosc."
+        },
+        {
+          "title": "Fianáin roghnacha",
+          "body": "Fanann fianáin roghnacha (mar shampla anailísíocht) múchta mura roghnaíonn tú Glac le gach ceann. Ní shocraíonn an suíomh gréasáin seo fianáin anailísíochta ná margaíochta inniu."
+        },
+        {
+          "title": "Fianáin a bhainistiú",
+          "body": "Úsáid an nasc socruithe fianán sa bhuntásc chun do rogha a athrú. Is féidir leat fianáin agus sonraí suímh a scriosadh i do bhrabhsálaí freisin. D'fhéadfadh bac a chur ar stóráil fhíor-riachtanach tú a shíniú amach nó do thralaí a fholmhú."
+        },
+        {
+          "title": "Tuilleadh eolais",
+          "body": "Féach ar an bpolasaí príobháideachais chun a fháil amach conas a láimhseálann {name} sonraí pearsanta, nó úsáid na sonraí teagmhála sa bhuntásc."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Tacaíocht",
+    "fabCloseLabel": "Dún an roghchlár tacaíochta",
+    "messageAction": "Teachtaireacht dhíreach",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Dia duit, tá ceist agam faoi Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "Aip Benwer Cars",
+    "metaDescription": "Cuir carranna in áirithe, coinnigh do thurais go léir in aon áit amháin agus faigh nuashonruithe áirithinte ar do ghuthán.",
+    "eyebrow": "Aip shoghluaiste",
+    "title": "Do chíos cairr, i do phóca",
+    "description": "Cuir carranna in áirithe ó chomhlachtaí áitiúla, coinnigh gach turas in aon áit amháin, íoc agus faigh nuashonruithe ar do ghuthán.",
+    "featureTrips": "Do thurais go léir, trasna comhlachtaí",
+    "featureBooking": "Cuir in áirithe agus íoc i gcúpla sconna",
+    "featurePush": "Nuashonruithe nuair a athraíonn d'áirithint",
+    "unavailableTitle": "Tá an aip ag teacht go luath",
+    "unavailableDescription": "Níl aip Benwer Cars sna siopaí go fóill. Is féidir leat cur in áirithe ar an ngréasán fós.",
+    "browse": "Brabhsáil carranna",
+    "badgeTitle": "Faigh aip Benwer Cars",
+    "companyText": "Cuir {company} in áirithe ar do ghuthán agus coinnigh do thurais in aon áit amháin.",
+    "bookingText": "Féach ar an áirithint seo, íoc agus faigh nuashonruithe ar do ghuthán."
+  }
+}

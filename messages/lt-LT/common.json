@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Kažkas nepavyko. Bandykite dar kartą.",
+    "network": "Nepavyksta pasiekti serverio. Patikrinkite ryšį.",
+    "vehicle": {
+      "not_found": "Šis automobilis nebėra pasiekiamas."
+    },
+    "company": {
+      "not_found": "Šios įmonės rasti nepavyko."
+    },
+    "reservation": {
+      "overlap": "Šis automobilis pasirinktomis datomis jau užsakytas.",
+      "not_found": "Užsakymas nerastas. Patikrinkite patvirtinimo nuorodą.",
+      "invalid_dates": "Grąžinimo data turi būti vėlesnė nei paėmimo.",
+      "min_lead": "Paėmimas per anksti. Pasirinkite vėlesnę datą.",
+      "terms_required": "Norėdami tęsti, sutikite su nuomos sąlygomis.",
+      "max_open_requests": "Jau turite dvi aktyvias užklausas. Prieš siųsdami naują, vieną atšaukite.",
+      "request_expired": "Šios užklausos galiojimas baigėsi. Pradėkite naują.",
+      "not_cancellable": "Šio užsakymo nebegalima atšaukti internetu."
+    },
+    "booking": {
+      "payment_not_required": "Šiam užsakymui mokėjimas internetu nereikalingas.",
+      "payment_window_elapsed": "15 minučių mokėjimo laikas baigėsi. Jei automobilis vis dar reikalingas, sukurkite naują užsakymą.",
+      "payment_not_open": "Šiam užsakymui mokėjimas nepasiekiamas. Bandykite dar kartą arba susisiekite su įmone."
+    },
+    "rental_payments": {
+      "already_paid": "Šis užsakymas jau apmokėtas."
+    },
+    "site": {
+      "not_found": "Šios nuomos svetainės rasti nepavyko.",
+      "paused": "Ši įmonė šiuo metu nepriima užsakymų.",
+      "not_published": "Ši svetainė dar nepriima užsakymų."
+    },
+    "website_domain": {
+      "not_found": "Šis svetainės adresas nėra susietas su nuomos įmone."
+    },
+    "staff": {
+      "unauthenticated": "Prisijunkite kaip įmonės savininkas, kad galėtumėte redaguoti šią svetainę.",
+      "forbidden": "Neturite leidimo redaguoti šios svetainės."
+    },
+    "guest": {
+      "not_configured": "Svečių paskyros šioje įmonėje dar nepasiekiamos.",
+      "not_linked": "Su šia paskyra dar nesusietas joks užsakymas.",
+      "invalid_token": "Ši patvirtinimo nuoroda neteisinga arba jos galiojimas baigėsi.",
+      "unauthenticated": "Prisijunkite, kad galėtumėte tęsti."
+    },
+    "pricing": {
+      "min_days": "Šios datos per trumpos šiam sezonui. Pasirinkite ilgesnę nuomą.",
+      "max_days": "Šios datos per ilgos šiam sezonui. Pasirinkite trumpesnę nuomą.",
+      "rental_too_long": "Ši nuoma per ilga užsakyti internetu. Susisiekite su įmone."
+    },
+    "contact": {
+      "not_configured": "Kontaktinis el. paštas dar nesukonfigūruotas. Bandykite vėliau.",
+      "delivery_failed": "Šiuo metu nepavyko išsiųsti jūsų žinutės. Bandykite vėliau."
+    }
+  },
+  "nav": {
+    "home": "Pradžia",
+    "cars": "Automobiliai",
+    "companies": "Įmonės",
+    "contact": "Kontaktai",
+    "privacy": "Privatumas",
+    "terms": "Sąlygos",
+    "cookies": "Slapukai",
+    "mainAria": "Pagrindinė navigacija",
+    "footerAria": "Poraštės navigacija",
+    "menu": "Meniu"
+  },
+  "meta": {
+    "siteTitle": "Raskite vietinių automobilių nuomą",
+    "siteDescription": "Palyginkite partnerių nuomos įmonių automobilius Malagos provincijoje ir tęskite įmonės svetainėje."
+  },
+  "notFound": {
+    "title": "Puslapis nerastas",
+    "description": "Tokio puslapio nėra. Grįžkite atgal ir ieškokite automobilio.",
+    "action": "Grįžti į pradžią"
+  },
+  "hostUnknown": {
+    "title": "Ši svetainė nepasiekiama",
+    "description": "Patikrinkite įvestą adresą. Šis puslapis nepriklauso „Benwer Cars“ nuomos svetainei."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, pradžia",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Perjungti į tamsųjį režimą",
+    "toLight": "Perjungti į šviesųjį režimą"
+  },
+  "locale": {
+    "label": "Kalba",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Ieškoti kalbų",
+    "noResults": "Atitinkančių kalbų nerasta"
+  },
+  "footer": {
+    "tagline": "Palyginkite partnerių nuomos įmonių automobilius.",
+    "trust": "Partnerių parkai · Malaga · Nuoma įmonės svetainėje",
+    "poweredBy": "Užsakyta per Benwer Cars",
+    "explore": "Naršyti",
+    "legal": "Teisinė informacija",
+    "copyright": "© {year} Benwer Cars. Visos teisės saugomos."
+  },
+  "cookieBanner": {
+    "body": "Naudojame kalbos slapuką ir išsaugome šį pasirinkimą jūsų įrenginyje. Pasirenkami slapukai lieka išjungti, kol jų nepriimate.",
+    "policy": "Slapukų politika",
+    "necessary": "Atmesti visus",
+    "accept": "Priimti visus",
+    "title": "Vertiname jūsų privatumą",
+    "settings": "Slapukų nustatymai"
+  },
+  "actions": {
+    "retry": "Bandyti dar kartą",
+    "back": "Grįžti atgal",
+    "viewAll": "Žiūrėti visus",
+    "close": "Uždaryti"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Šalies kodas, {country} {dial}",
+    "search": "Ieškoti šalių",
+    "countries": "Šalys",
+    "noResults": "Atitinkančių šalių nerasta",
+    "invalid": "Įveskite teisingą telefono numerį.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Išvalyti datą"
+  },
+  "guestNotifications": {
+    "title": "Pranešimai",
+    "openLabel": "Atidaryti pranešimus",
+    "unreadCount": "{count} neskaitytų pranešimų",
+    "emptyTitle": "Pranešimų dar nėra",
+    "emptyBody": "Čia bus rodomi užsakymo atnaujinimai, mokėjimo priminimai ir paėmimo įspėjimai.",
+    "error": "Nepavyko įkelti pranešimų.",
+    "retry": "Bandyti dar kartą",
+    "markAllRead": "Pažymėti visus kaip skaitytus",
+    "dismiss": "Uždaryti",
+    "loadMore": "Įkelti daugiau",
+    "enablePush": "Įjungti naršyklės pranešimus",
+    "pushEnabled": "Naršyklės pranešimai įjungti",
+    "pushBlocked": "Naršyklės pranešimai užblokuoti nustatymuose",
+    "disablePush": "Išjungti naršyklės pranešimus"
+  }
+}

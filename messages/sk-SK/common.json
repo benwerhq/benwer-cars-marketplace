@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Niečo sa pokazilo. Skúste to znova.",
+    "network": "Nepodarilo sa pripojiť k serveru. Skontrolujte pripojenie.",
+    "vehicle": {
+      "not_found": "Toto vozidlo už nie je dostupné."
+    },
+    "company": {
+      "not_found": "Túto spoločnosť sa nepodarilo nájsť."
+    },
+    "reservation": {
+      "overlap": "Toto vozidlo je na vybrané termíny už rezervované.",
+      "not_found": "Rezervácia sa nenašla. Skontrolujte svoj potvrdzovací odkaz.",
+      "invalid_dates": "Dátum vrátenia musí byť po dátume vyzdvihnutia.",
+      "min_lead": "Vyzdvihnutie je príliš skoro. Vyberte neskorší dátum.",
+      "terms_required": "Na pokračovanie potvrďte podmienky prenájmu.",
+      "max_open_requests": "Už máte dve otvorené žiadosti. Pred odoslaním ďalšej jednu stiahnite.",
+      "request_expired": "Platnosť tejto žiadosti vypršala. Vytvorte novú.",
+      "not_cancellable": "Túto rezerváciu už nie je možné zrušiť online."
+    },
+    "booking": {
+      "payment_not_required": "Pre túto rezerváciu nie je potrebná online platba.",
+      "payment_window_elapsed": "15-minútový čas na platbu uplynul. Ak auto stále potrebujete, vytvorte novú rezerváciu.",
+      "payment_not_open": "Platba pre túto rezerváciu nie je dostupná. Skúste to znova alebo kontaktujte autopožičovňu."
+    },
+    "rental_payments": {
+      "already_paid": "Táto rezervácia je už zaplatená."
+    },
+    "site": {
+      "not_found": "Túto webovú stránku autopožičovne sa nepodarilo nájsť.",
+      "paused": "Táto spoločnosť momentálne neprijíma rezervácie.",
+      "not_published": "Táto webová stránka ešte nie je otvorená pre rezervácie."
+    },
+    "website_domain": {
+      "not_found": "Táto webová adresa nie je prepojená so žiadnou autopožičovňou."
+    },
+    "staff": {
+      "unauthenticated": "Ak chcete upravovať túto webovú stránku, prihláste sa ako majiteľ spoločnosti.",
+      "forbidden": "Nemáte oprávnenie upravovať túto webovú stránku."
+    },
+    "guest": {
+      "not_configured": "Zákaznícke účty pre túto spoločnosť ešte nie sú dostupné.",
+      "not_linked": "K tomuto účtu zatiaľ nie sú priradené žiadne rezervácie.",
+      "invalid_token": "Tento potvrdzovací odkaz je neplatný alebo vypršal.",
+      "unauthenticated": "Na pokračovanie sa prihláste."
+    },
+    "pricing": {
+      "min_days": "Tieto termíny sú na danú sezónu príliš krátke. Vyberte dlhší prenájom.",
+      "max_days": "Tieto termíny sú na danú sezónu príliš dlhé. Vyberte kratší prenájom.",
+      "rental_too_long": "Tento prenájom je príliš dlhý na online rezerváciu. Kontaktujte spoločnosť."
+    },
+    "contact": {
+      "not_configured": "Kontaktný e-mail ešte nie je nastavený. Skúste to neskôr.",
+      "delivery_failed": "Vašu správu sa teraz nepodarilo odoslať. Skúste to neskôr."
+    }
+  },
+  "nav": {
+    "home": "Domov",
+    "cars": "Autá",
+    "companies": "Spoločnosti",
+    "contact": "Kontakt",
+    "privacy": "Ochrana súkromia",
+    "terms": "Podmienky",
+    "cookies": "Súbory cookie",
+    "mainAria": "Hlavná navigácia",
+    "footerAria": "Navigácia v pätičke",
+    "menu": "Menu"
+  },
+  "meta": {
+    "siteTitle": "Nájdite miestne autopožičovne",
+    "siteDescription": "Porovnajte autá od partnerských autopožičovní v celej provincii Málaga a potom pokračujte na web spoločnosti."
+  },
+  "notFound": {
+    "title": "Stránka sa nenašla",
+    "description": "Táto stránka neexistuje. Vráťte sa späť a vyhľadajte auto.",
+    "action": "Späť na domovskú stránku"
+  },
+  "hostUnknown": {
+    "title": "Táto webová stránka nie je dostupná",
+    "description": "Skontrolujte zadanú adresu. Táto stránka nepatrí k žiadnej webovej stránke autopožičovne Benwer Cars."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, domov",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Prepnúť na tmavý režim",
+    "toLight": "Prepnúť na svetlý režim"
+  },
+  "locale": {
+    "label": "Jazyk",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Hľadať jazyky",
+    "noResults": "Žiadne zodpovedajúce jazyky"
+  },
+  "footer": {
+    "tagline": "Porovnajte autá od partnerských autopožičovní.",
+    "trust": "Partnerské flotily · Málaga · Prenájom na webe spoločnosti",
+    "poweredBy": "Rezervované cez Benwer Cars",
+    "explore": "Preskúmať",
+    "legal": "Právne informácie",
+    "copyright": "© {year} Benwer Cars. Všetky práva vyhradené."
+  },
+  "cookieBanner": {
+    "body": "Používame jazykový súbor cookie a túto voľbu si ukladáme vo vašom zariadení. Voliteľné súbory cookie zostávajú vypnuté, pokiaľ ich neprijmete.",
+    "policy": "Zásady používania súborov cookie",
+    "necessary": "Odmietnuť všetko",
+    "accept": "Prijať všetko",
+    "title": "Vážime si vaše súkromie",
+    "settings": "Nastavenia súborov cookie"
+  },
+  "actions": {
+    "retry": "Skúsiť znova",
+    "back": "Späť",
+    "viewAll": "Zobraziť všetko",
+    "close": "Zavrieť"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Kód krajiny, {country} {dial}",
+    "search": "Hľadať krajiny",
+    "countries": "Krajiny",
+    "noResults": "Žiadne zodpovedajúce krajiny",
+    "invalid": "Zadajte platné telefónne číslo.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Vymazať dátum"
+  },
+  "guestNotifications": {
+    "title": "Oznámenia",
+    "openLabel": "Otvoriť oznámenia",
+    "unreadCount": "{count} neprečítaných oznámení",
+    "emptyTitle": "Zatiaľ žiadne oznámenia",
+    "emptyBody": "Aktualizácie rezervácií, pripomienky platieb a upozornenia na vyzdvihnutie sa zobrazia tu.",
+    "error": "Nepodarilo sa načítať oznámenia.",
+    "retry": "Skúsiť znova",
+    "markAllRead": "Označiť všetko ako prečítané",
+    "dismiss": "Zavrieť",
+    "loadMore": "Načítať viac",
+    "enablePush": "Povoliť upozornenia prehliadača",
+    "pushEnabled": "Upozornenia prehliadača sú povolené",
+    "pushBlocked": "Upozornenia prehliadača sú blokované v nastaveniach",
+    "disablePush": "Vypnúť upozornenia prehliadača"
+  }
+}

@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Companii",
+    "title": "Găsește mașina perfectă pentru tine",
+    "subtitle": "Compară mașini de la companii partenere de închirieri, apoi continuă pe site-ul companiei.",
+    "searchPlaceholder": "Unde mergi?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Companii recomandate",
+    "companiesSubtitle": "Companii partenere de închirieri din provincia Málaga — flote cu care colaborăm, nu anunțuri neverificate",
+    "trustLocal": "Companii partenere",
+    "trustGuest": "Închiriază pe site-ul companiei",
+    "trustArea": "Provincia Málaga",
+    "viewAllCompanies": "Vezi toate companiile"
+  },
+  "featuredCars": {
+    "viewAllCount": "Vezi toate cele {count} mașini",
+    "eyebrow": "Mașini",
+    "title": "Mașini disponibile",
+    "subtitle": "Toate mașinile publicate de companiile partenere, una lângă alta. Alege una pentru a rezerva pe site-ul companiei.",
+    "viewAll": "Caută toate mașinile",
+    "seeAll": "Vezi tot",
+    "emptyTitle": "Încă nu există mașini listate",
+    "emptyHint": "Flotele publice vor apărea aici atunci când companiile le publică."
+  },
+  "whatYouGet": {
+    "eyebrow": "Pentru companii de închirieri",
+    "title": "Ce primești",
+    "subtitle": "Un singur sistem pentru birou, parc auto și călătorii care caută în Málaga.",
+    "admin": {
+      "title": "Sistem complet de administrare",
+      "body": "Gestionează mașini, prețuri, disponibilitate și rezervări dintr-un singur panou operațional — același catalog din care citește marketplace-ul."
+    },
+    "mobile": {
+      "title": "Aplicație mobilă pentru personal",
+      "body": "Predă și preia mașini și vezi rezervările de azi direct din parcul auto."
+    },
+    "storefront": {
+      "title": "Site propriu cu brandul tău",
+      "body": "Prezență în marketplace plus propriul tău site și subdomeniu."
+    },
+    "preview": {
+      "utilisation": "Utilizare",
+      "utilisationValue": "82%",
+      "pickups": "Preluări azi",
+      "pickupsValue": "14",
+      "revenue": "Luna aceasta",
+      "revenueValue": "9,4k €",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Panou",
+      "navFleet": "Flotă",
+      "navCalendar": "Calendar",
+      "navReservations": "Rezervări",
+      "calendarTitle": "Disponibilitate",
+      "calendarMonth": "Următoarele 2 săptămâni",
+      "viaBenwer": "Prin Benwer",
+      "direct": "Direct",
+      "free": "Liber",
+      "carA": "Compactă",
+      "carB": "De oraș",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Azi",
+      "phoneDate": "Luni",
+      "pickUp": "Preluare",
+      "return": "Returnare",
+      "checkedOut": "Predată",
+      "due": "Așteptată",
+      "tabToday": "Azi",
+      "tabFleet": "Flotă",
+      "tabScan": "Scanare",
+      "storeName": "Compania ta",
+      "storeNavCars": "Mașini",
+      "storeNavContact": "Contact",
+      "storeHeadline": "Închiriază o mașină în Málaga",
+      "storeSearch": "Preluare și date",
+      "storeSearchCta": "Caută",
+      "storePrice": "Vezi prețurile",
+      "carE": "Hatchback",
+      "carF": "Break"
+    }
+  },
+  "faq": {
+    "eyebrow": "Întrebări frecvente",
+    "title": "Înainte să rezervi",
+    "subtitle": "Flote partenere, cum funcționează rezervarea și ce gestionează — și ce nu gestionează — Benwer.",
+    "items": {
+      "partners": {
+        "question": "Aceste mașini provin de la companii reale de închirieri?",
+        "answer": "Da. Fiecare anunț este o mașină publică de la un partener Benwer — o companie reală de închirieri cu care colaborăm, nu un anunț privat neverificat. Dacă o companie sau o mașină nu este publicată pe platformă, nu apare aici."
+      },
+      "booking": {
+        "question": "Rezerv și plătesc pe Benwer?",
+        "answer": "Nu. Aici compari flotele partenere, apoi continui pe site-ul companiei de închirieri pentru a confirma închirierea, garanția și preluarea. Benwer nu încasează plăți pe acest marketplace."
+      },
+      "photos": {
+        "question": "Pot avea încredere în fotografii și disponibilitate?",
+        "answer": "Listările folosesc fotografiile publice și disponibilitatea publicate de compania parteneră — același catalog pe care îl administrează în panoul de control. Dacă o mașină nu are încă o fotografie publică, afișăm un spațiu gol în loc de o imagine generică a altei mașini. Disponibilitatea finală este confirmată pe site-ul companiei."
+      },
+      "account": {
+        "question": "Am nevoie de un cont?",
+        "answer": "Nu este necesar un cont pentru a căuta. Dacă trimiți un mesaj de contact, folosim acele date doar pentru a-ți răspunde."
+      },
+      "safety": {
+        "question": "Cine este responsabil pentru închiriere?",
+        "answer": "Contractul este încheiat între tine și compania parteneră de închirieri. Citește termenii acesteia înainte de a confirma. Benwer te ajută să găsești o mașină dintr-o flotă parteneră; nu închiriază vehicule și nu încasează plăți aici."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Aplicația Benwer Cars",
+    "description": "Instalează Benwer Cars pe telefon. Aplicația Android este în testare timpurie pe Google Play — alătură-te testării și ajută-ne să o perfecționăm."
+  },
+  "partners": {
+    "eyebrow": "Pentru companii de închirieri auto",
+    "title": "Transformă zilele libere în rezervări",
+    "description": "Călătorii caută deja mașini în Málaga pe Benwer. Publică-ți flota o singură dată și ocupă zilele care altfel ar rămâne libere.",
+    "cta": "Află mai multe",
+    "ctaAria": "Află mai multe pe site-ul de prezentare Benwer (se deschide într-o filă nouă)",
+    "demo": "Vezi demo live",
+    "demoAria": "Vezi demonstrația live (se deschide într-o filă nouă)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Închirieri auto",
+    "companyDescription": "Închiriază o mașină de la {name} în {location}.",
+    "companyDescriptionPlain": "Închiriază o mașină de la {name}.",
+    "companyFallback": "Închirieri auto",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Închiriază un {brand} {model} de la {company}.",
+    "carDescriptionSpecs": "Închiriază un {brand} {model} — {seats, plural, one {# loc} few {# locuri} other {# de locuri}}, {transmission}.",
+    "carsTitle": "Mașini de închiriat în provincia Málaga"
+  },
+  "tenant": {
+    "notFoundTitle": "Compania nu a fost găsită",
+    "notFoundDescription": "Acest site nu a putut fi încărcat.",
+    "loadErrorTitle": "Detaliile companiei nu sunt disponibile",
+    "loadErrorDescription": "Nu am putut încărca acest site din catalogul live. Încearcă din nou — nu afișăm mașini fictive atunci când API-ul nu răspunde.",
+    "logoAlt": "Sigla {name}"
+  },
+  "howItWorks": {
+    "eyebrow": "Trei pași",
+    "title": "Cum funcționează",
+    "subtitle": "Compară flote partenere din Málaga, apoi rezervă direct la companie. Nu ai nevoie de cont Benwer.",
+    "stepLabel": "Pasul {number}",
+    "searchTitle": "Alege datele și locul",
+    "searchBody": "Selectează o localitate de pe Costa del Sol și zilele de care ai nevoie. Apar doar flote partenere verificate.",
+    "compareTitle": "Compară mașini reale",
+    "compareBody": "Locuri, cutie de viteze, fotografii și tariful zilnic, una lângă alta de la fiecare partener.",
+    "continueTitle": "Rezervă la companie",
+    "continueBody": "Confirmă preluarea, asigurarea și plata direct cu compania de închirieri care deține mașina.",
+    "cta": "Începe căutarea",
+    "preview": {
+      "place": "Aeroportul Málaga",
+      "dates": "Vi → Vi · 7 zile",
+      "carA": "Mașină compactă",
+      "carASpecs": "4 locuri · Manuală",
+      "carB": "SUV de familie",
+      "carBSpecs": "5 locuri · Automată",
+      "confirmed": "Rezervare confirmată",
+      "confirmedDetail": "Preluare la 10:00",
+      "example": "Exemplu"
+    }
+  },
+  "search": {
+    "locationLabel": "Loc de preluare",
+    "locationPlaceholder": "Caută locații",
+    "locationEmpty": "Nicio locație potrivită",
+    "allLocations": "Toate locațiile",
+    "allLocationsHint": "Fiecare oraș cu mașini disponibile",
+    "provinceSelected": "Toate locațiile",
+    "provinceHint": "Fiecare oraș cu mașini disponibile",
+    "pickupLabel": "Preluare",
+    "dropoffLabel": "Returnare",
+    "pickupPlaceholder": "Adaugă data",
+    "dropoffPlaceholder": "Adaugă data",
+    "pickupTrigger": "Data preluării, {date}",
+    "dropoffTrigger": "Data returnării, {date}",
+    "calendarLabel": "Selectează datele",
+    "datesRequired": "Alege data de preluare și data de returnare pentru a căuta.",
+    "submit": "Caută",
+    "returnLocationLabel": "Loc de returnare",
+    "differentReturn": "Returnare într-o altă locație",
+    "returnSame": "Același ca la preluare",
+    "returnNotOffered": "{company} nu oferă returnare într-o altă locație.",
+    "branchChoose": "Alege o locație",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Se încarcă locațiile…",
+    "branchAnyHint": "Fiecare filială cu mașini"
+  },
+  "browseLocation": {
+    "title": "Explorează după locație",
+    "subtitle": "Orașe populare din provincia Málaga",
+    "emptyTitle": "Încă nu există locații",
+    "emptyDescription": "Orașele recomandate vor apărea aici.",
+    "cityAria": "Explorează mașini în {city}"
+  },
+  "map": {
+    "teaserTitle": "Vezi de unde poți prelua mașina",
+    "teaserSubtitle": "Flote locale din provincia Málaga — deschide harta și mergi direct la o companie.",
+    "teaserCta": "Deschide harta",
+    "teaserCityAria": "Vezi companiile pe hartă în {city}",
+    "listLabel": "Listă",
+    "mapLabel": "Hartă",
+    "viewToggleAria": "Afișează companiile ca listă sau hartă",
+    "regionAria": "Harta companiilor de închirieri din provincia Málaga",
+    "pinAria": "{name} în {city}",
+    "fleetHint": "{count, plural, =0 {Încă nu există mașini listate} one {# mașină disponibilă} few {# mașini disponibile} other {# de mașini disponibile}}",
+    "fleetHintUnknown": "Vezi mașinile disponibile",
+    "viewFleet": "Vezi flota",
+    "closePin": "Închide",
+    "loading": "Se încarcă companiile…",
+    "errorDescription": "Harta nu a putut fi încărcată. Explorează lista în schimb.",
+    "emptyTitle": "Nicio companie pe hartă",
+    "emptyDescription": "Încearcă un alt oraș din provincia Málaga.",
+    "resultsCount": "{count, plural, one {# companie în provincia Málaga} few {# companii în provincia Málaga} other {# de companii în provincia Málaga}}",
+    "resultsInCity": "{count, plural, one {# companie în {city}} few {# companii în {city}} other {# de companii în {city}}}",
+    "resultsAtBranch": "{count, plural, one {# companie la {branch}} few {# companii la {branch}} other {# de companii la {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Se afișează {shown} din {total} mașini",
+    "loadMore": "Arată mai multe mașini",
+    "seeAll": "Vezi tot",
+    "title": "Mașini disponibile",
+    "subtitle": "Toate mașinile publice ale companiilor partenere din provincia Málaga. Alege datele pentru a vedea ce este liber.",
+    "searchEmptyTitle": "Nicio mașină nu corespunde căutării",
+    "searchEmptyHint": "Încearcă alte date sau o altă locație din provincia Málaga. Fiecare oraș rămâne în listă — chiar dacă nu sunt mașini listate acolo astăzi.",
+    "resultsInProvince": "{count, plural, one {# mașină în toate locațiile} few {# mașini în toate locațiile} other {# de mașini în toate locațiile}}",
+    "resultsInCity": "{count, plural, one {# mașină în {city}} few {# mașini în {city}} other {# de mașini în {city}}}",
+    "allCompanies": "Toate companiile",
+    "companyPlaceholder": "Caută companii",
+    "companyTrigger": "Companie, {company}",
+    "perDay": "{price} / zi",
+    "perDaySuffix": " / zi",
+    "viewDetails": "Vezi detalii",
+    "notAvailableForDates": "Indisponibilă pentru aceste date",
+    "bookUnavailable": "Vezi mașina",
+    "fleetSummary": "{total, plural, one {# mașină} few {# mașini} other {# de mașini}} · {available, plural, one {# disponibilă} few {# disponibile} other {# disponibile}}",
+    "fleetSummaryForDates": "{total, plural, one {# mașină} few {# mașini} other {# de mașini}} · {available, plural, one {# disponibilă} few {# disponibile} other {# disponibile}} · {from} – {to}",
+    "seats": "{count} locuri",
+    "resultsCount": "{count, plural, one {# mașină disponibilă} few {# mașini disponibile} other {# de mașini disponibile}}",
+    "resultsForDates": "{count, plural, one {# mașină} few {# mașini} other {# de mașini}} · {from} – {to}",
+    "emptyTitle": "Această flotă nu este încă publică",
+    "emptyHint": "Această companie este listată, dar mașinile sale nu sunt încă publicate pe Benwer. Este normal până când vehiculele sunt marcate ca publice — pagina funcționează corect.",
+    "noResults": "Nicio mașină nu corespunde căutării",
+    "noResultsHint": "Încearcă alte date, o altă locație sau mai puține filtre.",
+    "browseCompanies": "Explorează companiile",
+    "clearFilters": "Șterge filtrele",
+    "searchPlaceholder": "Caută după marcă sau model",
+    "filters": {
+      "title": "Filtre",
+      "seats": "Locuri",
+      "transmission": "Transmisie",
+      "company": "Companie",
+      "dates": "Date",
+      "from": "Data preluării",
+      "to": "Data returnării",
+      "category": "Categorie",
+      "fuel": "Tip combustibil",
+      "all": "Toate",
+      "clear": "Șterge",
+      "selectedCount": "{count} selectate"
+    },
+    "types": {
+      "car": "Autoturism",
+      "suv": "SUV",
+      "van": "Dubă",
+      "truck": "Camion",
+      "motorcycle": "Motocicletă"
+    },
+    "transmission": {
+      "automatic": "Automată",
+      "manual": "Manuală"
+    },
+    "fuel": {
+      "petrol": "Benzină",
+      "diesel": "Motorină",
+      "electric": "Electric",
+      "hybrid": "Hibrid",
+      "plugin_hybrid": "Hibrid plug-in"
+    },
+    "rowDeposit": "Garanție {amount}",
+    "rowAvailable": "Disponibilă pentru datele tale",
+    "rowTotal": "{amount} total · {days, plural, one {# zi} few {# zile} other {# de zile}}",
+    "bookNow": "Rezervă acum",
+    "availableCount": "{count, plural, =0 {Nicio mașină disponibilă} one {# mașină disponibilă} few {# mașini disponibile} other {# de mașini disponibile}}",
+    "availableForDates": "{count, plural, =0 {Nicio mașină disponibilă} one {# mașină disponibilă} few {# mașini disponibile} other {# de mașini disponibile}} · {from} – {to}",
+    "categories": {
+      "economy": "Economică",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "Monovolum",
+      "van": "Dubă",
+      "other": "Altele"
+    },
+    "sort": {
+      "label": "Sortează după",
+      "recommended": "Recomandate",
+      "pricePerDay_asc": "Cel mai mic tarif zilnic",
+      "pricePerDay_desc": "Cel mai mare tarif zilnic"
+    },
+    "colors": {
+      "white": "Alb",
+      "black": "Negru",
+      "silver": "Argintiu",
+      "grey": "Gri",
+      "red": "Roșu",
+      "blue": "Albastru",
+      "green": "Verde",
+      "orange": "Portocaliu",
+      "yellow": "Galben",
+      "brown": "Maro",
+      "beige": "Bej",
+      "gold": "Auriu",
+      "purple": "Mov"
+    },
+    "viewCar": "Vezi mașina",
+    "opensCompanySite": "(deschide site-ul companiei)"
+  },
+  "carDetail": {
+    "bookNow": "Rezervă acum",
+    "continueOnCompany": "Continuă pe {company}",
+    "rentOnCompanySite": "Închiriază pe site-ul companiei",
+    "handoffHint": "Vă vom cere confirmarea înainte de a vă redirecționa către site-ul companiei pentru a finaliza rezervarea.",
+    "pricePerDay": "{price} pe zi",
+    "specs": "Specificații",
+    "year": "An",
+    "type": "Tip",
+    "transmission": "Transmisie",
+    "fuel": "Combustibil",
+    "seats": "Locuri",
+    "availability": "Disponibilitate",
+    "availabilityError": "Nu am putut încărca disponibilitatea. Încearcă din nou.",
+    "availabilityUnavailable": "Disponibilitate indisponibilă",
+    "checkingAvailability": "Se verifică disponibilitatea…",
+    "notAvailable": "Această mașină nu este disponibilă pentru datele selectate.",
+    "selectPickup": "Selectează data preluării",
+    "selectDropoff": "Acum alege data returnării",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Șterge datele",
+    "addDate": "Adaugă data",
+    "calendarLabel": "Calendar de disponibilitate",
+    "legend": "Legenda calendarului",
+    "available": "Disponibilă",
+    "selected": "Selectat",
+    "unavailable": "Indisponibilă",
+    "openDates": "Nicio dată rezervată în următoarele {months} luni.",
+    "breadcrumbAria": "Cale de navigare",
+    "photoEmpty": "Fotografii în curând",
+    "previousPhoto": "Fotografia anterioară",
+    "nextPhoto": "Fotografia următoare",
+    "viewPhoto": "Vezi fotografia {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, fotografia {index}",
+    "backToFleet": "Înapoi la flotă",
+    "metaTitle": "Detalii mașină",
+    "about": "Despre această mașină",
+    "category": "Categorie",
+    "color": "Culoare",
+    "deposit": "Garanție",
+    "mileage": "Kilometraj",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Sunteți redirecționat către site-ul de rezervări al {company} pentru a finaliza rezervarea.",
+    "handoffTrust": "{company} este un partener Benwer de încredere.",
+    "handoffContinue": "Continuă",
+    "handoffCancel": "Anulează",
+    "handoffCompanyFallback": "companiei"
+  },
+  "booking": {
+    "title": "Finalizează rezervarea",
+    "subtitle": "Confirmă-ți datele — nu ai nevoie de cont.",
+    "details": "Datele tale",
+    "detailsHint": "Le vom folosi doar pentru a confirma această rezervare.",
+    "guestName": "Nume complet",
+    "guestNamePlaceholder": "Elena Popescu",
+    "guestEmail": "Adresă de e-mail",
+    "guestEmailPlaceholder": "elena@exemplu.ro",
+    "guestEmailHint": "Confirmarea va fi trimisă aici.",
+    "guestPhone": "Număr de telefon",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Compania de închirieri te poate contacta în legătură cu preluarea.",
+    "startDate": "Data preluării",
+    "endDate": "Data returnării",
+    "datesHint": "Datele provin din calendarul mașinii. Le poți ajusta aici.",
+    "addDate": "Adaugă data",
+    "changeDates": "Schimbă datele din calendar",
+    "summary": "Rezumatul rezervării",
+    "vehicle": "Vehicul",
+    "company": "Companie",
+    "rate": "Tarif zilnic",
+    "duration": "Durată",
+    "totalPrice": "Total",
+    "nights": "{count, plural, one {# zi} few {# zile} other {# de zile}}",
+    "stickyMeta": "{name} · {count, plural, one {# zi} few {# zile} other {# de zile}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Confirmă rezervarea",
+    "confirmRequest": "Trimite cererea",
+    "requesting": "Se trimite cererea…",
+    "confirming": "Se confirmă…",
+    "sitePaused": "Nu acceptă rezervări",
+    "insurance": "Asigurare",
+    "termsLabel": "Termeni de închiriere",
+    "termsAccept": "Accept",
+    "termsLink": "termenii de închiriere",
+    "successTitle": "Rezervare confirmată!",
+    "successMessage": "Confirmarea ta a fost trimisă la {email}.",
+    "viewBooking": "Vezi rezervarea mea",
+    "selectDates": "Selectează datele pentru a continua",
+    "invalidDates": "Alege un interval de date valid",
+    "backToCar": "Înapoi la {name}",
+    "trustNoAccount": "Fără cont necesar",
+    "trustEmail": "Confirmare pe e-mail",
+    "trustNoPayment": "Fără plată acum",
+    "trustCardPayment": "Plată cu cardul după rezervare",
+    "trustFooter": "Prin confirmare, soliciți această mașină pentru datele de mai sus. Compania va onora rezervarea.",
+    "missingTitle": "Alege o mașină pentru a continua",
+    "missingDescription": "Selectează un vehicul și datele înainte de a finaliza rezervarea.",
+    "browseCars": "Explorează mașinile",
+    "vehicleMissingTitle": "Această mașină nu mai este disponibilă",
+    "vehicleMissingDescription": "Este posibil să fi fost deja rezervată. Alege o altă mașină din flotă.",
+    "viewFleet": "Vezi flota",
+    "datesMissingTitle": "Adaugă datele călătoriei",
+    "datesMissingDescription": "Întoarce-te la mașină pentru a alege datele disponibile sau introdu-le în formular.",
+    "pickDates": "Alege datele pe pagina mașinii",
+    "formAria": "Detalii rezervare client",
+    "validation": {
+      "nameMin": "Introdu numele tău complet (cel puțin 2 caractere).",
+      "email": "Introdu o adresă de e-mail validă.",
+      "phone": "Introdu un număr de telefon valid.",
+      "startDate": "Selectează data preluării.",
+      "endDate": "Selectează data returnării.",
+      "endAfterStart": "Data returnării trebuie să fie după data preluării.",
+      "terms": "Acceptă termenii de închiriere pentru a continua.",
+      "fixErrors": "Te rugăm să corectezi câmpurile evidențiate."
+    },
+    "averageRate": "Tarif zilnic mediu",
+    "breakdownTitle": "Detalierea prețului",
+    "standardRate": "Tarif standard",
+    "weekendRate": "Weekend",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Închirierile în acest sezon trebuie să dureze cel puțin {limit, plural, one {# zi} few {# zile} other {# de zile}}. Schimbă datele pentru a rezerva.",
+    "warningMaxDays": "Închirierile în acest sezon pot dura cel mult {limit, plural, one {# zi} few {# zile} other {# de zile}}. Schimbă datele pentru a rezerva.",
+    "returnLocation": "Loc de returnare",
+    "oneWayFee": "Taxă pentru returnare în altă locație",
+    "signedInAs": "Conectat ca {email}",
+    "signInPrompt": "Ai deja un cont?",
+    "signInLink": "Conectează-te pentru a-ți completa datele",
+    "subtitleSignedIn": "Verifică datele și confirmă.",
+    "trustPaymentAfter": "Detaliile de plată urmează după rezervare",
+    "extras": "Extraopțiuni",
+    "extraPerDay": "{price} / zi",
+    "extraFixed": "{price} / închiriere",
+    "tripDetails": "Detalii călătorie",
+    "pickupTime": "Ora preluării",
+    "returnTime": "Ora returnării",
+    "timeAny": "Orice oră",
+    "flightNumber": "Numărul zborului",
+    "flightNumberHint": "Preluarea este la aeroport. Adaugă numărul zborului pentru ca firma să poată urmări eventualele întârzieri.",
+    "flightNumberOptional": "Adaugă-l dacă sosești cu avionul.",
+    "notes": "Comentarii",
+    "notesPlaceholder": "Ceva ce ar trebui să știe compania?",
+    "dateOfBirth": "Data nașterii",
+    "optional": "opțional",
+    "extraSoldOut": "Indisponibil pentru aceste date"
+  },
+  "reservationStatus": {
+    "title": "Rezervarea ta",
+    "successTitle": "Rezervarea este făcută",
+    "successSubtitle": "Am trimis o confirmare la {email}.",
+    "status": {
+      "draft": "În așteptare",
+      "confirmed": "Confirmată",
+      "active": "Activă — călătorie plăcută!",
+      "completed": "Finalizată",
+      "cancelled": "Anulată"
+    },
+    "vehicle": "Vehicul",
+    "company": "Companie",
+    "dates": "Date",
+    "pickup": "Preluare",
+    "dropoff": "Returnare",
+    "guest": "Client",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "total": "Total",
+    "reference": "Referință",
+    "referenceHint": "Prezintă acest cod la preluare.",
+    "trustCopy": "Salvează această pagină — este dovada rezervării tale. Compania de închirieri se ocupă mai departe.",
+    "trustEmail": "Confirmare trimisă pe e-mail",
+    "trustPickup": "Prezintă această pagină la preluare",
+    "nextTitle": "Ce urmează",
+    "nextEmail": "Verifică {email} pentru confirmare.",
+    "nextPickup": "Prezintă referința la preluare.",
+    "browseMore": "Explorează mai multe mașini",
+    "notFoundTitle": "Rezervarea nu a fost găsită",
+    "notFoundDescription": "Verifică linkul din e-mailul de confirmare sau începe o nouă căutare.",
+    "backHome": "Înapoi acasă",
+    "requestExpires": "Cererea expiră",
+    "cancelReason": "Motivul anulării",
+    "withdraw": "Retrage cererea",
+    "paymentStatus": "Plată",
+    "paidAmount": "Plătit",
+    "payment": {
+      "unpaid": "Neplătită",
+      "partially_paid": "Plătită parțial",
+      "paid": "Plătită",
+      "refund_due": "Rambursare datorată",
+      "authorized": "Card autorizat"
+    },
+    "reasons": {
+      "unpaid_timeout": "Plata nu a fost finalizată la timp",
+      "request_expired": "Compania nu a răspuns la timp",
+      "request_declined": "Compania a refuzat această cerere",
+      "customer_request": "Ai retras această cerere"
+    },
+    "insurance": "Asigurare",
+    "extras": "Extraopțiuni",
+    "fees": "Taxe de preluare și returnare",
+    "priceTitle": "Rezumatul prețului"
+  },
+  "payment": {
+    "title": "Plătește avansul",
+    "amountDue": "Sumă de plată: {amount}",
+    "countdown": "Finalizează plata în {time}",
+    "requestAuthorize": "Cardul tău este autorizat acum și va fi debitat doar când compania acceptă.",
+    "pay": "Plătește acum",
+    "paying": "Se procesează…",
+    "confirming": "Se confirmă plata",
+    "confirmingHint": "Te rugăm să aștepți — confirmăm plata de la companie, nu din formularul cardului.",
+    "declined": "Cardul a fost refuzat. Încearcă un alt card.",
+    "secure": "Datele cardului sunt procesate de Stripe în modul de test.",
+    "cancelBooking": "Anulează rezervarea",
+    "cancelTitle": "Anulezi această rezervare?",
+    "cancelDescription": "Vom aplica regulile de anulare ale companiei. Verifică taxa și rambursarea înainte de a confirma.",
+    "cancelFee": "Taxă de anulare",
+    "cancelRefund": "Rambursare",
+    "confirmCancel": "Confirmă anularea",
+    "keepBooking": "Păstrează rezervarea",
+    "cancelled": "Rezervarea ta a fost anulată."
+  },
+  "companies": {
+    "title": "Companii de închirieri",
+    "subtitle": "Explorează companiile partenere de închirieri din Málaga — pe hartă sau în listă",
+    "searchPlaceholder": "Caută companii…",
+    "noResults": "Nicio companie găsită",
+    "noResultsHint": "Încearcă o altă locație din provincia Málaga.",
+    "emptyTitle": "Încă nu există companii listate",
+    "emptyDescription": "Încă nu există companii de închirieri listate.",
+    "clearFilters": "Șterge căutarea",
+    "viewFleet": "Vezi flota",
+    "visitWebsite": "Vizitează site-ul",
+    "contact": "Contact",
+    "backToList": "Toate companiile",
+    "notFoundTitle": "Compania nu a fost găsită",
+    "notFoundDescription": "Această companie de închirieri nu este listată. Explorează altele din apropiere.",
+    "loadErrorTitle": "Detaliile companiei nu sunt disponibile",
+    "loadErrorDescription": "Nu am putut încărca această companie din catalogul live. Încearcă din nou — nu afișăm mașini fictive atunci când API-ul nu răspunde.",
+    "browseCars": "Explorează mașinile",
+    "featuredEmpty": "Încă nu există companii recomandate",
+    "featuredEmptyHint": "Revino în curând sau explorează mașini din flotele locale.",
+    "locationUnknown": "Locație nemenționată",
+    "noDescription": "Încă nu există descriere."
+  },
+  "contact": {
+    "title": "Contactează-ne",
+    "lede": "Ai întrebări despre marketplace? Trimite-ne un mesaj și îți vom răspunde cât mai curând posibil.",
+    "bookingHint": "Acest formular nu este pentru rezervări. Pentru a închiria o mașină, continuă pe site-ul propriu al companiei de închirieri.",
+    "name": "Nume complet",
+    "email": "Adresă de e-mail",
+    "subject": "Subiect",
+    "message": "Mesaj",
+    "submit": "Trimite mesajul",
+    "privacyNote": "Folosim aceste date doar pentru a-ți răspunde.",
+    "errors": {
+      "nameMin": "Introdu numele tău (cel puțin 2 caractere).",
+      "email": "Introdu o adresă de e-mail validă.",
+      "subjectMin": "Introdu un subiect (cel puțin 3 caractere).",
+      "messageMin": "Introdu un mesaj (cel puțin 10 caractere)."
+    },
+    "eyebrow": "Suport",
+    "namePlaceholder": "Elena Popescu",
+    "emailPlaceholder": "tu@exemplu.ro",
+    "subjectPlaceholder": "Cu ce te putem ajuta?",
+    "messagePlaceholder": "Spune-ne de ce ai nevoie…",
+    "supportSubjectDefault": "Cerere de suport",
+    "submitting": "Se trimite…",
+    "submittedTitle": "Mesaj trimis",
+    "submittedDescription": "Îți mulțumim că ne-ai scris. Îți vom răspunde pe e-mail cât mai curând posibil.",
+    "sendAnother": "Trimite un alt mesaj",
+    "backHome": "Înapoi acasă",
+    "whatsappTitle": "Preferi WhatsApp?",
+    "whatsappDescription": "Discută direct cu echipa Benwer Cars."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Politica de confidențialitate",
+      "lede": "Cum gestionăm datele personale atunci când utilizezi marketplace-ul Benwer Cars.",
+      "updated": "Ultima actualizare: 13 septembrie 2026",
+      "sections": [
+        {
+          "title": "Cine suntem",
+          "body": "Benwer Cars („Benwer”, „noi”) operează un marketplace pentru consumatori care îi ajută pe călători să descopere flotele de închirieri auto din provincia Málaga.\n\nAceastă politică acoperă exclusiv site-ul marketplace-ului. Dacă continui pe site-ul propriu al unei companii de închirieri pentru a rezerva, acea companie este responsabilă pentru datele pe care le trimiți acolo."
+        },
+        {
+          "title": "Ce face acest marketplace",
+          "body": "Poți căuta mașini și companii, poți compara detaliile publice ale flotelor și poți continua pe site-ul unei companii de închirieri pentru a finaliza o rezervare.\n\nBenwer nu încasează plăți și nu încheie contracte de închiriere pe marketplace. Contractul de închiriere este încheiat între tine și companie."
+        },
+        {
+          "title": "Informațiile pe care le colectăm",
+          "body": "În funcție de modul în care utilizezi marketplace-ul, putem prelucra:\n\n• Date de căutare și utilizare — locația și datele introduse, paginile vizitate și date tehnice de bază precum adresa IP, browserul și informațiile despre dispozitiv.\n• Preferința de limbă — stocată ca un cookie strict necesar pentru a afișa limba aleasă.\n• Consimțământul pentru cookie-uri — stocat pe dispozitivul tău pentru a reține alegerea făcută.\n• Mesaje de contact — nume, e-mail, subiect și mesaj dacă ne scrii. Le marcăm ca provenind din marketplace.\n\nNu îți cerem să îți creezi un cont pe marketplace. Detaliile de rezervare și plată sunt colectate de compania de închirieri pe propriul site, conform propriei politici de confidențialitate."
+        },
+        {
+          "title": "Cum folosim datele",
+          "body": "Folosim datele personale pentru a opera și îmbunătăți marketplace-ul, a reține opțiunile de limbă și cookie-uri, a răspunde mesajelor de contact, a menține securitatea serviciului și a respecta obligațiile legale.\n\nNu vindem datele tale personale."
+        },
+        {
+          "title": "Temeiuri legale (SEE / Regatul Unit)",
+          "body": "Acolo unde este aplicabil, ne bazăm pe interesul legitim (operarea unui director public și securizarea site-ului), consimțământ (cookie-uri opționale, dacă sunt introduse), obligație legală și pașii necesari pentru a răspunde atunci când ne contactezi."
+        },
+        {
+          "title": "Partajare",
+          "body": "Putem folosi furnizori de încredere pentru găzduire și livrarea e-mailurilor. Aceștia prelucrează datele conform instrucțiunilor noastre.\n\nDacă continui pe site-ul unei companii, acea companie devine operatorul tuturor datelor pe care le trimiți acolo. Nu transmitem mesajul tău din formularul de contact companiilor de închirieri decât dacă ne ceri acest lucru."
+        },
+        {
+          "title": "Cookie-uri",
+          "body": "Folosim un cookie de limbă strict necesar și stocăm alegerea ta privind cookie-urile pe dispozitiv. Consultă politica de cookie-uri pentru detalii. Cookie-urile opționale rămân dezactivate dacă nu le accepți."
+        },
+        {
+          "title": "Păstrarea datelor",
+          "body": "Păstrăm mesajele de contact atât timp cât este necesar pentru a răspunde și pentru o perioadă rezonabilă de urmărire. Jurnalele tehnice sunt păstrate pentru o perioadă scurtă. Alegerea ta privind cookie-urile rămâne salvată până când o modifici sau ștergi datele site-ului."
+        },
+        {
+          "title": "Drepturile tale",
+          "body": "În funcție de locația ta, poți avea dreptul de acces, rectificare, ștergere, restricționare sau portabilitate a datelor și dreptul de a te opune anumitor prelucrări. De asemenea, poți depune o plângere la autoritatea locală de supraveghere.\n\nPentru a-ți exercita drepturile, folosește pagina de contact."
+        },
+        {
+          "title": "Transferuri internaționale",
+          "body": "Dacă datele sunt transferate în afara țării tale, folosim garanții adecvate, cum ar fi clauzele contractuale standard sau mecanisme echivalente cerute de lege."
+        },
+        {
+          "title": "Modificări",
+          "body": "Putem actualiza această politică din când în când. Vom publica versiunea revizuită pe această pagină și vom actualiza data „Ultima actualizare”."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Termeni de utilizare",
+      "lede": "Regulile de utilizare a marketplace-ului Benwer Cars pentru a descoperi flote de închirieri.",
+      "updated": "Ultima actualizare: 13 septembrie 2026",
+      "sections": [
+        {
+          "title": "Marketplace-ul",
+          "body": "Benwer Cars oferă un director public al companiilor de închirieri auto și al flotelor publicate de acestea. Poți compara mașini și poți continua pe site-ul propriu al unei companii pentru a finaliza o închiriere.\n\nAcești termeni se aplică site-ului marketplace-ului. Nu înlocuiesc termenii proprii ai companiei de închirieri, care se aplică atunci când rezervi la aceasta."
+        },
+        {
+          "title": "Rezervările se fac cu companiile de închirieri",
+          "body": "Benwer nu închiriază mașini, nu încasează plăți și nu încheie contracte de închiriere pe marketplace.\n\nDacă continui pe site-ul unei companii, orice aranjament privind rezervarea, garanția, asigurarea și preluarea este între tine și acea companie. Citește termenii acesteia înainte de a confirma."
+        },
+        {
+          "title": "Listări și disponibilitate",
+          "body": "Detaliile flotei, prețurile, fotografiile și disponibilitatea sunt publicate de companiile de închirieri și se pot modifica. Ne propunem să afișăm informațiile publice cu acuratețe, dar nu garantăm că o mașină va fi în continuare disponibilă sau că un preț afișat va fi onorat până când compania nu îl confirmă.\n\nDatele pe care le introduci pe marketplace te ajută să cauți. Disponibilitatea finală este confirmată pe site-ul companiei."
+        },
+        {
+          "title": "Utilizare acceptabilă",
+          "body": "Utilizează marketplace-ul în mod legal. Nu extrage automat date (scraping), nu supraîncărca și nu perturba serviciul, nu trimite date de contact false și nu folosi site-ul pentru a prejudicia alte persoane sau companii."
+        },
+        {
+          "title": "Răspundere",
+          "body": "Marketplace-ul este oferit ca serviciu de descoperire. În măsura permisă de lege, Benwer nu răspunde pentru disputele legate de închiriere, starea vehiculelor sau rezervările finalizate pe site-ul unei companii.\n\nNimic din acești termeni nu limitează drepturile tale de consumator la care nu se poate renunța conform legii aplicabile."
+        },
+        {
+          "title": "Modificări",
+          "body": "Putem actualiza acești termeni. Data „Ultima actualizare” de pe această pagină indică versiunea curentă. Continuarea utilizării după o modificare înseamnă că accepți termenii actualizați."
+        },
+        {
+          "title": "Contact",
+          "body": "Întrebările despre acești termeni sau despre marketplace pot fi trimise din pagina de contact. Pentru o rezervare pe care ai început-o deja, contactează direct compania de închirieri."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Politica de cookie-uri",
+      "lede": "Cum folosim cookie-urile și tehnologiile similare pe marketplace.",
+      "updated": "Ultima actualizare: 13 septembrie 2026",
+      "sections": [
+        {
+          "title": "Ce folosim",
+          "body": "Cookie-urile sunt fișiere text mici stocate pe dispozitivul tău. Folosim și metode de stocare similare, precum local storage, pentru a reține alegerile tale.\n\nAceastă politică acoperă marketplace-ul Benwer Cars. Când continui pe site-ul unei companii de închirieri, acel site poate seta propriile cookie-uri."
+        },
+        {
+          "title": "Strict necesare",
+          "body": "Folosim un cookie de limbă pentru ca site-ul să afișeze limba aleasă de tine. Acesta este necesar pentru ca marketplace-ul să funcționeze așa cum te aștepți.\n\nAlegerea ta din bannerul de cookie-uri este stocată pe dispozitiv pentru a nu te întreba din nou la fiecare vizită. Această stocare nu este folosită pentru publicitate."
+        },
+        {
+          "title": "Cookie-uri opționale",
+          "body": "Cookie-urile opționale (de exemplu, pentru analiză) rămân dezactivate dacă nu alegi „Acceptă tot”.\n\nÎn prezent, marketplace-ul nu setează cookie-uri de analiză sau marketing. Dacă le vom adăuga ulterior, le vom descrie aici și vor necesita în continuare acordul tău."
+        },
+        {
+          "title": "Gestionarea cookie-urilor",
+          "body": "Folosește bannerul pentru a accepta toate cookie-urile sau pentru a păstra doar ce este necesar. De asemenea, poți șterge cookie-urile și datele site-ului din browser. Blocarea cookie-ului de limbă poate reseta limba la următoarea vizită."
+        },
+        {
+          "title": "Mai multe informații",
+          "body": "Consultă politica de confidențialitate pentru a vedea cum gestionăm datele personale sau trimite un mesaj din pagina de contact."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} acasă",
+    "defaultHeadline": "Închiriază o mașină cu {name}",
+    "footerTagline": "Rezervă direct la această companie de închirieri.",
+    "previewBanner": "Previzualizare — această pagină nu este publică. Motoarele de căutare nu o vor indexa.",
+    "editLink": "Editează",
+    "editContactEmpty": "Detaliile de contact sunt ascunse. Editează-le în panoul de administrare.",
+    "editBranchesEmpty": "Încă nu există filiale. Adaugă-le în panoul de administrare.",
+    "editRulesHint": "Modul de rezervare, timpul minim de preaviz și intervalul de răspuns.",
+    "editDomainHint": "Domeniu personalizat și URL live.",
+    "editSection": {
+      "hero": "Banner principal",
+      "search": "Căutare",
+      "fleet": "Flotă",
+      "branches": "Filiale",
+      "contact": "Contact",
+      "rules": "Reguli de rezervare",
+      "domain": "Domeniu"
+    },
+    "pausedTitle": "Nu acceptă rezervări",
+    "pausedDescription": "Această companie a suspendat rezervările online. Poți în continuare să explorezi flota.",
+    "notFoundTitle": "Site-ul nu a fost găsit",
+    "notFoundDescription": "Acest site de închirieri nu este disponibil.",
+    "loadErrorTitle": "Site indisponibil",
+    "loadErrorDescription": "Nu am putut încărca acest site de închirieri. Încearcă din nou în curând.",
+    "search": "Caută mașini",
+    "searchAria": "Caută după date și locație",
+    "searchTitle": "Caută mașini",
+    "searchDescription": "Alege datele și o locație pentru a vedea ce este disponibil.",
+    "branch": "Loc de preluare",
+    "anyBranch": "Orice locație",
+    "ownerSignIn": "Conectare proprietar",
+    "returnBranch": "Loc de returnare",
+    "differentReturn": "Returnare într-o altă locație",
+    "returnSame": "Același ca la preluare",
+    "driverAge": "Vârsta șoferului",
+    "driverAgeYears": "{band} ani",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Editează-ți site-ul",
+    "signInHint": "Proprietarii deschid editorul de site din Benwer admin. Folosește butonul „Editează site-ul” de acolo și vei fi conectat automat aici.",
+    "signedInTitle": "Ești conectat",
+    "signedInHint": "Dacă poți administra acest site, editorul se deschide pe pagina principală.",
+    "openEditor": "Deschide editorul de site",
+    "disabledTitle": "Editarea de către proprietar nu este disponibilă",
+    "disabledDescription": "Staff Firebase nu este configurat pe acest marketplace.",
+    "signOut": "Deconectare",
+    "auth": {
+      "tooManyRequests": "Prea multe încercări. Încearcă din nou mai târziu.",
+      "unknown": "Nu s-a putut realiza conectarea. Încearcă din nou.",
+      "invalidToken": "Acest link de conectare a expirat sau a fost deja folosit. Deschide din nou editorul din Benwer admin."
+    },
+    "signingIn": "Se conectează…",
+    "openAdmin": "Deschide Benwer admin",
+    "accountMenu": "Cont proprietar",
+    "signedInAs": "Conectat ca proprietar",
+    "guestSignedOut": "Ai fost deconectat din contul de client. Sesiunile de proprietar și client nu pot fi deschise simultan în acest browser."
+  },
+  "guest": {
+    "googleAction": "Conectează-te cu Google",
+    "googleCreate": "Continuă cu Google",
+    "or": "sau",
+    "forgotPassword": "Ai uitat parola?",
+    "resetTitle": "Resetează parola",
+    "resetHint": "Introdu adresa ta de e-mail și îți vom trimite un link pentru a alege o parolă nouă.",
+    "resetAction": "Trimite linkul de resetare",
+    "resetSentTitle": "Verifică-ți e-mailul",
+    "resetSentHint": "Dacă există un cont pentru acea adresă, am trimis instrucțiuni de resetare a parolei. Nu l-ai primit? Verifică folderul spam sau așteaptă câteva minute înainte de a încerca din nou.",
+    "backToSignIn": "Înapoi la conectare",
+    "signInNav": "Conectare",
+    "myBookings": "Rezervările mele",
+    "signInTitle": "Conectare",
+    "signInHint": "Folosește contul tău de client pentru această companie de închirieri. Aceasta nu este o conectare pentru personal.",
+    "signInAction": "Conectare",
+    "createTitle": "Creează un cont de client",
+    "createHint": "Salvează-ți rezervările la această companie. Personalul folosește o altă conectare.",
+    "createAction": "Creează cont",
+    "needAccount": "Ai nevoie de un cont? Creează unul",
+    "haveAccount": "Ai deja un cont? Conectează-te",
+    "email": "E-mail",
+    "password": "Parolă",
+    "bookingsTitle": "Rezervările mele",
+    "bookingsMeta": "Rezervări asociate pentru această companie de închirieri.",
+    "bookingsHint": "Conectat ca {email} la {company}.",
+    "emptyTitle": "Încă nu ai rezervări",
+    "emptyDescription": "Ai mai rezervat înainte? Asociază acea rezervare folosind e-mailul utilizat sau tokenul de confirmare.",
+    "bookingFallback": "Rezervare",
+    "loadErrorTitle": "Nu s-au putut încărca rezervările",
+    "linkTitle": "Asociază o rezervare",
+    "linkHint": "Introdu e-mailul folosit la rezervare sau tokenul de confirmare. Dacă găsim o potrivire, vom trimite un link pe e-mail — nu dezvăluim niciodată dacă există un cont.",
+    "linkEmail": "E-mailul rezervării",
+    "linkToken": "Tokenul rezervării",
+    "linkAction": "Trimite link",
+    "linkSent": "Dacă găsim o rezervare potrivită, vom trimite un link de confirmare pe e-mail.",
+    "accountTitle": "Cont",
+    "accountHint": "Deconectează-te din contul tău pe acest site.",
+    "signOut": "Deconectare",
+    "erase": "Șterge datele mele aici",
+    "eraseConfirm": "Da, șterge datele mele pentru această companie",
+    "confirmTitle": "Se asociază rezervarea ta",
+    "confirmHint": "Te rugăm să aștepți cât timp atașăm această rezervare la contul tău.",
+    "confirmSignIn": "Conectează-te cu contul tău de client pentru a finaliza asocierea acestei rezervări.",
+    "confirmMissing": "Lipsește tokenul de confirmare",
+    "confirmMissingHint": "Deschide din nou linkul din e-mail.",
+    "confirmError": "Nu am putut confirma acest link",
+    "disabledTitle": "Conturile de client nu sunt încă disponibile",
+    "disabledDescription": "Această companie nu a activat încă conectarea pentru clienți. Poți rezerva în continuare cu numele, e-mailul și telefonul tău.",
+    "auth": {
+      "popupClosed": "Conectarea a fost anulată.",
+      "popupBlocked": "Browserul tău a blocat fereastra Google. Permite ferestrele pop-up și încearcă din nou.",
+      "differentProvider": "Acest e-mail se conectează deja într-un alt mod. Folosește parola în schimb.",
+      "providerUnavailable": "Conectarea cu Google nu este încă disponibilă pe acest site. Folosește e-mailul și parola.",
+      "invalidEmail": "Introdu o adresă de e-mail validă.",
+      "emailInUse": "Există deja un cont de client pentru acest e-mail. Conectează-te în schimb.",
+      "weakPassword": "Folosește o parolă mai lungă.",
+      "tooManyRequests": "Prea multe încercări. Încearcă din nou peste câteva minute.",
+      "invalidCredentials": "E-mailul sau parola nu sunt corecte.",
+      "unknown": "Nu s-a putut realiza conectarea. Încearcă din nou.",
+      "googleDisabled": "Conectarea cu Google nu este încă activată pentru acest site. Folosește e-mailul și parola.",
+      "domainNotAuthorised": "Conectarea cu Google nu este încă configurată pentru adresa acestui site. Folosește e-mailul și parola deocamdată."
+    },
+    "accountMenu": "Contul tău",
+    "profileNav": "Profil",
+    "profileTitle": "Profil",
+    "profileMeta": "Contul tău de client pentru această companie de închirieri.",
+    "linkCancel": "Anulează",
+    "eraseTitle": "Șterge datele mele",
+    "eraseHint": "Șterge datele tale de client pentru această companie și te deconectează. Celelalte companii nu sunt afectate.",
+    "profileDetailsTitle": "Datele tale",
+    "profileDetailsHint": "Folosite pentru a completa automat rezervările tale la această companie.",
+    "profileFullName": "Nume complet",
+    "profilePhone": "Număr de telefon",
+    "profileDob": "Data nașterii",
+    "profileSave": "Salvează datele",
+    "profileNotLinked": "Numele și telefonul tău sunt salvate aici după prima rezervare cu acest e-mail. Ai rezervat deja cu alt e-mail? Asociază acea rezervare din Rezervările mele.",
+    "verifyTitle": "Verifică-ți e-mailul pentru a vedea rezervările",
+    "verifyHint": "Am trimis un link la {email}. Deschide-l, apoi revino aici. Până când e-mailul nu este verificat, nu îți putem afișa rezervările și nu putem salva numele și telefonul tău.",
+    "verifyResend": "Retrimite e-mailul",
+    "verifySent": "E-mail trimis. Verifică inboxul și folderul spam.",
+    "verifyDone": "Mi-am verificat e-mailul",
+    "verifyStillPending": "E-mailul tău nu este încă verificat. Deschide linkul din e-mail, apoi încearcă din nou.",
+    "verifyBanner": "Contul tău nu este încă activ. Verifică {email} pentru a-ți vedea rezervările și a folosi datele salvate.",
+    "verifyBannerAction": "Verifică e-mailul",
+    "profileEdit": "Editează datele",
+    "profileCancel": "Anulează",
+    "profileEmail": "E-mail",
+    "profileEmpty": "Neadăugat",
+    "bookingsUpcoming": "Viitoare",
+    "bookingsPast": "Trecute",
+    "ownerSignedOut": "Ai fost deconectat din editorul de site. Sesiunile de proprietar și client nu pot fi deschise simultan în acest browser."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Oferte {name}",
+      "slideAlt": "Banner {position} — {name}",
+      "slideLabel": "{position} din {count}",
+      "previous": "Bannerul anterior",
+      "next": "Bannerul următor",
+      "goTo": "Arată bannerul {position}",
+      "presets": {
+        "airport": {
+          "script": "abia ai aterizat?",
+          "highlight": "Preluare de la aeroport",
+          "joiner": "în",
+          "boxed": "10 minute",
+          "description": "Evită coada: semnează contractul pe telefon și pleacă la drum cu asigurare completă"
+        },
+        "weekend": {
+          "script": "rezervă în acest weekend",
+          "highlight": "Economisești 20%",
+          "joiner": "la",
+          "boxed": "Închirieri de weekend",
+          "description": "Preluare vineri, returnare luni. Scaun pentru copil și șofer suplimentar gratuite"
+        },
+        "roadtrip": {
+          "script": "următoarea ta călătorie",
+          "highlight": "Începe aici",
+          "joiner": "îți oferim",
+          "boxed": "Cheile",
+          "description": "Anulare gratuită până la 24h înainte de preluare, km nelimitați și fără taxe ascunse"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Inclus în fiecare preț",
+      "title": "Prețul pe care îl vezi este prețul pe care îl plătești",
+      "description": "Fără surprize la birou. Acestea fac întotdeauna parte din preț.",
+      "presets": {
+        "insurance": {
+          "title": "Asigurare de bază",
+          "text": "Acoperire pentru coliziune, furt și răspundere civilă.",
+          "tag": "Inclus"
+        },
+        "mileage": {
+          "title": "Kilometri nelimitați",
+          "text": "Condu cât de departe dorești, fără taxe pe kilometru.",
+          "tag": "Fără limite"
+        },
+        "fuel": {
+          "title": "Combustibil plin-la-plin",
+          "text": "Preiei mașina cu rezervorul plin și o returnezi tot plină.",
+          "tag": "Fără rezervor preplătit"
+        },
+        "cancellation": {
+          "title": "Anulare gratuită",
+          "text": "Ți s-au schimbat planurile? Anulează gratuit.",
+          "tag": "Flexibil"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Recenzii",
+      "title": "Ce spun șoferii despre noi",
+      "seeAll": "Vezi toate cele {count, plural, one {# recenzie} few {# recenzii} other {# de recenzii}}",
+      "seeAllOn": "Vezi toate cele {count, plural, one {# recenzie} few {# recenzii} other {# de recenzii}} pe {source}",
+      "basedOn": "Pe baza a {count, plural, one {# recenzie} few {# recenzii} other {# de recenzii}}",
+      "basedOnSource": "Pe baza a {count, plural, one {# recenzie} few {# recenzii} other {# de recenzii}} pe {source}",
+      "ratingAria": "Evaluat cu {rating} din 5",
+      "rented": "Închiriat: {vehicle}",
+      "verified": "Închiriere verificată",
+      "distributionAria": "Distribuția evaluărilor",
+      "emptyTitle": "Încă nu există recenzii",
+      "emptyText": "Clienții pot evalua închirierea după ce returnează mașina. Recenziile aprobate apar aici."
+    },
+    "app": {
+      "eyebrow": "Aplicație mobilă",
+      "title": "Rezervarea ta, oriunde ai fi",
+      "text": "Fă check-in online, vezi detaliile de preluare și trimite-ne mesaje, totul de pe telefon.",
+      "platformBoth": "iOS și Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Scanează pentru descărcare",
+      "qrAlt": "Cod QR pentru descărcarea aplicației",
+      "appStore": {
+        "prefix": "Descarcă din",
+        "name": "App Store",
+        "aria": "Descarcă din App Store",
+        "unavailable": "Încă nu este disponibilă pe App Store"
+      },
+      "googlePlay": {
+        "prefix": "Disponibilă pe",
+        "name": "Google Play",
+        "aria": "Disponibilă pe Google Play",
+        "unavailable": "Încă nu este disponibilă pe Google Play"
+      },
+      "comingSoon": "În curând"
+    },
+    "locations": {
+      "eyebrow": "Locații",
+      "title": "{count, plural, one {Biroul nostru} few {Birourile noastre} other {Birourile noastre}}",
+      "description": "{count, plural, one {Preia și returnează mașina aici.} few {Preia și returnează mașina la oricare dintre birourile noastre.} other {Preia și returnează mașina la oricare dintre birourile noastre.}}",
+      "directions": "Indicații",
+      "directionsTo": "Indicații către {name}",
+      "call": "Sună"
+    },
+    "faq": {
+      "eyebrow": "Întrebări frecvente",
+      "title": "Întrebări înainte de rezervare",
+      "description": "Nu găsești răspunsul? Contactează-ne, suntem bucuroși să te ajutăm."
+    },
+    "contact": {
+      "title": "Ai întrebări? Vorbește cu noi.",
+      "description": "Trimite-ne un mesaj sau sună-ne și te vom ajuta să găsești mașina potrivită.",
+      "whatsapp": "WhatsApp",
+      "email": "Trimite-ne un e-mail",
+      "whatsappMessage": "Bună {name}, am o întrebare despre închirierea unei mașini."
+    },
+    "nav": {
+      "reviews": "Recenzii",
+      "faq": "Întrebări",
+      "contact": "Contact",
+      "app": "Aplicație",
+      "branches": "Locații"
+    },
+    "footer": {
+      "contact": "Contact",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Acceptăm",
+      "rating": "{score} · {count, plural, one {# recenzie} few {# recenzii} other {# de recenzii}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Numerar"
+    }
+  },
+  "siteEditor": {
+    "aria": "Editor de site",
+    "title": "Editor de site",
+    "signOut": "Deconectare",
+    "tabsAria": "Secțiuni editor",
+    "status": {
+      "draft": "Ciornă",
+      "published": "Publicat",
+      "paused": "Suspendat"
+    },
+    "tabs": {
+      "sections": "Secțiuni",
+      "design": "Design",
+      "settings": "Setări",
+      "legal": "Legal"
+    },
+    "contentLanguage": "Limba de editare",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Toate secțiunile",
+    "sections": {
+      "company": "Companie",
+      "fleet": "Mașini",
+      "included": "Inclus în fiecare preț",
+      "reviews": "Recenzii",
+      "app": "Aplicație mobilă",
+      "faq": "Întrebări frecvente",
+      "contact": "Contact",
+      "hero": "Bannere și căutare",
+      "branches": "Locații"
+    },
+    "sectionsHint": "Activează sau dezactivează secțiuni și schimbă-le ordinea. Deschide o secțiune pentru a-i edita conținutul.",
+    "orderHint": "Mașinile sunt afișate mereu. Birourile provin din filialele tale din Benwer admin.",
+    "hiddenUntilContent": "Ascunsă până când adaugi conținut",
+    "summary": {
+      "banners": "{count, plural, one {# banner} few {# bannere} other {# de bannere}}",
+      "bannersEmpty": "Încă nu există bannere, se afișează culoarea brandului",
+      "company": "Titlu, introducere și detalii de contact",
+      "fleet": "Din flota ta Benwer",
+      "included": "{count, plural, one {# element} few {# elemente} other {# de elemente}}",
+      "reviews": "{count, plural, one {# recenzie} few {# recenzii} other {# de recenzii}}",
+      "app": "Linkuri magazine și cod QR",
+      "locations": "{count, plural, one {# birou} few {# birouri} other {# de birouri}} din Benwer",
+      "faq": "{count, plural, one {# întrebare} few {# întrebări} other {# de întrebări}}",
+      "contactWhatsapp": "WhatsApp, telefon și program",
+      "contact": "Telefon și e-mail"
+    },
+    "unsaved": "Modificări nesalvate",
+    "saved": "Toate modificările au fost salvate",
+    "discard": "Renunță",
+    "save": "Salvează modificările",
+    "common": {
+      "moveUp": "Mută {item} în sus",
+      "moveDown": "Mută {item} în jos",
+      "remove": "Elimină {item}",
+      "show": "Afișează {item}"
+    },
+    "banners": {
+      "title": "Bannere",
+      "description": "Până la {max} slide-uri. Câmpurile goale folosesc textul implicit afișat în gri.",
+      "empty": "Fără bannere. Zona bannerului afișează culoarea de fundal.",
+      "item": "Banner {position}",
+      "image": "Imagine",
+      "imageHint": "Încarcă o imagine lată, aproximativ 1600 × 560 px. JPG, PNG sau WebP până la 25 MB. Un PNG transparent se așază pe culoarea bannerului tău.",
+      "add": "Adaugă banner",
+      "fields": {
+        "script": "Rând scris de mână",
+        "highlight": "Titlu evidențiat",
+        "joiner": "Cuvânt de legătură",
+        "boxed": "Titlu în casetă",
+        "description": "Descriere"
+      },
+      "colorsTitle": "Culorile bannerului",
+      "colorsDescription": "Folosite pentru fiecare banner. Orice culoare funcționează pentru fundal.",
+      "resetColors": "Resetează la culorile implicite",
+      "colors": {
+        "background": "Fundal",
+        "text": "Text",
+        "highlight": "Casetă evidențiere",
+        "highlightText": "Text evidențiat",
+        "box": "Casetă albă",
+        "boxText": "Text în casetă albă",
+        "script": "Text de legătură"
+      },
+      "noImage": "Încă fără imagine",
+      "uploadImage": "Încarcă imagine",
+      "replaceImage": "Înlocuiește imaginea",
+      "tooLarge": "Acest fișier depășește 25 MB. Alege o imagine mai mică.",
+      "uploadFailed": "Încărcarea a eșuat. Încearcă din nou."
+    },
+    "company": {
+      "title": "Antet companie",
+      "description": "Numele tău, un titlu și o scurtă introducere.",
+      "headline": "Titlu",
+      "headlinePlaceholder": "Închiriază o mașină cu {name}",
+      "intro": "Introducere",
+      "introHint": "Una sau două propoziții despre compania ta.",
+      "contactTitle": "Detalii de contact",
+      "contactDescription": "Afișate în antet, secțiunea de locații și contact.",
+      "showPhone": "Afișează numărul de telefon",
+      "showEmail": "Afișează e-mailul",
+      "showAddress": "Afișează adresa"
+    },
+    "included": {
+      "title": "Inclus în fiecare preț",
+      "description": "Până la 6 beneficii incluse întotdeauna în preț.",
+      "accuracy": "Listează doar ceea ce este valabil pentru fiecare închiriere. Textul implicit este o sugestie; verifică să corespundă condițiilor tale.",
+      "item": "Element {position}",
+      "icon": "Pictogramă",
+      "itemTitle": "Titlu",
+      "itemText": "Descriere",
+      "itemTag": "Etichetă evidențiată",
+      "tagHint": "Etichetă scurtă afișată cu verde, cum ar fi „Franșiză 1.000 €”.",
+      "presets": {
+        "insurance": "Asigurare de bază",
+        "mileage": "Km nelimitați",
+        "fuel": "Combustibil plin-la-plin",
+        "cancellation": "Anulare gratuită"
+      },
+      "addCustom": "Element personalizat"
+    },
+    "icons": {
+      "shield": "Scut",
+      "gauge": "Vitezometru",
+      "fuel": "Pompă de combustibil",
+      "calendar_check": "Calendar",
+      "check": "Bifă",
+      "car": "Mașină",
+      "users": "Persoane",
+      "baby": "Scaun copil",
+      "plane": "Avion",
+      "key": "Cheie"
+    },
+    "reviews": {
+      "title": "Recenziile clienților",
+      "description": "Clienții își evaluează închirierea după returnarea mașinii. Sunt afișate doar recenziile pe care le aprobi.",
+      "summary": "Medie {average} din {count, plural, one {# recenzie aprobată} few {# recenzii aprobate} other {# de recenzii aprobate}}",
+      "none": "Încă nu există recenzii aprobate. Clienții văd o scurtă notă până când aprobi una.",
+      "manage": "Aprobă sau ascunde recenzii în Benwer admin",
+      "demo": "Acestea sunt recenzii demo afișate pe această companie de test până când aprobi recenzii reale în Benwer admin."
+    },
+    "app": {
+      "benwerAppTitle": "Aplicația Benwer Cars",
+      "benwerApp": "Afișează aplicația Benwer Cars",
+      "benwerAppDescription": "Clienții primesc aplicația gratuită Benwer Cars. Insignele duc la magazinele oficiale, iar codul QR deschide compania ta în aplicație.",
+      "storesWithBenwerApp": "Necesar doar dacă firma ta are propria aplicație. Cât timp aplicația Benwer Cars este activată, secțiunea folosește linkurile acesteia.",
+      "storesTitle": "Linkuri magazine",
+      "storesDescription": "Linkuri către propria ta aplicație. Un magazin lipsă apare estompat. Fără linkuri și cu aplicația Benwer Cars dezactivată, secțiunea rămâne ascunsă.",
+      "ios": "Link App Store",
+      "android": "Link Google Play",
+      "qrHint": "Codul QR deschide linkul Google Play sau linkul App Store dacă nu există un link Google Play.",
+      "copyTitle": "Text",
+      "title": "Titlu",
+      "text": "Descriere"
+    },
+    "faq": {
+      "title": "Întrebări",
+      "description": "Până la {max} întrebări cu răspunsuri scurte.",
+      "empty": "Încă nu există întrebări. Secțiunea rămâne ascunsă până când adaugi una.",
+      "item": "Întrebarea {position}",
+      "question": "Întrebare",
+      "answer": "Răspuns",
+      "incompleteHint": "Întrebările fără răspuns nu sunt afișate pe site.",
+      "add": "Adaugă întrebare"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Cum te pot contacta clienții. Telefonul și e-mailul provin din secțiunea companiei.",
+      "whatsapp": "Număr WhatsApp",
+      "whatsappHint": "Include prefixul de țară. Lasă gol pentru a ascunde butonul WhatsApp.",
+      "hours": "Când răspunzi",
+      "hoursPlaceholder": "Răspundem în fiecare zi între 08:00 și 22:00.",
+      "payments": "Metode de plată",
+      "paymentsHint": "Afișate în subsolul site-ului."
+    },
+    "design": {
+      "colorTitle": "Culoarea brandului",
+      "colorDescription": "Folosită pentru butoane, linkuri și accente pe întregul site. Fundalul bannerului preia această culoare; îl poți ajusta oricând la Bannere.",
+      "presets": "Culori sugerate",
+      "custom": "Culoare personalizată",
+      "customHint": "Folosește un cod hex, de exemplu #4f46e5.",
+      "picker": "Alege o culoare",
+      "lowContrast": "Această culoare este prea deschisă pentru textul alb de pe butoane. Alege una mai închisă, altfel salvarea va eșua.",
+      "fontTitle": "Font",
+      "fontDescription": "Folosit pentru tot textul de pe site-ul tău.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Curat și modern"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Clasic și elegant"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Îndrăzneț și prietenos"
+        }
+      },
+      "cornersTitle": "Colțuri",
+      "cornersDescription": "Colțuri rotunjite sau drepte pentru butoane, carduri și câmpuri pe tot site-ul.",
+      "corners": {
+        "round": {
+          "name": "Rotunjite",
+          "hint": "Fine și prietenoase"
+        },
+        "square": {
+          "name": "Drepte",
+          "hint": "Precise și minimaliste"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Site web",
+      "websiteEnabled": "Site de rezervări activ",
+      "websiteEnabledHint": "Când este activat, clienții pot vedea și rezerva pe site-ul tău publicat. Activarea publică și modificările salvate. Este același comutator ca în Benwer admin.",
+      "bookingTitle": "Rezervări",
+      "bookingDescription": "Cum rezervă clienții de pe site-ul tău.",
+      "bookingMode": "Mod de rezervare",
+      "mode": {
+        "instant": "Instant",
+        "request": "La cerere"
+      },
+      "modeHint": {
+        "instant": "Rezervările sunt confirmate imediat.",
+        "request": "Accepți sau refuzi fiecare rezervare în intervalul de răspuns."
+      },
+      "minLead": "Preaviz minim",
+      "requestWindow": "Timp de răspuns",
+      "hoursUnit": "În ore",
+      "differentReturnTitle": "Returnare într-o altă locație",
+      "differentReturnLabel": "Permite clienților să returneze mașina în altă locație",
+      "differentReturnHint": "Clienții aleg locul de returnare când caută. Taxa de sens unic din Benwer admin este adăugată la preț.",
+      "differentReturnOff": "Activează închirierile într-un singur sens în Benwer admin pentru a oferi această opțiune."
+    },
+    "savedNotPublished": "Salvat, nepublicat încă",
+    "publish": "Publică",
+    "branding": {
+      "logosTitle": "Sigle",
+      "logosDescription": "Acesta este logo-ul companiei dvs. Modificarea lui aici actualizează și Benwer admin și aplicația Benwer Cars.",
+      "headerLogo": "Sigla din bara de sus",
+      "headerLogoHint": "Afișată în bara din partea de sus a fiecărei pagini. O siglă lată funcționează cel mai bine.",
+      "companyLogo": "Sigla secțiunii companiei",
+      "companyLogoHint": "Afișată deasupra titlului, înainte de secțiunea companiei.",
+      "usingCompanyLogo": "Se folosește sigla companiei",
+      "upload": "Încarcă siglă",
+      "replace": "Înlocuiește",
+      "uploadFailed": "Sigla nu a putut fi încărcată. Folosește o imagine PNG, JPG sau WebP și încearcă din nou.",
+      "tooLarge": "Această imagine este mai mare de 25 MB.",
+      "backgroundTitle": "Fundalul paginii",
+      "backgroundDescription": "Culoarea din spatele conținutului site-ului tău.",
+      "backgroundPresets": "Fundaluri sugerate",
+      "backgroundCustom": "Fundal personalizat",
+      "backgroundPicker": "Alege o culoare de fundal",
+      "needsApi": "Disponibil odată ce actualizarea Benwer API pentru site-uri este activă.",
+      "headerLogoDark": "Sigla din bara de sus — mod întunecat",
+      "companyLogoDark": "Sigla secțiunii companiei — mod întunecat",
+      "squareLogo": "Siglă pătrată (1:1)",
+      "squareLogoHint": "Obligatorie pentru publicare. Afișată lângă numele companiei pe carduri, rezultate de căutare și liste mobile.",
+      "cropTitle": "Decupează sigla la 2:1",
+      "cropHint": "Trage și mărește astfel încât sigla ta să încapă curat în cadrul 2:1.",
+      "cropZoom": "Zoom",
+      "cropCancel": "Anulează",
+      "cropSave": "Decupează și încarcă",
+      "darkLogoHint": "Opțional. Afișată când vizitatorii folosesc modul întunecat. Folosește o versiune deschisă sau albă a siglei tale.",
+      "darkNeedsApi": "Siglele pentru modul întunecat sunt disponibile odată ce actualizarea Benwer API este activă.",
+      "logo": "Logo (2:1)",
+      "logoHint": "Obligatoriu pentru publicare. Un singur logo pentru modul luminos și întunecat: culoarea brandului dvs. ca fundal cu numele în alb, decupat la 2:1."
+    },
+    "legal": {
+      "hint": "Fiecare pagină începe cu textul standard, astfel încât să poți schimba doar părțile dorite. Adaugă o secțiune pentru fiecare subtitlu. „Revino la textul standard” anulează modificările.",
+      "needsApi": "Disponibil odată ce actualizarea Benwer API pentru site-uri este activă.",
+      "privacyTitle": "Politica de confidențialitate",
+      "privacyDescription": "Afișată la Confidențialitate în subsolul site-ului tău.",
+      "termsTitle": "Termeni și condiții",
+      "termsDescription": "Afișați la Termeni în subsolul site-ului tău.",
+      "text": "Text",
+      "intro": "Introducere",
+      "subtitle": "Subtitlu",
+      "sectionItem": "Secțiunea {position}",
+      "addSection": "Adaugă secțiune",
+      "reset": "Revino la textul standard",
+      "pageTitle": "Titlul paginii",
+      "privacyLooksLikeTerms": "Politica ta de confidențialitate are același text ca termenii. Folosește „Revino la textul standard” la Politica de confidențialitate sau scrie propriul text, apoi salvează."
+    },
+    "preview": "Previzualizare",
+    "fullscreen": "Editor pe tot ecranul",
+    "exitFullscreen": "Arată previzualizarea lângă editor",
+    "previewBarAria": "Controale previzualizare",
+    "previewing": "Previzualizezi site-ul tău",
+    "backToEdit": "Editează"
+  },
+  "marketplaceBanners": {
+    "aria": "Repere Benwer",
+    "slideLabel": "{position} din {count}",
+    "goTo": "Arată bannerul {position}",
+    "previous": "Bannerul anterior",
+    "next": "Bannerul următor",
+    "trust": {
+      "script": "rezervă cu încredere",
+      "highlight": "Companii verificate",
+      "joiner": "și",
+      "boxed": "Rezervare sigură",
+      "description": "Recenzii reale, termeni clari și contracte digitale pe care le semnezi de pe telefon"
+    },
+    "prices": {
+      "script": "o singură căutare",
+      "highlight": "Compară prețuri",
+      "joiner": "de la",
+      "boxed": "Companii partenere",
+      "description": "Vezi prețurile, asigurările și garanțiile de la companiile partenere una lângă alta înainte să rezervi"
+    },
+    "anywhere": {
+      "script": "găsește-ți mașina",
+      "highlight": "În toată Málaga",
+      "joiner": "cu",
+      "boxed": "Companii locale de închirieri",
+      "description": "Companii partenere de închirieri în localități din toată provincia Málaga, toate într-un singur loc"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Publicat de {name}.",
+    "cookies": {
+      "title": "Politica de cookie-uri",
+      "lede": "Cum folosește {name} cookie-urile și tehnologiile similare pe acest site.",
+      "updated": "Publicat de {name}.",
+      "sections": [
+        {
+          "title": "Ce folosim",
+          "body": "Cookie-urile sunt fișiere text mici stocate pe dispozitivul tău. Acest site folosește și stocare similară, precum local storage, pentru a reține alegerile tale, coșul și conectarea."
+        },
+        {
+          "title": "Strict necesare",
+          "body": "Un cookie de limbă permite site-ului să afișeze limba ta, iar alegerea din bannerul de cookie-uri este salvată pentru a nu te întreba din nou la fiecare vizită. Dacă te conectezi, furnizorul de autentificare stochează o sesiune pe dispozitivul tău pentru a rămâne conectat. Plățile cu cardul sunt procesate de Stripe, care poate seta propriile cookie-uri pentru prevenirea fraudelor."
+        },
+        {
+          "title": "Cookie-uri opționale",
+          "body": "Cookie-urile opționale (de exemplu, pentru analiză) rămân dezactivate dacă nu alegi „Acceptă tot”. Acest site nu setează cookie-uri de analiză sau marketing astăzi."
+        },
+        {
+          "title": "Gestionarea cookie-urilor",
+          "body": "Folosește linkul de setări cookie-uri din subsol pentru a-ți schimba alegerea. Poți de asemenea să ștergi cookie-urile și datele site-ului din browser. Blocarea stocării strict necesare te poate deconecta sau poate goli coșul."
+        },
+        {
+          "title": "Mai multe informații",
+          "body": "Consultă politica de confidențialitate pentru modul în care {name} gestionează datele personale sau folosește detaliile de contact din subsol."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Suport",
+    "fabCloseLabel": "Închide meniul de suport",
+    "messageAction": "Mesaj direct",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Bună, am o întrebare despre Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "Aplicația Benwer Cars",
+    "metaDescription": "Rezervă mașini, păstrează toate călătoriile într-un singur loc și primește actualizări ale rezervărilor pe telefon.",
+    "eyebrow": "Aplicație mobilă",
+    "title": "Închirierea ta auto, în buzunar",
+    "description": "Rezervă mașini de la companii locale, păstrează fiecare călătorie într-un singur loc, plătește și primește actualizări pe telefon.",
+    "featureTrips": "Toate călătoriile tale, de la toate companiile",
+    "featureBooking": "Rezervă și plătește în câteva atingeri",
+    "featurePush": "Actualizări când rezervarea ta se modifică",
+    "unavailableTitle": "Aplicația vine în curând",
+    "unavailableDescription": "Aplicația Benwer Cars nu este încă în magazine. Poți rezerva în continuare pe web.",
+    "browse": "Explorează mașinile",
+    "badgeTitle": "Descarcă aplicația Benwer Cars",
+    "companyText": "Rezervă la {company} de pe telefon și păstrează călătoriile într-un singur loc.",
+    "bookingText": "Vezi această rezervare, plătește și primește actualizări pe telefon."
+  }
+}

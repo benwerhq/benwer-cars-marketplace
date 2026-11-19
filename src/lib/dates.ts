@@ -5,14 +5,66 @@ import {
   isValid,
   parseISO,
   startOfDay,
+  type Locale,
 } from "date-fns";
-import { enGB, es, pt } from "date-fns/locale";
+import {
+  bg,
+  cs,
+  da,
+  de,
+  el,
+  enGB,
+  enIE,
+  es,
+  et,
+  fi,
+  fr,
+  hr,
+  hu,
+  it,
+  lt,
+  lv,
+  mt,
+  nl,
+  pl,
+  pt,
+  ro,
+  sk,
+  sl,
+  sv,
+} from "date-fns/locale";
+import type { AppLocale } from "@/i18n/routing";
 
-const DATE_LOCALES = {
+const DATE_LOCALES: Record<AppLocale, Locale> = {
+  "bg-BG": bg,
+  "cs-CZ": cs,
+  "da-DK": da,
+  "de-DE": de,
+  "el-GR": el,
   "en-GB": enGB,
   "es-ES": es,
+  "et-EE": et,
+  "fi-FI": fi,
+  "fr-FR": fr,
+  "ga-IE": enIE,
+  "hr-HR": hr,
+  "hu-HU": hu,
+  "it-IT": it,
+  "lt-LT": lt,
+  "lv-LV": lv,
+  "mt-MT": mt,
+  "nl-NL": nl,
+  "pl-PL": pl,
   "pt-PT": pt,
-} as const;
+  "ro-RO": ro,
+  "sk-SK": sk,
+  "sl-SI": sl,
+  "sv-SE": sv,
+};
+
+export function getDateFnsLocale(locale: string): Locale {
+  return DATE_LOCALES[locale as AppLocale] ?? DATE_LOCALES["en-GB"];
+}
 
 export function hasCompleteSearchDates(
   from: string | undefined,
@@ -49,15 +101,11 @@ export function toIsoDate(date: Date): string {
 }
 
 export function formatSearchDate(date: Date, locale: string): string {
-  const dateLocale =
-    DATE_LOCALES[locale as keyof typeof DATE_LOCALES] ?? DATE_LOCALES["en-GB"];
-  return format(date, "d MMM", { locale: dateLocale });
+  return format(date, "d MMM", { locale: getDateFnsLocale(locale) });
 }
 
 export function formatLongDate(date: Date, locale: string): string {
-  const dateLocale =
-    DATE_LOCALES[locale as keyof typeof DATE_LOCALES] ?? DATE_LOCALES["en-GB"];
-  return format(date, "d MMMM yyyy", { locale: dateLocale });
+  return format(date, "d MMMM yyyy", { locale: getDateFnsLocale(locale) });
 }
 
 export function startOfToday(): Date {
@@ -124,8 +172,7 @@ export interface DateParts {
 }
 
 export function formatDateParts(date: Date, locale: string): DateParts {
-  const dateLocale =
-    DATE_LOCALES[locale as keyof typeof DATE_LOCALES] ?? DATE_LOCALES["en-GB"];
+  const dateLocale = getDateFnsLocale(locale);
   return {
     weekday: format(date, "EEE", { locale: dateLocale }),
     day: format(date, "d", { locale: dateLocale }),

@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Bedrijven",
+    "title": "Vind jouw perfecte auto",
+    "subtitle": "Vergelijk auto's van partnerverhuurbedrijven en ga daarna verder op de website van het bedrijf.",
+    "searchPlaceholder": "Waar ga je naartoe?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Uitgelichte bedrijven",
+    "companiesSubtitle": "Partnerverhuurbedrijven in de provincie Málaga — vloten waar wij mee samenwerken, geen ongeverifieerde advertenties",
+    "trustLocal": "Partnerbedrijven",
+    "trustGuest": "Huur op de site van het bedrijf",
+    "trustArea": "Provincie Málaga",
+    "viewAllCompanies": "Alle bedrijven bekijken"
+  },
+  "featuredCars": {
+    "viewAllCount": "Bekijk alle {count} auto's",
+    "eyebrow": "Auto's",
+    "title": "Beschikbare auto's",
+    "subtitle": "Elke auto die partnerbedrijven hebben gepubliceerd, naast elkaar. Kies er een om te boeken op de eigen website van het bedrijf.",
+    "viewAll": "Alle auto's doorzoeken",
+    "seeAll": "Alles bekijken",
+    "emptyTitle": "Nog geen auto's vermeld",
+    "emptyHint": "Openbare vloten verschijnen hier zodra bedrijven ze publiceren."
+  },
+  "whatYouGet": {
+    "eyebrow": "Voor verhuurbedrijven",
+    "title": "Wat je krijgt",
+    "subtitle": "Eén systeem voor op kantoor, op het terrein en voor reizigers die zoeken in Málaga.",
+    "admin": {
+      "title": "Volledig beheersysteem",
+      "body": "Beheer auto's, prijzen, beschikbaarheid en reserveringen vanuit één operationeel dashboard — dezelfde catalogus die de marktplaats uitleest."
+    },
+    "mobile": {
+      "title": "Mobiele app voor medewerkers",
+      "body": "Check auto's in en uit en bekijk de boekingen van vandaag direct vanaf het terrein."
+    },
+    "storefront": {
+      "title": "Eigen website in huisstijl",
+      "body": "Een vermelding op de marktplaats plus je eigen website en subdomein."
+    },
+    "preview": {
+      "utilisation": "Bezetting",
+      "utilisationValue": "82%",
+      "pickups": "Ophaalmomenten vandaag",
+      "pickupsValue": "14",
+      "revenue": "Deze maand",
+      "revenueValue": "€ 9,4k",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Dashboard",
+      "navFleet": "Vloot",
+      "navCalendar": "Kalender",
+      "navReservations": "Reserveringen",
+      "calendarTitle": "Beschikbaarheid",
+      "calendarMonth": "Komende 2 weken",
+      "viaBenwer": "Via Benwer",
+      "direct": "Direct",
+      "free": "Vrij",
+      "carA": "Compact",
+      "carB": "Stadsauto",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Vandaag",
+      "phoneDate": "Maandag",
+      "pickUp": "Ophalen",
+      "return": "Inleveren",
+      "checkedOut": "Uitgegeven",
+      "due": "Verwacht",
+      "tabToday": "Vandaag",
+      "tabFleet": "Vloot",
+      "tabScan": "Scannen",
+      "storeName": "Jouw bedrijf",
+      "storeNavCars": "Auto's",
+      "storeNavContact": "Contact",
+      "storeHeadline": "Huur een auto in Málaga",
+      "storeSearch": "Ophaallocatie en data",
+      "storeSearchCta": "Zoeken",
+      "storePrice": "Bekijk prijzen",
+      "carE": "Hatchback",
+      "carF": "Stationwagen"
+    }
+  },
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "title": "Voordat je boekt",
+    "subtitle": "Partnervloten, hoe boeken werkt en wat Benwer wel — en niet — regelt.",
+    "items": {
+      "partners": {
+        "question": "Komen deze auto's van echte verhuurbedrijven?",
+        "answer": "Ja. Elke vermelding is een openbare auto van een Benwer-partner — een echt verhuurbedrijf waar wij mee samenwerken, geen ongeverifieerde particuliere advertentie. Als een bedrijf of auto niet op het platform is gepubliceerd, verschijnt deze hier niet."
+      },
+      "booking": {
+        "question": "Boek en betaal ik op Benwer?",
+        "answer": "Nee. Je vergelijkt hier partnervloten en gaat daarna verder op de website van het verhuurbedrijf om de huur, borg en het ophalen te bevestigen. Benwer int geen betalingen op deze marktplaats."
+      },
+      "photos": {
+        "question": "Kan ik de foto's en beschikbaarheid vertrouwen?",
+        "answer": "Vermeldingen gebruiken de openbare foto's en beschikbaarheid die het partnerbedrijf publiceert — dezelfde catalogus die zij in het beheersysteem beheren. Als een auto nog geen openbare foto heeft, tonen we een lege staat in plaats van een stockfoto van een andere auto. De definitieve beschikbaarheid wordt bevestigd op de website van het bedrijf."
+      },
+      "account": {
+        "question": "Heb ik een account nodig?",
+        "answer": "Je hebt geen account nodig om te zoeken. Als je een contactbericht verstuurt, gebruiken we die gegevens alleen om te antwoorden."
+      },
+      "safety": {
+        "question": "Wie is verantwoordelijk voor de huur?",
+        "answer": "Het contract wordt gesloten tussen jou en het partnerverhuurbedrijf. Lees hun voorwaarden voordat je bevestigt. Benwer helpt je een auto bij een partnervloot te vinden, maar verhuurt zelf geen voertuigen en int hier geen betalingen."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "De Benwer Cars-app",
+    "description": "Zet Benwer Cars op je telefoon. De Android-app bevindt zich in de vroege testfase op Google Play — doe mee aan de test en help mee verbeteren."
+  },
+  "partners": {
+    "eyebrow": "Voor autoverhuurbedrijven",
+    "title": "Zet lege dagen om in boekingen",
+    "description": "Reizigers zoeken al op Benwer naar auto's in Málaga. Publiceer je vloot één keer en vul dagen die anders leeg zouden blijven.",
+    "cta": "Meer informatie",
+    "ctaAria": "Meer informatie op de marketingwebsite van Benwer (opent in een nieuw tabblad)",
+    "demo": "Live demo bekijken",
+    "demoAria": "Bekijk de live demo (opent in een nieuw tabblad)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Autoverhuur",
+    "companyDescription": "Huur een auto bij {name} in {location}.",
+    "companyDescriptionPlain": "Huur een auto bij {name}.",
+    "companyFallback": "Autoverhuur",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Huur een {brand} {model} bij {company}.",
+    "carDescriptionSpecs": "Huur een {brand} {model} — {seats, plural, one {# zitplaats} other {# zitplaatsen}}, {transmission}.",
+    "carsTitle": "Huurauto's in de provincie Málaga"
+  },
+  "tenant": {
+    "notFoundTitle": "Bedrijf niet gevonden",
+    "notFoundDescription": "Deze website kon niet worden geladen.",
+    "loadErrorTitle": "Bedrijfsgegevens niet beschikbaar",
+    "loadErrorDescription": "We konden deze website niet laden uit de live catalogus. Probeer het opnieuw — we tonen geen fictieve auto's als de API niet werkt.",
+    "logoAlt": "Logo van {name}"
+  },
+  "howItWorks": {
+    "eyebrow": "Drie stappen",
+    "title": "Hoe het werkt",
+    "subtitle": "Vergelijk partnervloten in Málaga en boek daarna rechtstreeks bij het bedrijf. Geen Benwer-account nodig.",
+    "stepLabel": "Stap {number}",
+    "searchTitle": "Kies data en locatie",
+    "searchBody": "Kies een plaats aan de Costa del Sol en de dagen die je nodig hebt. Alleen geverifieerde partnervloten worden getoond.",
+    "compareTitle": "Vergelijk echte auto's",
+    "compareBody": "Zitplaatsen, transmissie, foto's en de dagprijs, overzichtelijk naast elkaar van elke partner.",
+    "continueTitle": "Boek bij het bedrijf",
+    "continueBody": "Bevestig ophalen, verzekering en betaling bij het verhuurbedrijf dat eigenaar is van de auto.",
+    "cta": "Begin met zoeken",
+    "preview": {
+      "place": "Luchthaven Málaga",
+      "dates": "Vr → Vr · 7 dagen",
+      "carA": "Compacte auto",
+      "carASpecs": "4 zitplaatsen · Handgeschakeld",
+      "carB": "Gezins-SUV",
+      "carBSpecs": "5 zitplaatsen · Automaat",
+      "confirmed": "Boeking bevestigd",
+      "confirmedDetail": "Ophalen om 10:00",
+      "example": "Voorbeeld"
+    }
+  },
+  "search": {
+    "locationLabel": "Ophaallocatie",
+    "locationPlaceholder": "Zoek locaties",
+    "locationEmpty": "Geen overeenkomende locatie",
+    "allLocations": "Alle locaties",
+    "allLocationsHint": "Elke stad met beschikbare auto's",
+    "provinceSelected": "Alle locaties",
+    "provinceHint": "Elke stad met beschikbare auto's",
+    "pickupLabel": "Ophalen",
+    "dropoffLabel": "Inleveren",
+    "pickupPlaceholder": "Datum toevoegen",
+    "dropoffPlaceholder": "Datum toevoegen",
+    "pickupTrigger": "Ophaaldatum, {date}",
+    "dropoffTrigger": "Inleverdatum, {date}",
+    "calendarLabel": "Selecteer data",
+    "datesRequired": "Kies je ophaal- en inleverdatum om te zoeken.",
+    "submit": "Zoeken",
+    "returnLocationLabel": "Inleverlocatie",
+    "differentReturn": "Inleveren op een andere locatie",
+    "returnSame": "Zelfde als ophaallocatie",
+    "returnNotOffered": "{company} biedt geen inlevering op een andere locatie aan.",
+    "branchChoose": "Kies een locatie",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Locaties laden…",
+    "branchAnyHint": "Elke vestiging met auto's"
+  },
+  "browseLocation": {
+    "title": "Bladeren op locatie",
+    "subtitle": "Populaire steden in de provincie Málaga",
+    "emptyTitle": "Nog geen locaties",
+    "emptyDescription": "Uitgelichte steden verschijnen hier.",
+    "cityAria": "Bekijk auto's in {city}"
+  },
+  "map": {
+    "teaserTitle": "Bekijk waar je kunt ophalen",
+    "teaserSubtitle": "Lokale vloten in de provincie Málaga — open de kaart en ga direct naar een bedrijf.",
+    "teaserCta": "Kaart openen",
+    "teaserCityAria": "Bekijk bedrijven op de kaart in {city}",
+    "listLabel": "Lijst",
+    "mapLabel": "Kaart",
+    "viewToggleAria": "Toon bedrijven als lijst of kaart",
+    "regionAria": "Kaart van verhuurbedrijven in de provincie Málaga",
+    "pinAria": "{name} in {city}",
+    "fleetHint": "{count, plural, =0 {Nog geen auto's vermeld} one {# auto beschikbaar} other {# auto's beschikbaar}}",
+    "fleetHintUnknown": "Bekijk beschikbare auto's",
+    "viewFleet": "Vloot bekijken",
+    "closePin": "Sluiten",
+    "loading": "Bedrijven laden…",
+    "errorDescription": "De kaart kon niet worden geladen. Bekijk in plaats daarvan de lijst.",
+    "emptyTitle": "Geen bedrijven op de kaart",
+    "emptyDescription": "Probeer een andere stad in de provincie Málaga.",
+    "resultsCount": "{count, plural, one {# bedrijf in de provincie Málaga} other {# bedrijven in de provincie Málaga}}",
+    "resultsInCity": "{count, plural, one {# bedrijf in {city}} other {# bedrijven in {city}}}",
+    "resultsAtBranch": "{count, plural, one {# bedrijf bij {branch}} other {# bedrijven bij {branch}}}"
+  },
+  "cars": {
+    "showingOf": "{shown} van {total} auto's weergegeven",
+    "loadMore": "Meer auto's tonen",
+    "seeAll": "Alles bekijken",
+    "title": "Beschikbare auto's",
+    "subtitle": "Elke openbare auto van partnerverhuurbedrijven in de provincie Málaga. Kies je data om te zien wat vrij is.",
+    "searchEmptyTitle": "Geen auto's voor deze zoekopdracht",
+    "searchEmptyHint": "Probeer andere data of een andere locatie in de provincie Málaga. Elke stad blijft in de lijst — ook als er vandaag geen auto's beschikbaar zijn.",
+    "resultsInProvince": "{count, plural, one {# auto op alle locaties} other {# auto's op alle locaties}}",
+    "resultsInCity": "{count, plural, one {# auto in {city}} other {# auto's in {city}}}",
+    "allCompanies": "Alle bedrijven",
+    "companyPlaceholder": "Zoek bedrijven",
+    "companyTrigger": "Bedrijf, {company}",
+    "perDay": "{price} / dag",
+    "perDaySuffix": " / dag",
+    "viewDetails": "Details bekijken",
+    "notAvailableForDates": "Niet beschikbaar voor deze data",
+    "bookUnavailable": "Auto bekijken",
+    "fleetSummary": "{total, plural, one {# auto} other {# auto's}} · {available, plural, one {# beschikbaar} other {# beschikbaar}}",
+    "fleetSummaryForDates": "{total, plural, one {# auto} other {# auto's}} · {available, plural, one {# beschikbaar} other {# beschikbaar}} · {from} – {to}",
+    "seats": "{count} zitplaatsen",
+    "resultsCount": "{count, plural, one {# auto beschikbaar} other {# auto's beschikbaar}}",
+    "resultsForDates": "{count, plural, one {# auto} other {# auto's}} · {from} – {to}",
+    "emptyTitle": "Deze vloot is nog niet openbaar",
+    "emptyHint": "Dit bedrijf staat wel vermeld, maar de auto's zijn nog niet gepubliceerd op Benwer. Dat is normaal totdat voertuigen openbaar worden gemaakt — de pagina is niet kapot.",
+    "noResults": "Geen auto's voor deze zoekopdracht",
+    "noResultsHint": "Probeer andere data, een andere locatie of minder filters.",
+    "browseCompanies": "Bedrijven bekijken",
+    "clearFilters": "Filters wissen",
+    "searchPlaceholder": "Zoek op merk of model",
+    "filters": {
+      "title": "Filters",
+      "seats": "Zitplaatsen",
+      "transmission": "Transmissie",
+      "company": "Bedrijf",
+      "dates": "Data",
+      "from": "Ophaaldatum",
+      "to": "Inleverdatum",
+      "category": "Categorie",
+      "fuel": "Brandstof",
+      "all": "Alle",
+      "clear": "Wissen",
+      "selectedCount": "{count} geselecteerd"
+    },
+    "types": {
+      "car": "Personenauto",
+      "suv": "SUV",
+      "van": "Bestelbus",
+      "truck": "Vrachtwagen",
+      "motorcycle": "Motorfiets"
+    },
+    "transmission": {
+      "automatic": "Automaat",
+      "manual": "Handgeschakeld"
+    },
+    "fuel": {
+      "petrol": "Benzine",
+      "diesel": "Diesel",
+      "electric": "Elektrisch",
+      "hybrid": "Hybride",
+      "plugin_hybrid": "Plug-in hybride"
+    },
+    "rowDeposit": "Borg {amount}",
+    "rowAvailable": "Beschikbaar voor jouw data",
+    "rowTotal": "{amount} totaal · {days, plural, one {# dag} other {# dagen}}",
+    "bookNow": "Nu boeken",
+    "availableCount": "{count, plural, =0 {Geen auto's beschikbaar} one {# auto beschikbaar} other {# auto's beschikbaar}}",
+    "availableForDates": "{count, plural, =0 {Geen auto's beschikbaar} one {# auto beschikbaar} other {# auto's beschikbaar}} · {from} – {to}",
+    "categories": {
+      "economy": "Economy",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "MPV",
+      "van": "Bestelbus",
+      "other": "Overig"
+    },
+    "sort": {
+      "label": "Sorteren op",
+      "recommended": "Aanbevolen",
+      "pricePerDay_asc": "Laagste dagprijs",
+      "pricePerDay_desc": "Hoogste dagprijs"
+    },
+    "colors": {
+      "white": "Wit",
+      "black": "Zwart",
+      "silver": "Zilver",
+      "grey": "Grijs",
+      "red": "Rood",
+      "blue": "Blauw",
+      "green": "Groen",
+      "orange": "Oranje",
+      "yellow": "Geel",
+      "brown": "Bruin",
+      "beige": "Beige",
+      "gold": "Goud",
+      "purple": "Paars"
+    },
+    "viewCar": "Auto bekijken",
+    "opensCompanySite": "(opent de website van het bedrijf)"
+  },
+  "carDetail": {
+    "bookNow": "Nu boeken",
+    "continueOnCompany": "Verder op {company}",
+    "rentOnCompanySite": "Huur op de site van het bedrijf",
+    "handoffHint": "We vragen eerst om bevestiging voordat we je doorsturen naar de website van het bedrijf om de boeking af te ronden.",
+    "pricePerDay": "{price} per dag",
+    "specs": "Specificaties",
+    "year": "Bouwjaar",
+    "type": "Type",
+    "transmission": "Transmissie",
+    "fuel": "Brandstof",
+    "seats": "Zitplaatsen",
+    "availability": "Beschikbaarheid",
+    "availabilityError": "We konden de beschikbaarheid niet laden. Probeer het opnieuw.",
+    "availabilityUnavailable": "Beschikbaarheid niet beschikbaar",
+    "checkingAvailability": "Beschikbaarheid controleren…",
+    "notAvailable": "Deze auto is niet beschikbaar voor de geselecteerde data.",
+    "selectPickup": "Kies een ophaaldatum",
+    "selectDropoff": "Kies nu een inleverdatum",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Data wissen",
+    "addDate": "Datum toevoegen",
+    "calendarLabel": "Beschikbaarheidskalender",
+    "legend": "Kalenderlegenda",
+    "available": "Beschikbaar",
+    "selected": "Geselecteerd",
+    "unavailable": "Niet beschikbaar",
+    "openDates": "Geen geboekte data in de komende {months} maanden.",
+    "breadcrumbAria": "Kruimelpad",
+    "photoEmpty": "Foto's volgen binnenkort",
+    "previousPhoto": "Vorige foto",
+    "nextPhoto": "Volgende foto",
+    "viewPhoto": "Bekijk foto {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, foto {index}",
+    "backToFleet": "Terug naar vloot",
+    "metaTitle": "Autodetails",
+    "about": "Over deze auto",
+    "category": "Categorie",
+    "color": "Kleur",
+    "deposit": "Borg",
+    "mileage": "Kilometerstand",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Je wordt doorgestuurd naar de boekingspagina van {company} om je reservering af te ronden.",
+    "handoffTrust": "{company} is een betrouwbare Benwer-partner.",
+    "handoffContinue": "Doorgaan",
+    "handoffCancel": "Annuleren",
+    "handoffCompanyFallback": "het bedrijf"
+  },
+  "booking": {
+    "title": "Rond je boeking af",
+    "subtitle": "Bevestig je gegevens — geen account nodig.",
+    "details": "Jouw gegevens",
+    "detailsHint": "We gebruiken deze gegevens alleen om deze boeking te bevestigen.",
+    "guestName": "Volledige naam",
+    "guestNamePlaceholder": "Sanne de Vries",
+    "guestEmail": "E-mailadres",
+    "guestEmailPlaceholder": "sanne@voorbeeld.nl",
+    "guestEmailHint": "Je bevestiging wordt naar dit adres gestuurd.",
+    "guestPhone": "Telefoonnummer",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Het verhuurbedrijf kan contact met je opnemen over het ophalen.",
+    "startDate": "Ophaaldatum",
+    "endDate": "Inleverdatum",
+    "datesHint": "De data komen uit de autokalender. Je kunt ze hier aanpassen.",
+    "addDate": "Datum toevoegen",
+    "changeDates": "Data wijzigen in de kalender",
+    "summary": "Boekingsoverzicht",
+    "vehicle": "Voertuig",
+    "company": "Bedrijf",
+    "rate": "Dagprijs",
+    "duration": "Duur",
+    "totalPrice": "Totaal",
+    "nights": "{count, plural, one {# dag} other {# dagen}}",
+    "stickyMeta": "{name} · {count, plural, one {# dag} other {# dagen}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Boeking bevestigen",
+    "confirmRequest": "Aanvraag versturen",
+    "requesting": "Aanvraag versturen…",
+    "confirming": "Bevestigen…",
+    "sitePaused": "Neemt geen boekingen aan",
+    "insurance": "Verzekering",
+    "termsLabel": "Huurvoorwaarden",
+    "termsAccept": "Ik accepteer de",
+    "termsLink": "huurvoorwaarden",
+    "successTitle": "Boeking bevestigd!",
+    "successMessage": "Je bevestiging is verzonden naar {email}.",
+    "viewBooking": "Mijn boeking bekijken",
+    "selectDates": "Selecteer data om door te gaan",
+    "invalidDates": "Kies een geldige periode",
+    "backToCar": "Terug naar {name}",
+    "trustNoAccount": "Geen account nodig",
+    "trustEmail": "Bevestiging per e-mail",
+    "trustNoPayment": "Nu geen betaling",
+    "trustCardPayment": "Betaal per kaart na het boeken",
+    "trustFooter": "Door te bevestigen vraag je deze auto aan voor bovenstaande data. Het bedrijf honoreert de reservering.",
+    "missingTitle": "Kies een auto om door te gaan",
+    "missingDescription": "Kies een voertuig en data voordat je je boeking afrondt.",
+    "browseCars": "Auto's bekijken",
+    "vehicleMissingTitle": "Deze auto is niet meer beschikbaar",
+    "vehicleMissingDescription": "Mogelijk is deze al gereserveerd. Kies een andere auto uit de vloot.",
+    "viewFleet": "Vloot bekijken",
+    "datesMissingTitle": "Voeg je reisdata toe",
+    "datesMissingDescription": "Ga terug naar de auto om beschikbare data te kiezen, of vul ze in het formulier in.",
+    "pickDates": "Kies data bij de auto",
+    "formAria": "Gegevens voor gastboeking",
+    "validation": {
+      "nameMin": "Vul je volledige naam in (minimaal 2 tekens).",
+      "email": "Vul een geldig e-mailadres in.",
+      "phone": "Vul een geldig telefoonnummer in.",
+      "startDate": "Selecteer een ophaaldatum.",
+      "endDate": "Selecteer een inleverdatum.",
+      "endAfterStart": "De inleverdatum moet na de ophaaldatum liggen.",
+      "terms": "Accepteer de huurvoorwaarden om door te gaan.",
+      "fixErrors": "Corrigeer de gemarkeerde velden."
+    },
+    "averageRate": "Gemiddelde dagprijs",
+    "breakdownTitle": "Prijsoverzicht",
+    "standardRate": "Standaardtarief",
+    "weekendRate": "Weekend",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Huurperiodes in dit seizoen moeten minimaal {limit, plural, one {# dag} other {# dagen}} duren. Pas je data aan om te boeken.",
+    "warningMaxDays": "Huurperiodes in dit seizoen mogen maximaal {limit, plural, one {# dag} other {# dagen}} duren. Pas je data aan om te boeken.",
+    "returnLocation": "Inleverlocatie",
+    "oneWayFee": "Toeslag andere inleverlocatie",
+    "signedInAs": "Ingelogd als {email}",
+    "signInPrompt": "Heb je een account?",
+    "signInLink": "Log in om je gegevens in te vullen",
+    "subtitleSignedIn": "Controleer je gegevens en bevestig.",
+    "trustPaymentAfter": "Betalingsgegevens volgen na het boeken",
+    "extras": "Extra's",
+    "extraPerDay": "{price} / dag",
+    "extraFixed": "{price} / huur",
+    "tripDetails": "Reisgegevens",
+    "pickupTime": "Ophaaltijd",
+    "returnTime": "Inlevertijd",
+    "timeAny": "Elk tijdstip",
+    "flightNumber": "Vluchtnummer",
+    "flightNumberHint": "Je haalt de auto op bij een luchthaven. Voeg je vluchtnummer toe zodat het bedrijf vertragingen kan volgen.",
+    "flightNumberOptional": "Voeg toe als je met het vliegtuig aankomt.",
+    "notes": "Opmerkingen",
+    "notesPlaceholder": "Iets dat het bedrijf moet weten?",
+    "dateOfBirth": "Geboortedatum",
+    "optional": "optioneel",
+    "extraSoldOut": "Niet beschikbaar voor deze data"
+  },
+  "reservationStatus": {
+    "title": "Jouw reservering",
+    "successTitle": "Je boeking staat vast",
+    "successSubtitle": "We hebben een bevestiging gestuurd naar {email}.",
+    "status": {
+      "draft": "In behandeling",
+      "confirmed": "Bevestigd",
+      "active": "Actief — fijne reis!",
+      "completed": "Afgerond",
+      "cancelled": "Geannuleerd"
+    },
+    "vehicle": "Voertuig",
+    "company": "Bedrijf",
+    "dates": "Data",
+    "pickup": "Ophalen",
+    "dropoff": "Inleveren",
+    "guest": "Gast",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "total": "Totaal",
+    "reference": "Referentie",
+    "referenceHint": "Toon dit bij het ophalen.",
+    "trustCopy": "Bewaar deze pagina — dit is je boekingsbewijs. Het verhuurbedrijf neemt het vanaf hier over.",
+    "trustEmail": "Bevestiging verzonden per e-mail",
+    "trustPickup": "Toon deze pagina bij het ophalen",
+    "nextTitle": "Wat er nu gebeurt",
+    "nextEmail": "Controleer {email} voor je bevestiging.",
+    "nextPickup": "Toon je referentie bij het ophalen.",
+    "browseMore": "Meer auto's bekijken",
+    "notFoundTitle": "Reservering niet gevonden",
+    "notFoundDescription": "Controleer de link in je bevestigingsmail of start een nieuwe zoekopdracht.",
+    "backHome": "Terug naar home",
+    "requestExpires": "Aanvraag verloopt",
+    "cancelReason": "Reden van annulering",
+    "withdraw": "Aanvraag intrekken",
+    "paymentStatus": "Betaling",
+    "paidAmount": "Betaald",
+    "payment": {
+      "unpaid": "Niet betaald",
+      "partially_paid": "Deels betaald",
+      "paid": "Betaald",
+      "refund_due": "Terugbetaling verschuldigd",
+      "authorized": "Kaart geautoriseerd"
+    },
+    "reasons": {
+      "unpaid_timeout": "De betaling is niet op tijd afgerond",
+      "request_expired": "Het bedrijf heeft niet op tijd gereageerd",
+      "request_declined": "Het bedrijf heeft deze aanvraag afgewezen",
+      "customer_request": "Je hebt deze aanvraag ingetrokken"
+    },
+    "insurance": "Verzekering",
+    "extras": "Extra's",
+    "fees": "Ophaal- en inlevertoeslagen",
+    "priceTitle": "Prijsoverzicht"
+  },
+  "payment": {
+    "title": "Betaal het voorschot",
+    "amountDue": "Te betalen bedrag: {amount}",
+    "countdown": "Rond de betaling af binnen {time}",
+    "requestAuthorize": "Je kaart wordt nu geautoriseerd en pas belast wanneer het bedrijf accepteert.",
+    "pay": "Nu betalen",
+    "paying": "Verwerken…",
+    "confirming": "Je betaling wordt bevestigd",
+    "confirmingHint": "Even geduld — we bevestigen de betaling bij het bedrijf, niet via het kaartformulier.",
+    "declined": "De kaart is geweigerd. Probeer een andere kaart.",
+    "secure": "Kaartgegevens worden verwerkt door Stripe in testmodus.",
+    "cancelBooking": "Boeking annuleren",
+    "cancelTitle": "Deze boeking annuleren?",
+    "cancelDescription": "We passen de annuleringsregels van het bedrijf toe. Controleer de kosten en terugbetaling voordat je bevestigt.",
+    "cancelFee": "Annuleringskosten",
+    "cancelRefund": "Terugbetaling",
+    "confirmCancel": "Annulering bevestigen",
+    "keepBooking": "Boeking behouden",
+    "cancelled": "Je boeking is geannuleerd."
+  },
+  "companies": {
+    "title": "Verhuurbedrijven",
+    "subtitle": "Bekijk partnerverhuurbedrijven in Málaga — op de kaart of in de lijst",
+    "searchPlaceholder": "Zoek bedrijven…",
+    "noResults": "Geen bedrijven gevonden",
+    "noResultsHint": "Probeer een andere locatie in de provincie Málaga.",
+    "emptyTitle": "Nog geen bedrijven vermeld",
+    "emptyDescription": "Er zijn nog geen verhuurbedrijven vermeld.",
+    "clearFilters": "Zoekopdracht wissen",
+    "viewFleet": "Vloot bekijken",
+    "visitWebsite": "Website bezoeken",
+    "contact": "Contact",
+    "backToList": "Alle bedrijven",
+    "notFoundTitle": "Bedrijf niet gevonden",
+    "notFoundDescription": "Dit verhuurbedrijf staat niet in de lijst. Bekijk andere bedrijven in de buurt.",
+    "loadErrorTitle": "Bedrijfsgegevens niet beschikbaar",
+    "loadErrorDescription": "We konden dit verhuurbedrijf niet laden uit de live catalogus. Probeer het opnieuw — we tonen geen fictieve auto's als de API niet werkt.",
+    "browseCars": "Auto's bekijken",
+    "featuredEmpty": "Nog geen uitgelichte bedrijven",
+    "featuredEmptyHint": "Kom snel terug of bekijk auto's van lokale vloten.",
+    "locationUnknown": "Locatie niet vermeld",
+    "noDescription": "Nog geen beschrijving."
+  },
+  "contact": {
+    "title": "Neem contact op",
+    "lede": "Vragen over de marktplaats? Stuur ons een bericht en we nemen zo snel mogelijk contact met je op.",
+    "bookingHint": "Dit formulier is niet voor boekingen. Ga verder op de eigen website van het verhuurbedrijf om een auto te huren.",
+    "name": "Volledige naam",
+    "email": "E-mailadres",
+    "subject": "Onderwerp",
+    "message": "Bericht",
+    "submit": "Bericht versturen",
+    "privacyNote": "We gebruiken deze gegevens alleen om te antwoorden.",
+    "errors": {
+      "nameMin": "Vul je naam in (minimaal 2 tekens).",
+      "email": "Vul een geldig e-mailadres in.",
+      "subjectMin": "Vul een onderwerp in (minimaal 3 tekens).",
+      "messageMin": "Vul een bericht in (minimaal 10 tekens)."
+    },
+    "eyebrow": "Ondersteuning",
+    "namePlaceholder": "Sanne de Vries",
+    "emailPlaceholder": "jij@voorbeeld.nl",
+    "subjectPlaceholder": "Waarmee kunnen we je helpen?",
+    "messagePlaceholder": "Vertel ons wat je nodig hebt…",
+    "supportSubjectDefault": "Ondersteuningsverzoek",
+    "submitting": "Versturen…",
+    "submittedTitle": "Bericht verzonden",
+    "submittedDescription": "Bedankt voor je bericht. We antwoorden zo snel mogelijk per e-mail.",
+    "sendAnother": "Nog een bericht versturen",
+    "backHome": "Terug naar home",
+    "whatsappTitle": "Liever via WhatsApp?",
+    "whatsappDescription": "Chat rechtstreeks met het team van Benwer Cars."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacybeleid",
+      "lede": "Hoe wij omgaan met persoonsgegevens wanneer je de marktplaats van Benwer Cars gebruikt.",
+      "updated": "Laatst bijgewerkt: 13 september 2026",
+      "sections": [
+        {
+          "title": "Wie wij zijn",
+          "body": "Benwer Cars (“Benwer”, “wij”, “ons”) beheert een consumentenmarktplaats waarmee reizigers autoverhuurvloten in de provincie Málaga kunnen ontdekken.\n\nDit beleid geldt alleen voor de marktplaatswebsite. Als je verdergaat naar de eigen website van een verhuurbedrijf om te boeken, is dat bedrijf verantwoordelijk voor de gegevens die je daar invult."
+        },
+        {
+          "title": "Wat deze marktplaats doet",
+          "body": "Je kunt auto's en bedrijven zoeken, openbare vlootgegevens vergelijken en doorgaan naar de website van een verhuurbedrijf om een boeking af te ronden.\n\nBenwer int geen betalingen en sluit geen huurovereenkomsten op de marktplaats. De huurovereenkomst is tussen jou en het bedrijf."
+        },
+        {
+          "title": "Gegevens die wij verzamelen",
+          "body": "Afhankelijk van hoe je de marktplaats gebruikt, kunnen wij het volgende verwerken:\n\n• Zoek- en gebruiksgegevens — de locatie en data die je invoert, pagina's die je bekijkt en technische basisgegevens zoals IP-adres, browser en apparaatinformatie.\n• Taalvoorkeur — opgeslagen als een strikt noodzakelijke cookie zodat we je gekozen taal kunnen tonen.\n• Cookievoorkeur — opgeslagen op je apparaat zodat we je keuze onthouden.\n• Contactberichten — naam, e-mailadres, onderwerp en bericht als je ons schrijft. We merken deze aan als afkomstig van de marktplaats.\n\nWe vragen je niet om een account aan te maken op de marktplaats. Boekings- en betalingsgegevens worden verzameld door het verhuurbedrijf op hun eigen website, onder hun eigen privacybeleid."
+        },
+        {
+          "title": "Hoe wij gegevens gebruiken",
+          "body": "We gebruiken persoonsgegevens om de marktplaats te beheren en te verbeteren, taal- en cookiekeuzes te onthouden, contactberichten te beantwoorden, de dienst veilig te houden en aan wettelijke verplichtingen te voldoen.\n\nWij verkopen je persoonsgegevens niet."
+        },
+        {
+          "title": "Rechtsgronden (EER / VK)",
+          "body": "Waar van toepassing baseren wij ons op gerechtvaardigd belang (het beheren van een openbare gids en het beveiligen van de site), toestemming (optionele cookies, indien ingevoerd), wettelijke verplichting en stappen die nodig zijn om te reageren wanneer je contact met ons opneemt."
+        },
+        {
+          "title": "Delen van gegevens",
+          "body": "We kunnen vertrouwde dienstverleners inzetten voor hosting en e-mailbezorging. Zij verwerken gegevens in opdracht van ons.\n\nAls je doorgaat naar een bedrijfswebsite, wordt dat bedrijf de verwerkingsverantwoordelijke voor alle gegevens die je daar indient. We sturen je contactformulierbericht niet door naar verhuurbedrijven, tenzij je ons daarom vraagt."
+        },
+        {
+          "title": "Cookies",
+          "body": "We gebruiken een strikt noodzakelijke taalcookie en slaan je cookiekeuze op je apparaat op. Zie het cookiebeleid voor details. Optionele cookies blijven uit tenzij je ze accepteert."
+        },
+        {
+          "title": "Bewaartermijn",
+          "body": "We bewaren contactberichten zolang dat nodig is om te reageren en gedurende een redelijke opvolgperiode. Technische logboeken worden kort bewaard. Je cookiekeuze blijft bewaard totdat je deze wijzigt of sitegegevens wist."
+        },
+        {
+          "title": "Jouw rechten",
+          "body": "Afhankelijk van je locatie heb je mogelijk recht op inzage, rectificatie, verwijdering, beperking of overdraagbaarheid van je gegevens, en om bezwaar te maken tegen bepaalde verwerkingen. Je kunt ook een klacht indienen bij je lokale toezichthoudende autoriteit.\n\nGebruik de contactpagina om je rechten uit te oefenen."
+        },
+        {
+          "title": "Internationale doorgiften",
+          "body": "Als gegevens buiten je land worden doorgegeven, gebruiken we passende waarborgen zoals standaardcontractbepalingen of gelijkwaardige mechanismen waar de wet dit vereist."
+        },
+        {
+          "title": "Wijzigingen",
+          "body": "We kunnen dit beleid van tijd tot tijd bijwerken. We plaatsen de herziene versie op deze pagina en werken de datum “Laatst bijgewerkt” bij."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Gebruiksvoorwaarden",
+      "lede": "De regels voor het gebruik van de Benwer Cars-marktplaats om verhuurvloten te ontdekken.",
+      "updated": "Laatst bijgewerkt: 13 september 2026",
+      "sections": [
+        {
+          "title": "De marktplaats",
+          "body": "Benwer Cars biedt een openbare gids met autoverhuurbedrijven en hun gepubliceerde vloten. Je kunt auto's vergelijken en doorgaan naar de eigen website van een bedrijf om een huur af te ronden.\n\nDeze voorwaarden gelden voor de marktplaatswebsite. Ze vervangen niet de eigen voorwaarden van het verhuurbedrijf, die gelden wanneer je bij hen boekt."
+        },
+        {
+          "title": "Boekingen lopen via verhuurbedrijven",
+          "body": "Benwer verhuurt geen auto's, int geen betalingen en sluit geen huurovereenkomsten op de marktplaats.\n\nAls je doorgaat naar de website van een bedrijf, lopen alle afspraken rondom boeking, borg, verzekering en ophalen tussen jou en dat bedrijf. Lees hun voorwaarden voordat je bevestigt."
+        },
+        {
+          "title": "Vermeldingen en beschikbaarheid",
+          "body": "Vlootgegevens, prijzen, foto's en beschikbaarheid worden gepubliceerd door verhuurbedrijven en kunnen wijzigen. We streven ernaar openbare informatie nauwkeurig weer te geven, maar garanderen niet dat een auto nog beschikbaar is of dat een vermelde prijs wordt gehonoreerd totdat het bedrijf dit bevestigt.\n\nDe data die je op de marktplaats invult helpen je zoeken. De definitieve beschikbaarheid wordt bevestigd op de website van het bedrijf."
+        },
+        {
+          "title": "Aanvaardbaar gebruik",
+          "body": "Gebruik de marktplaats rechtmatig. Scrape, overbelast of verstoor de dienst niet, dien geen valse contactgegevens in en gebruik de site niet om anderen of bedrijven schade toe te brengen."
+        },
+        {
+          "title": "Aansprakelijkheid",
+          "body": "De marktplaats wordt aangeboden als ontdekkingsdienst. Voor zover wettelijk toegestaan is Benwer niet aansprakelijk voor huurgeschillen, de staat van voertuigen of boekingen die op de website van een bedrijf zijn voltooid.\n\nNiets in deze voorwaarden beperkt rechten die je als consument hebt en die volgens toepasselijk recht niet kunnen worden uitgesloten."
+        },
+        {
+          "title": "Wijzigingen",
+          "body": "We kunnen deze voorwaarden bijwerken. De datum “Laatst bijgewerkt” op deze pagina toont de huidige versie. Voortgezet gebruik na een wijziging betekent dat je de bijgewerkte voorwaarden accepteert."
+        },
+        {
+          "title": "Contact",
+          "body": "Vragen over deze voorwaarden of de marktplaats kun je sturen via de contactpagina. Voor een boeking die je al bent gestart, neem je rechtstreeks contact op met het verhuurbedrijf."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookiebeleid",
+      "lede": "Hoe wij cookies en vergelijkbare technologieën op de marktplaats gebruiken.",
+      "updated": "Laatst bijgewerkt: 13 september 2026",
+      "sections": [
+        {
+          "title": "Wat wij gebruiken",
+          "body": "Cookies zijn kleine tekstbestanden die op je apparaat worden opgeslagen. We gebruiken ook vergelijkbare opslag, zoals local storage, om keuzes te onthouden.\n\nDit beleid geldt voor de Benwer Cars-marktplaats. Wanneer je doorgaat naar de website van een verhuurbedrijf, kan die site eigen cookies plaatsen."
+        },
+        {
+          "title": "Strikt noodzakelijk",
+          "body": "We gebruiken een taalcookie zodat de site jouw gekozen taal kan tonen. Dit is nodig om de marktplaats naar verwachting te laten werken.\n\nJe keuze in de cookiebanner wordt op je apparaat opgeslagen zodat we dit niet bij elk bezoek opnieuw hoeven te vragen. Deze opslag wordt niet gebruikt om advertenties te tonen."
+        },
+        {
+          "title": "Optionele cookies",
+          "body": "Optionele cookies (bijvoorbeeld voor statistieken) blijven uit tenzij je kiest voor Alles accepteren.\n\nOp dit moment plaatst de marktplaats geen analyse- of marketingcookies. Als we deze later toevoegen, beschrijven we ze hier en is nog steeds jouw toestemming vereist."
+        },
+        {
+          "title": "Cookies beheren",
+          "body": "Gebruik de banner om alle cookies te accepteren of alleen het noodzakelijke te behouden. Je kunt cookies en sitegegevens ook verwijderen in je browser. Het blokkeren van de taalcookie kan bij je volgende bezoek de taal resetten."
+        },
+        {
+          "title": "Meer informatie",
+          "body": "Bekijk het privacybeleid voor hoe wij met persoonsgegevens omgaan, of stuur een bericht via de contactpagina."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} home",
+    "defaultHeadline": "Huur een auto bij {name}",
+    "footerTagline": "Boek rechtstreeks bij dit verhuurbedrijf.",
+    "previewBanner": "Voorbeeld — deze pagina is niet openbaar. Zoekmachines indexeren deze niet.",
+    "editLink": "Bewerken",
+    "editContactEmpty": "Contactgegevens zijn verborgen. Bewerk ze in het beheersysteem.",
+    "editBranchesEmpty": "Nog geen vestigingen. Voeg ze toe in het beheersysteem.",
+    "editRulesHint": "Boekingsmodus, minimale aanlooptijd en reactietijd.",
+    "editDomainHint": "Eigen domein en live URL.",
+    "editSection": {
+      "hero": "Hero",
+      "search": "Zoeken",
+      "fleet": "Vloot",
+      "branches": "Vestigingen",
+      "contact": "Contact",
+      "rules": "Boekingsregels",
+      "domain": "Domein"
+    },
+    "pausedTitle": "Neemt geen boekingen aan",
+    "pausedDescription": "Dit bedrijf heeft online boekingen gepauzeerd. Je kunt de vloot nog wel bekijken.",
+    "notFoundTitle": "Website niet gevonden",
+    "notFoundDescription": "Deze verhuurwebsite is niet beschikbaar.",
+    "loadErrorTitle": "Website niet beschikbaar",
+    "loadErrorDescription": "We konden deze verhuurwebsite niet laden. Probeer het zo meteen opnieuw.",
+    "search": "Auto's zoeken",
+    "searchAria": "Zoek op data en locatie",
+    "searchTitle": "Auto's zoeken",
+    "searchDescription": "Kies data en een locatie om te zien wat beschikbaar is.",
+    "branch": "Ophaallocatie",
+    "anyBranch": "Elke locatie",
+    "ownerSignIn": "Inloggen voor eigenaar",
+    "returnBranch": "Inleverlocatie",
+    "differentReturn": "Inleveren op een andere locatie",
+    "returnSame": "Zelfde als ophaallocatie",
+    "driverAge": "Leeftijd bestuurder",
+    "driverAgeYears": "{band} jaar",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Bewerk je website",
+    "signInHint": "Eigenaren openen de website-editor vanuit Benwer admin. Gebruik daar de knop “Website bewerken” en je wordt hier automatisch ingelogd.",
+    "signedInTitle": "Je bent ingelogd",
+    "signedInHint": "Als je deze website kunt beheren, opent de editor op de startpagina.",
+    "openEditor": "Website-editor openen",
+    "disabledTitle": "Bewerken door eigenaar is niet beschikbaar",
+    "disabledDescription": "Staff Firebase is niet geconfigureerd op deze marktplaats.",
+    "signOut": "Uitloggen",
+    "auth": {
+      "tooManyRequests": "Te veel pogingen. Probeer het later opnieuw.",
+      "unknown": "Inloggen mislukt. Probeer het opnieuw.",
+      "invalidToken": "Deze inloglink is verlopen of al gebruikt. Open de editor opnieuw vanuit Benwer admin."
+    },
+    "signingIn": "Bezig met inloggen…",
+    "openAdmin": "Benwer admin openen",
+    "accountMenu": "Eigenaarsaccount",
+    "signedInAs": "Ingelogd als eigenaar",
+    "guestSignedOut": "Je bent uitgelogd bij je gastaccount. Eigenaars- en gastsessies kunnen niet tegelijk openstaan in deze browser."
+  },
+  "guest": {
+    "googleAction": "Inloggen met Google",
+    "googleCreate": "Doorgaan met Google",
+    "or": "of",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "resetTitle": "Wachtwoord opnieuw instellen",
+    "resetHint": "Vul je e-mailadres in en we sturen je een link om een nieuw wachtwoord te kiezen.",
+    "resetAction": "Resetlink versturen",
+    "resetSentTitle": "Controleer je e-mail",
+    "resetSentHint": "Als er een account bestaat voor dat adres, hebben we instructies voor het opnieuw instellen van je wachtwoord gestuurd. Niets ontvangen? Controleer je spammap of wacht een paar minuten voordat je het opnieuw probeert.",
+    "backToSignIn": "Terug naar inloggen",
+    "signInNav": "Inloggen",
+    "myBookings": "Mijn boekingen",
+    "signInTitle": "Inloggen",
+    "signInHint": "Gebruik je gastaccount voor dit verhuurbedrijf. Dit is geen medewerkerslogin.",
+    "signInAction": "Inloggen",
+    "createTitle": "Gastaccount aanmaken",
+    "createHint": "Bewaar je boekingen bij dit bedrijf. Medewerkers gebruiken een andere inlogpagina.",
+    "createAction": "Account aanmaken",
+    "needAccount": "Nog geen account? Maak er een aan",
+    "haveAccount": "Heb je al een account? Log in",
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "bookingsTitle": "Mijn boekingen",
+    "bookingsMeta": "Gekoppelde boekingen voor dit verhuurbedrijf.",
+    "bookingsHint": "Ingelogd als {email} bij {company}.",
+    "emptyTitle": "Nog geen boekingen",
+    "emptyDescription": "Eerder geboekt? Koppel die boeking met het e-mailadres dat je hebt gebruikt of met de bevestigingscode.",
+    "bookingFallback": "Boeking",
+    "loadErrorTitle": "Kan boekingen niet laden",
+    "linkTitle": "Boeking koppelen",
+    "linkHint": "Vul het e-mailadres in waarmee je hebt geboekt, of de bevestigingscode. Als we een match vinden sturen we een link per e-mail — we geven nooit prijs of een account bestaat.",
+    "linkEmail": "E-mailadres van boeking",
+    "linkToken": "Boekingscode",
+    "linkAction": "Link versturen",
+    "linkSent": "Als we een bijbehorende boeking vinden, sturen we een bevestigingslink per e-mail.",
+    "accountTitle": "Account",
+    "accountHint": "Log uit bij je account op deze site.",
+    "signOut": "Uitloggen",
+    "erase": "Mijn gegevens hier wissen",
+    "eraseConfirm": "Ja, wis mijn gegevens voor dit bedrijf",
+    "confirmTitle": "Je boeking wordt gekoppeld",
+    "confirmHint": "Even geduld terwijl we deze boeking aan je account koppelen.",
+    "confirmSignIn": "Log in met je gastaccount om het koppelen van deze boeking te voltooien.",
+    "confirmMissing": "Bevestigingscode ontbreekt",
+    "confirmMissingHint": "Open de link uit je e-mail opnieuw.",
+    "confirmError": "We konden deze link niet bevestigen",
+    "disabledTitle": "Gastaccounts zijn nog niet beschikbaar",
+    "disabledDescription": "Dit bedrijf heeft inloggen voor gasten nog niet ingeschakeld. Je kunt nog steeds boeken met je naam, e-mailadres en telefoonnummer.",
+    "auth": {
+      "popupClosed": "Inloggen is geannuleerd.",
+      "popupBlocked": "Je browser heeft het Google-venster geblokkeerd. Sta pop-ups toe en probeer het opnieuw.",
+      "differentProvider": "Dit e-mailadres logt al op een andere manier in. Gebruik in plaats daarvan je wachtwoord.",
+      "providerUnavailable": "Inloggen met Google is nog niet beschikbaar op deze site. Gebruik je e-mailadres en wachtwoord.",
+      "invalidEmail": "Vul een geldig e-mailadres in.",
+      "emailInUse": "Voor dat e-mailadres bestaat al een gastaccount. Log in plaats daarvan in.",
+      "weakPassword": "Gebruik een langer wachtwoord.",
+      "tooManyRequests": "Te veel pogingen. Probeer het over een paar minuten opnieuw.",
+      "invalidCredentials": "E-mailadres of wachtwoord is niet juist.",
+      "unknown": "Inloggen mislukt. Probeer het opnieuw.",
+      "googleDisabled": "Inloggen met Google is voor deze site nog niet ingeschakeld. Gebruik je e-mailadres en wachtwoord.",
+      "domainNotAuthorised": "Inloggen met Google is nog niet ingesteld voor dit webadres. Gebruik voorlopig je e-mailadres en wachtwoord."
+    },
+    "accountMenu": "Jouw account",
+    "profileNav": "Profiel",
+    "profileTitle": "Profiel",
+    "profileMeta": "Jouw gastaccount voor dit verhuurbedrijf.",
+    "linkCancel": "Annuleren",
+    "eraseTitle": "Mijn gegevens wissen",
+    "eraseHint": "Verwijdert je gastgegevens voor dit bedrijf en logt je uit. Andere bedrijven worden niet beïnvloed.",
+    "profileDetailsTitle": "Jouw gegevens",
+    "profileDetailsHint": "Wordt gebruikt om je boekingen bij dit bedrijf automatisch in te vullen.",
+    "profileFullName": "Volledige naam",
+    "profilePhone": "Telefoonnummer",
+    "profileDob": "Geboortedatum",
+    "profileSave": "Gegevens opslaan",
+    "profileNotLinked": "Je naam en telefoonnummer worden hier opgeslagen na je eerste boeking met dit e-mailadres. Al geboekt met een ander e-mailadres? Koppel die boeking via Mijn boekingen.",
+    "verifyTitle": "Verifieer je e-mailadres om je boekingen te zien",
+    "verifyHint": "We hebben een link gestuurd naar {email}. Open die en kom daarna hier terug. Totdat je e-mailadres is geverifieerd kunnen we je boekingen niet tonen en je naam en telefoonnummer niet opslaan.",
+    "verifyResend": "E-mail opnieuw versturen",
+    "verifySent": "E-mail verzonden. Controleer je inbox en spammap.",
+    "verifyDone": "Ik heb mijn e-mailadres geverifieerd",
+    "verifyStillPending": "Je e-mailadres is nog niet geverifieerd. Open de link in de e-mail en probeer het opnieuw.",
+    "verifyBanner": "Je account is nog niet actief. Verifieer {email} om je boekingen te zien en je opgeslagen gegevens te gebruiken.",
+    "verifyBannerAction": "E-mail verifiëren",
+    "profileEdit": "Gegevens bewerken",
+    "profileCancel": "Annuleren",
+    "profileEmail": "E-mailadres",
+    "profileEmpty": "Niet toegevoegd",
+    "bookingsUpcoming": "Aankomend",
+    "bookingsPast": "Afgelopen",
+    "ownerSignedOut": "Je bent uitgelogd bij de website-editor. Eigenaars- en gastsessies kunnen niet tegelijk openstaan in deze browser."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Aanbiedingen van {name}",
+      "slideAlt": "{name} banner {position}",
+      "slideLabel": "{position} van {count}",
+      "previous": "Vorige banner",
+      "next": "Volgende banner",
+      "goTo": "Toon banner {position}",
+      "presets": {
+        "airport": {
+          "script": "net geland?",
+          "highlight": "Ophalen op luchthaven",
+          "joiner": "binnen",
+          "boxed": "10 minuten",
+          "description": "Sla de wachtrij over: teken je contract op je telefoon en rijd weg met volledige verzekering"
+        },
+        "weekend": {
+          "script": "boek dit weekend",
+          "highlight": "Bespaar 20%",
+          "joiner": "op",
+          "boxed": "Weekendhuur",
+          "description": "Ophalen op vrijdag, inleveren op maandag. Gratis kinderzitje en extra bestuurder inbegrepen"
+        },
+        "roadtrip": {
+          "script": "jouw volgende roadtrip",
+          "highlight": "Begint hier",
+          "joiner": "wij geven je de",
+          "boxed": "Sleutels",
+          "description": "Gratis annuleren tot 24 uur voor ophalen, onbeperkte km en geen verborgen kosten"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Inbegrepen in elke prijs",
+      "title": "De prijs die je ziet is de prijs die je betaalt",
+      "description": "Geen verrassingen aan de balie. Dit zit altijd bij de prijs inbegrepen.",
+      "presets": {
+        "insurance": {
+          "title": "Basisverzekering",
+          "text": "Dekking voor aanrijding, diefstal en aansprakelijkheid.",
+          "tag": "Inbegrepen"
+        },
+        "mileage": {
+          "title": "Onbeperkte kilometers",
+          "text": "Rijd zo ver als je wilt, zonder kosten per kilometer.",
+          "tag": "Geen limieten"
+        },
+        "fuel": {
+          "title": "Vol-vol brandstofbeleid",
+          "text": "Haal de auto vol op en lever hem weer vol in.",
+          "tag": "Geen vooruitbetaalde tank"
+        },
+        "cancellation": {
+          "title": "Gratis annuleren",
+          "text": "Plannen gewijzigd? Annuleer kosteloos.",
+          "tag": "Flexibel"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Beoordelingen",
+      "title": "Wat bestuurders over ons zeggen",
+      "seeAll": "Bekijk alle {count, plural, one {# beoordeling} other {# beoordelingen}}",
+      "seeAllOn": "Bekijk alle {count, plural, one {# beoordeling} other {# beoordelingen}} op {source}",
+      "basedOn": "Gebaseerd op {count, plural, one {# beoordeling} other {# beoordelingen}}",
+      "basedOnSource": "Gebaseerd op {count, plural, one {# beoordeling} other {# beoordelingen}} op {source}",
+      "ratingAria": "Beoordeeld met {rating} van de 5",
+      "rented": "Gehuurd: {vehicle}",
+      "verified": "Geverifieerde huur",
+      "distributionAria": "Verdeling van beoordelingen",
+      "emptyTitle": "Nog geen beoordelingen",
+      "emptyText": "Gasten kunnen hun huur beoordelen zodra ze de auto hebben ingeleverd. Goedgekeurde beoordelingen verschijnen hier."
+    },
+    "app": {
+      "eyebrow": "Mobiele app",
+      "title": "Jouw boeking, altijd bij de hand",
+      "text": "Check online in, bekijk je ophaalgegevens en stuur ons een bericht, allemaal vanaf je telefoon.",
+      "platformBoth": "iOS & Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Scan om te downloaden",
+      "qrAlt": "QR-code om de app te downloaden",
+      "appStore": {
+        "prefix": "Download in de",
+        "name": "App Store",
+        "aria": "Download in de App Store",
+        "unavailable": "Nog niet beschikbaar in de App Store"
+      },
+      "googlePlay": {
+        "prefix": "Ontdek op",
+        "name": "Google Play",
+        "aria": "Ontdek op Google Play",
+        "unavailable": "Nog niet beschikbaar op Google Play"
+      },
+      "comingSoon": "Binnenkort beschikbaar"
+    },
+    "locations": {
+      "eyebrow": "Locaties",
+      "title": "{count, plural, one {Ons kantoor} other {Onze kantoren}}",
+      "description": "{count, plural, one {Haal je auto hier op en lever hem hier weer in.} other {Haal je auto op en lever hem in bij een van onze kantoren.}}",
+      "directions": "Routebeschrijving",
+      "directionsTo": "Routebeschrijving naar {name}",
+      "call": "Bellen"
+    },
+    "faq": {
+      "eyebrow": "Veelgestelde vragen",
+      "title": "Vragen voor het boeken",
+      "description": "Vind je je antwoord niet? Neem contact op, we helpen je graag."
+    },
+    "contact": {
+      "title": "Vragen? Spreek met een medewerker.",
+      "description": "Stuur ons een bericht of bel ons, dan helpen we je de juiste auto te vinden.",
+      "whatsapp": "WhatsApp",
+      "email": "Mail ons",
+      "whatsappMessage": "Hallo {name}, ik heb een vraag over het huren van een auto."
+    },
+    "nav": {
+      "reviews": "Beoordelingen",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "app": "App",
+      "branches": "Locaties"
+    },
+    "footer": {
+      "contact": "Contact",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Wij accepteren",
+      "rating": "{score} · {count, plural, one {# beoordeling} other {# beoordelingen}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Contant"
+    }
+  },
+  "siteEditor": {
+    "aria": "Website-editor",
+    "title": "Website-editor",
+    "signOut": "Uitloggen",
+    "tabsAria": "Editorsecties",
+    "status": {
+      "draft": "Concept",
+      "published": "Live",
+      "paused": "Gepauzeerd"
+    },
+    "tabs": {
+      "sections": "Secties",
+      "design": "Ontwerp",
+      "settings": "Instellingen",
+      "legal": "Juridisch"
+    },
+    "contentLanguage": "Bewerkingstaal",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Alle secties",
+    "sections": {
+      "company": "Bedrijf",
+      "fleet": "Auto's",
+      "included": "Inbegrepen in elke prijs",
+      "reviews": "Beoordelingen",
+      "app": "Mobiele app",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "hero": "Banners & zoeken",
+      "branches": "Locaties"
+    },
+    "sectionsHint": "Schakel secties in of uit en wijzig hun volgorde. Open een sectie om de inhoud te bewerken.",
+    "orderHint": "Auto's worden altijd getoond. Kantoren komen uit je vestigingen in Benwer admin.",
+    "hiddenUntilContent": "Verborgen totdat je inhoud toevoegt",
+    "summary": {
+      "banners": "{count, plural, one {# banner} other {# banners}}",
+      "bannersEmpty": "Nog geen banners, merkkleur wordt getoond",
+      "company": "Koptekst, introductie en contactgegevens",
+      "fleet": "Uit je Benwer-vloot",
+      "included": "{count, plural, one {# item} other {# items}}",
+      "reviews": "{count, plural, one {# beoordeling} other {# beoordelingen}}",
+      "app": "Winkellinks en QR-code",
+      "locations": "{count, plural, one {# kantoor} other {# kantoren}} uit Benwer",
+      "faq": "{count, plural, one {# vraag} other {# vragen}}",
+      "contactWhatsapp": "WhatsApp, telefoon en openingstijden",
+      "contact": "Telefoon en e-mail"
+    },
+    "unsaved": "Niet-opgeslagen wijzigingen",
+    "saved": "Alle wijzigingen opgeslagen",
+    "discard": "Verwerpen",
+    "save": "Wijzigingen opslaan",
+    "common": {
+      "moveUp": "{item} omhoog verplaatsen",
+      "moveDown": "{item} omlaag verplaatsen",
+      "remove": "{item} verwijderen",
+      "show": "{item} tonen"
+    },
+    "banners": {
+      "title": "Banners",
+      "description": "Maximaal {max} dia's. Lege velden gebruiken de standaardtekst in het grijs.",
+      "empty": "Geen banners. Het bannergedeelte toont je achtergrondkleur.",
+      "item": "Banner {position}",
+      "image": "Afbeelding",
+      "imageHint": "Upload een brede afbeelding, ongeveer 1600 × 560 px. JPG, PNG of WebP tot 25 MB. Een transparante PNG komt op je bannerkleur te liggen.",
+      "add": "Banner toevoegen",
+      "fields": {
+        "script": "Handgeschreven regel",
+        "highlight": "Uitgelichte titel",
+        "joiner": "Kort verbindingswoord",
+        "boxed": "Titel in kader",
+        "description": "Beschrijving"
+      },
+      "colorsTitle": "Bannerkleuren",
+      "colorsDescription": "Gebruikt voor elke banner. Elke kleur werkt voor de achtergrond.",
+      "resetColors": "Standaardkleuren herstellen",
+      "colors": {
+        "background": "Achtergrond",
+        "text": "Tekst",
+        "highlight": "Accentvak",
+        "highlightText": "Accenttekst",
+        "box": "Wit vak",
+        "boxText": "Tekst in wit vak",
+        "script": "Verbindingstekst"
+      },
+      "noImage": "Nog geen afbeelding",
+      "uploadImage": "Afbeelding uploaden",
+      "replaceImage": "Afbeelding vervangen",
+      "tooLarge": "Dat bestand is groter dan 25 MB. Kies een kleinere afbeelding.",
+      "uploadFailed": "Uploaden mislukt. Probeer het opnieuw."
+    },
+    "company": {
+      "title": "Bedrijfskop",
+      "description": "Je naam, een koptekst en een korte introductie.",
+      "headline": "Koptekst",
+      "headlinePlaceholder": "Huur een auto bij {name}",
+      "intro": "Introductie",
+      "introHint": "Een of twee zinnen over je bedrijf.",
+      "contactTitle": "Contactgegevens",
+      "contactDescription": "Getoond in de koptekst, locaties en contactsecties.",
+      "showPhone": "Telefoonnummer tonen",
+      "showEmail": "E-mailadres tonen",
+      "showAddress": "Adres tonen"
+    },
+    "included": {
+      "title": "Inbegrepen in elke prijs",
+      "description": "Maximaal 6 beloftes die altijd bij je prijs inbegrepen zijn.",
+      "accuracy": "Vermeld alleen wat geldt voor elke huur. De standaardtekst is een suggestie; controleer of deze overeenkomt met je huurvoorwaarden.",
+      "item": "Item {position}",
+      "icon": "Icoon",
+      "itemTitle": "Titel",
+      "itemText": "Beschrijving",
+      "itemTag": "Accentlabel",
+      "tagHint": "Kort label in het groen, zoals “Eigen risico € 1.000”.",
+      "presets": {
+        "insurance": "Basisverzekering",
+        "mileage": "Onbeperkte km",
+        "fuel": "Vol-vol brandstof",
+        "cancellation": "Gratis annuleren"
+      },
+      "addCustom": "Aangepast item"
+    },
+    "icons": {
+      "shield": "Schild",
+      "gauge": "Snelheidsmeter",
+      "fuel": "Brandstofpomp",
+      "calendar_check": "Kalender",
+      "check": "Vinkje",
+      "car": "Auto",
+      "users": "Personen",
+      "baby": "Kinderzitje",
+      "plane": "Vliegtuig",
+      "key": "Sleutel"
+    },
+    "reviews": {
+      "title": "Gastbeoordelingen",
+      "description": "Gasten beoordelen hun huur na het inleveren van de auto. Alleen beoordelingen die jij goedkeurt worden getoond.",
+      "summary": "{average} gemiddeld uit {count, plural, one {# goedgekeurde beoordeling} other {# goedgekeurde beoordelingen}}",
+      "none": "Nog geen goedgekeurde beoordelingen. Gasten zien een korte melding totdat je er een goedkeurt.",
+      "manage": "Beoordelingen goedkeuren of verbergen in Benwer admin",
+      "demo": "Dit zijn demobeoordelingen op dit testbedrijf totdat je echte beoordelingen goedkeurt in Benwer admin."
+    },
+    "app": {
+      "benwerAppTitle": "Benwer Cars-app",
+      "benwerApp": "Toon de Benwer Cars-app",
+      "benwerAppDescription": "Gasten krijgen de gratis Benwer Cars-app. De knoppen linken naar de officiële winkels en de QR-code opent jouw bedrijf in de app.",
+      "storesWithBenwerApp": "Alleen nodig als je bedrijf een eigen app heeft. Zolang de Benwer Cars-app aan staat, gebruikt de sectie die winkellinks.",
+      "storesTitle": "Winkellinks",
+      "storesDescription": "Links naar je eigen app. Een ontbrekende winkel wordt grijs weergegeven. Zonder links en met de Benwer Cars-app uit blijft de sectie verborgen.",
+      "ios": "App Store-link",
+      "android": "Google Play-link",
+      "qrHint": "De QR-code opent de Google Play-link, of de App Store-link als er geen Google Play-link is.",
+      "copyTitle": "Tekst",
+      "title": "Titel",
+      "text": "Beschrijving"
+    },
+    "faq": {
+      "title": "Vragen",
+      "description": "Maximaal {max} vragen met korte antwoorden.",
+      "empty": "Nog geen vragen. De sectie blijft verborgen totdat je er een toevoegt.",
+      "item": "Vraag {position}",
+      "question": "Vraag",
+      "answer": "Antwoord",
+      "incompleteHint": "Vragen zonder antwoord worden niet op de site getoond.",
+      "add": "Vraag toevoegen"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Hoe klanten je bereiken. Telefoon en e-mail komen uit de bedrijfssectie.",
+      "whatsapp": "WhatsApp-nummer",
+      "whatsappHint": "Voeg de landcode toe. Laat leeg om de WhatsApp-knop te verbergen.",
+      "hours": "Wanneer je antwoordt",
+      "hoursPlaceholder": "Wij antwoorden elke dag van 08:00 tot 22:00.",
+      "payments": "Betaalmethoden",
+      "paymentsHint": "Getoond in je voettekst."
+    },
+    "design": {
+      "colorTitle": "Merkkleur",
+      "colorDescription": "Gebruikt voor knoppen, links en accenten op je site. De bannerachtergrond volgt deze kleur; je kunt die nog steeds verfijnen onder Banners.",
+      "presets": "Voorgestelde kleuren",
+      "custom": "Aangepaste kleur",
+      "customHint": "Gebruik een hex-code, zoals #4f46e5.",
+      "picker": "Kies een kleur",
+      "lowContrast": "Deze kleur is te licht voor witte tekst op knoppen. Kies een donkerdere kleur, anders mislukt het opslaan.",
+      "fontTitle": "Lettertype",
+      "fontDescription": "Gebruikt voor alle tekst op je website.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Strak en modern"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klassiek en elegant"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Krachtig en vriendelijk"
+        }
+      },
+      "cornersTitle": "Hoeken",
+      "cornersDescription": "Afgeronde of rechte hoeken op knoppen, kaarten en velden op je website.",
+      "corners": {
+        "round": {
+          "name": "Afgerond",
+          "hint": "Zacht en vriendelijk"
+        },
+        "square": {
+          "name": "Recht",
+          "hint": "Strak en minimalistisch"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Website",
+      "websiteEnabled": "Boekingswebsite aan",
+      "websiteEnabledHint": "Wanneer dit aan staat, kunnen gasten je gepubliceerde site bekijken en boeken. Aanzetten publiceert ook je opgeslagen wijzigingen. Dit is dezelfde schakelaar als in Benwer admin.",
+      "bookingTitle": "Boekingen",
+      "bookingDescription": "Hoe klanten via je site boeken.",
+      "bookingMode": "Boekingsmodus",
+      "mode": {
+        "instant": "Direct",
+        "request": "Op aanvraag"
+      },
+      "modeHint": {
+        "instant": "Boekingen worden direct bevestigd.",
+        "request": "Je accepteert of weigert elke boeking binnen de reactietijd."
+      },
+      "minLead": "Minimale aanlooptijd",
+      "requestWindow": "Tijd om te reageren",
+      "hoursUnit": "In uren",
+      "differentReturnTitle": "Inleveren op een andere locatie",
+      "differentReturnLabel": "Laat gasten op een andere locatie inleveren",
+      "differentReturnHint": "Gasten kiezen een inleverlocatie tijdens het zoeken. De enkele-reistoeslag uit Benwer admin wordt aan de prijs toegevoegd.",
+      "differentReturnOff": "Schakel enkele-reisverhuur in Benwer admin in om dit aan te bieden."
+    },
+    "savedNotPublished": "Opgeslagen, nog niet gepubliceerd",
+    "publish": "Publiceren",
+    "branding": {
+      "logosTitle": "Logo's",
+      "logosDescription": "Dit is je bedrijfslogo. Als je het hier wijzigt, wordt het ook bijgewerkt in Benwer admin en de Benwer Cars-app.",
+      "headerLogo": "Logo in bovenbalk",
+      "headerLogoHint": "Getoond in de balk bovenaan elke pagina. Een breed logo werkt het best.",
+      "companyLogo": "Logo bedrijfssectie",
+      "companyLogoHint": "Getoond boven je koptekst, vóór de bedrijfssectie.",
+      "usingCompanyLogo": "Gebruikt je bedrijfslogo",
+      "upload": "Logo uploaden",
+      "replace": "Vervangen",
+      "uploadFailed": "Het logo kon niet worden geüpload. Gebruik een PNG-, JPG- of WebP-afbeelding en probeer het opnieuw.",
+      "tooLarge": "Deze afbeelding is groter dan 25 MB.",
+      "backgroundTitle": "Pagina-achtergrond",
+      "backgroundDescription": "De kleur achter de inhoud van je website.",
+      "backgroundPresets": "Voorgestelde achtergronden",
+      "backgroundCustom": "Aangepaste achtergrond",
+      "backgroundPicker": "Kies een achtergrondkleur",
+      "needsApi": "Beschikbaar zodra de Benwer API-update voor websites live staat.",
+      "headerLogoDark": "Logo in bovenbalk — donkere modus",
+      "companyLogoDark": "Logo bedrijfssectie — donkere modus",
+      "squareLogo": "Vierkant logo (1:1)",
+      "squareLogoHint": "Verplicht om te publiceren. Getoond naast je bedrijfsnaam op kaarten, zoekresultaten en mobiele lijsten.",
+      "cropTitle": "Logo bijsnijden naar 2:1",
+      "cropHint": "Sleep en zoom zodat je logo netjes binnen het 2:1-kader past.",
+      "cropZoom": "Zoom",
+      "cropCancel": "Annuleren",
+      "cropSave": "Bijsnijden & uploaden",
+      "darkLogoHint": "Optioneel. Getoond wanneer bezoekers de donkere modus gebruiken. Gebruik een lichte of witte versie van je logo.",
+      "darkNeedsApi": "Logo's voor donkere modus zijn beschikbaar zodra de Benwer API-update hiervoor live staat.",
+      "logo": "Logo (2:1)",
+      "logoHint": "Vereist om te publiceren. Eén logo voor lichte en donkere modus: je merkkleur als achtergrond met de naam in het wit, bijgesneden op 2:1."
+    },
+    "legal": {
+      "hint": "Elke pagina begint met de standaardtekst, zodat je alleen de delen hoeft aan te passen die je wilt wijzigen. Voeg een sectie toe voor elke subtitel. “Terug naar standaardtekst” maakt je wijzigingen ongedaan.",
+      "needsApi": "Beschikbaar zodra de Benwer API-update voor websites live staat.",
+      "privacyTitle": "Privacybeleid",
+      "privacyDescription": "Getoond onder Privacy in de voettekst van je website.",
+      "termsTitle": "Algemene voorwaarden",
+      "termsDescription": "Getoond onder Voorwaarden in de voettekst van je website.",
+      "text": "Tekst",
+      "intro": "Introductie",
+      "subtitle": "Subtitel",
+      "sectionItem": "Sectie {position}",
+      "addSection": "Sectie toevoegen",
+      "reset": "Terug naar standaardtekst",
+      "pageTitle": "Paginatitel",
+      "privacyLooksLikeTerms": "Je privacybeleid bevat dezelfde tekst als de voorwaarden. Gebruik \"Terug naar standaardtekst\" onder Privacybeleid, of schrijf je eigen privacytekst en sla op."
+    },
+    "preview": "Voorbeeld",
+    "fullscreen": "Editor op volledig scherm",
+    "exitFullscreen": "Voorbeeld naast editor tonen",
+    "previewBarAria": "Voorbeeldbediening",
+    "previewing": "Je bekijkt een voorbeeld van je website",
+    "backToEdit": "Bewerken"
+  },
+  "marketplaceBanners": {
+    "aria": "Benwer hoogtepunten",
+    "slideLabel": "{position} van {count}",
+    "goTo": "Toon banner {position}",
+    "previous": "Vorige banner",
+    "next": "Volgende banner",
+    "trust": {
+      "script": "boek met vertrouwen",
+      "highlight": "Geverifieerde bedrijven",
+      "joiner": "en",
+      "boxed": "Veilig boeken",
+      "description": "Echte beoordelingen, duidelijke voorwaarden en digitale contracten die je op je telefoon ondertekent"
+    },
+    "prices": {
+      "script": "één zoekopdracht",
+      "highlight": "Vergelijk prijzen",
+      "joiner": "van",
+      "boxed": "Partnerbedrijven",
+      "description": "Bekijk prijzen, verzekeringen en borgsommen van partnerverhuurbedrijven naast elkaar voordat je boekt"
+    },
+    "anywhere": {
+      "script": "vind jouw auto",
+      "highlight": "Door heel Málaga",
+      "joiner": "met",
+      "boxed": "Lokale verhuurbedrijven",
+      "description": "Partnerverhuurbedrijven in plaatsen door heel de provincie Málaga, allemaal op één plek"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Gepubliceerd door {name}.",
+    "cookies": {
+      "title": "Cookiebeleid",
+      "lede": "Hoe {name} cookies en vergelijkbare technologieën op deze website gebruikt.",
+      "updated": "Gepubliceerd door {name}.",
+      "sections": [
+        {
+          "title": "Wat wij gebruiken",
+          "body": "Cookies zijn kleine tekstbestanden die op je apparaat worden opgeslagen. Deze website gebruikt ook vergelijkbare opslag, zoals local storage, om je keuzes, winkelwagen en inlogsessie te onthouden."
+        },
+        {
+          "title": "Strikt noodzakelijk",
+          "body": "Een taalcookie zorgt ervoor dat de site jouw taal toont, en je keuze in de cookiebanner wordt opgeslagen zodat we dit niet bij elk bezoek opnieuw vragen. Als je inlogt, slaat de inlogprovider een sessie op je apparaat op zodat je ingelogd blijft. Kaartbetalingen worden verwerkt door Stripe, dat eigen cookies kan plaatsen om fraude te voorkomen."
+        },
+        {
+          "title": "Optionele cookies",
+          "body": "Optionele cookies (bijvoorbeeld voor statistieken) blijven uit tenzij je kiest voor Alles accepteren. Deze website plaatst vandaag geen analyse- of marketingcookies."
+        },
+        {
+          "title": "Cookies beheren",
+          "body": "Gebruik de link voor cookie-instellingen in de voettekst om je keuze te wijzigen. Je kunt cookies en sitegegevens ook verwijderen in je browser. Het blokkeren van strikt noodzakelijke opslag kan je uitloggen of je winkelwagen leegmaken."
+        },
+        {
+          "title": "Meer informatie",
+          "body": "Bekijk het privacybeleid voor hoe {name} met persoonsgegevens omgaat, of gebruik de contactgegevens in de voettekst."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Ondersteuning",
+    "fabCloseLabel": "Ondersteuningsmenu sluiten",
+    "messageAction": "Direct bericht",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Hallo, ik heb een vraag over Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "De Benwer Cars-app",
+    "metaDescription": "Boek auto's, houd al je reizen op één plek en ontvang updates over je boeking op je telefoon.",
+    "eyebrow": "Mobiele app",
+    "title": "Jouw huurauto, op zak",
+    "description": "Boek auto's bij lokale bedrijven, houd elke reis op één plek, betaal en ontvang updates op je telefoon.",
+    "featureTrips": "Al je reizen, van alle bedrijven",
+    "featureBooking": "Boek en betaal in een paar tikken",
+    "featurePush": "Updates wanneer je boeking verandert",
+    "unavailableTitle": "De app komt eraan",
+    "unavailableDescription": "De Benwer Cars-app staat nog niet in de winkels. Je kunt nog steeds op het web boeken.",
+    "browse": "Auto's bekijken",
+    "badgeTitle": "Download de Benwer Cars-app",
+    "companyText": "Boek {company} op je telefoon en houd je reizen op één plek.",
+    "bookingText": "Bekijk deze boeking, betaal en ontvang updates op je telefoon."
+  }
+}

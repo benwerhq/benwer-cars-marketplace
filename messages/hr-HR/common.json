@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Nešto je pošlo po zlu. Pokušajte ponovno.",
+    "network": "Nije moguće povezati se s poslužiteljem. Provjerite internetsku vezu.",
+    "vehicle": {
+      "not_found": "Ovo vozilo više nije dostupno."
+    },
+    "company": {
+      "not_found": "Ova tvrtka nije pronađena."
+    },
+    "reservation": {
+      "overlap": "Ovo vozilo je već rezervirano za odabrane datume.",
+      "not_found": "Rezervacija nije pronađena. Provjerite poveznicu za potvrdu.",
+      "invalid_dates": "Datum povrata mora biti nakon datuma preuzimanja.",
+      "min_lead": "Preuzimanje je prerano. Odaberite kasniji datum.",
+      "terms_required": "Prihvatite uvjete najma za nastavak.",
+      "max_open_requests": "Već imate dva otvorena zahtjeva. Povucite jedan prije slanja novog.",
+      "request_expired": "Ovaj zahtjev je istekao. Započnite novi.",
+      "not_cancellable": "Ovu rezervaciju više nije moguće otkazati putem interneta."
+    },
+    "booking": {
+      "payment_not_required": "Za ovu rezervaciju nije potrebno online plaćanje.",
+      "payment_window_elapsed": "Rok za plaćanje od 15 minuta je istekao. Započnite novu rezervaciju ako vam vozilo i dalje treba.",
+      "payment_not_open": "Plaćanje za ovu rezervaciju nije dostupno. Pokušajte ponovno ili kontaktirajte tvrtku."
+    },
+    "rental_payments": {
+      "already_paid": "Ova rezervacija je već plaćena."
+    },
+    "site": {
+      "not_found": "Ova web-stranica za najam vozila nije pronađena.",
+      "paused": "Ova tvrtka trenutačno ne prima rezervacije.",
+      "not_published": "Ova web-stranica još nije otvorena za rezervacije."
+    },
+    "website_domain": {
+      "not_found": "Ova web-adresa nije povezana ni s jednom tvrtkom za najam vozila."
+    },
+    "staff": {
+      "unauthenticated": "Prijavite se kao vlasnik tvrtke za uređivanje ove web-stranice.",
+      "forbidden": "Nemate dopuštenje za uređivanje ove web-stranice."
+    },
+    "guest": {
+      "not_configured": "Korisnički računi za goste još nisu dostupni za ovu tvrtku.",
+      "not_linked": "Nijedna rezervacija još nije povezana s ovim računom.",
+      "invalid_token": "Ova poveznica za potvrdu nije valjana ili je istekla.",
+      "unauthenticated": "Prijavite se za nastavak."
+    },
+    "pricing": {
+      "min_days": "Ovi datumi su prekratki za sezonu. Odaberite dulji najam.",
+      "max_days": "Ovi datumi su predugi za sezonu. Odaberite kraći najam.",
+      "rental_too_long": "Ovaj najam je predug za online rezervaciju. Kontaktirajte tvrtku."
+    },
+    "contact": {
+      "not_configured": "E-adresa za kontakt još nije postavljena. Pokušajte ponovno kasnije.",
+      "delivery_failed": "Trenutačno nismo mogli poslati vašu poruku. Pokušajte ponovno kasnije."
+    }
+  },
+  "nav": {
+    "home": "Početna",
+    "cars": "Vozila",
+    "companies": "Tvrtke",
+    "contact": "Kontakt",
+    "privacy": "Privatnost",
+    "terms": "Uvjeti",
+    "cookies": "Kolačići",
+    "mainAria": "Glavna navigacija",
+    "footerAria": "Navigacija u podnožju",
+    "menu": "Izbornik"
+  },
+  "meta": {
+    "siteTitle": "Pronađite lokalni najam vozila",
+    "siteDescription": "Usporedite vozila partnerskih tvrtki za najam diljem pokrajine Málaga, a zatim nastavite na web-stranici tvrtke."
+  },
+  "notFound": {
+    "title": "Stranica nije pronađena",
+    "description": "Ta stranica ne postoji. Vratite se i potražite vozilo.",
+    "action": "Natrag na početnu"
+  },
+  "hostUnknown": {
+    "title": "Ova web-stranica nije dostupna",
+    "description": "Provjerite upisanu adresu. Ova stranica ne pripada nijednoj Benwer Cars web-stranici za najam vozila."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, početna",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Prebaci na tamni način",
+    "toLight": "Prebaci na svijetli način"
+  },
+  "locale": {
+    "label": "Jezik",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Pretraži jezike",
+    "noResults": "Nema podudarajućih jezika"
+  },
+  "footer": {
+    "tagline": "Usporedite vozila partnerskih tvrtki za najam.",
+    "trust": "Partnerski vozni parkovi · Málaga · Najam na stranici tvrtke",
+    "poweredBy": "Rezervirano putem Benwer Cars",
+    "explore": "Istražite",
+    "legal": "Pravne informacije",
+    "copyright": "© {year} Benwer Cars. Sva prava pridržana."
+  },
+  "cookieBanner": {
+    "body": "Koristimo kolačić za jezik i pamtimo ovaj odabir na vašem uređaju. Izborni kolačići ostaju isključeni osim ako ih ne prihvatite.",
+    "policy": "Pravila o kolačićima",
+    "necessary": "Odbij sve",
+    "accept": "Prihvati sve",
+    "title": "Cijenimo vašu privatnost",
+    "settings": "Postavke kolačića"
+  },
+  "actions": {
+    "retry": "Pokušaj ponovno",
+    "back": "Natrag",
+    "viewAll": "Prikaži sve",
+    "close": "Zatvori"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Pozivni broj države, {country} {dial}",
+    "search": "Pretraži države",
+    "countries": "Države",
+    "noResults": "Nema podudarnih država",
+    "invalid": "Unesite valjani telefonski broj.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Očisti datum"
+  },
+  "guestNotifications": {
+    "title": "Obavijesti",
+    "openLabel": "Otvori obavijesti",
+    "unreadCount": "{count} nepročitanih obavijesti",
+    "emptyTitle": "Još nema obavijesti",
+    "emptyBody": "Ovdje će se prikazivati novosti o rezervacijama, podsjetnici za plaćanje i obavijesti o preuzimanju.",
+    "error": "Nije moguće učitati obavijesti.",
+    "retry": "Pokušaj ponovno",
+    "markAllRead": "Označi sve kao pročitano",
+    "dismiss": "Odbaci",
+    "loadMore": "Učitaj više",
+    "enablePush": "Omogući obavijesti preglednika",
+    "pushEnabled": "Obavijesti preglednika su omogućene",
+    "pushBlocked": "Obavijesti preglednika su blokirane u postavkama",
+    "disablePush": "Onemogući obavijesti preglednika"
+  }
+}

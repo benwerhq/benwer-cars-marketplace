@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Spoločnosti",
+    "title": "Nájdite si ideálne auto",
+    "subtitle": "Porovnajte autá od partnerských autopožičovní a potom pokračujte na webe spoločnosti.",
+    "searchPlaceholder": "Kam máte namierené?",
+    "eyebrow": "Málaga · Costa del Sol",
+    "companiesHeading": "Vybrané spoločnosti",
+    "companiesSubtitle": "Partnerské autopožičovne v celej provincii Málaga — flotily, s ktorými spolupracujeme, nie neoverené inzeráty",
+    "trustLocal": "Partnerské spoločnosti",
+    "trustGuest": "Prenájom na webe spoločnosti",
+    "trustArea": "Provincia Málaga",
+    "viewAllCompanies": "Zobraziť všetky spoločnosti"
+  },
+  "featuredCars": {
+    "viewAllCount": "Zobraziť všetkých {count} áut",
+    "eyebrow": "Autá",
+    "title": "Dostupné autá",
+    "subtitle": "Všetky autá zverejnené partnerskými spoločnosťami vedľa seba. Vyberte si jedno a rezervujte na webe spoločnosti.",
+    "viewAll": "Hľadať všetky autá",
+    "seeAll": "Zobraziť všetko",
+    "emptyTitle": "Zatiaľ nie sú uvedené žiadne autá",
+    "emptyHint": "Verejné flotily sa tu zobrazia, keď ich spoločnosti zverejnia."
+  },
+  "whatYouGet": {
+    "eyebrow": "Pre autopožičovne",
+    "title": "Čo získate",
+    "subtitle": "Jedno riešenie pre kanceláriu, parkovisko aj cestovateľov hľadajúcich v Málage.",
+    "admin": {
+      "title": "Kompletný administratívny systém",
+      "body": "Spravujte autá, ceny, dostupnosť a rezervácie z jedného prehľadného panela — toho istého katalógu, z ktorého čerpá trhovisko."
+    },
+    "mobile": {
+      "title": "Mobilná aplikácia pre zamestnancov",
+      "body": "Odovzdávajte a preberajte autá a sledujte dnešné rezervácie priamo z parkoviska."
+    },
+    "storefront": {
+      "title": "Značková webová prezentácia",
+      "body": "Zápis na trhovisku plus vaša vlastná webová stránka a subdoména."
+    },
+    "preview": {
+      "utilisation": "Využitie",
+      "utilisationValue": "82 %",
+      "pickups": "Dnešné vyzdvihnutia",
+      "pickupsValue": "14",
+      "revenue": "Tento mesiac",
+      "revenueValue": "9,4 tis. €",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Prehľad",
+      "navFleet": "Flotila",
+      "navCalendar": "Kalendár",
+      "navReservations": "Rezervácie",
+      "calendarTitle": "Dostupnosť",
+      "calendarMonth": "Najbližšie 2 týždne",
+      "viaBenwer": "Cez Benwer",
+      "direct": "Priamo",
+      "free": "Voľné",
+      "carA": "Kompakt",
+      "carB": "Mestské auto",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Dnes",
+      "phoneDate": "Pondelok",
+      "pickUp": "Vyzdvihnutie",
+      "return": "Vrátenie",
+      "checkedOut": "Odovzdané",
+      "due": "Na vrátenie",
+      "tabToday": "Dnes",
+      "tabFleet": "Flotila",
+      "tabScan": "Skenovať",
+      "storeName": "Vaša spoločnosť",
+      "storeNavCars": "Autá",
+      "storeNavContact": "Kontakt",
+      "storeHeadline": "Prenajmite si auto v Málage",
+      "storeSearch": "Vyzdvihnutie a termíny",
+      "storeSearchCta": "Hľadať",
+      "storePrice": "Zobraziť ceny",
+      "carE": "Hatchback",
+      "carF": "Kombi"
+    }
+  },
+  "faq": {
+    "eyebrow": "Často kladené otázky",
+    "title": "Pred rezerváciou",
+    "subtitle": "Partnerské flotily, ako funguje rezervácia a čo Benwer zabezpečuje — a čo nie.",
+    "items": {
+      "partners": {
+        "question": "Sú tieto autá od skutočných autopožičovní?",
+        "answer": "Áno. Každá ponuka je verejné vozidlo od partnera Benwer — skutočnej autopožičovne, s ktorou spolupracujeme, nie neoverený súkromný inzerát. Ak spoločnosť alebo vozidlo nie je na platforme zverejnené, tu sa nezobrazí."
+      },
+      "booking": {
+        "question": "Rezervujem a platím na Benwer?",
+        "answer": "Nie. Tu porovnáte partnerské flotily a potom pokračujete na web autopožičovne, kde potvrdíte prenájom, zálohu a vyzdvihnutie. Benwer na tomto trhovisku platby neprijíma."
+      },
+      "photos": {
+        "question": "Môžem dôverovať fotografiám a dostupnosti?",
+        "answer": "Ponuky používajú verejné fotografie a dostupnosť, ktoré zverejňuje partnerská spoločnosť — rovnaký katalóg, ktorý spravuje v administrácii. Ak vozidlo zatiaľ nemá verejnú fotografiu, zobrazíme prázdny stav namiesto ilustračnej fotky iného auta. Konečná dostupnosť sa potvrdzuje na webe spoločnosti."
+      },
+      "account": {
+        "question": "Potrebujem účet?",
+        "answer": "Na vyhľadávanie nie je potrebný žiadny účet. Ak nám pošlete kontaktnú správu, vaše údaje použijeme len na odpoveď."
+      },
+      "safety": {
+        "question": "Kto zodpovedá za prenájom?",
+        "answer": "Zmluva je uzavretá medzi vami a partnerskou autopožičovňou. Pred potvrdením si prečítajte jej podmienky. Benwer vám pomáha nájsť vozidlo z partnerskej flotily; vozidlá sám neprenajíma ani tu neprijíma platby."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Aplikácia Benwer Cars",
+    "description": "Získajte Benwer Cars do svojho telefónu. Aplikácia pre Android je v ranom testovaní na Google Play — pridajte sa a pomôžte ju vylepšiť."
+  },
+  "partners": {
+    "eyebrow": "Pre autopožičovne",
+    "title": "Premeňte voľné dni na rezervácie",
+    "description": "Cestovatelia už na Benwer hľadajú autá v Málage. Zverejnite svoju flotilu raz a zaplňte dni, ktoré by inak zostali neobsadené.",
+    "cta": "Zistiť viac",
+    "ctaAria": "Zistiť viac na marketingovej stránke Benwer (otvorí sa na novej karte)",
+    "demo": "Zobraziť živé demo",
+    "demoAria": "Zobraziť živé demo (otvorí sa na novej karte)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Prenájom áut",
+    "companyDescription": "Prenajmite si auto od {name} v lokalite {location}.",
+    "companyDescriptionPlain": "Prenajmite si auto od {name}.",
+    "companyFallback": "Prenájom áut",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Prenajmite si {brand} {model} od {company}.",
+    "carDescriptionSpecs": "Prenajmite si {brand} {model} — {seats, plural, one {# miesto} few {# miesta} other {# miest}}, {transmission}.",
+    "carsTitle": "Prenájom áut v celej provincii Málaga"
+  },
+  "tenant": {
+    "notFoundTitle": "Spoločnosť sa nenašla",
+    "notFoundDescription": "Túto prezentáciu sa nepodarilo načítať.",
+    "loadErrorTitle": "Podrobnosti o spoločnosti nie sú dostupné",
+    "loadErrorDescription": "Túto prezentáciu sa nepodarilo načítať zo živého katalógu. Skúste to znova — pri výpadku API nezobrazujeme zástupné autá.",
+    "logoAlt": "Logo {name}"
+  },
+  "howItWorks": {
+    "eyebrow": "Tri kroky",
+    "title": "Ako to funguje",
+    "subtitle": "Porovnajte partnerské flotily v celej Málage a potom rezervujte priamo u spoločnosti. Účet Benwer nepotrebujete.",
+    "stepLabel": "Krok {number}",
+    "searchTitle": "Vyberte termín a miesto",
+    "searchBody": "Zvoľte mesto na Costa del Sol a dni, ktoré potrebujete. Zobrazia sa len overené partnerské flotily.",
+    "compareTitle": "Porovnajte skutočné autá",
+    "compareBody": "Počet miest, prevodovka, fotografie a denná sadzba vedľa seba od každého partnera.",
+    "continueTitle": "Rezervujte u spoločnosti",
+    "continueBody": "Potvrďte vyzdvihnutie, poistenie a platbu priamo s autopožičovňou, ktorá vozidlo vlastní.",
+    "cta": "Začať vyhľadávať",
+    "preview": {
+      "place": "Letisko Málaga",
+      "dates": "Pia → Pia · 7 dní",
+      "carA": "Kompaktné auto",
+      "carASpecs": "4 miesta · Manuál",
+      "carB": "Rodinné SUV",
+      "carBSpecs": "5 miest · Automat",
+      "confirmed": "Rezervácia potvrdená",
+      "confirmedDetail": "Vyzdvihnutie o 10:00",
+      "example": "Príklad"
+    }
+  },
+  "search": {
+    "locationLabel": "Miesto vyzdvihnutia",
+    "locationPlaceholder": "Hľadať lokality",
+    "locationEmpty": "Žiadna zodpovedajúca lokalita",
+    "allLocations": "Všetky lokality",
+    "allLocationsHint": "Každé mesto s dostupnými autami",
+    "provinceSelected": "Všetky lokality",
+    "provinceHint": "Každé mesto s dostupnými autami",
+    "pickupLabel": "Vyzdvihnutie",
+    "dropoffLabel": "Vrátenie",
+    "pickupPlaceholder": "Pridať dátum",
+    "dropoffPlaceholder": "Pridať dátum",
+    "pickupTrigger": "Dátum vyzdvihnutia, {date}",
+    "dropoffTrigger": "Dátum vrátenia, {date}",
+    "calendarLabel": "Vybrať termíny",
+    "datesRequired": "Na vyhľadávanie vyberte dátum vyzdvihnutia a vrátenia.",
+    "submit": "Hľadať",
+    "returnLocationLabel": "Miesto vrátenia",
+    "differentReturn": "Vrátiť na inom mieste",
+    "returnSame": "Rovnaké ako vyzdvihnutie",
+    "returnNotOffered": "{company} neponúka vrátenie na inom mieste.",
+    "branchChoose": "Vyberte lokalitu",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Načítavajú sa lokality…",
+    "branchAnyHint": "Každá pobočka s autami"
+  },
+  "browseLocation": {
+    "title": "Prehliadať podľa lokality",
+    "subtitle": "Obľúbené mestá v provincii Málaga",
+    "emptyTitle": "Zatiaľ žiadne lokality",
+    "emptyDescription": "Vybrané mestá sa zobrazia tu.",
+    "cityAria": "Prehliadať autá v meste {city}"
+  },
+  "map": {
+    "teaserTitle": "Pozrite si, kde si môžete auto vyzdvihnúť",
+    "teaserSubtitle": "Miestne flotily v celej provincii Málaga — otvorte mapu a prejdite priamo k spoločnosti.",
+    "teaserCta": "Otvoriť mapu",
+    "teaserCityAria": "Zobraziť spoločnosti na mape v meste {city}",
+    "listLabel": "Zoznam",
+    "mapLabel": "Mapa",
+    "viewToggleAria": "Zobraziť spoločnosti ako zoznam alebo mapu",
+    "regionAria": "Mapa autopožičovní v provincii Málaga",
+    "pinAria": "{name} v lokalite {city}",
+    "fleetHint": "{count, plural, =0 {Zatiaľ žiadne uvedené autá} one {# dostupné auto} few {# dostupné autá} other {# dostupných áut}}",
+    "fleetHintUnknown": "Zobraziť dostupné autá",
+    "viewFleet": "Zobraziť flotilu",
+    "closePin": "Zavrieť",
+    "loading": "Načítavajú sa spoločnosti…",
+    "errorDescription": "Mapu sa nepodarilo načítať. Prehliadajte namiesto toho zoznam.",
+    "emptyTitle": "Žiadne spoločnosti na mape",
+    "emptyDescription": "Skúste iné mesto v provincii Málaga.",
+    "resultsCount": "{count, plural, one {# spoločnosť v provincii Málaga} few {# spoločnosti v provincii Málaga} other {# spoločností v provincii Málaga}}",
+    "resultsInCity": "{count, plural, one {# spoločnosť v meste {city}} few {# spoločnosti v meste {city}} other {# spoločností v meste {city}}}",
+    "resultsAtBranch": "{count, plural, one {# spoločnosť na pobočke {branch}} few {# spoločnosti na pobočke {branch}} other {# spoločností na pobočke {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Zobrazených {shown} z {total} áut",
+    "loadMore": "Zobraziť viac áut",
+    "seeAll": "Zobraziť všetko",
+    "title": "Dostupné autá",
+    "subtitle": "Každé verejné auto od partnerských autopožičovní v celej provincii Málaga. Vyberte termíny a zistite, čo je voľné.",
+    "searchEmptyTitle": "Tomuto vyhľadávaniu nezodpovedajú žiadne autá",
+    "searchEmptyHint": "Skúste iné termíny alebo inú lokalitu v provincii Málaga. Každé mesto zostáva v zozname — aj keď v ňom dnes nie sú uvedené žiadne autá.",
+    "resultsInProvince": "{count, plural, one {# auto vo všetkých lokalitách} few {# autá vo všetkých lokalitách} other {# áut vo všetkých lokalitách}}",
+    "resultsInCity": "{count, plural, one {# auto v meste {city}} few {# autá v meste {city}} other {# áut v meste {city}}}",
+    "allCompanies": "Všetky spoločnosti",
+    "companyPlaceholder": "Hľadať spoločnosti",
+    "companyTrigger": "Spoločnosť, {company}",
+    "perDay": "{price} / deň",
+    "perDaySuffix": " / deň",
+    "viewDetails": "Zobraziť detaily",
+    "notAvailableForDates": "Nie je dostupné pre tieto termíny",
+    "bookUnavailable": "Zobraziť auto",
+    "fleetSummary": "{total, plural, one {# auto} few {# autá} other {# áut}} · {available, plural, one {# dostupné} few {# dostupné} other {# dostupných}}",
+    "fleetSummaryForDates": "{total, plural, one {# auto} few {# autá} other {# áut}} · {available, plural, one {# dostupné} few {# dostupné} other {# dostupných}} · {from} – {to}",
+    "seats": "{count} miest",
+    "resultsCount": "{count, plural, one {# dostupné auto} few {# dostupné autá} other {# dostupných áut}}",
+    "resultsForDates": "{count, plural, one {# auto} few {# autá} other {# áut}} · {from} – {to}",
+    "emptyTitle": "Táto flotila zatiaľ nie je verejná",
+    "emptyHint": "Táto spoločnosť je v zozname, ale jej autá ešte nie sú na Benwer zverejnené. Je to očakávané, kým vozidlá nebudú označené ako verejné — nejde o chybu stránky.",
+    "noResults": "Tomuto vyhľadávaniu nezodpovedajú žiadne autá",
+    "noResultsHint": "Skúste iné termíny, inú lokalitu alebo menej filtrov.",
+    "browseCompanies": "Prehliadať spoločnosti",
+    "clearFilters": "Vymazať filtre",
+    "searchPlaceholder": "Hľadať podľa značky alebo modelu",
+    "filters": {
+      "title": "Filtre",
+      "seats": "Počet miest",
+      "transmission": "Prevodovka",
+      "company": "Spoločnosť",
+      "dates": "Termíny",
+      "from": "Dátum vyzdvihnutia",
+      "to": "Dátum vrátenia",
+      "category": "Kategória",
+      "fuel": "Typ paliva",
+      "all": "Všetky",
+      "clear": "Vymazať",
+      "selectedCount": "Vybrané: {count}"
+    },
+    "types": {
+      "car": "Osobné auto",
+      "suv": "SUV",
+      "van": "Dodávka",
+      "truck": "Nákladné auto",
+      "motorcycle": "Motocykel"
+    },
+    "transmission": {
+      "automatic": "Automatická",
+      "manual": "Manuálna"
+    },
+    "fuel": {
+      "petrol": "Benzín",
+      "diesel": "Nafta",
+      "electric": "Elektrina",
+      "hybrid": "Hybrid",
+      "plugin_hybrid": "Plug-in hybrid"
+    },
+    "rowDeposit": "Záloha {amount}",
+    "rowAvailable": "Dostupné pre vaše termíny",
+    "rowTotal": "Celkom {amount} · {days, plural, one {# deň} few {# dni} other {# dní}}",
+    "bookNow": "Rezervovať teraz",
+    "availableCount": "{count, plural, =0 {Žiadne dostupné autá} one {# dostupné auto} few {# dostupné autá} other {# dostupných áut}}",
+    "availableForDates": "{count, plural, =0 {Žiadne dostupné autá} one {# dostupné auto} few {# dostupné autá} other {# dostupných áut}} · {from} – {to}",
+    "categories": {
+      "economy": "Ekonomické",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "Minivan",
+      "van": "Dodávka",
+      "other": "Ostatné"
+    },
+    "sort": {
+      "label": "Zoradiť podľa",
+      "recommended": "Odporúčané",
+      "pricePerDay_asc": "Najnižšia denná cena",
+      "pricePerDay_desc": "Najvyššia denná cena"
+    },
+    "colors": {
+      "white": "Biela",
+      "black": "Čierna",
+      "silver": "Strieborná",
+      "grey": "Sivá",
+      "red": "Červená",
+      "blue": "Modrá",
+      "green": "Zelená",
+      "orange": "Oranžová",
+      "yellow": "Žltá",
+      "brown": "Hnedá",
+      "beige": "Béžová",
+      "gold": "Zlatá",
+      "purple": "Fialová"
+    },
+    "viewCar": "Zobraziť auto",
+    "opensCompanySite": "(otvorí webovú stránku spoločnosti)"
+  },
+  "carDetail": {
+    "bookNow": "Rezervovať teraz",
+    "continueOnCompany": "Pokračovať na {company}",
+    "rentOnCompanySite": "Prenajať na webe spoločnosti",
+    "handoffHint": "Pred presmerovaním na stránku spoločnosti na dokončenie rezervácie sa vás najprv opýtame.",
+    "pricePerDay": "{price} na deň",
+    "specs": "Špecifikácie",
+    "year": "Rok",
+    "type": "Typ",
+    "transmission": "Prevodovka",
+    "fuel": "Palivo",
+    "seats": "Počet miest",
+    "availability": "Dostupnosť",
+    "availabilityError": "Nepodarilo sa načítať dostupnosť. Skúste to znova.",
+    "availabilityUnavailable": "Dostupnosť nie je k dispozícii",
+    "checkingAvailability": "Kontroluje sa dostupnosť…",
+    "notAvailable": "Toto auto nie je pre vybrané termíny dostupné.",
+    "selectPickup": "Vyberte dátum vyzdvihnutia",
+    "selectDropoff": "Teraz vyberte dátum vrátenia",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Vymazať termíny",
+    "addDate": "Pridať dátum",
+    "calendarLabel": "Kalendár dostupnosti",
+    "legend": "Legenda kalendára",
+    "available": "Dostupné",
+    "selected": "Vybrané",
+    "unavailable": "Nedostupné",
+    "openDates": "Žiadne rezervované termíny v nasledujúcich {months} mesiacoch.",
+    "breadcrumbAria": "Navigácia",
+    "photoEmpty": "Fotografie už čoskoro",
+    "previousPhoto": "Predchádzajúca fotografia",
+    "nextPhoto": "Ďalšia fotografia",
+    "viewPhoto": "Zobraziť fotografiu {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, fotografia {index}",
+    "backToFleet": "Späť na flotilu",
+    "metaTitle": "Detail vozidla",
+    "about": "O tomto aute",
+    "category": "Kategória",
+    "color": "Farba",
+    "deposit": "Záloha",
+    "mileage": "Najazdené kilometre",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Presmerovávame vás na rezervačnú stránku spoločnosti {company}, kde dokončíte svoju rezerváciu.",
+    "handoffTrust": "{company} je dôveryhodný partner Benwer.",
+    "handoffContinue": "Pokračovať",
+    "handoffCancel": "Zrušiť",
+    "handoffCompanyFallback": "spoločnosti"
+  },
+  "booking": {
+    "title": "Dokončite svoju rezerváciu",
+    "subtitle": "Potvrďte svoje údaje — účet nie je potrebný.",
+    "details": "Vaše údaje",
+    "detailsHint": "Tieto údaje použijeme iba na potvrdenie tejto rezervácie.",
+    "guestName": "Celé meno",
+    "guestNamePlaceholder": "Jana Nováková",
+    "guestEmail": "E-mailová adresa",
+    "guestEmailPlaceholder": "jana@example.com",
+    "guestEmailHint": "Potvrdenie vám pošleme na túto adresu.",
+    "guestPhone": "Telefónne číslo",
+    "guestPhonePlaceholder": "+421 900 000 000",
+    "guestPhoneHint": "Autopožičovňa vás môže kontaktovať ohľadom vyzdvihnutia.",
+    "startDate": "Dátum vyzdvihnutia",
+    "endDate": "Dátum vrátenia",
+    "datesHint": "Termíny pochádzajú z kalendára vozidla. Tu ich môžete upraviť.",
+    "addDate": "Pridať dátum",
+    "changeDates": "Zmeniť termíny v kalendári",
+    "summary": "Súhrn rezervácie",
+    "vehicle": "Vozidlo",
+    "company": "Spoločnosť",
+    "rate": "Denná sadzba",
+    "duration": "Trvanie",
+    "totalPrice": "Celkom",
+    "nights": "{count, plural, one {# deň} few {# dni} other {# dní}}",
+    "stickyMeta": "{name} · {count, plural, one {# deň} few {# dni} other {# dní}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Potvrdiť rezerváciu",
+    "confirmRequest": "Odoslať žiadosť",
+    "requesting": "Odosiela sa žiadosť…",
+    "confirming": "Potvrdzuje sa…",
+    "sitePaused": "Neprijíma rezervácie",
+    "insurance": "Poistenie",
+    "termsLabel": "Podmienky prenájmu",
+    "termsAccept": "Súhlasím s",
+    "termsLink": "podmienkami prenájmu",
+    "successTitle": "Rezervácia potvrdená!",
+    "successMessage": "Potvrdenie bolo odoslané na {email}.",
+    "viewBooking": "Zobraziť moju rezerváciu",
+    "selectDates": "Na pokračovanie vyberte termíny",
+    "invalidDates": "Vyberte platný rozsah dátumov",
+    "backToCar": "Späť na {name}",
+    "trustNoAccount": "Bez potreby účtu",
+    "trustEmail": "Potvrdenie e-mailom",
+    "trustNoPayment": "Žiadna platba teraz",
+    "trustCardPayment": "Platba kartou po rezervácii",
+    "trustFooter": "Potvrdením žiadate o toto vozidlo na uvedené termíny. Spoločnosť rezerváciu dodrží.",
+    "missingTitle": "Na pokračovanie vyberte auto",
+    "missingDescription": "Pred dokončením rezervácie vyberte vozidlo a termíny.",
+    "browseCars": "Prehliadať autá",
+    "vehicleMissingTitle": "Toto auto už nie je dostupné",
+    "vehicleMissingDescription": "Mohlo byť medzitým rezervované. Vyberte si iné z flotily.",
+    "viewFleet": "Zobraziť flotilu",
+    "datesMissingTitle": "Pridajte termíny cesty",
+    "datesMissingDescription": "Vráťte sa k vozidlu a vyberte dostupné termíny, alebo ich zadajte vo formulári.",
+    "pickDates": "Vybrať termíny pre auto",
+    "formAria": "Údaje hosťa k rezervácii",
+    "validation": {
+      "nameMin": "Zadajte celé meno (aspoň 2 znaky).",
+      "email": "Zadajte platnú e-mailovú adresu.",
+      "phone": "Zadajte platné telefónne číslo.",
+      "startDate": "Vyberte dátum vyzdvihnutia.",
+      "endDate": "Vyberte dátum vrátenia.",
+      "endAfterStart": "Dátum vrátenia musí byť po dátume vyzdvihnutia.",
+      "terms": "Na pokračovanie potvrďte podmienky prenájmu.",
+      "fixErrors": "Opravte zvýraznené polia."
+    },
+    "averageRate": "Priemerná denná sadzba",
+    "breakdownTitle": "Rozpis ceny",
+    "standardRate": "Štandardná sadzba",
+    "weekendRate": "Víkend",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Prenájmy v tejto sezóne musia trvať aspoň {limit, plural, one {# deň} few {# dni} other {# dní}}. Na rezerváciu zmeňte termíny.",
+    "warningMaxDays": "Prenájmy v tejto sezóne môžu trvať najviac {limit, plural, one {# deň} few {# dni} other {# dní}}. Na rezerváciu zmeňte termíny.",
+    "returnLocation": "Miesto vrátenia",
+    "oneWayFee": "Poplatok za vrátenie na inom mieste",
+    "signedInAs": "Prihlásený ako {email}",
+    "signInPrompt": "Máte účet?",
+    "signInLink": "Prihláste sa pre vyplnenie údajov",
+    "subtitleSignedIn": "Skontrolujte svoje údaje a potvrďte.",
+    "trustPaymentAfter": "Platobné údaje nasledujú po rezervácii",
+    "extras": "Doplnky",
+    "extraPerDay": "{price} / deň",
+    "extraFixed": "{price} / prenájom",
+    "tripDetails": "Podrobnosti o ceste",
+    "pickupTime": "Čas vyzdvihnutia",
+    "returnTime": "Čas vrátenia",
+    "timeAny": "Kedykoľvek",
+    "flightNumber": "Číslo letu",
+    "flightNumberHint": "Vyzdvihnutie je na letisku. Pridajte číslo letu, aby spoločnosť mohla sledovať meškania.",
+    "flightNumberOptional": "Pridajte ho, ak prilietate lietadlom.",
+    "notes": "Poznámky",
+    "notesPlaceholder": "Je niečo, čo by spoločnosť mala vedieť?",
+    "dateOfBirth": "Dátum narodenia",
+    "optional": "voliteľné",
+    "extraSoldOut": "Nie je dostupné pre tieto termíny"
+  },
+  "reservationStatus": {
+    "title": "Vaša rezervácia",
+    "successTitle": "Máte rezervované",
+    "successSubtitle": "Potvrdenie sme poslali na {email}.",
+    "status": {
+      "draft": "Čaká na schválenie",
+      "confirmed": "Potvrdená",
+      "active": "Aktívna — užite si cestu!",
+      "completed": "Dokončená",
+      "cancelled": "Zrušená"
+    },
+    "vehicle": "Vozidlo",
+    "company": "Spoločnosť",
+    "dates": "Termíny",
+    "pickup": "Vyzdvihnutie",
+    "dropoff": "Vrátenie",
+    "guest": "Hosť",
+    "email": "E-mail",
+    "phone": "Telefón",
+    "total": "Celkom",
+    "reference": "Referenčné číslo",
+    "referenceHint": "Ukážte pri vyzdvihnutí.",
+    "trustCopy": "Uložte si túto stránku — je to vaše potvrdenie rezervácie. O všetko ostatné sa postará autopožičovňa.",
+    "trustEmail": "Potvrdenie odoslané e-mailom",
+    "trustPickup": "Ukážte túto stránku pri vyzdvihnutí",
+    "nextTitle": "Čo nasleduje",
+    "nextEmail": "Skontrolujte e-mail {email}, kde nájdete potvrdenie.",
+    "nextPickup": "Pri vyzdvihnutí ukážte svoje referenčné číslo.",
+    "browseMore": "Prehliadať ďalšie autá",
+    "notFoundTitle": "Rezervácia sa nenašla",
+    "notFoundDescription": "Skontrolujte odkaz v potvrdzovacom e-maile alebo začnite nové vyhľadávanie.",
+    "backHome": "Späť na domovskú stránku",
+    "requestExpires": "Žiadosť vyprší",
+    "cancelReason": "Dôvod zrušenia",
+    "withdraw": "Stiahnuť žiadosť",
+    "paymentStatus": "Platba",
+    "paidAmount": "Zaplatené",
+    "payment": {
+      "unpaid": "Nezaplatené",
+      "partially_paid": "Čiastočne zaplatené",
+      "paid": "Zaplatené",
+      "refund_due": "Na vrátenie",
+      "authorized": "Karta autorizovaná"
+    },
+    "reasons": {
+      "unpaid_timeout": "Platba nebola dokončená včas",
+      "request_expired": "Spoločnosť neodpovedala včas",
+      "request_declined": "Spoločnosť túto žiadosť zamietla",
+      "customer_request": "Túto žiadosť ste stiahli"
+    },
+    "insurance": "Poistenie",
+    "extras": "Doplnky",
+    "fees": "Poplatky za vyzdvihnutie a vrátenie",
+    "priceTitle": "Súhrn ceny"
+  },
+  "payment": {
+    "title": "Zaplatiť zálohu",
+    "amountDue": "Suma na úhradu: {amount}",
+    "countdown": "Dokončite platbu do {time}",
+    "requestAuthorize": "Vaša karta sa teraz autorizuje a suma sa stiahne až po prijatí žiadosti spoločnosťou.",
+    "pay": "Zaplatiť teraz",
+    "paying": "Spracováva sa…",
+    "confirming": "Potvrdzujeme vašu platbu",
+    "confirmingHint": "Počkajte prosím — platbu potvrdzujeme u spoločnosti, nie z platobného formulára.",
+    "declined": "Karta bola zamietnutá. Skúste inú kartu.",
+    "secure": "Údaje o karte spracováva Stripe v testovacom režime.",
+    "cancelBooking": "Zrušiť rezerváciu",
+    "cancelTitle": "Zrušiť túto rezerváciu?",
+    "cancelDescription": "Uplatnia sa storno podmienky spoločnosti. Pred potvrdením skontrolujte poplatok a vrátenú sumu.",
+    "cancelFee": "Storno poplatok",
+    "cancelRefund": "Vrátená suma",
+    "confirmCancel": "Potvrdiť zrušenie",
+    "keepBooking": "Ponechať rezerváciu",
+    "cancelled": "Vaša rezervácia bola zrušená."
+  },
+  "companies": {
+    "title": "Autopožičovne",
+    "subtitle": "Prehliadajte partnerské autopožičovne v celej Málage — na mape alebo v zozname",
+    "searchPlaceholder": "Hľadať spoločnosti…",
+    "noResults": "Nenašli sa žiadne spoločnosti",
+    "noResultsHint": "Skúste inú lokalitu v provincii Málaga.",
+    "emptyTitle": "Zatiaľ nie sú uvedené žiadne spoločnosti",
+    "emptyDescription": "Zatiaľ nie sú uvedené žiadne autopožičovne.",
+    "clearFilters": "Vymazať vyhľadávanie",
+    "viewFleet": "Zobraziť flotilu",
+    "visitWebsite": "Navštíviť web",
+    "contact": "Kontakt",
+    "backToList": "Všetky spoločnosti",
+    "notFoundTitle": "Spoločnosť sa nenašla",
+    "notFoundDescription": "Táto autopožičovňa nie je v zozname. Pozrite si ďalšie v okolí.",
+    "loadErrorTitle": "Podrobnosti o spoločnosti nie sú dostupné",
+    "loadErrorDescription": "Túto autopožičovňu sa nepodarilo načítať zo živého katalógu. Skúste to znova — pri výpadku API nezobrazujeme zástupné autá.",
+    "browseCars": "Prehliadať autá",
+    "featuredEmpty": "Zatiaľ žiadne vybrané spoločnosti",
+    "featuredEmptyHint": "Skúste to čoskoro znova alebo si pozrite autá z miestnych flotíl.",
+    "locationUnknown": "Lokalita nie je uvedená",
+    "noDescription": "Zatiaľ bez popisu."
+  },
+  "contact": {
+    "title": "Kontaktujte nás",
+    "lede": "Máte otázky ohľadom trhoviska? Pošlite nám správu a ozveme sa vám čo najskôr.",
+    "bookingHint": "Tento formulár neslúži na rezervácie. Ak si chcete prenajať auto, pokračujte na webe autopožičovne.",
+    "name": "Celé meno",
+    "email": "E-mailová adresa",
+    "subject": "Predmet",
+    "message": "Správa",
+    "submit": "Odoslať správu",
+    "privacyNote": "Tieto údaje použijeme iba na odpoveď.",
+    "errors": {
+      "nameMin": "Zadajte svoje meno (aspoň 2 znaky).",
+      "email": "Zadajte platnú e-mailovú adresu.",
+      "subjectMin": "Zadajte predmet (aspoň 3 znaky).",
+      "messageMin": "Zadajte správu (aspoň 10 znakov)."
+    },
+    "eyebrow": "Podpora",
+    "namePlaceholder": "Jana Nováková",
+    "emailPlaceholder": "vy@example.com",
+    "subjectPlaceholder": "Ako vám môžeme pomôcť?",
+    "messagePlaceholder": "Napíšte nám, čo potrebujete…",
+    "supportSubjectDefault": "Žiadosť o podporu",
+    "submitting": "Odosiela sa…",
+    "submittedTitle": "Správa odoslaná",
+    "submittedDescription": "Ďakujeme, že ste nás kontaktovali. Odpovieme vám na e-mail čo najskôr.",
+    "sendAnother": "Odoslať ďalšiu správu",
+    "backHome": "Späť na domovskú stránku",
+    "whatsappTitle": "Uprednostňujete WhatsApp?",
+    "whatsappDescription": "Napíšte priamo tímu Benwer Cars."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Zásady ochrany osobných údajov",
+      "lede": "Ako nakladáme s osobnými údajmi pri používaní trhoviska Benwer Cars.",
+      "updated": "Posledná aktualizácia: 13. septembra 2026",
+      "sections": [
+        {
+          "title": "Kto sme",
+          "body": "Benwer Cars („Benwer“, „my“, „nás“) prevádzkuje spotrebiteľské trhovisko, ktoré pomáha cestovateľom objavovať flotily autopožičovní v provincii Málaga.\n\nTieto zásady sa vzťahujú iba na webovú stránku trhoviska. Ak pokračujete na web samotnej autopožičovne za účelom rezervácie, za údaje, ktoré tam zadáte, zodpovedá táto spoločnosť."
+        },
+        {
+          "title": "Čo toto trhovisko robí",
+          "body": "Môžete vyhľadávať autá a spoločnosti, porovnávať verejné údaje o flotilách a pokračovať na web autopožičovne na dokončenie rezervácie.\n\nBenwer na trhovisku neprijíma platby ani neuzatvára zmluvy o prenájme. Nájomná zmluva je medzi vami a spoločnosťou."
+        },
+        {
+          "title": "Aké informácie zhromažďujeme",
+          "body": "Podľa toho, ako trhovisko používate, môžeme spracúvať:\n\n• Údaje o vyhľadávaní a používaní — lokalitu a termíny, ktoré zadáte, zobrazené stránky a základné technické údaje, ako je IP adresa, prehliadač a informácie o zariadení.\n• Jazykovú preferenciu — uloženú ako nevyhnutný súbor cookie, aby sme mohli zobraziť preferovaný jazyk.\n• Súhlas so súbormi cookie — uložený vo vašom zariadení, aby sme si zapamätali vašu voľbu.\n• Kontaktné správy — meno, e-mail, predmet a správu, ak nám napíšete. Tieto správy označujeme ako odoslané z trhoviska.\n\nNa trhovisku od vás nežiadame vytvorenie účtu. Údaje o rezervácii a platbe zhromažďuje autopožičovňa na svojom webe podľa vlastných zásad ochrany osobných údajov."
+        },
+        {
+          "title": "Ako údaje používame",
+          "body": "Osobné údaje používame na prevádzku a zlepšovanie trhoviska, zapamätanie si jazykových volieb a nastavení cookie, odpovedanie na kontaktné správy, zabezpečenie služby a plnenie zákonných povinností.\n\nVaše osobné údaje nepredávame."
+        },
+        {
+          "title": "Právne základy (EHP / Spojené kráľovstvo)",
+          "body": "Tam, kde je to uplatniteľné, sa spoliehame na oprávnený záujem (prevádzkovanie verejného katalógu a zabezpečenie webu), súhlas (voliteľné súbory cookie, ak budú zavedené), zákonnú povinnosť a kroky potrebné na odpoveď, keď nás kontaktujete."
+        },
+        {
+          "title": "Zdieľanie údajov",
+          "body": "Na hosting a doručovanie e-mailov môžeme využívať overených poskytovateľov. Tí spracúvajú údaje podľa našich pokynov.\n\nAk pokračujete na web spoločnosti, táto spoločnosť sa stáva prevádzkovateľom všetkých údajov, ktoré tam zadáte. Vašu správu z kontaktného formulára autopožičovniam neposkytujeme, pokiaľ nás o to nepožiadate."
+        },
+        {
+          "title": "Súbory cookie",
+          "body": "Používame nevyhnutný jazykový súbor cookie a vašu voľbu ohľadom cookie ukladáme vo vašom zariadení. Podrobnosti nájdete v zásadách používania súborov cookie. Voliteľné súbory cookie zostávajú vypnuté, pokiaľ ich neprijmete."
+        },
+        {
+          "title": "Uchovávanie údajov",
+          "body": "Kontaktné správy uchovávame tak dlho, ako je potrebné na odpoveď a počas primeranej nadväzujúcej doby. Technické záznamy uchovávame krátkodobo. Vaša voľba ohľadom súborov cookie zostáva uložená, kým ju nezmeníte alebo nevymažete údaje stránky."
+        },
+        {
+          "title": "Vaše práva",
+          "body": "Podľa miesta vášho pobytu môžete mať právo na prístup k údajom, ich opravu, vymazanie, obmedzenie spracúvania, prenosnosť a právo namietať proti určitému spracúvaniu. Môžete tiež podať sťažnosť miestnemu dozornému orgánu.\n\nNa uplatnenie svojich práv použite kontaktnú stránku."
+        },
+        {
+          "title": "Medzinárodné prenosy",
+          "body": "Ak sa údaje prenášajú mimo vašej krajiny, používame primerané záruky, ako sú štandardné zmluvné doložky alebo rovnocenné mechanizmy, ak to vyžaduje zákon."
+        },
+        {
+          "title": "Zmeny",
+          "body": "Tieto zásady môžeme priebežne aktualizovať. Upravenú verziu zverejníme na tejto stránke a aktualizujeme dátum „Posledná aktualizácia“."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Podmienky používania",
+      "lede": "Pravidlá používania trhoviska Benwer Cars na objavovanie flotíl autopožičovní.",
+      "updated": "Posledná aktualizácia: 13. septembra 2026",
+      "sections": [
+        {
+          "title": "Trhovisko",
+          "body": "Benwer Cars poskytuje verejný adresár autopožičovní a ich zverejnených flotíl. Môžete porovnávať autá a pokračovať na vlastnú webovú stránku spoločnosti na dokončenie prenájmu.\n\nTieto podmienky platia pre webovú stránku trhoviska. Nenahrádzajú vlastné podmienky autopožičovne, ktoré platia pri rezervácii u nej."
+        },
+        {
+          "title": "Rezervácie prebiehajú s autopožičovňami",
+          "body": "Benwer na trhovisku neprenajíma autá, neprijíma platby ani neuzatvára nájomné zmluvy.\n\nAk pokračujete na web spoločnosti, akákoľvek rezervácia, záloha, poistenie a dohoda o vyzdvihnutí je medzi vami a touto spoločnosťou. Pred potvrdením si prečítajte jej podmienky."
+        },
+        {
+          "title": "Ponuky a dostupnosť",
+          "body": "Údaje o flotilách, ceny, fotografie a dostupnosť zverejňujú autopožičovne a môžu sa meniť. Snažíme sa zobrazovať verejné informácie presne, ale nezaručujeme, že auto bude stále voľné alebo že uvedená cena bude dodržaná, kým ju spoločnosť nepotvrdí.\n\nTermíny, ktoré zadáte na trhovisku, slúžia na vyhľadávanie. Konečná dostupnosť sa potvrdzuje na webe spoločnosti."
+        },
+        {
+          "title": "Prijateľné používanie",
+          "body": "Používajte trhovisko v súlade so zákonom. Nevyťažujte automatizovane dáta, nepreťažujte ani nenarúšajte službu, nezadávajte nepravdivé kontaktné údaje ani nepoužívajte web na poškodzovanie iných osôb alebo podnikov."
+        },
+        {
+          "title": "Zodpovednosť",
+          "body": "Trhovisko je poskytované ako vyhľadávacia služba. V rozsahu povolenom zákonom Benwer nezodpovedá za spory z prenájmu, stav vozidiel ani rezervácie dokončené na webe spoločnosti.\n\nNič v týchto podmienkach neobmedzuje práva, ktoré máte ako spotrebiteľ a ktorých sa nemožno vzdať podľa platného práva."
+        },
+        {
+          "title": "Zmeny",
+          "body": "Tieto podmienky môžeme aktualizovať. Dátum „Posledná aktualizácia“ na tejto stránke zobrazuje aktuálnu verziu. Ďalšie používanie po zmene znamená, že s aktualizovanými podmienkami súhlasíte."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Otázky k týmto podmienkam alebo k trhovisku nám môžete poslať cez kontaktnú stránku. Ohľadom už začatej rezervácie kontaktujte priamo autopožičovňu."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Zásady používania súborov cookie",
+      "lede": "Ako na trhovisku používame súbory cookie a podobné technológie.",
+      "updated": "Posledná aktualizácia: 13. septembra 2026",
+      "sections": [
+        {
+          "title": "Čo používame",
+          "body": "Súbory cookie sú malé textové súbory uložené vo vašom zariadení. Na zapamätanie vašich volieb používame aj podobné úložiská, napríklad lokálne úložisko.\n\nTieto zásady sa vzťahujú na trhovisko Benwer Cars. Keď prejdete na web autopožičovne, táto stránka môže nastaviť vlastné súbory cookie."
+        },
+        {
+          "title": "Nevyhnutné súbory cookie",
+          "body": "Používame jazykový súbor cookie, aby web mohol zobraziť zvolený jazyk. Je nevyhnutný na to, aby trhovisko fungovalo podľa vašich očakávaní.\n\nVaša voľba v cookie lište sa ukladá vo vašom zariadení, aby sme sa pri každej návšteve nemuseli pýtať znova. Toto úložisko sa nepoužíva na reklamu."
+        },
+        {
+          "title": "Voliteľné súbory cookie",
+          "body": "Voliteľné súbory cookie (napríklad analytické) zostávajú vypnuté, pokiaľ nezvolíte Prijať všetko.\n\nV súčasnosti trhovisko nenastavuje analytické ani marketingové súbory cookie. Ak ich v budúcnosti pridáme, popíšeme ich tu a naďalej budú vyžadovať váš súhlas."
+        },
+        {
+          "title": "Správa súborov cookie",
+          "body": "Pomocou lišty môžete prijať všetky súbory cookie alebo ponechať len nevyhnutné. Súbory cookie a údaje stránok môžete tiež vymazať vo svojom prehliadači. Zablokovanie jazykového súboru cookie môže pri ďalšej návšteve obnoviť predvolený jazyk."
+        },
+        {
+          "title": "Ďalšie informácie",
+          "body": "Informácie o spracúvaní osobných údajov nájdete v zásadách ochrany osobných údajov, alebo nám pošlite správu cez kontaktnú stránku."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} domov",
+    "defaultHeadline": "Prenajmite si auto u {name}",
+    "footerTagline": "Rezervujte priamo u tejto autopožičovne.",
+    "previewBanner": "Náhľad — táto stránka nie je verejná. Vyhľadávače ju nebudú indexovať.",
+    "editLink": "Upraviť",
+    "editContactEmpty": "Kontaktné údaje sú skryté. Upravte ich v administrácii.",
+    "editBranchesEmpty": "Zatiaľ žiadne pobočky. Pridajte ich v administrácii.",
+    "editRulesHint": "Režim rezervácie, minimálny predstih a čas na odpoveď.",
+    "editDomainHint": "Vlastná doména a verejná URL adresa.",
+    "editSection": {
+      "hero": "Úvod",
+      "search": "Vyhľadávanie",
+      "fleet": "Flotila",
+      "branches": "Pobočky",
+      "contact": "Kontakt",
+      "rules": "Pravidlá rezervácie",
+      "domain": "Doména"
+    },
+    "pausedTitle": "Neprijíma rezervácie",
+    "pausedDescription": "Táto spoločnosť pozastavila online rezervácie. Flotilu si však môžete naďalej prezerať.",
+    "notFoundTitle": "Webová stránka sa nenašla",
+    "notFoundDescription": "Táto webová stránka autopožičovne nie je dostupná.",
+    "loadErrorTitle": "Webová stránka nie je dostupná",
+    "loadErrorDescription": "Túto webovú stránku autopožičovne sa nepodarilo načítať. Skúste to znova o chvíľu.",
+    "search": "Hľadať autá",
+    "searchAria": "Hľadať podľa termínov a lokality",
+    "searchTitle": "Hľadať autá",
+    "searchDescription": "Vyberte termíny a lokalitu, aby ste videli, čo je dostupné.",
+    "branch": "Miesto vyzdvihnutia",
+    "anyBranch": "Akákoľvek lokalita",
+    "ownerSignIn": "Prihlásenie majiteľa",
+    "returnBranch": "Miesto vrátenia",
+    "differentReturn": "Vrátiť na inom mieste",
+    "returnSame": "Rovnaké ako vyzdvihnutie",
+    "driverAge": "Vek vodiča",
+    "driverAgeYears": "{band} rokov",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Upravte svoju webovú stránku",
+    "signInHint": "Majitelia otvárajú editor webu z administrácie Benwer. Použite tam tlačidlo „Upraviť web“ a budete tu automaticky prihlásení.",
+    "signedInTitle": "Ste prihlásení",
+    "signedInHint": "Ak môžete spravovať túto webovú stránku, editor sa otvorí na domovskej stránke.",
+    "openEditor": "Otvoriť editor webu",
+    "disabledTitle": "Úprava pre majiteľov nie je dostupná",
+    "disabledDescription": "Zamestnanecký Firebase nie je na tomto trhovisku nastavený.",
+    "signOut": "Odhlásiť sa",
+    "auth": {
+      "tooManyRequests": "Príliš veľa pokusov. Skúste to neskôr.",
+      "unknown": "Nepodarilo sa prihlásiť. Skúste to znova.",
+      "invalidToken": "Tento prihlasovací odkaz vypršal alebo už bol použitý. Otvorte editor znova z administrácie Benwer."
+    },
+    "signingIn": "Prihlasujeme vás…",
+    "openAdmin": "Otvoriť administráciu Benwer",
+    "accountMenu": "Účet majiteľa",
+    "signedInAs": "Prihlásený ako majiteľ",
+    "guestSignedOut": "Boli ste odhlásení zo svojho zákazníckeho účtu. Relácie majiteľa a zákazníka nemôžu byť v tomto prehliadači otvorené súčasne."
+  },
+  "guest": {
+    "googleAction": "Prihlásiť sa cez Google",
+    "googleCreate": "Pokračovať cez Google",
+    "or": "alebo",
+    "forgotPassword": "Zabudli ste heslo?",
+    "resetTitle": "Obnoviť heslo",
+    "resetHint": "Zadajte svoju e-mailovú adresu a pošleme vám odkaz na nastavenie nového hesla.",
+    "resetAction": "Odoslať odkaz na obnovenie",
+    "resetSentTitle": "Skontrolujte svoj e-mail",
+    "resetSentHint": "Ak pre túto adresu existuje účet, poslali sme pokyny na obnovenie hesla. Nedostali ste ho? Skontrolujte priečinok spam alebo počkajte niekoľko minút a skúste to znova.",
+    "backToSignIn": "Späť na prihlásenie",
+    "signInNav": "Prihlásiť sa",
+    "myBookings": "Moje rezervácie",
+    "signInTitle": "Prihlásiť sa",
+    "signInHint": "Použite svoj zákaznícky účet pre túto autopožičovňu. Toto nie je prihlásenie pre zamestnancov.",
+    "signInAction": "Prihlásiť sa",
+    "createTitle": "Vytvoriť zákaznícky účet",
+    "createHint": "Uložte si svoje rezervácie u tejto spoločnosti. Zamestnanci používajú iné prihlásenie.",
+    "createAction": "Vytvoriť účet",
+    "needAccount": "Nemáte účet? Vytvorte si ho",
+    "haveAccount": "Už máte účet? Prihláste sa",
+    "email": "E-mail",
+    "password": "Heslo",
+    "bookingsTitle": "Moje rezervácie",
+    "bookingsMeta": "Prepojené rezervácie pre túto autopožičovňu.",
+    "bookingsHint": "Prihlásený ako {email} u spoločnosti {company}.",
+    "emptyTitle": "Zatiaľ žiadne rezervácie",
+    "emptyDescription": "Už ste si predtým rezervovali? Prepojte túto rezerváciu pomocou použitého e-mailu alebo potvrdzovacieho tokenu.",
+    "bookingFallback": "Rezervácia",
+    "loadErrorTitle": "Nepodarilo sa načítať rezervácie",
+    "linkTitle": "Prepojiť rezerváciu",
+    "linkHint": "Zadajte e-mail použitý pri rezervácii alebo potvrdzovací token. Ak nájdeme zhodu, pošleme vám odkaz e-mailom — nikdy neuvádzame, či účet existuje.",
+    "linkEmail": "E-mail rezervácie",
+    "linkToken": "Token rezervácie",
+    "linkAction": "Odoslať odkaz",
+    "linkSent": "Ak nájdeme zodpovedajúcu rezerváciu, pošleme vám potvrdzovací odkaz e-mailom.",
+    "accountTitle": "Účet",
+    "accountHint": "Odhláste sa zo svojho účtu na tejto stránke.",
+    "signOut": "Odhlásiť sa",
+    "erase": "Vymazať moje údaje tu",
+    "eraseConfirm": "Áno, vymazať moje údaje pre túto spoločnosť",
+    "confirmTitle": "Prepájanie vašej rezervácie",
+    "confirmHint": "Počkajte prosím, kým túto rezerváciu priradíme k vášmu účtu.",
+    "confirmSignIn": "Na dokončenie prepojenia tejto rezervácie sa prihláste svojím zákazníckym účtom.",
+    "confirmMissing": "Chýba potvrdzovací token",
+    "confirmMissingHint": "Otvorte odkaz zo svojho e-mailu znova.",
+    "confirmError": "Tento odkaz sa nepodarilo potvrdiť",
+    "disabledTitle": "Zákaznícke účty ešte nie sú dostupné",
+    "disabledDescription": "Táto spoločnosť ešte nezapla prihlasovanie zákazníkov. Stále si môžete rezervovať pomocou mena, e-mailu a telefónu.",
+    "auth": {
+      "popupClosed": "Prihlásenie bolo zrušené.",
+      "popupBlocked": "Váš prehliadač zablokoval okno Google. Povoľte vyskakovacie okná a skúste to znova.",
+      "differentProvider": "Tento e-mail sa už prihlasuje iným spôsobom. Použite namiesto toho svoje heslo.",
+      "providerUnavailable": "Prihlásenie cez Google zatiaľ na tejto stránke nie je dostupné. Použite e-mail a heslo.",
+      "invalidEmail": "Zadajte platnú e-mailovú adresu.",
+      "emailInUse": "Tento e-mail už má zákaznícky účet. Prihláste sa namiesto toho.",
+      "weakPassword": "Použite dlhšie heslo.",
+      "tooManyRequests": "Príliš veľa pokusov. Skúste to znova o pár minút.",
+      "invalidCredentials": "E-mail alebo heslo nie je správne.",
+      "unknown": "Nepodarilo sa prihlásiť. Skúste to znova.",
+      "googleDisabled": "Prihlásenie cez Google ešte nie je pre túto stránku zapnuté. Použite e-mail a heslo.",
+      "domainNotAuthorised": "Prihlásenie cez Google zatiaľ nie je nastavené pre adresu tejto stránky. Zatiaľ použite e-mail a heslo."
+    },
+    "accountMenu": "Váš účet",
+    "profileNav": "Profil",
+    "profileTitle": "Profil",
+    "profileMeta": "Váš zákaznícky účet pre túto autopožičovňu.",
+    "linkCancel": "Zrušiť",
+    "eraseTitle": "Vymazať moje údaje",
+    "eraseHint": "Vymaže vaše zákaznícke údaje pre túto spoločnosť a odhlási vás. Ostatných spoločností sa to netýka.",
+    "profileDetailsTitle": "Vaše údaje",
+    "profileDetailsHint": "Používajú sa na predvyplnenie vašich rezervácií u tejto spoločnosti.",
+    "profileFullName": "Celé meno",
+    "profilePhone": "Telefónne číslo",
+    "profileDob": "Dátum narodenia",
+    "profileSave": "Uložiť údaje",
+    "profileNotLinked": "Vaše meno a telefón sa tu uložia po vašej prvej rezervácii s týmto e-mailom. Už ste rezervovali s iným e-mailom? Prepojte túto rezerváciu v sekcii Moje rezervácie.",
+    "verifyTitle": "Overte svoj e-mail, aby ste videli svoje rezervácie",
+    "verifyHint": "Poslali sme odkaz na {email}. Otvorte ho a potom sa sem vráťte. Kým váš e-mail nebude overený, nemôžeme zobraziť vaše rezervácie ani uložiť vaše meno a telefón.",
+    "verifyResend": "Znova odoslať e-mail",
+    "verifySent": "E-mail bol odoslaný. Skontrolujte doručenú poštu aj priečinok spam.",
+    "verifyDone": "Overil(a) som svoj e-mail",
+    "verifyStillPending": "Váš e-mail zatiaľ nie je overený. Otvorte odkaz v e-maile a skúste to znova.",
+    "verifyBanner": "Váš účet ešte nie je aktívny. Overte {email}, aby ste videli svoje rezervácie a mohli používať uložené údaje.",
+    "verifyBannerAction": "Overiť e-mail",
+    "profileEdit": "Upraviť údaje",
+    "profileCancel": "Zrušiť",
+    "profileEmail": "E-mail",
+    "profileEmpty": "Nezadané",
+    "bookingsUpcoming": "Nadchádzajúce",
+    "bookingsPast": "Minulé",
+    "ownerSignedOut": "Boli ste odhlásení z editora webu. Relácie majiteľa a zákazníka nemôžu byť v tomto prehliadači otvorené súčasne."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Ponuky {name}",
+      "slideAlt": "Banner {name} {position}",
+      "slideLabel": "{position} z {count}",
+      "previous": "Predchádzajúci banner",
+      "next": "Ďalší banner",
+      "goTo": "Zobraziť banner {position}",
+      "presets": {
+        "airport": {
+          "script": "práve ste pristáli?",
+          "highlight": "Vyzdvihnutie na letisku",
+          "joiner": "za",
+          "boxed": "10 minút",
+          "description": "Preskočte rad: podpíšte zmluvu v telefóne a odíďte s plným poistením"
+        },
+        "weekend": {
+          "script": "rezervujte tento víkend",
+          "highlight": "Ušetrite 20 %",
+          "joiner": "na",
+          "boxed": "Víkendové prenájmy",
+          "description": "Vyzdvihnutie v piatok, vrátenie v pondelok. Detská sedačka a ďalší vodič v cene"
+        },
+        "roadtrip": {
+          "script": "váš ďalší výlet",
+          "highlight": "Začína tu",
+          "joiner": "odovzdáme vám",
+          "boxed": "Kľúče",
+          "description": "Bezplatné zrušenie do 24 hodín pred vyzdvihnutím, neobmedzené km a žiadne skryté poplatky"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Zahrnuté v každej cene",
+      "title": "Cena, ktorú vidíte, je cena, ktorú zaplatíte",
+      "description": "Žiadne prekvapenia na pobočke. Tieto výhody sú vždy súčasťou ceny.",
+      "presets": {
+        "insurance": {
+          "title": "Základné poistenie",
+          "text": "Krytie proti havárii, krádeži a zodpovednosti za škodu.",
+          "tag": "V cene"
+        },
+        "mileage": {
+          "title": "Neobmedzené kilometre",
+          "text": "Jazdite toľko, koľko chcete, bez poplatkov za kilometer.",
+          "tag": "Bez limitu"
+        },
+        "fuel": {
+          "title": "Plná – plná nádrž",
+          "text": "Vyzdvihnete si auto s plnou nádržou a s plnou ho vrátite.",
+          "tag": "Bez predplatenej nádrže"
+        },
+        "cancellation": {
+          "title": "Bezplatné zrušenie",
+          "text": "Zmenili sa vám plány? Zrušte bezplatne.",
+          "tag": "Flexibilné"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Recenzie",
+      "title": "Čo o nás hovoria vodiči",
+      "seeAll": "Zobraziť {count, plural, one {# recenziu} few {všetky # recenzie} other {všetkých # recenzií}}",
+      "seeAllOn": "Zobraziť {count, plural, one {# recenziu} few {všetky # recenzie} other {všetkých # recenzií}} na {source}",
+      "basedOn": "Na základe {count, plural, one {# recenzie} few {# recenzií} other {# recenzií}}",
+      "basedOnSource": "Na základe {count, plural, one {# recenzie} few {# recenzií} other {# recenzií}} na {source}",
+      "ratingAria": "Hodnotenie {rating} z 5",
+      "rented": "Prenajaté: {vehicle}",
+      "verified": "Overený prenájom",
+      "distributionAria": "Rozdelenie hodnotení",
+      "emptyTitle": "Zatiaľ žiadne recenzie",
+      "emptyText": "Zákazníci môžu ohodnotiť svoj prenájom po vrátení vozidla. Schválené recenzie sa zobrazia tu."
+    },
+    "app": {
+      "eyebrow": "Mobilná aplikácia",
+      "title": "Vaša rezervácia vždy po ruke",
+      "text": "Prihláste sa online, zobrazte podrobnosti o vyzdvihnutí a napíšte nám — všetko z telefónu.",
+      "platformBoth": "iOS a Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Naskenujte pre stiahnutie",
+      "qrAlt": "QR kód na stiahnutie aplikácie",
+      "appStore": {
+        "prefix": "Stiahnuť v",
+        "name": "App Store",
+        "aria": "Stiahnuť v App Store",
+        "unavailable": "Zatiaľ nie je dostupné v App Store"
+      },
+      "googlePlay": {
+        "prefix": "Získať na",
+        "name": "Google Play",
+        "aria": "Získať na Google Play",
+        "unavailable": "Zatiaľ nie je dostupné na Google Play"
+      },
+      "comingSoon": "Už čoskoro"
+    },
+    "locations": {
+      "eyebrow": "Lokality",
+      "title": "{count, plural, one {Naša pobočka} few {Naše pobočky} other {Naše pobočky}}",
+      "description": "{count, plural, one {Vyzdvihnite si a vráťte auto tu.} few {Vyzdvihnite si a vráťte auto v ktorejkoľvek z našich pobočiek.} other {Vyzdvihnite si a vráťte auto v ktorejkoľvek z našich pobočiek.}}",
+      "directions": "Trasa",
+      "directionsTo": "Trasa do {name}",
+      "call": "Zavolať"
+    },
+    "faq": {
+      "eyebrow": "Často kladené otázky",
+      "title": "Otázky pred rezerváciou",
+      "description": "Nenašli ste odpoveď? Ozvite sa nám, radi vám pomôžeme."
+    },
+    "contact": {
+      "title": "Máte otázky? Porozprávajte sa s nami.",
+      "description": "Pošlite nám správu alebo zavolajte a pomôžeme vám vybrať správne auto.",
+      "whatsapp": "WhatsApp",
+      "email": "Napíšte nám e-mail",
+      "whatsappMessage": "Dobrý deň, {name}, mám otázku ohľadom prenájmu auta."
+    },
+    "nav": {
+      "reviews": "Recenzie",
+      "faq": "Časté otázky",
+      "contact": "Kontakt",
+      "app": "Aplikácia",
+      "branches": "Lokality"
+    },
+    "footer": {
+      "contact": "Kontakt",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Prijímame",
+      "rating": "{score} · {count, plural, one {# recenzia} few {# recenzie} other {# recenzií}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Hotovosť"
+    }
+  },
+  "siteEditor": {
+    "aria": "Editor webu",
+    "title": "Editor webu",
+    "signOut": "Odhlásiť sa",
+    "tabsAria": "Sekcie editora",
+    "status": {
+      "draft": "Koncept",
+      "published": "Zverejnené",
+      "paused": "Pozastavené"
+    },
+    "tabs": {
+      "sections": "Sekcie",
+      "design": "Dizajn",
+      "settings": "Nastavenia",
+      "legal": "Právne"
+    },
+    "contentLanguage": "Jazyk úprav",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Všetky sekcie",
+    "sections": {
+      "company": "Spoločnosť",
+      "fleet": "Autá",
+      "included": "Zahrnuté v každej cene",
+      "reviews": "Recenzie",
+      "app": "Mobilná aplikácia",
+      "faq": "Časté otázky",
+      "contact": "Kontakt",
+      "hero": "Bannery a vyhľadávanie",
+      "branches": "Lokality"
+    },
+    "sectionsHint": "Zapnite alebo vypnite sekcie a zmeňte ich poradie. Otvorte sekciu a upravte jej obsah.",
+    "orderHint": "Autá sa zobrazujú vždy. Pobočky pochádzajú z vašich pobočiek v administrácii Benwer.",
+    "hiddenUntilContent": "Skryté, kým nepridáte obsah",
+    "summary": {
+      "banners": "{count, plural, one {# banner} few {# bannery} other {# bannerov}}",
+      "bannersEmpty": "Zatiaľ žiadne bannery, zobrazuje sa farba značky",
+      "company": "Nadpis, úvod a kontaktné údaje",
+      "fleet": "Z vašej flotily Benwer",
+      "included": "{count, plural, one {# položka} few {# položky} other {# položiek}}",
+      "reviews": "{count, plural, one {# recenzia} few {# recenzie} other {# recenzií}}",
+      "app": "Odkazy na obchody a QR kód",
+      "locations": "{count, plural, one {# pobočka} few {# pobočky} other {# pobočiek}} z Benwer",
+      "faq": "{count, plural, one {# otázka} few {# otázky} other {# otázok}}",
+      "contactWhatsapp": "WhatsApp, telefón a otváracie hodiny",
+      "contact": "Telefón a e-mail"
+    },
+    "unsaved": "Neuložené zmeny",
+    "saved": "Všetky zmeny sú uložené",
+    "discard": "Zahodiť",
+    "save": "Uložiť zmeny",
+    "common": {
+      "moveUp": "Posunúť {item} nahor",
+      "moveDown": "Posunúť {item} nadol",
+      "remove": "Odstrániť {item}",
+      "show": "Zobraziť {item}"
+    },
+    "banners": {
+      "title": "Bannery",
+      "description": "Až {max} snímok. Prázdne polia používajú predvolený text zobrazený sivou.",
+      "empty": "Žiadne bannery. Oblasť bannera zobrazuje vašu farbu pozadia.",
+      "item": "Banner {position}",
+      "image": "Obrázok",
+      "imageHint": "Nahrajte široký obrázok, približne 1600 × 560 px. JPG, PNG alebo WebP do 25 MB. Priehľadné PNG sa zobrazí na farbe vášho bannera.",
+      "add": "Pridať banner",
+      "fields": {
+        "script": "Ručne písaný riadok",
+        "highlight": "Zvýraznený nadpis",
+        "joiner": "Krátke spojenie",
+        "boxed": "Nadpis v rámčeku",
+        "description": "Popis"
+      },
+      "colorsTitle": "Farby bannera",
+      "colorsDescription": "Používajú sa pre každý banner. Pre pozadie funguje akákoľvek farba.",
+      "resetColors": "Obnoviť predvolené farby",
+      "colors": {
+        "background": "Pozadie",
+        "text": "Text",
+        "highlight": "Zvýraznený rámček",
+        "highlightText": "Zvýraznený text",
+        "box": "Biely rámček",
+        "boxText": "Text bieleho rámčeka",
+        "script": "Text spojenia"
+      },
+      "noImage": "Zatiaľ žiadny obrázok",
+      "uploadImage": "Nahrať obrázok",
+      "replaceImage": "Nahradiť obrázok",
+      "tooLarge": "Tento súbor má viac ako 25 MB. Vyberte menší obrázok.",
+      "uploadFailed": "Nahrávanie zlyhalo. Skúste to znova."
+    },
+    "company": {
+      "title": "Hlavička spoločnosti",
+      "description": "Váš názov, nadpis a krátke predstavenie.",
+      "headline": "Nadpis",
+      "headlinePlaceholder": "Prenajmite si auto u {name}",
+      "intro": "Úvod",
+      "introHint": "Jedna alebo dve vety o vašej spoločnosti.",
+      "contactTitle": "Kontaktné údaje",
+      "contactDescription": "Zobrazujú sa v hlavičke, sekcii lokalít a kontaktu.",
+      "showPhone": "Zobraziť telefónne číslo",
+      "showEmail": "Zobraziť e-mail",
+      "showAddress": "Zobraziť adresu"
+    },
+    "included": {
+      "title": "Zahrnuté v každej cene",
+      "description": "Až 6 výhod, ktoré sú vždy súčasťou vašej ceny.",
+      "accuracy": "Uvádzajte len to, čo platí pre každý prenájom. Predvolený text je návrh, skontrolujte, či zodpovedá vašim podmienkam prenájmu.",
+      "item": "Položka {position}",
+      "icon": "Ikona",
+      "itemTitle": "Názov",
+      "itemText": "Popis",
+      "itemTag": "Zvýraznenie",
+      "tagHint": "Krátky štítok zobrazený zelenou, napríklad „Spoluúčasť 1 000 €“.",
+      "presets": {
+        "insurance": "Základné poistenie",
+        "mileage": "Neobmedzené km",
+        "fuel": "Plná – plná nádrž",
+        "cancellation": "Bezplatné zrušenie"
+      },
+      "addCustom": "Vlastná položka"
+    },
+    "icons": {
+      "shield": "Štít",
+      "gauge": "Tachometer",
+      "fuel": "Čerpadlo",
+      "calendar_check": "Kalendár",
+      "check": "Fajka",
+      "car": "Auto",
+      "users": "Ľudia",
+      "baby": "Detská sedačka",
+      "plane": "Lietadlo",
+      "key": "Kľúč"
+    },
+    "reviews": {
+      "title": "Recenzie zákazníkov",
+      "description": "Zákazníci hodnotia prenájom po vrátení vozidla. Zobrazujú sa len recenzie, ktoré schválite.",
+      "summary": "Priemer {average} z {count, plural, one {# schválenej recenzie} few {# schválených recenzií} other {# schválených recenzií}}",
+      "none": "Zatiaľ žiadne schválené recenzie. Zákazníci uvidia krátku poznámku, kým nejakú neschválite.",
+      "manage": "Schváliť alebo skryť recenzie v administrácii Benwer",
+      "demo": "Toto sú ukážkové recenzie zobrazené pre túto testovaciu spoločnosť, kým neschválite skutočné v administrácii Benwer."
+    },
+    "app": {
+      "benwerAppTitle": "Aplikácia Benwer Cars",
+      "benwerApp": "Zobraziť aplikáciu Benwer Cars",
+      "benwerAppDescription": "Zákazníci získajú bezplatnú aplikáciu Benwer Cars. Odznaky vedú do oficiálnych obchodov a QR kód otvorí vašu spoločnosť v aplikácii.",
+      "storesWithBenwerApp": "Potrebné len vtedy, ak má vaša spoločnosť vlastnú aplikáciu. Kým je zapnutá aplikácia Benwer Cars, sekcia používa jej odkazy na obchody.",
+      "storesTitle": "Odkazy na obchody",
+      "storesDescription": "Odkazy na vašu vlastnú aplikáciu. Chýbajúci obchod sa zobrazí sivou. Bez odkazov a s vypnutou aplikáciou Benwer Cars zostane sekcia skrytá.",
+      "ios": "Odkaz na App Store",
+      "android": "Odkaz na Google Play",
+      "qrHint": "QR kód otvorí odkaz na Google Play, alebo odkaz na App Store, ak odkaz na Google Play chýba.",
+      "copyTitle": "Text",
+      "title": "Nadpis",
+      "text": "Popis"
+    },
+    "faq": {
+      "title": "Otázky",
+      "description": "Až {max} otázok s krátkymi odpoveďami.",
+      "empty": "Zatiaľ žiadne otázky. Sekcia zostane skrytá, kým nejakú nepridáte.",
+      "item": "Otázka {position}",
+      "question": "Otázka",
+      "answer": "Odpoveď",
+      "incompleteHint": "Otázky bez odpovede sa na webe nezobrazujú.",
+      "add": "Pridať otázku"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Ako sa s vami zákazníci spoja. Telefón a e-mail pochádzajú zo sekcie spoločnosti.",
+      "whatsapp": "Číslo WhatsApp",
+      "whatsappHint": "Uveďte aj predvoľbu krajiny. Nechajte prázdne na skrytie tlačidla WhatsApp.",
+      "hours": "Kedy odpovedáte",
+      "hoursPlaceholder": "Odpovedáme každý deň od 08:00 do 22:00.",
+      "payments": "Spôsoby platby",
+      "paymentsHint": "Zobrazuje sa v pätičke."
+    },
+    "design": {
+      "colorTitle": "Farba značky",
+      "colorDescription": "Používa sa pre tlačidlá, odkazy a zvýraznenia na celom webe. Pozadie bannera túto farbu preberá; stále ho môžete doladiť v sekcii Bannery.",
+      "presets": "Navrhované farby",
+      "custom": "Vlastná farba",
+      "customHint": "Použite hex kód, napríklad #4f46e5.",
+      "picker": "Vybrať farbu",
+      "lowContrast": "Táto farba je príliš svetlá pre biely text na tlačidlách. Vyberte tmavšiu, inak uloženie zlyhá.",
+      "fontTitle": "Písmo",
+      "fontDescription": "Používa sa pre všetok text na vašom webe.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Čisté a moderné"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klasické a elegantné"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Výrazné a priateľské"
+        }
+      },
+      "cornersTitle": "Rohy",
+      "cornersDescription": "Zaoblené alebo hranaté rohy tlačidiel, kariet a polí na celom webe.",
+      "corners": {
+        "round": {
+          "name": "Zaoblené",
+          "hint": "Jemné a priateľské"
+        },
+        "square": {
+          "name": "Hranaté",
+          "hint": "Ostré a minimalistické"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Webová stránka",
+      "websiteEnabled": "Rezervačný web zapnutý",
+      "websiteEnabledHint": "Keď je zapnutý, zákazníci môžu prezerať a rezervovať na vašom zverejnenom webe. Zapnutím sa zároveň zverejnia uložené zmeny. Je to rovnaký prepínač ako v administrácii Benwer.",
+      "bookingTitle": "Rezervácie",
+      "bookingDescription": "Ako si zákazníci rezervujú cez váš web.",
+      "bookingMode": "Režim rezervácie",
+      "mode": {
+        "instant": "Okamžitá",
+        "request": "Na vyžiadanie"
+      },
+      "modeHint": {
+        "instant": "Rezervácie sa potvrdzujú okamžite.",
+        "request": "Každú rezerváciu prijmete alebo zamietnete v rámci času na odpoveď."
+      },
+      "minLead": "Minimálny predstih",
+      "requestWindow": "Čas na odpoveď",
+      "hoursUnit": "V hodinách",
+      "differentReturnTitle": "Vrátenie na inom mieste",
+      "differentReturnLabel": "Umožniť zákazníkom vrátenie na inom mieste",
+      "differentReturnHint": "Zákazníci si pri vyhľadávaní vyberú miesto vrátenia. K cene sa pripočíta jednosmerný poplatok z administrácie Benwer.",
+      "differentReturnOff": "Ak chcete túto možnosť ponúkať, zapnite jednosmerné prenájmy v administrácii Benwer."
+    },
+    "savedNotPublished": "Uložené, ešte nezverejnené",
+    "publish": "Zverejniť",
+    "branding": {
+      "logosTitle": "Logá",
+      "logosDescription": "Toto je logo vašej spoločnosti. Jeho zmena tu aktualizuje aj Benwer admin a aplikáciu Benwer Cars.",
+      "headerLogo": "Logo v hornej lište",
+      "headerLogoHint": "Zobrazuje sa v lište v hornej časti každej stránky. Najlepšie funguje široké logo.",
+      "companyLogo": "Logo v sekcii spoločnosti",
+      "companyLogoHint": "Zobrazuje sa nad nadpisom, pred sekciou spoločnosti.",
+      "usingCompanyLogo": "Používa sa logo vašej spoločnosti",
+      "upload": "Nahrať logo",
+      "replace": "Nahradiť",
+      "uploadFailed": "Logo sa nepodarilo nahrať. Použite obrázok PNG, JPG alebo WebP a skúste to znova.",
+      "tooLarge": "Tento obrázok je väčší ako 25 MB.",
+      "backgroundTitle": "Pozadie stránky",
+      "backgroundDescription": "Farba za obsahom vašej webovej stránky.",
+      "backgroundPresets": "Navrhované pozadia",
+      "backgroundCustom": "Vlastné pozadie",
+      "backgroundPicker": "Vybrať farbu pozadia",
+      "needsApi": "Dostupné po spustení aktualizácie Benwer API pre webové stránky.",
+      "headerLogoDark": "Logo v hornej lište — tmavý režim",
+      "companyLogoDark": "Logo v sekcii spoločnosti — tmavý režim",
+      "squareLogo": "Štvorcové logo (1:1)",
+      "squareLogoHint": "Povinné na zverejnenie. Zobrazuje sa vedľa názvu spoločnosti na kartách, vo výsledkoch vyhľadávania a v mobilných zoznamoch.",
+      "cropTitle": "Orezať logo na 2:1",
+      "cropHint": "Posúvajte a približujte, aby sa logo čisto zmestilo do rámčeka 2:1.",
+      "cropZoom": "Priblíženie",
+      "cropCancel": "Zrušiť",
+      "cropSave": "Orezať a nahrať",
+      "darkLogoHint": "Voliteľné. Zobrazuje sa, keď návštevníci používajú tmavý režim. Použite svetlú alebo bielu verziu loga.",
+      "darkNeedsApi": "Logá pre tmavý režim budú dostupné po spustení aktualizácie Benwer API.",
+      "logo": "Logo (2:1)",
+      "logoHint": "Vyžadované na publikovanie. Jedno logo pre svetlý a tmavý režim: farba vašej značky ako pozadie s bielym názvom, orezané v pomere 2:1."
+    },
+    "legal": {
+      "hint": "Každá stránka začína štandardným textom, takže môžete upraviť len časti, ktoré potrebujete. Pre každý podnadpis pridajte sekciu. „Späť na štandardný text“ vráti vaše zmeny späť.",
+      "needsApi": "Dostupné po spustení aktualizácie Benwer API pre webové stránky.",
+      "privacyTitle": "Zásady ochrany osobných údajov",
+      "privacyDescription": "Zobrazuje sa pod odkazom Ochrana súkromia v pätičke vášho webu.",
+      "termsTitle": "Obchodné podmienky",
+      "termsDescription": "Zobrazuje sa pod odkazom Podmienky v pätičke vášho webu.",
+      "text": "Text",
+      "intro": "Úvod",
+      "subtitle": "Podnadpis",
+      "sectionItem": "Sekcia {position}",
+      "addSection": "Pridať sekciu",
+      "reset": "Späť na štandardný text",
+      "pageTitle": "Názov stránky",
+      "privacyLooksLikeTerms": "Vaše zásady ochrany osobných údajov majú rovnaký text ako podmienky. Použite „Späť na štandardný text“ pod Zásadami ochrany osobných údajov alebo napíšte vlastný text a uložte ho."
+    },
+    "preview": "Náhľad",
+    "fullscreen": "Editor na celú obrazovku",
+    "exitFullscreen": "Zobraziť náhľad vedľa editora",
+    "previewBarAria": "Ovládanie náhľadu",
+    "previewing": "Prezeráte si náhľad svojho webu",
+    "backToEdit": "Upraviť"
+  },
+  "marketplaceBanners": {
+    "aria": "Výber Benwer",
+    "slideLabel": "{position} z {count}",
+    "goTo": "Zobraziť banner {position}",
+    "previous": "Predchádzajúci banner",
+    "next": "Ďalší banner",
+    "trust": {
+      "script": "rezervujte s istotou",
+      "highlight": "Overené spoločnosti",
+      "joiner": "a",
+      "boxed": "Bezpečná rezervácia",
+      "description": "Skutočné recenzie, jasné podmienky a digitálne zmluvy, ktoré podpíšete v telefóne"
+    },
+    "prices": {
+      "script": "jedno vyhľadávanie",
+      "highlight": "Porovnajte ceny",
+      "joiner": "od",
+      "boxed": "Partnerské spoločnosti",
+      "description": "Pozrite si ceny, poistenie a zálohy od partnerských autopožičovní vedľa seba pred rezerváciou"
+    },
+    "anywhere": {
+      "script": "nájdite svoje auto",
+      "highlight": "V celej Málage",
+      "joiner": "s",
+      "boxed": "Miestne autopožičovne",
+      "description": "Partnerské autopožičovne v mestách po celej provincii Málaga, všetko na jednom mieste"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Zverejnila spoločnosť {name}.",
+    "cookies": {
+      "title": "Zásady používania súborov cookie",
+      "lede": "Ako {name} používa súbory cookie a podobné technológie na tejto webovej stránke.",
+      "updated": "Zverejnila spoločnosť {name}.",
+      "sections": [
+        {
+          "title": "Čo používame",
+          "body": "Súbory cookie sú malé textové súbory uložené vo vašom zariadení. Táto webová stránka používa aj podobné úložiská, napríklad lokálne úložisko, na zapamätanie vašich volieb, košíka a prihlásenia."
+        },
+        {
+          "title": "Nevyhnutné súbory cookie",
+          "body": "Jazykový súbor cookie umožňuje stránke zobraziť váš jazyk a vaša voľba v cookie lište sa ukladá, aby sme sa pri každej návšteve nemuseli pýtať znova. Ak sa prihlásite, poskytovateľ prihlásenia uloží reláciu vo vašom zariadení, aby ste zostali prihlásení. Platby kartou spracováva Stripe, ktorý môže nastaviť vlastné súbory cookie na prevenciu podvodov."
+        },
+        {
+          "title": "Voliteľné súbory cookie",
+          "body": "Voliteľné súbory cookie (napríklad analytické) zostávajú vypnuté, pokiaľ nezvolíte Prijať všetko. Táto webová stránka v súčasnosti nenastavuje analytické ani marketingové súbory cookie."
+        },
+        {
+          "title": "Správa súborov cookie",
+          "body": "Na zmenu svojej voľby použite odkaz Nastavenia súborov cookie v pätičke. Súbory cookie a údaje stránok môžete tiež vymazať vo svojom prehliadači. Zablokovanie nevyhnutného úložiska vás môže odhlásiť alebo vyprázdniť váš košík."
+        },
+        {
+          "title": "Ďalšie informácie",
+          "body": "Informácie o tom, ako {name} spracúva osobné údaje, nájdete v zásadách ochrany osobných údajov alebo použite kontaktné údaje v pätičke."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Podpora",
+    "fabCloseLabel": "Zavrieť ponuku podpory",
+    "messageAction": "Priama správa",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Dobrý deň, mám otázku ohľadom Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "Aplikácia Benwer Cars",
+    "metaDescription": "Rezervujte autá, majte všetky cesty na jednom mieste a dostávajte aktualizácie rezervácií do telefónu.",
+    "eyebrow": "Mobilná aplikácia",
+    "title": "Váš prenájom auta priamo vo vrecku",
+    "description": "Rezervujte autá od miestnych spoločností, majte každú cestu na jednom mieste, plaťte a dostávajte aktualizácie do telefónu.",
+    "featureTrips": "Všetky vaše cesty naprieč spoločnosťami",
+    "featureBooking": "Rezervácia a platba na pár klepnutí",
+    "featurePush": "Upozornenia pri zmene vašej rezervácie",
+    "unavailableTitle": "Aplikácia príde už čoskoro",
+    "unavailableDescription": "Aplikácia Benwer Cars ešte nie je v obchodoch. Stále však môžete rezervovať na webe.",
+    "browse": "Prehliadať autá",
+    "badgeTitle": "Získajte aplikáciu Benwer Cars",
+    "companyText": "Rezervujte u {company} v telefóne a majte svoje cesty na jednom mieste.",
+    "bookingText": "Zobrazte túto rezerváciu, zaplaťte a dostávajte aktualizácie do telefónu."
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Jokin meni pieleen. Yritä uudelleen.",
+    "network": "Palvelimeen ei saada yhteyttä. Tarkista verkkoyhteytesi.",
+    "vehicle": {
+      "not_found": "Tämä ajoneuvo ei ole enää saatavilla."
+    },
+    "company": {
+      "not_found": "Tätä yritystä ei löytynyt."
+    },
+    "reservation": {
+      "overlap": "Tämä ajoneuvo on jo varattu kyseisille päiville.",
+      "not_found": "Varausta ei löytynyt. Tarkista vahvistuslinkkisi.",
+      "invalid_dates": "Palautuspäivän on oltava noutopäivän jälkeen.",
+      "min_lead": "Nouto on liian pian. Valitse myöhäisempi päivämäärä.",
+      "terms_required": "Hyväksy vuokrausehdot jatkaaksesi.",
+      "max_open_requests": "Sinulla on jo kaksi avointa pyyntöä. Peruuta toinen ennen uuden lähettämistä.",
+      "request_expired": "Tämä pyyntö on vanhentunut. Aloita uusi varaus.",
+      "not_cancellable": "Tätä varausta ei voi enää peruuttaa verkossa."
+    },
+    "booking": {
+      "payment_not_required": "Tälle varaukselle ei tarvitse suorittaa verkkomaksua.",
+      "payment_window_elapsed": "15 minuutin maksuaika on päättynyt. Aloita uusi varaus, jos tarvitset yhä auton.",
+      "payment_not_open": "Maksu ei ole käytettävissä tälle varaukselle. Yritä uudelleen tai ota yhteyttä yritykseen."
+    },
+    "rental_payments": {
+      "already_paid": "Tämä varaus on jo maksettu."
+    },
+    "site": {
+      "not_found": "Tätä vuokraussivustoa ei löytynyt.",
+      "paused": "Tämä yritys ei ota tällä hetkellä vastaan varauksia.",
+      "not_published": "Tämä sivusto ei ole vielä avoinna varauksille."
+    },
+    "website_domain": {
+      "not_found": "Tätä verkko-osoitetta ei ole liitetty vuokrausyritykseen."
+    },
+    "staff": {
+      "unauthenticated": "Kirjaudu sisään yrityksen omistajana muokataksesi tätä sivustoa.",
+      "forbidden": "Sinulla ei ole oikeutta muokata tätä sivustoa."
+    },
+    "guest": {
+      "not_configured": "Asiakastilit eivät ole vielä käytettävissä tälle yritykselle.",
+      "not_linked": "Tähän tiliin ei ole vielä liitetty varauksia.",
+      "invalid_token": "Tämä vahvistuslinkki on virheellinen tai vanhentunut.",
+      "unauthenticated": "Kirjaudu sisään jatkaaksesi."
+    },
+    "pricing": {
+      "min_days": "Valitut päivät ovat liian lyhyt aika tälle kaudelle. Valitse pidempi vuokra-aika.",
+      "max_days": "Valitut päivät ovat liian pitkä aika tälle kaudelle. Valitse lyhyempi vuokra-aika.",
+      "rental_too_long": "Tämä vuokraus on liian pitkä verkossa varattavaksi. Ota yhteyttä yritykseen."
+    },
+    "contact": {
+      "not_configured": "Yhteydenottosähköpostia ei ole vielä määritetty. Yritä myöhemmin uudelleen.",
+      "delivery_failed": "Viestisi lähettäminen ei onnistunut juuri nyt. Yritä myöhemmin uudelleen."
+    }
+  },
+  "nav": {
+    "home": "Etusivu",
+    "cars": "Autot",
+    "companies": "Yritykset",
+    "contact": "Yhteystiedot",
+    "privacy": "Tietosuoja",
+    "terms": "Ehdot",
+    "cookies": "Evästeet",
+    "mainAria": "Päävalikko",
+    "footerAria": "Alatunnisteen valikko",
+    "menu": "Valikko"
+  },
+  "meta": {
+    "siteTitle": "Löydä paikalliset vuokra-autot",
+    "siteDescription": "Vertaile kumppanivuokraamojen autoja Málagan maakunnassa ja jatka sitten yrityksen omalle sivustolle."
+  },
+  "notFound": {
+    "title": "Sivua ei löytynyt",
+    "description": "Tätä sivua ei ole olemassa. Palaa takaisin ja etsi autoa.",
+    "action": "Takaisin etusivulle"
+  },
+  "hostUnknown": {
+    "title": "Tämä sivusto ei ole käytettävissä",
+    "description": "Tarkista kirjoittamasi osoite. Tämä sivu ei kuulu Benwer Cars -vuokraussivustoon."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, etusivu",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Vaihda tummaan tilaan",
+    "toLight": "Vaihda vaaleaan tilaan"
+  },
+  "locale": {
+    "label": "Kieli",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Hae kieliä",
+    "noResults": "Ei vastaavia kieliä"
+  },
+  "footer": {
+    "tagline": "Vertaile kumppanivuokraamojen autoja.",
+    "trust": "Kumppanikalustot · Málaga · Vuokraa yrityksen sivustolla",
+    "poweredBy": "Varattu Benwer Carsin kautta",
+    "explore": "Tutustu",
+    "legal": "Lakitiedot",
+    "copyright": "© {year} Benwer Cars. Kaikki oikeudet pidätetään."
+  },
+  "cookieBanner": {
+    "body": "Käytämme kielievästettä ja tallennamme tämän valinnan laitteellesi. Valinnaiset evästeet pysyvät pois päältä, ellet hyväksy niitä.",
+    "policy": "Evästekäytäntö",
+    "necessary": "Hylkää kaikki",
+    "accept": "Hyväksy kaikki",
+    "title": "Arvostamme yksityisyyttäsi",
+    "settings": "Evästeasetukset"
+  },
+  "actions": {
+    "retry": "Yritä uudelleen",
+    "back": "Takaisin",
+    "viewAll": "Näytä kaikki",
+    "close": "Sulje"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Maatunnus, {country} {dial}",
+    "search": "Etsi maita",
+    "countries": "Maat",
+    "noResults": "Ei vastaavia maita",
+    "invalid": "Anna kelvollinen puhelinnumero.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Tyhjennä päivämäärä"
+  },
+  "guestNotifications": {
+    "title": "Ilmoitukset",
+    "openLabel": "Avaa ilmoitukset",
+    "unreadCount": "{count} lukematonta ilmoitusta",
+    "emptyTitle": "Ei vielä ilmoituksia",
+    "emptyBody": "Varauspäivitykset, maksumuistutukset ja noutoilmoitukset näkyvät täällä.",
+    "error": "Ilmoitusten lataaminen epäonnistui.",
+    "retry": "Yritä uudelleen",
+    "markAllRead": "Merkitse kaikki luetuiksi",
+    "dismiss": "Sulje",
+    "loadMore": "Lataa lisää",
+    "enablePush": "Ota selainilmoitukset käyttöön",
+    "pushEnabled": "Selainilmoitukset käytössä",
+    "pushBlocked": "Selainilmoitukset on estetty asetuksissa",
+    "disablePush": "Poista selainilmoitukset käytöstä"
+  }
+}

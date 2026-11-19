@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Xi ħaġa marret ħażin. Jekk jogħġbok erġa' pprova.",
+    "network": "Ma nistgħux nilħqu s-server. Iċċekkja l-konnessjoni tiegħek.",
+    "vehicle": {
+      "not_found": "Dan il-vettura m'għadhiex disponibbli."
+    },
+    "company": {
+      "not_found": "Din il-kumpanija ma nstabitx."
+    },
+    "reservation": {
+      "overlap": "Din il-vettura diġà hija bbukkjata għal dawk id-dati.",
+      "not_found": "Ir-riservazzjoni ma nstabitx. Iċċekkja l-link ta' konferma tiegħek.",
+      "invalid_dates": "Ir-ritorn irid ikun wara l-ġbir.",
+      "min_lead": "Il-ġbir huwa kmieni wisq. Agħżel data aktar tard.",
+      "terms_required": "Jekk jogħġbok aċċetta t-termini tal-kiri biex tkompli.",
+      "max_open_requests": "Diġà għandek żewġ talbiet miftuħa. Irtira waħda qabel tibgħat oħra.",
+      "request_expired": "Din it-talba skadiet. Ibda waħda ġdida.",
+      "not_cancellable": "Dan il-booking ma jistax jibqa' jiġi kkanċellat online."
+    },
+    "booking": {
+      "payment_not_required": "L-ebda ħlas online mhu meħtieġ għal dan il-booking.",
+      "payment_window_elapsed": "Il-perjodu ta' 15-il minuta għall-ħlas intemm. Ibda booking ġdid jekk għadek teħtieġ il-karozza.",
+      "payment_not_open": "Il-ħlas mhuwiex disponibbli għal dan il-booking. Erġa' pprova jew ikkuntattja lill-kumpanija."
+    },
+    "rental_payments": {
+      "already_paid": "Dan il-booking diġà tħallas."
+    },
+    "site": {
+      "not_found": "Dan is-sit tal-kiri ma nstabx.",
+      "paused": "Din il-kumpanija bħalissa mhijiex taċċetta bookings.",
+      "not_published": "Dan is-sit għadu mhuwiex miftuħ għall-bookings."
+    },
+    "website_domain": {
+      "not_found": "Dan l-indirizz tas-sit mhuwiex marbut ma' kumpanija tal-kiri."
+    },
+    "staff": {
+      "unauthenticated": "Idħol bħala s-sid tal-kumpanija biex teditja dan is-sit.",
+      "forbidden": "M'għandekx permess teditja dan is-sit."
+    },
+    "guest": {
+      "not_configured": "Il-kontijiet tal-klijenti għadhom mhumiex disponibbli għal din il-kumpanija.",
+      "not_linked": "Għad m'hemm l-ebda booking marbut ma' dan il-kont.",
+      "invalid_token": "Din il-link ta' konferma mhijiex valida jew skadiet.",
+      "unauthenticated": "Idħol fil-kont biex tkompli."
+    },
+    "pricing": {
+      "min_days": "Dawn id-dati huma qosra wisq għall-istaġun. Agħżel kiri itwal.",
+      "max_days": "Dawn id-dati huma twal wisq għall-istaġun. Agħżel kiri iqsar.",
+      "rental_too_long": "Dan il-kiri huwa twil wisq biex tibbukkja online. Ikkuntattja lill-kumpanija."
+    },
+    "contact": {
+      "not_configured": "L-email ta' kuntatt għadu mhux ikkonfigurat. Jekk jogħġbok erġa' pprova aktar tard.",
+      "delivery_failed": "Ma stajniex nibagħtu l-messaġġ tiegħek bħalissa. Jekk jogħġbok erġa' pprova aktar tard."
+    }
+  },
+  "nav": {
+    "home": "Paġna ewlenija",
+    "cars": "Karozzi",
+    "companies": "Kumpaniji",
+    "contact": "Kuntatt",
+    "privacy": "Privatezza",
+    "terms": "Termini",
+    "cookies": "Cookies",
+    "mainAria": "Navigazzjoni ewlenija",
+    "footerAria": "Navigazzjoni tal-qiegħ",
+    "menu": "Menu"
+  },
+  "meta": {
+    "siteTitle": "Sib kiri ta' karozzi lokali",
+    "siteDescription": "Qabbel karozzi minn kumpaniji msieħba tal-kiri madwar il-provinċja ta' Málaga, imbagħad kompli fuq is-sit tal-kumpanija."
+  },
+  "notFound": {
+    "title": "Il-paġna ma nstabitx",
+    "description": "Dik il-paġna ma teżistix. Mur lura u fittex karozza.",
+    "action": "Lura lejn il-paġna ewlenija"
+  },
+  "hostUnknown": {
+    "title": "Dan is-sit mhuwiex disponibbli",
+    "description": "Iċċekkja l-indirizz li ktibt. Din il-paġna ma tappartjenix għal sit tal-kiri ta' Benwer Cars."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, paġna ewlenija",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Aqleb għall-modalità skura",
+    "toLight": "Aqleb għall-modalità ċara"
+  },
+  "locale": {
+    "label": "Lingwa",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Fittex lingwi",
+    "noResults": "L-ebda lingwa ma taqbel"
+  },
+  "footer": {
+    "tagline": "Qabbel karozzi minn kumpaniji msieħba tal-kiri.",
+    "trust": "Flotot msieħba · Málaga · Kiri fuq is-sit tal-kumpanija",
+    "poweredBy": "Ibbukkjat permezz ta' Benwer Cars",
+    "explore": "Esplora",
+    "legal": "Legali",
+    "copyright": "© {year} Benwer Cars. Id-drittijiet kollha riżervati."
+  },
+  "cookieBanner": {
+    "body": "Nużaw cookie tal-lingwa u niftakru din l-għażla fuq it-tagħmir tiegħek. Il-cookies mhux obbligatorji jibqgħu mitfija sakemm ma taċċettahomx.",
+    "policy": "Politika tal-cookies",
+    "necessary": "Irrifjuta kollox",
+    "accept": "Aċċetta kollox",
+    "title": "Ngħożżu l-privatezza tiegħek",
+    "settings": "Settings tal-cookies"
+  },
+  "actions": {
+    "retry": "Erġa' pprova",
+    "back": "Mur lura",
+    "viewAll": "Ara kollox",
+    "close": "Agħlaq"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Kodiċi tal-pajjiż, {country} {dial}",
+    "search": "Fittex pajjiżi",
+    "countries": "Pajjiżi",
+    "noResults": "L-ebda pajjiż ma jaqbel",
+    "invalid": "Daħħal numru tat-telefown validu.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Neħħi d-data"
+  },
+  "guestNotifications": {
+    "title": "Notifiki",
+    "openLabel": "Iftaħ in-notifiki",
+    "unreadCount": "{count} notifiki mhux moqrija",
+    "emptyTitle": "Għad m'hemmx notifiki",
+    "emptyBody": "Aġġornamenti tal-booking, tfakkiriet tal-ħlas u twissijiet tal-ġbir se jidhru hawn.",
+    "error": "Ma stajniex ngħabbu n-notifiki.",
+    "retry": "Erġa' pprova",
+    "markAllRead": "Immarka kollox bħala moqri",
+    "dismiss": "Agħlaq",
+    "loadMore": "Għabbi aktar",
+    "enablePush": "Attiva t-twissijiet tal-browser",
+    "pushEnabled": "Twissijiet tal-browser attivati",
+    "pushBlocked": "Twissijiet tal-browser imblukkati fis-settings",
+    "disablePush": "Itfi t-twissijiet tal-browser"
+  }
+}

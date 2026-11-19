@@ -5,11 +5,11 @@ import * as Popover from "@radix-ui/react-popover";
 import { Calendar } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { DayPicker, type DateRange } from "react-day-picker";
-import { enGB, es, pt } from "react-day-picker/locale";
 import { SearchFieldSegment } from "./SearchFieldSegment";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import {
   formatSearchDate,
+  getDateFnsLocale,
   parseIsoDate,
   startOfToday,
   toIsoDate,
@@ -152,7 +152,7 @@ export function DateRangePopover({
         >
           <DayPicker
             mode="range"
-            locale={locale === "es-ES" ? es : locale === "pt-PT" ? pt : enGB}
+            locale={getDateFnsLocale(locale)}
             numberOfMonths={isDesktop ? 2 : 1}
             selected={selected}
             onSelect={handleSelect}

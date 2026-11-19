@@ -3,13 +3,19 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Menu, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { SiteSectionId } from "@/enums";
 import { formatPhoneDisplay, phoneTelHref } from "@/lib/phone";
 import { cn } from "@/lib/utils";
-import { HeaderMobileMenu, headerNavLinkClass, type HeaderMenuLink } from "./HeaderMobileMenu";
+import {
+  HeaderMobileMenu,
+  MOBILE_MENU_ITEM,
+  headerNavLinkClass,
+  type HeaderMenuLink,
+} from "./HeaderMobileMenu";
 import { SiteCartMenuItem } from "./SiteCartLink";
 import { SiteAccountMenuItems } from "./SiteGuestLink";
 import { HEADER_ICON_BUTTON, MENU_CONTENT, MENU_ITEM } from "./LocaleSwitcher";
@@ -52,12 +58,12 @@ export function SiteMobileMenu({ phone, cartSlug, ...nav }: SiteMobileMenuProps)
   return (
     <HeaderMobileMenu links={useSiteLinks(nav)}>
       {phone ? (
-        <DropdownMenu.Item asChild className={MENU_ITEM}>
-          <a href={phoneTelHref(phone)}>
-            <Phone size={15} aria-hidden />
+        <Dialog.Close asChild>
+          <a href={phoneTelHref(phone)} className={MOBILE_MENU_ITEM}>
+            <Phone size={16} className="shrink-0 text-muted-foreground" aria-hidden />
             {formatPhoneDisplay(phone)}
           </a>
-        </DropdownMenu.Item>
+        </Dialog.Close>
       ) : null}
       {cartSlug ? <SiteCartMenuItem slug={cartSlug} homeHref={nav.homeHref} /> : null}
       <SiteAccountMenuItems homeHref={nav.homeHref} />

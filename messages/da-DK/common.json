@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Noget gik galt. Prøv venligst igen.",
+    "network": "Kan ikke oprette forbindelse til serveren. Tjek din internetforbindelse.",
+    "vehicle": {
+      "not_found": "Dette køretøj er ikke længere tilgængeligt."
+    },
+    "company": {
+      "not_found": "Denne virksomhed kunne ikke findes."
+    },
+    "reservation": {
+      "overlap": "Dette køretøj er allerede booket for de valgte datoer.",
+      "not_found": "Reservationen blev ikke fundet. Tjek dit bekræftelseslink.",
+      "invalid_dates": "Aflevering skal være efter afhentning.",
+      "min_lead": "Afhentning er for tidligt. Vælg en senere dato.",
+      "terms_required": "Accepter venligst lejebetingelserne for at fortsætte.",
+      "max_open_requests": "Du har allerede to åbne forespørgsler. Træk en tilbage, før du sender en ny.",
+      "request_expired": "Denne forespørgsel er udløbet. Start en ny.",
+      "not_cancellable": "Denne booking kan ikke længere annulleres online."
+    },
+    "booking": {
+      "payment_not_required": "Der skal ikke betales online for denne booking.",
+      "payment_window_elapsed": "Betalingsvinduet på 15 minutter er udløbet. Start en ny booking, hvis du stadig har brug for bilen.",
+      "payment_not_open": "Betaling er ikke tilgængelig for denne booking. Prøv igen eller kontakt virksomheden."
+    },
+    "rental_payments": {
+      "already_paid": "Denne booking er allerede betalt."
+    },
+    "site": {
+      "not_found": "Denne udlejningshjemmeside kunne ikke findes.",
+      "paused": "Denne virksomhed tager ikke imod bookinger lige nu.",
+      "not_published": "Denne hjemmeside er endnu ikke åben for bookinger."
+    },
+    "website_domain": {
+      "not_found": "Denne webadresse er ikke knyttet til en udlejningsvirksomhed."
+    },
+    "staff": {
+      "unauthenticated": "Log ind som virksomhedsejer for at redigere denne hjemmeside.",
+      "forbidden": "Du har ikke tilladelse til at redigere denne hjemmeside."
+    },
+    "guest": {
+      "not_configured": "Gæstekonti er endnu ikke tilgængelige for denne virksomhed.",
+      "not_linked": "Der er endnu ingen bookinger knyttet til denne konto.",
+      "invalid_token": "Dette bekræftelseslink er ugyldigt eller udløbet.",
+      "unauthenticated": "Log ind for at fortsætte."
+    },
+    "pricing": {
+      "min_days": "Disse datoer er for korte for sæsonen. Vælg en længere lejeperiode.",
+      "max_days": "Disse datoer er for lange for sæsonen. Vælg en kortere lejeperiode.",
+      "rental_too_long": "Denne lejeperiode er for lang til at booke online. Kontakt virksomheden."
+    },
+    "contact": {
+      "not_configured": "Kontakt-e-mail er endnu ikke konfigureret. Prøv venligst igen senere.",
+      "delivery_failed": "Vi kunne ikke sende din besked lige nu. Prøv venligst igen senere."
+    }
+  },
+  "nav": {
+    "home": "Forside",
+    "cars": "Biler",
+    "companies": "Virksomheder",
+    "contact": "Kontakt",
+    "privacy": "Privatliv",
+    "terms": "Vilkår",
+    "cookies": "Cookies",
+    "mainAria": "Hovednavigation",
+    "footerAria": "Sidefodsnavigation",
+    "menu": "Menu"
+  },
+  "meta": {
+    "siteTitle": "Find lokale biludlejninger",
+    "siteDescription": "Sammenlign biler fra partner-udlejningsvirksomheder i Málaga-provinsen, og fortsæt derefter på virksomhedens egen side."
+  },
+  "notFound": {
+    "title": "Siden blev ikke fundet",
+    "description": "Den side findes ikke. Gå tilbage og søg efter en bil.",
+    "action": "Tilbage til forsiden"
+  },
+  "hostUnknown": {
+    "title": "Denne hjemmeside er ikke tilgængelig",
+    "description": "Tjek adressen, du indtastede. Denne side tilhører ikke en Benwer Cars-udlejningshjemmeside."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, forside",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Skift til mørk tilstand",
+    "toLight": "Skift til lys tilstand"
+  },
+  "locale": {
+    "label": "Sprog",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Søg efter sprog",
+    "noResults": "Ingen matchende sprog"
+  },
+  "footer": {
+    "tagline": "Sammenlign biler fra partner-udlejningsvirksomheder.",
+    "trust": "Partnerflåder · Málaga · Lej på virksomhedens side",
+    "poweredBy": "Booket gennem Benwer Cars",
+    "explore": "Udforsk",
+    "legal": "Juridisk",
+    "copyright": "© {year} Benwer Cars. Alle rettigheder forbeholdes."
+  },
+  "cookieBanner": {
+    "body": "Vi bruger en sprogcookie og husker dette valg på din enhed. Valgfrie cookies forbliver slået fra, medmindre du accepterer dem.",
+    "policy": "Cookiepolitik",
+    "necessary": "Afvis alle",
+    "accept": "Accepter alle",
+    "title": "Vi værner om dit privatliv",
+    "settings": "Cookieindstillinger"
+  },
+  "actions": {
+    "retry": "Prøv igen",
+    "back": "Gå tilbage",
+    "viewAll": "Vis alle",
+    "close": "Luk"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Landekode, {country} {dial}",
+    "search": "Søg efter lande",
+    "countries": "Lande",
+    "noResults": "Ingen lande matcher",
+    "invalid": "Indtast et gyldigt telefonnummer.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Ryd dato"
+  },
+  "guestNotifications": {
+    "title": "Notifikationer",
+    "openLabel": "Åbn notifikationer",
+    "unreadCount": "{count} ulæste notifikationer",
+    "emptyTitle": "Ingen notifikationer endnu",
+    "emptyBody": "Bookingopdateringer, betalingspåmindelser og afhentningsbeskeder vises her.",
+    "error": "Kunne ikke indlæse notifikationer.",
+    "retry": "Prøv igen",
+    "markAllRead": "Marker alle som læst",
+    "dismiss": "Luk",
+    "loadMore": "Indlæs flere",
+    "enablePush": "Aktivér browsernotifikationer",
+    "pushEnabled": "Browsernotifikationer aktiveret",
+    "pushBlocked": "Browsernotifikationer blokeret i indstillinger",
+    "disablePush": "Deaktivér browsernotifikationer"
+  }
+}

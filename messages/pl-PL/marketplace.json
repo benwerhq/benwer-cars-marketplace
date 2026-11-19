@@ -1,0 +1,1402 @@
+{
+  "home": {
+    "companiesEyebrow": "Firmy",
+    "title": "Znajdź swój idealny samochód",
+    "subtitle": "Porównaj samochody z partnerskich wypożyczalni, a następnie przejdź na stronę firmy.",
+    "searchPlaceholder": "Dokąd się wybierasz?",
+    "eyebrow": "Malaga · Costa del Sol",
+    "companiesHeading": "Polecane firmy",
+    "companiesSubtitle": "Partnerskie wypożyczalnie w prowincji Malaga — floty, z którymi współpracujemy, a nie niezweryfikowane ogłoszenia",
+    "trustLocal": "Firmy partnerskie",
+    "trustGuest": "Wynajem na stronie firmy",
+    "trustArea": "Prowincja Malaga",
+    "viewAllCompanies": "Zobacz wszystkie firmy"
+  },
+  "featuredCars": {
+    "viewAllCount": "Zobacz wszystkie {count} samochodów",
+    "eyebrow": "Samochody",
+    "title": "Dostępne samochody",
+    "subtitle": "Wszystkie samochody opublikowane przez firmy partnerskie, zestawione obok siebie. Wybierz jeden, aby zarezerwować go na stronie firmy.",
+    "viewAll": "Szukaj wśród wszystkich samochodów",
+    "seeAll": "Zobacz wszystkie",
+    "emptyTitle": "Brak opublikowanych samochodów",
+    "emptyHint": "Publiczne floty pojawią się tutaj, gdy firmy je opublikują."
+  },
+  "whatYouGet": {
+    "eyebrow": "Dla wypożyczalni samochodów",
+    "title": "Co zyskujesz",
+    "subtitle": "Jedno narzędzie dla biura, placu i podróżnych szukających aut w Maladze.",
+    "admin": {
+      "title": "Pełny system administracyjny",
+      "body": "Zarządzaj samochodami, cenami, dostępnością i rezerwacjami z jednego panelu operacyjnego — tego samego katalogu, z którego korzysta platforma."
+    },
+    "mobile": {
+      "title": "Aplikacja mobilna dla personelu",
+      "body": "Wydawaj i przyjmuj samochody oraz przeglądaj dzisiejsze rezerwacje prosto z placu."
+    },
+    "storefront": {
+      "title": "Własna strona pod Twoją marką",
+      "body": "Obecność na platformie oraz własna strona internetowa i subdomena."
+    },
+    "preview": {
+      "utilisation": "Wykorzystanie floty",
+      "utilisationValue": "82%",
+      "pickups": "Odbiory dzisiaj",
+      "pickupsValue": "14",
+      "revenue": "W tym miesiącu",
+      "revenueValue": "9,4 tys. €",
+      "domain": "yourcompany.benwer.es",
+      "adminDomain": "cars-admin.benwer.es",
+      "navDashboard": "Panel",
+      "navFleet": "Flota",
+      "navCalendar": "Kalendarz",
+      "navReservations": "Rezerwacje",
+      "calendarTitle": "Dostępność",
+      "calendarMonth": "Najbliższe 2 tygodnie",
+      "viaBenwer": "Przez Benwer",
+      "direct": "Bezpośrednie",
+      "free": "Wolny",
+      "carA": "Kompakt",
+      "carB": "Miejski",
+      "carC": "SUV",
+      "carD": "Crossover",
+      "phoneTitle": "Dzisiaj",
+      "phoneDate": "Poniedziałek",
+      "pickUp": "Odbiór",
+      "return": "Zwrot",
+      "checkedOut": "Wydany",
+      "due": "Oczekiwany",
+      "tabToday": "Dzisiaj",
+      "tabFleet": "Flota",
+      "tabScan": "Skanuj",
+      "storeName": "Twoja firma",
+      "storeNavCars": "Samochody",
+      "storeNavContact": "Kontakt",
+      "storeHeadline": "Wynajmij samochód w Maladze",
+      "storeSearch": "Odbiór i daty",
+      "storeSearchCta": "Szukaj",
+      "storePrice": "Zobacz ceny",
+      "carE": "Hatchback",
+      "carF": "Kombi"
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Zanim zarezerwujesz",
+    "subtitle": "Floty partnerskie, zasady rezerwacji oraz zakres tego, czym Benwer się zajmuje — a czym nie.",
+    "items": {
+      "partners": {
+        "question": "Czy te samochody pochodzą z prawdziwych wypożyczalni?",
+        "answer": "Tak. Każda oferta to publicznie dostępny samochód partnera Benwer — prawdziwej wypożyczalni, z którą współpracujemy, a nie niezweryfikowane ogłoszenie prywatne. Jeśli firma lub pojazd nie są opublikowane na platformie, nie pojawią się tutaj."
+      },
+      "booking": {
+        "question": "Czy rezerwuję i płacę na Benwer?",
+        "answer": "Nie. Tutaj porównujesz floty partnerskie, a następnie przechodzisz na stronę wypożyczalni, aby potwierdzić wynajem, kaucję i odbiór. Benwer nie pobiera płatności na tej platformie."
+      },
+      "photos": {
+        "question": "Czy mogę ufać zdjęciom i dostępności?",
+        "answer": "Oferty korzystają z publicznych zdjęć i dostępności publikowanych przez firmę partnerską — z tego samego katalogu, którym zarządza w panelu administracyjnym. Jeśli samochód nie ma jeszcze publicznego zdjęcia, pokazujemy pusty stan zamiast zdjęcia stockowego innego pojazdu. Ostateczna dostępność jest potwierdzana na stronie firmy."
+      },
+      "account": {
+        "question": "Czy potrzebuję konta?",
+        "answer": "Do wyszukiwania konto nie jest wymagane. Jeśli wyślesz wiadomość przez formularz kontaktowy, wykorzystamy te dane wyłącznie do udzielenia odpowiedzi."
+      },
+      "safety": {
+        "question": "Kto odpowiada za wynajem?",
+        "answer": "Umowa jest zawierana między Tobą a partnerską wypożyczalnią. Przed potwierdzeniem zapoznaj się z jej regulaminem. Benwer pomaga znaleźć samochód w flocie partnerskiej, ale sam nie wynajmuje pojazdów ani nie pobiera tu płatności."
+      }
+    }
+  },
+  "appBanner": {
+    "title": "Aplikacja Benwer Cars",
+    "description": "Pobierz Benwer Cars na telefon. Aplikacja na Androida jest we wczesnych testach w Google Play — dołącz do testów i pomóż ją ulepszyć."
+  },
+  "partners": {
+    "eyebrow": "Dla wypożyczalni samochodów",
+    "title": "Zamień puste dni w rezerwacje",
+    "description": "Podróżni już szukają samochodów w Maladze na Benwer. Opublikuj swoją flotę raz i wypełnij dni, w których auta stałyby bezczynnie.",
+    "cta": "Dowiedz się więcej",
+    "ctaAria": "Dowiedz się więcej na stronie marketingowej Benwer (otwiera się w nowej karcie)",
+    "demo": "Zobacz wersję demo",
+    "demoAria": "Zobacz wersję demo na żywo (otwiera się w nowej karcie)"
+  },
+  "seo": {
+    "companyTitle": "{name} — Wypożyczalnia samochodów",
+    "companyDescription": "Wynajmij samochód w {name} w lokalizacji {location}.",
+    "companyDescriptionPlain": "Wynajmij samochód w {name}.",
+    "companyFallback": "Wypożyczalnia samochodów",
+    "carTitle": "{brand} {model} — {company}",
+    "carTitleTenant": "{brand} {model} ({year})",
+    "carDescription": "Wynajmij {brand} {model} w {company}.",
+    "carDescriptionSpecs": "Wynajmij {brand} {model} — {seats, plural, one {# miejsce} few {# miejsca} many {# miejsc} other {# miejsca}}, {transmission}.",
+    "carsTitle": "Samochody do wynajęcia w prowincji Malaga"
+  },
+  "tenant": {
+    "notFoundTitle": "Nie znaleziono firmy",
+    "notFoundDescription": "Nie udało się załadować tej strony wypożyczalni.",
+    "loadErrorTitle": "Dane firmy niedostępne",
+    "loadErrorDescription": "Nie udało się załadować tej strony z bieżącego katalogu. Spróbuj ponownie — w razie błędu API nie wyświetlamy przykładowych samochodów.",
+    "logoAlt": "Logo {name}"
+  },
+  "howItWorks": {
+    "eyebrow": "Trzy kroki",
+    "title": "Jak to działa",
+    "subtitle": "Porównaj floty partnerskie w Maladze, a następnie zarezerwuj bezpośrednio w firmie. Konto Benwer nie jest potrzebne.",
+    "stepLabel": "Krok {number}",
+    "searchTitle": "Wybierz daty i miejsce",
+    "searchBody": "Wybierz miejscowość na Costa del Sol oraz potrzebne terminy. Wyświetlane są wyłącznie zweryfikowane floty partnerskie.",
+    "compareTitle": "Porównaj prawdziwe samochody",
+    "compareBody": "Liczba miejsc, skrzynia biegów, zdjęcia i cena za dobę zestawione obok siebie od każdego partnera.",
+    "continueTitle": "Zarezerwuj w firmie",
+    "continueBody": "Potwierdź odbiór, ubezpieczenie i płatność bezpośrednio w wypożyczalni będącej właścicielem samochodu.",
+    "cta": "Rozpocznij wyszukiwanie",
+    "preview": {
+      "place": "Lotnisko w Maladze",
+      "dates": "Pt → Pt · 7 dni",
+      "carA": "Samochód kompaktowy",
+      "carASpecs": "4 miejsca · Manualna",
+      "carB": "Rodzinny SUV",
+      "carBSpecs": "5 miejsc · Automatyczna",
+      "confirmed": "Rezerwacja potwierdzona",
+      "confirmedDetail": "Odbiór o 10:00",
+      "example": "Przykład"
+    }
+  },
+  "search": {
+    "locationLabel": "Miejsce odbioru",
+    "locationPlaceholder": "Szukaj lokalizacji",
+    "locationEmpty": "Brak pasującej lokalizacji",
+    "allLocations": "Wszystkie lokalizacje",
+    "allLocationsHint": "Każde miasto z dostępnymi samochodami",
+    "provinceSelected": "Wszystkie lokalizacje",
+    "provinceHint": "Każde miasto z dostępnymi samochodami",
+    "pickupLabel": "Odbiór",
+    "dropoffLabel": "Zwrot",
+    "pickupPlaceholder": "Dodaj datę",
+    "dropoffPlaceholder": "Dodaj datę",
+    "pickupTrigger": "Data odbioru, {date}",
+    "dropoffTrigger": "Data zwrotu, {date}",
+    "calendarLabel": "Wybierz daty",
+    "datesRequired": "Wybierz datę odbioru i zwrotu, aby wyszukać.",
+    "submit": "Szukaj",
+    "returnLocationLabel": "Miejsce zwrotu",
+    "differentReturn": "Zwrot w innym miejscu",
+    "returnSame": "Takie samo jak miejsce odbioru",
+    "returnNotOffered": "Firma {company} nie oferuje zwrotu w innym miejscu.",
+    "branchChoose": "Wybierz lokalizację",
+    "branchTrigger": "{label}, {name}",
+    "branchLoading": "Ładowanie lokalizacji…",
+    "branchAnyHint": "Każdy oddział z samochodami"
+  },
+  "browseLocation": {
+    "title": "Przeglądaj według lokalizacji",
+    "subtitle": "Popularne miasta w prowincji Malaga",
+    "emptyTitle": "Brak lokalizacji",
+    "emptyDescription": "Wyróżnione miasta pojawią się tutaj.",
+    "cityAria": "Przeglądaj samochody w lokalizacji {city}"
+  },
+  "map": {
+    "teaserTitle": "Sprawdź, gdzie możesz odebrać auto",
+    "teaserSubtitle": "Lokalne floty w prowincji Malaga — otwórz mapę i przejdź prosto do wybranej firmy.",
+    "teaserCta": "Otwórz mapę",
+    "teaserCityAria": "Zobacz firmy na mapie w lokalizacji {city}",
+    "listLabel": "Lista",
+    "mapLabel": "Mapa",
+    "viewToggleAria": "Pokaż firmy jako listę lub mapę",
+    "regionAria": "Mapa wypożyczalni samochodów w prowincji Malaga",
+    "pinAria": "{name} w lokalizacji {city}",
+    "fleetHint": "{count, plural, =0 {Brak opublikowanych samochodów} one {# dostępny samochód} few {# dostępne samochody} many {# dostępnych samochodów} other {# dostępnego samochodu}}",
+    "fleetHintUnknown": "Zobacz dostępne samochody",
+    "viewFleet": "Zobacz flotę",
+    "closePin": "Zamknij",
+    "loading": "Ładowanie firm…",
+    "errorDescription": "Nie udało się załadować mapy. Przeglądaj zamiast tego listę.",
+    "emptyTitle": "Brak firm na mapie",
+    "emptyDescription": "Wypróbuj inne miasto w prowincji Malaga.",
+    "resultsCount": "{count, plural, one {# firma w prowincji Malaga} few {# firmy w prowincji Malaga} many {# firm w prowincji Malaga} other {# firmy w prowincji Malaga}}",
+    "resultsInCity": "{count, plural, one {# firma w lokalizacji {city}} few {# firmy w lokalizacji {city}} many {# firm w lokalizacji {city}} other {# firmy w lokalizacji {city}}}",
+    "resultsAtBranch": "{count, plural, one {# firma w oddziale {branch}} few {# firmy w oddziale {branch}} many {# firm w oddziale {branch}} other {# firmy w oddziale {branch}}}"
+  },
+  "cars": {
+    "showingOf": "Wyświetlono {shown} z {total} samochodów",
+    "loadMore": "Pokaż więcej samochodów",
+    "seeAll": "Zobacz wszystkie",
+    "title": "Dostępne samochody",
+    "subtitle": "Wszystkie publiczne samochody z partnerskich wypożyczalni w prowincji Malaga. Wybierz daty, aby sprawdzić wolne pojazdy.",
+    "searchEmptyTitle": "Brak samochodów pasujących do wyszukiwania",
+    "searchEmptyHint": "Wypróbuj inne daty lub inną lokalizację w prowincji Malaga. Każde miasto pozostaje na liście — nawet jeśli dzisiaj nie ma tam żadnych samochodów.",
+    "resultsInProvince": "{count, plural, one {# samochód we wszystkich lokalizacjach} few {# samochody we wszystkich lokalizacjach} many {# samochodów we wszystkich lokalizacjach} other {# samochodu we wszystkich lokalizacjach}}",
+    "resultsInCity": "{count, plural, one {# samochód w lokalizacji {city}} few {# samochody w lokalizacji {city}} many {# samochodów w lokalizacji {city}} other {# samochodu w lokalizacji {city}}}",
+    "allCompanies": "Wszystkie firmy",
+    "companyPlaceholder": "Szukaj firm",
+    "companyTrigger": "Firma, {company}",
+    "perDay": "{price} / dzień",
+    "perDaySuffix": " / dzień",
+    "viewDetails": "Zobacz szczegóły",
+    "notAvailableForDates": "Niedostępny w tych terminach",
+    "bookUnavailable": "Zobacz samochód",
+    "fleetSummary": "{total, plural, one {# samochód} few {# samochody} many {# samochodów} other {# samochodu}} · {available, plural, one {# dostępny} few {# dostępne} many {# dostępnych} other {# dostępnego}}",
+    "fleetSummaryForDates": "{total, plural, one {# samochód} few {# samochody} many {# samochodów} other {# samochodu}} · {available, plural, one {# dostępny} few {# dostępne} many {# dostępnych} other {# dostępnego}} · {from} – {to}",
+    "seats": "{count} miejsc",
+    "resultsCount": "{count, plural, one {# dostępny samochód} few {# dostępne samochody} many {# dostępnych samochodów} other {# dostępnego samochodu}}",
+    "resultsForDates": "{count, plural, one {# samochód} few {# samochody} many {# samochodów} other {# samochodu}} · {from} – {to}",
+    "emptyTitle": "Ta flota nie jest jeszcze publiczna",
+    "emptyHint": "Ta firma jest na liście, ale jej samochody nie zostały jeszcze opublikowane w Benwer. To normalne, dopóki pojazdy nie zostaną oznaczone jako publiczne — strona działa poprawnie.",
+    "noResults": "Brak samochodów pasujących do wyszukiwania",
+    "noResultsHint": "Wypróbuj inne daty, inną lokalizację lub mniej filtrów.",
+    "browseCompanies": "Przeglądaj firmy",
+    "clearFilters": "Wyczyść filtry",
+    "searchPlaceholder": "Szukaj po marce lub modelu",
+    "filters": {
+      "title": "Filtry",
+      "seats": "Miejsca",
+      "transmission": "Skrzynia biegów",
+      "company": "Firma",
+      "dates": "Daty",
+      "from": "Data odbioru",
+      "to": "Data zwrotu",
+      "category": "Kategoria",
+      "fuel": "Rodzaj paliwa",
+      "all": "Wszystkie",
+      "clear": "Wyczyść",
+      "selectedCount": "Wybrano: {count}"
+    },
+    "types": {
+      "car": "Samochód osobowy",
+      "suv": "SUV",
+      "van": "Furgon",
+      "truck": "Ciężarówka",
+      "motorcycle": "Motocykl"
+    },
+    "transmission": {
+      "automatic": "Automatyczna",
+      "manual": "Manualna"
+    },
+    "fuel": {
+      "petrol": "Benzyna",
+      "diesel": "Diesel",
+      "electric": "Elektryczny",
+      "hybrid": "Hybryda",
+      "plugin_hybrid": "Hybryda plug-in"
+    },
+    "rowDeposit": "Kaucja {amount}",
+    "rowAvailable": "Dostępny w wybranych terminach",
+    "rowTotal": "Razem {amount} · {days, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}",
+    "bookNow": "Zarezerwuj teraz",
+    "availableCount": "{count, plural, =0 {Brak dostępnych samochodów} one {# dostępny samochód} few {# dostępne samochody} many {# dostępnych samochodów} other {# dostępnego samochodu}}",
+    "availableForDates": "{count, plural, =0 {Brak dostępnych samochodów} one {# dostępny samochód} few {# dostępne samochody} many {# dostępnych samochodów} other {# dostępnego samochodu}} · {from} – {to}",
+    "categories": {
+      "economy": "Ekonomiczny",
+      "sedan": "Sedan",
+      "suv": "SUV",
+      "minivan": "Minivan",
+      "van": "Furgon",
+      "other": "Inny"
+    },
+    "sort": {
+      "label": "Sortuj według",
+      "recommended": "Polecane",
+      "pricePerDay_asc": "Najniższa cena za dzień",
+      "pricePerDay_desc": "Najwyższa cena za dzień"
+    },
+    "colors": {
+      "white": "Biały",
+      "black": "Czarny",
+      "silver": "Srebrny",
+      "grey": "Szary",
+      "red": "Czerwony",
+      "blue": "Niebieski",
+      "green": "Zielony",
+      "orange": "Pomarańczowy",
+      "yellow": "Żółty",
+      "brown": "Brązowy",
+      "beige": "Beżowy",
+      "gold": "Złoty",
+      "purple": "Fioletowy"
+    },
+    "viewCar": "Zobacz samochód",
+    "opensCompanySite": "(otwiera stronę internetową firmy)"
+  },
+  "carDetail": {
+    "bookNow": "Zarezerwuj teraz",
+    "continueOnCompany": "Kontynuuj na stronie {company}",
+    "rentOnCompanySite": "Wynajmij na stronie firmy",
+    "handoffHint": "Zapytamy Cię przed przekierowaniem na stronę wypożyczalni w celu dokończenia rezerwacji.",
+    "pricePerDay": "{price} za dzień",
+    "specs": "Specyfikacja",
+    "year": "Rocznik",
+    "type": "Typ",
+    "transmission": "Skrzynia biegów",
+    "fuel": "Paliwo",
+    "seats": "Miejsca",
+    "availability": "Dostępność",
+    "availabilityError": "Nie udało się załadować dostępności. Spróbuj ponownie.",
+    "availabilityUnavailable": "Dostępność niedostępna",
+    "checkingAvailability": "Sprawdzanie dostępności…",
+    "notAvailable": "Ten samochód jest niedostępny w wybranych terminach.",
+    "selectPickup": "Wybierz datę odbioru",
+    "selectDropoff": "Teraz wybierz datę zwrotu",
+    "selectedRange": "{from} – {to}",
+    "clearDates": "Wyczyść daty",
+    "addDate": "Dodaj datę",
+    "calendarLabel": "Kalendarz dostępności",
+    "legend": "Legenda kalendarza",
+    "available": "Dostępny",
+    "selected": "Wybrany",
+    "unavailable": "Niedostępny",
+    "openDates": "Brak zarezerwowanych terminów w ciągu najbliższych {months} miesięcy.",
+    "breadcrumbAria": "Ścieżka nawigacji",
+    "photoEmpty": "Zdjęcia wkrótce",
+    "previousPhoto": "Poprzednie zdjęcie",
+    "nextPhoto": "Następne zdjęcie",
+    "viewPhoto": "Zobacz zdjęcie {index}",
+    "photoIndex": "{current} / {total}",
+    "photoAlt": "{name}, zdjęcie {index}",
+    "backToFleet": "Powrót do floty",
+    "metaTitle": "Szczegóły samochodu",
+    "about": "O tym samochodzie",
+    "category": "Kategoria",
+    "color": "Kolor",
+    "deposit": "Kaucja",
+    "mileage": "Przebieg",
+    "mileageValue": "{count, number} km",
+    "handoffTitle": "Przekierowujemy Cię na stronę rezerwacji {company}, aby dokończyć rezerwację.",
+    "handoffTrust": "{company} to zaufany partner Benwer.",
+    "handoffContinue": "Kontynuuj",
+    "handoffCancel": "Anuluj",
+    "handoffCompanyFallback": "wypożyczalni"
+  },
+  "booking": {
+    "title": "Dokończ rezerwację",
+    "subtitle": "Potwierdź swoje dane — konto nie jest potrzebne.",
+    "details": "Twoje dane",
+    "detailsHint": "Użyjemy ich wyłącznie do potwierdzenia tej rezerwacji.",
+    "guestName": "Imię i nazwisko",
+    "guestNamePlaceholder": "Anna Kowalska",
+    "guestEmail": "Adres e-mail",
+    "guestEmailPlaceholder": "anna@przyklad.pl",
+    "guestEmailHint": "Na ten adres wyślemy potwierdzenie.",
+    "guestPhone": "Numer telefonu",
+    "guestPhonePlaceholder": "+34 600 000 000",
+    "guestPhoneHint": "Wypożyczalnia może skontaktować się z Tobą w sprawie odbioru.",
+    "startDate": "Data odbioru",
+    "endDate": "Data zwrotu",
+    "datesHint": "Daty pochodzą z kalendarza samochodu. Możesz je tutaj zmienić.",
+    "addDate": "Dodaj datę",
+    "changeDates": "Zmień daty w kalendarzu",
+    "summary": "Podsumowanie rezerwacji",
+    "vehicle": "Pojazd",
+    "company": "Firma",
+    "rate": "Stawka dzienna",
+    "duration": "Czas trwania",
+    "totalPrice": "Razem",
+    "nights": "{count, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}",
+    "stickyMeta": "{name} · {count, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}",
+    "rateTimesDays": "{rate} × {days}",
+    "confirm": "Potwierdź rezerwację",
+    "confirmRequest": "Wyślij zapytanie",
+    "requesting": "Wysyłanie zapytania…",
+    "confirming": "Potwierdzanie…",
+    "sitePaused": "Nie przyjmuje rezerwacji",
+    "insurance": "Ubezpieczenie",
+    "termsLabel": "Warunki wynajmu",
+    "termsAccept": "Akceptuję",
+    "termsLink": "warunki wynajmu",
+    "successTitle": "Rezerwacja potwierdzona!",
+    "successMessage": "Potwierdzenie zostało wysłane na adres {email}.",
+    "viewBooking": "Zobacz moją rezerwację",
+    "selectDates": "Wybierz daty, aby kontynuować",
+    "invalidDates": "Wybierz prawidłowy zakres dat",
+    "backToCar": "Powrót do {name}",
+    "trustNoAccount": "Bez zakładania konta",
+    "trustEmail": "Potwierdzenie e-mailem",
+    "trustNoPayment": "Bez płatności teraz",
+    "trustCardPayment": "Płatność kartą po rezerwacji",
+    "trustFooter": "Potwierdzając, rezerwujesz ten samochód w powyższych terminach. Firma zrealizuje rezerwację.",
+    "missingTitle": "Wybierz samochód, aby kontynuować",
+    "missingDescription": "Wybierz pojazd i daty przed dokończeniem rezerwacji.",
+    "browseCars": "Przeglądaj samochody",
+    "vehicleMissingTitle": "Ten samochód nie jest już dostępny",
+    "vehicleMissingDescription": "Mógł zostać już zarezerwowany. Wybierz inny pojazd z floty.",
+    "viewFleet": "Zobacz flotę",
+    "datesMissingTitle": "Dodaj daty podróży",
+    "datesMissingDescription": "Wróć do samochodu, aby wybrać dostępne daty, lub wpisz je w formularzu.",
+    "pickDates": "Wybierz daty przy samochodzie",
+    "formAria": "Dane gościa do rezerwacji",
+    "validation": {
+      "nameMin": "Wpisz imię i nazwisko (co najmniej 2 znaki).",
+      "email": "Wpisz prawidłowy adres e-mail.",
+      "phone": "Wpisz prawidłowy numer telefonu.",
+      "startDate": "Wybierz datę odbioru.",
+      "endDate": "Wybierz datę zwrotu.",
+      "endAfterStart": "Data zwrotu musi być późniejsza niż data odbioru.",
+      "terms": "Zaakceptuj warunki wynajmu, aby kontynuować.",
+      "fixErrors": "Popraw zaznaczone pola."
+    },
+    "averageRate": "Średnia stawka dzienna",
+    "breakdownTitle": "Szczegóły ceny",
+    "standardRate": "Stawka standardowa",
+    "weekendRate": "Weekend",
+    "segmentDetail": "{range} · {days} × {rate}",
+    "warningMinDays": "Wynajem w tym sezonie musi trwać co najmniej {limit, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}. Zmień daty, aby zarezerwować.",
+    "warningMaxDays": "Wynajem w tym sezonie może trwać maksymalnie {limit, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}. Zmień daty, aby zarezerwować.",
+    "returnLocation": "Miejsce zwrotu",
+    "oneWayFee": "Opłata za zwrot w innym miejscu",
+    "signedInAs": "Zalogowano jako {email}",
+    "signInPrompt": "Masz już konto?",
+    "signInLink": "Zaloguj się, aby uzupełnić swoje dane",
+    "subtitleSignedIn": "Sprawdź swoje dane i potwierdź.",
+    "trustPaymentAfter": "Szczegóły płatności po rezerwacji",
+    "extras": "Dodatki",
+    "extraPerDay": "{price} / dzień",
+    "extraFixed": "{price} / wynajem",
+    "tripDetails": "Szczegóły podróży",
+    "pickupTime": "Godzina odbioru",
+    "returnTime": "Godzina zwrotu",
+    "timeAny": "Dowolna godzina",
+    "flightNumber": "Numer lotu",
+    "flightNumberHint": "Odbiór odbywa się na lotnisku. Podaj numer lotu, aby firma mogła śledzić ewentualne opóźnienia.",
+    "flightNumberOptional": "Podaj, jeśli przylatujesz samolotem.",
+    "notes": "Uwagi",
+    "notesPlaceholder": "Czy firma powinna o czymś wiedzieć?",
+    "dateOfBirth": "Data urodzenia",
+    "optional": "opcjonalnie",
+    "extraSoldOut": "Niedostępne w tych terminach"
+  },
+  "reservationStatus": {
+    "title": "Twoja rezerwacja",
+    "successTitle": "Rezerwacja gotowa",
+    "successSubtitle": "Wysłaliśmy potwierdzenie na adres {email}.",
+    "status": {
+      "draft": "Oczekująca",
+      "confirmed": "Potwierdzona",
+      "active": "Aktywna — udanej podróży!",
+      "completed": "Zakończona",
+      "cancelled": "Anulowana"
+    },
+    "vehicle": "Pojazd",
+    "company": "Firma",
+    "dates": "Daty",
+    "pickup": "Odbiór",
+    "dropoff": "Zwrot",
+    "guest": "Gość",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "total": "Razem",
+    "reference": "Numer referencyjny",
+    "referenceHint": "Pokaż ten numer przy odbiorze.",
+    "trustCopy": "Zachowaj tę stronę — to Twoje potwierdzenie rezerwacji. Dalej wszystkim zajmie się wypożyczalnia.",
+    "trustEmail": "Potwierdzenie wysłane e-mailem",
+    "trustPickup": "Pokaż tę stronę przy odbiorze",
+    "nextTitle": "Co dalej",
+    "nextEmail": "Sprawdź skrzynkę {email}, aby znaleźć potwierdzenie.",
+    "nextPickup": "Pokaż numer referencyjny przy odbiorze.",
+    "browseMore": "Przeglądaj więcej samochodów",
+    "notFoundTitle": "Nie znaleziono rezerwacji",
+    "notFoundDescription": "Sprawdź link w e-mailu z potwierdzeniem lub rozpocznij nowe wyszukiwanie.",
+    "backHome": "Powrót na stronę główną",
+    "requestExpires": "Zapytanie wygasa",
+    "cancelReason": "Powód anulowania",
+    "withdraw": "Wycofaj zapytanie",
+    "paymentStatus": "Płatność",
+    "paidAmount": "Opłacono",
+    "payment": {
+      "unpaid": "Nieopłacona",
+      "partially_paid": "Częściowo opłacona",
+      "paid": "Opłacona",
+      "refund_due": "Należny zwrot",
+      "authorized": "Karta autoryzowana"
+    },
+    "reasons": {
+      "unpaid_timeout": "Płatność nie została ukończona na czas",
+      "request_expired": "Firma nie odpowiedziała na czas",
+      "request_declined": "Firma odrzuciła to zapytanie",
+      "customer_request": "Wycofałeś(-aś) to zapytanie"
+    },
+    "insurance": "Ubezpieczenie",
+    "extras": "Dodatki",
+    "fees": "Opłaty za odbiór i zwrot",
+    "priceTitle": "Podsumowanie ceny"
+  },
+  "payment": {
+    "title": "Opłać zaliczkę",
+    "amountDue": "Kwota do zapłaty: {amount}",
+    "countdown": "Dokończ płatność w ciągu {time}",
+    "requestAuthorize": "Twoja karta zostanie teraz autoryzowana, a obciążona dopiero po zaakceptowaniu przez firmę.",
+    "pay": "Zapłać teraz",
+    "paying": "Przetwarzanie…",
+    "confirming": "Potwierdzanie płatności",
+    "confirmingHint": "Proszę czekać — potwierdzamy płatność po stronie firmy, a nie w formularzu karty.",
+    "declined": "Karta została odrzucona. Spróbuj innej karty.",
+    "secure": "Dane karty są obsługiwane przez Stripe w trybie testowym.",
+    "cancelBooking": "Anuluj rezerwację",
+    "cancelTitle": "Anulować tę rezerwację?",
+    "cancelDescription": "Zastosujemy zasady anulowania tej firmy. Przed potwierdzeniem sprawdź opłatę i kwotę zwrotu.",
+    "cancelFee": "Opłata za anulowanie",
+    "cancelRefund": "Zwrot",
+    "confirmCancel": "Potwierdź anulowanie",
+    "keepBooking": "Zachowaj rezerwację",
+    "cancelled": "Twoja rezerwacja została anulowana."
+  },
+  "companies": {
+    "title": "Wypożyczalnie samochodów",
+    "subtitle": "Przeglądaj partnerskie wypożyczalnie w Maladze — na mapie lub na liście",
+    "searchPlaceholder": "Szukaj firm…",
+    "noResults": "Nie znaleziono firm",
+    "noResultsHint": "Wypróbuj inną lokalizację w prowincji Malaga.",
+    "emptyTitle": "Brak firm na liście",
+    "emptyDescription": "Na liście nie ma jeszcze żadnych wypożyczalni samochodów.",
+    "clearFilters": "Wyczyść wyszukiwanie",
+    "viewFleet": "Zobacz flotę",
+    "visitWebsite": "Odwiedź stronę",
+    "contact": "Kontakt",
+    "backToList": "Wszystkie firmy",
+    "notFoundTitle": "Nie znaleziono firmy",
+    "notFoundDescription": "Tej wypożyczalni nie ma na liście. Przejrzyj inne firmy w okolicy.",
+    "loadErrorTitle": "Dane firmy niedostępne",
+    "loadErrorDescription": "Nie udało się załadować tej wypożyczalni z bieżącego katalogu. Spróbuj ponownie — w razie błędu API nie wyświetlamy przykładowych samochodów.",
+    "browseCars": "Przeglądaj samochody",
+    "featuredEmpty": "Brak polecanych firm",
+    "featuredEmptyHint": "Zajrzyj wkrótce lub przejrzyj samochody z lokalnych flot.",
+    "locationUnknown": "Lokalizacja niepodana",
+    "noDescription": "Brak opisu."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "lede": "Masz pytania dotyczące platformy? Wyślij nam wiadomość, a odpowiemy najszybciej jak to możliwe.",
+    "bookingHint": "Ten formularz nie służy do rezerwacji. Aby wynająć samochód, przejdź na własną stronę wypożyczalni.",
+    "name": "Imię i nazwisko",
+    "email": "Adres e-mail",
+    "subject": "Temat",
+    "message": "Wiadomość",
+    "submit": "Wyślij wiadomość",
+    "privacyNote": "Używamy tych danych wyłącznie do udzielenia odpowiedzi.",
+    "errors": {
+      "nameMin": "Wpisz imię i nazwisko (co najmniej 2 znaki).",
+      "email": "Wpisz prawidłowy adres e-mail.",
+      "subjectMin": "Wpisz temat (co najmniej 3 znaki).",
+      "messageMin": "Wpisz wiadomość (co najmniej 10 znaków)."
+    },
+    "eyebrow": "Wsparcie",
+    "namePlaceholder": "Anna Kowalska",
+    "emailPlaceholder": "ty@przyklad.pl",
+    "subjectPlaceholder": "W czym możemy pomóc?",
+    "messagePlaceholder": "Opisz, czego potrzebujesz…",
+    "supportSubjectDefault": "Zgłoszenie wsparcia",
+    "submitting": "Wysyłanie…",
+    "submittedTitle": "Wiadomość wysłana",
+    "submittedDescription": "Dziękujemy za kontakt. Odpowiemy na Twój adres e-mail najszybciej jak to możliwe.",
+    "sendAnother": "Wyślij kolejną wiadomość",
+    "backHome": "Powrót na stronę główną",
+    "whatsappTitle": "Wolisz WhatsApp?",
+    "whatsappDescription": "Porozmawiaj bezpośrednio z zespołem Benwer Cars."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Polityka prywatności",
+      "lede": "Jak przetwarzamy dane osobowe podczas korzystania z platformy Benwer Cars.",
+      "updated": "Ostatnia aktualizacja: 13 września 2026",
+      "sections": [
+        {
+          "title": "Kim jesteśmy",
+          "body": "Benwer Cars („Benwer”, „my”, „nas”) prowadzi platformę konsumencką, która pomaga podróżnym odkrywać floty wypożyczalni samochodów w prowincji Malaga.\n\nNiniejsza polityka dotyczy wyłącznie strony platformy. Jeśli przejdziesz na stronę własną wypożyczalni w celu dokonania rezerwacji, za dane podane tam odpowiada ta firma."
+        },
+        {
+          "title": "Co robi ta platforma",
+          "body": "Możesz wyszukiwać samochody i firmy, porównywać publiczne dane flot oraz przejść na stronę wypożyczalni, aby dokończyć rezerwację.\n\nBenwer nie pobiera płatności ani nie zawiera umów najmu na platformie. Umowa najmu zawierana jest pomiędzy Tobą a firmą."
+        },
+        {
+          "title": "Jakie dane zbieramy",
+          "body": "W zależności od tego, jak korzystasz z platformy, możemy przetwarzać:\n\n• Dane wyszukiwania i korzystania — wpisywaną lokalizację i daty, przeglądane strony oraz podstawowe dane techniczne, takie jak adres IP, przeglądarka i informacje o urządzeniu.\n• Preferencję języka — zapisywaną w niezbędnym pliku cookie, aby wyświetlać wybrany język.\n• Zgodę na pliki cookie — zapisywaną na Twoim urządzeniu, aby zapamiętać Twój wybór.\n• Wiadomości kontaktowe — imię i nazwisko, adres e-mail, temat i treść wiadomości, jeśli do nas napiszesz. Oznaczamy je jako pochodzące z platformy.\n\nNie wymagamy zakładania konta na platformie. Dane rezerwacji i płatności zbiera wypożyczalnia na własnej stronie, zgodnie ze swoją polityką prywatności."
+        },
+        {
+          "title": "Jak wykorzystujemy dane",
+          "body": "Wykorzystujemy dane osobowe do prowadzenia i ulepszania platformy, zapamiętywania preferencji języka i plików cookie, odpowiadania na wiadomości kontaktowe, zapewnienia bezpieczeństwa usługi oraz wypełniania obowiązków prawnych.\n\nNie sprzedajemy Twoich danych osobowych."
+        },
+        {
+          "title": "Podstawy prawne (EOG / Wielka Brytania)",
+          "body": "Tam, gdzie ma to zastosowanie, opieramy się na prawnie uzasadnionym interesie (prowadzenie publicznego katalogu i zabezpieczenie strony), zgodzie (opcjonalne pliki cookie, jeśli zostaną wprowadzone), obowiązku prawnym oraz działaniach niezbędnych do udzielenia odpowiedzi, gdy się z nami kontaktujesz."
+        },
+        {
+          "title": "Udostępnianie danych",
+          "body": "Możemy korzystać z zaufanych dostawców usług hostingu i dostarczania poczty e-mail. Przetwarzają oni dane na nasze polecenie.\n\nJeśli przejdziesz na stronę firmy, firma ta staje się administratorem wszelkich danych, które tam podasz. Nie przekazujemy wiadomości z formularza kontaktowego wypożyczalniom, chyba że nas o to poprosisz."
+        },
+        {
+          "title": "Pliki cookie",
+          "body": "Używamy ściśle niezbędnego pliku cookie języka i zapisujemy Twój wybór dotyczący plików cookie na Twoim urządzeniu. Szczegóły znajdziesz w polityce plików cookie. Opcjonalne pliki cookie pozostają wyłączone, dopóki ich nie zaakceptujesz."
+        },
+        {
+          "title": "Okres przechowywania",
+          "body": "Przechowujemy wiadomości kontaktowe tak długo, jak to konieczne do udzielenia odpowiedzi i przez rozsądny okres dalszej korespondencji. Logi techniczne są przechowywane krótko. Twój wybór dotyczący plików cookie pozostaje zapisany do czasu jego zmiany lub wyczyszczenia danych witryny."
+        },
+        {
+          "title": "Twoje prawa",
+          "body": "W zależności od miejsca zamieszkania możesz mieć prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania lub przenoszenia, a także prawo sprzeciwu wobec określonego przetwarzania. Możesz również złożyć skargę do lokalnego organu nadzorczego.\n\nAby skorzystać ze swoich praw, użyj strony kontaktowej."
+        },
+        {
+          "title": "Przekazywanie danych za granicę",
+          "body": "Jeśli dane są przekazywane poza Twój kraj, stosujemy odpowiednie zabezpieczenia, takie jak standardowe klauzule umowne lub równoważne mechanizmy wymagane przez prawo."
+        },
+        {
+          "title": "Zmiany",
+          "body": "Możemy okresowo aktualizować niniejszą politykę. Zmienioną wersję opublikujemy na tej stronie i zaktualizujemy datę „Ostatnia aktualizacja”."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Warunki korzystania",
+      "lede": "Zasady korzystania z platformy Benwer Cars do wyszukiwania flot wypożyczalni.",
+      "updated": "Ostatnia aktualizacja: 13 września 2026",
+      "sections": [
+        {
+          "title": "Platforma",
+          "body": "Benwer Cars udostępnia publiczny katalog wypożyczalni samochodów oraz ich opublikowanych flot. Możesz porównywać pojazdy i przejść na stronę własną firmy, aby sfinalizować wynajem.\n\nNiniejsze warunki dotyczą strony platformy. Nie zastępują własnego regulaminu wypożyczalni, który obowiązuje podczas rezerwacji w tej firmie."
+        },
+        {
+          "title": "Rezerwacje zawierane są z wypożyczalniami",
+          "body": "Benwer nie wynajmuje samochodów, nie pobiera płatności ani nie zawiera umów najmu na platformie.\n\nJeśli przejdziesz na stronę firmy, wszelkie ustalenia dotyczące rezerwacji, kaucji, ubezpieczenia i odbioru obowiązują między Tobą a tą firmą. Przed potwierdzeniem zapoznaj się z jej regulaminem."
+        },
+        {
+          "title": "Oferty i dostępność",
+          "body": "Dane floty, ceny, zdjęcia i dostępność są publikowane przez wypożyczalnie i mogą ulegać zmianie. Dokładamy starań, aby prezentować publiczne informacje rzetelnie, ale nie gwarantujemy, że samochód nadal będzie dostępny lub że podana cena zostanie utrzymana do momentu potwierdzenia przez firmę.\n\nDaty wpisywane na platformie ułatwiają wyszukiwanie. Ostateczna dostępność jest potwierdzana na stronie firmy."
+        },
+        {
+          "title": "Dozwolone korzystanie",
+          "body": "Korzystaj z platformy zgodnie z prawem. Nie kopiuj automatycznie danych (scraping), nie przeciążaj ani nie zakłócaj działania usługi, nie podawaj fałszywych danych kontaktowych ani nie wykorzystuj strony do wyrządzania szkód innym osobom lub firmom."
+        },
+        {
+          "title": "Odpowiedzialność",
+          "body": "Platforma jest udostępniana jako usługa wyszukiwania. W zakresie dozwolonym przez prawo Benwer nie ponosi odpowiedzialności za spory dotyczące wynajmu, stan pojazdów ani rezerwacje dokonane na stronie firmy.\n\nŻadne z postanowień niniejszych warunków nie ogranicza praw przysługujących Ci jako konsumentowi, których nie można wyłączyć na mocy obowiązującego prawa."
+        },
+        {
+          "title": "Zmiany",
+          "body": "Możemy aktualizować niniejsze warunki. Data „Ostatnia aktualizacja” na tej stronie wskazuje bieżącą wersję. Dalsze korzystanie po wprowadzeniu zmiany oznacza akceptację zaktualizowanych warunków."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Pytania dotyczące niniejszych warunków lub platformy można przesyłać przez stronę kontaktową. W sprawie już rozpoczętej rezerwacji skontaktuj się bezpośrednio z wypożyczalnią."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Polityka plików cookie",
+      "lede": "Jak używamy plików cookie i podobnych technologii na platformie.",
+      "updated": "Ostatnia aktualizacja: 13 września 2026",
+      "sections": [
+        {
+          "title": "Czego używamy",
+          "body": "Pliki cookie to małe pliki tekstowe zapisywane na Twoim urządzeniu. Używamy również podobnych mechanizmów, takich jak pamięć lokalna (local storage), aby zapamiętywać Twoje wybory.\n\nNiniejsza polityka dotyczy platformy Benwer Cars. Gdy przejdziesz na stronę wypożyczalni, tamta witryna może zapisywać własne pliki cookie."
+        },
+        {
+          "title": "Ściśle niezbędne",
+          "body": "Używamy pliku cookie języka, aby strona mogła wyświetlać wybrany przez Ciebie język. Jest to niezbędne do prawidłowego działania platformy.\n\nTwój wybór z banera plików cookie jest zapisywany na urządzeniu, abyśmy nie pytali ponownie przy każdej wizycie. Pamięć ta nie służy do celów reklamowych."
+        },
+        {
+          "title": "Opcjonalne pliki cookie",
+          "body": "Opcjonalne pliki cookie (np. analityczne) pozostają wyłączone, chyba że wybierzesz „Zaakceptuj wszystkie”.\n\nObecnie platforma nie zapisuje analitycznych ani marketingowych plików cookie. Jeśli dodamy je w przyszłości, opiszemy je tutaj i nadal będą wymagały Twojej zgody."
+        },
+        {
+          "title": "Zarządzanie plikami cookie",
+          "body": "Użyj banera, aby zaakceptować wszystkie pliki cookie lub pozostawić tylko niezbędne. Możesz też usunąć pliki cookie i dane witryny w ustawieniach przeglądarki. Zablokowanie pliku cookie języka może spowodować zresetowanie języka przy kolejnej wizycie."
+        },
+        {
+          "title": "Więcej informacji",
+          "body": "Zobacz politykę prywatności, aby dowiedzieć się, jak przetwarzamy dane osobowe, lub wyślij wiadomość przez stronę kontaktową."
+        }
+      ]
+    }
+  },
+  "site": {
+    "logoAlt": "{name} — strona główna",
+    "defaultHeadline": "Wynajmij samochód w {name}",
+    "footerTagline": "Zarezerwuj bezpośrednio w tej wypożyczalni.",
+    "previewBanner": "Podgląd — ta strona nie jest publiczna. Wyszukiwarki nie będą jej indeksować.",
+    "editLink": "Edytuj",
+    "editContactEmpty": "Dane kontaktowe są ukryte. Edytuj je w panelu administracyjnym.",
+    "editBranchesEmpty": "Brak oddziałów. Dodaj je w panelu administracyjnym.",
+    "editRulesHint": "Tryb rezerwacji, minimalne wyprzedzenie i czas na odpowiedź.",
+    "editDomainHint": "Własna domena i aktywny adres URL.",
+    "editSection": {
+      "hero": "Baner główny",
+      "search": "Wyszukiwarka",
+      "fleet": "Flota",
+      "branches": "Oddziały",
+      "contact": "Kontakt",
+      "rules": "Zasady rezerwacji",
+      "domain": "Domena"
+    },
+    "pausedTitle": "Nie przyjmuje rezerwacji",
+    "pausedDescription": "Ta firma wstrzymała rezerwacje online. Nadal możesz przeglądać flotę.",
+    "notFoundTitle": "Nie znaleziono strony",
+    "notFoundDescription": "Ta strona wypożyczalni jest niedostępna.",
+    "loadErrorTitle": "Strona niedostępna",
+    "loadErrorDescription": "Nie udało się załadować tej strony wypożyczalni. Spróbuj ponownie za chwilę.",
+    "search": "Szukaj samochodów",
+    "searchAria": "Szukaj według dat i lokalizacji",
+    "searchTitle": "Szukaj samochodów",
+    "searchDescription": "Wybierz daty i lokalizację, aby sprawdzić dostępność.",
+    "branch": "Miejsce odbioru",
+    "anyBranch": "Dowolna lokalizacja",
+    "ownerSignIn": "Logowanie właściciela",
+    "returnBranch": "Miejsce zwrotu",
+    "differentReturn": "Zwrot w innym miejscu",
+    "returnSame": "Takie samo jak miejsce odbioru",
+    "driverAge": "Wiek kierowcy",
+    "driverAgeYears": "{band} lat",
+    "driverAgeBands": {
+      "18-24": "18–24",
+      "25-69": "25–69",
+      "70+": "70+"
+    }
+  },
+  "owner": {
+    "signInTitle": "Edytuj swoją stronę",
+    "signInHint": "Właściciele otwierają edytor strony z panelu Benwer admin. Kliknij tam przycisk „Edytuj stronę”, a zalogujesz się tutaj automatycznie.",
+    "signedInTitle": "Jesteś zalogowany(-a)",
+    "signedInHint": "Jeśli masz uprawnienia do zarządzania tą stroną, edytor otworzy się na stronie głównej.",
+    "openEditor": "Otwórz edytor strony",
+    "disabledTitle": "Edycja przez właściciela jest niedostępna",
+    "disabledDescription": "Staff Firebase nie jest skonfigurowany na tej platformie.",
+    "signOut": "Wyloguj się",
+    "auth": {
+      "tooManyRequests": "Zbyt wiele prób. Spróbuj ponownie później.",
+      "unknown": "Nie udało się zalogować. Spróbuj ponownie.",
+      "invalidToken": "Ten link logowania wygasł lub został już użyty. Otwórz edytor ponownie z panelu Benwer admin."
+    },
+    "signingIn": "Logowanie…",
+    "openAdmin": "Otwórz Benwer admin",
+    "accountMenu": "Konto właściciela",
+    "signedInAs": "Zalogowano jako właściciel",
+    "guestSignedOut": "Wylogowano z konta gościa. Sesje właściciela i gościa nie mogą być aktywne jednocześnie w tej przeglądarce."
+  },
+  "guest": {
+    "googleAction": "Zaloguj się przez Google",
+    "googleCreate": "Kontynuuj z Google",
+    "or": "lub",
+    "forgotPassword": "Nie pamiętasz hasła?",
+    "resetTitle": "Zresetuj hasło",
+    "resetHint": "Wpisz swój adres e-mail, a wyślemy Ci link do ustawienia nowego hasła.",
+    "resetAction": "Wyślij link resetujący",
+    "resetSentTitle": "Sprawdź pocztę",
+    "resetSentHint": "Jeśli dla tego adresu istnieje konto, wysłaliśmy instrukcje resetowania hasła. Nie dotarła wiadomość? Sprawdź folder spam lub odczekaj kilka minut przed kolejną próbą.",
+    "backToSignIn": "Powrót do logowania",
+    "signInNav": "Zaloguj się",
+    "myBookings": "Moje rezerwacje",
+    "signInTitle": "Zaloguj się",
+    "signInHint": "Użyj swojego konta gościa dla tej wypożyczalni. To nie jest logowanie dla personelu.",
+    "signInAction": "Zaloguj się",
+    "createTitle": "Utwórz konto gościa",
+    "createHint": "Zapisuj swoje rezerwacje w tej firmie. Personel korzysta z innego logowania.",
+    "createAction": "Utwórz konto",
+    "needAccount": "Nie masz konta? Utwórz je",
+    "haveAccount": "Masz już konto? Zaloguj się",
+    "email": "E-mail",
+    "password": "Hasło",
+    "bookingsTitle": "Moje rezerwacje",
+    "bookingsMeta": "Powiązane rezerwacje w tej wypożyczalni.",
+    "bookingsHint": "Zalogowano jako {email} w {company}.",
+    "emptyTitle": "Brak rezerwacji",
+    "emptyDescription": "Masz wcześniejszą rezerwację? Powiąż ją za pomocą użytego adresu e-mail lub tokenu potwierdzenia.",
+    "bookingFallback": "Rezerwacja",
+    "loadErrorTitle": "Nie udało się załadować rezerwacji",
+    "linkTitle": "Powiąż rezerwację",
+    "linkHint": "Wpisz adres e-mail użyty podczas rezerwacji lub token potwierdzenia. Jeśli znajdziemy dopasowanie, wyślemy link e-mailem — nigdy nie ujawniamy, czy konto istnieje.",
+    "linkEmail": "E-mail z rezerwacji",
+    "linkToken": "Token rezerwacji",
+    "linkAction": "Wyślij link",
+    "linkSent": "Jeśli znajdziemy pasującą rezerwację, wyślemy link potwierdzający na e-mail.",
+    "accountTitle": "Konto",
+    "accountHint": "Wyloguj się ze swojego konta na tej stronie.",
+    "signOut": "Wyloguj się",
+    "erase": "Usuń moje dane tutaj",
+    "eraseConfirm": "Tak, usuń moje dane z tej firmy",
+    "confirmTitle": "Łączenie rezerwacji",
+    "confirmHint": "Poczekaj, aż przypiszemy tę rezerwację do Twojego konta.",
+    "confirmSignIn": "Zaloguj się na swoje konto gościa, aby dokończyć powiązanie tej rezerwacji.",
+    "confirmMissing": "Brak tokenu potwierdzającego",
+    "confirmMissingHint": "Otwórz ponownie link z wiadomości e-mail.",
+    "confirmError": "Nie udało się potwierdzić tego linku",
+    "disabledTitle": "Konta gości nie są jeszcze dostępne",
+    "disabledDescription": "Ta firma nie włączyła jeszcze logowania gości. Nadal możesz rezerwować, podając imię i nazwisko, e-mail oraz telefon.",
+    "auth": {
+      "popupClosed": "Logowanie zostało anulowane.",
+      "popupBlocked": "Twoja przeglądarka zablokowała okno Google. Zezwól na wyskakujące okna i spróbuj ponownie.",
+      "differentProvider": "Ten adres e-mail loguje się już w inny sposób. Użyj zamiast tego hasła.",
+      "providerUnavailable": "Logowanie przez Google nie jest jeszcze dostępne na tej stronie. Użyj adresu e-mail i hasła.",
+      "invalidEmail": "Wpisz prawidłowy adres e-mail.",
+      "emailInUse": "Ten adres e-mail ma już konto gościa. Zaloguj się zamiast tego.",
+      "weakPassword": "Użyj dłuższego hasła.",
+      "tooManyRequests": "Zbyt wiele prób. Spróbuj ponownie za kilka minut.",
+      "invalidCredentials": "Nieprawidłowy adres e-mail lub hasło.",
+      "unknown": "Nie udało się zalogować. Spróbuj ponownie.",
+      "googleDisabled": "Logowanie przez Google nie jest jeszcze włączone na tej stronie. Użyj adresu e-mail i hasła.",
+      "domainNotAuthorised": "Logowanie przez Google nie jest jeszcze skonfigurowane dla adresu tej strony. Na razie użyj adresu e-mail i hasła."
+    },
+    "accountMenu": "Twoje konto",
+    "profileNav": "Profil",
+    "profileTitle": "Profil",
+    "profileMeta": "Twoje konto gościa w tej wypożyczalni.",
+    "linkCancel": "Anuluj",
+    "eraseTitle": "Usuń moje dane",
+    "eraseHint": "Usuwa Twoje dane gościa w tej firmie i wylogowuje Cię. Inne firmy nie są objęte zmianą.",
+    "profileDetailsTitle": "Twoje dane",
+    "profileDetailsHint": "Służą do automatycznego uzupełniania rezerwacji w tej firmie.",
+    "profileFullName": "Imię i nazwisko",
+    "profilePhone": "Numer telefonu",
+    "profileDob": "Data urodzenia",
+    "profileSave": "Zapisz dane",
+    "profileNotLinked": "Twoje imię, nazwisko i telefon zapiszą się tutaj po pierwszej rezerwacji z tym adresem e-mail. Rezerwowałeś(-aś) z innego adresu? Powiąż tę rezerwację w zakładce Moje rezerwacje.",
+    "verifyTitle": "Zweryfikuj adres e-mail, aby zobaczyć rezerwacje",
+    "verifyHint": "Wysłaliśmy link na adres {email}. Otwórz go, a następnie wróć tutaj. Dopóki nie zweryfikujesz adresu e-mail, nie możemy wyświetlić Twoich rezerwacji ani zapisać imienia i telefonu.",
+    "verifyResend": "Wyślij e-mail ponownie",
+    "verifySent": "E-mail wysłany. Sprawdź skrzynkę odbiorczą i folder spam.",
+    "verifyDone": "Zweryfikowałem(-am) swój e-mail",
+    "verifyStillPending": "Twój adres e-mail nie jest jeszcze zweryfikowany. Otwórz link w wiadomości i spróbuj ponownie.",
+    "verifyBanner": "Twoje konto nie jest jeszcze aktywne. Zweryfikuj {email}, aby zobaczyć rezerwacje i korzystać z zapisanych danych.",
+    "verifyBannerAction": "Zweryfikuj e-mail",
+    "profileEdit": "Edytuj dane",
+    "profileCancel": "Anuluj",
+    "profileEmail": "E-mail",
+    "profileEmpty": "Nie dodano",
+    "bookingsUpcoming": "Nadchodzące",
+    "bookingsPast": "Zakończone",
+    "ownerSignedOut": "Wylogowano z edytora strony. Sesje właściciela i gościa nie mogą być aktywne jednocześnie w tej przeglądarce."
+  },
+  "siteSections": {
+    "banners": {
+      "aria": "Oferty firmy {name}",
+      "slideAlt": "{name} — baner {position}",
+      "slideLabel": "{position} z {count}",
+      "previous": "Poprzedni baner",
+      "next": "Następny baner",
+      "goTo": "Pokaż baner {position}",
+      "presets": {
+        "airport": {
+          "script": "właśnie wylądowałeś?",
+          "highlight": "Odbiór na lotnisku",
+          "joiner": "w",
+          "boxed": "10 minut",
+          "description": "Omiń kolejkę: podpisz umowę na telefonie i odjedź z pełnym ubezpieczeniem"
+        },
+        "weekend": {
+          "script": "zarezerwuj na weekend",
+          "highlight": "Zaoszczędź 20%",
+          "joiner": "na",
+          "boxed": "Wynajem weekendowy",
+          "description": "Odbiór w piątek, zwrot w poniedziałek. Fotelik dziecięcy i dodatkowy kierowca gratis"
+        },
+        "roadtrip": {
+          "script": "Twoja kolejna podróż",
+          "highlight": "Zaczyna się tutaj",
+          "joiner": "przekazujemy Ci",
+          "boxed": "Kluczyki",
+          "description": "Bezpłatne anulowanie do 24 godz. przed odbiorem, brak limitu km i ukrytych opłat"
+        }
+      }
+    },
+    "included": {
+      "eyebrow": "Wliczone w każdą cenę",
+      "title": "Cena, którą widzisz, to cena, którą płacisz",
+      "description": "Bez niespodzianek przy odbiorze. To zawsze jest wliczone w cenę.",
+      "presets": {
+        "insurance": {
+          "title": "Podstawowe ubezpieczenie",
+          "text": "Ochrona od kolizji, kradzieży i OC.",
+          "tag": "W cenie"
+        },
+        "mileage": {
+          "title": "Bez limitu kilometrów",
+          "text": "Jedź tak daleko, jak chcesz, bez dopłat za kilometr.",
+          "tag": "Bez limitów"
+        },
+        "fuel": {
+          "title": "Polityka pełny–pełny",
+          "text": "Odbierasz auto z pełnym bakiem i oddajesz z pełnym.",
+          "tag": "Bez przedpłaty za paliwo"
+        },
+        "cancellation": {
+          "title": "Bezpłatne anulowanie",
+          "text": "Zmieniły się plany? Anuluj bez opłat.",
+          "tag": "Elastycznie"
+        }
+      }
+    },
+    "reviews": {
+      "eyebrow": "Opinie",
+      "title": "Co mówią o nas kierowcy",
+      "seeAll": "Zobacz wszystkie ({count, plural, one {# opinia} few {# opinie} many {# opinii} other {# opinii}})",
+      "seeAllOn": "Zobacz wszystkie ({count, plural, one {# opinia} few {# opinie} many {# opinii} other {# opinii}}) w serwisie {source}",
+      "basedOn": "Na podstawie {count, plural, one {# opinii} few {# opinii} many {# opinii} other {# opinii}}",
+      "basedOnSource": "Na podstawie {count, plural, one {# opinii} few {# opinii} many {# opinii} other {# opinii}} w serwisie {source}",
+      "ratingAria": "Ocena {rating} na 5",
+      "rented": "Wynajęto: {vehicle}",
+      "verified": "Zweryfikowany wynajem",
+      "distributionAria": "Rozkład ocen",
+      "emptyTitle": "Brak opinii",
+      "emptyText": "Goście mogą ocenić wynajem po zwrocie samochodu. Zatwierdzone opinie pojawią się tutaj."
+    },
+    "app": {
+      "eyebrow": "Aplikacja mobilna",
+      "title": "Twoja rezerwacja zawsze pod ręką",
+      "text": "Odpraw się online, sprawdź szczegóły odbioru i napisz do nas — wszystko z telefonu.",
+      "platformBoth": "iOS i Android",
+      "platformAndroid": "Android",
+      "platformIos": "iOS",
+      "scan": "Zeskanuj, aby pobrać",
+      "qrAlt": "Kod QR do pobrania aplikacji",
+      "appStore": {
+        "prefix": "Pobierz z",
+        "name": "App Store",
+        "aria": "Pobierz z App Store",
+        "unavailable": "Jeszcze niedostępna w App Store"
+      },
+      "googlePlay": {
+        "prefix": "Pobierz z",
+        "name": "Google Play",
+        "aria": "Pobierz z Google Play",
+        "unavailable": "Jeszcze niedostępna w Google Play"
+      },
+      "comingSoon": "Wkrótce"
+    },
+    "locations": {
+      "eyebrow": "Lokalizacje",
+      "title": "{count, plural, one {Nasze biuro} few {Nasze biura} many {Nasze biura} other {Nasze biura}}",
+      "description": "{count, plural, one {Tutaj odbierzesz i zwrócisz swój samochód.} few {Odbierz i zwróć samochód w dowolnym z naszych biur.} many {Odbierz i zwróć samochód w dowolnym z naszych biur.} other {Odbierz i zwróć samochód w dowolnym z naszych biur.}}",
+      "directions": "Dojazd",
+      "directionsTo": "Dojazd do {name}",
+      "call": "Zadzwoń"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Pytania przed rezerwacją",
+      "description": "Nie znajdujesz odpowiedzi? Skontaktuj się z nami, chętnie pomożemy."
+    },
+    "contact": {
+      "title": "Masz pytania? Porozmawiaj z nami.",
+      "description": "Wyślij wiadomość lub zadzwoń, a pomożemy Ci znaleźć odpowiedni samochód.",
+      "whatsapp": "WhatsApp",
+      "email": "Napisz do nas",
+      "whatsappMessage": "Dzień dobry {name}, mam pytanie dotyczące wynajmu samochodu."
+    },
+    "nav": {
+      "reviews": "Opinie",
+      "faq": "FAQ",
+      "contact": "Kontakt",
+      "app": "Aplikacja",
+      "branches": "Lokalizacje"
+    },
+    "footer": {
+      "contact": "Kontakt",
+      "whatsapp": "WhatsApp",
+      "copyright": "© {year} {name}",
+      "weAccept": "Akceptujemy",
+      "rating": "{score} · {count, plural, one {# opinia} few {# opinie} many {# opinii} other {# opinii}}"
+    },
+    "payments": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "bizum": "Bizum",
+      "cash": "Gotówka"
+    }
+  },
+  "siteEditor": {
+    "aria": "Edytor strony",
+    "title": "Edytor strony",
+    "signOut": "Wyloguj się",
+    "tabsAria": "Sekcje edytora",
+    "status": {
+      "draft": "Szkic",
+      "published": "Opublikowana",
+      "paused": "Wstrzymana"
+    },
+    "tabs": {
+      "sections": "Sekcje",
+      "design": "Wygląd",
+      "settings": "Ustawienia",
+      "legal": "Informacje prawne"
+    },
+    "contentLanguage": "Język edycji",
+    "locales": {
+      "bg-BG": "BG",
+      "cs-CZ": "CS",
+      "da-DK": "DA",
+      "de-DE": "DE",
+      "el-GR": "EL",
+      "en-GB": "EN",
+      "es-ES": "ES",
+      "et-EE": "ET",
+      "fi-FI": "FI",
+      "fr-FR": "FR",
+      "ga-IE": "GA",
+      "hr-HR": "HR",
+      "hu-HU": "HU",
+      "it-IT": "IT",
+      "lt-LT": "LT",
+      "lv-LV": "LV",
+      "mt-MT": "MT",
+      "nl-NL": "NL",
+      "pl-PL": "PL",
+      "pt-PT": "PT",
+      "ro-RO": "RO",
+      "sk-SK": "SK",
+      "sl-SI": "SL",
+      "sv-SE": "SV"
+    },
+    "backToSections": "Wszystkie sekcje",
+    "sections": {
+      "company": "Firma",
+      "fleet": "Samochody",
+      "included": "Wliczone w każdą cenę",
+      "reviews": "Opinie",
+      "app": "Aplikacja mobilna",
+      "faq": "FAQ",
+      "contact": "Kontakt",
+      "hero": "Banery i wyszukiwarka",
+      "branches": "Lokalizacje"
+    },
+    "sectionsHint": "Włączaj lub wyłączaj sekcje oraz zmieniaj ich kolejność. Otwórz sekcję, aby edytować jej treść.",
+    "orderHint": "Samochody są zawsze widoczne. Biura pochodzą z Twoich oddziałów w Benwer admin.",
+    "hiddenUntilContent": "Ukryta, dopóki nie dodasz treści",
+    "summary": {
+      "banners": "{count, plural, one {# baner} few {# banery} many {# banerów} other {# banera}}",
+      "bannersEmpty": "Brak banerów, wyświetlany jest kolor marki",
+      "company": "Nagłówek, wstęp i dane kontaktowe",
+      "fleet": "Z Twojej floty Benwer",
+      "included": "{count, plural, one {# element} few {# elementy} many {# elementów} other {# elementu}}",
+      "reviews": "{count, plural, one {# opinia} few {# opinie} many {# opinii} other {# opinii}}",
+      "app": "Linki do sklepów i kod QR",
+      "locations": "{count, plural, one {# biuro} few {# biura} many {# biur} other {# biura}} z Benwer",
+      "faq": "{count, plural, one {# pytanie} few {# pytania} many {# pytań} other {# pytania}}",
+      "contactWhatsapp": "WhatsApp, telefon i godziny otwarcia",
+      "contact": "Telefon i e-mail"
+    },
+    "unsaved": "Niezapisane zmiany",
+    "saved": "Wszystkie zmiany zapisane",
+    "discard": "Odrzuć",
+    "save": "Zapisz zmiany",
+    "common": {
+      "moveUp": "Przesuń {item} w górę",
+      "moveDown": "Przesuń {item} w dół",
+      "remove": "Usuń {item}",
+      "show": "Pokaż {item}"
+    },
+    "banners": {
+      "title": "Banery",
+      "description": "Maksymalnie {max} slajdów. Puste pola korzystają z domyślnego tekstu pokazanego na szaro.",
+      "empty": "Brak banerów. Obszar banera wyświetla Twój kolor tła.",
+      "item": "Baner {position}",
+      "image": "Obraz",
+      "imageHint": "Prześlij szeroki obraz, około 1600 × 560 px. JPG, PNG lub WebP do 25 MB. Przezroczysty plik PNG wyświetli się na kolorze banera.",
+      "add": "Dodaj baner",
+      "fields": {
+        "script": "Linia pismem odręcznym",
+        "highlight": "Wyróżniony tytuł",
+        "joiner": "Krótki łącznik",
+        "boxed": "Tytuł w ramce",
+        "description": "Opis"
+      },
+      "colorsTitle": "Kolory banera",
+      "colorsDescription": "Stosowane na każdym banerze. Jako tło sprawdzi się dowolny kolor.",
+      "resetColors": "Przywróć domyślne kolory",
+      "colors": {
+        "background": "Tło",
+        "text": "Tekst",
+        "highlight": "Ramka wyróżnienia",
+        "highlightText": "Tekst wyróżnienia",
+        "box": "Biała ramka",
+        "boxText": "Tekst w białej ramce",
+        "script": "Tekst łącznika"
+      },
+      "noImage": "Brak obrazu",
+      "uploadImage": "Prześlij obraz",
+      "replaceImage": "Zmień obraz",
+      "tooLarge": "Ten plik przekracza 25 MB. Wybierz mniejszy obraz.",
+      "uploadFailed": "Przesyłanie nie powiodło się. Spróbuj ponownie."
+    },
+    "company": {
+      "title": "Nagłówek firmy",
+      "description": "Twoja nazwa, nagłówek oraz krótkie wprowadzenie.",
+      "headline": "Nagłówek",
+      "headlinePlaceholder": "Wynajmij samochód w {name}",
+      "intro": "Wprowadzenie",
+      "introHint": "Jedno lub dwa zdania o Twojej firmie.",
+      "contactTitle": "Dane kontaktowe",
+      "contactDescription": "Wyświetlane w nagłówku, sekcji lokalizacji i kontaktu.",
+      "showPhone": "Pokaż numer telefonu",
+      "showEmail": "Pokaż adres e-mail",
+      "showAddress": "Pokaż adres"
+    },
+    "included": {
+      "title": "Wliczone w każdą cenę",
+      "description": "Do 6 obietnic, które zawsze są częścią Twojej ceny.",
+      "accuracy": "Wymieniaj tylko to, co dotyczy każdego wynajmu. Domyślny tekst to propozycja — sprawdź, czy odpowiada Twoim warunkom wynajmu.",
+      "item": "Element {position}",
+      "icon": "Ikona",
+      "itemTitle": "Tytuł",
+      "itemText": "Opis",
+      "itemTag": "Wyróżnienie",
+      "tagHint": "Krótka etykieta wyświetlana na zielono, np. „Udział własny 1000 €”.",
+      "presets": {
+        "insurance": "Podstawowe ubezpieczenie",
+        "mileage": "Bez limitu km",
+        "fuel": "Paliwo pełny–pełny",
+        "cancellation": "Bezpłatne anulowanie"
+      },
+      "addCustom": "Własny element"
+    },
+    "icons": {
+      "shield": "Tarcza",
+      "gauge": "Prędkościomierz",
+      "fuel": "Dystrybutor paliwa",
+      "calendar_check": "Kalendarz",
+      "check": "Znacznik wyboru",
+      "car": "Samochód",
+      "users": "Osoby",
+      "baby": "Fotelik dziecięcy",
+      "plane": "Samolot",
+      "key": "Kluczyk"
+    },
+    "reviews": {
+      "title": "Opinie gości",
+      "description": "Goście oceniają wynajem po zwrocie samochodu. Wyświetlane są wyłącznie zatwierdzone przez Ciebie opinie.",
+      "summary": "Średnia {average} na podstawie {count, plural, one {# zatwierdzonej opinii} few {# zatwierdzonych opinii} many {# zatwierdzonych opinii} other {# zatwierdzonej opinii}}",
+      "none": "Brak zatwierdzonych opinii. Dopóki nie zatwierdzisz pierwszej, goście widzą krótki komunikat.",
+      "manage": "Zatwierdzaj lub ukrywaj opinie w Benwer admin",
+      "demo": "To przykładowe opinie wyświetlane w tej firmie testowej, dopóki nie zatwierdzisz prawdziwych w Benwer admin."
+    },
+    "app": {
+      "benwerAppTitle": "Aplikacja Benwer Cars",
+      "benwerApp": "Pokaż aplikację Benwer Cars",
+      "benwerAppDescription": "Goście otrzymują bezpłatną aplikację Benwer Cars. Przyciski prowadzą do oficjalnych sklepów, a kod QR otwiera Twoją firmę w aplikacji.",
+      "storesWithBenwerApp": "Potrzebne tylko wtedy, gdy Twoja firma ma własną aplikację. Gdy aplikacja Benwer Cars jest włączona, sekcja korzysta z jej linków do sklepów.",
+      "storesTitle": "Linki do sklepów",
+      "storesDescription": "Linki do Twojej własnej aplikacji. Brakujący sklep wyświetla się na szaro. Bez linków i przy wyłączonej aplikacji Benwer Cars sekcja pozostaje ukryta.",
+      "ios": "Link do App Store",
+      "android": "Link do Google Play",
+      "qrHint": "Kod QR otwiera link do Google Play lub do App Store, jeśli link do Google Play nie został podany.",
+      "copyTitle": "Tekst",
+      "title": "Tytuł",
+      "text": "Opis"
+    },
+    "faq": {
+      "title": "Pytania",
+      "description": "Do {max} pytań z krótkimi odpowiedziami.",
+      "empty": "Brak pytań. Sekcja pozostaje ukryta, dopóki nie dodasz choć jednego.",
+      "item": "Pytanie {position}",
+      "question": "Pytanie",
+      "answer": "Odpowiedź",
+      "incompleteHint": "Pytania bez odpowiedzi nie są wyświetlane na stronie.",
+      "add": "Dodaj pytanie"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Jak klienci mogą się z Tobą skontaktować. Telefon i e-mail pochodzą z sekcji firmy.",
+      "whatsapp": "Numer WhatsApp",
+      "whatsappHint": "Podaj numer kierunkowy kraju. Pozostaw puste, aby ukryć przycisk WhatsApp.",
+      "hours": "Kiedy odpowiadasz",
+      "hoursPlaceholder": "Odpowiadamy codziennie od 08:00 do 22:00.",
+      "payments": "Metody płatności",
+      "paymentsHint": "Wyświetlane w stopce strony."
+    },
+    "design": {
+      "colorTitle": "Kolor marki",
+      "colorDescription": "Używany dla przycisków, linków i wyróżnień na stronie. Tło banera dopasowuje się do tego koloru; możesz je dodatkowo dostosować w sekcji Banery.",
+      "presets": "Sugerowane kolory",
+      "custom": "Własny kolor",
+      "customHint": "Użyj kodu szesnastkowego, np. #4f46e5.",
+      "picker": "Wybierz kolor",
+      "lowContrast": "Ten kolor jest zbyt jasny dla białego tekstu na przyciskach. Wybierz ciemniejszy, w przeciwnym razie zapis się nie powiedzie.",
+      "fontTitle": "Czcionka",
+      "fontDescription": "Używana dla całego tekstu na stronie.",
+      "fonts": {
+        "sans": {
+          "name": "Inter",
+          "hint": "Czysta i nowoczesna"
+        },
+        "serif": {
+          "name": "Lora",
+          "hint": "Klasyczna i elegancka"
+        },
+        "display": {
+          "name": "Poppins",
+          "hint": "Wyrazista i przyjazna"
+        }
+      },
+      "cornersTitle": "Narożniki",
+      "cornersDescription": "Zaokrąglone lub ostre narożniki przycisków, kart i pól na całej stronie.",
+      "corners": {
+        "round": {
+          "name": "Zaokrąglone",
+          "hint": "Miękkie i przyjazne"
+        },
+        "square": {
+          "name": "Kwadratowe",
+          "hint": "Ostre i minimalistyczne"
+        }
+      }
+    },
+    "settings": {
+      "websiteTitle": "Strona internetowa",
+      "websiteEnabled": "Strona rezerwacji włączona",
+      "websiteEnabledHint": "Gdy ta opcja jest włączona, goście mogą oglądać Twoją opublikowaną stronę i rezerwować na niej auta. Włączenie jej publikuje również zapisane zmiany. To ten sam przełącznik co w Benwer admin.",
+      "bookingTitle": "Rezerwacje",
+      "bookingDescription": "Jak klienci rezerwują przez Twoją stronę.",
+      "bookingMode": "Tryb rezerwacji",
+      "mode": {
+        "instant": "Natychmiastowa",
+        "request": "Na zapytanie"
+      },
+      "modeHint": {
+        "instant": "Rezerwacje są potwierdzane od razu.",
+        "request": "Akceptujesz lub odrzucasz każdą rezerwację w wyznaczonym czasie na odpowiedź."
+      },
+      "minLead": "Minimalne wyprzedzenie",
+      "requestWindow": "Czas na odpowiedź",
+      "hoursUnit": "W godzinach",
+      "differentReturnTitle": "Zwrot w innym miejscu",
+      "differentReturnLabel": "Pozwól gościom zwracać auto w innej lokalizacji",
+      "differentReturnHint": "Goście wybierają miejsce zwrotu podczas wyszukiwania. Do ceny doliczana jest opłata za wynajem w jedną stronę z Benwer admin.",
+      "differentReturnOff": "Włącz wynajem w jedną stronę w Benwer admin, aby zaoferować tę opcję."
+    },
+    "savedNotPublished": "Zapisano, jeszcze nieopublikowane",
+    "publish": "Opublikuj",
+    "branding": {
+      "logosTitle": "Logotypy",
+      "logosDescription": "To jest logo Twojej firmy. Zmiana tutaj zaktualizuje je również w Benwer admin oraz w aplikacji Benwer Cars.",
+      "headerLogo": "Logo w górnym pasku",
+      "headerLogoHint": "Wyświetlane na pasku u góry każdej strony. Najlepiej sprawdza się szerokie logo.",
+      "companyLogo": "Logo w sekcji firmy",
+      "companyLogoHint": "Wyświetlane nad nagłówkiem, przed sekcją firmy.",
+      "usingCompanyLogo": "Używasz logo firmy",
+      "upload": "Prześlij logo",
+      "replace": "Zmień",
+      "uploadFailed": "Nie udało się przesłać logo. Użyj obrazu PNG, JPG lub WebP i spróbuj ponownie.",
+      "tooLarge": "Ten obraz jest większy niż 25 MB.",
+      "backgroundTitle": "Tło strony",
+      "backgroundDescription": "Kolor za treścią Twojej strony internetowej.",
+      "backgroundPresets": "Sugerowane tła",
+      "backgroundCustom": "Własne tło",
+      "backgroundPicker": "Wybierz kolor tła",
+      "needsApi": "Dostępne po wdrożeniu aktualizacji Benwer API dla stron internetowych.",
+      "headerLogoDark": "Logo w górnym pasku — tryb ciemny",
+      "companyLogoDark": "Logo w sekcji firmy — tryb ciemny",
+      "squareLogo": "Kwadratowe logo (1:1)",
+      "squareLogoHint": "Wymagane do publikacji. Wyświetlane obok nazwy firmy na kartach, w wynikach wyszukiwania i na listach mobilnych.",
+      "cropTitle": "Przytnij logo do 2:1",
+      "cropHint": "Przeciągaj i powiększaj, aby logo dobrze mieściło się w ramce 2:1.",
+      "cropZoom": "Powiększenie",
+      "cropCancel": "Anuluj",
+      "cropSave": "Przytnij i prześlij",
+      "darkLogoHint": "Opcjonalne. Wyświetlane, gdy odwiedzający korzystają z trybu ciemnego. Użyj jasnej lub białej wersji logo.",
+      "darkNeedsApi": "Logotypy dla trybu ciemnego będą dostępne po wdrożeniu aktualizacji Benwer API.",
+      "logo": "Logo (2:1)",
+      "logoHint": "Wymagane do publikacji. Jedno logo dla trybu jasnego i ciemnego: kolor Twojej marki jako tło i biała nazwa, przycięte do proporcji 2:1."
+    },
+    "legal": {
+      "hint": "Każda strona zaczyna od tekstu standardowego, więc możesz zmienić tylko wybrane fragmenty. Dodaj sekcję dla każdego podtytułu. „Przywróć tekst standardowy” cofa Twoje zmiany.",
+      "needsApi": "Dostępne po wdrożeniu aktualizacji Benwer API dla stron internetowych.",
+      "privacyTitle": "Polityka prywatności",
+      "privacyDescription": "Wyświetlana w stopce strony pod linkiem Prywatność.",
+      "termsTitle": "Regulamin",
+      "termsDescription": "Wyświetlany w stopce strony pod linkiem Regulamin.",
+      "text": "Treść",
+      "intro": "Wprowadzenie",
+      "subtitle": "Podtytuł",
+      "sectionItem": "Sekcja {position}",
+      "addSection": "Dodaj sekcję",
+      "reset": "Przywróć tekst standardowy",
+      "pageTitle": "Tytuł strony",
+      "privacyLooksLikeTerms": "Twoja polityka prywatności ma tę samą treść co regulamin. Użyj „Przywróć tekst standardowy” w sekcji Polityka prywatności lub wpisz własny tekst, a następnie zapisz."
+    },
+    "preview": "Podgląd",
+    "fullscreen": "Edytor na pełnym ekranie",
+    "exitFullscreen": "Pokaż podgląd obok edytora",
+    "previewBarAria": "Sterowanie podglądem",
+    "previewing": "Oglądasz podgląd swojej strony",
+    "backToEdit": "Edytuj"
+  },
+  "marketplaceBanners": {
+    "aria": "Wyróżnione w Benwer",
+    "slideLabel": "{position} z {count}",
+    "goTo": "Pokaż baner {position}",
+    "previous": "Poprzedni baner",
+    "next": "Następny baner",
+    "trust": {
+      "script": "rezerwuj bez obaw",
+      "highlight": "Zweryfikowane firmy",
+      "joiner": "i",
+      "boxed": "Bezpieczna rezerwacja",
+      "description": "Prawdziwe opinie, jasne warunki i cyfrowe umowy podpisywane na telefonie"
+    },
+    "prices": {
+      "script": "jedno wyszukiwanie",
+      "highlight": "Porównaj ceny",
+      "joiner": "od",
+      "boxed": "Firm partnerskich",
+      "description": "Sprawdź ceny, ubezpieczenia i kaucje z partnerskich wypożyczalni obok siebie przed rezerwacją"
+    },
+    "anywhere": {
+      "script": "znajdź swoje auto",
+      "highlight": "W całej Maladze",
+      "joiner": "z",
+      "boxed": "Lokalnymi wypożyczalniami",
+      "description": "Partnerskie wypożyczalnie w miejscowościach całej prowincji Malaga, wszystko w jednym miejscu"
+    }
+  },
+  "siteLegal": {
+    "byCompany": "Opublikowane przez {name}.",
+    "cookies": {
+      "title": "Polityka plików cookie",
+      "lede": "Jak {name} używa plików cookie i podobnych technologii na tej stronie.",
+      "updated": "Opublikowane przez {name}.",
+      "sections": [
+        {
+          "title": "Czego używamy",
+          "body": "Pliki cookie to małe pliki tekstowe zapisywane na Twoim urządzeniu. Ta strona używa również podobnej pamięci, np. local storage, aby zapamiętywać Twoje wybory, koszyk i sesję logowania."
+        },
+        {
+          "title": "Ściśle niezbędne",
+          "body": "Plik cookie języka pozwala wyświetlać stronę w Twoim języku, a wybór z banera plików cookie jest zapisywany, abyśmy nie pytali ponownie przy każdej wizycie. Po zalogowaniu dostawca logowania zapisuje sesję na urządzeniu, aby utrzymać zalogowanie. Płatności kartą obsługuje Stripe, który może zapisywać własne pliki cookie w celu zapobiegania oszustwom."
+        },
+        {
+          "title": "Opcjonalne pliki cookie",
+          "body": "Opcjonalne pliki cookie (np. analityczne) pozostają wyłączone, chyba że wybierzesz „Zaakceptuj wszystkie”. Ta strona obecnie nie zapisuje analitycznych ani marketingowych plików cookie."
+        },
+        {
+          "title": "Zarządzanie plikami cookie",
+          "body": "Użyj linku ustawień plików cookie w stopce, aby zmienić swój wybór. Możesz też usunąć pliki cookie i dane witryny w przeglądarce. Zablokowanie ściśle niezbędnej pamięci może Cię wylogować lub opróżnić koszyk."
+        },
+        {
+          "title": "Więcej informacji",
+          "body": "Zobacz politykę prywatności, aby dowiedzieć się, jak {name} przetwarza dane osobowe, lub skorzystaj z danych kontaktowych w stopce."
+        }
+      ]
+    }
+  },
+  "support": {
+    "fabLabel": "Wsparcie",
+    "fabCloseLabel": "Zamknij menu wsparcia",
+    "messageAction": "Wiadomość bezpośrednia",
+    "whatsappAction": "WhatsApp",
+    "whatsappMessage": "Dzień dobry, mam pytanie dotyczące Benwer Cars."
+  },
+  "guestApp": {
+    "metaTitle": "Aplikacja Benwer Cars",
+    "metaDescription": "Rezerwuj samochody, trzymaj wszystkie podróże w jednym miejscu i otrzymuj aktualizacje rezerwacji na telefonie.",
+    "eyebrow": "Aplikacja mobilna",
+    "title": "Wynajem auta w Twojej kieszeni",
+    "description": "Rezerwuj samochody w lokalnych firmach, trzymaj każdą podróż w jednym miejscu, płać i otrzymuj powiadomienia na telefonie.",
+    "featureTrips": "Wszystkie Twoje podróże w różnych firmach",
+    "featureBooking": "Rezerwuj i płać kilkoma dotknięciami",
+    "featurePush": "Powiadomienia o zmianach w rezerwacji",
+    "unavailableTitle": "Aplikacja już wkrótce",
+    "unavailableDescription": "Aplikacja Benwer Cars nie jest jeszcze dostępna w sklepach. Nadal możesz rezerwować przez przeglądarkę.",
+    "browse": "Przeglądaj samochody",
+    "badgeTitle": "Pobierz aplikację Benwer Cars",
+    "companyText": "Rezerwuj w {company} na telefonie i trzymaj wszystkie podróże w jednym miejscu.",
+    "bookingText": "Zobacz tę rezerwację, zapłać i otrzymuj aktualizacje na telefonie."
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "errors": {
+    "unknown": "Något gick fel. Försök igen.",
+    "network": "Kunde inte nå servern. Kontrollera din anslutning.",
+    "vehicle": {
+      "not_found": "Det här fordonet är inte längre tillgängligt."
+    },
+    "company": {
+      "not_found": "Det här företaget kunde inte hittas."
+    },
+    "reservation": {
+      "overlap": "Det här fordonet är redan bokat för de datumen.",
+      "not_found": "Bokningen hittades inte. Kontrollera din bekräftelselänk.",
+      "invalid_dates": "Återlämning måste ske efter upphämtning.",
+      "min_lead": "Upphämtningen är för snart. Välj ett senare datum.",
+      "terms_required": "Godkänn hyresvillkoren för att fortsätta.",
+      "max_open_requests": "Du har redan två öppna förfrågningar. Dra tillbaka en innan du skickar en ny.",
+      "request_expired": "Den här förfrågan har löpt ut. Gör en ny.",
+      "not_cancellable": "Den här bokningen kan inte längre avbokas online."
+    },
+    "booking": {
+      "payment_not_required": "Ingen onlinebetalning krävs för den här bokningen.",
+      "payment_window_elapsed": "Betalningsfönstret på 15 minuter har löpt ut. Gör en ny bokning om du fortfarande behöver bilen.",
+      "payment_not_open": "Betalning är inte tillgänglig för den här bokningen. Försök igen eller kontakta företaget."
+    },
+    "rental_payments": {
+      "already_paid": "Den här bokningen är redan betald."
+    },
+    "site": {
+      "not_found": "Den här uthyrningswebbplatsen kunde inte hittas.",
+      "paused": "Det här företaget tar inte emot bokningar just nu.",
+      "not_published": "Den här webbplatsen är inte öppen för bokningar ännu."
+    },
+    "website_domain": {
+      "not_found": "Den här webbadressen är inte kopplad till något uthyrningsföretag."
+    },
+    "staff": {
+      "unauthenticated": "Logga in som företagsägare för att redigera den här webbplatsen.",
+      "forbidden": "Du har inte behörighet att redigera den här webbplatsen."
+    },
+    "guest": {
+      "not_configured": "Gästkonton är inte tillgängliga för det här företaget ännu.",
+      "not_linked": "Inga bokningar är kopplade till det här kontot ännu.",
+      "invalid_token": "Den här bekräftelselänken är ogiltig eller har löpt ut.",
+      "unauthenticated": "Logga in för att fortsätta."
+    },
+    "pricing": {
+      "min_days": "De här datumen är för korta för säsongen. Välj en längre hyresperiod.",
+      "max_days": "De här datumen är för långa för säsongen. Välj en kortare hyresperiod.",
+      "rental_too_long": "Den här hyresperioden är för lång för att bokas online. Kontakta företaget."
+    },
+    "contact": {
+      "not_configured": "Kontakt-e-post är inte konfigurerad ännu. Försök igen senare.",
+      "delivery_failed": "Vi kunde inte skicka ditt meddelande just nu. Försök igen senare."
+    }
+  },
+  "nav": {
+    "home": "Hem",
+    "cars": "Bilar",
+    "companies": "Företag",
+    "contact": "Kontakt",
+    "privacy": "Integritet",
+    "terms": "Villkor",
+    "cookies": "Kakor",
+    "mainAria": "Huvudnavigering",
+    "footerAria": "Sidfotsnavigering",
+    "menu": "Meny"
+  },
+  "meta": {
+    "siteTitle": "Hitta lokal biluthyrning",
+    "siteDescription": "Jämför bilar från partnerföretag i hela Málagaprovinsen och fortsätt sedan på företagets webbplats."
+  },
+  "notFound": {
+    "title": "Sidan hittades inte",
+    "description": "Den sidan finns inte. Gå tillbaka och sök efter en bil.",
+    "action": "Tillbaka till startsidan"
+  },
+  "hostUnknown": {
+    "title": "Den här webbplatsen är inte tillgänglig",
+    "description": "Kontrollera adressen du angav. Den här sidan tillhör inte en uthyrningswebbplats hos Benwer Cars."
+  },
+  "brand": {
+    "name": "Benwer Cars",
+    "shortName": "Benwer",
+    "homeAria": "Benwer Cars, startsida",
+    "logoAlt": "Benwer Cars"
+  },
+  "colorScheme": {
+    "toDark": "Byt till mörkt läge",
+    "toLight": "Byt till ljust läge"
+  },
+  "locale": {
+    "label": "Språk",
+    "bg": "BG",
+    "cs": "CS",
+    "da": "DA",
+    "de": "DE",
+    "el": "EL",
+    "en": "EN",
+    "es": "ES",
+    "et": "ET",
+    "fi": "FI",
+    "fr": "FR",
+    "ga": "GA",
+    "hr": "HR",
+    "hu": "HU",
+    "it": "IT",
+    "lt": "LT",
+    "lv": "LV",
+    "mt": "MT",
+    "nl": "NL",
+    "pl": "PL",
+    "pt": "PT",
+    "ro": "RO",
+    "sk": "SK",
+    "sl": "SL",
+    "sv": "SV",
+    "bgName": "Български",
+    "csName": "Čeština",
+    "daName": "Dansk",
+    "deName": "Deutsch",
+    "elName": "Ελληνικά",
+    "enName": "English",
+    "esName": "Español",
+    "etName": "Eesti",
+    "fiName": "Suomi",
+    "frName": "Français",
+    "gaName": "Gaeilge",
+    "hrName": "Hrvatski",
+    "huName": "Magyar",
+    "itName": "Italiano",
+    "ltName": "Lietuvių",
+    "lvName": "Latviešu",
+    "mtName": "Malti",
+    "nlName": "Nederlands",
+    "plName": "Polski",
+    "ptName": "Português",
+    "roName": "Română",
+    "skName": "Slovenčina",
+    "slName": "Slovenščina",
+    "svName": "Svenska",
+    "search": "Sök språk",
+    "noResults": "Inga matchande språk"
+  },
+  "footer": {
+    "tagline": "Jämför bilar från partnerföretag inom biluthyrning.",
+    "trust": "Partnerflottor · Málaga · Hyr på företagets webbplats",
+    "poweredBy": "Bokad via Benwer Cars",
+    "explore": "Utforska",
+    "legal": "Juridiskt",
+    "copyright": "© {year} Benwer Cars. Alla rättigheter förbehållna."
+  },
+  "cookieBanner": {
+    "body": "Vi använder en språkkaka och sparar ditt val på din enhet. Valfria kakor förblir avstängda om du inte godkänner dem.",
+    "policy": "Kakor och policy",
+    "necessary": "Avvisa alla",
+    "accept": "Acceptera alla",
+    "title": "Vi värnar om din integritet",
+    "settings": "Inställningar för kakor"
+  },
+  "actions": {
+    "retry": "Försök igen",
+    "back": "Tillbaka",
+    "viewAll": "Visa alla",
+    "close": "Stäng"
+  },
+  "phoneInput": {
+    "countryCodeValue": "Landskod, {country} {dial}",
+    "search": "Sök länder",
+    "countries": "Länder",
+    "noResults": "Inga länder matchar",
+    "invalid": "Ange ett giltigt telefonnummer.",
+    "placeholder": "600 000 000"
+  },
+  "datePicker": {
+    "clear": "Rensa datum"
+  },
+  "guestNotifications": {
+    "title": "Aviseringar",
+    "openLabel": "Öppna aviseringar",
+    "unreadCount": "{count} olästa aviseringar",
+    "emptyTitle": "Inga aviseringar ännu",
+    "emptyBody": "Bokningsuppdateringar, betalningspåminnelser och upphämtningsaviseringar visas här.",
+    "error": "Kunde inte läsa in aviseringar.",
+    "retry": "Försök igen",
+    "markAllRead": "Markera alla som lästa",
+    "dismiss": "Avfärda",
+    "loadMore": "Läs in fler",
+    "enablePush": "Aktivera webbläsaraviseringar",
+    "pushEnabled": "Webbläsaraviseringar aktiverade",
+    "pushBlocked": "Webbläsaraviseringar är blockerade i inställningarna",
+    "disablePush": "Inaktivera webbläsaraviseringar"
+  }
+}
